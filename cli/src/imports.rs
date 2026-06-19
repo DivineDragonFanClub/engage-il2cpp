@@ -199,14 +199,14 @@ fn classify_use(tree: &UseTree, manifest: &Manifest) -> UseShape {
                 let mut full = prefix.clone();
                 full.push(name.clone());
                 let path = full.join("::");
-                let Some(feature) = manifest.paths.get(&path) else {
+                let Some((full_path, feature)) = manifest.resolve_path(&path) else {
                     return UseShape::Other;
                 };
                 return UseShape::Single {
                     leaf: EngageLeaf {
-                        full_path: path,
+                        full_path: full_path.to_string(),
                         local_name: name,
-                        feature: feature.clone(),
+                        feature: feature.to_string(),
                     },
                 };
             }
@@ -216,14 +216,14 @@ fn classify_use(tree: &UseTree, manifest: &Manifest) -> UseShape {
                 let mut full = prefix.clone();
                 full.push(name.clone());
                 let path = full.join("::");
-                let Some(feature) = manifest.paths.get(&path) else {
+                let Some((full_path, feature)) = manifest.resolve_path(&path) else {
                     return UseShape::Other;
                 };
                 return UseShape::Single {
                     leaf: EngageLeaf {
-                        full_path: path,
+                        full_path: full_path.to_string(),
                         local_name: local,
-                        feature: feature.clone(),
+                        feature: feature.to_string(),
                     },
                 };
             }
@@ -236,12 +236,12 @@ fn classify_use(tree: &UseTree, manifest: &Manifest) -> UseShape {
                             let mut full = prefix.clone();
                             full.push(name.clone());
                             let path = full.join("::");
-                            let kind = if let Some(feature) = manifest.paths.get(&path) {
+                            let kind = if let Some((full_path, feature)) = manifest.resolve_path(&path) {
                                 MemberKind::Engage {
                                     leaf: EngageLeaf {
-                                        full_path: path,
+                                        full_path: full_path.to_string(),
                                         local_name: name.clone(),
-                                        feature: feature.clone(),
+                                        feature: feature.to_string(),
                                     },
                                 }
                             } else {
@@ -258,12 +258,12 @@ fn classify_use(tree: &UseTree, manifest: &Manifest) -> UseShape {
                             let mut full = prefix.clone();
                             full.push(name.clone());
                             let path = full.join("::");
-                            let kind = if let Some(feature) = manifest.paths.get(&path) {
+                            let kind = if let Some((full_path, feature)) = manifest.resolve_path(&path) {
                                 MemberKind::Engage {
                                     leaf: EngageLeaf {
-                                        full_path: path,
+                                        full_path: full_path.to_string(),
                                         local_name: local.clone(),
-                                        feature: feature.clone(),
+                                        feature: feature.to_string(),
                                     },
                                 }
                             } else {
@@ -335,6 +335,27 @@ impl<'ast> Visit<'ast> for BodyRefVisitor {
 
     fn visit_ident(&mut self, ident: &'ast proc_macro2::Ident) {
         self.out.insert(strip_raw(&ident.to_string()));
+    }
+
+    // syn keeps a macro's contents as raw tokens and never parses them, so a type
+    // used only inside something like `vec![Fade::black_out(...)]` is invisible to
+    // the normal walk. Pull every identifier out of the macro tokens so we don't
+    // call a still-used import dead and delete it.
+    fn visit_macro(&mut self, mac: &'ast syn::Macro) {
+        collect_idents_from_tokens(mac.tokens.clone(), &mut self.out);
+        syn::visit::visit_macro(self, mac);
+    }
+}
+
+fn collect_idents_from_tokens(tokens: proc_macro2::TokenStream, out: &mut BTreeSet<String>) {
+    for tt in tokens {
+        match tt {
+            proc_macro2::TokenTree::Ident(id) => {
+                out.insert(strip_raw(&id.to_string()));
+            }
+            proc_macro2::TokenTree::Group(g) => collect_idents_from_tokens(g.stream(), out),
+            _ => {}
+        }
     }
 }
 

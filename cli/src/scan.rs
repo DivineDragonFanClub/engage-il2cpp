@@ -110,16 +110,12 @@ impl<'a> PathVisitor<'a> {
         for n in (2..=segments.len()).rev() {
             let candidate: String = segments[..n].join("::");
 
-            if self.manifest.paths.contains_key(&candidate) {
-                self.out.insert(candidate);
-                return;
-            }
-
-            // Code usually imports the short re-export path (engage_il2cpp::app::Fade)
-            // rather than the canonical one (engage_il2cpp::app::fade::Fade). Record the
-            // canonical so it maps to a feature downstream.
-            if let Some(canonical) = self.manifest.reexports.get(&candidate) {
-                self.out.insert(canonical.clone());
+            // Matches either the canonical path or the short re-export form code
+            // usually writes (engage_il2cpp::app::Fade). Record the canonical so it
+            // maps to a feature downstream.
+            if let Some((canonical, _)) = self.manifest.resolve_path(&candidate) {
+                let canonical = canonical.to_string();
+                self.out.insert(canonical);
                 return;
             }
 

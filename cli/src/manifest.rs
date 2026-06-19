@@ -57,6 +57,23 @@ impl Manifest {
         self.paths.iter().filter(|(path, _)| path.split("::").last() == Some(leaf)).collect()
     }
 
+    /// Resolve a path as written in code to its (canonical path, gating feature).
+    /// Accepts the canonical path itself (engage_il2cpp::app::fade::Fade) or the
+    /// short re-export form code usually writes (engage_il2cpp::app::Fade), and
+    /// always hands back the canonical one so callers agree on a single key.
+    /// Returns None if the path names no known engage type. This is the one place
+    /// that knows about re-exports, so both the scanner and the prune import check
+    /// go through it instead of each reimplementing the lookup.
+    pub fn resolve_path(&self, path: &str) -> Option<(&str, &str)> {
+        if let Some((canonical, feature)) = self.paths.get_key_value(path) {
+            return Some((canonical.as_str(), feature.as_str()));
+        }
+
+        let canonical = self.reexports.get(path)?;
+        let feature = self.paths.get(canonical)?;
+        Some((canonical.as_str(), feature.as_str()))
+    }
+
     pub fn closure(&self, feature: &str) -> BTreeSet<String> {
         let mut out = BTreeSet::new();
         let mut stack = vec![feature.to_string()];
