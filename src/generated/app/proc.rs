@@ -17,6 +17,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc.md"))]#[::unity2::class(namespace="App",name="Proc")]#[parent(crate::system::object::Object)]pub struct Proc{#[static_field]#[rename(name="s_Roots")]pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc_ProcCallback_1.md"))]#[::unity2::class(namespace="App",name="Proc.ProcCallback`1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity>{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc_RootType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Proc_RootType{pub value:i32,}
 impl::unity2::ClassIdentity for Proc_RootType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Proc.RootType";
@@ -35,12 +41,6 @@ pub fn low()->Self{Self{value:2}
 pub fn num()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc.md"))]#[::unity2::class(namespace="App",name="Proc")]#[parent(crate::system::object::Object)]pub struct Proc{#[static_field]#[rename(name="s_Roots")]pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc_ProcCallback_1.md"))]#[::unity2::class(namespace="App",name="Proc.ProcCallback`1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
@@ -421,13 +421,13 @@ this}
 #[cfg(feature = "app-proc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Proc_RootType;
     pub use super::Proc;
     pub use super::IProc;
     pub use super::IProcMethods;
     pub use super::Proc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1Methods;
+    pub use super::Proc_RootType;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

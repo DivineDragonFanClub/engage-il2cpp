@@ -19,10 +19,19 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.KeyHelpObjects")]#[parent(crate::system::object::Object)]pub struct TalkUI_KeyHelpObjects{#[offset(16)]#[rename(name="m_rootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_talkObjects")]pub m_talk_objects:crate::app::talk3_d::talkui::TalkUI_TalkObjects,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_TalkObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.TalkObjects")]#[parent(crate::system::object::Object)]pub struct TalkUI_TalkObjects{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Window")]pub m_window:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_WindowImage")]pub m_window_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_WindowAnimator")]pub m_window_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_MainTextAnimator")]pub m_main_text_animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_MainText")]pub m_main_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_WaitKeyIcon")]pub m_wait_key_icon:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_AutoPlayIcon")]pub m_auto_play_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_KeyHelpObjects")]pub m_key_help_objects:crate::app::talk3_d::talkui::TalkUI_KeyHelpObjects, #[offset(88)]#[rename(name="m_ImmediatelyAfterActivation")]pub m_immediately_after_activation:bool, #[offset(89)]#[rename(name="m_IsShowKeyWaitIcon")]pub m_is_show_key_wait_icon:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::talk3_d::talkui::TalkUI>)]pub struct TalkUI{#[static_field]#[rename(name="EventPictureMax")]pub event_picture_max:i32, #[static_field]#[rename(name="FaceLocationName_Left")]pub face_location_name_left: ::unity2::Il2CppString, #[static_field]#[rename(name="FaceLocationName_Right")]pub face_location_name_right: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_SystemObjects")]pub m_system_objects:crate::app::talk3_d::talkui::TalkUI_SystemObjects, #[offset(40)]#[rename(name="m_StandObjects")]pub m_stand_objects:crate::app::talk3_d::talkui::TalkUI_StandObjects, #[offset(48)]#[rename(name="m_FaceObjects")]pub m_face_objects:crate::app::talk3_d::talkui::TalkUI_FaceObjects, #[offset(56)]#[rename(name="m_FocusTalkObjects")]pub m_focus_talk_objects:crate::app::talk3_d::talkui::TalkUI_TalkObjects, #[offset(64)]#[rename(name="m_ReserveFocusWindow")]pub m_reserve_focus_window: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_EventPictureController")]pub m_event_picture_controller: ::unity2::Array<crate::app::eventpicturecontroller::EventPictureController> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_FaceObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.FaceObjects")]#[parent(crate::app::talk3_d::talkui::TalkUI_StandObjects)]pub struct TalkUI_FaceObjects{#[offset(112)]#[rename(name="m_Panel")]pub m_panel:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_PanelAnimator")]pub m_panel_animator:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_FaceL")]pub m_face_l:crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face, #[offset(136)]#[rename(name="m_FaceR")]pub m_face_r:crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_SystemObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.SystemObjects")]#[parent(crate::app::talk3_d::talkui::TalkUI_TalkObjects)]pub struct TalkUI_SystemObjects{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_FaceObjects_Face.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.FaceObjects.Face")]#[parent(crate::system::object::Object)]pub struct TalkUI_FaceObjects_Face{#[static_field]#[rename(name="FaceSlideLength")]pub face_slide_length:f32, #[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_ImageBaseX")]pub m_image_base_x:f32, #[offset(36)]#[rename(name="m_IsDirRight")]pub m_is_dir_right:bool, #[offset(40)]#[rename(name="m_material")]pub m_material:crate::unity_engine::material::Material,}
@@ -30,19 +39,230 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_StandObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.StandObjects")]#[parent(crate::app::talk3_d::talkui::TalkUI_SystemObjects)]pub struct TalkUI_StandObjects{#[offset(96)]#[rename(name="m_NameRoot")]pub m_name_root:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_CurrentLocationName")]pub m_current_location_name: ::unity2::Il2CppString,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_TalkObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.TalkObjects")]#[parent(crate::system::object::Object)]pub struct TalkUI_TalkObjects{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Window")]pub m_window:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_WindowImage")]pub m_window_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_WindowAnimator")]pub m_window_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_MainTextAnimator")]pub m_main_text_animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_MainText")]pub m_main_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_WaitKeyIcon")]pub m_wait_key_icon:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_AutoPlayIcon")]pub m_auto_play_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_KeyHelpObjects")]pub m_key_help_objects:crate::app::talk3_d::talkui::TalkUI_KeyHelpObjects, #[offset(88)]#[rename(name="m_ImmediatelyAfterActivation")]pub m_immediately_after_activation:bool, #[offset(89)]#[rename(name="m_IsShowKeyWaitIcon")]pub m_is_show_key_wait_icon:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.KeyHelpObjects")]#[parent(crate::system::object::Object)]pub struct TalkUI_KeyHelpObjects{#[offset(16)]#[rename(name="m_rootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_talkObjects")]pub m_talk_objects:crate::app::talk3_d::talkui::TalkUI_TalkObjects,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkui/TalkUI_SystemObjects.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkUI.SystemObjects")]#[parent(crate::app::talk3_d::talkui::TalkUI_TalkObjects)]pub struct TalkUI_SystemObjects{}
-
 }
 
 #[cfg(feature = "app-talk3_d-talkui-types")]
 pub use __types::*;
+
+#[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUI_KeyHelpObjectsMethods:ITalkUI_KeyHelpObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fcf70usize)as*mut u8,();
+(TalkUI_KeyHelpObjects)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+#[doc="`SetTalkObjects(crate::app::talk3_d::talkui::TalkUI_TalkObjects)` overload"]fn set_talk_objects(self,talk_objects:impl::core::convert::Into<crate::app::talk3_d::talkui::TalkUI_TalkObjects>)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd090usize)as*mut u8,();
+(TalkUI_KeyHelpObjects)__receiver,(crate::app::talk3_d::talkui::TalkUI_TalkObjects)::core::convert::Into::into(talk_objects))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fcfb0usize)as*mut u8,();
+(TalkUI_KeyHelpObjects)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd0a0usize)as*mut u8,();
+(TalkUI_KeyHelpObjects)__receiver)}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd1d0usize)as*mut u8,();
+(TalkUI_KeyHelpObjects)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd280usize)as*mut u8,();
+(TalkUI_KeyHelpObjects)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd330usize)as*mut u8,();
+(TalkUI_KeyHelpObjects)__receiver)}
+}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]impl<__T:ITalkUI_KeyHelpObjects>ITalkUI_KeyHelpObjectsMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_KeyHelpObjects{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_talk_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_KeyHelpObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkUI_KeyHelpObjects), ::core::stringify!(new),));
+ <Self as ITalkUI_KeyHelpObjectsMethods> ::ctor(this,game_object);
+this}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_TalkObjects{#[doc="`TryPlayAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"]pub fn try_play_anime(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21fd860usize)as*mut u8,();
+(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(::unity2::Il2CppString)::core::convert::Into::into(state_name))}
+}
+#[doc="`TryPlayOpen(crate::unity_engine::animator::Animator)` overload"]pub fn try_play_open(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21fcc50usize)as*mut u8,();
+(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
+}
+#[doc="`TryPlayClose(crate::unity_engine::animator::Animator)` overload"]pub fn try_play_close(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21fcd80usize)as*mut u8,();
+(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
+}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUI_TalkObjectsMethods:ITalkUI_TalkObjects{#[doc="`GetWindowAnimator()` overload"]fn get_window_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3b0usize)as*mut u8,crate::unity_engine::animator::Animator;
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe1a0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe1e0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`SetImmediatelyAfterActivation()` overload"]fn set_immediately_after_activation(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3d0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3e0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`IsTextEmpty()` overload"]fn is_text_empty(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3f0usize)as*mut u8,bool;
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`IsNeedTextScroll()` overload"]fn is_need_text_scroll(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe420usize)as*mut u8,bool;
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`AddLetter(u16)` overload"]fn add_letter(self,c:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe460usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver,(u16)::core::convert::Into::into(c))}
+}
+#[doc="`AddString(::unity2::Il2CppString)` overload"]fn add_string(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe530usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`ClearText()` overload"]fn clear_text(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe600usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`CalcTotalWidth(::unity2::Il2CppString)` overload"]fn calc_total_width(self,mess_str:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe680usize)as*mut u8,f32;
+(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mess_str))}
+}
+#[doc="`SetupWaitIcon()` overload"]fn setup_wait_icon(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe700usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`ShowKeyWaitIcon()` overload"]fn show_key_wait_icon(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe790usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`HideKeyWaitIcon()` overload"]fn hide_key_wait_icon(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3c0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`GetNameLocator(::unity2::Il2CppString)` overload"]fn get_name_locator(self,location_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(location_name))}
+}
+#[doc="`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_talker_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,location:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7b0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(location))}
+}
+#[doc="`SetFocus(::unity2::Il2CppString)` overload"]fn set_focus(self,location:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7c0usize)as*mut u8,bool;
+(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(location))}
+}
+#[doc="`CloseTalkerName()` overload"]fn close_talker_name(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7d0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`SetActive(bool)` overload"]fn set_active(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7e0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver,(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`OpenWindow()` overload"]fn open_window(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe880usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`CloseWindow()` overload"]fn close_window(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe890usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`CloseAll()` overload"]fn close_all(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fdcb0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`ShowWindowBg()` overload"]fn show_window_bg(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe8a0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`HideWindowBg()` overload"]fn hide_window_bg(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe940usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`IsPlayingWindowAnimation()` overload"]fn is_playing_window_animation(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fdfa0usize)as*mut u8,bool;
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`StartTextScroll()` overload"]fn start_text_scroll(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe9e0usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`IsTextScrolling()` overload"]fn is_text_scrolling(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fea40usize)as*mut u8,bool;
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`SetupKeyHelp()` overload"]fn setup_key_help(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21feb10usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver)}
+}
+#[doc="`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add_to_log(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,talker_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21feb20usize)as*mut u8,();
+(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Il2CppString)::core::convert::Into::into(talker_name))}
+}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]impl<__T:ITalkUI_TalkObjects>ITalkUI_TalkObjectsMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_TalkObjects{pub fn get_window_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_immediately_after_activation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_text_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_need_text_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_letter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn calc_total_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn setup_wait_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn show_key_wait_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn hide_key_wait_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_name_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_talker_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn close_talker_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn open_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn close_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn close_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn show_window_bg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn hide_window_bg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn is_playing_window_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn try_play_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn try_play_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn try_play_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn start_text_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn is_text_scrolling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn setup_key_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn add_to_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_TalkObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkUI_TalkObjects), ::core::stringify!(new),));
+ <Self as ITalkUI_TalkObjectsMethods> ::ctor(this,root_object);
+this}
+}
 
 #[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUIMethods:ITalkUI{#[doc="`get_TalkType()` overload"]fn get_talk_type(self,)->crate::app::talk3_d::talk_2::Talk_TalkType{unsafe{let __receiver= <TalkUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21dcaf0usize)as*mut u8,crate::app::talk3_d::talk_2::Talk_TalkType;
@@ -350,6 +570,34 @@ pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
+#[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUI_SystemObjectsMethods:ITalkUI_SystemObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkUI_SystemObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd4b0usize)as*mut u8,();
+(TalkUI_SystemObjects)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TalkUI_SystemObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd850usize)as*mut u8,();
+(TalkUI_SystemObjects)__receiver)}
+}
+#[doc="`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add_to_log(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,talker_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_SystemObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe2c0usize)as*mut u8,();
+(TalkUI_SystemObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Il2CppString)::core::convert::Into::into(talker_name))}
+}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]impl<__T:ITalkUI_SystemObjects>ITalkUI_SystemObjectsMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_SystemObjects{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_to_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_SystemObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkUI_SystemObjects), ::core::stringify!(new),));
+ <Self as ITalkUI_SystemObjectsMethods> ::ctor(this,root_object);
+this}
+}
+
 #[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUI_FaceObjects_FaceMethods:ITalkUI_FaceObjects_Face{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,image_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_dir_right:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkUI_FaceObjects_Face as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0e50usize)as*mut u8,();
 (TalkUI_FaceObjects_Face)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(::unity2::Il2CppString)::core::convert::Into::into(image_name),(bool)::core::convert::Into::into(is_dir_right))}
@@ -471,278 +719,30 @@ pub fn add_to_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_TalkObjects{#[doc="`TryPlayAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"]pub fn try_play_anime(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21fd860usize)as*mut u8,();
-(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(::unity2::Il2CppString)::core::convert::Into::into(state_name))}
-}
-#[doc="`TryPlayOpen(crate::unity_engine::animator::Animator)` overload"]pub fn try_play_open(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21fcc50usize)as*mut u8,();
-(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
-}
-#[doc="`TryPlayClose(crate::unity_engine::animator::Animator)` overload"]pub fn try_play_close(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21fcd80usize)as*mut u8,();
-(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
-}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUI_TalkObjectsMethods:ITalkUI_TalkObjects{#[doc="`GetWindowAnimator()` overload"]fn get_window_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3b0usize)as*mut u8,crate::unity_engine::animator::Animator;
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe1a0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe1e0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`SetImmediatelyAfterActivation()` overload"]fn set_immediately_after_activation(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3d0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3e0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`IsTextEmpty()` overload"]fn is_text_empty(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3f0usize)as*mut u8,bool;
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`IsNeedTextScroll()` overload"]fn is_need_text_scroll(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe420usize)as*mut u8,bool;
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`AddLetter(u16)` overload"]fn add_letter(self,c:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe460usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver,(u16)::core::convert::Into::into(c))}
-}
-#[doc="`AddString(::unity2::Il2CppString)` overload"]fn add_string(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe530usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
-}
-#[doc="`ClearText()` overload"]fn clear_text(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe600usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`CalcTotalWidth(::unity2::Il2CppString)` overload"]fn calc_total_width(self,mess_str:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe680usize)as*mut u8,f32;
-(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mess_str))}
-}
-#[doc="`SetupWaitIcon()` overload"]fn setup_wait_icon(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe700usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`ShowKeyWaitIcon()` overload"]fn show_key_wait_icon(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe790usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`HideKeyWaitIcon()` overload"]fn hide_key_wait_icon(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe3c0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`GetNameLocator(::unity2::Il2CppString)` overload"]fn get_name_locator(self,location_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(location_name))}
-}
-#[doc="`SetTalkerName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_talker_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,location:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7b0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(location))}
-}
-#[doc="`SetFocus(::unity2::Il2CppString)` overload"]fn set_focus(self,location:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7c0usize)as*mut u8,bool;
-(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(location))}
-}
-#[doc="`CloseTalkerName()` overload"]fn close_talker_name(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7d0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`SetActive(bool)` overload"]fn set_active(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe7e0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver,(bool)::core::convert::Into::into(is_active))}
-}
-#[doc="`OpenWindow()` overload"]fn open_window(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe880usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`CloseWindow()` overload"]fn close_window(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe890usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`CloseAll()` overload"]fn close_all(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fdcb0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`ShowWindowBg()` overload"]fn show_window_bg(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe8a0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`HideWindowBg()` overload"]fn hide_window_bg(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe940usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`IsPlayingWindowAnimation()` overload"]fn is_playing_window_animation(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fdfa0usize)as*mut u8,bool;
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`StartTextScroll()` overload"]fn start_text_scroll(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe9e0usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`IsTextScrolling()` overload"]fn is_text_scrolling(self,)->bool{unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fea40usize)as*mut u8,bool;
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`SetupKeyHelp()` overload"]fn setup_key_help(self,)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21feb10usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver)}
-}
-#[doc="`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add_to_log(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,talker_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_TalkObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21feb20usize)as*mut u8,();
-(TalkUI_TalkObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Il2CppString)::core::convert::Into::into(talker_name))}
-}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]impl<__T:ITalkUI_TalkObjects>ITalkUI_TalkObjectsMethods for __T{}
-
-#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_TalkObjects{pub fn get_window_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_immediately_after_activation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_text_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_need_text_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn add_letter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn add_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn clear_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn calc_total_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn setup_wait_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn show_key_wait_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn hide_key_wait_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_name_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_talker_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn close_talker_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn open_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn close_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn close_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn show_window_bg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn hide_window_bg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn is_playing_window_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn try_play_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn try_play_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn try_play_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn start_text_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn is_text_scrolling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn setup_key_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn add_to_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_TalkObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkUI_TalkObjects), ::core::stringify!(new),));
- <Self as ITalkUI_TalkObjectsMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUI_KeyHelpObjectsMethods:ITalkUI_KeyHelpObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fcf70usize)as*mut u8,();
-(TalkUI_KeyHelpObjects)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`SetTalkObjects(crate::app::talk3_d::talkui::TalkUI_TalkObjects)` overload"]fn set_talk_objects(self,talk_objects:impl::core::convert::Into<crate::app::talk3_d::talkui::TalkUI_TalkObjects>)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd090usize)as*mut u8,();
-(TalkUI_KeyHelpObjects)__receiver,(crate::app::talk3_d::talkui::TalkUI_TalkObjects)::core::convert::Into::into(talk_objects))}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fcfb0usize)as*mut u8,();
-(TalkUI_KeyHelpObjects)__receiver)}
-}
-#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd0a0usize)as*mut u8,();
-(TalkUI_KeyHelpObjects)__receiver)}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd1d0usize)as*mut u8,();
-(TalkUI_KeyHelpObjects)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd280usize)as*mut u8,();
-(TalkUI_KeyHelpObjects)__receiver)}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkUI_KeyHelpObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd330usize)as*mut u8,();
-(TalkUI_KeyHelpObjects)__receiver)}
-}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]impl<__T:ITalkUI_KeyHelpObjects>ITalkUI_KeyHelpObjectsMethods for __T{}
-
-#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_KeyHelpObjects{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_talk_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_KeyHelpObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkUI_KeyHelpObjects), ::core::stringify!(new),));
- <Self as ITalkUI_KeyHelpObjectsMethods> ::ctor(this,game_object);
-this}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]pub trait ITalkUI_SystemObjectsMethods:ITalkUI_SystemObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkUI_SystemObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd4b0usize)as*mut u8,();
-(TalkUI_SystemObjects)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TalkUI_SystemObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fd850usize)as*mut u8,();
-(TalkUI_SystemObjects)__receiver)}
-}
-#[doc="`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add_to_log(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,talker_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkUI_SystemObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fe2c0usize)as*mut u8,();
-(TalkUI_SystemObjects)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Il2CppString)::core::convert::Into::into(talker_name))}
-}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]impl<__T:ITalkUI_SystemObjects>ITalkUI_SystemObjectsMethods for __T{}
-
-#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_SystemObjects{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn add_to_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-talk3_d-talkui")]impl TalkUI_SystemObjects{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkUI_SystemObjects), ::core::stringify!(new),));
- <Self as ITalkUI_SystemObjectsMethods> ::ctor(this,root_object);
-this}
-}
-
 #[cfg(feature = "app-talk3_d-talkui")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkUI_KeyHelpObjects;
+    pub use super::ITalkUI_KeyHelpObjects;
+    pub use super::ITalkUI_KeyHelpObjectsMethods;
+    pub use super::TalkUI_TalkObjects;
+    pub use super::ITalkUI_TalkObjects;
+    pub use super::ITalkUI_TalkObjectsMethods;
     pub use super::TalkUI;
     pub use super::ITalkUI;
     pub use super::ITalkUIMethods;
     pub use super::TalkUI_FaceObjects;
     pub use super::ITalkUI_FaceObjects;
     pub use super::ITalkUI_FaceObjectsMethods;
+    pub use super::TalkUI_SystemObjects;
+    pub use super::ITalkUI_SystemObjects;
+    pub use super::ITalkUI_SystemObjectsMethods;
     pub use super::TalkUI_FaceObjects_Face;
     pub use super::ITalkUI_FaceObjects_Face;
     pub use super::ITalkUI_FaceObjects_FaceMethods;
     pub use super::TalkUI_StandObjects;
     pub use super::ITalkUI_StandObjects;
     pub use super::ITalkUI_StandObjectsMethods;
-    pub use super::TalkUI_TalkObjects;
-    pub use super::ITalkUI_TalkObjects;
-    pub use super::ITalkUI_TalkObjectsMethods;
-    pub use super::TalkUI_KeyHelpObjects;
-    pub use super::ITalkUI_KeyHelpObjects;
-    pub use super::ITalkUI_KeyHelpObjectsMethods;
-    pub use super::TalkUI_SystemObjects;
-    pub use super::ITalkUI_SystemObjects;
-    pub use super::ITalkUI_SystemObjectsMethods;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

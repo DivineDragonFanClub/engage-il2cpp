@@ -11,89 +11,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu")]#[parent(crate::system::object::Object)]pub struct MapDebugDisposMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu.DisposMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct MapDebugDisposMenu_DisposMenuItem{#[offset(32)]#[rename(name="m_Group")]pub m_group: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_PositionGroup")]pub m_position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DeleteForceMenuItem.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu.DeleteForceMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct MapDebugDisposMenu_DeleteForceMenuItem{#[offset(32)]#[rename(name="m_ForceType")]pub m_force_type:crate::app::force::Force_Type, #[offset(40)]#[rename(name="m_ForceName")]pub m_force_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ForceUnitCount")]pub m_force_unit_count: ::unity2::Il2CppString,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu")]#[parent(crate::system::object::Object)]pub struct MapDebugDisposMenu{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu.DisposMenuItem.SharedPositionGroup")]#[parent(crate::system::object::Object)]pub struct MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup{#[offset(16)]#[rename(name="m_PositionGroup")]pub m_position_group: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu.DisposMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct MapDebugDisposMenu_DisposMenuItem{#[offset(32)]#[rename(name="m_Group")]pub m_group: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_PositionGroup")]pub m_position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,}
 
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c3360usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenuMethods:IMapDebugDisposMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDebugDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29c35b0usize)as*mut u8,();
-(MapDebugDisposMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl<__T:IMapDebugDisposMenu>IMapDebugDisposMenuMethods for __T{}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDebugDisposMenu), ::core::stringify!(new),));
- <Self as IMapDebugDisposMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn draw_cell(group:impl::core::convert::Into< ::unity2::Il2CppString> ,position:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24bdec0usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(group),(::unity2::Il2CppString)::core::convert::Into::into(position))}
-}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenu_DisposMenuItemMethods:IMapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]fn ctor(self,group:impl::core::convert::Into< ::unity2::Il2CppString> ,position_group:impl::core::convert::Into<crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup>)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bde60usize)as*mut u8,();
-(MapDebugDisposMenu_DisposMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(group),(crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)::core::convert::Into::into(position_group))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdeb0usize)as*mut u8, ::unity2::Il2CppString;
-(MapDebugDisposMenu_DisposMenuItem)__receiver)}
-}
-#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24be1f0usize)as*mut u8,();
-(MapDebugDisposMenu_DisposMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24be200usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(MapDebugDisposMenu_DisposMenuItem)__receiver)}
-}
-#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24be230usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(MapDebugDisposMenu_DisposMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl<__T:IMapDebugDisposMenu_DisposMenuItem>IMapDebugDisposMenu_DisposMenuItemMethods for __T{}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn draw_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]pub fn new(group: ::unity2::Il2CppString,position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDebugDisposMenu_DisposMenuItem), ::core::stringify!(new),));
- <Self as IMapDebugDisposMenu_DisposMenuItemMethods> ::ctor(this,group,position_group);
-this}
-}
 
 #[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenu_DeleteForceMenuItemMethods:IMapDebugDisposMenu_DeleteForceMenuItem{#[doc="`.ctor(crate::app::force::Force_Type)` overload"]fn ctor(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdb70usize)as*mut u8,();
@@ -158,6 +90,30 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c3360usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenuMethods:IMapDebugDisposMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDebugDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c35b0usize)as*mut u8,();
+(MapDebugDisposMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl<__T:IMapDebugDisposMenu>IMapDebugDisposMenuMethods for __T{}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDebugDisposMenu), ::core::stringify!(new),));
+ <Self as IMapDebugDisposMenuMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods:IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup{#[doc="`Set(::unity2::Il2CppString)` overload"]fn set(self,position_group:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69b10usize)as*mut u8,();
 (MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(position_group))}
@@ -191,21 +147,65 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn draw_cell(group:impl::core::convert::Into< ::unity2::Il2CppString> ,position:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24bdec0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(group),(::unity2::Il2CppString)::core::convert::Into::into(position))}
+}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenu_DisposMenuItemMethods:IMapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]fn ctor(self,group:impl::core::convert::Into< ::unity2::Il2CppString> ,position_group:impl::core::convert::Into<crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup>)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bde60usize)as*mut u8,();
+(MapDebugDisposMenu_DisposMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(group),(crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)::core::convert::Into::into(position_group))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdeb0usize)as*mut u8, ::unity2::Il2CppString;
+(MapDebugDisposMenu_DisposMenuItem)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24be1f0usize)as*mut u8,();
+(MapDebugDisposMenu_DisposMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24be200usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(MapDebugDisposMenu_DisposMenuItem)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24be230usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(MapDebugDisposMenu_DisposMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl<__T:IMapDebugDisposMenu_DisposMenuItem>IMapDebugDisposMenu_DisposMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn draw_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]pub fn new(group: ::unity2::Il2CppString,position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDebugDisposMenu_DisposMenuItem), ::core::stringify!(new),));
+ <Self as IMapDebugDisposMenu_DisposMenuItemMethods> ::ctor(this,group,position_group);
+this}
+}
+
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapDebugDisposMenu;
-    pub use super::IMapDebugDisposMenu;
-    pub use super::IMapDebugDisposMenuMethods;
-    pub use super::MapDebugDisposMenu_DisposMenuItem;
-    pub use super::IMapDebugDisposMenu_DisposMenuItem;
-    pub use super::IMapDebugDisposMenu_DisposMenuItemMethods;
     pub use super::MapDebugDisposMenu_DeleteForceMenuItem;
     pub use super::IMapDebugDisposMenu_DeleteForceMenuItem;
     pub use super::IMapDebugDisposMenu_DeleteForceMenuItemMethods;
+    pub use super::MapDebugDisposMenu;
+    pub use super::IMapDebugDisposMenu;
+    pub use super::IMapDebugDisposMenuMethods;
     pub use super::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup;
     pub use super::IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroup;
     pub use super::IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods;
+    pub use super::MapDebugDisposMenu_DisposMenuItem;
+    pub use super::IMapDebugDisposMenu_DisposMenuItem;
+    pub use super::IMapDebugDisposMenu_DisposMenuItemMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;

@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceai/MapSequenceAI.md"))]#[::unity2::class(namespace="App",name="MapSequenceAI")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceai::MapSequenceAI>)]pub struct MapSequenceAI{#[static_field]#[rename(name="s_AiThread")]pub s_ai_thread:crate::app::mapaithread::MapAiThread, #[offset(116)]#[rename(name="m_LastMindX")]pub m_last_mind_x:i32, #[offset(120)]#[rename(name="m_LastMindZ")]pub m_last_mind_z:i32, #[offset(124)]#[rename(name="m_IsOrderUnitEngageOrGodChange")]pub m_is_order_unit_engage_or_god_change:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceai/MapSequenceAI_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceAI_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceAI_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceAI.Label";
@@ -43,9 +46,6 @@ pub fn entrust_cancel()->Self{Self{value:6}
 pub fn end()->Self{Self{value:7}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceai/MapSequenceAI.md"))]#[::unity2::class(namespace="App",name="MapSequenceAI")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceai::MapSequenceAI>)]pub struct MapSequenceAI{#[static_field]#[rename(name="s_AiThread")]pub s_ai_thread:crate::app::mapaithread::MapAiThread, #[offset(116)]#[rename(name="m_LastMindX")]pub m_last_mind_x:i32, #[offset(120)]#[rename(name="m_LastMindZ")]pub m_last_mind_z:i32, #[offset(124)]#[rename(name="m_IsOrderUnitEngageOrGodChange")]pub m_is_order_unit_engage_or_god_change:bool,}
 
 }
 
@@ -207,10 +207,10 @@ this}
 #[cfg(feature = "app-mapsequenceai")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceAI_Label;
     pub use super::MapSequenceAI;
     pub use super::IMapSequenceAI;
     pub use super::IMapSequenceAIMethods;
+    pub use super::MapSequenceAI_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/playablebinding/PlayableBinding_CreateOutputMethod.md"))]#[::unity2::class(namespace="UnityEngine.Playables",name="PlayableBinding.CreateOutputMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PlayableBinding_CreateOutputMethod{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/playablebinding/PlayableBinding.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct PlayableBinding{pub m_stream_name: ::unity2::Il2CppString,pub m_source_object:crate::unity_engine::object_2::Object_2,pub m_source_binding_type: ::unity2::SystemType,pub m_create_output_method:crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod,}
 impl::unity2::ClassIdentity for PlayableBinding{const NAMESPACE: &'static str="UnityEngine.Playables";
 const NAME: &'static str="PlayableBinding";
@@ -40,13 +43,33 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"DefaultDurat
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/playablebinding/PlayableBinding_CreateOutputMethod.md"))]#[::unity2::class(namespace="UnityEngine.Playables",name="PlayableBinding.CreateOutputMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PlayableBinding_CreateOutputMethod{}
-
 }
 
 #[cfg(feature = "unity_engine-playables-playablebinding-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-playables-playablebinding")]pub trait IPlayableBinding_CreateOutputMethodMethods:IPlayableBinding_CreateOutputMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PlayableBinding_CreateOutputMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379d880usize)as*mut u8,();
+(PlayableBinding_CreateOutputMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]fn invoke(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{let __receiver= <PlayableBinding_CreateOutputMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379d8a0usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
+(PlayableBinding_CreateOutputMethod)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
+
+#[cfg(feature="unity_engine-playables-playablebinding")]impl<__T:IPlayableBinding_CreateOutputMethod>IPlayableBinding_CreateOutputMethodMethods for __T{}
+
+#[cfg(feature="unity_engine-playables-playablebinding")]impl PlayableBinding_CreateOutputMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-playables-playablebinding")]impl PlayableBinding_CreateOutputMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayableBinding_CreateOutputMethod), ::core::stringify!(new),));
+ <Self as IPlayableBinding_CreateOutputMethodMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="unity_engine-playables-playablebinding")]impl PlayableBinding{#[doc="`CreateInternal(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2, ::unity2::SystemType, crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod)` overload"]pub fn create_internal(name:impl::core::convert::Into< ::unity2::Il2CppString> ,source_object:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,source_type:impl::core::convert::Into< ::unity2::SystemType> ,create_function:impl::core::convert::Into<crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod>)->crate::unity_engine::playables::playablebinding::PlayableBinding{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1fb0usize)as*mut u8,crate::unity_engine::playables::playablebinding::PlayableBinding;
 (::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(source_object),(::unity2::SystemType)::core::convert::Into::into(source_type),(crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod)::core::convert::Into::into(create_function))}
@@ -74,36 +97,13 @@ pub fn create_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="unity_engine-playables-playablebinding")]pub trait IPlayableBinding_CreateOutputMethodMethods:IPlayableBinding_CreateOutputMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PlayableBinding_CreateOutputMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379d880usize)as*mut u8,();
-(PlayableBinding_CreateOutputMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]fn invoke(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{let __receiver= <PlayableBinding_CreateOutputMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379d8a0usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
-(PlayableBinding_CreateOutputMethod)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-}
-
-#[cfg(feature="unity_engine-playables-playablebinding")]impl<__T:IPlayableBinding_CreateOutputMethod>IPlayableBinding_CreateOutputMethodMethods for __T{}
-
-#[cfg(feature="unity_engine-playables-playablebinding")]impl PlayableBinding_CreateOutputMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-playables-playablebinding")]impl PlayableBinding_CreateOutputMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(PlayableBinding_CreateOutputMethod), ::core::stringify!(new),));
- <Self as IPlayableBinding_CreateOutputMethodMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "unity_engine-playables-playablebinding")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PlayableBinding;
     pub use super::PlayableBinding_CreateOutputMethod;
     pub use super::IPlayableBinding_CreateOutputMethod;
     pub use super::IPlayableBinding_CreateOutputMethodMethods;
+    pub use super::PlayableBinding;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

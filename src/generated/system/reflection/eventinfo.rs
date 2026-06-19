@@ -15,38 +15,15 @@ use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/eventinfo/EventInfo_AddEventAdapter.md"))]#[::unity2::class(namespace="System.Reflection",name="EventInfo.AddEventAdapter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventInfo_AddEventAdapter{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/eventinfo/EventInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="EventInfo")]#[parent(crate::system::reflection::memberinfo::MemberInfo)]pub struct EventInfo{#[offset(16)]#[rename(name="cached_add_event")]pub cached_add_event:crate::system::reflection::eventinfo::EventInfo_AddEventAdapter,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/eventinfo/EventInfo_AddEventAdapter.md"))]#[::unity2::class(namespace="System.Reflection",name="EventInfo.AddEventAdapter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventInfo_AddEventAdapter{}
 
 }
 
 #[cfg(feature = "system-reflection-eventinfo-types")]
 pub use __types::*;
-
-#[cfg(feature="system-reflection-eventinfo")]pub trait IEventInfo_AddEventAdapterMethods:IEventInfo_AddEventAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventInfo_AddEventAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d5b40usize)as*mut u8,();
-(EventInfo_AddEventAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::delegate::Delegate)` overload"]fn invoke(self,target_0:impl::core::convert::Into<crate::system::object::Object> ,dele:impl::core::convert::Into<crate::system::delegate::Delegate>)->(){unsafe{let __receiver= <EventInfo_AddEventAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d5b60usize)as*mut u8,();
-(EventInfo_AddEventAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(target_0),(crate::system::delegate::Delegate)::core::convert::Into::into(dele))}
-}
-}
-
-#[cfg(feature="system-reflection-eventinfo")]impl<__T:IEventInfo_AddEventAdapter>IEventInfo_AddEventAdapterMethods for __T{}
-
-#[cfg(feature="system-reflection-eventinfo")]impl EventInfo_AddEventAdapter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-reflection-eventinfo")]impl EventInfo_AddEventAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventInfo_AddEventAdapter), ::core::stringify!(new),));
- <Self as IEventInfo_AddEventAdapterMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="system-reflection-eventinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventInfo_unity2_raw{use super:: * ;
 pub unsafe fn get_attributes(this:EventInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::eventattributes::EventAttributes{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Attributes").unwrap_or_else(||panic!("unity2: abstract method `{}
@@ -152,15 +129,38 @@ pub fn internal_from_handle_type_method_info()-> & 'static::unity2::il2cpp::Meth
 this}
 }
 
+#[cfg(feature="system-reflection-eventinfo")]pub trait IEventInfo_AddEventAdapterMethods:IEventInfo_AddEventAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventInfo_AddEventAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d5b40usize)as*mut u8,();
+(EventInfo_AddEventAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::delegate::Delegate)` overload"]fn invoke(self,target_0:impl::core::convert::Into<crate::system::object::Object> ,dele:impl::core::convert::Into<crate::system::delegate::Delegate>)->(){unsafe{let __receiver= <EventInfo_AddEventAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d5b60usize)as*mut u8,();
+(EventInfo_AddEventAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(target_0),(crate::system::delegate::Delegate)::core::convert::Into::into(dele))}
+}
+}
+
+#[cfg(feature="system-reflection-eventinfo")]impl<__T:IEventInfo_AddEventAdapter>IEventInfo_AddEventAdapterMethods for __T{}
+
+#[cfg(feature="system-reflection-eventinfo")]impl EventInfo_AddEventAdapter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-reflection-eventinfo")]impl EventInfo_AddEventAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventInfo_AddEventAdapter), ::core::stringify!(new),));
+ <Self as IEventInfo_AddEventAdapterMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "system-reflection-eventinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventInfo_AddEventAdapter;
-    pub use super::IEventInfo_AddEventAdapter;
-    pub use super::IEventInfo_AddEventAdapterMethods;
     pub use super::EventInfo;
     pub use super::IEventInfo;
     pub use super::IEventInfoMethods;
+    pub use super::EventInfo_AddEventAdapter;
+    pub use super::IEventInfo_AddEventAdapter;
+    pub use super::IEventInfo_AddEventAdapterMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -9,18 +9,56 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/stack/Stack.md"))]#[::unity2::class(namespace="System.Collections",name="Stack")]#[parent(crate::system::object::Object)]pub struct Stack{#[offset(16)]#[rename(name="_array")]pub array: ::unity2::Array<crate::system::object::Object> , #[offset(24)]#[rename(name="_size")]pub size:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/stack/Stack_StackDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="Stack.StackDebugView")]#[parent(crate::system::object::Object)]pub struct Stack_StackDebugView{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/stack/Stack_StackEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="Stack.StackEnumerator")]#[parent(crate::system::object::Object)]pub struct Stack_StackEnumerator{#[offset(16)]#[rename(name="_stack")]pub stack:crate::system::collections::stack::Stack, #[offset(24)]#[rename(name="_index")]pub index:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="currentElement")]pub current_element: ::unity2::IlInstance,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/stack/Stack_StackDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="Stack.StackDebugView")]#[parent(crate::system::object::Object)]pub struct Stack_StackDebugView{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/stack/Stack.md"))]#[::unity2::class(namespace="System.Collections",name="Stack")]#[parent(crate::system::object::Object)]pub struct Stack{#[offset(16)]#[rename(name="_array")]pub array: ::unity2::Array<crate::system::object::Object> , #[offset(24)]#[rename(name="_size")]pub size:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "system-collections-stack-types")]
 pub use __types::*;
+
+#[cfg(feature="system-collections-stack")]pub trait IStack_StackEnumeratorMethods:IStack_StackEnumerator{#[doc="`.ctor(crate::system::collections::stack::Stack)` overload"]fn ctor(self,stack:impl::core::convert::Into<crate::system::collections::stack::Stack>)->(){unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57c40usize)as*mut u8,();
+(Stack_StackEnumerator)__receiver,(crate::system::collections::stack::Stack)::core::convert::Into::into(stack))}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57ca0usize)as*mut u8,crate::system::object::Object;
+(Stack_StackEnumerator)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57cb0usize)as*mut u8,bool;
+(Stack_StackEnumerator)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57db0usize)as*mut u8,crate::system::object::Object;
+(Stack_StackEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57e40usize)as*mut u8,();
+(Stack_StackEnumerator)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-stack")]impl<__T:IStack_StackEnumerator>IStack_StackEnumeratorMethods for __T{}
+
+#[cfg(feature="system-collections-stack")]impl Stack_StackEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="system-collections-stack")]impl Stack_StackEnumerator{#[doc="`.ctor(crate::system::collections::stack::Stack)` — overload selector"]pub fn new(stack:crate::system::collections::stack::Stack)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Stack_StackEnumerator), ::core::stringify!(new),));
+ <Self as IStack_StackEnumeratorMethods> ::ctor(this,stack);
+this}
+}
 
 #[cfg(feature="system-collections-stack")]pub trait IStackMethods:IStack{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Stack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x376f0a0usize)as*mut u8,();
@@ -100,55 +138,17 @@ this}
 this}
 }
 
-#[cfg(feature="system-collections-stack")]pub trait IStack_StackEnumeratorMethods:IStack_StackEnumerator{#[doc="`.ctor(crate::system::collections::stack::Stack)` overload"]fn ctor(self,stack:impl::core::convert::Into<crate::system::collections::stack::Stack>)->(){unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57c40usize)as*mut u8,();
-(Stack_StackEnumerator)__receiver,(crate::system::collections::stack::Stack)::core::convert::Into::into(stack))}
-}
-#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57ca0usize)as*mut u8,crate::system::object::Object;
-(Stack_StackEnumerator)__receiver)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57cb0usize)as*mut u8,bool;
-(Stack_StackEnumerator)__receiver)}
-}
-#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57db0usize)as*mut u8,crate::system::object::Object;
-(Stack_StackEnumerator)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Stack_StackEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57e40usize)as*mut u8,();
-(Stack_StackEnumerator)__receiver)}
-}
-}
-
-#[cfg(feature="system-collections-stack")]impl<__T:IStack_StackEnumerator>IStack_StackEnumeratorMethods for __T{}
-
-#[cfg(feature="system-collections-stack")]impl Stack_StackEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="system-collections-stack")]impl Stack_StackEnumerator{#[doc="`.ctor(crate::system::collections::stack::Stack)` — overload selector"]pub fn new(stack:crate::system::collections::stack::Stack)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Stack_StackEnumerator), ::core::stringify!(new),));
- <Self as IStack_StackEnumeratorMethods> ::ctor(this,stack);
-this}
-}
-
 #[cfg(feature = "system-collections-stack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Stack;
-    pub use super::IStack;
-    pub use super::IStackMethods;
+    pub use super::Stack_StackDebugView;
+    pub use super::IStack_StackDebugView;
     pub use super::Stack_StackEnumerator;
     pub use super::IStack_StackEnumerator;
     pub use super::IStack_StackEnumeratorMethods;
-    pub use super::Stack_StackDebugView;
-    pub use super::IStack_StackDebugView;
+    pub use super::Stack;
+    pub use super::IStack;
+    pub use super::IStackMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

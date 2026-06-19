@@ -21,9 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerauto/CameraControllerAuto.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerAuto")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerAuto{#[offset(168)]#[rename(name="DistanceCurve")]pub distance_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(176)]#[rename(name="VirticalMinMax")]pub virtical_min_max:crate::unity_engine::vector2::Vector2, #[offset(184)]#[rename(name="HorizontalMinMax")]pub horizontal_min_max:crate::unity_engine::vector2::Vector2, #[offset(220)]#[rename(name="m_Time")]pub m_time:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CameraControllerAuto_CamRotate{pub start_degree:f32,pub end_degree:f32,pub speed:f32,}
 impl::unity2::ClassIdentity for CameraControllerAuto_CamRotate{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="CameraControllerAuto.CamRotate";
@@ -34,10 +31,21 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for CameraControllerAuto_CamRotate{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerauto/CameraControllerAuto.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerAuto")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerAuto{#[offset(168)]#[rename(name="DistanceCurve")]pub distance_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(176)]#[rename(name="VirticalMinMax")]pub virtical_min_max:crate::unity_engine::vector2::Vector2, #[offset(184)]#[rename(name="HorizontalMinMax")]pub horizontal_min_max:crate::unity_engine::vector2::Vector2, #[offset(220)]#[rename(name="m_Time")]pub m_time:f32,}
+
 }
 
 #[cfg(feature = "combat-cameracontrollerauto-types")]
 pub use __types::*;
+
+#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto_CamRotate{#[doc="`Get(f32)` overload"]pub fn get(&mut self,rate:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bd7b0usize)as*mut u8,f32;
+(*mut CameraControllerAuto_CamRotate)self as*mut CameraControllerAuto_CamRotate,(f32)::core::convert::Into::into(rate))}
+}
+}
+
+#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto_CamRotate{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature="combat-cameracontrollerauto")]pub trait ICameraControllerAutoMethods:ICameraControllerAuto{#[doc="`get_TimeLength()` overload"]fn get_time_length(self,)->f32{unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2995a90usize)as*mut u8,f32;
@@ -117,21 +125,13 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto_CamRotate{#[doc="`Get(f32)` overload"]pub fn get(&mut self,rate:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bd7b0usize)as*mut u8,f32;
-(*mut CameraControllerAuto_CamRotate)self as*mut CameraControllerAuto_CamRotate,(f32)::core::convert::Into::into(rate))}
-}
-}
-
-#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto_CamRotate{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature = "combat-cameracontrollerauto")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CameraControllerAuto_CamRotate;
     pub use super::CameraControllerAuto;
     pub use super::ICameraControllerAuto;
     pub use super::ICameraControllerAutoMethods;
-    pub use super::CameraControllerAuto_CamRotate;
     pub use crate::combat::basecameracontroller::IBaseCameraController;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

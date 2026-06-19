@@ -19,103 +19,24 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent_KeyHelp.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent.KeyHelp")]#[parent(crate::system::object::Object)]pub struct RewindMenuContent_KeyHelp{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent_Phase.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent.Phase")]#[parent(crate::system::object::Object)]pub struct RewindMenuContent_Phase{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_TurnName")]pub m_turn_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Turn")]pub m_turn:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_RestName")]pub m_rest_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_Rest")]pub m_rest:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent_ScrollArrow.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent.ScrollArrow")]#[parent(crate::system::object::Object)]pub struct RewindMenuContent_ScrollArrow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent_RestRewindTimes.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent.RestRewindTimes")]#[parent(crate::system::object::Object)]pub struct RewindMenuContent_RestRewindTimes{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Times")]pub m_times:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent_Phase.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent.Phase")]#[parent(crate::system::object::Object)]pub struct RewindMenuContent_Phase{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_TurnName")]pub m_turn_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Turn")]pub m_turn:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_RestName")]pub m_rest_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_Rest")]pub m_rest:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RewindMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="ShowRowMax")]pub show_row_max:i32, #[offset(232)]#[rename(name="m_PlayerPhaseObj")]pub m_player_phase_obj:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_EnemyPhaseObj")]pub m_enemy_phase_obj:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_AllyPhaseObj")]pub m_ally_phase_obj:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_Enemy2PhaseObj")]pub m_enemy2_phase_obj:crate::unity_engine::gameobject::GameObject, #[offset(264)]#[rename(name="m_ScrollArrowUpObj")]pub m_scroll_arrow_up_obj:crate::unity_engine::gameobject::GameObject, #[offset(272)]#[rename(name="m_ScrollArrowDownObj")]pub m_scroll_arrow_down_obj:crate::unity_engine::gameobject::GameObject, #[offset(280)]#[rename(name="m_RestRewindTimesObj")]pub m_rest_rewind_times_obj:crate::unity_engine::gameobject::GameObject, #[offset(288)]#[rename(name="m_KeyHelpObj")]pub m_key_help_obj:crate::unity_engine::gameobject::GameObject, #[offset(296)]#[rename(name="m_ForcePlayerColor")]pub m_force_player_color:crate::unity_engine::color::Color, #[offset(312)]#[rename(name="m_ForceEnemyColor")]pub m_force_enemy_color:crate::unity_engine::color::Color, #[offset(328)]#[rename(name="m_ForceAllyColor")]pub m_force_ally_color:crate::unity_engine::color::Color, #[offset(344)]#[rename(name="m_ForceEnemy2Color")]pub m_force_enemy2_color:crate::unity_engine::color::Color, #[offset(360)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(368)]#[rename(name="m_PlayerPhase")]pub m_player_phase:crate::app::rewindmenucontent::RewindMenuContent_Phase, #[offset(376)]#[rename(name="m_EnemyPhase")]pub m_enemy_phase:crate::app::rewindmenucontent::RewindMenuContent_Phase, #[offset(384)]#[rename(name="m_AllyPhase")]pub m_ally_phase:crate::app::rewindmenucontent::RewindMenuContent_Phase, #[offset(392)]#[rename(name="m_Enemy2Phase")]pub m_enemy2_phase:crate::app::rewindmenucontent::RewindMenuContent_Phase, #[offset(400)]#[rename(name="m_ScrollArrowUp")]pub m_scroll_arrow_up:crate::app::rewindmenucontent::RewindMenuContent_ScrollArrow, #[offset(408)]#[rename(name="m_ScrollArrowDown")]pub m_scroll_arrow_down:crate::app::rewindmenucontent::RewindMenuContent_ScrollArrow, #[offset(416)]#[rename(name="m_RestRewindTimes")]pub m_rest_rewind_times:crate::app::rewindmenucontent::RewindMenuContent_RestRewindTimes, #[offset(424)]#[rename(name="m_KeyHelp")]pub m_key_help:crate::app::rewindmenucontent::RewindMenuContent_KeyHelp,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent_KeyHelp.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent.KeyHelp")]#[parent(crate::system::object::Object)]pub struct RewindMenuContent_KeyHelp{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenucontent/RewindMenuContent_RestRewindTimes.md"))]#[::unity2::class(namespace="App",name="RewindMenuContent.RestRewindTimes")]#[parent(crate::system::object::Object)]pub struct RewindMenuContent_RestRewindTimes{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Times")]pub m_times:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-rewindmenucontent-types")]
 pub use __types::*;
-
-#[cfg(feature="app-rewindmenucontent")]pub trait IRewindMenuContent_KeyHelpMethods:IRewindMenuContent_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RewindMenuContent_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f380usize)as*mut u8,();
-(RewindMenuContent_KeyHelp)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <RewindMenuContent_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f3d0usize)as*mut u8,();
-(RewindMenuContent_KeyHelp)__receiver)}
-}
-#[doc="`Set()` overload"]fn set(self,)->(){unsafe{let __receiver= <RewindMenuContent_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f4b0usize)as*mut u8,();
-(RewindMenuContent_KeyHelp)__receiver)}
-}
-}
-
-#[cfg(feature="app-rewindmenucontent")]impl<__T:IRewindMenuContent_KeyHelp>IRewindMenuContent_KeyHelpMethods for __T{}
-
-#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_KeyHelp{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenuContent_KeyHelp), ::core::stringify!(new),));
- <Self as IRewindMenuContent_KeyHelpMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-rewindmenucontent")]pub trait IRewindMenuContent_ScrollArrowMethods:IRewindMenuContent_ScrollArrow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RewindMenuContent_ScrollArrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fde0usize)as*mut u8,();
-(RewindMenuContent_ScrollArrow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <RewindMenuContent_ScrollArrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fe20usize)as*mut u8,();
-(RewindMenuContent_ScrollArrow)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <RewindMenuContent_ScrollArrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fe30usize)as*mut u8,();
-(RewindMenuContent_ScrollArrow)__receiver)}
-}
-}
-
-#[cfg(feature="app-rewindmenucontent")]impl<__T:IRewindMenuContent_ScrollArrow>IRewindMenuContent_ScrollArrowMethods for __T{}
-
-#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_ScrollArrow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_ScrollArrow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenuContent_ScrollArrow), ::core::stringify!(new),));
- <Self as IRewindMenuContent_ScrollArrowMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-rewindmenucontent")]pub trait IRewindMenuContent_RestRewindTimesMethods:IRewindMenuContent_RestRewindTimes{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RewindMenuContent_RestRewindTimes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0faa0usize)as*mut u8,();
-(RewindMenuContent_RestRewindTimes)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`SetTimes(i32)` overload"]fn set_times(self,times:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RewindMenuContent_RestRewindTimes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fcc0usize)as*mut u8,();
-(RewindMenuContent_RestRewindTimes)__receiver,(i32)::core::convert::Into::into(times))}
-}
-}
-
-#[cfg(feature="app-rewindmenucontent")]impl<__T:IRewindMenuContent_RestRewindTimes>IRewindMenuContent_RestRewindTimesMethods for __T{}
-
-#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_RestRewindTimes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_times_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_RestRewindTimes{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenuContent_RestRewindTimes), ::core::stringify!(new),));
- <Self as IRewindMenuContent_RestRewindTimesMethods> ::ctor(this,root_object);
-this}
-}
 
 #[cfg(feature="app-rewindmenucontent")]pub trait IRewindMenuContent_PhaseMethods:IRewindMenuContent_Phase{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RewindMenuContent_Phase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f5b0usize)as*mut u8,();
@@ -152,6 +73,34 @@ pub fn set_rest_unit_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 ::{}
  failed to instantiate", ::core::stringify!(RewindMenuContent_Phase), ::core::stringify!(new),));
  <Self as IRewindMenuContent_PhaseMethods> ::ctor(this,root_object);
+this}
+}
+
+#[cfg(feature="app-rewindmenucontent")]pub trait IRewindMenuContent_ScrollArrowMethods:IRewindMenuContent_ScrollArrow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RewindMenuContent_ScrollArrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fde0usize)as*mut u8,();
+(RewindMenuContent_ScrollArrow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <RewindMenuContent_ScrollArrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fe20usize)as*mut u8,();
+(RewindMenuContent_ScrollArrow)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <RewindMenuContent_ScrollArrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fe30usize)as*mut u8,();
+(RewindMenuContent_ScrollArrow)__receiver)}
+}
+}
+
+#[cfg(feature="app-rewindmenucontent")]impl<__T:IRewindMenuContent_ScrollArrow>IRewindMenuContent_ScrollArrowMethods for __T{}
+
+#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_ScrollArrow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_ScrollArrow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenuContent_ScrollArrow), ::core::stringify!(new),));
+ <Self as IRewindMenuContent_ScrollArrowMethods> ::ctor(this,root_object);
 this}
 }
 
@@ -301,24 +250,75 @@ pub fn create_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
+#[cfg(feature="app-rewindmenucontent")]pub trait IRewindMenuContent_KeyHelpMethods:IRewindMenuContent_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RewindMenuContent_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f380usize)as*mut u8,();
+(RewindMenuContent_KeyHelp)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <RewindMenuContent_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f3d0usize)as*mut u8,();
+(RewindMenuContent_KeyHelp)__receiver)}
+}
+#[doc="`Set()` overload"]fn set(self,)->(){unsafe{let __receiver= <RewindMenuContent_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f4b0usize)as*mut u8,();
+(RewindMenuContent_KeyHelp)__receiver)}
+}
+}
+
+#[cfg(feature="app-rewindmenucontent")]impl<__T:IRewindMenuContent_KeyHelp>IRewindMenuContent_KeyHelpMethods for __T{}
+
+#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_KeyHelp{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenuContent_KeyHelp), ::core::stringify!(new),));
+ <Self as IRewindMenuContent_KeyHelpMethods> ::ctor(this,root_object);
+this}
+}
+
+#[cfg(feature="app-rewindmenucontent")]pub trait IRewindMenuContent_RestRewindTimesMethods:IRewindMenuContent_RestRewindTimes{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RewindMenuContent_RestRewindTimes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0faa0usize)as*mut u8,();
+(RewindMenuContent_RestRewindTimes)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`SetTimes(i32)` overload"]fn set_times(self,times:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RewindMenuContent_RestRewindTimes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0fcc0usize)as*mut u8,();
+(RewindMenuContent_RestRewindTimes)__receiver,(i32)::core::convert::Into::into(times))}
+}
+}
+
+#[cfg(feature="app-rewindmenucontent")]impl<__T:IRewindMenuContent_RestRewindTimes>IRewindMenuContent_RestRewindTimesMethods for __T{}
+
+#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_RestRewindTimes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_times_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-rewindmenucontent")]impl RewindMenuContent_RestRewindTimes{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenuContent_RestRewindTimes), ::core::stringify!(new),));
+ <Self as IRewindMenuContent_RestRewindTimesMethods> ::ctor(this,root_object);
+this}
+}
+
 #[cfg(feature = "app-rewindmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RewindMenuContent_KeyHelp;
-    pub use super::IRewindMenuContent_KeyHelp;
-    pub use super::IRewindMenuContent_KeyHelpMethods;
-    pub use super::RewindMenuContent_ScrollArrow;
-    pub use super::IRewindMenuContent_ScrollArrow;
-    pub use super::IRewindMenuContent_ScrollArrowMethods;
-    pub use super::RewindMenuContent_RestRewindTimes;
-    pub use super::IRewindMenuContent_RestRewindTimes;
-    pub use super::IRewindMenuContent_RestRewindTimesMethods;
     pub use super::RewindMenuContent_Phase;
     pub use super::IRewindMenuContent_Phase;
     pub use super::IRewindMenuContent_PhaseMethods;
+    pub use super::RewindMenuContent_ScrollArrow;
+    pub use super::IRewindMenuContent_ScrollArrow;
+    pub use super::IRewindMenuContent_ScrollArrowMethods;
     pub use super::RewindMenuContent;
     pub use super::IRewindMenuContent;
     pub use super::IRewindMenuContentMethods;
+    pub use super::RewindMenuContent_KeyHelp;
+    pub use super::IRewindMenuContent_KeyHelp;
+    pub use super::IRewindMenuContent_KeyHelpMethods;
+    pub use super::RewindMenuContent_RestRewindTimes;
+    pub use super::IRewindMenuContent_RestRewindTimes;
+    pub use super::IRewindMenuContent_RestRewindTimesMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

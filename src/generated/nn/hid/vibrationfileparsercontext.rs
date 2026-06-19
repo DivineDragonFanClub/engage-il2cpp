@@ -11,17 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationFileParserContext{pub storage:crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext_IntPtrArray10,}
-impl::unity2::ClassIdentity for VibrationFileParserContext{const NAMESPACE: &'static str="nn.hid";
-const NAME: &'static str="VibrationFileParserContext";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VibrationFileParserContext{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext_IntPtrArray10.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationFileParserContext_IntPtrArray10{pub value0: ::unity2::IntPtr,pub value1: ::unity2::IntPtr,pub value2: ::unity2::IntPtr,pub value3: ::unity2::IntPtr,pub value4: ::unity2::IntPtr,pub value5: ::unity2::IntPtr,pub value6: ::unity2::IntPtr,pub value7: ::unity2::IntPtr,pub value8: ::unity2::IntPtr,pub value9: ::unity2::IntPtr,}
 impl::unity2::ClassIdentity for VibrationFileParserContext_IntPtrArray10{const NAMESPACE: &'static str="nn.hid";
 const NAME: &'static str="VibrationFileParserContext.IntPtrArray10";
@@ -38,6 +27,17 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
 let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
  ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationfileparsercontext/VibrationFileParserContext.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationFileParserContext{pub storage:crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext_IntPtrArray10,}
+impl::unity2::ClassIdentity for VibrationFileParserContext{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="VibrationFileParserContext";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VibrationFileParserContext{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -116,8 +116,8 @@ pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 #[cfg(feature = "nn-hid-vibrationfileparsercontext")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VibrationFileParserContext;
     pub use super::VibrationFileParserContext_IntPtrArray10;
+    pub use super::VibrationFileParserContext;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

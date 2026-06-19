@@ -21,9 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignment")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapTerrainInfoAlignment{#[offset(24)]#[rename(name="m_Type")]pub m_type:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_Type, #[offset(32)]#[rename(name="m_InversionObjList")]pub m_inversion_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_WidthMax")]pub m_width_max:f32, #[offset(48)]#[rename(name="m_MapTerrainObj")]pub m_map_terrain_obj:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_TitleObj")]pub m_title_obj:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_TerrainObj")]pub m_terrain_obj:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_OverlapObj")]pub m_overlap_obj:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_OverlapObjList")]pub m_overlap_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(88)]#[rename(name="m_CannonInfoObj")]pub m_cannon_info_obj:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_CannonInfoObjList")]pub m_cannon_info_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(104)]#[rename(name="m_DetailsObj")]pub m_details_obj:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_MapTerrainEffectsObj")]pub m_map_terrain_effects_obj:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_MapTerrainEffectsPointRectTransform")]pub m_map_terrain_effects_point_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(128)]#[rename(name="m_MapTerrainEffectsContentsObj")]pub m_map_terrain_effects_contents_obj:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_MapTerrainEffectsContentsObjList")]pub m_map_terrain_effects_contents_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(144)]#[rename(name="m_SkillObj")]pub m_skill_obj:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_SkillPointRectTransform")]pub m_skill_point_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(160)]#[rename(name="m_SkillContentsObj")]pub m_skill_contents_obj:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_SkillContentsTitleObj")]pub m_skill_contents_title_obj:crate::unity_engine::gameobject::GameObject, #[offset(176)]#[rename(name="m_SkillIconObj")]pub m_skill_icon_obj:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_SkillIconList")]pub m_skill_icon_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(192)]#[rename(name="m_SkillIconWidth")]pub m_skill_icon_width:f32, #[offset(196)]#[rename(name="m_IsCompress")]pub m_is_compress:bool, #[offset(200)]#[rename(name="m_RootAlignParent")]pub m_root_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(208)]#[rename(name="m_MapTerrainAlignParent")]pub m_map_terrain_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(216)]#[rename(name="m_DetailsAlignParent")]pub m_details_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(224)]#[rename(name="m_MapTerrainEffectsAlignParent")]pub m_map_terrain_effects_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(232)]#[rename(name="m_SkillAlignParent")]pub m_skill_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(240)]#[rename(name="m_TitleAlignParent")]pub m_title_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(248)]#[rename(name="m_OverlapAlignParent")]pub m_overlap_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(256)]#[rename(name="m_CannonInfoAlignParent")]pub m_cannon_info_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(264)]#[rename(name="m_MapTerrainEffectsContentsAlignParent")]pub m_map_terrain_effects_contents_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(272)]#[rename(name="m_SkillContentsAlignParent")]pub m_skill_contents_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(280)]#[rename(name="m_SkillIconAlignParent")]pub m_skill_icon_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(288)]#[rename(name="m_TerrainAlignMember")]pub m_terrain_align_member:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember, #[offset(296)]#[rename(name="m_SkillContentsTitleAlignMember")]pub m_skill_contents_title_align_member:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember, #[offset(304)]#[rename(name="m_FirstLeftList")]pub m_first_left_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(312)]#[rename(name="m_FirstRightList")]pub m_first_right_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(320)]#[rename(name="m_SecondList")]pub m_second_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(328)]#[rename(name="m_ThirdList")]pub m_third_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(336)]#[rename(name="m_InversionMemberList")]pub m_inversion_member_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_InversionMember> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTerrainInfoAlignment_Type{pub value:i32,}
 impl::unity2::ClassIdentity for MapTerrainInfoAlignment_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapTerrainInfoAlignment.Type";
@@ -40,7 +37,16 @@ pub fn right()->Self{Self{value:1}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignment")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapTerrainInfoAlignment{#[offset(24)]#[rename(name="m_Type")]pub m_type:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_Type, #[offset(32)]#[rename(name="m_InversionObjList")]pub m_inversion_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_WidthMax")]pub m_width_max:f32, #[offset(48)]#[rename(name="m_MapTerrainObj")]pub m_map_terrain_obj:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_TitleObj")]pub m_title_obj:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_TerrainObj")]pub m_terrain_obj:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_OverlapObj")]pub m_overlap_obj:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_OverlapObjList")]pub m_overlap_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(88)]#[rename(name="m_CannonInfoObj")]pub m_cannon_info_obj:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_CannonInfoObjList")]pub m_cannon_info_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(104)]#[rename(name="m_DetailsObj")]pub m_details_obj:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_MapTerrainEffectsObj")]pub m_map_terrain_effects_obj:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_MapTerrainEffectsPointRectTransform")]pub m_map_terrain_effects_point_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(128)]#[rename(name="m_MapTerrainEffectsContentsObj")]pub m_map_terrain_effects_contents_obj:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_MapTerrainEffectsContentsObjList")]pub m_map_terrain_effects_contents_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(144)]#[rename(name="m_SkillObj")]pub m_skill_obj:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_SkillPointRectTransform")]pub m_skill_point_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(160)]#[rename(name="m_SkillContentsObj")]pub m_skill_contents_obj:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_SkillContentsTitleObj")]pub m_skill_contents_title_obj:crate::unity_engine::gameobject::GameObject, #[offset(176)]#[rename(name="m_SkillIconObj")]pub m_skill_icon_obj:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_SkillIconList")]pub m_skill_icon_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(192)]#[rename(name="m_SkillIconWidth")]pub m_skill_icon_width:f32, #[offset(196)]#[rename(name="m_IsCompress")]pub m_is_compress:bool, #[offset(200)]#[rename(name="m_RootAlignParent")]pub m_root_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(208)]#[rename(name="m_MapTerrainAlignParent")]pub m_map_terrain_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(216)]#[rename(name="m_DetailsAlignParent")]pub m_details_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(224)]#[rename(name="m_MapTerrainEffectsAlignParent")]pub m_map_terrain_effects_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(232)]#[rename(name="m_SkillAlignParent")]pub m_skill_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(240)]#[rename(name="m_TitleAlignParent")]pub m_title_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(248)]#[rename(name="m_OverlapAlignParent")]pub m_overlap_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(256)]#[rename(name="m_CannonInfoAlignParent")]pub m_cannon_info_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(264)]#[rename(name="m_MapTerrainEffectsContentsAlignParent")]pub m_map_terrain_effects_contents_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(272)]#[rename(name="m_SkillContentsAlignParent")]pub m_skill_contents_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(280)]#[rename(name="m_SkillIconAlignParent")]pub m_skill_icon_align_parent:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignParent, #[offset(288)]#[rename(name="m_TerrainAlignMember")]pub m_terrain_align_member:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember, #[offset(296)]#[rename(name="m_SkillContentsTitleAlignMember")]pub m_skill_contents_title_align_member:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember, #[offset(304)]#[rename(name="m_FirstLeftList")]pub m_first_left_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(312)]#[rename(name="m_FirstRightList")]pub m_first_right_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(320)]#[rename(name="m_SecondList")]pub m_second_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(328)]#[rename(name="m_ThirdList")]pub m_third_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember> , #[offset(336)]#[rename(name="m_InversionMemberList")]pub m_inversion_member_list:crate::system::collections::generic::list_1::List_1<crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_InversionMember> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_InversionMember.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignment.InversionMember")]#[parent(crate::system::object::Object)]pub struct MapTerrainInfoAlignment_InversionMember{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignParent.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignment.AlignParent")]#[parent(crate::system::object::Object)]pub struct MapTerrainInfoAlignment_AlignParent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignment.AlignMember")]#[parent(crate::system::object::Object)]pub struct MapTerrainInfoAlignment_AlignMember{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootRect")]pub m_root_rect:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_RootText")]pub m_root_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_AlingMenber")]pub m_aling_menber:crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember, #[offset(48)]#[rename(name="m_TitleObj")]pub m_title_obj:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_TitleRect")]pub m_title_rect:crate::unity_engine::recttransform::RectTransform, #[offset(64)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_ValueObj")]pub m_value_obj:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_ValueRect")]pub m_value_rect:crate::unity_engine::recttransform::RectTransform, #[offset(88)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_Type")]pub m_type:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember_Type,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTerrainInfoAlignment_AlignMember_Type{pub value:i32,}
@@ -59,12 +65,6 @@ pub fn value()->Self{Self{value:1}
 pub fn icon()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignment.AlignMember")]#[parent(crate::system::object::Object)]pub struct MapTerrainInfoAlignment_AlignMember{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootRect")]pub m_root_rect:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_RootText")]pub m_root_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_AlingMenber")]pub m_aling_menber:crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember, #[offset(48)]#[rename(name="m_TitleObj")]pub m_title_obj:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_TitleRect")]pub m_title_rect:crate::unity_engine::recttransform::RectTransform, #[offset(64)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_ValueObj")]pub m_value_obj:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_ValueRect")]pub m_value_rect:crate::unity_engine::recttransform::RectTransform, #[offset(88)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_Type")]pub m_type:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember_Type,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignParent.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignment.AlignParent")]#[parent(crate::system::object::Object)]pub struct MapTerrainInfoAlignment_AlignParent{}
 
 }
 
@@ -147,42 +147,6 @@ pub fn inversion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-mapterraininfoalignment")]pub trait IMapTerrainInfoAlignment_AlignMemberMethods:IMapTerrainInfoAlignment_AlignMember{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e467b0usize)as*mut u8,();
-(MapTerrainInfoAlignment_AlignMember)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
-}
-#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e46b30usize)as*mut u8,bool;
-(MapTerrainInfoAlignment_AlignMember)__receiver)}
-}
-#[doc="`SetPosX(f32)` overload"]fn set_pos_x(self,pos_x:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e46bd0usize)as*mut u8,();
-(MapTerrainInfoAlignment_AlignMember)__receiver,(f32)::core::convert::Into::into(pos_x))}
-}
-#[doc="`Alignment(*mutf32, f32, f32)` overload"]fn alignment(self,rate:impl::core::convert::Into<f32> ,default_width:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1e46c90usize)as*mut u8,f32;
-(MapTerrainInfoAlignment_AlignMember)__receiver,(*mut f32)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(rate),(f32)::core::convert::Into::into(default_width))}
-;
-(__ret,__out_0.assume_init())}
-}
-}
-
-#[cfg(feature="app-mapterraininfoalignment")]impl<__T:IMapTerrainInfoAlignment_AlignMember>IMapTerrainInfoAlignment_AlignMemberMethods for __T{}
-
-#[cfg(feature="app-mapterraininfoalignment")]impl MapTerrainInfoAlignment_AlignMember{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn alignment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapterraininfoalignment")]impl MapTerrainInfoAlignment_AlignMember{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapTerrainInfoAlignment_AlignMember), ::core::stringify!(new),));
- <Self as IMapTerrainInfoAlignment_AlignMemberMethods> ::ctor(this,root);
-this}
-}
-
 #[cfg(feature="app-mapterraininfoalignment")]pub trait IMapTerrainInfoAlignment_AlignParentMethods:IMapTerrainInfoAlignment_AlignParent{#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <MapTerrainInfoAlignment_AlignParent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e46e60usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
 (MapTerrainInfoAlignment_AlignParent)__receiver)}
@@ -261,23 +225,59 @@ pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
+#[cfg(feature="app-mapterraininfoalignment")]pub trait IMapTerrainInfoAlignment_AlignMemberMethods:IMapTerrainInfoAlignment_AlignMember{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e467b0usize)as*mut u8,();
+(MapTerrainInfoAlignment_AlignMember)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e46b30usize)as*mut u8,bool;
+(MapTerrainInfoAlignment_AlignMember)__receiver)}
+}
+#[doc="`SetPosX(f32)` overload"]fn set_pos_x(self,pos_x:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e46bd0usize)as*mut u8,();
+(MapTerrainInfoAlignment_AlignMember)__receiver,(f32)::core::convert::Into::into(pos_x))}
+}
+#[doc="`Alignment(*mutf32, f32, f32)` overload"]fn alignment(self,rate:impl::core::convert::Into<f32> ,default_width:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let __receiver= <MapTerrainInfoAlignment_AlignMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1e46c90usize)as*mut u8,f32;
+(MapTerrainInfoAlignment_AlignMember)__receiver,(*mut f32)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(rate),(f32)::core::convert::Into::into(default_width))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
+
+#[cfg(feature="app-mapterraininfoalignment")]impl<__T:IMapTerrainInfoAlignment_AlignMember>IMapTerrainInfoAlignment_AlignMemberMethods for __T{}
+
+#[cfg(feature="app-mapterraininfoalignment")]impl MapTerrainInfoAlignment_AlignMember{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn alignment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapterraininfoalignment")]impl MapTerrainInfoAlignment_AlignMember{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapTerrainInfoAlignment_AlignMember), ::core::stringify!(new),));
+ <Self as IMapTerrainInfoAlignment_AlignMemberMethods> ::ctor(this,root);
+this}
+}
+
 #[cfg(feature = "app-mapterraininfoalignment")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapTerrainInfoAlignment_Type;
     pub use super::MapTerrainInfoAlignment;
     pub use super::IMapTerrainInfoAlignment;
     pub use super::IMapTerrainInfoAlignmentMethods;
-    pub use super::MapTerrainInfoAlignment_Type;
     pub use super::MapTerrainInfoAlignment_InversionMember;
     pub use super::IMapTerrainInfoAlignment_InversionMember;
     pub use super::IMapTerrainInfoAlignment_InversionMemberMethods;
-    pub use super::MapTerrainInfoAlignment_AlignMember_Type;
-    pub use super::MapTerrainInfoAlignment_AlignMember;
-    pub use super::IMapTerrainInfoAlignment_AlignMember;
-    pub use super::IMapTerrainInfoAlignment_AlignMemberMethods;
     pub use super::MapTerrainInfoAlignment_AlignParent;
     pub use super::IMapTerrainInfoAlignment_AlignParent;
     pub use super::IMapTerrainInfoAlignment_AlignParentMethods;
+    pub use super::MapTerrainInfoAlignment_AlignMember;
+    pub use super::IMapTerrainInfoAlignment_AlignMember;
+    pub use super::IMapTerrainInfoAlignment_AlignMemberMethods;
+    pub use super::MapTerrainInfoAlignment_AlignMember_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

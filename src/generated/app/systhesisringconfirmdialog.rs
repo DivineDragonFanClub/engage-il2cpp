@@ -19,39 +19,40 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md"))]#[::unity2::class(namespace="App",name="SysthesisRingConfirmDialog.YesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SysthesisRingConfirmDialog_YesDialogItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]#[::unity2::class(namespace="App",name="SysthesisRingConfirmDialog")]#[parent(crate::system::object::Object)]pub struct SysthesisRingConfirmDialog{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SysthesisRingConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SysthesisRingConfirmDialog_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]#[::unity2::class(namespace="App",name="SysthesisRingConfirmDialog")]#[parent(crate::system::object::Object)]pub struct SysthesisRingConfirmDialog{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md"))]#[::unity2::class(namespace="App",name="SysthesisRingConfirmDialog.YesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SysthesisRingConfirmDialog_YesDialogItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-systhesisringconfirmdialog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-systhesisringconfirmdialog")]pub trait ISysthesisRingConfirmDialog_YesDialogItemMethods:ISysthesisRingConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <SysthesisRingConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa190usize)as*mut u8,();
-(SysthesisRingConfirmDialog_YesDialogItem)__receiver,(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SysthesisRingConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SysthesisRingConfirmDialog_YesDialogItem)__receiver)}
+#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]pub fn create_bind(proc:impl::core::convert::Into<crate::app::procinst::ProcInst> ,text:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b5340usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(proc),(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 }
 
-#[cfg(feature="app-systhesisringconfirmdialog")]impl<__T:ISysthesisRingConfirmDialog_YesDialogItem>ISysthesisRingConfirmDialog_YesDialogItemMethods for __T{}
-
-#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog_YesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-systhesisringconfirmdialog")]pub trait ISysthesisRingConfirmDialogMethods:ISysthesisRingConfirmDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SysthesisRingConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7690usize)as*mut u8,();
+(SysthesisRingConfirmDialog)__receiver)}
+}
 }
 
-#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-systhesisringconfirmdialog")]impl<__T:ISysthesisRingConfirmDialog>ISysthesisRingConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SysthesisRingConfirmDialog_YesDialogItem), ::core::stringify!(new),));
- <Self as ISysthesisRingConfirmDialog_YesDialogItemMethods> ::ctor(this,decide_event_handler);
+ failed to instantiate", ::core::stringify!(SysthesisRingConfirmDialog), ::core::stringify!(new),));
+ <Self as ISysthesisRingConfirmDialogMethods> ::ctor(this,);
 this}
 }
 
@@ -78,42 +79,41 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]pub fn create_bind(proc:impl::core::convert::Into<crate::app::procinst::ProcInst> ,text:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b5340usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(proc),(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+#[cfg(feature="app-systhesisringconfirmdialog")]pub trait ISysthesisRingConfirmDialog_YesDialogItemMethods:ISysthesisRingConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <SysthesisRingConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa190usize)as*mut u8,();
+(SysthesisRingConfirmDialog_YesDialogItem)__receiver,(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SysthesisRingConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SysthesisRingConfirmDialog_YesDialogItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-systhesisringconfirmdialog")]pub trait ISysthesisRingConfirmDialogMethods:ISysthesisRingConfirmDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SysthesisRingConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7690usize)as*mut u8,();
-(SysthesisRingConfirmDialog)__receiver)}
-}
-}
+#[cfg(feature="app-systhesisringconfirmdialog")]impl<__T:ISysthesisRingConfirmDialog_YesDialogItem>ISysthesisRingConfirmDialog_YesDialogItemMethods for __T{}
 
-#[cfg(feature="app-systhesisringconfirmdialog")]impl<__T:ISysthesisRingConfirmDialog>ISysthesisRingConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog_YesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-systhesisringconfirmdialog")]impl SysthesisRingConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SysthesisRingConfirmDialog), ::core::stringify!(new),));
- <Self as ISysthesisRingConfirmDialogMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SysthesisRingConfirmDialog_YesDialogItem), ::core::stringify!(new),));
+ <Self as ISysthesisRingConfirmDialog_YesDialogItemMethods> ::ctor(this,decide_event_handler);
 this}
 }
 
 #[cfg(feature = "app-systhesisringconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SysthesisRingConfirmDialog_YesDialogItem;
-    pub use super::ISysthesisRingConfirmDialog_YesDialogItem;
-    pub use super::ISysthesisRingConfirmDialog_YesDialogItemMethods;
-    pub use super::SysthesisRingConfirmDialog_DecideEventHandler;
-    pub use super::ISysthesisRingConfirmDialog_DecideEventHandler;
-    pub use super::ISysthesisRingConfirmDialog_DecideEventHandlerMethods;
     pub use super::SysthesisRingConfirmDialog;
     pub use super::ISysthesisRingConfirmDialog;
     pub use super::ISysthesisRingConfirmDialogMethods;
+    pub use super::SysthesisRingConfirmDialog_DecideEventHandler;
+    pub use super::ISysthesisRingConfirmDialog_DecideEventHandler;
+    pub use super::ISysthesisRingConfirmDialog_DecideEventHandlerMethods;
+    pub use super::SysthesisRingConfirmDialog_YesDialogItem;
+    pub use super::ISysthesisRingConfirmDialog_YesDialogItem;
+    pub use super::ISysthesisRingConfirmDialog_YesDialogItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

@@ -19,19 +19,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcDescFade.md"))]#[::unity2::class(namespace="App",name="Fade.ProcDescFade")]#[parent(crate::app::procdescuser::ProcDescUser)]pub struct Fade_ProcDescFade{#[offset(20)]#[rename(name="m_Layer")]pub m_layer:crate::app::fade::Fade_Layer,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade.md"))]#[::unity2::class(namespace="App",name="Fade")]#[parent(crate::system::object::Object)]pub struct Fade{#[static_field]#[rename(name="Num")]pub num:i32, #[static_field]#[rename(name="VeryFast")]pub very_fast:f32, #[static_field]#[rename(name="Fast")]pub fast:f32, #[static_field]#[rename(name="Normal")]pub normal:f32, #[static_field]#[rename(name="Slow")]pub slow:f32, #[static_field]#[rename(name="VerySlow")]pub very_slow:f32, #[static_field]#[rename(name="s_Proc")]pub s_proc:crate::app::fade::Fade_ProcFade, #[static_field]#[rename(name="s_Colors")]pub s_colors: ::unity2::Array<crate::unity_engine::color::Color> , #[static_field]#[rename(name="s_Layer")]pub s_layer:crate::app::fade::Fade_Layer, #[static_field]#[rename(name="s_Statck")]pub s_statck:crate::system::collections::generic::stack_1::Stack_1<crate::app::fade::Fade_Layer> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcDescInOut.md"))]#[::unity2::class(namespace="App",name="Fade.ProcDescInOut")]#[parent(crate::app::fade::Fade_ProcDescFade)]pub struct Fade_ProcDescInOut{#[offset(24)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="m_Duration")]pub m_duration:f32, #[offset(44)]#[rename(name="m_IsIn")]pub m_is_in:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcFade.md"))]#[::unity2::class(namespace="App",name="Fade.ProcFade")]#[parent(crate::app::procinst::ProcInst)]pub struct Fade_ProcFade{#[offset(112)]#[rename(name="m_FadeLayer")]pub m_fade_layer: ::unity2::Array<crate::app::fade::Fade_FadeLayer> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_FadeLayer.md"))]#[::unity2::class(namespace="App",name="Fade.FadeLayer")]#[parent(crate::system::object::Object)]pub struct Fade_FadeLayer{#[offset(16)]#[rename(name="m_FromColor")]pub m_from_color:crate::unity_engine::color::Color, #[offset(32)]#[rename(name="m_ToColor")]pub m_to_color:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="m_Duration")]pub m_duration:f32, #[offset(52)]#[rename(name="m_Elapsed")]pub m_elapsed:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_LayerScope.md"))]#[::unity2::class(namespace="App",name="Fade.LayerScope")]#[parent(crate::system::object::Object)]pub struct Fade_LayerScope{#[offset(16)]#[rename(name="m_Layer")]pub m_layer:crate::app::fade::Fade_Layer,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcFadeWait.md"))]#[::unity2::class(namespace="App",name="Fade.ProcFadeWait")]#[parent(crate::app::procinst::ProcInst)]pub struct Fade_ProcFadeWait{#[offset(112)]#[rename(name="m_Layer")]pub m_layer:crate::app::fade::Fade_Layer,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_Layer.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Fade_Layer{pub value:i32,}
@@ -56,230 +47,27 @@ pub fn current()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_LayerScope.md"))]#[::unity2::class(namespace="App",name="Fade.LayerScope")]#[parent(crate::system::object::Object)]pub struct Fade_LayerScope{#[offset(16)]#[rename(name="m_Layer")]pub m_layer:crate::app::fade::Fade_Layer,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_FadeLayer.md"))]#[::unity2::class(namespace="App",name="Fade.FadeLayer")]#[parent(crate::system::object::Object)]pub struct Fade_FadeLayer{#[offset(16)]#[rename(name="m_FromColor")]pub m_from_color:crate::unity_engine::color::Color, #[offset(32)]#[rename(name="m_ToColor")]pub m_to_color:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="m_Duration")]pub m_duration:f32, #[offset(52)]#[rename(name="m_Elapsed")]pub m_elapsed:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcFade.md"))]#[::unity2::class(namespace="App",name="Fade.ProcFade")]#[parent(crate::app::procinst::ProcInst)]pub struct Fade_ProcFade{#[offset(112)]#[rename(name="m_FadeLayer")]pub m_fade_layer: ::unity2::Array<crate::app::fade::Fade_FadeLayer> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcDescWait.md"))]#[::unity2::class(namespace="App",name="Fade.ProcDescWait")]#[parent(crate::app::fade::Fade_ProcDescFade)]pub struct Fade_ProcDescWait{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcFadeWait.md"))]#[::unity2::class(namespace="App",name="Fade.ProcFadeWait")]#[parent(crate::app::procinst::ProcInst)]pub struct Fade_ProcFadeWait{#[offset(112)]#[rename(name="m_Layer")]pub m_layer:crate::app::fade::Fade_Layer,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcDescInOut.md"))]#[::unity2::class(namespace="App",name="Fade.ProcDescInOut")]#[parent(crate::app::fade::Fade_ProcDescFade)]pub struct Fade_ProcDescInOut{#[offset(24)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="m_Duration")]pub m_duration:f32, #[offset(44)]#[rename(name="m_IsIn")]pub m_is_in:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade.md"))]#[::unity2::class(namespace="App",name="Fade")]#[parent(crate::system::object::Object)]pub struct Fade{#[static_field]#[rename(name="Num")]pub num:i32, #[static_field]#[rename(name="VeryFast")]pub very_fast:f32, #[static_field]#[rename(name="Fast")]pub fast:f32, #[static_field]#[rename(name="Normal")]pub normal:f32, #[static_field]#[rename(name="Slow")]pub slow:f32, #[static_field]#[rename(name="VerySlow")]pub very_slow:f32, #[static_field]#[rename(name="s_Proc")]pub s_proc:crate::app::fade::Fade_ProcFade, #[static_field]#[rename(name="s_Colors")]pub s_colors: ::unity2::Array<crate::unity_engine::color::Color> , #[static_field]#[rename(name="s_Layer")]pub s_layer:crate::app::fade::Fade_Layer, #[static_field]#[rename(name="s_Statck")]pub s_statck:crate::system::collections::generic::stack_1::Stack_1<crate::app::fade::Fade_Layer> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fade/Fade_ProcDescFade.md"))]#[::unity2::class(namespace="App",name="Fade.ProcDescFade")]#[parent(crate::app::procdescuser::ProcDescUser)]pub struct Fade_ProcDescFade{#[offset(20)]#[rename(name="m_Layer")]pub m_layer:crate::app::fade::Fade_Layer,}
 
 }
 
 #[cfg(feature = "app-fade-types")]
 pub use __types::*;
-
-#[cfg(feature="app-fade")]pub trait IFade_ProcDescFadeMethods:IFade_ProcDescFade{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_ProcDescFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dac0usize)as*mut u8,();
-(Fade_ProcDescFade)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
-}
-#[doc="`GetLayer()` overload"]fn get_layer(self,)->crate::app::fade::Fade_Layer{unsafe{let __receiver= <Fade_ProcDescFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5daf0usize)as*mut u8,crate::app::fade::Fade_Layer;
-(Fade_ProcDescFade)__receiver)}
-}
-}
-
-#[cfg(feature="app-fade")]impl<__T:IFade_ProcDescFade>IFade_ProcDescFadeMethods for __T{}
-
-#[cfg(feature="app-fade")]impl Fade_ProcDescFade{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-fade")]impl Fade_ProcDescFade{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Fade_ProcDescFade), ::core::stringify!(new),));
- <Self as IFade_ProcDescFadeMethods> ::ctor(this,layer);
-this}
-}
-
-#[cfg(feature="app-fade")]pub trait IFade_ProcDescInOutMethods:IFade_ProcDescInOut{#[doc="`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32> ,is_in:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Fade_ProcDescInOut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5db80usize)as*mut u8,();
-(Fade_ProcDescInOut)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(duration),(bool)::core::convert::Into::into(is_in))}
-}
-#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <Fade_ProcDescInOut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dc00usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
-(Fade_ProcDescInOut)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
-}
-}
-
-#[cfg(feature="app-fade")]impl<__T:IFade_ProcDescInOut>IFade_ProcDescInOutMethods for __T{}
-
-#[cfg(feature="app-fade")]impl Fade_ProcDescInOut{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-fade")]impl Fade_ProcDescInOut{#[doc="`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer,color:crate::unity_engine::color::Color,duration:f32,is_in:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Fade_ProcDescInOut), ::core::stringify!(new),));
- <Self as IFade_ProcDescInOutMethods> ::ctor(this,layer,color,duration,is_in);
-this}
-}
-
-#[cfg(feature="app-fade")]impl Fade_ProcFade{#[doc="`Create(crate::unity_engine::color::Color, f32)` overload"]pub fn create(to_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e5df10usize)as*mut u8,();
-(crate::unity_engine::color::Color)::core::convert::Into::into(to_color),(f32)::core::convert::Into::into(duration))}
-}
-}
-
-#[cfg(feature="app-fade")]pub trait IFade_ProcFadeMethods:IFade_ProcFade{#[doc="`get_Current()` overload"]fn get_current(self,)->crate::app::fade::Fade_FadeLayer{unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5de70usize)as*mut u8,crate::app::fade::Fade_FadeLayer;
-(Fade_ProcFade)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e280usize)as*mut u8,();
-(Fade_ProcFade)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e640usize)as*mut u8,();
-(Fade_ProcFade)__receiver)}
-}
-#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e6b0usize)as*mut u8,();
-(Fade_ProcFade)__receiver)}
-}
-#[doc="`IsActive(crate::app::fade::Fade_Layer)` overload"]fn is_active(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->bool{unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e900usize)as*mut u8,bool;
-(Fade_ProcFade)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
-}
-}
-
-#[cfg(feature="app-fade")]impl<__T:IFade_ProcFade>IFade_ProcFadeMethods for __T{}
-
-#[cfg(feature="app-fade")]impl Fade_ProcFade{pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-fade")]impl Fade_ProcFade{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Fade_ProcFade), ::core::stringify!(new),));
- <Self as IFade_ProcFadeMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-fade")]pub trait IFade_FadeLayerMethods:IFade_FadeLayer{#[doc="`Exec(crate::unity_engine::color::Color, f32)` overload"]fn exec(self,to_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d640usize)as*mut u8,();
-(Fade_FadeLayer)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(to_color),(f32)::core::convert::Into::into(duration))}
-}
-#[doc="`Tick(f32)` overload"]fn tick(self,delta_time:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d790usize)as*mut u8,bool;
-(Fade_FadeLayer)__receiver,(f32)::core::convert::Into::into(delta_time))}
-}
-#[doc="`GetColor()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d730usize)as*mut u8,crate::unity_engine::color::Color;
-(Fade_FadeLayer)__receiver)}
-}
-#[doc="`get_ToColor()` overload"]fn get_to_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d7e0usize)as*mut u8,crate::unity_engine::color::Color;
-(Fade_FadeLayer)__receiver)}
-}
-#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d7f0usize)as*mut u8,bool;
-(Fade_FadeLayer)__receiver)}
-}
-#[doc="`IsAlive()` overload"]fn is_alive(self,)->bool{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d800usize)as*mut u8,bool;
-(Fade_FadeLayer)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d830usize)as*mut u8,();
-(Fade_FadeLayer)__receiver)}
-}
-}
-
-#[cfg(feature="app-fade")]impl<__T:IFade_FadeLayer>IFade_FadeLayerMethods for __T{}
-
-#[cfg(feature="app-fade")]impl Fade_FadeLayer{pub fn exec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_to_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-fade")]impl Fade_FadeLayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Fade_FadeLayer), ::core::stringify!(new),));
- <Self as IFade_FadeLayerMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-fade")]pub trait IFade_LayerScopeMethods:IFade_LayerScope{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_LayerScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d8d0usize)as*mut u8,();
-(Fade_LayerScope)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
-}
-#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Fade_LayerScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d970usize)as*mut u8,();
-(Fade_LayerScope)__receiver)}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Fade_LayerScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5da30usize)as*mut u8,();
-(Fade_LayerScope)__receiver)}
-}
-}
-
-#[cfg(feature="app-fade")]impl<__T:IFade_LayerScope>IFade_LayerScopeMethods for __T{}
-
-#[cfg(feature="app-fade")]impl Fade_LayerScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-fade")]impl Fade_LayerScope{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Fade_LayerScope), ::core::stringify!(new),));
- <Self as IFade_LayerScopeMethods> ::ctor(this,layer);
-this}
-}
-
-#[cfg(feature="app-fade")]pub trait IFade_ProcDescWaitMethods:IFade_ProcDescWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_ProcDescWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dd40usize)as*mut u8,();
-(Fade_ProcDescWait)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
-}
-#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <Fade_ProcDescWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dd70usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
-(Fade_ProcDescWait)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
-}
-}
-
-#[cfg(feature="app-fade")]impl<__T:IFade_ProcDescWait>IFade_ProcDescWaitMethods for __T{}
-
-#[cfg(feature="app-fade")]impl Fade_ProcDescWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-fade")]impl Fade_ProcDescWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Fade_ProcDescWait), ::core::stringify!(new),));
- <Self as IFade_ProcDescWaitMethods> ::ctor(this,layer);
-this}
-}
-
-#[cfg(feature="app-fade")]pub trait IFade_ProcFadeWaitMethods:IFade_ProcFadeWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_ProcFadeWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e940usize)as*mut u8,();
-(Fade_ProcFadeWait)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
-}
-#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <Fade_ProcFadeWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e970usize)as*mut u8,();
-(Fade_ProcFadeWait)__receiver)}
-}
-}
-
-#[cfg(feature="app-fade")]impl<__T:IFade_ProcFadeWait>IFade_ProcFadeWaitMethods for __T{}
-
-#[cfg(feature="app-fade")]impl Fade_ProcFadeWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-fade")]impl Fade_ProcFadeWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Fade_ProcFadeWait), ::core::stringify!(new),));
- <Self as IFade_ProcFadeWaitMethods> ::ctor(this,layer);
-this}
-}
 
 #[cfg(feature="app-fade")]impl Fade{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d52770usize)as*mut u8,();
 )}
@@ -401,34 +189,246 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-fade")]pub trait IFade_ProcFadeWaitMethods:IFade_ProcFadeWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_ProcFadeWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e940usize)as*mut u8,();
+(Fade_ProcFadeWait)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <Fade_ProcFadeWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e970usize)as*mut u8,();
+(Fade_ProcFadeWait)__receiver)}
+}
+}
+
+#[cfg(feature="app-fade")]impl<__T:IFade_ProcFadeWait>IFade_ProcFadeWaitMethods for __T{}
+
+#[cfg(feature="app-fade")]impl Fade_ProcFadeWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-fade")]impl Fade_ProcFadeWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Fade_ProcFadeWait), ::core::stringify!(new),));
+ <Self as IFade_ProcFadeWaitMethods> ::ctor(this,layer);
+this}
+}
+
+#[cfg(feature="app-fade")]pub trait IFade_LayerScopeMethods:IFade_LayerScope{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_LayerScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d8d0usize)as*mut u8,();
+(Fade_LayerScope)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Fade_LayerScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d970usize)as*mut u8,();
+(Fade_LayerScope)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Fade_LayerScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5da30usize)as*mut u8,();
+(Fade_LayerScope)__receiver)}
+}
+}
+
+#[cfg(feature="app-fade")]impl<__T:IFade_LayerScope>IFade_LayerScopeMethods for __T{}
+
+#[cfg(feature="app-fade")]impl Fade_LayerScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-fade")]impl Fade_LayerScope{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Fade_LayerScope), ::core::stringify!(new),));
+ <Self as IFade_LayerScopeMethods> ::ctor(this,layer);
+this}
+}
+
+#[cfg(feature="app-fade")]pub trait IFade_FadeLayerMethods:IFade_FadeLayer{#[doc="`Exec(crate::unity_engine::color::Color, f32)` overload"]fn exec(self,to_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d640usize)as*mut u8,();
+(Fade_FadeLayer)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(to_color),(f32)::core::convert::Into::into(duration))}
+}
+#[doc="`Tick(f32)` overload"]fn tick(self,delta_time:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d790usize)as*mut u8,bool;
+(Fade_FadeLayer)__receiver,(f32)::core::convert::Into::into(delta_time))}
+}
+#[doc="`GetColor()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d730usize)as*mut u8,crate::unity_engine::color::Color;
+(Fade_FadeLayer)__receiver)}
+}
+#[doc="`get_ToColor()` overload"]fn get_to_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d7e0usize)as*mut u8,crate::unity_engine::color::Color;
+(Fade_FadeLayer)__receiver)}
+}
+#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d7f0usize)as*mut u8,bool;
+(Fade_FadeLayer)__receiver)}
+}
+#[doc="`IsAlive()` overload"]fn is_alive(self,)->bool{unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d800usize)as*mut u8,bool;
+(Fade_FadeLayer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Fade_FadeLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d830usize)as*mut u8,();
+(Fade_FadeLayer)__receiver)}
+}
+}
+
+#[cfg(feature="app-fade")]impl<__T:IFade_FadeLayer>IFade_FadeLayerMethods for __T{}
+
+#[cfg(feature="app-fade")]impl Fade_FadeLayer{pub fn exec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_to_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-fade")]impl Fade_FadeLayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Fade_FadeLayer), ::core::stringify!(new),));
+ <Self as IFade_FadeLayerMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-fade")]impl Fade_ProcFade{#[doc="`Create(crate::unity_engine::color::Color, f32)` overload"]pub fn create(to_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e5df10usize)as*mut u8,();
+(crate::unity_engine::color::Color)::core::convert::Into::into(to_color),(f32)::core::convert::Into::into(duration))}
+}
+}
+
+#[cfg(feature="app-fade")]pub trait IFade_ProcFadeMethods:IFade_ProcFade{#[doc="`get_Current()` overload"]fn get_current(self,)->crate::app::fade::Fade_FadeLayer{unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5de70usize)as*mut u8,crate::app::fade::Fade_FadeLayer;
+(Fade_ProcFade)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e280usize)as*mut u8,();
+(Fade_ProcFade)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e640usize)as*mut u8,();
+(Fade_ProcFade)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e6b0usize)as*mut u8,();
+(Fade_ProcFade)__receiver)}
+}
+#[doc="`IsActive(crate::app::fade::Fade_Layer)` overload"]fn is_active(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->bool{unsafe{let __receiver= <Fade_ProcFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5e900usize)as*mut u8,bool;
+(Fade_ProcFade)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
+}
+}
+
+#[cfg(feature="app-fade")]impl<__T:IFade_ProcFade>IFade_ProcFadeMethods for __T{}
+
+#[cfg(feature="app-fade")]impl Fade_ProcFade{pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-fade")]impl Fade_ProcFade{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Fade_ProcFade), ::core::stringify!(new),));
+ <Self as IFade_ProcFadeMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-fade")]pub trait IFade_ProcDescWaitMethods:IFade_ProcDescWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_ProcDescWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dd40usize)as*mut u8,();
+(Fade_ProcDescWait)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <Fade_ProcDescWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dd70usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(Fade_ProcDescWait)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
+
+#[cfg(feature="app-fade")]impl<__T:IFade_ProcDescWait>IFade_ProcDescWaitMethods for __T{}
+
+#[cfg(feature="app-fade")]impl Fade_ProcDescWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-fade")]impl Fade_ProcDescWait{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Fade_ProcDescWait), ::core::stringify!(new),));
+ <Self as IFade_ProcDescWaitMethods> ::ctor(this,layer);
+this}
+}
+
+#[cfg(feature="app-fade")]pub trait IFade_ProcDescInOutMethods:IFade_ProcDescInOut{#[doc="`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32> ,is_in:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Fade_ProcDescInOut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5db80usize)as*mut u8,();
+(Fade_ProcDescInOut)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(duration),(bool)::core::convert::Into::into(is_in))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <Fade_ProcDescInOut as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dc00usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(Fade_ProcDescInOut)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
+
+#[cfg(feature="app-fade")]impl<__T:IFade_ProcDescInOut>IFade_ProcDescInOutMethods for __T{}
+
+#[cfg(feature="app-fade")]impl Fade_ProcDescInOut{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-fade")]impl Fade_ProcDescInOut{#[doc="`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer,color:crate::unity_engine::color::Color,duration:f32,is_in:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Fade_ProcDescInOut), ::core::stringify!(new),));
+ <Self as IFade_ProcDescInOutMethods> ::ctor(this,layer,color,duration,is_in);
+this}
+}
+
+#[cfg(feature="app-fade")]pub trait IFade_ProcDescFadeMethods:IFade_ProcDescFade{#[doc="`.ctor(crate::app::fade::Fade_Layer)` overload"]fn ctor(self,layer:impl::core::convert::Into<crate::app::fade::Fade_Layer>)->(){unsafe{let __receiver= <Fade_ProcDescFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5dac0usize)as*mut u8,();
+(Fade_ProcDescFade)__receiver,(crate::app::fade::Fade_Layer)::core::convert::Into::into(layer))}
+}
+#[doc="`GetLayer()` overload"]fn get_layer(self,)->crate::app::fade::Fade_Layer{unsafe{let __receiver= <Fade_ProcDescFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5daf0usize)as*mut u8,crate::app::fade::Fade_Layer;
+(Fade_ProcDescFade)__receiver)}
+}
+}
+
+#[cfg(feature="app-fade")]impl<__T:IFade_ProcDescFade>IFade_ProcDescFadeMethods for __T{}
+
+#[cfg(feature="app-fade")]impl Fade_ProcDescFade{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-fade")]impl Fade_ProcDescFade{#[doc="`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]pub fn new(layer:crate::app::fade::Fade_Layer)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Fade_ProcDescFade), ::core::stringify!(new),));
+ <Self as IFade_ProcDescFadeMethods> ::ctor(this,layer);
+this}
+}
+
 #[cfg(feature = "app-fade")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Fade_ProcDescFade;
-    pub use super::IFade_ProcDescFade;
-    pub use super::IFade_ProcDescFadeMethods;
-    pub use super::Fade_ProcDescInOut;
-    pub use super::IFade_ProcDescInOut;
-    pub use super::IFade_ProcDescInOutMethods;
-    pub use super::Fade_ProcFade;
-    pub use super::IFade_ProcFade;
-    pub use super::IFade_ProcFadeMethods;
-    pub use super::Fade_FadeLayer;
-    pub use super::IFade_FadeLayer;
-    pub use super::IFade_FadeLayerMethods;
-    pub use super::Fade_LayerScope;
-    pub use super::IFade_LayerScope;
-    pub use super::IFade_LayerScopeMethods;
-    pub use super::Fade_Layer;
-    pub use super::Fade_ProcDescWait;
-    pub use super::IFade_ProcDescWait;
-    pub use super::IFade_ProcDescWaitMethods;
-    pub use super::Fade_ProcFadeWait;
-    pub use super::IFade_ProcFadeWait;
-    pub use super::IFade_ProcFadeWaitMethods;
     pub use super::Fade;
     pub use super::IFade;
     pub use super::IFadeMethods;
+    pub use super::Fade_ProcFadeWait;
+    pub use super::IFade_ProcFadeWait;
+    pub use super::IFade_ProcFadeWaitMethods;
+    pub use super::Fade_Layer;
+    pub use super::Fade_LayerScope;
+    pub use super::IFade_LayerScope;
+    pub use super::IFade_LayerScopeMethods;
+    pub use super::Fade_FadeLayer;
+    pub use super::IFade_FadeLayer;
+    pub use super::IFade_FadeLayerMethods;
+    pub use super::Fade_ProcFade;
+    pub use super::IFade_ProcFade;
+    pub use super::IFade_ProcFadeMethods;
+    pub use super::Fade_ProcDescWait;
+    pub use super::IFade_ProcDescWait;
+    pub use super::IFade_ProcDescWaitMethods;
+    pub use super::Fade_ProcDescInOut;
+    pub use super::IFade_ProcDescInOut;
+    pub use super::IFade_ProcDescInOutMethods;
+    pub use super::Fade_ProcDescFade;
+    pub use super::IFade_ProcDescFade;
+    pub use super::IFade_ProcDescFadeMethods;
     pub use crate::app::procdesc::IProcDesc;
     pub use crate::app::procdescuser::IProcDescUser;
     pub use crate::app::procinst::IProcInst;

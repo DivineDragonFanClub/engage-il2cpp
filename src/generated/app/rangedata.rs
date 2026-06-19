@@ -19,6 +19,20 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData_Offset.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RangeData_Offset{pub x:i8,pub z:i8,pub target:crate::app::rangedata::RangeData_Targets,}
+impl::unity2::ClassIdentity for RangeData_Offset{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RangeData.Offset";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RangeData_Offset{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData.md"))]#[::unity2::class(namespace="App",name="RangeData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::rangedata::RangeData>)]pub struct RangeData{#[offset(48)]#[rename(name="m_Values")]pub m_values: ::unity2::Array<i8> , #[static_field]#[rename(name="s_DirOffsets")]pub s_dir_offsets:crate::app::rangedata::RangeData_DirOffsets,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData_Targets.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RangeData_Targets{pub value:i32,}
 impl::unity2::ClassIdentity for RangeData_Targets{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RangeData.Targets";
@@ -39,20 +53,6 @@ pub fn friend()->Self{Self{value:3}
 pub fn both()->Self{Self{value:4}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData_Offset.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RangeData_Offset{pub x:i8,pub z:i8,pub target:crate::app::rangedata::RangeData_Targets,}
-impl::unity2::ClassIdentity for RangeData_Offset{const NAMESPACE: &'static str="App";
-const NAME: &'static str="RangeData.Offset";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RangeData_Offset{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData.md"))]#[::unity2::class(namespace="App",name="RangeData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::rangedata::RangeData>)]pub struct RangeData{#[offset(48)]#[rename(name="m_Values")]pub m_values: ::unity2::Array<i8> , #[static_field]#[rename(name="s_DirOffsets")]pub s_dir_offsets:crate::app::rangedata::RangeData_DirOffsets,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData_DirOffsets.md"))]#[::unity2::class(namespace="App",name="RangeData.DirOffsets")]#[parent(crate::system::object::Object)]pub struct RangeData_DirOffsets{#[offset(16)]#[rename(name="m_Offsets")]pub m_offsets: ::unity2::Array<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> > > , #[offset(24)]#[rename(name="m_Centers")]pub m_centers:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::rangedata::RangeData_Targets> ,}
@@ -244,11 +244,11 @@ this}
 #[cfg(feature = "app-rangedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RangeData_Targets;
     pub use super::RangeData_Offset;
     pub use super::RangeData;
     pub use super::IRangeData;
     pub use super::IRangeDataMethods;
+    pub use super::RangeData_Targets;
     pub use super::RangeData_DirOffsets;
     pub use super::IRangeData_DirOffsets;
     pub use super::IRangeData_DirOffsetsMethods;

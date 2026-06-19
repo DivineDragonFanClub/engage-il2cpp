@@ -9,10 +9,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter")]pub struct TextWriter{#[static_field]#[rename(name="Null")]pub null:crate::system::io::textwriter::TextWriter, #[static_field]#[rename(name="_WriteCharDelegate")]pub write_char_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteStringDelegate")]pub write_string_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteCharArrayRangeDelegate")]pub write_char_array_range_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineCharDelegate")]pub write_line_char_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineStringDelegate")]pub write_line_string_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineCharArrayRangeDelegate")]pub write_line_char_array_range_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_FlushDelegate")]pub flush_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[offset(24)]#[rename(name="CoreNewLine")]pub core_new_line: ::unity2::Array<u16> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter_NullTextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter.NullTextWriter")]#[parent(crate::system::io::textwriter::TextWriter)]pub struct TextWriter_NullTextWriter{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter")]pub struct TextWriter{#[static_field]#[rename(name="Null")]pub null:crate::system::io::textwriter::TextWriter, #[static_field]#[rename(name="_WriteCharDelegate")]pub write_char_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteStringDelegate")]pub write_string_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteCharArrayRangeDelegate")]pub write_char_array_range_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineCharDelegate")]pub write_line_char_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineStringDelegate")]pub write_line_string_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineCharArrayRangeDelegate")]pub write_line_char_array_range_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_FlushDelegate")]pub flush_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[offset(24)]#[rename(name="CoreNewLine")]pub core_new_line: ::unity2::Array<u16> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter_SyncTextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter.SyncTextWriter")]#[parent(crate::system::io::textwriter::TextWriter)]pub struct TextWriter_SyncTextWriter{#[offset(40)]#[rename(name="_out")]pub out:crate::system::io::textwriter::TextWriter,}
@@ -21,6 +21,44 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "system-io-textwriter-types")]
 pub use __types::*;
+
+#[cfg(feature="system-io-textwriter")]pub trait ITextWriter_NullTextWriterMethods:ITextWriter_NullTextWriter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5ae90usize)as*mut u8,();
+(TextWriter_NullTextWriter)__receiver)}
+}
+#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af50usize)as*mut u8,();
+(TextWriter_NullTextWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af60usize)as*mut u8,();
+(TextWriter_NullTextWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`WriteLine()` overload"]fn write_line(self,)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af70usize)as*mut u8,();
+(TextWriter_NullTextWriter)__receiver)}
+}
+#[doc="`WriteLine(::unity2::Il2CppString)` overload"]fn write_line_2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af80usize)as*mut u8,();
+(TextWriter_NullTextWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="system-io-textwriter")]impl<__T:ITextWriter_NullTextWriter>ITextWriter_NullTextWriterMethods for __T{}
+
+#[cfg(feature="system-io-textwriter")]impl TextWriter_NullTextWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn write_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn write_line_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-io-textwriter")]impl TextWriter_NullTextWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextWriter_NullTextWriter), ::core::stringify!(new),));
+ <Self as ITextWriter_NullTextWriterMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="system-io-textwriter")]impl TextWriter{#[doc="`get_InitialNewLine()` overload"]pub fn get_initial_new_line()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34e1330usize)as*mut u8, ::unity2::Il2CppString;
 )}
@@ -124,44 +162,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="system-io-textwriter")]pub trait ITextWriter_NullTextWriterMethods:ITextWriter_NullTextWriter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5ae90usize)as*mut u8,();
-(TextWriter_NullTextWriter)__receiver)}
-}
-#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af50usize)as*mut u8,();
-(TextWriter_NullTextWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
-}
-#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af60usize)as*mut u8,();
-(TextWriter_NullTextWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`WriteLine()` overload"]fn write_line(self,)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af70usize)as*mut u8,();
-(TextWriter_NullTextWriter)__receiver)}
-}
-#[doc="`WriteLine(::unity2::Il2CppString)` overload"]fn write_line_2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af80usize)as*mut u8,();
-(TextWriter_NullTextWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="system-io-textwriter")]impl<__T:ITextWriter_NullTextWriter>ITextWriter_NullTextWriterMethods for __T{}
-
-#[cfg(feature="system-io-textwriter")]impl TextWriter_NullTextWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn write_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn write_line_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="system-io-textwriter")]impl TextWriter_NullTextWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TextWriter_NullTextWriter), ::core::stringify!(new),));
- <Self as ITextWriter_NullTextWriterMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="system-io-textwriter")]pub trait ITextWriter_SyncTextWriterMethods:ITextWriter_SyncTextWriter{#[doc="`.ctor(crate::system::io::textwriter::TextWriter)` overload"]fn ctor(self,t:impl::core::convert::Into<crate::system::io::textwriter::TextWriter>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af90usize)as*mut u8,();
 (TextWriter_SyncTextWriter)__receiver,(crate::system::io::textwriter::TextWriter)::core::convert::Into::into(t))}
@@ -248,12 +248,12 @@ this}
 #[cfg(feature = "system-io-textwriter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TextWriter;
-    pub use super::ITextWriter;
-    pub use super::ITextWriterMethods;
     pub use super::TextWriter_NullTextWriter;
     pub use super::ITextWriter_NullTextWriter;
     pub use super::ITextWriter_NullTextWriterMethods;
+    pub use super::TextWriter;
+    pub use super::ITextWriter;
+    pub use super::ITextWriterMethods;
     pub use super::TextWriter_SyncTextWriter;
     pub use super::ITextWriter_SyncTextWriter;
     pub use super::ITextWriter_SyncTextWriterMethods;

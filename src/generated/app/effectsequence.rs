@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence.md"))]#[::unity2::class(namespace="App",name="EffectSequence")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectsequence::EffectSequence>)]pub struct EffectSequence{#[offset(64)]#[rename(name="m_Effects")]pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectSequence_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for EffectSequence_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="EffectSequence.Kind";
@@ -40,6 +37,9 @@ pub fn hit()->Self{Self{value:2}
 pub fn num()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence.md"))]#[::unity2::class(namespace="App",name="EffectSequence")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectsequence::EffectSequence>)]pub struct EffectSequence{#[offset(64)]#[rename(name="m_Effects")]pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData> ,}
 
 }
 
@@ -151,10 +151,10 @@ this}
 #[cfg(feature = "app-effectsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::EffectSequence_Kind;
     pub use super::EffectSequence;
     pub use super::IEffectSequence;
     pub use super::IEffectSequenceMethods;
-    pub use super::EffectSequence_Kind;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

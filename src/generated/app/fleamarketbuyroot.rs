@@ -21,15 +21,38 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fleamarketbuyroot/FleaMarketBuyRoot.md"))]#[::unity2::class(namespace="App",name="FleaMarketBuyRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FleaMarketBuyRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MenuObject")]pub m_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_HoldingInfoWindowObject")]pub m_holding_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_FleaMarketBuyMenu")]pub m_flea_market_buy_menu:crate::app::itemshopbuymenu::ItemShopBuyMenu, #[offset(56)]#[rename(name="m_ItemHoldingInfoWindow")]pub m_item_holding_info_window:crate::app::itemholdinginfowindow::ItemHoldingInfoWindow, #[offset(64)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::fleamarketbuyroot::FleaMarketBuyRoot_ReturnEventHandler, #[offset(72)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(80)]#[rename(name="m_ItemData")]pub m_item_data:crate::app::itemdata::ItemData, #[offset(88)]#[rename(name="m_IsSendingItemToTransporter")]pub m_is_sending_item_to_transporter:bool, #[offset(89)]#[rename(name="m_IsSendingUnitItem")]pub m_is_sending_unit_item:bool, #[offset(92)]#[rename(name="m_SendingUnitItemIndex")]pub m_sending_unit_item_index:i32, #[offset(96)]#[rename(name="m_IsDiscardingTransporterItem")]pub m_is_discarding_transporter_item:bool, #[offset(100)]#[rename(name="m_DiscardingTransporterItemIndex")]pub m_discarding_transporter_item_index:i32, #[offset(104)]#[rename(name="m_IsEnabledVoice")]pub m_is_enabled_voice:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fleamarketbuyroot/FleaMarketBuyRoot_ReturnEventHandler.md"))]#[::unity2::class(namespace="App",name="FleaMarketBuyRoot.ReturnEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FleaMarketBuyRoot_ReturnEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fleamarketbuyroot/FleaMarketBuyRoot.md"))]#[::unity2::class(namespace="App",name="FleaMarketBuyRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FleaMarketBuyRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MenuObject")]pub m_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_HoldingInfoWindowObject")]pub m_holding_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_FleaMarketBuyMenu")]pub m_flea_market_buy_menu:crate::app::itemshopbuymenu::ItemShopBuyMenu, #[offset(56)]#[rename(name="m_ItemHoldingInfoWindow")]pub m_item_holding_info_window:crate::app::itemholdinginfowindow::ItemHoldingInfoWindow, #[offset(64)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::fleamarketbuyroot::FleaMarketBuyRoot_ReturnEventHandler, #[offset(72)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(80)]#[rename(name="m_ItemData")]pub m_item_data:crate::app::itemdata::ItemData, #[offset(88)]#[rename(name="m_IsSendingItemToTransporter")]pub m_is_sending_item_to_transporter:bool, #[offset(89)]#[rename(name="m_IsSendingUnitItem")]pub m_is_sending_unit_item:bool, #[offset(92)]#[rename(name="m_SendingUnitItemIndex")]pub m_sending_unit_item_index:i32, #[offset(96)]#[rename(name="m_IsDiscardingTransporterItem")]pub m_is_discarding_transporter_item:bool, #[offset(100)]#[rename(name="m_DiscardingTransporterItemIndex")]pub m_discarding_transporter_item_index:i32, #[offset(104)]#[rename(name="m_IsEnabledVoice")]pub m_is_enabled_voice:bool,}
 
 }
 
 #[cfg(feature = "app-fleamarketbuyroot-types")]
 pub use __types::*;
+
+#[cfg(feature="app-fleamarketbuyroot")]pub trait IFleaMarketBuyRoot_ReturnEventHandlerMethods:IFleaMarketBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FleaMarketBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62930usize)as*mut u8,();
+(FleaMarketBuyRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <FleaMarketBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62950usize)as*mut u8,();
+(FleaMarketBuyRoot_ReturnEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-fleamarketbuyroot")]impl<__T:IFleaMarketBuyRoot_ReturnEventHandler>IFleaMarketBuyRoot_ReturnEventHandlerMethods for __T{}
+
+#[cfg(feature="app-fleamarketbuyroot")]impl FleaMarketBuyRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-fleamarketbuyroot")]impl FleaMarketBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FleaMarketBuyRoot_ReturnEventHandler), ::core::stringify!(new),));
+ <Self as IFleaMarketBuyRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-fleamarketbuyroot")]impl FleaMarketBuyRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260ce80usize)as*mut u8,();
 )}
@@ -126,38 +149,15 @@ pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-fleamarketbuyroot")]pub trait IFleaMarketBuyRoot_ReturnEventHandlerMethods:IFleaMarketBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FleaMarketBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62930usize)as*mut u8,();
-(FleaMarketBuyRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <FleaMarketBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62950usize)as*mut u8,();
-(FleaMarketBuyRoot_ReturnEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-fleamarketbuyroot")]impl<__T:IFleaMarketBuyRoot_ReturnEventHandler>IFleaMarketBuyRoot_ReturnEventHandlerMethods for __T{}
-
-#[cfg(feature="app-fleamarketbuyroot")]impl FleaMarketBuyRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-fleamarketbuyroot")]impl FleaMarketBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FleaMarketBuyRoot_ReturnEventHandler), ::core::stringify!(new),));
- <Self as IFleaMarketBuyRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-fleamarketbuyroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FleaMarketBuyRoot;
-    pub use super::IFleaMarketBuyRoot;
-    pub use super::IFleaMarketBuyRootMethods;
     pub use super::FleaMarketBuyRoot_ReturnEventHandler;
     pub use super::IFleaMarketBuyRoot_ReturnEventHandler;
     pub use super::IFleaMarketBuyRoot_ReturnEventHandlerMethods;
+    pub use super::FleaMarketBuyRoot;
+    pub use super::IFleaMarketBuyRoot;
+    pub use super::IFleaMarketBuyRootMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

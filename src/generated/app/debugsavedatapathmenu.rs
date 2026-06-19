@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md"))]#[::unity2::class(namespace="App",name="DebugSaveDataPathMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct DebugSaveDataPathMenu{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DebugSaveDataPathMenu_Label{pub value:i32,}
 impl::unity2::ClassIdentity for DebugSaveDataPathMenu_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DebugSaveDataPathMenu.Label";
@@ -33,9 +36,6 @@ pub fn prepare_reload()->Self{Self{value:2}
 pub fn end()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md"))]#[::unity2::class(namespace="App",name="DebugSaveDataPathMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct DebugSaveDataPathMenu{}
 
 }
 
@@ -69,10 +69,10 @@ this}
 #[cfg(feature = "app-debugsavedatapathmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugSaveDataPathMenu_Label;
     pub use super::DebugSaveDataPathMenu;
     pub use super::IDebugSaveDataPathMenu;
     pub use super::IDebugSaveDataPathMenuMethods;
+    pub use super::DebugSaveDataPathMenu_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

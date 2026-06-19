@@ -19,33 +19,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinebasemenucontent/RefineShopRefineBaseMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineBaseMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct RefineShopRefineBaseMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinebasemenucontent/RefineShopRefineBaseMenuContent.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineBaseMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RefineShopRefineBaseMenuContent{#[offset(232)]#[rename(name="m_CaptionText")]pub m_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent_KindIcon> , #[offset(248)]#[rename(name="m_EnabledItemKindCount")]pub m_enabled_item_kind_count:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinebasemenucontent/RefineShopRefineBaseMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineBaseMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct RefineShopRefineBaseMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds,}
 
 }
 
 #[cfg(feature = "app-refineshoprefinebasemenucontent-types")]
 pub use __types::*;
-
-#[cfg(feature="app-refineshoprefinebasemenucontent")]pub trait IRefineShopRefineBaseMenuContent_KindIconMethods:IRefineShopRefineBaseMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afc710usize)as*mut u8,();
-(RefineShopRefineBaseMenuContent_KindIcon)__receiver)}
-}
-}
-
-#[cfg(feature="app-refineshoprefinebasemenucontent")]impl<__T:IRefineShopRefineBaseMenuContent_KindIcon>IRefineShopRefineBaseMenuContent_KindIconMethods for __T{}
-
-#[cfg(feature="app-refineshoprefinebasemenucontent")]impl RefineShopRefineBaseMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-refineshoprefinebasemenucontent")]impl RefineShopRefineBaseMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefineShopRefineBaseMenuContent_KindIcon), ::core::stringify!(new),));
- <Self as IRefineShopRefineBaseMenuContent_KindIconMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-refineshoprefinebasemenucontent")]pub trait IRefineShopRefineBaseMenuContentMethods:IRefineShopRefineBaseMenuContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2968360usize)as*mut u8,();
@@ -130,15 +112,33 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-refineshoprefinebasemenucontent")]pub trait IRefineShopRefineBaseMenuContent_KindIconMethods:IRefineShopRefineBaseMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afc710usize)as*mut u8,();
+(RefineShopRefineBaseMenuContent_KindIcon)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineshoprefinebasemenucontent")]impl<__T:IRefineShopRefineBaseMenuContent_KindIcon>IRefineShopRefineBaseMenuContent_KindIconMethods for __T{}
+
+#[cfg(feature="app-refineshoprefinebasemenucontent")]impl RefineShopRefineBaseMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-refineshoprefinebasemenucontent")]impl RefineShopRefineBaseMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopRefineBaseMenuContent_KindIcon), ::core::stringify!(new),));
+ <Self as IRefineShopRefineBaseMenuContent_KindIconMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-refineshoprefinebasemenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineShopRefineBaseMenuContent_KindIcon;
-    pub use super::IRefineShopRefineBaseMenuContent_KindIcon;
-    pub use super::IRefineShopRefineBaseMenuContent_KindIconMethods;
     pub use super::RefineShopRefineBaseMenuContent;
     pub use super::IRefineShopRefineBaseMenuContent;
     pub use super::IRefineShopRefineBaseMenuContentMethods;
+    pub use super::RefineShopRefineBaseMenuContent_KindIcon;
+    pub use super::IRefineShopRefineBaseMenuContent_KindIcon;
+    pub use super::IRefineShopRefineBaseMenuContent_KindIconMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

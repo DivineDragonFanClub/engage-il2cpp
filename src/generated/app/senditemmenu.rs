@@ -29,13 +29,7 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/senditemmenu/SendItemMenu_DecideCallback.md"))]#[::unity2::class(namespace="App",name="SendItemMenu.DecideCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SendItemMenu_DecideCallback{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/senditemmenu/SendItemMenu_ConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="SendItemMenu.ConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SendItemMenu_ConfirmDialog_ConfirmYesDialogItem{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_UnitItemIndex")]pub m_unit_item_index:i32, #[offset(128)]#[rename(name="m_GainUnitItem")]pub m_gain_unit_item:crate::app::unititem::UnitItem, #[offset(136)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::senditemmenu::SendItemMenu_DecideCallback,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/senditemmenu/SendItemMenu_SendItemMenuItem.md"))]#[::unity2::class(namespace="App",name="SendItemMenu.SendItemMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct SendItemMenu_SendItemMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/senditemmenu/SendItemMenu_CancelCallback.md"))]#[::unity2::class(namespace="App",name="SendItemMenu.CancelCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SendItemMenu_CancelCallback{}
@@ -46,33 +40,16 @@ use crate::system::object::{IObject,Object}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/senditemmenu/SendItemMenu.md"))]#[::unity2::class(namespace="App",name="SendItemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SendItemMenu{#[offset(200)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_GainUnitItem")]pub m_gain_unit_item:crate::app::unititem::UnitItem, #[offset(216)]#[rename(name="m_Root")]pub m_root:crate::app::senditemroot::SendItemRoot, #[offset(224)]#[rename(name="m_Uncancellable")]pub m_uncancellable:bool, #[offset(232)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::senditemmenu::SendItemMenu_DecideCallback, #[offset(240)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::app::senditemmenu::SendItemMenu_CancelCallback,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/senditemmenu/SendItemMenu_SendItemMenuItem.md"))]#[::unity2::class(namespace="App",name="SendItemMenu.SendItemMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct SendItemMenu_SendItemMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/senditemmenu/SendItemMenu_DecideCallback.md"))]#[::unity2::class(namespace="App",name="SendItemMenu.DecideCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SendItemMenu_DecideCallback{}
+
 }
 
 #[cfg(feature = "app-senditemmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-senditemmenu")]pub trait ISendItemMenu_DecideCallbackMethods:ISendItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SendItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d699e0usize)as*mut u8,();
-(SendItemMenu_DecideCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(bool, i32)` overload"]fn invoke(self,select_unit_item:impl::core::convert::Into<bool> ,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SendItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69a00usize)as*mut u8,();
-(SendItemMenu_DecideCallback)__receiver,(bool)::core::convert::Into::into(select_unit_item),(i32)::core::convert::Into::into(unit_item_index))}
-}
-}
-
-#[cfg(feature="app-senditemmenu")]impl<__T:ISendItemMenu_DecideCallback>ISendItemMenu_DecideCallbackMethods for __T{}
-
-#[cfg(feature="app-senditemmenu")]impl SendItemMenu_DecideCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-senditemmenu")]impl SendItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SendItemMenu_DecideCallback), ::core::stringify!(new),));
- <Self as ISendItemMenu_DecideCallbackMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-senditemmenu")]pub trait ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods:ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(crate::app::unit::Unit, i32, crate::app::unititem::UnitItem, crate::app::senditemmenu::SendItemMenu_DecideCallback)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item_index:impl::core::convert::Into<i32> ,gain_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,decide_callback:impl::core::convert::Into<crate::app::senditemmenu::SendItemMenu_DecideCallback>)->(){unsafe{let __receiver= <SendItemMenu_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22edb20usize)as*mut u8,();
@@ -94,74 +71,6 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(SendItemMenu_ConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
  <Self as ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods> ::ctor(this,unit,unit_item_index,gain_unit_item,decide_callback);
-this}
-}
-
-#[cfg(feature="app-senditemmenu")]pub trait ISendItemMenu_SendItemMenuItemMethods:ISendItemMenu_SendItemMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69d10usize)as*mut u8, ::unity2::Il2CppString;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69ff0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a190usize)as*mut u8,();
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a310usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a480usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`GetSendItemMenu()` overload"]fn get_send_item_menu(self,)->crate::app::senditemmenu::SendItemMenu{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a2b0usize)as*mut u8,crate::app::senditemmenu::SendItemMenu;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a510usize)as*mut u8,crate::app::unit::Unit;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a580usize)as*mut u8,crate::app::unititem::UnitItem;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`GetRecieverUnit()` overload"]fn get_reciever_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a620usize)as*mut u8,crate::app::unit::Unit;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`IsGainItem()` overload"]fn is_gain_item(self,)->bool{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a180usize)as*mut u8,bool;
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a630usize)as*mut u8,();
-(SendItemMenu_SendItemMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-senditemmenu")]impl<__T:ISendItemMenu_SendItemMenuItem>ISendItemMenu_SendItemMenuItemMethods for __T{}
-
-#[cfg(feature="app-senditemmenu")]impl SendItemMenu_SendItemMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_send_item_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_reciever_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn is_gain_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-senditemmenu")]impl SendItemMenu_SendItemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SendItemMenu_SendItemMenuItem), ::core::stringify!(new),));
- <Self as ISendItemMenu_SendItemMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -276,18 +185,103 @@ pub fn send_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="app-senditemmenu")]pub trait ISendItemMenu_SendItemMenuItemMethods:ISendItemMenu_SendItemMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69d10usize)as*mut u8, ::unity2::Il2CppString;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69ff0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a190usize)as*mut u8,();
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a310usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a480usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`GetSendItemMenu()` overload"]fn get_send_item_menu(self,)->crate::app::senditemmenu::SendItemMenu{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a2b0usize)as*mut u8,crate::app::senditemmenu::SendItemMenu;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a510usize)as*mut u8,crate::app::unit::Unit;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a580usize)as*mut u8,crate::app::unititem::UnitItem;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`GetRecieverUnit()` overload"]fn get_reciever_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a620usize)as*mut u8,crate::app::unit::Unit;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`IsGainItem()` overload"]fn is_gain_item(self,)->bool{unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a180usize)as*mut u8,bool;
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SendItemMenu_SendItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a630usize)as*mut u8,();
+(SendItemMenu_SendItemMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-senditemmenu")]impl<__T:ISendItemMenu_SendItemMenuItem>ISendItemMenu_SendItemMenuItemMethods for __T{}
+
+#[cfg(feature="app-senditemmenu")]impl SendItemMenu_SendItemMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_send_item_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_reciever_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_gain_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-senditemmenu")]impl SendItemMenu_SendItemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SendItemMenu_SendItemMenuItem), ::core::stringify!(new),));
+ <Self as ISendItemMenu_SendItemMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-senditemmenu")]pub trait ISendItemMenu_DecideCallbackMethods:ISendItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SendItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d699e0usize)as*mut u8,();
+(SendItemMenu_DecideCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool, i32)` overload"]fn invoke(self,select_unit_item:impl::core::convert::Into<bool> ,unit_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SendItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69a00usize)as*mut u8,();
+(SendItemMenu_DecideCallback)__receiver,(bool)::core::convert::Into::into(select_unit_item),(i32)::core::convert::Into::into(unit_item_index))}
+}
+}
+
+#[cfg(feature="app-senditemmenu")]impl<__T:ISendItemMenu_DecideCallback>ISendItemMenu_DecideCallbackMethods for __T{}
+
+#[cfg(feature="app-senditemmenu")]impl SendItemMenu_DecideCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-senditemmenu")]impl SendItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SendItemMenu_DecideCallback), ::core::stringify!(new),));
+ <Self as ISendItemMenu_DecideCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-senditemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SendItemMenu_DecideCallback;
-    pub use super::ISendItemMenu_DecideCallback;
-    pub use super::ISendItemMenu_DecideCallbackMethods;
     pub use super::SendItemMenu_ConfirmDialog_ConfirmYesDialogItem;
     pub use super::ISendItemMenu_ConfirmDialog_ConfirmYesDialogItem;
     pub use super::ISendItemMenu_ConfirmDialog_ConfirmYesDialogItemMethods;
-    pub use super::SendItemMenu_SendItemMenuItem;
-    pub use super::ISendItemMenu_SendItemMenuItem;
-    pub use super::ISendItemMenu_SendItemMenuItemMethods;
     pub use super::SendItemMenu_CancelCallback;
     pub use super::ISendItemMenu_CancelCallback;
     pub use super::ISendItemMenu_CancelCallbackMethods;
@@ -297,6 +291,12 @@ pub mod prelude {
     pub use super::SendItemMenu;
     pub use super::ISendItemMenu;
     pub use super::ISendItemMenuMethods;
+    pub use super::SendItemMenu_SendItemMenuItem;
+    pub use super::ISendItemMenu_SendItemMenuItem;
+    pub use super::ISendItemMenu_SendItemMenuItemMethods;
+    pub use super::SendItemMenu_DecideCallback;
+    pub use super::ISendItemMenu_DecideCallback;
+    pub use super::ISendItemMenu_DecideCallbackMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

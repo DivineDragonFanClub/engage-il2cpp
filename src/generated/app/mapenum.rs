@@ -33,20 +33,6 @@ impl::unity2::IlType for MapEnum_CellEnumerator{fn il_type()-> &'static::unity2:
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenum/MapEnum_AreaEnumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapEnum_AreaEnumerator{pub m_current:crate::app::mappos::MapPos,pub m_min_x:i32,pub m_min_z:i32,pub m_max_x:i32,pub m_max_z:i32,}
-impl::unity2::ClassIdentity for MapEnum_AreaEnumerator{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapEnum.AreaEnumerator";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapEnum_AreaEnumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenum/MapEnum.md"))]#[::unity2::class(namespace="App",name="MapEnum")]#[parent(crate::system::object::Object)]pub struct MapEnum{#[static_field]#[rename(name="s_AreaEnumerator")]pub s_area_enumerator:crate::app::mapenum::MapEnum_AreaEnumerator, #[static_field]#[rename(name="s_RangeEnumerator")]pub s_range_enumerator:crate::app::mapenum::MapEnum_RangeEnumerator, #[static_field]#[rename(name="s_MoveEnumerator")]pub s_move_enumerator:crate::app::mapenum::MapEnum_MoveEnumerator, #[static_field]#[rename(name="s_CellEnumerator")]pub s_cell_enumerator:crate::app::mapenum::MapEnum_CellEnumerator,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenum/MapEnum_MoveEnumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapEnum_MoveEnumerator{pub m_current:crate::app::maprange::MapRange,pub m_min_x:i32,pub m_min_z:i32,pub m_max_x:i32,pub m_max_z:i32,}
 impl::unity2::ClassIdentity for MapEnum_MoveEnumerator{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapEnum.MoveEnumerator";
@@ -55,6 +41,20 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for MapEnum_MoveEnumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenum/MapEnum.md"))]#[::unity2::class(namespace="App",name="MapEnum")]#[parent(crate::system::object::Object)]pub struct MapEnum{#[static_field]#[rename(name="s_AreaEnumerator")]pub s_area_enumerator:crate::app::mapenum::MapEnum_AreaEnumerator, #[static_field]#[rename(name="s_RangeEnumerator")]pub s_range_enumerator:crate::app::mapenum::MapEnum_RangeEnumerator, #[static_field]#[rename(name="s_MoveEnumerator")]pub s_move_enumerator:crate::app::mapenum::MapEnum_MoveEnumerator, #[static_field]#[rename(name="s_CellEnumerator")]pub s_cell_enumerator:crate::app::mapenum::MapEnum_CellEnumerator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenum/MapEnum_AreaEnumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapEnum_AreaEnumerator{pub m_current:crate::app::mappos::MapPos,pub m_min_x:i32,pub m_min_z:i32,pub m_max_x:i32,pub m_max_z:i32,}
+impl::unity2::ClassIdentity for MapEnum_AreaEnumerator{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapEnum.AreaEnumerator";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapEnum_AreaEnumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -134,33 +134,33 @@ pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static:
 pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
-#[cfg(feature="app-mapenum")]impl MapEnum_AreaEnumerator{#[doc="`Setup(i32, i32, i32, i32)` overload"]pub fn setup(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,w:impl::core::convert::Into<i32> ,h:impl::core::convert::Into<i32>)->crate::app::mapenum::MapEnum_AreaEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4850usize)as*mut u8,crate::app::mapenum::MapEnum_AreaEnumerator;
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(w),(i32)::core::convert::Into::into(h))}
+#[cfg(feature="app-mapenum")]impl MapEnum_MoveEnumerator{#[doc="`Setup()` overload"]pub fn setup(&mut self,)->crate::app::mapenum::MapEnum_MoveEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4cf0usize)as*mut u8,crate::app::mapenum::MapEnum_MoveEnumerator;
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c0750usize)as*mut u8,();
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4dd0usize)as*mut u8,();
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
-#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::mappos::MapPos{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4920usize)as*mut u8,crate::app::mappos::MapPos;
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::maprange::MapRange{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4de0usize)as*mut u8,crate::app::maprange::MapRange;
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
-#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4930usize)as*mut u8,crate::system::object::Object;
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4df0usize)as*mut u8,crate::system::object::Object;
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
-#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4990usize)as*mut u8,bool;
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4e60usize)as*mut u8,bool;
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
-#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c49e0usize)as*mut u8,();
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4fb0usize)as*mut u8,();
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
-#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4a70usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c5050usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
-#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::mapenum::MapEnum_AreaEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c0730usize)as*mut u8,crate::app::mapenum::MapEnum_AreaEnumerator;
-(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
+#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::mapenum::MapEnum_MoveEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c50d0usize)as*mut u8,crate::app::mapenum::MapEnum_MoveEnumerator;
+(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
 }
 }
 
-#[cfg(feature="app-mapenum")]impl MapEnum_AreaEnumerator{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mapenum")]impl MapEnum_MoveEnumerator{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -226,33 +226,33 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapenum")]impl MapEnum_MoveEnumerator{#[doc="`Setup()` overload"]pub fn setup(&mut self,)->crate::app::mapenum::MapEnum_MoveEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4cf0usize)as*mut u8,crate::app::mapenum::MapEnum_MoveEnumerator;
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[cfg(feature="app-mapenum")]impl MapEnum_AreaEnumerator{#[doc="`Setup(i32, i32, i32, i32)` overload"]pub fn setup(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,w:impl::core::convert::Into<i32> ,h:impl::core::convert::Into<i32>)->crate::app::mapenum::MapEnum_AreaEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4850usize)as*mut u8,crate::app::mapenum::MapEnum_AreaEnumerator;
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(w),(i32)::core::convert::Into::into(h))}
 }
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4dd0usize)as*mut u8,();
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c0750usize)as*mut u8,();
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
 }
-#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::maprange::MapRange{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4de0usize)as*mut u8,crate::app::maprange::MapRange;
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::mappos::MapPos{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4920usize)as*mut u8,crate::app::mappos::MapPos;
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
 }
-#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4df0usize)as*mut u8,crate::system::object::Object;
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4930usize)as*mut u8,crate::system::object::Object;
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
 }
-#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4e60usize)as*mut u8,bool;
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4990usize)as*mut u8,bool;
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
 }
-#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4fb0usize)as*mut u8,();
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c49e0usize)as*mut u8,();
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
 }
-#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c5050usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c4a70usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
 }
-#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::mapenum::MapEnum_MoveEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c50d0usize)as*mut u8,crate::app::mapenum::MapEnum_MoveEnumerator;
-(*mut MapEnum_MoveEnumerator)self as*mut MapEnum_MoveEnumerator)}
+#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::mapenum::MapEnum_AreaEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c0730usize)as*mut u8,crate::app::mapenum::MapEnum_AreaEnumerator;
+(*mut MapEnum_AreaEnumerator)self as*mut MapEnum_AreaEnumerator)}
 }
 }
 
-#[cfg(feature="app-mapenum")]impl MapEnum_MoveEnumerator{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mapenum")]impl MapEnum_AreaEnumerator{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -267,11 +267,11 @@ pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub mod prelude {
     pub use super::MapEnum_RangeEnumerator;
     pub use super::MapEnum_CellEnumerator;
-    pub use super::MapEnum_AreaEnumerator;
+    pub use super::MapEnum_MoveEnumerator;
     pub use super::MapEnum;
     pub use super::IMapEnum;
     pub use super::IMapEnumMethods;
-    pub use super::MapEnum_MoveEnumerator;
+    pub use super::MapEnum_AreaEnumerator;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

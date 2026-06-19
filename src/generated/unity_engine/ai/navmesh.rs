@@ -13,15 +13,38 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh")]#[parent(crate::system::object::Object)]pub struct NavMesh{#[static_field]#[rename(name="onPreUpdate")]pub on_pre_update:crate::unity_engine::ai::navmesh::NavMesh_OnNavMeshPreUpdate,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh_OnNavMeshPreUpdate.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh.OnNavMeshPreUpdate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NavMesh_OnNavMeshPreUpdate{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh")]#[parent(crate::system::object::Object)]pub struct NavMesh{#[static_field]#[rename(name="onPreUpdate")]pub on_pre_update:crate::unity_engine::ai::navmesh::NavMesh_OnNavMeshPreUpdate,}
 
 }
 
 #[cfg(feature = "unity_engine-ai-navmesh-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ai-navmesh")]pub trait INavMesh_OnNavMeshPreUpdateMethods:INavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44300usize)as*mut u8,();
+(NavMesh_OnNavMeshPreUpdate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f431e0usize)as*mut u8,();
+(NavMesh_OnNavMeshPreUpdate)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl<__T:INavMesh_OnNavMeshPreUpdate>INavMesh_OnNavMeshPreUpdateMethods for __T{}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NavMesh_OnNavMeshPreUpdate), ::core::stringify!(new),));
+ <Self as INavMesh_OnNavMeshPreUpdateMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh{#[doc="`Internal_CallOnNavMeshPreUpdate()` overload"]pub fn internal_call_on_nav_mesh_pre_update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43180usize)as*mut u8,();
 )}
@@ -62,37 +85,14 @@ pub fn calculate_path_internal_injected_method_info()-> & 'static::unity2::il2cp
 pub fn sample_position_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="unity_engine-ai-navmesh")]pub trait INavMesh_OnNavMeshPreUpdateMethods:INavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44300usize)as*mut u8,();
-(NavMesh_OnNavMeshPreUpdate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f431e0usize)as*mut u8,();
-(NavMesh_OnNavMeshPreUpdate)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-ai-navmesh")]impl<__T:INavMesh_OnNavMeshPreUpdate>INavMesh_OnNavMeshPreUpdateMethods for __T{}
-
-#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NavMesh_OnNavMeshPreUpdate), ::core::stringify!(new),));
- <Self as INavMesh_OnNavMeshPreUpdateMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "unity_engine-ai-navmesh")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NavMesh;
-    pub use super::INavMesh;
     pub use super::NavMesh_OnNavMeshPreUpdate;
     pub use super::INavMesh_OnNavMeshPreUpdate;
     pub use super::INavMesh_OnNavMeshPreUpdateMethods;
+    pub use super::NavMesh;
+    pub use super::INavMesh;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

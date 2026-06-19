@@ -29,13 +29,63 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterSequence.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::hubsequence::HubSequence_LastChapterSequence>)]pub struct HubSequence_LastChapterSequence{#[static_field]#[rename(name="isGotoLastConfirm")]pub is_goto_last_confirm:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_AreaString.md"))]#[::unity2::class(namespace="App",name="HubSequence.AreaString")]#[parent(crate::system::object::Object)]pub struct HubSequence_AreaString{#[offset(16)]#[rename(name="m_value")]pub m_value:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="m_lastValue")]pub m_last_value: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_GoToMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.GoToMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubSequence_LastChapterMenu_GoToMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubSequence_LastChapterMenu{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterSequence.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubSequence_LastChapterSequence_ConfirmDialogItemNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubSequence_LastChapterMenu_RankingMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemNo.md"))]#[::unity2::class(namespace="App",name="HubSequence.ConfirmEndRollDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubSequence_ConfirmEndRollDialogItemNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemYes.md"))]#[::unity2::class(namespace="App",name="HubSequence.ConfirmEndRollDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubSequence_ConfirmEndRollDialogItemYes{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence.md"))]#[::unity2::class(namespace="App",name="HubSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct HubSequence{#[offset(136)]#[rename(name="m_ScriptFuncName")]pub m_script_func_name: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_FastTravelID")]pub m_fast_travel_id: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_TalkAccess")]pub m_talk_access:crate::app::hubaccess::HubAccess, #[offset(160)]#[rename(name="m_IsBackgroundBind")]pub m_is_background_bind:bool, #[offset(161)]#[rename(name="m_IsKeyHelp")]pub m_is_key_help:bool, #[offset(162)]#[rename(name="m_IsCave")]pub m_is_cave:bool, #[offset(168)]#[rename(name="m_SceneName")]pub m_scene_name: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_StartName")]pub m_start_name: ::unity2::Il2CppString, #[offset(184)]#[rename(name="m_HubRoot")]pub m_hub_root:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_HubEnv")]pub m_hub_env:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_HubLocatorGroup")]pub m_hub_locator_group:crate::app::hublocatorgroup::HubLocatorGroup, #[offset(208)]#[rename(name="m_HubPlayerController")]pub m_hub_player_controller:crate::app::hubplayercontroller::HubPlayerController, #[offset(216)]#[rename(name="m_HubCamera")]pub m_hub_camera:crate::app::hubcamera::HubCamera, #[offset(224)]#[rename(name="m_ButtonNavi")]pub m_button_navi:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_DragonRideNode")]pub m_dragon_ride_node:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_DragonRideEnv")]pub m_dragon_ride_env:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_FishingNode")]pub m_fishing_node:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_Hologram")]pub m_hologram:crate::unity_engine::gameobject::GameObject, #[offset(264)]#[rename(name="m_HubEffect")]pub m_hub_effect:crate::unity_engine::gameobject::GameObject, #[offset(272)]#[rename(name="m_LensFlare")]pub m_lens_flare:crate::unity_engine::gameobject::GameObject, #[offset(280)]#[rename(name="m_MyRoomAccObject")]pub m_my_room_acc_object:crate::unity_engine::gameobject::GameObject, #[offset(288)]#[rename(name="m_MyRoomAcc")]pub m_my_room_acc:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(344)]#[rename(name="m_IsShutdown")]pub m_is_shutdown:bool, #[offset(348)]#[rename(name="m_numPieceOfBond")]pub m_num_piece_of_bond:i32, #[offset(352)]#[rename(name="EndRollDisableList")]pub end_roll_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(360)]#[rename(name="ArgConfirmMid")]pub arg_confirm_mid: ::unity2::Il2CppString, #[offset(368)]#[rename(name="ArgScriptName")]pub arg_script_name: ::unity2::Il2CppString, #[offset(376)]#[rename(name="SolanelBgmList")]pub solanel_bgm_list: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterRankingMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterRankingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubSequence_LastChapterRankingMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterSequence.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::hubsequence::HubSequence_LastChapterSequence>)]pub struct HubSequence_LastChapterSequence{#[static_field]#[rename(name="isGotoLastConfirm")]pub is_goto_last_confirm:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubSequence_LastChapterSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for HubSequence_LastChapterSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubSequence.LastChapterSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubSequence_LastChapterSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubSequence_LastChapterSequence_Label{pub fn menu()->Self{Self{value:0}
+}
+pub fn go_to()->Self{Self{value:1}
+}
+pub fn ranking()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterGoToMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterGoToMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubSequence_LastChapterGoToMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubSequence_Label{pub value:i32,}
@@ -122,116 +172,15 @@ pub fn save_data_load()->Self{Self{value:35}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemNo.md"))]#[::unity2::class(namespace="App",name="HubSequence.ConfirmEndRollDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubSequence_ConfirmEndRollDialogItemNo{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubSequence_LastChapterMenu_RankingMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterGoToMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterGoToMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubSequence_LastChapterGoToMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubSequence_LastChapterSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for HubSequence_LastChapterSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="HubSequence.LastChapterSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for HubSequence_LastChapterSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl HubSequence_LastChapterSequence_Label{pub fn menu()->Self{Self{value:0}
-}
-pub fn go_to()->Self{Self{value:1}
-}
-pub fn ranking()->Self{Self{value:2}
-}
-pub fn end()->Self{Self{value:3}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterSequence.ConfirmGotoLastDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_GoToMenuItem.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.GoToMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubSequence_LastChapterMenu_GoToMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemYes.md"))]#[::unity2::class(namespace="App",name="HubSequence.ConfirmEndRollDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubSequence_ConfirmEndRollDialogItemYes{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_AreaString.md"))]#[::unity2::class(namespace="App",name="HubSequence.AreaString")]#[parent(crate::system::object::Object)]pub struct HubSequence_AreaString{#[offset(16)]#[rename(name="m_value")]pub m_value:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="m_lastValue")]pub m_last_value: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubSequence_LastChapterMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence.md"))]#[::unity2::class(namespace="App",name="HubSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct HubSequence{#[offset(136)]#[rename(name="m_ScriptFuncName")]pub m_script_func_name: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_FastTravelID")]pub m_fast_travel_id: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_TalkAccess")]pub m_talk_access:crate::app::hubaccess::HubAccess, #[offset(160)]#[rename(name="m_IsBackgroundBind")]pub m_is_background_bind:bool, #[offset(161)]#[rename(name="m_IsKeyHelp")]pub m_is_key_help:bool, #[offset(162)]#[rename(name="m_IsCave")]pub m_is_cave:bool, #[offset(168)]#[rename(name="m_SceneName")]pub m_scene_name: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_StartName")]pub m_start_name: ::unity2::Il2CppString, #[offset(184)]#[rename(name="m_HubRoot")]pub m_hub_root:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_HubEnv")]pub m_hub_env:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_HubLocatorGroup")]pub m_hub_locator_group:crate::app::hublocatorgroup::HubLocatorGroup, #[offset(208)]#[rename(name="m_HubPlayerController")]pub m_hub_player_controller:crate::app::hubplayercontroller::HubPlayerController, #[offset(216)]#[rename(name="m_HubCamera")]pub m_hub_camera:crate::app::hubcamera::HubCamera, #[offset(224)]#[rename(name="m_ButtonNavi")]pub m_button_navi:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_DragonRideNode")]pub m_dragon_ride_node:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_DragonRideEnv")]pub m_dragon_ride_env:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_FishingNode")]pub m_fishing_node:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_Hologram")]pub m_hologram:crate::unity_engine::gameobject::GameObject, #[offset(264)]#[rename(name="m_HubEffect")]pub m_hub_effect:crate::unity_engine::gameobject::GameObject, #[offset(272)]#[rename(name="m_LensFlare")]pub m_lens_flare:crate::unity_engine::gameobject::GameObject, #[offset(280)]#[rename(name="m_MyRoomAccObject")]pub m_my_room_acc_object:crate::unity_engine::gameobject::GameObject, #[offset(288)]#[rename(name="m_MyRoomAcc")]pub m_my_room_acc:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(344)]#[rename(name="m_IsShutdown")]pub m_is_shutdown:bool, #[offset(348)]#[rename(name="m_numPieceOfBond")]pub m_num_piece_of_bond:i32, #[offset(352)]#[rename(name="EndRollDisableList")]pub end_roll_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(360)]#[rename(name="ArgConfirmMid")]pub arg_confirm_mid: ::unity2::Il2CppString, #[offset(368)]#[rename(name="ArgScriptName")]pub arg_script_name: ::unity2::Il2CppString, #[offset(376)]#[rename(name="SolanelBgmList")]pub solanel_bgm_list: ::unity2::Array< ::unity2::Il2CppString> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog{}
 
 }
 
 #[cfg(feature = "app-hubsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods:IHubSequence_LastChapterSequence_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66070usize)as*mut u8,();
-(HubSequence_LastChapterSequence_ConfirmDialogItemNo)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66100usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterSequence_ConfirmDialogItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterSequence_ConfirmDialogItemNo>IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterSequence_ConfirmDialogItemNo), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterRankingMenuItemMethods:IHubSequence_LastChapterRankingMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterRankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec9d0usize)as*mut u8, ::unity2::Il2CppString;
-(HubSequence_LastChapterRankingMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterRankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aeca50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterRankingMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterRankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aecbe0usize)as*mut u8,();
-(HubSequence_LastChapterRankingMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterRankingMenuItem>IHubSequence_LastChapterRankingMenuItemMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterRankingMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterRankingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterRankingMenuItem), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterRankingMenuItemMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aed170usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -291,233 +240,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb1e0usize)as*mut u8, ::unity2::Il2CppString;
-(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb260usize)as*mut u8,();
-(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem>IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_ConfirmEndRollDialogItemNoMethods:IHubSequence_ConfirmEndRollDialogItemNo{#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec120usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_ConfirmEndRollDialogItemNo)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec1e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_ConfirmEndRollDialogItemNo)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec2a0usize)as*mut u8,();
-(HubSequence_ConfirmEndRollDialogItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_ConfirmEndRollDialogItemNo>IHubSequence_ConfirmEndRollDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemNo{pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_ConfirmEndRollDialogItemNo), ::core::stringify!(new),));
- <Self as IHubSequence_ConfirmEndRollDialogItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_RankingMenuItemMethods:IHubSequence_LastChapterMenu_RankingMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65b60usize)as*mut u8, ::unity2::Il2CppString;
-(HubSequence_LastChapterMenu_RankingMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65be0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterMenu_RankingMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65df0usize)as*mut u8,();
-(HubSequence_LastChapterMenu_RankingMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_RankingMenuItem>IHubSequence_LastChapterMenu_RankingMenuItemMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterMenu_RankingMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb270usize)as*mut u8,();
-(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb2b0usize)as*mut u8, ::unity2::Il2CppString;
-(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb330usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem>IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods> ::ctor(this,result_func);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ff350usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterGoToMenuItemMethods:IHubSequence_LastChapterGoToMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterGoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec410usize)as*mut u8, ::unity2::Il2CppString;
-(HubSequence_LastChapterGoToMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterGoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec490usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterGoToMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterGoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec620usize)as*mut u8,();
-(HubSequence_LastChapterGoToMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterGoToMenuItem>IHubSequence_LastChapterGoToMenuItemMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterGoToMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterGoToMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterGoToMenuItem), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterGoToMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods:IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66110usize)as*mut u8,();
-(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b661a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66210usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes>IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_GoToMenuItemMethods:IHubSequence_LastChapterMenu_GoToMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_GoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65970usize)as*mut u8, ::unity2::Il2CppString;
-(HubSequence_LastChapterMenu_GoToMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterMenu_GoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b659f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_LastChapterMenu_GoToMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_GoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65b50usize)as*mut u8,();
-(HubSequence_LastChapterMenu_GoToMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_GoToMenuItem>IHubSequence_LastChapterMenu_GoToMenuItemMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_GoToMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_GoToMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_GoToMenuItem), ::core::stringify!(new),));
- <Self as IHubSequence_LastChapterMenu_GoToMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubsequence")]pub trait IHubSequence_ConfirmEndRollDialogItemYesMethods:IHubSequence_ConfirmEndRollDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec2b0usize)as*mut u8,();
-(HubSequence_ConfirmEndRollDialogItemYes)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec340usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_ConfirmEndRollDialogItemYes)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec350usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubSequence_ConfirmEndRollDialogItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_ConfirmEndRollDialogItemYes>IHubSequence_ConfirmEndRollDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubSequence_ConfirmEndRollDialogItemYes), ::core::stringify!(new),));
- <Self as IHubSequence_ConfirmEndRollDialogItemYesMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-hubsequence")]pub trait IHubSequence_AreaStringMethods:IHubSequence_AreaString{#[doc="`Push(::unity2::Il2CppString)` overload"]fn push(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubSequence_AreaString as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2aebe10usize)as*mut u8,();
 (HubSequence_AreaString)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
@@ -556,6 +278,34 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_GoToMenuItemMethods:IHubSequence_LastChapterMenu_GoToMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_GoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65970usize)as*mut u8, ::unity2::Il2CppString;
+(HubSequence_LastChapterMenu_GoToMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterMenu_GoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b659f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterMenu_GoToMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_GoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65b50usize)as*mut u8,();
+(HubSequence_LastChapterMenu_GoToMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_GoToMenuItem>IHubSequence_LastChapterMenu_GoToMenuItemMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_GoToMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_GoToMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_GoToMenuItem), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterMenu_GoToMenuItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu{#[doc="`get_CurrentMenuSelect()` overload"]pub fn get_current_menu_select()->crate::app::basicmenuselect::BasicMenuSelect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aec630usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
 )}
 }
@@ -590,6 +340,113 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 ::{}
  failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu), ::core::stringify!(new),));
  <Self as IHubSequence_LastChapterMenuMethods> ::ctor(this,menu_item_list,super_);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods:IHubSequence_LastChapterSequence_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66070usize)as*mut u8,();
+(HubSequence_LastChapterSequence_ConfirmDialogItemNo)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66100usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterSequence_ConfirmDialogItemNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterSequence_ConfirmDialogItemNo>IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterSequence_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_RankingMenuItemMethods:IHubSequence_LastChapterMenu_RankingMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65b60usize)as*mut u8, ::unity2::Il2CppString;
+(HubSequence_LastChapterMenu_RankingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65be0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterMenu_RankingMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65df0usize)as*mut u8,();
+(HubSequence_LastChapterMenu_RankingMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_RankingMenuItem>IHubSequence_LastChapterMenu_RankingMenuItemMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterMenu_RankingMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_ConfirmEndRollDialogItemNoMethods:IHubSequence_ConfirmEndRollDialogItemNo{#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec120usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_ConfirmEndRollDialogItemNo)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec1e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_ConfirmEndRollDialogItemNo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec2a0usize)as*mut u8,();
+(HubSequence_ConfirmEndRollDialogItemNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_ConfirmEndRollDialogItemNo>IHubSequence_ConfirmEndRollDialogItemNoMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemNo{pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_ConfirmEndRollDialogItemNo), ::core::stringify!(new),));
+ <Self as IHubSequence_ConfirmEndRollDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_ConfirmEndRollDialogItemYesMethods:IHubSequence_ConfirmEndRollDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec2b0usize)as*mut u8,();
+(HubSequence_ConfirmEndRollDialogItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec340usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_ConfirmEndRollDialogItemYes)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_ConfirmEndRollDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec350usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_ConfirmEndRollDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_ConfirmEndRollDialogItemYes>IHubSequence_ConfirmEndRollDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_ConfirmEndRollDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_ConfirmEndRollDialogItemYes), ::core::stringify!(new),));
+ <Self as IHubSequence_ConfirmEndRollDialogItemYesMethods> ::ctor(this,);
 this}
 }
 
@@ -1475,55 +1332,198 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb270usize)as*mut u8,();
+(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb2b0usize)as*mut u8, ::unity2::Il2CppString;
+(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb330usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem>IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods> ::ctor(this,result_func);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterRankingMenuItemMethods:IHubSequence_LastChapterRankingMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterRankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec9d0usize)as*mut u8, ::unity2::Il2CppString;
+(HubSequence_LastChapterRankingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterRankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aeca50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterRankingMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterRankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aecbe0usize)as*mut u8,();
+(HubSequence_LastChapterRankingMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterRankingMenuItem>IHubSequence_LastChapterRankingMenuItemMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterRankingMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterRankingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterRankingMenuItem), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterRankingMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb1e0usize)as*mut u8, ::unity2::Il2CppString;
+(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb260usize)as*mut u8,();
+(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem>IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterGoToMenuItemMethods:IHubSequence_LastChapterGoToMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubSequence_LastChapterGoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec410usize)as*mut u8, ::unity2::Il2CppString;
+(HubSequence_LastChapterGoToMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterGoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec490usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterGoToMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterGoToMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aec620usize)as*mut u8,();
+(HubSequence_LastChapterGoToMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterGoToMenuItem>IHubSequence_LastChapterGoToMenuItemMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterGoToMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterGoToMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterGoToMenuItem), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterGoToMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]pub trait IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods:IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66110usize)as*mut u8,();
+(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b661a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66210usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl<__T:IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes>IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes), ::core::stringify!(new),));
+ <Self as IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ff350usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+}
+}
+
+#[cfg(feature="app-hubsequence")]impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "app-hubsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubSequence_LastChapterSequence_ConfirmDialogItemNo;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmDialogItemNo;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods;
-    pub use super::HubSequence_LastChapterRankingMenuItem;
-    pub use super::IHubSequence_LastChapterRankingMenuItem;
-    pub use super::IHubSequence_LastChapterRankingMenuItemMethods;
     pub use super::HubSequence_LastChapterSequence;
     pub use super::IHubSequence_LastChapterSequence;
     pub use super::IHubSequence_LastChapterSequenceMethods;
-    pub use super::HubSequence_Label;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods;
-    pub use super::HubSequence_ConfirmEndRollDialogItemNo;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemNo;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemNoMethods;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItemMethods;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods;
-    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog;
-    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog;
-    pub use super::HubSequence_LastChapterGoToMenuItem;
-    pub use super::IHubSequence_LastChapterGoToMenuItem;
-    pub use super::IHubSequence_LastChapterGoToMenuItemMethods;
-    pub use super::HubSequence_LastChapterSequence_Label;
-    pub use super::HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes;
-    pub use super::IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods;
-    pub use super::HubSequence_LastChapterMenu_GoToMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_GoToMenuItem;
-    pub use super::IHubSequence_LastChapterMenu_GoToMenuItemMethods;
-    pub use super::HubSequence_ConfirmEndRollDialogItemYes;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemYes;
-    pub use super::IHubSequence_ConfirmEndRollDialogItemYesMethods;
     pub use super::HubSequence_AreaString;
     pub use super::IHubSequence_AreaString;
     pub use super::IHubSequence_AreaStringMethods;
+    pub use super::HubSequence_LastChapterMenu_GoToMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_GoToMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_GoToMenuItemMethods;
     pub use super::HubSequence_LastChapterMenu;
     pub use super::IHubSequence_LastChapterMenu;
     pub use super::IHubSequence_LastChapterMenuMethods;
+    pub use super::HubSequence_LastChapterSequence_ConfirmDialogItemNo;
+    pub use super::IHubSequence_LastChapterSequence_ConfirmDialogItemNo;
+    pub use super::IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods;
+    pub use super::HubSequence_LastChapterMenu_RankingMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_RankingMenuItemMethods;
+    pub use super::HubSequence_ConfirmEndRollDialogItemNo;
+    pub use super::IHubSequence_ConfirmEndRollDialogItemNo;
+    pub use super::IHubSequence_ConfirmEndRollDialogItemNoMethods;
+    pub use super::HubSequence_ConfirmEndRollDialogItemYes;
+    pub use super::IHubSequence_ConfirmEndRollDialogItemYes;
+    pub use super::IHubSequence_ConfirmEndRollDialogItemYesMethods;
     pub use super::HubSequence;
     pub use super::IHubSequence;
     pub use super::IHubSequenceMethods;
+    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods;
+    pub use super::HubSequence_LastChapterRankingMenuItem;
+    pub use super::IHubSequence_LastChapterRankingMenuItem;
+    pub use super::IHubSequence_LastChapterRankingMenuItemMethods;
+    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem;
+    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods;
+    pub use super::HubSequence_LastChapterSequence_Label;
+    pub use super::HubSequence_LastChapterGoToMenuItem;
+    pub use super::IHubSequence_LastChapterGoToMenuItem;
+    pub use super::IHubSequence_LastChapterGoToMenuItemMethods;
+    pub use super::HubSequence_Label;
+    pub use super::HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes;
+    pub use super::IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes;
+    pub use super::IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods;
+    pub use super::HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog;
+    pub use super::IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

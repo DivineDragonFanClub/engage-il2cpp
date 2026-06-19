@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsequence2/TestSequence2.md"))]#[::unity2::class(namespace="",name="TestSequence2")]#[parent(crate::app::procinst::ProcInst)]pub struct TestSequence2{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsequence2/TestSequence2_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TestSequence2_Label{pub value:i32,}
 impl::unity2::ClassIdentity for TestSequence2_Label{const NAMESPACE: &'static str="";
 const NAME: &'static str="TestSequence2.Label";
@@ -30,6 +27,9 @@ impl::unity2::IlType for TestSequence2_Label{fn il_type()-> &'static::unity2::il
 impl TestSequence2_Label{pub fn end()->Self{Self{value:0}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsequence2/TestSequence2.md"))]#[::unity2::class(namespace="",name="TestSequence2")]#[parent(crate::app::procinst::ProcInst)]pub struct TestSequence2{}
 
 }
 
@@ -73,10 +73,10 @@ this}
 #[cfg(feature = "root-testsequence2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TestSequence2_Label;
     pub use super::TestSequence2;
     pub use super::ITestSequence2;
     pub use super::ITestSequence2Methods;
-    pub use super::TestSequence2_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

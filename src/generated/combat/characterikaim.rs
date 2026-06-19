@@ -17,7 +17,7 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterikaim/CharacterIKAim.md"))]#[::unity2::class(namespace="Combat",name="CharacterIKAim")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIKAim{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(48)]#[rename(name="AnimAimDir")]pub anim_aim_dir:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="CurrentAimDir")]pub current_aim_dir:crate::unity_engine::vector3::Vector3,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterikaim/CharacterIKAim.md"))]#[::unity2::class(namespace="Combat",name="CharacterIKAim")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIKAim{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="aimIK")]pub aim_ik:crate::root_motion::final_ik::aimik::AimIK, #[offset(48)]#[rename(name="AnimAimDir")]pub anim_aim_dir:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="CurrentAimDir")]pub current_aim_dir:crate::unity_engine::vector3::Vector3,}
 
 }
 

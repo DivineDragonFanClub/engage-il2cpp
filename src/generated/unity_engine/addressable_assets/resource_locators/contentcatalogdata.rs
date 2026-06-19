@@ -22,15 +22,88 @@ impl::unity2::IlType for ContentCatalogData_Bucket{fn il_type()-> &'static::unit
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.ResourceLocators",name="ContentCatalogData")]#[parent(crate::system::object::Object)]pub struct ContentCatalogData{#[offset(16)]#[rename(name="localHash")]pub local_hash: ::unity2::Il2CppString, #[offset(24)]#[rename(name="location")]pub location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, #[offset(32)]#[rename(name="m_LocatorId")]pub m_locator_id: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_InstanceProviderData")]pub m_instance_provider_data:crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData, #[offset(88)]#[rename(name="m_SceneProviderData")]pub m_scene_provider_data:crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData, #[offset(136)]#[rename(name="m_ResourceProviderData")]pub m_resource_provider_data:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData> , #[offset(144)]#[rename(name="m_ProviderIds")]pub m_provider_ids: ::unity2::Array< ::unity2::Il2CppString> , #[offset(152)]#[rename(name="m_InternalIds")]pub m_internal_ids: ::unity2::Array< ::unity2::Il2CppString> , #[offset(160)]#[rename(name="m_KeyDataString")]pub m_key_data_string: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_BucketDataString")]pub m_bucket_data_string: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_EntryDataString")]pub m_entry_data_string: ::unity2::Il2CppString, #[static_field]#[rename(name="kBytesPerInt32")]pub k_bytes_per_int32:i32, #[static_field]#[rename(name="k_EntryDataItemPerEntry")]pub k_entry_data_item_per_entry:i32, #[offset(184)]#[rename(name="m_ExtraDataString")]pub m_extra_data_string: ::unity2::Il2CppString, #[offset(192)]#[rename(name="m_resourceTypes")]pub m_resource_types: ::unity2::Array<crate::unity_engine::resource_management::util::serializedtype::SerializedType> , #[offset(200)]#[rename(name="m_InternalIdPrefixes")]pub m_internal_id_prefixes: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData_CompactLocation.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.ResourceLocators",name="ContentCatalogData.CompactLocation")]#[parent(crate::system::object::Object)]pub struct ContentCatalogData_CompactLocation{#[offset(16)]#[rename(name="m_Locator")]pub m_locator:crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, #[offset(24)]#[rename(name="m_InternalId")]pub m_internal_id: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_ProviderId")]pub m_provider_id: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Dependency")]pub m_dependency: ::unity2::IlInstance, #[offset(48)]#[rename(name="m_Data")]pub m_data: ::unity2::IlInstance, #[offset(56)]#[rename(name="m_HashCode")]pub m_hash_code:i32, #[offset(60)]#[rename(name="m_DependencyHashCode")]pub m_dependency_hash_code:i32, #[offset(64)]#[rename(name="m_PrimaryKey")]pub m_primary_key: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_Type")]pub m_type: ::unity2::SystemType,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_locators/contentcatalogdata/ContentCatalogData.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.ResourceLocators",name="ContentCatalogData")]#[parent(crate::system::object::Object)]pub struct ContentCatalogData{#[offset(16)]#[rename(name="localHash")]pub local_hash: ::unity2::Il2CppString, #[offset(24)]#[rename(name="location")]pub location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, #[offset(32)]#[rename(name="m_LocatorId")]pub m_locator_id: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_InstanceProviderData")]pub m_instance_provider_data:crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData, #[offset(88)]#[rename(name="m_SceneProviderData")]pub m_scene_provider_data:crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData, #[offset(136)]#[rename(name="m_ResourceProviderData")]pub m_resource_provider_data:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData> , #[offset(144)]#[rename(name="m_ProviderIds")]pub m_provider_ids: ::unity2::Array< ::unity2::Il2CppString> , #[offset(152)]#[rename(name="m_InternalIds")]pub m_internal_ids: ::unity2::Array< ::unity2::Il2CppString> , #[offset(160)]#[rename(name="m_KeyDataString")]pub m_key_data_string: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_BucketDataString")]pub m_bucket_data_string: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_EntryDataString")]pub m_entry_data_string: ::unity2::Il2CppString, #[static_field]#[rename(name="kBytesPerInt32")]pub k_bytes_per_int32:i32, #[static_field]#[rename(name="k_EntryDataItemPerEntry")]pub k_entry_data_item_per_entry:i32, #[offset(184)]#[rename(name="m_ExtraDataString")]pub m_extra_data_string: ::unity2::Il2CppString, #[offset(192)]#[rename(name="m_resourceTypes")]pub m_resource_types: ::unity2::Array<crate::unity_engine::resource_management::util::serializedtype::SerializedType> , #[offset(200)]#[rename(name="m_InternalIdPrefixes")]pub m_internal_id_prefixes: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]pub trait IContentCatalogData_CompactLocationMethods:IContentCatalogData_CompactLocation{#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbedc0usize)as*mut u8, ::unity2::Il2CppString;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbedd0usize)as*mut u8, ::unity2::Il2CppString;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbede0usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`get_HasDependencies()` overload"]fn get_has_dependencies(self,)->bool{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeeb0usize)as*mut u8,bool;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`get_DependencyHashCode()` overload"]fn get_dependency_hash_code(self,)->i32{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeec0usize)as*mut u8,i32;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeed0usize)as*mut u8,crate::system::object::Object;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`get_PrimaryKey()` overload"]fn get_primary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeee0usize)as*mut u8, ::unity2::Il2CppString;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`set_PrimaryKey(::unity2::Il2CppString)` overload"]fn set_primary_key(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeef0usize)as*mut u8,();
+(ContentCatalogData_CompactLocation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef00usize)as*mut u8, ::unity2::SystemType;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef10usize)as*mut u8, ::unity2::Il2CppString;
+(ContentCatalogData_CompactLocation)__receiver)}
+}
+#[doc="`Hash(::unity2::SystemType)` overload"]fn hash(self,t:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef20usize)as*mut u8,i32;
+(ContentCatalogData_CompactLocation)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+}
+#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn ctor(self,locator:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap> ,internal_id:impl::core::convert::Into< ::unity2::Il2CppString> ,provider_id:impl::core::convert::Into< ::unity2::Il2CppString> ,dependency_key:impl::core::convert::Into<crate::system::object::Object> ,data:impl::core::convert::Into<crate::system::object::Object> ,dep_hash:impl::core::convert::Into<i32> ,primary_key:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db5180usize)as*mut u8,();
+(ContentCatalogData_CompactLocation)__receiver,(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap)::core::convert::Into::into(locator),(::unity2::Il2CppString)::core::convert::Into::into(internal_id),(::unity2::Il2CppString)::core::convert::Into::into(provider_id),(crate::system::object::Object)::core::convert::Into::into(dependency_key),(crate::system::object::Object)::core::convert::Into::into(data),(i32)::core::convert::Into::into(dep_hash),(::unity2::Il2CppString)::core::convert::Into::into(primary_key),(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]impl<__T:IContentCatalogData_CompactLocation>IContentCatalogData_CompactLocationMethods for __T{}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]impl ContentCatalogData_CompactLocation{pub fn get_internal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_provider_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_has_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_dependency_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_primary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_primary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_resource_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]impl ContentCatalogData_CompactLocation{#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` — overload selector"]pub fn new(locator:crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,internal_id: ::unity2::Il2CppString,provider_id: ::unity2::Il2CppString,dependency_key:crate::system::object::Object,data:crate::system::object::Object,dep_hash:i32,primary_key: ::unity2::Il2CppString,r#type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContentCatalogData_CompactLocation), ::core::stringify!(new),));
+ <Self as IContentCatalogData_CompactLocationMethods> ::ctor(this,locator,internal_id,provider_id,dependency_key,data,dep_hash,primary_key,r#type);
+this}
+}
 
 #[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]impl ContentCatalogData{#[doc="`ExpandInternalId(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]pub fn expand_internal_id(internal_id_prefixes:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,v:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db50b0usize)as*mut u8, ::unity2::Il2CppString;
 (::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(internal_id_prefixes),(::unity2::Il2CppString)::core::convert::Into::into(v))}
@@ -121,89 +194,16 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]pub trait IContentCatalogData_CompactLocationMethods:IContentCatalogData_CompactLocation{#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbedc0usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbedd0usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbede0usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`get_HasDependencies()` overload"]fn get_has_dependencies(self,)->bool{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeeb0usize)as*mut u8,bool;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`get_DependencyHashCode()` overload"]fn get_dependency_hash_code(self,)->i32{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeec0usize)as*mut u8,i32;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeed0usize)as*mut u8,crate::system::object::Object;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`get_PrimaryKey()` overload"]fn get_primary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeee0usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`set_PrimaryKey(::unity2::Il2CppString)` overload"]fn set_primary_key(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeef0usize)as*mut u8,();
-(ContentCatalogData_CompactLocation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef00usize)as*mut u8, ::unity2::SystemType;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef10usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
-}
-#[doc="`Hash(::unity2::SystemType)` overload"]fn hash(self,t:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef20usize)as*mut u8,i32;
-(ContentCatalogData_CompactLocation)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
-}
-#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn ctor(self,locator:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap> ,internal_id:impl::core::convert::Into< ::unity2::Il2CppString> ,provider_id:impl::core::convert::Into< ::unity2::Il2CppString> ,dependency_key:impl::core::convert::Into<crate::system::object::Object> ,data:impl::core::convert::Into<crate::system::object::Object> ,dep_hash:impl::core::convert::Into<i32> ,primary_key:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db5180usize)as*mut u8,();
-(ContentCatalogData_CompactLocation)__receiver,(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap)::core::convert::Into::into(locator),(::unity2::Il2CppString)::core::convert::Into::into(internal_id),(::unity2::Il2CppString)::core::convert::Into::into(provider_id),(crate::system::object::Object)::core::convert::Into::into(dependency_key),(crate::system::object::Object)::core::convert::Into::into(data),(i32)::core::convert::Into::into(dep_hash),(::unity2::Il2CppString)::core::convert::Into::into(primary_key),(::unity2::SystemType)::core::convert::Into::into(r#type))}
-}
-}
-
-#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]impl<__T:IContentCatalogData_CompactLocation>IContentCatalogData_CompactLocationMethods for __T{}
-
-#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]impl ContentCatalogData_CompactLocation{pub fn get_internal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_provider_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_has_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_dependency_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_primary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_primary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_resource_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-}
-
-#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]impl ContentCatalogData_CompactLocation{#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` — overload selector"]pub fn new(locator:crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap,internal_id: ::unity2::Il2CppString,provider_id: ::unity2::Il2CppString,dependency_key:crate::system::object::Object,data:crate::system::object::Object,dep_hash:i32,primary_key: ::unity2::Il2CppString,r#type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ContentCatalogData_CompactLocation), ::core::stringify!(new),));
- <Self as IContentCatalogData_CompactLocationMethods> ::ctor(this,locator,internal_id,provider_id,dependency_key,data,dep_hash,primary_key,r#type);
-this}
-}
-
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ContentCatalogData_Bucket;
-    pub use super::ContentCatalogData;
-    pub use super::IContentCatalogData;
-    pub use super::IContentCatalogDataMethods;
     pub use super::ContentCatalogData_CompactLocation;
     pub use super::IContentCatalogData_CompactLocation;
     pub use super::IContentCatalogData_CompactLocationMethods;
+    pub use super::ContentCatalogData;
+    pub use super::IContentCatalogData;
+    pub use super::IContentCatalogDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

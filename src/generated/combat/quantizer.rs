@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/quantizer/Quantizer.md"))]#[::unity2::class(namespace="Combat",name="Quantizer")]#[parent(crate::system::object::Object)]pub struct Quantizer{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/quantizer/Quantizer_MajorAxis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Quantizer_MajorAxis{pub value:i32,}
 impl::unity2::ClassIdentity for Quantizer_MajorAxis{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="Quantizer.MajorAxis";
@@ -31,9 +34,6 @@ pub fn z()->Self{Self{value:2}
 pub fn mask()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/quantizer/Quantizer.md"))]#[::unity2::class(namespace="Combat",name="Quantizer")]#[parent(crate::system::object::Object)]pub struct Quantizer{}
 
 }
 
@@ -59,9 +59,9 @@ pub fn ito_fxz_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 #[cfg(feature = "combat-quantizer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Quantizer_MajorAxis;
     pub use super::Quantizer;
     pub use super::IQuantizer;
+    pub use super::Quantizer_MajorAxis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

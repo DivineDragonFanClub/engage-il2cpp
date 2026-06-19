@@ -19,10 +19,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_2.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitSelectMenu_2{#[static_field]#[rename(name="s_SelectUnitList")]pub s_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[static_field]#[rename(name="s_Content")]pub s_content:crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2, #[static_field]#[rename(name="s_SelectIndex")]pub s_select_index:i32, #[static_field]#[rename(name="s_ScrollIndex")]pub s_scroll_index:i32, #[static_field]#[rename(name="s_IsFirstSelect")]pub s_is_first_select:bool, #[offset(200)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu.UnitSelectMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_2.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitSelectMenu_2{#[static_field]#[rename(name="s_SelectUnitList")]pub s_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[static_field]#[rename(name="s_Content")]pub s_content:crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2, #[static_field]#[rename(name="s_SelectIndex")]pub s_select_index:i32, #[static_field]#[rename(name="s_ScrollIndex")]pub s_scroll_index:i32, #[static_field]#[rename(name="s_IsFirstSelect")]pub s_is_first_select:bool, #[offset(200)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu.UnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectMenu_UnitSelectMenuItem{#[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_IsDecided")]pub m_is_decided:bool, #[offset(120)]#[rename(name="m_SelectEventHander")]pub m_select_event_hander:crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler,}
@@ -31,6 +31,29 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-cooking_menu-unitselectmenu_2-types")]
 pub use __types::*;
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]pub trait IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5a50usize)as*mut u8,();
+(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5a70usize)as*mut u8,();
+(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl<__T:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler>IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_2{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_unit_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,all_content:impl::core::convert::Into<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent> ,close_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5e5e0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(select_unit_list),(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent)::core::convert::Into::into(all_content),(crate::system::action::Action)::core::convert::Into::into(close_callback))}
@@ -113,29 +136,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]pub trait IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5a50usize)as*mut u8,();
-(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5a70usize)as*mut u8,();
-(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl<__T:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler>IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature="app-cooking_menu-unitselectmenu_2")]pub trait IUnitSelectMenu_UnitSelectMenuItemMethods:IUnitSelectMenu_UnitSelectMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,select_event_handler:impl::core::convert::Into<crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b55b60usize)as*mut u8,();
 (UnitSelectMenu_UnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
@@ -187,12 +187,12 @@ this}
 #[cfg(feature = "app-cooking_menu-unitselectmenu_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitSelectMenu_2;
-    pub use super::IUnitSelectMenu_2;
-    pub use super::IUnitSelectMenu_2Methods;
     pub use super::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler;
     pub use super::IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler;
     pub use super::IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods;
+    pub use super::UnitSelectMenu_2;
+    pub use super::IUnitSelectMenu_2;
+    pub use super::IUnitSelectMenu_2Methods;
     pub use super::UnitSelectMenu_UnitSelectMenuItem;
     pub use super::IUnitSelectMenu_UnitSelectMenuItem;
     pub use super::IUnitSelectMenu_UnitSelectMenuItemMethods;

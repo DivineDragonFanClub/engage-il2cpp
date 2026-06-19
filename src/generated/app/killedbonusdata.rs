@@ -47,6 +47,12 @@ pub fn god_exp()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]#[::unity2::class(namespace="App",name="KilledBonusData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::killedbonusdata::KilledBonusData_Flags>)]pub struct KilledBonusData_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData.md"))]#[::unity2::class(namespace="App",name="KilledBonusData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::killedbonusdata::KilledBonusData>)]pub struct KilledBonusData{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KilledBonusData_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for KilledBonusData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="KilledBonusData.Flags";
@@ -59,12 +65,6 @@ impl::unity2::IlType for KilledBonusData_Flags{fn il_type()-> &'static::unity2::
 impl KilledBonusData_Flags{pub fn god()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]#[::unity2::class(namespace="App",name="KilledBonusData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::killedbonusdata::KilledBonusData_Flags>)]pub struct KilledBonusData_FlagField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData.md"))]#[::unity2::class(namespace="App",name="KilledBonusData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::killedbonusdata::KilledBonusData>)]pub struct KilledBonusData{}
 
 }
 
@@ -187,13 +187,13 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::KilledBonusData_Kinds;
-    pub use super::KilledBonusData_Flags;
     pub use super::KilledBonusData_FlagField;
     pub use super::IKilledBonusData_FlagField;
     pub use super::IKilledBonusData_FlagFieldMethods;
     pub use super::KilledBonusData;
     pub use super::IKilledBonusData;
     pub use super::IKilledBonusDataMethods;
+    pub use super::KilledBonusData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

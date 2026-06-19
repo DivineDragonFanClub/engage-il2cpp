@@ -15,16 +15,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map.md"))]#[::unity2::class(namespace="App",name="Map")]#[parent(crate::system::object::Object)]pub struct Map{#[static_field]#[rename(name="Layer_CameraTransparent")]pub layer_camera_transparent:i32, #[static_field]#[rename(name="LOD_COUNT")]pub lod_count:i32, #[static_field]#[rename(name="CELL_SIZE")]pub cell_size:f32, #[static_field]#[rename(name="CELL_INV")]pub cell_inv:f32, #[static_field]#[rename(name="CELL_HALF")]pub cell_half:f32, #[static_field]#[rename(name="CELL_QUATER")]pub cell_quater:f32, #[static_field]#[rename(name="CELL_OCTER")]pub cell_octer:f32, #[static_field]#[rename(name="CELL_OFFSET")]pub cell_offset:f32, #[static_field]#[rename(name="CELL_SLOPE")]pub cell_slope:f32, #[static_field]#[rename(name="CELL_SIZE3")]pub cell_size3:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="RAY_RADUIS")]pub ray_raduis:f32, #[static_field]#[rename(name="RAY_OFFSET")]pub ray_offset:f32, #[static_field]#[rename(name="RAY_OFFSETS")]pub ray_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="CELL_OFFSETS")]pub cell_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="OFFSET_RATIO")]pub offset_ratio:f32, #[static_field]#[rename(name="s_EventList")]pub s_event_list:crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject> , #[static_field]#[rename(name="s_EventHits")]pub s_event_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> , #[static_field]#[rename(name="AttributeSeparator")]pub attribute_separator: ::unity2::Array<u16> , #[static_field]#[rename(name="RenderLayerMask")]pub render_layer_mask:i32, #[static_field]#[rename(name="ColliderLayerMask")]pub collider_layer_mask:i32, #[static_field]#[rename(name="AttributeLayerMask")]pub attribute_layer_mask:i32, #[static_field]#[rename(name="RAY_HEIGHT_EVENT")]pub ray_height_event:f32, #[static_field]#[rename(name="RAY_HEIGHT_GROUND")]pub ray_height_ground:f32, #[static_field]#[rename(name="RAY_DISTANCE_GROUND")]pub ray_distance_ground:f32, #[static_field]#[rename(name="s_UpdateBinder")]pub s_update_binder:crate::app::bindholder::BindHolder,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map_CellVertex.md"))]#[::unity2::class(namespace="App",name="Map.CellVertex")]#[parent(crate::system::object::Object)]pub struct Map_CellVertex{#[offset(16)]#[rename(name="m_Position")]pub m_position: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map_CellMesh.md"))]#[::unity2::class(namespace="App",name="Map.CellMesh")]#[parent(crate::app::dynamicmesh::DynamicMesh)]pub struct Map_CellMesh{#[offset(104)]#[rename(name="m_CellVertex")]pub m_cell_vertex:crate::app::map::Map_CellVertex,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map_FillList.md"))]#[::unity2::class(namespace="App",name="Map.FillList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::map::Map_Pos>)]pub struct Map_FillList{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map_CellVertex.md"))]#[::unity2::class(namespace="App",name="Map.CellVertex")]#[parent(crate::system::object::Object)]pub struct Map_CellVertex{#[offset(16)]#[rename(name="m_Position")]pub m_position: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map_Pos.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Map_Pos{pub x:i32,pub z:i32,}
@@ -37,10 +31,160 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for Map_Pos{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map_FillList.md"))]#[::unity2::class(namespace="App",name="Map.FillList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::map::Map_Pos>)]pub struct Map_FillList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/map/Map.md"))]#[::unity2::class(namespace="App",name="Map")]#[parent(crate::system::object::Object)]pub struct Map{#[static_field]#[rename(name="Layer_CameraTransparent")]pub layer_camera_transparent:i32, #[static_field]#[rename(name="LOD_COUNT")]pub lod_count:i32, #[static_field]#[rename(name="CELL_SIZE")]pub cell_size:f32, #[static_field]#[rename(name="CELL_INV")]pub cell_inv:f32, #[static_field]#[rename(name="CELL_HALF")]pub cell_half:f32, #[static_field]#[rename(name="CELL_QUATER")]pub cell_quater:f32, #[static_field]#[rename(name="CELL_OCTER")]pub cell_octer:f32, #[static_field]#[rename(name="CELL_OFFSET")]pub cell_offset:f32, #[static_field]#[rename(name="CELL_SLOPE")]pub cell_slope:f32, #[static_field]#[rename(name="CELL_SIZE3")]pub cell_size3:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="RAY_RADUIS")]pub ray_raduis:f32, #[static_field]#[rename(name="RAY_OFFSET")]pub ray_offset:f32, #[static_field]#[rename(name="RAY_OFFSETS")]pub ray_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="CELL_OFFSETS")]pub cell_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="OFFSET_RATIO")]pub offset_ratio:f32, #[static_field]#[rename(name="s_EventList")]pub s_event_list:crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject> , #[static_field]#[rename(name="s_EventHits")]pub s_event_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> , #[static_field]#[rename(name="AttributeSeparator")]pub attribute_separator: ::unity2::Array<u16> , #[static_field]#[rename(name="RenderLayerMask")]pub render_layer_mask:i32, #[static_field]#[rename(name="ColliderLayerMask")]pub collider_layer_mask:i32, #[static_field]#[rename(name="AttributeLayerMask")]pub attribute_layer_mask:i32, #[static_field]#[rename(name="RAY_HEIGHT_EVENT")]pub ray_height_event:f32, #[static_field]#[rename(name="RAY_HEIGHT_GROUND")]pub ray_height_ground:f32, #[static_field]#[rename(name="RAY_DISTANCE_GROUND")]pub ray_distance_ground:f32, #[static_field]#[rename(name="s_UpdateBinder")]pub s_update_binder:crate::app::bindholder::BindHolder,}
+
 }
 
 #[cfg(feature = "app-map-types")]
 pub use __types::*;
+
+#[cfg(feature="app-map")]pub trait IMap_CellMeshMethods:IMap_CellMesh{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]fn ctor(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,sub_mesh_count:impl::core::convert::Into<i32> ,vertex_capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad210usize)as*mut u8,();
+(Map_CellMesh)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(sub_mesh_count),(i32)::core::convert::Into::into(vertex_capacity))}
+}
+#[doc="`AddTangents5(*mutcrate::unity_engine::vector4::Vector4)` overload"]fn add_tangents5(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector4::Vector4> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad3a0usize)as*mut u8,();
+(Map_CellMesh)__receiver,(*mut crate::unity_engine::vector4::Vector4)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, f32)` overload"]fn add_cell(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad500usize)as*mut u8,();
+(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, i32, f32)` overload"]fn add_cell_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,rotation:impl::core::convert::Into<i32> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24adb70usize)as*mut u8,();
+(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(i32)::core::convert::Into::into(rotation),(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`AddCell(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn add_cell_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ae330usize)as*mut u8,();
+(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]fn add_cell_4(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color0:impl::core::convert::Into<crate::unity_engine::color::Color> ,color1:impl::core::convert::Into<crate::unity_engine::color::Color> ,color2:impl::core::convert::Into<crate::unity_engine::color::Color> ,color3:impl::core::convert::Into<crate::unity_engine::color::Color> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ae9a0usize)as*mut u8,();
+(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color0),(crate::unity_engine::color::Color)::core::convert::Into::into(color1),(crate::unity_engine::color::Color)::core::convert::Into::into(color2),(crate::unity_engine::color::Color)::core::convert::Into::into(color3),(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn add_cell_5(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color0:impl::core::convert::Into<crate::unity_engine::color::Color> ,color1:impl::core::convert::Into<crate::unity_engine::color::Color> ,color2:impl::core::convert::Into<crate::unity_engine::color::Color> ,color3:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24af0d0usize)as*mut u8,();
+(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color0),(crate::unity_engine::color::Color)::core::convert::Into::into(color1),(crate::unity_engine::color::Color)::core::convert::Into::into(color2),(crate::unity_engine::color::Color)::core::convert::Into::into(color3),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`AddCell(i32, i32, crate::app::dir_2::Dir_Type, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn add_cell_6(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24af920usize)as*mut u8,();
+(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(f32)::core::convert::Into::into(distance))}
+}
+#[doc="`AddStraddleCell(crate::app::unit::Unit, crate::unity_engine::color::Color, f32)` overload"]fn add_straddle_cell(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv_rotate:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b1260usize)as*mut u8,();
+(Map_CellMesh)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(uv_rotate))}
+}
+#[doc="`AddEventCell(i32, i32, crate::unity_engine::color::Color)` overload"]fn add_event_cell(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3160usize)as*mut u8,();
+(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+}
+
+#[cfg(feature="app-map")]impl<__T:IMap_CellMesh>IMap_CellMeshMethods for __T{}
+
+#[cfg(feature="app-map")]impl Map_CellMesh{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_tangents5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_cell_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_cell_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_cell_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_cell_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_cell_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_straddle_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_event_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-map")]impl Map_CellMesh{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]pub fn new(go:crate::unity_engine::gameobject::GameObject,sub_mesh_count:i32,vertex_capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Map_CellMesh), ::core::stringify!(new),));
+ <Self as IMap_CellMeshMethods> ::ctor(this,go,sub_mesh_count,vertex_capacity);
+this}
+}
+
+#[cfg(feature="app-map")]pub trait IMap_CellVertexMethods:IMap_CellVertex{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b38a0usize)as*mut u8,();
+(Map_CellVertex)__receiver)}
+}
+#[doc="`Calc(i32, i32)` overload"]fn calc(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3930usize)as*mut u8,();
+(Map_CellVertex)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3bb0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Map_CellVertex)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`set_Item(i32, crate::unity_engine::vector3::Vector3)` overload"]fn set_item(self,i:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3bf0usize)as*mut u8,();
+(Map_CellVertex)__receiver,(i32)::core::convert::Into::into(i),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_MinHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3c40usize)as*mut u8,f32;
+(Map_CellVertex)__receiver)}
+}
+#[doc="`get_MaxHeight()` overload"]fn get_max_height(self,)->f32{unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3cd0usize)as*mut u8,f32;
+(Map_CellVertex)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad330usize)as*mut u8,();
+(Map_CellVertex)__receiver)}
+}
+}
+
+#[cfg(feature="app-map")]impl<__T:IMap_CellVertex>IMap_CellVertexMethods for __T{}
+
+#[cfg(feature="app-map")]impl Map_CellVertex{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_max_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-map")]impl Map_CellVertex{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Map_CellVertex), ::core::stringify!(new),));
+ <Self as IMap_CellVertexMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-map")]impl Map_Pos{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b3fc0usize)as*mut u8,();
+(*mut Map_Pos)self as*mut Map_Pos,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
+
+#[cfg(feature="app-map")]impl Map_Pos{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-map")]pub trait IMap_FillListMethods:IMap_FillList{#[doc="`FillTerrain(i32, i32, i32, i32)` overload"]fn fill_terrain(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,before:impl::core::convert::Into<i32> ,after:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Map_FillList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3d60usize)as*mut u8,();
+(Map_FillList)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(before),(i32)::core::convert::Into::into(after))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Map_FillList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3fd0usize)as*mut u8,();
+(Map_FillList)__receiver)}
+}
+}
+
+#[cfg(feature="app-map")]impl<__T:IMap_FillList>IMap_FillListMethods for __T{}
+
+#[cfg(feature="app-map")]impl Map_FillList{pub fn fill_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-map")]impl Map_FillList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Map_FillList), ::core::stringify!(new),));
+ <Self as IMap_FillListMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-map")]impl Map{#[doc="`get_GridAlpha()` overload"]pub fn get_grid_alpha()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ee3a90usize)as*mut u8,f32;
 )}
@@ -507,166 +651,22 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-map")]pub trait IMap_CellVertexMethods:IMap_CellVertex{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b38a0usize)as*mut u8,();
-(Map_CellVertex)__receiver)}
-}
-#[doc="`Calc(i32, i32)` overload"]fn calc(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3930usize)as*mut u8,();
-(Map_CellVertex)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3bb0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(Map_CellVertex)__receiver,(i32)::core::convert::Into::into(i))}
-}
-#[doc="`set_Item(i32, crate::unity_engine::vector3::Vector3)` overload"]fn set_item(self,i:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3bf0usize)as*mut u8,();
-(Map_CellVertex)__receiver,(i32)::core::convert::Into::into(i),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`get_MinHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3c40usize)as*mut u8,f32;
-(Map_CellVertex)__receiver)}
-}
-#[doc="`get_MaxHeight()` overload"]fn get_max_height(self,)->f32{unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3cd0usize)as*mut u8,f32;
-(Map_CellVertex)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Map_CellVertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad330usize)as*mut u8,();
-(Map_CellVertex)__receiver)}
-}
-}
-
-#[cfg(feature="app-map")]impl<__T:IMap_CellVertex>IMap_CellVertexMethods for __T{}
-
-#[cfg(feature="app-map")]impl Map_CellVertex{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_max_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-map")]impl Map_CellVertex{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Map_CellVertex), ::core::stringify!(new),));
- <Self as IMap_CellVertexMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-map")]pub trait IMap_CellMeshMethods:IMap_CellMesh{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]fn ctor(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,sub_mesh_count:impl::core::convert::Into<i32> ,vertex_capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad210usize)as*mut u8,();
-(Map_CellMesh)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(sub_mesh_count),(i32)::core::convert::Into::into(vertex_capacity))}
-}
-#[doc="`AddTangents5(*mutcrate::unity_engine::vector4::Vector4)` overload"]fn add_tangents5(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector4::Vector4> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad3a0usize)as*mut u8,();
-(Map_CellMesh)__receiver,(*mut crate::unity_engine::vector4::Vector4)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, f32)` overload"]fn add_cell(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad500usize)as*mut u8,();
-(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(distance))}
-}
-#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, i32, f32)` overload"]fn add_cell_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,rotation:impl::core::convert::Into<i32> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24adb70usize)as*mut u8,();
-(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(i32)::core::convert::Into::into(rotation),(f32)::core::convert::Into::into(distance))}
-}
-#[doc="`AddCell(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn add_cell_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ae330usize)as*mut u8,();
-(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(f32)::core::convert::Into::into(distance))}
-}
-#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]fn add_cell_4(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color0:impl::core::convert::Into<crate::unity_engine::color::Color> ,color1:impl::core::convert::Into<crate::unity_engine::color::Color> ,color2:impl::core::convert::Into<crate::unity_engine::color::Color> ,color3:impl::core::convert::Into<crate::unity_engine::color::Color> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ae9a0usize)as*mut u8,();
-(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color0),(crate::unity_engine::color::Color)::core::convert::Into::into(color1),(crate::unity_engine::color::Color)::core::convert::Into::into(color2),(crate::unity_engine::color::Color)::core::convert::Into::into(color3),(f32)::core::convert::Into::into(distance))}
-}
-#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn add_cell_5(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color0:impl::core::convert::Into<crate::unity_engine::color::Color> ,color1:impl::core::convert::Into<crate::unity_engine::color::Color> ,color2:impl::core::convert::Into<crate::unity_engine::color::Color> ,color3:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24af0d0usize)as*mut u8,();
-(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color0),(crate::unity_engine::color::Color)::core::convert::Into::into(color1),(crate::unity_engine::color::Color)::core::convert::Into::into(color2),(crate::unity_engine::color::Color)::core::convert::Into::into(color3),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(f32)::core::convert::Into::into(distance))}
-}
-#[doc="`AddCell(i32, i32, crate::app::dir_2::Dir_Type, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn add_cell_6(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,distance:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24af920usize)as*mut u8,();
-(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv2),(f32)::core::convert::Into::into(distance))}
-}
-#[doc="`AddStraddleCell(crate::app::unit::Unit, crate::unity_engine::color::Color, f32)` overload"]fn add_straddle_cell(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv_rotate:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b1260usize)as*mut u8,();
-(Map_CellMesh)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(uv_rotate))}
-}
-#[doc="`AddEventCell(i32, i32, crate::unity_engine::color::Color)` overload"]fn add_event_cell(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <Map_CellMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3160usize)as*mut u8,();
-(Map_CellMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
-}
-}
-
-#[cfg(feature="app-map")]impl<__T:IMap_CellMesh>IMap_CellMeshMethods for __T{}
-
-#[cfg(feature="app-map")]impl Map_CellMesh{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_tangents5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn add_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn add_cell_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn add_cell_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn add_cell_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn add_cell_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn add_cell_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn add_straddle_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn add_event_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-map")]impl Map_CellMesh{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]pub fn new(go:crate::unity_engine::gameobject::GameObject,sub_mesh_count:i32,vertex_capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Map_CellMesh), ::core::stringify!(new),));
- <Self as IMap_CellMeshMethods> ::ctor(this,go,sub_mesh_count,vertex_capacity);
-this}
-}
-
-#[cfg(feature="app-map")]pub trait IMap_FillListMethods:IMap_FillList{#[doc="`FillTerrain(i32, i32, i32, i32)` overload"]fn fill_terrain(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,before:impl::core::convert::Into<i32> ,after:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Map_FillList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3d60usize)as*mut u8,();
-(Map_FillList)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(before),(i32)::core::convert::Into::into(after))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Map_FillList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24b3fd0usize)as*mut u8,();
-(Map_FillList)__receiver)}
-}
-}
-
-#[cfg(feature="app-map")]impl<__T:IMap_FillList>IMap_FillListMethods for __T{}
-
-#[cfg(feature="app-map")]impl Map_FillList{pub fn fill_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-map")]impl Map_FillList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Map_FillList), ::core::stringify!(new),));
- <Self as IMap_FillListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-map")]impl Map_Pos{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b3fc0usize)as*mut u8,();
-(*mut Map_Pos)self as*mut Map_Pos,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-}
-
-#[cfg(feature="app-map")]impl Map_Pos{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature = "app-map")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Map;
-    pub use super::IMap;
-    pub use super::IMapMethods;
-    pub use super::Map_CellVertex;
-    pub use super::IMap_CellVertex;
-    pub use super::IMap_CellVertexMethods;
     pub use super::Map_CellMesh;
     pub use super::IMap_CellMesh;
     pub use super::IMap_CellMeshMethods;
+    pub use super::Map_CellVertex;
+    pub use super::IMap_CellVertex;
+    pub use super::IMap_CellVertexMethods;
+    pub use super::Map_Pos;
     pub use super::Map_FillList;
     pub use super::IMap_FillList;
     pub use super::IMap_FillListMethods;
-    pub use super::Map_Pos;
+    pub use super::Map;
+    pub use super::IMap;
+    pub use super::IMapMethods;
     pub use crate::app::dynamicmesh::IDynamicMesh;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;

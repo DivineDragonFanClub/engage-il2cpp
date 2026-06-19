@@ -17,40 +17,39 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitselectmenu/GodUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="GodUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GodUnitSelectMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitselectmenu/GodUnitSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="GodUnitSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GodUnitSelectMenu_SelectEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitselectmenu/GodUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="GodUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GodUnitSelectMenu_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitselectmenu/GodUnitSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="GodUnitSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GodUnitSelectMenu_SelectEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitselectmenu/GodUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="GodUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GodUnitSelectMenu{}
 
 }
 
 #[cfg(feature = "app-godunitselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,list_root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,select_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233d8f0usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(list_root_object),(crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god))}
+#[cfg(feature="app-godunitselectmenu")]pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:IGodUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GodUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdaf20usize)as*mut u8,();
+(GodUnitSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,optional_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <GodUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdaf40usize)as*mut u8,();
+(GodUnitSelectMenu_SelectEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(optional_type))}
 }
 }
 
-#[cfg(feature="app-godunitselectmenu")]pub trait IGodUnitSelectMenuMethods:IGodUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::godunitselectmenucontent::GodUnitSelectMenuContent> ,menu_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GodUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2347550usize)as*mut u8,();
-(GodUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)::core::convert::Into::into(menu_content),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_object))}
-}
-}
+#[cfg(feature="app-godunitselectmenu")]impl<__T:IGodUnitSelectMenu_SelectEventHandler>IGodUnitSelectMenu_SelectEventHandlerMethods for __T{}
 
-#[cfg(feature="app-godunitselectmenu")]impl<__T:IGodUnitSelectMenu>IGodUnitSelectMenuMethods for __T{}
-
-#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,menu_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GodUnitSelectMenu), ::core::stringify!(new),));
- <Self as IGodUnitSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,menu_object);
+ failed to instantiate", ::core::stringify!(GodUnitSelectMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IGodUnitSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -77,41 +76,42 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-godunitselectmenu")]pub trait IGodUnitSelectMenu_SelectEventHandlerMethods:IGodUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GodUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdaf20usize)as*mut u8,();
-(GodUnitSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,optional_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <GodUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdaf40usize)as*mut u8,();
-(GodUnitSelectMenu_SelectEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(optional_type))}
+#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,list_root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,select_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233d8f0usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(list_root_object),(crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god))}
 }
 }
 
-#[cfg(feature="app-godunitselectmenu")]impl<__T:IGodUnitSelectMenu_SelectEventHandler>IGodUnitSelectMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-godunitselectmenu")]pub trait IGodUnitSelectMenuMethods:IGodUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::godunitselectmenucontent::GodUnitSelectMenuContent> ,menu_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GodUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347550usize)as*mut u8,();
+(GodUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)::core::convert::Into::into(menu_content),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_object))}
+}
 }
 
-#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-godunitselectmenu")]impl<__T:IGodUnitSelectMenu>IGodUnitSelectMenuMethods for __T{}
+
+#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-godunitselectmenu")]impl GodUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,menu_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GodUnitSelectMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IGodUnitSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(GodUnitSelectMenu), ::core::stringify!(new),));
+ <Self as IGodUnitSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,menu_object);
 this}
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodUnitSelectMenu;
-    pub use super::IGodUnitSelectMenu;
-    pub use super::IGodUnitSelectMenuMethods;
-    pub use super::GodUnitSelectMenu_DecideEventHandler;
-    pub use super::IGodUnitSelectMenu_DecideEventHandler;
-    pub use super::IGodUnitSelectMenu_DecideEventHandlerMethods;
     pub use super::GodUnitSelectMenu_SelectEventHandler;
     pub use super::IGodUnitSelectMenu_SelectEventHandler;
     pub use super::IGodUnitSelectMenu_SelectEventHandlerMethods;
+    pub use super::GodUnitSelectMenu_DecideEventHandler;
+    pub use super::IGodUnitSelectMenu_DecideEventHandler;
+    pub use super::IGodUnitSelectMenu_DecideEventHandlerMethods;
+    pub use super::GodUnitSelectMenu;
+    pub use super::IGodUnitSelectMenu;
+    pub use super::IGodUnitSelectMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

@@ -15,33 +15,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemessage/GameMessage_Status.md"))]#[::unity2::class(namespace="App",name="GameMessage.Status")]#[parent(crate::app::bitfield32::BitField32)]pub struct GameMessage_Status{#[static_field]#[rename(name="SkipDisable")]pub skip_disable:i32, #[static_field]#[rename(name="KeyWait")]pub key_wait:i32, #[static_field]#[rename(name="SystemWait")]pub system_wait:i32, #[static_field]#[rename(name="SystemWaitEnd")]pub system_wait_end:i32, #[static_field]#[rename(name="Warning")]pub warning:i32, #[static_field]#[rename(name="FatalError")]pub fatal_error:i32, #[static_field]#[rename(name="WindowOpened")]pub window_opened:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemessage/GameMessage.md"))]#[::unity2::class(namespace="App",name="GameMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct GameMessage{#[offset(112)]#[rename(name="m_content")]pub m_content:crate::app::gamemessagecontent::GameMessageContent, #[offset(120)]#[rename(name="m_status")]pub m_status:crate::app::gamemessage::GameMessage_Status, #[offset(128)]#[rename(name="m_mess")]pub m_mess: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_expandedMess")]pub m_expanded_mess: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_tickCount")]pub m_tick_count:i32, #[offset(148)]#[rename(name="m_endFrame")]pub m_end_frame:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemessage/GameMessage_Status.md"))]#[::unity2::class(namespace="App",name="GameMessage.Status")]#[parent(crate::app::bitfield32::BitField32)]pub struct GameMessage_Status{#[static_field]#[rename(name="SkipDisable")]pub skip_disable:i32, #[static_field]#[rename(name="KeyWait")]pub key_wait:i32, #[static_field]#[rename(name="SystemWait")]pub system_wait:i32, #[static_field]#[rename(name="SystemWaitEnd")]pub system_wait_end:i32, #[static_field]#[rename(name="Warning")]pub warning:i32, #[static_field]#[rename(name="FatalError")]pub fatal_error:i32, #[static_field]#[rename(name="WindowOpened")]pub window_opened:i32,}
 
 }
 
 #[cfg(feature = "app-gamemessage-types")]
 pub use __types::*;
-
-#[cfg(feature="app-gamemessage")]pub trait IGameMessage_StatusMethods:IGameMessage_Status{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameMessage_Status as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66570usize)as*mut u8,();
-(GameMessage_Status)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamemessage")]impl<__T:IGameMessage_Status>IGameMessage_StatusMethods for __T{}
-
-#[cfg(feature="app-gamemessage")]impl GameMessage_Status{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-gamemessage")]impl GameMessage_Status{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameMessage_Status), ::core::stringify!(new),));
- <Self as IGameMessage_StatusMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-gamemessage")]impl GameMessage{#[doc="`CreateCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString, bool, i32)` overload"]pub fn create_common(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mess:impl::core::convert::Into< ::unity2::Il2CppString> ,is_bind:impl::core::convert::Into<bool> ,status:impl::core::convert::Into<i32>)->crate::app::gamemessage::GameMessage{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x227ebd0usize)as*mut u8,crate::app::gamemessage::GameMessage;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mess),(bool)::core::convert::Into::into(is_bind),(i32)::core::convert::Into::into(status))}
@@ -181,15 +163,33 @@ pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
+#[cfg(feature="app-gamemessage")]pub trait IGameMessage_StatusMethods:IGameMessage_Status{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameMessage_Status as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66570usize)as*mut u8,();
+(GameMessage_Status)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamemessage")]impl<__T:IGameMessage_Status>IGameMessage_StatusMethods for __T{}
+
+#[cfg(feature="app-gamemessage")]impl GameMessage_Status{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-gamemessage")]impl GameMessage_Status{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameMessage_Status), ::core::stringify!(new),));
+ <Self as IGameMessage_StatusMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-gamemessage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameMessage_Status;
-    pub use super::IGameMessage_Status;
-    pub use super::IGameMessage_StatusMethods;
     pub use super::GameMessage;
     pub use super::IGameMessage;
     pub use super::IGameMessageMethods;
+    pub use super::GameMessage_Status;
+    pub use super::IGameMessage_Status;
+    pub use super::IGameMessage_StatusMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::procinst::IProcInst;

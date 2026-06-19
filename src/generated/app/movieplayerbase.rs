@@ -12,10 +12,10 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/movieplayerbase/MoviePlayerBase_TitleLogo.md"))]#[::unity2::class(namespace="App",name="MoviePlayerBase.TitleLogo")]#[parent(crate::system::object::Object)]pub struct MoviePlayerBase_TitleLogo{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_Time")]pub m_time:f32, #[offset(36)]#[rename(name="m_Duration")]pub m_duration:f32, #[offset(40)]#[rename(name="m_TextureResourceHandle")]pub m_texture_resource_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::sprite::Sprite> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/movieplayerbase/MoviePlayerBase_KeyHelp.md"))]#[::unity2::class(namespace="App",name="MoviePlayerBase.KeyHelp")]#[parent(crate::system::object::Object)]pub struct MoviePlayerBase_KeyHelp{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_KeyHelpController")]pub m_key_help_controller:crate::app::keyhelpcontroller::KeyHelpController, #[offset(32)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(36)]#[rename(name="m_DispTimer")]pub m_disp_timer:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/movieplayerbase/MoviePlayerBase.md"))]#[::unity2::class(namespace="App",name="MoviePlayerBase")]#[parent(crate::system::object::Object)]pub struct MoviePlayerBase{#[static_field]#[rename(name="UseFileExtName")]pub use_file_ext_name: ::unity2::Il2CppString, #[static_field]#[rename(name="UseSceneName")]pub use_scene_name: ::unity2::Il2CppString, #[static_field]#[rename(name="HeroFemalePostfix")]pub hero_female_postfix: ::unity2::Il2CppString, #[offset(16)]#[rename(name="m_ScreenObject")]pub m_screen_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_CanvasObject")]pub m_canvas_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Caption")]pub m_caption:crate::app::movieplayerbase::MoviePlayerBase_Caption, #[offset(40)]#[rename(name="m_TitleLogo")]pub m_title_logo:crate::app::movieplayerbase::MoviePlayerBase_TitleLogo, #[offset(48)]#[rename(name="m_KeyHelp")]pub m_key_help:crate::app::movieplayerbase::MoviePlayerBase_KeyHelp, #[offset(56)]#[rename(name="m_IsMovieFileNameDirect")]pub m_is_movie_file_name_direct:bool, #[offset(64)]#[rename(name="m_BaseMovieFileName")]pub m_base_movie_file_name: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_MovieFileName")]pub m_movie_file_name: ::unity2::Il2CppString, #[offset(80)]#[rename(name="m_SoundBankName")]pub m_sound_bank_name: ::unity2::Il2CppString, #[offset(88)]#[rename(name="m_PrevPlayTime")]pub m_prev_play_time:f64, #[offset(96)]#[rename(name="m_IsErrorOccured")]pub m_is_error_occured:bool, #[offset(104)]#[rename(name="m_SoundEventOnStartViewer1")]pub m_sound_event_on_start_viewer1: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_SoundEventOnStartViewer2")]pub m_sound_event_on_start_viewer2: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_SoundEventOnStartViewer3")]pub m_sound_event_on_start_viewer3: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/movieplayerbase/MoviePlayerBase_KeyHelp.md"))]#[::unity2::class(namespace="App",name="MoviePlayerBase.KeyHelp")]#[parent(crate::system::object::Object)]pub struct MoviePlayerBase_KeyHelp{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_KeyHelpController")]pub m_key_help_controller:crate::app::keyhelpcontroller::KeyHelpController, #[offset(32)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(36)]#[rename(name="m_DispTimer")]pub m_disp_timer:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/movieplayerbase/MoviePlayerBase_Caption.md"))]#[::unity2::class(namespace="App",name="MoviePlayerBase.Caption")]#[parent(crate::system::object::Object)]pub struct MoviePlayerBase_Caption{#[offset(16)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_Time")]pub m_time:f32, #[offset(28)]#[rename(name="m_Duration")]pub m_duration:f32, #[offset(32)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(33)]#[rename(name="m_IsShowOld")]pub m_is_show_old:bool,}
@@ -70,39 +70,6 @@ pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(MoviePlayerBase_TitleLogo), ::core::stringify!(new),));
  <Self as IMoviePlayerBase_TitleLogoMethods> ::ctor(this,image,animator);
-this}
-}
-
-#[cfg(feature="app-movieplayerbase")]pub trait IMoviePlayerBase_KeyHelpMethods:IMoviePlayerBase_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2090a00usize)as*mut u8,();
-(MoviePlayerBase_KeyHelp)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2090a90usize)as*mut u8,();
-(MoviePlayerBase_KeyHelp)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2090b00usize)as*mut u8,();
-(MoviePlayerBase_KeyHelp)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2090b20usize)as*mut u8,();
-(MoviePlayerBase_KeyHelp)__receiver)}
-}
-}
-
-#[cfg(feature="app-movieplayerbase")]impl<__T:IMoviePlayerBase_KeyHelp>IMoviePlayerBase_KeyHelpMethods for __T{}
-
-#[cfg(feature="app-movieplayerbase")]impl MoviePlayerBase_KeyHelp{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-movieplayerbase")]impl MoviePlayerBase_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MoviePlayerBase_KeyHelp), ::core::stringify!(new),));
- <Self as IMoviePlayerBase_KeyHelpMethods> ::ctor(this,root_object);
 this}
 }
 
@@ -334,6 +301,39 @@ pub fn suspend_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-movieplayerbase")]pub trait IMoviePlayerBase_KeyHelpMethods:IMoviePlayerBase_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2090a00usize)as*mut u8,();
+(MoviePlayerBase_KeyHelp)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2090a90usize)as*mut u8,();
+(MoviePlayerBase_KeyHelp)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2090b00usize)as*mut u8,();
+(MoviePlayerBase_KeyHelp)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MoviePlayerBase_KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2090b20usize)as*mut u8,();
+(MoviePlayerBase_KeyHelp)__receiver)}
+}
+}
+
+#[cfg(feature="app-movieplayerbase")]impl<__T:IMoviePlayerBase_KeyHelp>IMoviePlayerBase_KeyHelpMethods for __T{}
+
+#[cfg(feature="app-movieplayerbase")]impl MoviePlayerBase_KeyHelp{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-movieplayerbase")]impl MoviePlayerBase_KeyHelp{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MoviePlayerBase_KeyHelp), ::core::stringify!(new),));
+ <Self as IMoviePlayerBase_KeyHelpMethods> ::ctor(this,root_object);
+this}
+}
+
 #[cfg(feature="app-movieplayerbase")]pub trait IMoviePlayerBase_CaptionMethods:IMoviePlayerBase_Caption{#[doc="`.ctor(crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]fn ctor(self,text:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>)->(){unsafe{let __receiver= <MoviePlayerBase_Caption as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20906b0usize)as*mut u8,();
 (MoviePlayerBase_Caption)__receiver,(crate::tm_pro::textmeshprougui::TextMeshProUGUI)::core::convert::Into::into(text))}
@@ -403,12 +403,12 @@ pub mod prelude {
     pub use super::MoviePlayerBase_TitleLogo;
     pub use super::IMoviePlayerBase_TitleLogo;
     pub use super::IMoviePlayerBase_TitleLogoMethods;
-    pub use super::MoviePlayerBase_KeyHelp;
-    pub use super::IMoviePlayerBase_KeyHelp;
-    pub use super::IMoviePlayerBase_KeyHelpMethods;
     pub use super::MoviePlayerBase;
     pub use super::IMoviePlayerBase;
     pub use super::IMoviePlayerBaseMethods;
+    pub use super::MoviePlayerBase_KeyHelp;
+    pub use super::IMoviePlayerBase_KeyHelp;
+    pub use super::IMoviePlayerBase_KeyHelpMethods;
     pub use super::MoviePlayerBase_Caption;
     pub use super::IMoviePlayerBase_Caption;
     pub use super::IMoviePlayerBase_CaptionMethods;

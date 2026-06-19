@@ -25,9 +25,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceobject/ResourceObject.md"))]#[::unity2::class(namespace="App",name="ResourceObject")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ResourceObject{#[offset(24)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcegameobject::ResourceGameObject, #[offset(32)]#[rename(name="m_StartCallback")]pub m_start_callback:crate::app::resourceobject::ResourceObject_Callback, #[offset(40)]#[rename(name="m_TickCallback")]pub m_tick_callback:crate::app::resourceobject::ResourceObject_Callback, #[offset(48)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::app::resourceobject::ResourceObject_Callback, #[offset(56)]#[rename(name="m_Coroutine")]pub m_coroutine:crate::app::resourceobject::ResourceObject_Coroutine, #[offset(64)]#[rename(name="m_BindProc")]pub m_bind_proc:crate::app::procinst::ProcInst, #[offset(72)]#[rename(name="m_BindHolder")]pub m_bind_holder:crate::app::bindholder::BindHolder, #[offset(80)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::resourceobject::ResourceObject_Sequence, #[offset(84)]#[rename(name="m_Flags")]pub m_flags:crate::app::resourceobject::ResourceObject_Flags, #[offset(88)]#[rename(name="m_DelayTime")]pub m_delay_time:f32, #[offset(92)]#[rename(name="m_BindTime")]pub m_bind_time:f32, #[offset(96)]#[rename(name="m_LifeTime")]pub m_life_time:f32, #[offset(104)]#[rename(name="m_SoundLabel")]pub m_sound_label: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceobject/ResourceObject_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ResourceObject_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for ResourceObject_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ResourceObject.Flags";
@@ -50,6 +47,9 @@ pub fn can_skip()->Self{Self{value:16}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceobject/ResourceObject_Coroutine.md"))]#[::unity2::class(namespace="App",name="ResourceObject.Coroutine")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ResourceObject_Coroutine{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceobject/ResourceObject_Sequence.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ResourceObject_Sequence{pub value:i32,}
 impl::unity2::ClassIdentity for ResourceObject_Sequence{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ResourceObject.Sequence";
@@ -68,15 +68,38 @@ pub fn end()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceobject/ResourceObject.md"))]#[::unity2::class(namespace="App",name="ResourceObject")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ResourceObject{#[offset(24)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcegameobject::ResourceGameObject, #[offset(32)]#[rename(name="m_StartCallback")]pub m_start_callback:crate::app::resourceobject::ResourceObject_Callback, #[offset(40)]#[rename(name="m_TickCallback")]pub m_tick_callback:crate::app::resourceobject::ResourceObject_Callback, #[offset(48)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::app::resourceobject::ResourceObject_Callback, #[offset(56)]#[rename(name="m_Coroutine")]pub m_coroutine:crate::app::resourceobject::ResourceObject_Coroutine, #[offset(64)]#[rename(name="m_BindProc")]pub m_bind_proc:crate::app::procinst::ProcInst, #[offset(72)]#[rename(name="m_BindHolder")]pub m_bind_holder:crate::app::bindholder::BindHolder, #[offset(80)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::resourceobject::ResourceObject_Sequence, #[offset(84)]#[rename(name="m_Flags")]pub m_flags:crate::app::resourceobject::ResourceObject_Flags, #[offset(88)]#[rename(name="m_DelayTime")]pub m_delay_time:f32, #[offset(92)]#[rename(name="m_BindTime")]pub m_bind_time:f32, #[offset(96)]#[rename(name="m_LifeTime")]pub m_life_time:f32, #[offset(104)]#[rename(name="m_SoundLabel")]pub m_sound_label: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceobject/ResourceObject_Callback.md"))]#[::unity2::class(namespace="App",name="ResourceObject.Callback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ResourceObject_Callback{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceobject/ResourceObject_Coroutine.md"))]#[::unity2::class(namespace="App",name="ResourceObject.Coroutine")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ResourceObject_Coroutine{}
 
 }
 
 #[cfg(feature = "app-resourceobject-types")]
 pub use __types::*;
+
+#[cfg(feature="app-resourceobject")]pub trait IResourceObject_CoroutineMethods:IResourceObject_Coroutine{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ResourceObject_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0e5d0usize)as*mut u8,();
+(ResourceObject_Coroutine)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]fn invoke(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ResourceObject_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0e5f0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ResourceObject_Coroutine)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+}
+
+#[cfg(feature="app-resourceobject")]impl<__T:IResourceObject_Coroutine>IResourceObject_CoroutineMethods for __T{}
+
+#[cfg(feature="app-resourceobject")]impl ResourceObject_Coroutine{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-resourceobject")]impl ResourceObject_Coroutine{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourceObject_Coroutine), ::core::stringify!(new),));
+ <Self as IResourceObject_CoroutineMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-resourceobject")]impl ResourceObject{#[doc="`CreateObjectImpl(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]pub fn create_object_impl(parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::resourceobject::ResourceObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2017ed0usize)as*mut u8,crate::app::resourceobject::ResourceObject;
 (crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -331,43 +354,20 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-resourceobject")]pub trait IResourceObject_CoroutineMethods:IResourceObject_Coroutine{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ResourceObject_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0e5d0usize)as*mut u8,();
-(ResourceObject_Coroutine)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]fn invoke(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ResourceObject_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0e5f0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(ResourceObject_Coroutine)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
-}
-}
-
-#[cfg(feature="app-resourceobject")]impl<__T:IResourceObject_Coroutine>IResourceObject_CoroutineMethods for __T{}
-
-#[cfg(feature="app-resourceobject")]impl ResourceObject_Coroutine{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-resourceobject")]impl ResourceObject_Coroutine{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ResourceObject_Coroutine), ::core::stringify!(new),));
- <Self as IResourceObject_CoroutineMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-resourceobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ResourceObject;
-    pub use super::IResourceObject;
-    pub use super::IResourceObjectMethods;
     pub use super::ResourceObject_Flags;
-    pub use super::ResourceObject_Sequence;
-    pub use super::ResourceObject_Callback;
-    pub use super::IResourceObject_Callback;
-    pub use super::IResourceObject_CallbackMethods;
     pub use super::ResourceObject_Coroutine;
     pub use super::IResourceObject_Coroutine;
     pub use super::IResourceObject_CoroutineMethods;
+    pub use super::ResourceObject_Sequence;
+    pub use super::ResourceObject;
+    pub use super::IResourceObject;
+    pub use super::IResourceObjectMethods;
+    pub use super::ResourceObject_Callback;
+    pub use super::IResourceObject_Callback;
+    pub use super::IResourceObject_CallbackMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

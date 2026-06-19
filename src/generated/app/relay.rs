@@ -23,94 +23,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_TakeOverModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_TakeOverModes{pub value:i32,}
-impl::unity2::ClassIdentity for Relay_TakeOverModes{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Relay.TakeOverModes";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Relay_TakeOverModes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Relay_TakeOverModes{pub fn random()->Self{Self{value:0}
-}
-pub fn data_code()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_FlagsField.md"))]#[::unity2::class(namespace="App",name="Relay.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::relay::Relay_Flags>)]pub struct Relay_FlagsField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_ChooseAwardeeData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Relay_ChooseAwardeeData{pub unit:crate::app::unit::Unit,pub leaving_unit_data:crate::app::relayleavingunitdata::RelayLeavingUnitData,pub count:i32,}
-impl::unity2::ClassIdentity for Relay_ChooseAwardeeData{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Relay.ChooseAwardeeData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Relay_ChooseAwardeeData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_Flags{pub value:i32,}
-impl::unity2::ClassIdentity for Relay_Flags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Relay.Flags";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Relay_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Relay_Flags{pub fn need_to_upload()->Self{Self{value:1}
-}
-pub fn uploaded()->Self{Self{value:2}
-}
-pub fn global_saved()->Self{Self{value:4}
-}
-pub fn show_win_rule()->Self{Self{value:8}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_Modes{pub value:i32,}
-impl::unity2::ClassIdentity for Relay_Modes{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Relay.Modes";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Relay_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Relay_Modes{pub fn new()->Self{Self{value:0}
-}
-pub fn take_over()->Self{Self{value:1}
-}
-pub fn replay()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_DisposPlayerCountsSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_DisposPlayerCountsSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for Relay_DisposPlayerCountsSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Relay.DisposPlayerCountsSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Relay_DisposPlayerCountsSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Relay_DisposPlayerCountsSequence_Label{pub fn loading()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay.md"))]#[::unity2::class(namespace="App",name="Relay")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::relay::Relay>)]pub struct Relay{#[offset(32)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(40)]#[rename(name="m_Data")]pub m_data:crate::app::relayserverdata::RelayServerData, #[offset(48)]#[rename(name="m_SelectedMetaData")]pub m_selected_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(56)]#[rename(name="m_BackupDataForReplay")]pub m_backup_data_for_replay:crate::app::relaybackupdata::RelayBackupData, #[offset(64)]#[rename(name="m_BackupDataForAll")]pub m_backup_data_for_all:crate::app::relaybackupdata::RelayBackupData, #[offset(72)]#[rename(name="m_CopiedUserData")]pub m_copied_user_data:crate::app::relayuserdata::RelayUserData, #[offset(80)]#[rename(name="m_Mode")]pub m_mode:crate::app::relay::Relay_Modes, #[offset(88)]#[rename(name="m_Flag")]pub m_flag:crate::app::relay::Relay_FlagsField, #[offset(96)]#[rename(name="m_DisposPlayerCounts")]pub m_dispos_player_counts:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> , #[offset(104)]#[rename(name="m_Sortie")]pub m_sortie:crate::app::relaysortie::RelaySortie, #[offset(112)]#[rename(name="m_AppearanceUnits")]pub m_appearance_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(120)]#[rename(name="m_LeavingUnits")]pub m_leaving_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(128)]#[rename(name="m_MaxTurn")]pub m_max_turn:i32, #[offset(132)]#[rename(name="m_LimitTurn")]pub m_limit_turn:i32, #[offset(136)]#[rename(name="m_CurrentPlayerIndex")]pub m_current_player_index:i32, #[offset(144)]#[rename(name="m_CurrentBattle")]pub m_current_battle:crate::app::relayuserdata::RelayUserData_EnteredBattle, #[offset(152)]#[rename(name="m_ReplayPlayerIndex")]pub m_replay_player_index:i32, #[offset(160)]#[rename(name="m_PlayingTermHolder")]pub m_playing_term_holder:crate::app::gameparam::GameParam_Holder, #[offset(168)]#[rename(name="m_PoolUnits")]pub m_pool_units:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(176)]#[rename(name="m_PoolGods")]pub m_pool_gods:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_DisposPlayerCountsSequence.md"))]#[::unity2::class(namespace="App",name="Relay.DisposPlayerCountsSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct Relay_DisposPlayerCountsSequence{#[offset(112)]#[rename(name="m_Index")]pub m_index:i32, #[offset(120)]#[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay.md"))]#[::unity2::class(namespace="App",name="Relay")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::relay::Relay>)]pub struct Relay{#[offset(32)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(40)]#[rename(name="m_Data")]pub m_data:crate::app::relayserverdata::RelayServerData, #[offset(48)]#[rename(name="m_SelectedMetaData")]pub m_selected_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(56)]#[rename(name="m_BackupDataForReplay")]pub m_backup_data_for_replay:crate::app::relaybackupdata::RelayBackupData, #[offset(64)]#[rename(name="m_BackupDataForAll")]pub m_backup_data_for_all:crate::app::relaybackupdata::RelayBackupData, #[offset(72)]#[rename(name="m_CopiedUserData")]pub m_copied_user_data:crate::app::relayuserdata::RelayUserData, #[offset(80)]#[rename(name="m_Mode")]pub m_mode:crate::app::relay::Relay_Modes, #[offset(88)]#[rename(name="m_Flag")]pub m_flag:crate::app::relay::Relay_FlagsField, #[offset(96)]#[rename(name="m_DisposPlayerCounts")]pub m_dispos_player_counts:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> , #[offset(104)]#[rename(name="m_Sortie")]pub m_sortie:crate::app::relaysortie::RelaySortie, #[offset(112)]#[rename(name="m_AppearanceUnits")]pub m_appearance_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(120)]#[rename(name="m_LeavingUnits")]pub m_leaving_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(128)]#[rename(name="m_MaxTurn")]pub m_max_turn:i32, #[offset(132)]#[rename(name="m_LimitTurn")]pub m_limit_turn:i32, #[offset(136)]#[rename(name="m_CurrentPlayerIndex")]pub m_current_player_index:i32, #[offset(144)]#[rename(name="m_CurrentBattle")]pub m_current_battle:crate::app::relayuserdata::RelayUserData_EnteredBattle, #[offset(152)]#[rename(name="m_ReplayPlayerIndex")]pub m_replay_player_index:i32, #[offset(160)]#[rename(name="m_PlayingTermHolder")]pub m_playing_term_holder:crate::app::gameparam::GameParam_Holder, #[offset(168)]#[rename(name="m_PoolUnits")]pub m_pool_units:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(176)]#[rename(name="m_PoolGods")]pub m_pool_gods:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_TrfrResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_TrfrResult{pub value:i32,}
@@ -127,6 +43,33 @@ impl Relay_TrfrResult{pub fn no_changed()->Self{Self{value:0}
 pub fn done()->Self{Self{value:1}
 }
 pub fn failed()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_ChooseAwardeeData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Relay_ChooseAwardeeData{pub unit:crate::app::unit::Unit,pub leaving_unit_data:crate::app::relayleavingunitdata::RelayLeavingUnitData,pub count:i32,}
+impl::unity2::ClassIdentity for Relay_ChooseAwardeeData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.ChooseAwardeeData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_ChooseAwardeeData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_DisposPlayerCountsSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_DisposPlayerCountsSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_DisposPlayerCountsSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.DisposPlayerCountsSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_DisposPlayerCountsSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_DisposPlayerCountsSequence_Label{pub fn loading()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
 }
 }
 
@@ -154,113 +97,67 @@ pub fn ng_unknown()->Self{Self{value:5}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_Modes{pub fn new()->Self{Self{value:0}
+}
+pub fn take_over()->Self{Self{value:1}
+}
+pub fn replay()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_FlagsField.md"))]#[::unity2::class(namespace="App",name="Relay.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::relay::Relay_Flags>)]pub struct Relay_FlagsField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_Flags{pub fn need_to_upload()->Self{Self{value:1}
+}
+pub fn uploaded()->Self{Self{value:2}
+}
+pub fn global_saved()->Self{Self{value:4}
+}
+pub fn show_win_rule()->Self{Self{value:8}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relay/Relay_TakeOverModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Relay_TakeOverModes{pub value:i32,}
+impl::unity2::ClassIdentity for Relay_TakeOverModes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Relay.TakeOverModes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Relay_TakeOverModes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Relay_TakeOverModes{pub fn random()->Self{Self{value:0}
+}
+pub fn data_code()->Self{Self{value:1}
+}
+}
+
 }
 
 #[cfg(feature = "app-relay-types")]
 pub use __types::*;
-
-#[cfg(feature="app-relay")]pub trait IRelay_FlagsFieldMethods:IRelay_FlagsField{#[doc="`ToInt(crate::app::relay::Relay_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::relay::Relay_Flags>)->i32{unsafe{let __receiver= <Relay_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04940usize)as*mut u8,i32;
-(Relay_FlagsField)__receiver,(crate::app::relay::Relay_Flags)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Relay_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04950usize)as*mut u8,();
-(Relay_FlagsField)__receiver)}
-}
-}
-
-#[cfg(feature="app-relay")]impl<__T:IRelay_FlagsField>IRelay_FlagsFieldMethods for __T{}
-
-#[cfg(feature="app-relay")]impl Relay_FlagsField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relay")]impl Relay_FlagsField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Relay_FlagsField), ::core::stringify!(new),));
- <Self as IRelay_FlagsFieldMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-relay")]impl Relay_ChooseAwardeeData{#[doc="`CompareAndSwap(crate::app::unit::Unit, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare_and_swap(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b03c60usize)as*mut u8,();
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
-}
-#[doc="`CompareAndSwap(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare_and_swap_2(&mut self,leaving_unit_data:impl::core::convert::Into<crate::app::relayleavingunitdata::RelayLeavingUnitData> ,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04020usize)as*mut u8,();
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(crate::app::relayleavingunitdata::RelayLeavingUnitData)::core::convert::Into::into(leaving_unit_data),(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
-}
-#[doc="`Compare(i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare(&mut self,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b03f60usize)as*mut u8,bool;
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
-}
-#[doc="`CompareGreater(i32)` overload"]pub fn compare_greater(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b040a0usize)as*mut u8,bool;
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
-}
-#[doc="`CompareLess(i32)` overload"]pub fn compare_less(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04100usize)as*mut u8,bool;
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
-}
-#[doc="`CompareZero(i32)` overload"]pub fn compare_zero(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04160usize)as*mut u8,bool;
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
-}
-#[doc="`IsRandom()` overload"]pub fn is_random(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b041d0usize)as*mut u8,bool;
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData)}
-}
-#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b041b0usize)as*mut u8,bool;
-(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData)}
-}
-}
-
-#[cfg(feature="app-relay")]impl Relay_ChooseAwardeeData{pub fn compare_and_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn compare_and_swap_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn compare_greater_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn compare_less_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn compare_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04610usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-relay")]pub trait IRelay_DisposPlayerCountsSequenceMethods:IRelay_DisposPlayerCountsSequence{#[doc="`LoadFirst()` overload"]fn load_first(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04200usize)as*mut u8,();
-(Relay_DisposPlayerCountsSequence)__receiver)}
-}
-#[doc="`LoadDone()` overload"]fn load_done(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04310usize)as*mut u8,();
-(Relay_DisposPlayerCountsSequence)__receiver)}
-}
-#[doc="`GetChapter()` overload"]fn get_chapter(self,)->crate::app::chapterdata::ChapterData{unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04500usize)as*mut u8,crate::app::chapterdata::ChapterData;
-(Relay_DisposPlayerCountsSequence)__receiver)}
-}
-#[doc="`Load()` overload"]fn load(self,)->bool{unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b042c0usize)as*mut u8,bool;
-(Relay_DisposPlayerCountsSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04930usize)as*mut u8,();
-(Relay_DisposPlayerCountsSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-relay")]impl<__T:IRelay_DisposPlayerCountsSequence>IRelay_DisposPlayerCountsSequenceMethods for __T{}
-
-#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{pub fn load_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn load_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Relay_DisposPlayerCountsSequence), ::core::stringify!(new),));
- <Self as IRelay_DisposPlayerCountsSequenceMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-relay")]impl Relay{#[doc="`IsValid()` overload"]pub fn is_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c8830usize)as*mut u8,bool;
 )}
@@ -636,25 +533,128 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04610usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-relay")]pub trait IRelay_DisposPlayerCountsSequenceMethods:IRelay_DisposPlayerCountsSequence{#[doc="`LoadFirst()` overload"]fn load_first(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04200usize)as*mut u8,();
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`LoadDone()` overload"]fn load_done(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04310usize)as*mut u8,();
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`GetChapter()` overload"]fn get_chapter(self,)->crate::app::chapterdata::ChapterData{unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04500usize)as*mut u8,crate::app::chapterdata::ChapterData;
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`Load()` overload"]fn load(self,)->bool{unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b042c0usize)as*mut u8,bool;
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Relay_DisposPlayerCountsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04930usize)as*mut u8,();
+(Relay_DisposPlayerCountsSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-relay")]impl<__T:IRelay_DisposPlayerCountsSequence>IRelay_DisposPlayerCountsSequenceMethods for __T{}
+
+#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{pub fn load_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-relay")]impl Relay_DisposPlayerCountsSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Relay_DisposPlayerCountsSequence), ::core::stringify!(new),));
+ <Self as IRelay_DisposPlayerCountsSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-relay")]impl Relay_ChooseAwardeeData{#[doc="`CompareAndSwap(crate::app::unit::Unit, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare_and_swap(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b03c60usize)as*mut u8,();
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
+}
+#[doc="`CompareAndSwap(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare_and_swap_2(&mut self,leaving_unit_data:impl::core::convert::Into<crate::app::relayleavingunitdata::RelayLeavingUnitData> ,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04020usize)as*mut u8,();
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(crate::app::relayleavingunitdata::RelayLeavingUnitData)::core::convert::Into::into(leaving_unit_data),(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
+}
+#[doc="`Compare(i32, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]pub fn compare(&mut self,count:impl::core::convert::Into<i32> ,op:impl::core::convert::Into<crate::app::relayawarddata::RelayAwardData_CompareOp>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b03f60usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count),(crate::app::relayawarddata::RelayAwardData_CompareOp)::core::convert::Into::into(op))}
+}
+#[doc="`CompareGreater(i32)` overload"]pub fn compare_greater(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b040a0usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`CompareLess(i32)` overload"]pub fn compare_less(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04100usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`CompareZero(i32)` overload"]pub fn compare_zero(&mut self,count:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b04160usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`IsRandom()` overload"]pub fn is_random(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b041d0usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData)}
+}
+#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b041b0usize)as*mut u8,bool;
+(*mut Relay_ChooseAwardeeData)self as*mut Relay_ChooseAwardeeData)}
+}
+}
+
+#[cfg(feature="app-relay")]impl Relay_ChooseAwardeeData{pub fn compare_and_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn compare_and_swap_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn compare_greater_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn compare_less_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn compare_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-relay")]pub trait IRelay_FlagsFieldMethods:IRelay_FlagsField{#[doc="`ToInt(crate::app::relay::Relay_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::relay::Relay_Flags>)->i32{unsafe{let __receiver= <Relay_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04940usize)as*mut u8,i32;
+(Relay_FlagsField)__receiver,(crate::app::relay::Relay_Flags)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Relay_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04950usize)as*mut u8,();
+(Relay_FlagsField)__receiver)}
+}
+}
+
+#[cfg(feature="app-relay")]impl<__T:IRelay_FlagsField>IRelay_FlagsFieldMethods for __T{}
+
+#[cfg(feature="app-relay")]impl Relay_FlagsField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relay")]impl Relay_FlagsField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Relay_FlagsField), ::core::stringify!(new),));
+ <Self as IRelay_FlagsFieldMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-relay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Relay_TakeOverModes;
-    pub use super::Relay_FlagsField;
-    pub use super::IRelay_FlagsField;
-    pub use super::IRelay_FlagsFieldMethods;
-    pub use super::Relay_ChooseAwardeeData;
-    pub use super::Relay_Flags;
-    pub use super::Relay_Modes;
-    pub use super::Relay_DisposPlayerCountsSequence_Label;
-    pub use super::Relay_DisposPlayerCountsSequence;
-    pub use super::IRelay_DisposPlayerCountsSequence;
-    pub use super::IRelay_DisposPlayerCountsSequenceMethods;
     pub use super::Relay;
     pub use super::IRelay;
     pub use super::IRelayMethods;
+    pub use super::Relay_DisposPlayerCountsSequence;
+    pub use super::IRelay_DisposPlayerCountsSequence;
+    pub use super::IRelay_DisposPlayerCountsSequenceMethods;
     pub use super::Relay_TrfrResult;
+    pub use super::Relay_ChooseAwardeeData;
+    pub use super::Relay_DisposPlayerCountsSequence_Label;
     pub use super::Relay_CstoResult;
+    pub use super::Relay_Modes;
+    pub use super::Relay_FlagsField;
+    pub use super::IRelay_FlagsField;
+    pub use super::IRelay_FlagsFieldMethods;
+    pub use super::Relay_Flags;
+    pub use super::Relay_TakeOverModes;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

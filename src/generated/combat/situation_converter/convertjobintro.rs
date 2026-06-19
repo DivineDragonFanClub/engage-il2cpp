@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertJobIntro")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertJobIntro{#[offset(24)]#[rename(name="m_State")]pub m_state:crate::combat::situation_converter::convertjobintro::ConvertJobIntro_State,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertjobintro/ConvertJobIntro_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ConvertJobIntro_State{pub value:i32,}
 impl::unity2::ClassIdentity for ConvertJobIntro_State{const NAMESPACE: &'static str="Combat.SituationConverter";
 const NAME: &'static str="ConvertJobIntro.State";
@@ -36,6 +33,9 @@ pub fn after_critical()->Self{Self{value:2}
 pub fn end()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertJobIntro")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertJobIntro{#[offset(24)]#[rename(name="m_State")]pub m_state:crate::combat::situation_converter::convertjobintro::ConvertJobIntro_State,}
 
 }
 
@@ -68,10 +68,10 @@ this}
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ConvertJobIntro_State;
     pub use super::ConvertJobIntro;
     pub use super::IConvertJobIntro;
     pub use super::IConvertJobIntroMethods;
-    pub use super::ConvertJobIntro_State;
     pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

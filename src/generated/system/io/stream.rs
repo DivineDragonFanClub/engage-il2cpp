@@ -14,6 +14,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream_SynchronousAsyncResult.md"))]#[::unity2::class(namespace="System.IO",name="Stream.SynchronousAsyncResult")]#[parent(crate::system::object::Object)]pub struct Stream_SynchronousAsyncResult{#[offset(16)]#[rename(name="_stateObject")]pub state_object: ::unity2::IlInstance, #[offset(24)]#[rename(name="_isWrite")]pub is_write:bool, #[offset(48)]#[rename(name="_endXxxCalled")]pub end_xxx_called:bool, #[offset(52)]#[rename(name="_bytesRead")]pub bytes_read:i32,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream.md"))]#[::unity2::class(namespace="System.IO",name="Stream")]pub struct Stream{#[static_field]#[rename(name="Null")]pub null:crate::system::io::stream::Stream, #[offset(24)]#[rename(name="_activeReadWriteTask")]pub active_read_write_task:crate::system::io::stream::Stream_ReadWriteTask,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream_NullStream.md"))]#[::unity2::class(namespace="System.IO",name="Stream.NullStream")]#[parent(crate::system::io::stream::Stream)]pub struct Stream_NullStream{#[static_field]#[rename(name="s_nullReadTask")]pub s_null_read_task: ::unity2::IlInstance,}
 
 
@@ -29,9 +32,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for Stream_ReadWriteParameters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream.md"))]#[::unity2::class(namespace="System.IO",name="Stream")]pub struct Stream{#[static_field]#[rename(name="Null")]pub null:crate::system::io::stream::Stream, #[offset(24)]#[rename(name="_activeReadWriteTask")]pub active_read_write_task:crate::system::io::stream::Stream_ReadWriteTask,}
 
 }
 
@@ -84,111 +84,6 @@ this}
  failed to instantiate", ::core::stringify!(Stream_SynchronousAsyncResult), ::core::stringify!(new_2),));
  <Self as IStream_SynchronousAsyncResultMethods> ::ctor_2(this,async_state_object);
 this}
-}
-
-#[cfg(feature="system-io-stream")]pub trait IStream_NullStreamMethods:IStream_NullStream{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58390usize)as*mut u8,();
-(Stream_NullStream)__receiver)}
-}
-#[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58400usize)as*mut u8,bool;
-(Stream_NullStream)__receiver)}
-}
-#[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58410usize)as*mut u8,bool;
-(Stream_NullStream)__receiver)}
-}
-#[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58420usize)as*mut u8,bool;
-(Stream_NullStream)__receiver)}
-}
-#[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58430usize)as*mut u8,i64;
-(Stream_NullStream)__receiver)}
-}
-#[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58440usize)as*mut u8,i64;
-(Stream_NullStream)__receiver)}
-}
-#[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58450usize)as*mut u8,();
-(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(value))}
-}
-#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58460usize)as*mut u8,();
-(Stream_NullStream)__receiver,(bool)::core::convert::Into::into(disposing))}
-}
-#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58470usize)as*mut u8,();
-(Stream_NullStream)__receiver)}
-}
-#[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c586e0usize)as*mut u8,i32;
-(Stream_NullStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
-}
-#[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c587f0usize)as*mut u8,i32;
-(Stream_NullStream)__receiver)}
-}
-#[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58800usize)as*mut u8,();
-(Stream_NullStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
-}
-#[doc="`WriteByte(u8)` overload"]fn write_byte(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588c0usize)as*mut u8,();
-(Stream_NullStream)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588d0usize)as*mut u8,i64;
-(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
-}
-#[doc="`SetLength(i64)` overload"]fn set_length(self,length:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588e0usize)as*mut u8,();
-(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(length))}
-}
-}
-
-#[cfg(feature="system-io-stream")]impl<__T:IStream_NullStream>IStream_NullStreamMethods for __T{}
-
-#[cfg(feature="system-io-stream")]impl Stream_NullStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_can_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_can_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn read_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn write_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-}
-
-#[cfg(feature="system-io-stream")]impl Stream_NullStream{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Stream_NullStream), ::core::stringify!(new),));
- <Self as IStream_NullStreamMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{#[doc="`InvokeAsyncCallback(crate::system::object::Object)` overload"]pub fn invoke_async_callback(completed_task:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c58ab0usize)as*mut u8,();
-(crate::system::object::Object)::core::convert::Into::into(completed_task))}
-}
-}
-
-#[cfg(feature="system-io-stream")]pub trait IStream_ReadWriteTaskMethods:IStream_ReadWriteTask{#[doc="`ClearBeginState()` overload"]fn clear_begin_state(self,)->(){unsafe{let __receiver= <Stream_ReadWriteTask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c580e0usize)as*mut u8,();
-(Stream_ReadWriteTask)__receiver)}
-}
-}
-
-#[cfg(feature="system-io-stream")]impl<__T:IStream_ReadWriteTask>IStream_ReadWriteTaskMethods for __T{}
-
-#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{pub fn clear_begin_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_async_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
 #[cfg(feature="system-io-stream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Stream_unity2_raw{use super:: * ;
@@ -394,12 +289,120 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="system-io-stream")]pub trait IStream_NullStreamMethods:IStream_NullStream{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58390usize)as*mut u8,();
+(Stream_NullStream)__receiver)}
+}
+#[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58400usize)as*mut u8,bool;
+(Stream_NullStream)__receiver)}
+}
+#[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58410usize)as*mut u8,bool;
+(Stream_NullStream)__receiver)}
+}
+#[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58420usize)as*mut u8,bool;
+(Stream_NullStream)__receiver)}
+}
+#[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58430usize)as*mut u8,i64;
+(Stream_NullStream)__receiver)}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58440usize)as*mut u8,i64;
+(Stream_NullStream)__receiver)}
+}
+#[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58450usize)as*mut u8,();
+(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58460usize)as*mut u8,();
+(Stream_NullStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58470usize)as*mut u8,();
+(Stream_NullStream)__receiver)}
+}
+#[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c586e0usize)as*mut u8,i32;
+(Stream_NullStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c587f0usize)as*mut u8,i32;
+(Stream_NullStream)__receiver)}
+}
+#[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58800usize)as*mut u8,();
+(Stream_NullStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`WriteByte(u8)` overload"]fn write_byte(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588c0usize)as*mut u8,();
+(Stream_NullStream)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588d0usize)as*mut u8,i64;
+(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
+}
+#[doc="`SetLength(i64)` overload"]fn set_length(self,length:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588e0usize)as*mut u8,();
+(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(length))}
+}
+}
+
+#[cfg(feature="system-io-stream")]impl<__T:IStream_NullStream>IStream_NullStreamMethods for __T{}
+
+#[cfg(feature="system-io-stream")]impl Stream_NullStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_can_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_can_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn read_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn write_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="system-io-stream")]impl Stream_NullStream{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Stream_NullStream), ::core::stringify!(new),));
+ <Self as IStream_NullStreamMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{#[doc="`InvokeAsyncCallback(crate::system::object::Object)` overload"]pub fn invoke_async_callback(completed_task:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c58ab0usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(completed_task))}
+}
+}
+
+#[cfg(feature="system-io-stream")]pub trait IStream_ReadWriteTaskMethods:IStream_ReadWriteTask{#[doc="`ClearBeginState()` overload"]fn clear_begin_state(self,)->(){unsafe{let __receiver= <Stream_ReadWriteTask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c580e0usize)as*mut u8,();
+(Stream_ReadWriteTask)__receiver)}
+}
+}
+
+#[cfg(feature="system-io-stream")]impl<__T:IStream_ReadWriteTask>IStream_ReadWriteTaskMethods for __T{}
+
+#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{pub fn clear_begin_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_async_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
 #[cfg(feature = "system-io-stream")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Stream_SynchronousAsyncResult;
     pub use super::IStream_SynchronousAsyncResult;
     pub use super::IStream_SynchronousAsyncResultMethods;
+    pub use super::Stream;
+    pub use super::IStream;
+    pub use super::IStreamMethods;
     pub use super::Stream_NullStream;
     pub use super::IStream_NullStream;
     pub use super::IStream_NullStreamMethods;
@@ -407,9 +410,6 @@ pub mod prelude {
     pub use super::IStream_ReadWriteTask;
     pub use super::IStream_ReadWriteTaskMethods;
     pub use super::Stream_ReadWriteParameters;
-    pub use super::Stream;
-    pub use super::IStream;
-    pub use super::IStreamMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

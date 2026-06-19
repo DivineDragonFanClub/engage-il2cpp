@@ -29,33 +29,280 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct DiscardItemMenu{#[offset(200)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_AddedUnitItem")]pub m_added_unit_item:crate::app::unititem::UnitItem, #[offset(216)]#[rename(name="m_Root")]pub m_root:crate::app::discarditemroot::DiscardItemRoot, #[offset(224)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds, #[offset(232)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(240)]#[rename(name="m_Uncancellable")]pub m_uncancellable:bool, #[offset(248)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::discarditemmenu::DiscardItemMenu_DecideCallback, #[offset(256)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::app::discarditemmenu::DiscardItemMenu_CancelCallback,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_DiscardItemMenuItem.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.DiscardItemMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct DiscardItemMenu_DiscardItemMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.ConfirmDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DiscardItemMenu_ConfirmDialog_YesEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_DiscardItemEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.DiscardItemEmptyMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct DiscardItemMenu_DiscardItemEmptyMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct DiscardItemMenu_ConfirmDialog{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_CancelCallback.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.CancelCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DiscardItemMenu_CancelCallback{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesDialogItem.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.ConfirmDialog.YesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct DiscardItemMenu_ConfirmDialog_YesDialogItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_CancelCallback.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.CancelCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DiscardItemMenu_CancelCallback{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct DiscardItemMenu_ConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_DiscardItemEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.DiscardItemEmptyMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct DiscardItemMenu_DiscardItemEmptyMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.ConfirmDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DiscardItemMenu_ConfirmDialog_YesEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_DecideCallback.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.DecideCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DiscardItemMenu_DecideCallback{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu_DiscardItemMenuItem.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu.DiscardItemMenuItem")]#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]pub struct DiscardItemMenu_DiscardItemMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenu/DiscardItemMenu.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct DiscardItemMenu{#[offset(200)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_AddedUnitItem")]pub m_added_unit_item:crate::app::unititem::UnitItem, #[offset(216)]#[rename(name="m_Root")]pub m_root:crate::app::discarditemroot::DiscardItemRoot, #[offset(224)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds, #[offset(232)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(240)]#[rename(name="m_Uncancellable")]pub m_uncancellable:bool, #[offset(248)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::discarditemmenu::DiscardItemMenu_DecideCallback, #[offset(256)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::app::discarditemmenu::DiscardItemMenu_CancelCallback,}
 
 }
 
 #[cfg(feature = "app-discarditemmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_CancelCallbackMethods:IDiscardItemMenu_CancelCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DiscardItemMenu_CancelCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcefc0usize)as*mut u8,();
+(DiscardItemMenu_CancelCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <DiscardItemMenu_CancelCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcefe0usize)as*mut u8,();
+(DiscardItemMenu_CancelCallback)__receiver)}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_CancelCallback>IDiscardItemMenu_CancelCallbackMethods for __T{}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_CancelCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_CancelCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenu_CancelCallback), ::core::stringify!(new),));
+ <Self as IDiscardItemMenu_CancelCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods:IDiscardItemMenu_ConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39bd0usize)as*mut u8,();
+(DiscardItemMenu_ConfirmDialog_YesDialogItem)__receiver,(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DiscardItemMenu_ConfirmDialog_YesDialogItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_ConfirmDialog_YesDialogItem>IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods for __T{}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` — overload selector"]pub fn new(yes_event_handler:crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesDialogItem), ::core::stringify!(new),));
+ <Self as IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods> ::ctor(this,yes_event_handler);
+this}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,discarding_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,decide_callback:impl::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf230usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unititem::UnitItem)::core::convert::Into::into(discarding_unit_item),(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)::core::convert::Into::into(decide_callback))}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_ConfirmDialogMethods:IDiscardItemMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf7e0usize)as*mut u8,();
+(DiscardItemMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_ConfirmDialog>IDiscardItemMenu_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenu_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IDiscardItemMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_DiscardItemEmptyMenuItemMethods:IDiscardItemMenu_DiscardItemEmptyMenuItem{#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfb90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfba0usize)as*mut u8,crate::app::unititem::UnitItem;
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+#[doc="`GetBlankText()` overload"]fn get_blank_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfbb0usize)as*mut u8, ::unity2::Il2CppString;
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+#[doc="`IsVisibleItemIconOnBlank()` overload"]fn is_visible_item_icon_on_blank(self,)->bool{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfc30usize)as*mut u8,bool;
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfc40usize)as*mut u8,();
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfd30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfd40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfdf0usize)as*mut u8,();
+(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_DiscardItemEmptyMenuItem>IDiscardItemMenu_DiscardItemEmptyMenuItemMethods for __T{}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemEmptyMenuItem{pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_blank_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_visible_item_icon_on_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemEmptyMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenu_DiscardItemEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IDiscardItemMenu_DiscardItemEmptyMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods:IDiscardItemMenu_ConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39eb0usize)as*mut u8,();
+(DiscardItemMenu_ConfirmDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39ca0usize)as*mut u8,();
+(DiscardItemMenu_ConfirmDialog_YesEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_ConfirmDialog_YesEventHandler>IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods for __T{}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesEventHandler), ::core::stringify!(new),));
+ <Self as IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_DecideCallbackMethods:IDiscardItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DiscardItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf860usize)as*mut u8,();
+(DiscardItemMenu_DecideCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool, i32)` overload"]fn invoke(self,transporter_is_selected:impl::core::convert::Into<bool> ,transporter_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DiscardItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf880usize)as*mut u8,();
+(DiscardItemMenu_DecideCallback)__receiver,(bool)::core::convert::Into::into(transporter_is_selected),(i32)::core::convert::Into::into(transporter_item_index))}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_DecideCallback>IDiscardItemMenu_DecideCallbackMethods for __T{}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DecideCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenu_DecideCallback), ::core::stringify!(new),));
+ <Self as IDiscardItemMenu_DecideCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_DiscardItemMenuItemMethods:IDiscardItemMenu_DiscardItemMenuItem{#[doc="`get_m_OwnerItemIndex()` overload"]fn get_m_owner_item_index(self,)->i32{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe00usize)as*mut u8,i32;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`set_m_OwnerItemIndex(i32)` overload"]fn set_m_owner_item_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe10usize)as*mut u8,();
+(DiscardItemMenu_DiscardItemMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_SortValue()` overload"]fn get_m_sort_value(self,)->i64{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe20usize)as*mut u8,i64;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`set_m_SortValue(i64)` overload"]fn set_m_sort_value(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe30usize)as*mut u8,();
+(DiscardItemMenu_DiscardItemMenuItem)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor(self,owner_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe40usize)as*mut u8,();
+(DiscardItemMenu_DiscardItemMenuItem)__receiver,(i32)::core::convert::Into::into(owner_item_index))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcff00usize)as*mut u8, ::unity2::Il2CppString;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd01e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0360usize)as*mut u8,();
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0480usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd05f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd06a0usize)as*mut u8,crate::app::unit::Unit;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd06b0usize)as*mut u8,crate::app::unititem::UnitItem;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+#[doc="`GetRecieverUnit()` overload"]fn get_reciever_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd07c0usize)as*mut u8,crate::app::unit::Unit;
+(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_DiscardItemMenuItem>IDiscardItemMenu_DiscardItemMenuItemMethods for __T{}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemMenuItem{pub fn get_m_owner_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_owner_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_reciever_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(owner_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenu_DiscardItemMenuItem), ::core::stringify!(new),));
+ <Self as IDiscardItemMenu_DiscardItemMenuItemMethods> ::ctor(this,owner_item_index);
+this}
+}
 
 #[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unititem::UnitItem, bool, crate::app::discarditemmenu::DiscardItemMenu_DecideCallback, crate::app::discarditemmenu::DiscardItemMenu_CancelCallback)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,added_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,uncancellable:impl::core::convert::Into<bool> ,decide_callback:impl::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_DecideCallback> ,cancel_callback:impl::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_CancelCallback>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceea70usize)as*mut u8,crate::app::procinst::ProcInst;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(added_unit_item),(bool)::core::convert::Into::into(uncancellable),(crate::app::discarditemmenu::DiscardItemMenu_DecideCallback)::core::convert::Into::into(decide_callback),(crate::app::discarditemmenu::DiscardItemMenu_CancelCallback)::core::convert::Into::into(cancel_callback))}
@@ -154,280 +401,33 @@ pub fn discard_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
-#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_DiscardItemMenuItemMethods:IDiscardItemMenu_DiscardItemMenuItem{#[doc="`get_m_OwnerItemIndex()` overload"]fn get_m_owner_item_index(self,)->i32{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe00usize)as*mut u8,i32;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`set_m_OwnerItemIndex(i32)` overload"]fn set_m_owner_item_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe10usize)as*mut u8,();
-(DiscardItemMenu_DiscardItemMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_m_SortValue()` overload"]fn get_m_sort_value(self,)->i64{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe20usize)as*mut u8,i64;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`set_m_SortValue(i64)` overload"]fn set_m_sort_value(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe30usize)as*mut u8,();
-(DiscardItemMenu_DiscardItemMenuItem)__receiver,(i64)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(i32)` overload"]fn ctor(self,owner_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfe40usize)as*mut u8,();
-(DiscardItemMenu_DiscardItemMenuItem)__receiver,(i32)::core::convert::Into::into(owner_item_index))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcff00usize)as*mut u8, ::unity2::Il2CppString;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd01e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0360usize)as*mut u8,();
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0480usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd05f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd06a0usize)as*mut u8,crate::app::unit::Unit;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd06b0usize)as*mut u8,crate::app::unititem::UnitItem;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-#[doc="`GetRecieverUnit()` overload"]fn get_reciever_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <DiscardItemMenu_DiscardItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd07c0usize)as*mut u8,crate::app::unit::Unit;
-(DiscardItemMenu_DiscardItemMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_DiscardItemMenuItem>IDiscardItemMenu_DiscardItemMenuItemMethods for __T{}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemMenuItem{pub fn get_m_owner_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_m_owner_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_m_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_m_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_reciever_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(owner_item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenu_DiscardItemMenuItem), ::core::stringify!(new),));
- <Self as IDiscardItemMenu_DiscardItemMenuItemMethods> ::ctor(this,owner_item_index);
-this}
-}
-
-#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods:IDiscardItemMenu_ConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39eb0usize)as*mut u8,();
-(DiscardItemMenu_ConfirmDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39ca0usize)as*mut u8,();
-(DiscardItemMenu_ConfirmDialog_YesEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_ConfirmDialog_YesEventHandler>IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods for __T{}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesEventHandler), ::core::stringify!(new),));
- <Self as IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_DiscardItemEmptyMenuItemMethods:IDiscardItemMenu_DiscardItemEmptyMenuItem{#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfb90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-#[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfba0usize)as*mut u8,crate::app::unititem::UnitItem;
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-#[doc="`GetBlankText()` overload"]fn get_blank_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfbb0usize)as*mut u8, ::unity2::Il2CppString;
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-#[doc="`IsVisibleItemIconOnBlank()` overload"]fn is_visible_item_icon_on_blank(self,)->bool{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfc30usize)as*mut u8,bool;
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfc40usize)as*mut u8,();
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfd30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfd40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DiscardItemMenu_DiscardItemEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcfdf0usize)as*mut u8,();
-(DiscardItemMenu_DiscardItemEmptyMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_DiscardItemEmptyMenuItem>IDiscardItemMenu_DiscardItemEmptyMenuItemMethods for __T{}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemEmptyMenuItem{pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_blank_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_visible_item_icon_on_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DiscardItemEmptyMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenu_DiscardItemEmptyMenuItem), ::core::stringify!(new),));
- <Self as IDiscardItemMenu_DiscardItemEmptyMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unititem::UnitItem, crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,discarding_unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,decide_callback:impl::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf230usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unititem::UnitItem)::core::convert::Into::into(discarding_unit_item),(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)::core::convert::Into::into(decide_callback))}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_ConfirmDialogMethods:IDiscardItemMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf7e0usize)as*mut u8,();
-(DiscardItemMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_ConfirmDialog>IDiscardItemMenu_ConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenu_ConfirmDialog), ::core::stringify!(new),));
- <Self as IDiscardItemMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list);
-this}
-}
-
-#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods:IDiscardItemMenu_ConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler>)->(){unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39bd0usize)as*mut u8,();
-(DiscardItemMenu_ConfirmDialog_YesDialogItem)__receiver,(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DiscardItemMenu_ConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DiscardItemMenu_ConfirmDialog_YesDialogItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_ConfirmDialog_YesDialogItem>IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods for __T{}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_ConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` — overload selector"]pub fn new(yes_event_handler:crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesDialogItem), ::core::stringify!(new),));
- <Self as IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods> ::ctor(this,yes_event_handler);
-this}
-}
-
-#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_CancelCallbackMethods:IDiscardItemMenu_CancelCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DiscardItemMenu_CancelCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcefc0usize)as*mut u8,();
-(DiscardItemMenu_CancelCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <DiscardItemMenu_CancelCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcefe0usize)as*mut u8,();
-(DiscardItemMenu_CancelCallback)__receiver)}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_CancelCallback>IDiscardItemMenu_CancelCallbackMethods for __T{}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_CancelCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_CancelCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenu_CancelCallback), ::core::stringify!(new),));
- <Self as IDiscardItemMenu_CancelCallbackMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-discarditemmenu")]pub trait IDiscardItemMenu_DecideCallbackMethods:IDiscardItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DiscardItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf860usize)as*mut u8,();
-(DiscardItemMenu_DecideCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(bool, i32)` overload"]fn invoke(self,transporter_is_selected:impl::core::convert::Into<bool> ,transporter_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DiscardItemMenu_DecideCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bcf880usize)as*mut u8,();
-(DiscardItemMenu_DecideCallback)__receiver,(bool)::core::convert::Into::into(transporter_is_selected),(i32)::core::convert::Into::into(transporter_item_index))}
-}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl<__T:IDiscardItemMenu_DecideCallback>IDiscardItemMenu_DecideCallbackMethods for __T{}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DecideCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-discarditemmenu")]impl DiscardItemMenu_DecideCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenu_DecideCallback), ::core::stringify!(new),));
- <Self as IDiscardItemMenu_DecideCallbackMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-discarditemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DiscardItemMenu;
-    pub use super::IDiscardItemMenu;
-    pub use super::IDiscardItemMenuMethods;
-    pub use super::DiscardItemMenu_DiscardItemMenuItem;
-    pub use super::IDiscardItemMenu_DiscardItemMenuItem;
-    pub use super::IDiscardItemMenu_DiscardItemMenuItemMethods;
-    pub use super::DiscardItemMenu_ConfirmDialog_YesEventHandler;
-    pub use super::IDiscardItemMenu_ConfirmDialog_YesEventHandler;
-    pub use super::IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods;
-    pub use super::DiscardItemMenu_DiscardItemEmptyMenuItem;
-    pub use super::IDiscardItemMenu_DiscardItemEmptyMenuItem;
-    pub use super::IDiscardItemMenu_DiscardItemEmptyMenuItemMethods;
-    pub use super::DiscardItemMenu_ConfirmDialog;
-    pub use super::IDiscardItemMenu_ConfirmDialog;
-    pub use super::IDiscardItemMenu_ConfirmDialogMethods;
-    pub use super::DiscardItemMenu_ConfirmDialog_YesDialogItem;
-    pub use super::IDiscardItemMenu_ConfirmDialog_YesDialogItem;
-    pub use super::IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods;
     pub use super::DiscardItemMenu_CancelCallback;
     pub use super::IDiscardItemMenu_CancelCallback;
     pub use super::IDiscardItemMenu_CancelCallbackMethods;
+    pub use super::DiscardItemMenu_ConfirmDialog_YesDialogItem;
+    pub use super::IDiscardItemMenu_ConfirmDialog_YesDialogItem;
+    pub use super::IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods;
+    pub use super::DiscardItemMenu_ConfirmDialog;
+    pub use super::IDiscardItemMenu_ConfirmDialog;
+    pub use super::IDiscardItemMenu_ConfirmDialogMethods;
+    pub use super::DiscardItemMenu_DiscardItemEmptyMenuItem;
+    pub use super::IDiscardItemMenu_DiscardItemEmptyMenuItem;
+    pub use super::IDiscardItemMenu_DiscardItemEmptyMenuItemMethods;
+    pub use super::DiscardItemMenu_ConfirmDialog_YesEventHandler;
+    pub use super::IDiscardItemMenu_ConfirmDialog_YesEventHandler;
+    pub use super::IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods;
     pub use super::DiscardItemMenu_DecideCallback;
     pub use super::IDiscardItemMenu_DecideCallback;
     pub use super::IDiscardItemMenu_DecideCallbackMethods;
+    pub use super::DiscardItemMenu_DiscardItemMenuItem;
+    pub use super::IDiscardItemMenu_DiscardItemMenuItem;
+    pub use super::IDiscardItemMenu_DiscardItemMenuItemMethods;
+    pub use super::DiscardItemMenu;
+    pub use super::IDiscardItemMenu;
+    pub use super::IDiscardItemMenuMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

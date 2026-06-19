@@ -21,6 +21,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]#[::unity2::class(namespace="App",name="WellSequence.DialogItemGotoEvilFirst")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct WellSequence_DialogItemGotoEvilFirst{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_EvilWeaponEventStates{pub value:i32,}
 impl::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WellSequence.EvilWeaponEventStates";
@@ -41,7 +44,7 @@ pub fn already_talk()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]#[::unity2::class(namespace="App",name="WellSequence.DialogItemGotoEvilFirst")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct WellSequence_DialogItemGotoEvilFirst{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]#[::unity2::class(namespace="App",name="WellSequence.ChangeDifficultyMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct WellSequence_ChangeDifficultyMenuItem{#[offset(112)]#[rename(name="YesEventHandler")]pub yes_event_handler:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_Label{pub value:i32,}
@@ -80,6 +83,9 @@ pub fn end()->Self{Self{value:11}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence.md"))]#[::unity2::class(namespace="App",name="WellSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct WellSequence{#[static_field]#[rename(name="UseFlagName")]pub use_flag_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ExchangeLevelName")]pub exchange_level_name: ::unity2::Il2CppString, #[static_field]#[rename(name="SeedName")]pub seed_name: ::unity2::Il2CppString, #[static_field]#[rename(name="EvilWeaponState")]pub evil_weapon_state: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::welltopmenu::WellTopMenu_MenuResult, #[static_field]#[rename(name="m_WellEffectManager")]pub m_well_effect_manager:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="EFF_NAME_TABLE")]pub eff_name_table: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_UseFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_UseFlags{pub value:i32,}
 impl::unity2::ClassIdentity for WellSequence_UseFlags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WellSequence.UseFlags";
@@ -96,12 +102,6 @@ pub fn used()->Self{Self{value:1}
 pub fn item_return()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]#[::unity2::class(namespace="App",name="WellSequence.ChangeDifficultyMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct WellSequence_ChangeDifficultyMenuItem{#[offset(112)]#[rename(name="YesEventHandler")]pub yes_event_handler:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence.md"))]#[::unity2::class(namespace="App",name="WellSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct WellSequence{#[static_field]#[rename(name="UseFlagName")]pub use_flag_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ExchangeLevelName")]pub exchange_level_name: ::unity2::Il2CppString, #[static_field]#[rename(name="SeedName")]pub seed_name: ::unity2::Il2CppString, #[static_field]#[rename(name="EvilWeaponState")]pub evil_weapon_state: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::welltopmenu::WellTopMenu_MenuResult, #[static_field]#[rename(name="m_WellEffectManager")]pub m_well_effect_manager:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="EFF_NAME_TABLE")]pub eff_name_table: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
@@ -381,18 +381,18 @@ this}
 #[cfg(feature = "app-wellsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WellSequence_EvilWeaponEventStates;
     pub use super::WellSequence_DialogItemGotoEvilFirst;
     pub use super::IWellSequence_DialogItemGotoEvilFirst;
     pub use super::IWellSequence_DialogItemGotoEvilFirstMethods;
-    pub use super::WellSequence_Label;
-    pub use super::WellSequence_UseFlags;
+    pub use super::WellSequence_EvilWeaponEventStates;
     pub use super::WellSequence_ChangeDifficultyMenuItem;
     pub use super::IWellSequence_ChangeDifficultyMenuItem;
     pub use super::IWellSequence_ChangeDifficultyMenuItemMethods;
+    pub use super::WellSequence_Label;
     pub use super::WellSequence;
     pub use super::IWellSequence;
     pub use super::IWellSequenceMethods;
+    pub use super::WellSequence_UseFlags;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

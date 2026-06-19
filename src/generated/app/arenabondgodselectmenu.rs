@@ -29,25 +29,16 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ChangeUnitEventHandle.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.ChangeUnitEventHandle")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondGodSelectMenu_ChangeUnitEventHandle{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ArenaBondGodSelectMenu_ConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ArenaBondGodSelectMenu{#[offset(200)]#[rename(name="m_Root")]pub m_root:crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, #[offset(216)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, #[offset(224)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, #[offset(232)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, #[offset(240)]#[rename(name="m_StartHelpEventHandler")]pub m_start_help_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondGodSelectMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ChangeUnitEventHandle.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.ChangeUnitEventHandle")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondGodSelectMenu_ChangeUnitEventHandle{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondGodSelectMenu_SelectEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_DecideAction")]pub m_decide_action:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.ArenaBondEmblemSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem{#[offset(120)]#[rename(name="Unit")]pub unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="BondLv")]pub bond_lv:i32, #[offset(132)]#[rename(name="MaxBondLv")]pub max_bond_lv:i32, #[offset(136)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, #[offset(144)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, #[offset(152)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, #[offset(160)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, #[offset(168)]#[rename(name="m_StartHelpEventHandler")]pub m_start_help_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler,}
@@ -55,10 +46,42 @@ use crate::system::object::{IObject,Object}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_StartHelpEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.StartHelpEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondGodSelectMenu_StartHelpEventHandler{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ArenaBondGodSelectMenu{#[offset(200)]#[rename(name="m_Root")]pub m_root:crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, #[offset(216)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, #[offset(224)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, #[offset(232)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, #[offset(240)]#[rename(name="m_StartHelpEventHandler")]pub m_start_help_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_DecideAction")]pub m_decide_action:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondGodSelectMenu_DecideEventHandler{}
+
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods:IArenaBondGodSelectMenu_ChangeUnitEventHandle{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_ChangeUnitEventHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba86b0usize)as*mut u8,();
+(ArenaBondGodSelectMenu_ChangeUnitEventHandle)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_ChangeUnitEventHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba7cb0usize)as*mut u8,();
+(ArenaBondGodSelectMenu_ChangeUnitEventHandle)__receiver)}
+}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu_ChangeUnitEventHandle>IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods for __T{}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ChangeUnitEventHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ChangeUnitEventHandle{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_ChangeUnitEventHandle), ::core::stringify!(new),));
+ <Self as IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba6e20usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(decide_action))}
@@ -84,52 +107,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent> ,root:impl::core::convert::Into<crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot> ,selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,default_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,start_help_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler>)->crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cf40usize)as*mut u8,crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot)::core::convert::Into::into(root),(crate::app::unit::Unit)::core::convert::Into::into(selected_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(default_type),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)::core::convert::Into::into(start_help_event_handler))}
-}
-#[doc="`CreateMenuItem(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, *muti32, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` overload"]pub fn create_menu_item(unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,default_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,start_help_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler>)->(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1c9d110usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
-(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(default_type),(*mut i32)__out_0.as_mut_ptr(),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)::core::convert::Into::into(start_help_event_handler))}
-;
-(__ret,__out_0.assume_init())}
-}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenuMethods:IArenaBondGodSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent> ,root:impl::core::convert::Into<crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,start_help_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9d9b0usize)as*mut u8,();
-(ArenaBondGodSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot)::core::convert::Into::into(root),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)::core::convert::Into::into(start_help_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9da60usize)as*mut u8, ::unity2::Il2CppString;
-(ArenaBondGodSelectMenu)__receiver)}
-}
-#[doc="`RebuildMenu(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn rebuild_menu(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9dab0usize)as*mut u8,();
-(ArenaBondGodSelectMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
-}
-#[doc="`SetActiveForReliance(bool, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn set_active_for_reliance(self,is_active:impl::core::convert::Into<bool> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9db90usize)as*mut u8,();
-(ArenaBondGodSelectMenu)__receiver,(bool)::core::convert::Into::into(is_active),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
-}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu>IArenaBondGodSelectMenuMethods for __T{}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_active_for_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent,root:crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot,decide_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler,select_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler,change_unit_to_prev_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle,change_unit_to_next_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle,start_help_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu), ::core::stringify!(new),));
- <Self as IArenaBondGodSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,root,decide_event_handler,select_event_handler,change_unit_to_prev_event_handler,change_unit_to_next_event_handler,start_help_event_handler);
-this}
-}
-
 #[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods:IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31a30usize)as*mut u8,();
 (ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo)__receiver)}
@@ -145,52 +122,6 @@ this}
 ::{}
  failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
  <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenu_DecideEventHandlerMethods:IArenaBondGodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba8790usize)as*mut u8,();
-(ArenaBondGodSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba7050usize)as*mut u8,();
-(ArenaBondGodSelectMenu_DecideEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
-}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu_DecideEventHandler>IArenaBondGodSelectMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IArenaBondGodSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods:IArenaBondGodSelectMenu_ChangeUnitEventHandle{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_ChangeUnitEventHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba86b0usize)as*mut u8,();
-(ArenaBondGodSelectMenu_ChangeUnitEventHandle)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_ChangeUnitEventHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba7cb0usize)as*mut u8,();
-(ArenaBondGodSelectMenu_ChangeUnitEventHandle)__receiver)}
-}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu_ChangeUnitEventHandle>IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods for __T{}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ChangeUnitEventHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ChangeUnitEventHandle{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_ChangeUnitEventHandle), ::core::stringify!(new),));
- <Self as IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -214,29 +145,6 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_SelectEventHandler), ::core::stringify!(new),));
  <Self as IArenaBondGodSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods:IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31ac0usize)as*mut u8,();
-(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_action))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31b70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes>IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(decide_action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
- <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,decide_action);
 this}
 }
 
@@ -346,36 +254,128 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent> ,root:impl::core::convert::Into<crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot> ,selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,default_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,start_help_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler>)->crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cf40usize)as*mut u8,crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot)::core::convert::Into::into(root),(crate::app::unit::Unit)::core::convert::Into::into(selected_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(default_type),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)::core::convert::Into::into(start_help_event_handler))}
+}
+#[doc="`CreateMenuItem(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, *muti32, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` overload"]pub fn create_menu_item(unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,default_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,start_help_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler>)->(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1c9d110usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(default_type),(*mut i32)__out_0.as_mut_ptr(),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)::core::convert::Into::into(start_help_event_handler))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenuMethods:IArenaBondGodSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent> ,root:impl::core::convert::Into<crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle> ,start_help_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9d9b0usize)as*mut u8,();
+(ArenaBondGodSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot)::core::convert::Into::into(root),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler),(crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)::core::convert::Into::into(start_help_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9da60usize)as*mut u8, ::unity2::Il2CppString;
+(ArenaBondGodSelectMenu)__receiver)}
+}
+#[doc="`RebuildMenu(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn rebuild_menu(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9dab0usize)as*mut u8,();
+(ArenaBondGodSelectMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetActiveForReliance(bool, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn set_active_for_reliance(self,is_active:impl::core::convert::Into<bool> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9db90usize)as*mut u8,();
+(ArenaBondGodSelectMenu)__receiver,(bool)::core::convert::Into::into(is_active),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu>IArenaBondGodSelectMenuMethods for __T{}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_active_for_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle, crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent,root:crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot,decide_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_DecideEventHandler,select_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_SelectEventHandler,change_unit_to_prev_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle,change_unit_to_next_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_ChangeUnitEventHandle,start_help_event_handler:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu_StartHelpEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu), ::core::stringify!(new),));
+ <Self as IArenaBondGodSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,root,decide_event_handler,select_event_handler,change_unit_to_prev_event_handler,change_unit_to_next_event_handler,start_help_event_handler);
+this}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods:IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31ac0usize)as*mut u8,();
+(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_action))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31b70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes>IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(decide_action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,decide_action);
+this}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]pub trait IArenaBondGodSelectMenu_DecideEventHandlerMethods:IArenaBondGodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba8790usize)as*mut u8,();
+(ArenaBondGodSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba7050usize)as*mut u8,();
+(ArenaBondGodSelectMenu_DecideEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl<__T:IArenaBondGodSelectMenu_DecideEventHandler>IArenaBondGodSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondgodselectmenu")]impl ArenaBondGodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondGodSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IArenaBondGodSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-arenabondgodselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaBondGodSelectMenu_ConfirmDialog;
-    pub use super::IArenaBondGodSelectMenu_ConfirmDialog;
-    pub use super::IArenaBondGodSelectMenu_ConfirmDialogMethods;
-    pub use super::ArenaBondGodSelectMenu;
-    pub use super::IArenaBondGodSelectMenu;
-    pub use super::IArenaBondGodSelectMenuMethods;
-    pub use super::ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods;
-    pub use super::ArenaBondGodSelectMenu_DecideEventHandler;
-    pub use super::IArenaBondGodSelectMenu_DecideEventHandler;
-    pub use super::IArenaBondGodSelectMenu_DecideEventHandlerMethods;
     pub use super::ArenaBondGodSelectMenu_ChangeUnitEventHandle;
     pub use super::IArenaBondGodSelectMenu_ChangeUnitEventHandle;
     pub use super::IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods;
+    pub use super::ArenaBondGodSelectMenu_ConfirmDialog;
+    pub use super::IArenaBondGodSelectMenu_ConfirmDialog;
+    pub use super::IArenaBondGodSelectMenu_ConfirmDialogMethods;
+    pub use super::ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods;
     pub use super::ArenaBondGodSelectMenu_SelectEventHandler;
     pub use super::IArenaBondGodSelectMenu_SelectEventHandler;
     pub use super::IArenaBondGodSelectMenu_SelectEventHandlerMethods;
-    pub use super::ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods;
     pub use super::ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem;
     pub use super::IArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem;
     pub use super::IArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItemMethods;
     pub use super::ArenaBondGodSelectMenu_StartHelpEventHandler;
     pub use super::IArenaBondGodSelectMenu_StartHelpEventHandler;
     pub use super::IArenaBondGodSelectMenu_StartHelpEventHandlerMethods;
+    pub use super::ArenaBondGodSelectMenu;
+    pub use super::IArenaBondGodSelectMenu;
+    pub use super::IArenaBondGodSelectMenuMethods;
+    pub use super::ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods;
+    pub use super::ArenaBondGodSelectMenu_DecideEventHandler;
+    pub use super::IArenaBondGodSelectMenu_DecideEventHandler;
+    pub use super::IArenaBondGodSelectMenu_DecideEventHandlerMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

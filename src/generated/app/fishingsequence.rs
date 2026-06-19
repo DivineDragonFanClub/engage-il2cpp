@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence.md"))]#[::unity2::class(namespace="App",name="FishingSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingSequence{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FishingSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for FishingSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="FishingSequence.Label";
@@ -39,9 +42,6 @@ pub fn check_continue()->Self{Self{value:3}
 pub fn exit()->Self{Self{value:4}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence.md"))]#[::unity2::class(namespace="App",name="FishingSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingSequence{}
 
 }
 
@@ -124,10 +124,10 @@ this}
 #[cfg(feature = "app-fishingsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingSequence_Label;
     pub use super::FishingSequence;
     pub use super::IFishingSequence;
     pub use super::IFishingSequenceMethods;
+    pub use super::FishingSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

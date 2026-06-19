@@ -15,33 +15,15 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData_ShaderResources.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="StatusModelRendererData.ShaderResources")]#[parent(crate::system::object::Object)]pub struct StatusModelRendererData_ShaderResources{#[offset(16)]#[rename(name="blitPS")]pub blit_ps:crate::unity_engine::shader::Shader, #[offset(24)]#[rename(name="downsampleDepth")]pub downsample_depth:crate::unity_engine::shader::Shader, #[offset(32)]#[rename(name="halfResoComposite")]pub half_reso_composite:crate::unity_engine::shader::Shader, #[offset(40)]#[rename(name="copyDepthPS")]pub copy_depth_ps:crate::unity_engine::shader::Shader, #[offset(48)]#[rename(name="samplingPS")]pub sampling_ps:crate::unity_engine::shader::Shader,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="StatusModelRendererData")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]pub struct StatusModelRendererData{#[offset(48)]#[rename(name="postProcessData")]pub post_process_data:crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, #[offset(56)]#[rename(name="shaders")]pub shaders:crate::unity_engine::rendering::universal::custom::statusmodelrendererdata::StatusModelRendererData_ShaderResources, #[offset(64)]#[rename(name="m_OpaqueLayerMask")]pub m_opaque_layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(68)]#[rename(name="m_TransparentLayerMask")]pub m_transparent_layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(72)]#[rename(name="m_DefaultStencilState")]pub m_default_stencil_state:crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData, #[offset(80)]#[rename(name="m_ShadowTransparentReceive")]pub m_shadow_transparent_receive:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData_ShaderResources.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="StatusModelRendererData.ShaderResources")]#[parent(crate::system::object::Object)]pub struct StatusModelRendererData_ShaderResources{#[offset(16)]#[rename(name="blitPS")]pub blit_ps:crate::unity_engine::shader::Shader, #[offset(24)]#[rename(name="downsampleDepth")]pub downsample_depth:crate::unity_engine::shader::Shader, #[offset(32)]#[rename(name="halfResoComposite")]pub half_reso_composite:crate::unity_engine::shader::Shader, #[offset(40)]#[rename(name="copyDepthPS")]pub copy_depth_ps:crate::unity_engine::shader::Shader, #[offset(48)]#[rename(name="samplingPS")]pub sampling_ps:crate::unity_engine::shader::Shader,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]pub trait IStatusModelRendererData_ShaderResourcesMethods:IStatusModelRendererData_ShaderResources{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StatusModelRendererData_ShaderResources as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba720usize)as*mut u8,();
-(StatusModelRendererData_ShaderResources)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]impl<__T:IStatusModelRendererData_ShaderResources>IStatusModelRendererData_ShaderResourcesMethods for __T{}
-
-#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]impl StatusModelRendererData_ShaderResources{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]impl StatusModelRendererData_ShaderResources{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(StatusModelRendererData_ShaderResources), ::core::stringify!(new),));
- <Self as IStatusModelRendererData_ShaderResourcesMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]pub trait IStatusModelRendererDataMethods:IStatusModelRendererData{#[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <StatusModelRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2edf810usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
@@ -111,15 +93,33 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]pub trait IStatusModelRendererData_ShaderResourcesMethods:IStatusModelRendererData_ShaderResources{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StatusModelRendererData_ShaderResources as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba720usize)as*mut u8,();
+(StatusModelRendererData_ShaderResources)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]impl<__T:IStatusModelRendererData_ShaderResources>IStatusModelRendererData_ShaderResourcesMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]impl StatusModelRendererData_ShaderResources{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrendererdata")]impl StatusModelRendererData_ShaderResources{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StatusModelRendererData_ShaderResources), ::core::stringify!(new),));
+ <Self as IStatusModelRendererData_ShaderResourcesMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::StatusModelRendererData_ShaderResources;
-    pub use super::IStatusModelRendererData_ShaderResources;
-    pub use super::IStatusModelRendererData_ShaderResourcesMethods;
     pub use super::StatusModelRendererData;
     pub use super::IStatusModelRendererData;
     pub use super::IStatusModelRendererDataMethods;
+    pub use super::StatusModelRendererData_ShaderResources;
+    pub use super::IStatusModelRendererData_ShaderResources;
+    pub use super::IStatusModelRendererData_ShaderResourcesMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::object_2::IObject_2;
     pub use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;

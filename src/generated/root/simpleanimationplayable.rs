@@ -16,10 +16,19 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateHandle.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.StateHandle")]#[parent(crate::system::object::Object)]pub struct SimpleAnimationPlayable_StateHandle{#[offset(16)]#[rename(name="m_Parent")]pub m_parent:crate::root::simpleanimationplayable::SimpleAnimationPlayable, #[offset(24)]#[rename(name="m_Index")]pub m_index:i32, #[offset(32)]#[rename(name="m_Target")]pub m_target:crate::unity_engine::playables::playable::Playable,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateInfo.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.StateInfo")]#[parent(crate::system::object::Object)]pub struct SimpleAnimationPlayable_StateInfo{#[offset(16)]#[rename(name="m_Enabled")]pub m_enabled:bool, #[offset(20)]#[rename(name="m_Index")]pub m_index:i32, #[offset(24)]#[rename(name="m_StateName")]pub m_state_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Fading")]pub m_fading:bool, #[offset(36)]#[rename(name="m_Time")]pub m_time:f32, #[offset(40)]#[rename(name="m_TargetWeight")]pub m_target_weight:f32, #[offset(44)]#[rename(name="m_Weight")]pub m_weight:f32, #[offset(48)]#[rename(name="m_FadeSpeed")]pub m_fade_speed:f32, #[offset(56)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::animationclip::AnimationClip, #[offset(64)]#[rename(name="m_Playable")]pub m_playable:crate::unity_engine::playables::playable::Playable, #[offset(80)]#[rename(name="m_WrapMode")]pub m_wrap_mode:crate::unity_engine::wrapmode::WrapMode, #[offset(84)]#[rename(name="m_IsClone")]pub m_is_clone:bool, #[offset(85)]#[rename(name="m_ReadyForCleanup")]pub m_ready_for_cleanup:bool, #[offset(88)]#[rename(name="m_ParentState")]pub m_parent_state:crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle, #[offset(96)]#[rename(name="m_WeightDirty")]pub m_weight_dirty:bool, #[offset(97)]#[rename(name="m_EnabledDirty")]pub m_enabled_dirty:bool, #[offset(98)]#[rename(name="m_TimeIsUpToDate")]pub m_time_is_up_to_date:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateManagement.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.StateManagement")]#[parent(crate::system::object::Object)]pub struct SimpleAnimationPlayable_StateManagement{#[offset(16)]#[rename(name="m_States")]pub m_states:crate::system::collections::generic::list_1::List_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateInfo> , #[offset(24)]#[rename(name="m_Count")]pub m_count:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct SimpleAnimationPlayable{#[offset(16)]#[rename(name="m_StateQueue")]pub m_state_queue:crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_QueuedState> , #[offset(24)]#[rename(name="m_States")]pub m_states:crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateManagement, #[offset(32)]#[rename(name="m_Initialized")]pub m_initialized:bool, #[offset(33)]#[rename(name="m_KeepStoppedPlayablesConnected")]pub m_keep_stopped_playables_connected:bool, #[offset(40)]#[rename(name="m_ActualPlayable")]pub m_actual_playable:crate::unity_engine::playables::playable::Playable, #[offset(56)]#[rename(name="m_Mixer")]pub m_mixer:crate::unity_engine::animations::animationmixerplayable::AnimationMixerPlayable, #[offset(72)]#[rename(name="onDone")]pub on_done:crate::system::action::Action, #[offset(80)]#[rename(name="m_StatesVersion")]pub m_states_version:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_IState.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.IState")]pub struct SimpleAnimationPlayable_IState{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateEnumerable.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.StateEnumerable")]#[parent(crate::system::object::Object)]pub struct SimpleAnimationPlayable_StateEnumerable{#[offset(16)]#[rename(name="m_Owner")]pub m_owner:crate::root::simpleanimationplayable::SimpleAnimationPlayable,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateInfo.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.StateInfo")]#[parent(crate::system::object::Object)]pub struct SimpleAnimationPlayable_StateInfo{#[offset(16)]#[rename(name="m_Enabled")]pub m_enabled:bool, #[offset(20)]#[rename(name="m_Index")]pub m_index:i32, #[offset(24)]#[rename(name="m_StateName")]pub m_state_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Fading")]pub m_fading:bool, #[offset(36)]#[rename(name="m_Time")]pub m_time:f32, #[offset(40)]#[rename(name="m_TargetWeight")]pub m_target_weight:f32, #[offset(44)]#[rename(name="m_Weight")]pub m_weight:f32, #[offset(48)]#[rename(name="m_FadeSpeed")]pub m_fade_speed:f32, #[offset(56)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::animationclip::AnimationClip, #[offset(64)]#[rename(name="m_Playable")]pub m_playable:crate::unity_engine::playables::playable::Playable, #[offset(80)]#[rename(name="m_WrapMode")]pub m_wrap_mode:crate::unity_engine::wrapmode::WrapMode, #[offset(84)]#[rename(name="m_IsClone")]pub m_is_clone:bool, #[offset(85)]#[rename(name="m_ReadyForCleanup")]pub m_ready_for_cleanup:bool, #[offset(88)]#[rename(name="m_ParentState")]pub m_parent_state:crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle, #[offset(96)]#[rename(name="m_WeightDirty")]pub m_weight_dirty:bool, #[offset(97)]#[rename(name="m_EnabledDirty")]pub m_enabled_dirty:bool, #[offset(98)]#[rename(name="m_TimeIsUpToDate")]pub m_time_is_up_to_date:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_QueuedState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SimpleAnimationPlayable_QueuedState{pub state:crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle,pub fade_time:f32,}
@@ -34,15 +43,6 @@ impl::unity2::IlType for SimpleAnimationPlayable_QueuedState{fn il_type()-> &'st
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateEnumerable_StateEnumerator.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.StateEnumerable.StateEnumerator")]#[parent(crate::system::object::Object)]pub struct SimpleAnimationPlayable_StateEnumerable_StateEnumerator{#[offset(16)]#[rename(name="m_Index")]pub m_index:i32, #[offset(20)]#[rename(name="m_Version")]pub m_version:i32, #[offset(24)]#[rename(name="m_Owner")]pub m_owner:crate::root::simpleanimationplayable::SimpleAnimationPlayable,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_IState.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.IState")]pub struct SimpleAnimationPlayable_IState{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct SimpleAnimationPlayable{#[offset(16)]#[rename(name="m_StateQueue")]pub m_state_queue:crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_QueuedState> , #[offset(24)]#[rename(name="m_States")]pub m_states:crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateManagement, #[offset(32)]#[rename(name="m_Initialized")]pub m_initialized:bool, #[offset(33)]#[rename(name="m_KeepStoppedPlayablesConnected")]pub m_keep_stopped_playables_connected:bool, #[offset(40)]#[rename(name="m_ActualPlayable")]pub m_actual_playable:crate::unity_engine::playables::playable::Playable, #[offset(56)]#[rename(name="m_Mixer")]pub m_mixer:crate::unity_engine::animations::animationmixerplayable::AnimationMixerPlayable, #[offset(72)]#[rename(name="onDone")]pub on_done:crate::system::action::Action, #[offset(80)]#[rename(name="m_StatesVersion")]pub m_states_version:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimationplayable/SimpleAnimationPlayable_StateEnumerable.md"))]#[::unity2::class(namespace="",name="SimpleAnimationPlayable.StateEnumerable")]#[parent(crate::system::object::Object)]pub struct SimpleAnimationPlayable_StateEnumerable{#[offset(16)]#[rename(name="m_Owner")]pub m_owner:crate::root::simpleanimationplayable::SimpleAnimationPlayable,}
 
 }
 
@@ -149,209 +149,6 @@ pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 ::{}
  failed to instantiate", ::core::stringify!(SimpleAnimationPlayable_StateHandle), ::core::stringify!(new),));
  <Self as ISimpleAnimationPlayable_StateHandleMethods> ::ctor(this,s,index,target);
-this}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayable_StateInfoMethods:ISimpleAnimationPlayable_StateInfo{#[doc="`Initialize(::unity2::Il2CppString, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::wrapmode::WrapMode)` overload"]fn initialize(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip> ,wrap_mode:impl::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eee510usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(clip),(crate::unity_engine::wrapmode::WrapMode)::core::convert::Into::into(wrap_mode))}
-}
-#[doc="`GetTime()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef06a0usize)as*mut u8,f32;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`SetTime(f32)` overload"]fn set_time(self,new_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3820usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(new_time))}
-}
-#[doc="`Enable()` overload"]fn enable(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eeeb80usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0780usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`Pause()` overload"]fn pause(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eee560usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`Play()` overload"]fn play(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0580usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef04e0usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`ForceWeight(f32)` overload"]fn force_weight(self,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eeeba0usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(weight))}
-}
-#[doc="`SetWeight(f32)` overload"]fn set_weight(self,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef04d0usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(weight))}
-}
-#[doc="`FadeTo(f32, f32)` overload"]fn fade_to(self,weight:impl::core::convert::Into<f32> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eef490usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(weight),(f32)::core::convert::Into::into(speed))}
-}
-#[doc="`DestroyPlayable()` overload"]fn destroy_playable(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3930usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`SetAsCloneOf(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle)` overload"]fn set_as_clone_of(self,handle:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eef7b0usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle)::core::convert::Into::into(handle))}
-}
-#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef39e0usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef39f0usize)as*mut u8,i32;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`set_index(i32)` overload"]fn set_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a00usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_stateName()` overload"]fn get_state_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a10usize)as*mut u8, ::unity2::Il2CppString;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`set_stateName(::unity2::Il2CppString)` overload"]fn set_state_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a20usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_fading()` overload"]fn get_fading(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a30usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_targetWeight()` overload"]fn get_target_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a40usize)as*mut u8,f32;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a50usize)as*mut u8,f32;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_fadeSpeed()` overload"]fn get_fade_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a60usize)as*mut u8,f32;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0640usize)as*mut u8,f32;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`set_speed(f32)` overload"]fn set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef1130usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_playableDuration()` overload"]fn get_playable_duration(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0720usize)as*mut u8,f32;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a70usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`SetPlayable(crate::unity_engine::playables::playable::Playable)` overload"]fn set_playable(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a80usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
-}
-#[doc="`get_isDone()` overload"]fn get_is_done(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef05e0usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_playable()` overload"]fn get_playable(self,)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a90usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_wrapMode()` overload"]fn get_wrap_mode(self,)->crate::unity_engine::wrapmode::WrapMode{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3aa0usize)as*mut u8,crate::unity_engine::wrapmode::WrapMode;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_isClone()` overload"]fn get_is_clone(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ab0usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_isReadyForCleanup()` overload"]fn get_is_ready_for_cleanup(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ac0usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_parentState()` overload"]fn get_parent_state(self,)->crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ad0usize)as*mut u8,crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_enabledDirty()` overload"]fn get_enabled_dirty(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ae0usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`get_weightDirty()` overload"]fn get_weight_dirty(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3af0usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`ResetDirtyFlags()` overload"]fn reset_dirty_flags(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef07a0usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`InvalidateTime()` overload"]fn invalidate_time(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0e70usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3b00usize)as*mut u8,();
-(SimpleAnimationPlayable_StateInfo)__receiver)}
-}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]impl<__T:ISimpleAnimationPlayable_StateInfo>ISimpleAnimationPlayable_StateInfoMethods for __T{}
-
-#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateInfo{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn force_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn fade_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn destroy_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_as_clone_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_state_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn set_state_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn get_fading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_target_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn get_fade_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn set_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn get_playable_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn set_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn get_is_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn get_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn get_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn get_is_clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn get_is_ready_for_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn get_parent_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-pub fn get_enabled_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
-pub fn get_weight_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
-pub fn reset_dirty_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
-pub fn invalidate_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SimpleAnimationPlayable_StateInfo), ::core::stringify!(new),));
- <Self as ISimpleAnimationPlayable_StateInfoMethods> ::ctor(this,);
 this}
 }
 
@@ -491,247 +288,6 @@ pub fn stop_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
  failed to instantiate", ::core::stringify!(SimpleAnimationPlayable_StateManagement), ::core::stringify!(new),));
  <Self as ISimpleAnimationPlayable_StateManagementMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_QueuedState{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle, f32)` overload"]pub fn ctor(&mut self,s:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle> ,t:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eeef70usize)as*mut u8,();
-(*mut SimpleAnimationPlayable_QueuedState)self as*mut SimpleAnimationPlayable_QueuedState,(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle)::core::convert::Into::into(s),(f32)::core::convert::Into::into(t))}
-}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_QueuedState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods:ISimpleAnimationPlayable_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` overload"]fn ctor(self,owner:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef2130usize)as*mut u8,();
-(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver,(crate::root::simpleanimationplayable::SimpleAnimationPlayable)::core::convert::Into::into(owner))}
-}
-#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4000usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
-}
-#[doc="`GetCurrentHandle(i32)` overload"]fn get_current_handle(self,index:impl::core::convert::Into<i32>)->crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4030usize)as*mut u8,crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState;
-(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`System.Collections.IEnumerator.get_Current()` overload"]fn system_collections_i_enumerator_get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef41c0usize)as*mut u8,crate::system::object::Object;
-(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef41e0usize)as*mut u8,();
-(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef41f0usize)as*mut u8,bool;
-(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3f80usize)as*mut u8,();
-(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
-}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]impl<__T:ISimpleAnimationPlayable_StateEnumerable_StateEnumerator>ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods for __T{}
-
-#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateEnumerable_StateEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_current_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` — overload selector"]pub fn new(owner:crate::root::simpleanimationplayable::SimpleAnimationPlayable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SimpleAnimationPlayable_StateEnumerable_StateEnumerator), ::core::stringify!(new),));
- <Self as ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods> ::ctor(this,owner);
-this}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SimpleAnimationPlayable_IState_unity2_raw{use super:: * ;
-pub unsafe fn is_valid(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsValid").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsValid", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_enabled(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_enabled").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_enabled", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_enabled(this:SimpleAnimationPlayable_IState,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_enabled").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_enabled", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_time(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_time").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_time", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_time(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_time").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_time", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_normalized_time(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_normalizedTime").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_normalizedTime", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_normalized_time(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_normalizedTime").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_normalizedTime", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_speed(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_speed").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_speed", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_speed(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_speed").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_speed", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_name(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_name").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_name", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_name(this:SimpleAnimationPlayable_IState,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_name").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_name", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_weight(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_weight").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_weight", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_weight(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_weight").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_weight", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_length(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_length").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_length", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_clip(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_clip").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_clip", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_wrap_mode(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_wrapMode").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_wrapMode", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayable_IStateMethods:ISimpleAnimationPlayable_IState{#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_enabled(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_enabled(bool)` overload"]fn set_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::set_enabled(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_time(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_time(f32)` overload"]fn set_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_normalizedTime()` overload"]fn get_normalized_time(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_normalized_time(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_normalizedTime(f32)` overload"]fn set_normalized_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::set_normalized_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_speed(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_speed(f32)` overload"]fn set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::set_speed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_weight(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_weight(f32)` overload"]fn set_weight(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_length()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_clip(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_wrapMode()` overload"]fn get_wrap_mode(self,)->crate::unity_engine::wrapmode::WrapMode{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimationPlayable_IState_unity2_raw::get_wrap_mode(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="root-simpleanimationplayable")]impl<__T:ISimpleAnimationPlayable_IState>ISimpleAnimationPlayable_IStateMethods for __T{}
-
-#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_IState{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
 #[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayableMethods:ISimpleAnimationPlayable{#[doc="`get_keepStoppedPlayablesConnected()` overload"]fn get_keep_stopped_playables_connected(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1022,6 +578,191 @@ pub fn state_info_to_handle_method_info()-> & 'static::unity2::il2cpp::MethodInf
 this}
 }
 
+#[cfg(feature="root-simpleanimationplayable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SimpleAnimationPlayable_IState_unity2_raw{use super:: * ;
+pub unsafe fn is_valid(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsValid").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsValid", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_enabled(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_enabled").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_enabled", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_enabled(this:SimpleAnimationPlayable_IState,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_enabled").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_enabled", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_time(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_time").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_time", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_time(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_time").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_time", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_normalized_time(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_normalizedTime").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_normalizedTime", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_normalized_time(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_normalizedTime").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_normalizedTime", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_speed(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_speed").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_speed", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_speed(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_speed").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_speed", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_name(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_name").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_name", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_name(this:SimpleAnimationPlayable_IState,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_name").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_name", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_weight(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_weight").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_weight", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_weight(this:SimpleAnimationPlayable_IState,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_weight").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_weight", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_length(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_length").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_length", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_clip(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_clip").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_clip", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_wrap_mode(this:SimpleAnimationPlayable_IState,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_wrapMode").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_wrapMode", <SimpleAnimationPlayable_IState as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SimpleAnimationPlayable_IState, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayable_IStateMethods:ISimpleAnimationPlayable_IState{#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_enabled(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_enabled(bool)` overload"]fn set_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::set_enabled(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_time(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_time(f32)` overload"]fn set_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_normalizedTime()` overload"]fn get_normalized_time(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_normalized_time(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_normalizedTime(f32)` overload"]fn set_normalized_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::set_normalized_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_speed(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_speed(f32)` overload"]fn set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::set_speed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_weight(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_weight(f32)` overload"]fn set_weight(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_length()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_clip(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_wrapMode()` overload"]fn get_wrap_mode(self,)->crate::unity_engine::wrapmode::WrapMode{unsafe{let __receiver= <SimpleAnimationPlayable_IState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SimpleAnimationPlayable_IState_unity2_raw::get_wrap_mode(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]impl<__T:ISimpleAnimationPlayable_IState>ISimpleAnimationPlayable_IStateMethods for __T{}
+
+#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_IState{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
+
 #[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayable_StateEnumerableMethods:ISimpleAnimationPlayable_StateEnumerable{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` overload"]fn ctor(self,owner:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3eedf40usize)as*mut u8,();
 (SimpleAnimationPlayable_StateEnumerable)__receiver,(crate::root::simpleanimationplayable::SimpleAnimationPlayable)::core::convert::Into::into(owner))}
@@ -1050,31 +791,290 @@ pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static:
 this}
 }
 
+#[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayable_StateInfoMethods:ISimpleAnimationPlayable_StateInfo{#[doc="`Initialize(::unity2::Il2CppString, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::wrapmode::WrapMode)` overload"]fn initialize(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip> ,wrap_mode:impl::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eee510usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(clip),(crate::unity_engine::wrapmode::WrapMode)::core::convert::Into::into(wrap_mode))}
+}
+#[doc="`GetTime()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef06a0usize)as*mut u8,f32;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`SetTime(f32)` overload"]fn set_time(self,new_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3820usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(new_time))}
+}
+#[doc="`Enable()` overload"]fn enable(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eeeb80usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0780usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`Pause()` overload"]fn pause(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eee560usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`Play()` overload"]fn play(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0580usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef04e0usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`ForceWeight(f32)` overload"]fn force_weight(self,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eeeba0usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(weight))}
+}
+#[doc="`SetWeight(f32)` overload"]fn set_weight(self,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef04d0usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(weight))}
+}
+#[doc="`FadeTo(f32, f32)` overload"]fn fade_to(self,weight:impl::core::convert::Into<f32> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eef490usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(weight),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`DestroyPlayable()` overload"]fn destroy_playable(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3930usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`SetAsCloneOf(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle)` overload"]fn set_as_clone_of(self,handle:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eef7b0usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef39e0usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef39f0usize)as*mut u8,i32;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`set_index(i32)` overload"]fn set_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a00usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_stateName()` overload"]fn get_state_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a10usize)as*mut u8, ::unity2::Il2CppString;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`set_stateName(::unity2::Il2CppString)` overload"]fn set_state_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a20usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_fading()` overload"]fn get_fading(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a30usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_targetWeight()` overload"]fn get_target_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a40usize)as*mut u8,f32;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a50usize)as*mut u8,f32;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_fadeSpeed()` overload"]fn get_fade_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a60usize)as*mut u8,f32;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0640usize)as*mut u8,f32;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`set_speed(f32)` overload"]fn set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef1130usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_playableDuration()` overload"]fn get_playable_duration(self,)->f32{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0720usize)as*mut u8,f32;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a70usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`SetPlayable(crate::unity_engine::playables::playable::Playable)` overload"]fn set_playable(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a80usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`get_isDone()` overload"]fn get_is_done(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef05e0usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_playable()` overload"]fn get_playable(self,)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3a90usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_wrapMode()` overload"]fn get_wrap_mode(self,)->crate::unity_engine::wrapmode::WrapMode{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3aa0usize)as*mut u8,crate::unity_engine::wrapmode::WrapMode;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_isClone()` overload"]fn get_is_clone(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ab0usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_isReadyForCleanup()` overload"]fn get_is_ready_for_cleanup(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ac0usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_parentState()` overload"]fn get_parent_state(self,)->crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ad0usize)as*mut u8,crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_enabledDirty()` overload"]fn get_enabled_dirty(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3ae0usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`get_weightDirty()` overload"]fn get_weight_dirty(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3af0usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`ResetDirtyFlags()` overload"]fn reset_dirty_flags(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef07a0usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`InvalidateTime()` overload"]fn invalidate_time(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef0e70usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3b00usize)as*mut u8,();
+(SimpleAnimationPlayable_StateInfo)__receiver)}
+}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]impl<__T:ISimpleAnimationPlayable_StateInfo>ISimpleAnimationPlayable_StateInfoMethods for __T{}
+
+#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateInfo{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn force_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn fade_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn destroy_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_as_clone_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_state_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_state_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_fading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_target_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_fade_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_playable_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_is_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_is_clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_is_ready_for_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_parent_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_enabled_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_weight_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn reset_dirty_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn invalidate_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SimpleAnimationPlayable_StateInfo), ::core::stringify!(new),));
+ <Self as ISimpleAnimationPlayable_StateInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_QueuedState{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle, f32)` overload"]pub fn ctor(&mut self,s:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle> ,t:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eeef70usize)as*mut u8,();
+(*mut SimpleAnimationPlayable_QueuedState)self as*mut SimpleAnimationPlayable_QueuedState,(crate::root::simpleanimationplayable::SimpleAnimationPlayable_StateHandle)::core::convert::Into::into(s),(f32)::core::convert::Into::into(t))}
+}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_QueuedState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]pub trait ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods:ISimpleAnimationPlayable_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` overload"]fn ctor(self,owner:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable>)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef2130usize)as*mut u8,();
+(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver,(crate::root::simpleanimationplayable::SimpleAnimationPlayable)::core::convert::Into::into(owner))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4000usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
+}
+#[doc="`GetCurrentHandle(i32)` overload"]fn get_current_handle(self,index:impl::core::convert::Into<i32>)->crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4030usize)as*mut u8,crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState;
+(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]fn system_collections_i_enumerator_get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef41c0usize)as*mut u8,crate::system::object::Object;
+(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef41e0usize)as*mut u8,();
+(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef41f0usize)as*mut u8,bool;
+(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SimpleAnimationPlayable_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3f80usize)as*mut u8,();
+(SimpleAnimationPlayable_StateEnumerable_StateEnumerator)__receiver)}
+}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]impl<__T:ISimpleAnimationPlayable_StateEnumerable_StateEnumerator>ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods for __T{}
+
+#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateEnumerable_StateEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_current_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="root-simpleanimationplayable")]impl SimpleAnimationPlayable_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable)` — overload selector"]pub fn new(owner:crate::root::simpleanimationplayable::SimpleAnimationPlayable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SimpleAnimationPlayable_StateEnumerable_StateEnumerator), ::core::stringify!(new),));
+ <Self as ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods> ::ctor(this,owner);
+this}
+}
+
 #[cfg(feature = "root-simpleanimationplayable")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SimpleAnimationPlayable_StateHandle;
     pub use super::ISimpleAnimationPlayable_StateHandle;
     pub use super::ISimpleAnimationPlayable_StateHandleMethods;
-    pub use super::SimpleAnimationPlayable_StateInfo;
-    pub use super::ISimpleAnimationPlayable_StateInfo;
-    pub use super::ISimpleAnimationPlayable_StateInfoMethods;
     pub use super::SimpleAnimationPlayable_StateManagement;
     pub use super::ISimpleAnimationPlayable_StateManagement;
     pub use super::ISimpleAnimationPlayable_StateManagementMethods;
+    pub use super::SimpleAnimationPlayable;
+    pub use super::ISimpleAnimationPlayable;
+    pub use super::ISimpleAnimationPlayableMethods;
+    pub use super::SimpleAnimationPlayable_IState;
+    pub use super::ISimpleAnimationPlayable_IState;
+    pub use super::ISimpleAnimationPlayable_IStateMethods;
+    pub use super::SimpleAnimationPlayable_StateEnumerable;
+    pub use super::ISimpleAnimationPlayable_StateEnumerable;
+    pub use super::ISimpleAnimationPlayable_StateEnumerableMethods;
+    pub use super::SimpleAnimationPlayable_StateInfo;
+    pub use super::ISimpleAnimationPlayable_StateInfo;
+    pub use super::ISimpleAnimationPlayable_StateInfoMethods;
     pub use super::SimpleAnimationPlayable_QueuedState;
     pub use super::SimpleAnimationPlayable_StateEnumerable_StateEnumerator;
     pub use super::ISimpleAnimationPlayable_StateEnumerable_StateEnumerator;
     pub use super::ISimpleAnimationPlayable_StateEnumerable_StateEnumeratorMethods;
-    pub use super::SimpleAnimationPlayable_IState;
-    pub use super::ISimpleAnimationPlayable_IState;
-    pub use super::ISimpleAnimationPlayable_IStateMethods;
-    pub use super::SimpleAnimationPlayable;
-    pub use super::ISimpleAnimationPlayable;
-    pub use super::ISimpleAnimationPlayableMethods;
-    pub use super::SimpleAnimationPlayable_StateEnumerable;
-    pub use super::ISimpleAnimationPlayable_StateEnumerable;
-    pub use super::ISimpleAnimationPlayable_StateEnumerableMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;

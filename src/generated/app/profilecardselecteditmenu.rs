@@ -23,6 +23,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardSelectEditMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardSelectEditMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardSelectEditMenu.ProfileCardSelectEditMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem{#[offset(100)]#[rename(name="m_Result2")]pub m_result2:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DecideEventHandler, #[offset(112)]#[rename(name="m_NameMid")]pub m_name_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardSelectEditMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardSelectEditMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardSelectEditMenu.Result2";
@@ -59,42 +65,36 @@ pub fn num()->Self{Self{value:10}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardSelectEditMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardSelectEditMenu_DisposeEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardSelectEditMenu.ProfileCardSelectEditMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem{#[offset(100)]#[rename(name="m_Result2")]pub m_result2:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DecideEventHandler, #[offset(112)]#[rename(name="m_NameMid")]pub m_name_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardSelectEditMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardSelectEditMenu_DecideEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardSelectEditMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardSelectEditMenu{#[offset(200)]#[rename(name="m_ProfileCardRoot")]pub m_profile_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DecideEventHandler, #[offset(216)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_DisposeEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardselecteditmenu/ProfileCardSelectEditMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardSelectEditMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardSelectEditMenu_DisposeEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardselecteditmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-profilecardselecteditmenu")]pub trait IProfileCardSelectEditMenu_DisposeEventHandlerMethods:IProfileCardSelectEditMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226ac10usize)as*mut u8,();
-(ProfileCardSelectEditMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-profilecardselecteditmenu")]pub trait IProfileCardSelectEditMenu_DecideEventHandlerMethods:IProfileCardSelectEditMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226a8f0usize)as*mut u8,();
+(ProfileCardSelectEditMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226ac30usize)as*mut u8,();
-(ProfileCardSelectEditMenu_DisposeEventHandler)__receiver)}
+#[doc="`Invoke(crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226a910usize)as*mut u8,();
+(ProfileCardSelectEditMenu_DecideEventHandler)__receiver,(crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2)::core::convert::Into::into(result))}
 }
 }
 
-#[cfg(feature="app-profilecardselecteditmenu")]impl<__T:IProfileCardSelectEditMenu_DisposeEventHandler>IProfileCardSelectEditMenu_DisposeEventHandlerMethods for __T{}
+#[cfg(feature="app-profilecardselecteditmenu")]impl<__T:IProfileCardSelectEditMenu_DecideEventHandler>IProfileCardSelectEditMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(ProfileCardSelectEditMenu_DisposeEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardSelectEditMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(ProfileCardSelectEditMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardSelectEditMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -138,29 +138,6 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem), ::core::stringify!(new),));
  <Self as IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItemMethods> ::ctor(this,result2,decide_event_handler);
-this}
-}
-
-#[cfg(feature="app-profilecardselecteditmenu")]pub trait IProfileCardSelectEditMenu_DecideEventHandlerMethods:IProfileCardSelectEditMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226a8f0usize)as*mut u8,();
-(ProfileCardSelectEditMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226a910usize)as*mut u8,();
-(ProfileCardSelectEditMenu_DecideEventHandler)__receiver,(crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-profilecardselecteditmenu")]impl<__T:IProfileCardSelectEditMenu_DecideEventHandler>IProfileCardSelectEditMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardSelectEditMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardSelectEditMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -213,22 +190,45 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-profilecardselecteditmenu")]pub trait IProfileCardSelectEditMenu_DisposeEventHandlerMethods:IProfileCardSelectEditMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ac10usize)as*mut u8,();
+(ProfileCardSelectEditMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardSelectEditMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ac30usize)as*mut u8,();
+(ProfileCardSelectEditMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardselecteditmenu")]impl<__T:IProfileCardSelectEditMenu_DisposeEventHandler>IProfileCardSelectEditMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardselecteditmenu")]impl ProfileCardSelectEditMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardSelectEditMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardSelectEditMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-profilecardselecteditmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardSelectEditMenu_Result2;
-    pub use super::ProfileCardSelectEditMenu_DisposeEventHandler;
-    pub use super::IProfileCardSelectEditMenu_DisposeEventHandler;
-    pub use super::IProfileCardSelectEditMenu_DisposeEventHandlerMethods;
-    pub use super::ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem;
-    pub use super::IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem;
-    pub use super::IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItemMethods;
     pub use super::ProfileCardSelectEditMenu_DecideEventHandler;
     pub use super::IProfileCardSelectEditMenu_DecideEventHandler;
     pub use super::IProfileCardSelectEditMenu_DecideEventHandlerMethods;
+    pub use super::ProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem;
+    pub use super::IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItem;
+    pub use super::IProfileCardSelectEditMenu_ProfileCardSelectEditMenuItemMethods;
+    pub use super::ProfileCardSelectEditMenu_Result2;
     pub use super::ProfileCardSelectEditMenu;
     pub use super::IProfileCardSelectEditMenu;
     pub use super::IProfileCardSelectEditMenuMethods;
+    pub use super::ProfileCardSelectEditMenu_DisposeEventHandler;
+    pub use super::IProfileCardSelectEditMenu_DisposeEventHandler;
+    pub use super::IProfileCardSelectEditMenu_DisposeEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

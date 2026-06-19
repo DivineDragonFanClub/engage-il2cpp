@@ -21,6 +21,47 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ProcDispos.md"))]#[::unity2::class(namespace="App",name="MapDispos.ProcDispos")]#[parent(crate::app::procinst::ProcInst)]pub struct MapDispos_ProcDispos{#[static_field]#[rename(name="s_ProcessCount")]pub s_process_count:i32, #[offset(112)]#[rename(name="m_List")]pub m_list:crate::app::mapdispos::MapDispos_ActualDataList, #[offset(120)]#[rename(name="m_DisposFlag")]pub m_dispos_flag:crate::app::mapdispos::MapDispos_FlagField,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_FlagField.md"))]#[::unity2::class(namespace="App",name="MapDispos.FlagField")]#[parent(crate::app::bitfield32::BitField32)]pub struct MapDispos_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos.md"))]#[::unity2::class(namespace="App",name="MapDispos")]#[parent(crate::system::object::Object)]pub struct MapDispos{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_PosList.md"))]#[::unity2::class(namespace="App",name="MapDispos.PosList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapdispos::MapDispos_Pos>)]pub struct MapDispos_PosList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ActualDataList.md"))]#[::unity2::class(namespace="App",name="MapDispos.ActualDataList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapdispos::MapDispos_ActualData>)]pub struct MapDispos_ActualDataList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_Pos.md"))]#[::unity2::class(namespace="App",name="MapDispos.Pos")]#[parent(crate::system::object::Object)]pub struct MapDispos_Pos{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ActualData.md"))]#[::unity2::class(namespace="App",name="MapDispos.ActualData")]#[parent(crate::system::object::Object)]pub struct MapDispos_ActualData{#[offset(16)]#[rename(name="m_Data")]pub m_data:crate::app::disposdata::DisposData, #[offset(24)]#[rename(name="m_PositionData")]pub m_position_data:crate::app::disposdata::DisposData, #[offset(32)]#[rename(name="m_CalcResult")]pub m_calc_result:crate::app::mapdispos::MapDispos_ActualData_CalcResults, #[offset(36)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32, #[offset(40)]#[rename(name="m_CalcAppearX")]pub m_calc_appear_x:i32, #[offset(44)]#[rename(name="m_CalcAppearZ")]pub m_calc_appear_z:i32, #[offset(48)]#[rename(name="m_CalcDisposX")]pub m_calc_dispos_x:i32, #[offset(52)]#[rename(name="m_CalcDisposZ")]pub m_calc_dispos_z:i32, #[offset(56)]#[rename(name="m_Direction")]pub m_direction:crate::app::disposdata::DisposData_Directions,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ActualData_CalcResults.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapDispos_ActualData_CalcResults{pub value:i32,}
+impl::unity2::ClassIdentity for MapDispos_ActualData_CalcResults{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapDispos.ActualData.CalcResults";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapDispos_ActualData_CalcResults{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapDispos_ActualData_CalcResults{pub fn none()->Self{Self{value:0}
+}
+pub fn success()->Self{Self{value:1}
+}
+pub fn failure()->Self{Self{value:2}
+}
+pub fn disable()->Self{Self{value:3}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_Flag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapDispos_Flag{pub value:i32,}
 impl::unity2::ClassIdentity for MapDispos_Flag{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapDispos.Flag";
@@ -56,97 +97,129 @@ pub fn bind()->Self{Self{value:2097152}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ActualData_CalcResults.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapDispos_ActualData_CalcResults{pub value:i32,}
-impl::unity2::ClassIdentity for MapDispos_ActualData_CalcResults{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapDispos.ActualData.CalcResults";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapDispos_ActualData_CalcResults{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapDispos_ActualData_CalcResults{pub fn none()->Self{Self{value:0}
-}
-pub fn success()->Self{Self{value:1}
-}
-pub fn failure()->Self{Self{value:2}
-}
-pub fn disable()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_Pos.md"))]#[::unity2::class(namespace="App",name="MapDispos.Pos")]#[parent(crate::system::object::Object)]pub struct MapDispos_Pos{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos.md"))]#[::unity2::class(namespace="App",name="MapDispos")]#[parent(crate::system::object::Object)]pub struct MapDispos{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ActualData.md"))]#[::unity2::class(namespace="App",name="MapDispos.ActualData")]#[parent(crate::system::object::Object)]pub struct MapDispos_ActualData{#[offset(16)]#[rename(name="m_Data")]pub m_data:crate::app::disposdata::DisposData, #[offset(24)]#[rename(name="m_PositionData")]pub m_position_data:crate::app::disposdata::DisposData, #[offset(32)]#[rename(name="m_CalcResult")]pub m_calc_result:crate::app::mapdispos::MapDispos_ActualData_CalcResults, #[offset(36)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32, #[offset(40)]#[rename(name="m_CalcAppearX")]pub m_calc_appear_x:i32, #[offset(44)]#[rename(name="m_CalcAppearZ")]pub m_calc_appear_z:i32, #[offset(48)]#[rename(name="m_CalcDisposX")]pub m_calc_dispos_x:i32, #[offset(52)]#[rename(name="m_CalcDisposZ")]pub m_calc_dispos_z:i32, #[offset(56)]#[rename(name="m_Direction")]pub m_direction:crate::app::disposdata::DisposData_Directions,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ProcDispos.md"))]#[::unity2::class(namespace="App",name="MapDispos.ProcDispos")]#[parent(crate::app::procinst::ProcInst)]pub struct MapDispos_ProcDispos{#[static_field]#[rename(name="s_ProcessCount")]pub s_process_count:i32, #[offset(112)]#[rename(name="m_List")]pub m_list:crate::app::mapdispos::MapDispos_ActualDataList, #[offset(120)]#[rename(name="m_DisposFlag")]pub m_dispos_flag:crate::app::mapdispos::MapDispos_FlagField,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_ActualDataList.md"))]#[::unity2::class(namespace="App",name="MapDispos.ActualDataList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapdispos::MapDispos_ActualData>)]pub struct MapDispos_ActualDataList{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_PosList.md"))]#[::unity2::class(namespace="App",name="MapDispos.PosList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapdispos::MapDispos_Pos>)]pub struct MapDispos_PosList{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdispos/MapDispos_FlagField.md"))]#[::unity2::class(namespace="App",name="MapDispos.FlagField")]#[parent(crate::app::bitfield32::BitField32)]pub struct MapDispos_FlagField{}
-
 }
 
 #[cfg(feature = "app-mapdispos-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapdispos")]pub trait IMapDispos_PosMethods:IMapDispos_Pos{#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12c0usize)as*mut u8,i32;
-(MapDispos_Pos)__receiver)}
+#[cfg(feature="app-mapdispos")]impl MapDispos_ProcDispos{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList> ,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c15f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
 }
-#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12d0usize)as*mut u8,();
-(MapDispos_Pos)__receiver,(i32)::core::convert::Into::into(value))}
+#[doc="`IsExist()` overload"]pub fn is_exist()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c1fe0usize)as*mut u8,bool;
+)}
 }
-#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12e0usize)as*mut u8,i32;
-(MapDispos_Pos)__receiver)}
+#[doc="`InstantIfPossible(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]pub fn instant_if_possible(list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList> ,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c1a00usize)as*mut u8,bool;
+(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
 }
-#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12f0usize)as*mut u8,();
-(MapDispos_Pos)__receiver,(i32)::core::convert::Into::into(value))}
+#[doc="`CheckHide(crate::app::mapdispos::MapDispos_ActualDataList)` overload"]pub fn check_hide(list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2de0usize)as*mut u8,bool;
+(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list))}
 }
-#[doc="`get_Dir()` overload"]fn get_dir(self,)->crate::app::disposdata::DisposData_Directions{unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1300usize)as*mut u8,crate::app::disposdata::DisposData_Directions;
-(MapDispos_Pos)__receiver)}
+#[doc="`CalcFocusPos(crate::app::mapdispos::MapDispos_ActualDataList, *muti32, *muti32)` overload"]pub fn calc_focus_pos(list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList>)->(bool,i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x24c2680usize)as*mut u8,bool;
+(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
 }
-#[doc="`set_Dir(crate::app::disposdata::DisposData_Directions)` overload"]fn set_dir(self,value:impl::core::convert::Into<crate::app::disposdata::DisposData_Directions>)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1310usize)as*mut u8,();
-(MapDispos_Pos)__receiver,(crate::app::disposdata::DisposData_Directions)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1320usize)as*mut u8,();
-(MapDispos_Pos)__receiver)}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2f30usize)as*mut u8,();
+)}
 }
 }
 
-#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_Pos>IMapDispos_PosMethods for __T{}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_Pos{pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature="app-mapdispos")]pub trait IMapDispos_ProcDisposMethods:IMapDispos_ProcDispos{#[doc="`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList> ,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1ef0usize)as*mut u8,();
+(MapDispos_ProcDispos)__receiver,(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2050usize)as*mut u8,();
+(MapDispos_ProcDispos)__receiver)}
+}
+#[doc="`Load()` overload"]fn load(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c21a0usize)as*mut u8,();
+(MapDispos_ProcDispos)__receiver)}
+}
+#[doc="`WaitLoad()` overload"]fn wait_load(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2430usize)as*mut u8,();
+(MapDispos_ProcDispos)__receiver)}
+}
+#[doc="`Focus()` overload"]fn focus(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c25a0usize)as*mut u8,();
+(MapDispos_ProcDispos)__receiver)}
+}
+#[doc="`Dispos()` overload"]fn dispos(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2860usize)as*mut u8,();
+(MapDispos_ProcDispos)__receiver)}
+}
+#[doc="`WaitDispos()` overload"]fn wait_dispos(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2c70usize)as*mut u8,();
+(MapDispos_ProcDispos)__receiver)}
+}
 }
 
-#[cfg(feature="app-mapdispos")]impl MapDispos_Pos{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_ProcDispos>IMapDispos_ProcDisposMethods for __T{}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_ProcDispos{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn wait_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn wait_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn instant_if_possible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn check_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_focus_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_ProcDispos{#[doc="`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` — overload selector"]pub fn new(list:crate::app::mapdispos::MapDispos_ActualDataList,dispos_flag:crate::app::mapdispos::MapDispos_Flag)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapDispos_Pos), ::core::stringify!(new),));
- <Self as IMapDispos_PosMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MapDispos_ProcDispos), ::core::stringify!(new),));
+ <Self as IMapDispos_ProcDisposMethods> ::ctor(this,list,dispos_flag);
+this}
+}
+
+#[cfg(feature="app-mapdispos")]pub trait IMapDispos_FlagFieldMethods:IMapDispos_FlagField{#[doc="`Set(crate::app::mapdispos::MapDispos_Flag)` overload"]fn set(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1260usize)as*mut u8,();
+(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
+}
+#[doc="`Test(crate::app::mapdispos::MapDispos_Flag)` overload"]fn test(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1270usize)as*mut u8,bool;
+(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
+}
+#[doc="`Not(crate::app::mapdispos::MapDispos_Flag)` overload"]fn not(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1280usize)as*mut u8,bool;
+(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
+}
+#[doc="`Clear(crate::app::mapdispos::MapDispos_Flag)` overload"]fn clear(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1290usize)as*mut u8,();
+(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
+}
+#[doc="`Reset(crate::app::mapdispos::MapDispos_Flag)` overload"]fn reset(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12a0usize)as*mut u8,();
+(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12b0usize)as*mut u8,();
+(MapDispos_FlagField)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_FlagField>IMapDispos_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_FlagField{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn not_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDispos_FlagField), ::core::stringify!(new),));
+ <Self as IMapDispos_FlagFieldMethods> ::ctor(this,);
 this}
 }
 
@@ -316,6 +389,125 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapdispos")]pub trait IMapDispos_PosListMethods:IMapDispos_PosList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1330usize)as*mut u8,();
+(MapDispos_PosList)__receiver)}
+}
+#[doc="`Register(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, i32)` overload"]fn register(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> > ,limit:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c13c0usize)as*mut u8,();
+(MapDispos_PosList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list),(i32)::core::convert::Into::into(limit))}
+}
+#[doc="`PopFront()` overload"]fn pop_front(self,)->crate::app::mapdispos::MapDispos_Pos{unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24beab0usize)as*mut u8,crate::app::mapdispos::MapDispos_Pos;
+(MapDispos_PosList)__receiver)}
+}
+#[doc="`TryRemove(crate::app::disposdata::DisposData)` overload"]fn try_remove(self,data:impl::core::convert::Into<crate::app::disposdata::DisposData>)->bool{unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c14f0usize)as*mut u8,bool;
+(MapDispos_PosList)__receiver,(crate::app::disposdata::DisposData)::core::convert::Into::into(data))}
+}
+}
+
+#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_PosList>IMapDispos_PosListMethods for __T{}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_PosList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn register_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn pop_front_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_PosList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDispos_PosList), ::core::stringify!(new),));
+ <Self as IMapDispos_PosListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapdispos")]pub trait IMapDispos_ActualDataListMethods:IMapDispos_ActualDataList{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]fn ctor(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> >)->(){unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c0a80usize)as*mut u8,();
+(MapDispos_ActualDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list))}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]fn ctor_2(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> > ,position_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> >)->(){unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c0e30usize)as*mut u8,();
+(MapDispos_ActualDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list),(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(position_data_list))}
+}
+#[doc="`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]fn calc(self,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1020usize)as*mut u8,bool;
+(MapDispos_ActualDataList)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
+}
+#[doc="`Filter(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]fn filter(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> >)->crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>{unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c0c90usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> ;
+(MapDispos_ActualDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list))}
+}
+}
+
+#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_ActualDataList>IMapDispos_ActualDataListMethods for __T{}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_ActualDataList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn filter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_ActualDataList{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]pub fn new(data_list:crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDispos_ActualDataList), ::core::stringify!(new),));
+ <Self as IMapDispos_ActualDataListMethods> ::ctor(this,data_list);
+this}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]pub fn new_2(data_list:crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> ,position_data_list:crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDispos_ActualDataList), ::core::stringify!(new_2),));
+ <Self as IMapDispos_ActualDataListMethods> ::ctor_2(this,data_list,position_data_list);
+this}
+}
+
+#[cfg(feature="app-mapdispos")]pub trait IMapDispos_PosMethods:IMapDispos_Pos{#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12c0usize)as*mut u8,i32;
+(MapDispos_Pos)__receiver)}
+}
+#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12d0usize)as*mut u8,();
+(MapDispos_Pos)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12e0usize)as*mut u8,i32;
+(MapDispos_Pos)__receiver)}
+}
+#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12f0usize)as*mut u8,();
+(MapDispos_Pos)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Dir()` overload"]fn get_dir(self,)->crate::app::disposdata::DisposData_Directions{unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1300usize)as*mut u8,crate::app::disposdata::DisposData_Directions;
+(MapDispos_Pos)__receiver)}
+}
+#[doc="`set_Dir(crate::app::disposdata::DisposData_Directions)` overload"]fn set_dir(self,value:impl::core::convert::Into<crate::app::disposdata::DisposData_Directions>)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1310usize)as*mut u8,();
+(MapDispos_Pos)__receiver,(crate::app::disposdata::DisposData_Directions)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDispos_Pos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1320usize)as*mut u8,();
+(MapDispos_Pos)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_Pos>IMapDispos_PosMethods for __T{}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_Pos{pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapdispos")]impl MapDispos_Pos{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDispos_Pos), ::core::stringify!(new),));
+ <Self as IMapDispos_PosMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-mapdispos")]pub trait IMapDispos_ActualDataMethods:IMapDispos_ActualData{#[doc="`.ctor(crate::app::disposdata::DisposData, crate::app::disposdata::DisposData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::disposdata::DisposData> ,position_data:impl::core::convert::Into<crate::app::disposdata::DisposData>)->(){unsafe{let __receiver= <MapDispos_ActualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24bed60usize)as*mut u8,();
 (MapDispos_ActualData)__receiver,(crate::app::disposdata::DisposData)::core::convert::Into::into(data),(crate::app::disposdata::DisposData)::core::convert::Into::into(position_data))}
@@ -482,224 +674,32 @@ pub fn get_data_appear_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 this}
 }
 
-#[cfg(feature="app-mapdispos")]impl MapDispos_ProcDispos{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList> ,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c15f0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
-}
-#[doc="`IsExist()` overload"]pub fn is_exist()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c1fe0usize)as*mut u8,bool;
-)}
-}
-#[doc="`InstantIfPossible(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]pub fn instant_if_possible(list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList> ,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c1a00usize)as*mut u8,bool;
-(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
-}
-#[doc="`CheckHide(crate::app::mapdispos::MapDispos_ActualDataList)` overload"]pub fn check_hide(list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2de0usize)as*mut u8,bool;
-(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list))}
-}
-#[doc="`CalcFocusPos(crate::app::mapdispos::MapDispos_ActualDataList, *muti32, *muti32)` overload"]pub fn calc_focus_pos(list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList>)->(bool,i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x24c2680usize)as*mut u8,bool;
-(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2f30usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-mapdispos")]pub trait IMapDispos_ProcDisposMethods:IMapDispos_ProcDispos{#[doc="`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::app::mapdispos::MapDispos_ActualDataList> ,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1ef0usize)as*mut u8,();
-(MapDispos_ProcDispos)__receiver,(crate::app::mapdispos::MapDispos_ActualDataList)::core::convert::Into::into(list),(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2050usize)as*mut u8,();
-(MapDispos_ProcDispos)__receiver)}
-}
-#[doc="`Load()` overload"]fn load(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c21a0usize)as*mut u8,();
-(MapDispos_ProcDispos)__receiver)}
-}
-#[doc="`WaitLoad()` overload"]fn wait_load(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2430usize)as*mut u8,();
-(MapDispos_ProcDispos)__receiver)}
-}
-#[doc="`Focus()` overload"]fn focus(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c25a0usize)as*mut u8,();
-(MapDispos_ProcDispos)__receiver)}
-}
-#[doc="`Dispos()` overload"]fn dispos(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2860usize)as*mut u8,();
-(MapDispos_ProcDispos)__receiver)}
-}
-#[doc="`WaitDispos()` overload"]fn wait_dispos(self,)->(){unsafe{let __receiver= <MapDispos_ProcDispos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c2c70usize)as*mut u8,();
-(MapDispos_ProcDispos)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_ProcDispos>IMapDispos_ProcDisposMethods for __T{}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_ProcDispos{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn wait_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn wait_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn instant_if_possible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn check_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn calc_focus_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_ProcDispos{#[doc="`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` — overload selector"]pub fn new(list:crate::app::mapdispos::MapDispos_ActualDataList,dispos_flag:crate::app::mapdispos::MapDispos_Flag)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDispos_ProcDispos), ::core::stringify!(new),));
- <Self as IMapDispos_ProcDisposMethods> ::ctor(this,list,dispos_flag);
-this}
-}
-
-#[cfg(feature="app-mapdispos")]pub trait IMapDispos_ActualDataListMethods:IMapDispos_ActualDataList{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]fn ctor(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> >)->(){unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c0a80usize)as*mut u8,();
-(MapDispos_ActualDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list))}
-}
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]fn ctor_2(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> > ,position_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> >)->(){unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c0e30usize)as*mut u8,();
-(MapDispos_ActualDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list),(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(position_data_list))}
-}
-#[doc="`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]fn calc(self,dispos_flag:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1020usize)as*mut u8,bool;
-(MapDispos_ActualDataList)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(dispos_flag))}
-}
-#[doc="`Filter(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]fn filter(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> >)->crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>{unsafe{let __receiver= <MapDispos_ActualDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c0c90usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> ;
-(MapDispos_ActualDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list))}
-}
-}
-
-#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_ActualDataList>IMapDispos_ActualDataListMethods for __T{}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_ActualDataList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn filter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_ActualDataList{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]pub fn new(data_list:crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDispos_ActualDataList), ::core::stringify!(new),));
- <Self as IMapDispos_ActualDataListMethods> ::ctor(this,data_list);
-this}
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]pub fn new_2(data_list:crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> ,position_data_list:crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDispos_ActualDataList), ::core::stringify!(new_2),));
- <Self as IMapDispos_ActualDataListMethods> ::ctor_2(this,data_list,position_data_list);
-this}
-}
-
-#[cfg(feature="app-mapdispos")]pub trait IMapDispos_PosListMethods:IMapDispos_PosList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1330usize)as*mut u8,();
-(MapDispos_PosList)__receiver)}
-}
-#[doc="`Register(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, i32)` overload"]fn register(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> > ,limit:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c13c0usize)as*mut u8,();
-(MapDispos_PosList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(data_list),(i32)::core::convert::Into::into(limit))}
-}
-#[doc="`PopFront()` overload"]fn pop_front(self,)->crate::app::mapdispos::MapDispos_Pos{unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24beab0usize)as*mut u8,crate::app::mapdispos::MapDispos_Pos;
-(MapDispos_PosList)__receiver)}
-}
-#[doc="`TryRemove(crate::app::disposdata::DisposData)` overload"]fn try_remove(self,data:impl::core::convert::Into<crate::app::disposdata::DisposData>)->bool{unsafe{let __receiver= <MapDispos_PosList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c14f0usize)as*mut u8,bool;
-(MapDispos_PosList)__receiver,(crate::app::disposdata::DisposData)::core::convert::Into::into(data))}
-}
-}
-
-#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_PosList>IMapDispos_PosListMethods for __T{}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_PosList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn register_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn pop_front_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn try_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_PosList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDispos_PosList), ::core::stringify!(new),));
- <Self as IMapDispos_PosListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapdispos")]pub trait IMapDispos_FlagFieldMethods:IMapDispos_FlagField{#[doc="`Set(crate::app::mapdispos::MapDispos_Flag)` overload"]fn set(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1260usize)as*mut u8,();
-(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
-}
-#[doc="`Test(crate::app::mapdispos::MapDispos_Flag)` overload"]fn test(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1270usize)as*mut u8,bool;
-(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
-}
-#[doc="`Not(crate::app::mapdispos::MapDispos_Flag)` overload"]fn not(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->bool{unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1280usize)as*mut u8,bool;
-(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
-}
-#[doc="`Clear(crate::app::mapdispos::MapDispos_Flag)` overload"]fn clear(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c1290usize)as*mut u8,();
-(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
-}
-#[doc="`Reset(crate::app::mapdispos::MapDispos_Flag)` overload"]fn reset(self,f:impl::core::convert::Into<crate::app::mapdispos::MapDispos_Flag>)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12a0usize)as*mut u8,();
-(MapDispos_FlagField)__receiver,(crate::app::mapdispos::MapDispos_Flag)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDispos_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c12b0usize)as*mut u8,();
-(MapDispos_FlagField)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapdispos")]impl<__T:IMapDispos_FlagField>IMapDispos_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_FlagField{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn not_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-mapdispos")]impl MapDispos_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDispos_FlagField), ::core::stringify!(new),));
- <Self as IMapDispos_FlagFieldMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapdispos")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapDispos_Flag;
-    pub use super::MapDispos_ActualData_CalcResults;
-    pub use super::MapDispos_Pos;
-    pub use super::IMapDispos_Pos;
-    pub use super::IMapDispos_PosMethods;
-    pub use super::MapDispos;
-    pub use super::IMapDispos;
-    pub use super::IMapDisposMethods;
-    pub use super::MapDispos_ActualData;
-    pub use super::IMapDispos_ActualData;
-    pub use super::IMapDispos_ActualDataMethods;
     pub use super::MapDispos_ProcDispos;
     pub use super::IMapDispos_ProcDispos;
     pub use super::IMapDispos_ProcDisposMethods;
-    pub use super::MapDispos_ActualDataList;
-    pub use super::IMapDispos_ActualDataList;
-    pub use super::IMapDispos_ActualDataListMethods;
-    pub use super::MapDispos_PosList;
-    pub use super::IMapDispos_PosList;
-    pub use super::IMapDispos_PosListMethods;
     pub use super::MapDispos_FlagField;
     pub use super::IMapDispos_FlagField;
     pub use super::IMapDispos_FlagFieldMethods;
+    pub use super::MapDispos;
+    pub use super::IMapDispos;
+    pub use super::IMapDisposMethods;
+    pub use super::MapDispos_PosList;
+    pub use super::IMapDispos_PosList;
+    pub use super::IMapDispos_PosListMethods;
+    pub use super::MapDispos_ActualDataList;
+    pub use super::IMapDispos_ActualDataList;
+    pub use super::IMapDispos_ActualDataListMethods;
+    pub use super::MapDispos_Pos;
+    pub use super::IMapDispos_Pos;
+    pub use super::IMapDispos_PosMethods;
+    pub use super::MapDispos_ActualData;
+    pub use super::IMapDispos_ActualData;
+    pub use super::IMapDispos_ActualDataMethods;
+    pub use super::MapDispos_ActualData_CalcResults;
+    pub use super::MapDispos_Flag;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::procinst::IProcInst;

@@ -23,10 +23,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_RelianceMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.RelianceMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRecallMenu_RelianceMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MyRoomRecallMenu_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_GodRelianceMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.GodRelianceMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRecallMenu_GodRelianceMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_MusicMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.MusicMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRecallMenu_MusicMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_WakeupMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.WakeupMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRecallMenu_WakeupMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler,}
@@ -56,10 +59,7 @@ pub fn end()->Self{Self{value:5}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MyRoomRecallMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_RelianceMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.RelianceMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRecallMenu_RelianceMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu_MusicMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu.MusicMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRecallMenu_MusicMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrecallmenu/MyRoomRecallMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomRecallMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomRecallMenu{}
@@ -71,6 +71,67 @@ pub fn end()->Self{Self{value:5}
 
 #[cfg(feature = "app-myroomrecallmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-myroomrecallmenu")]pub trait IMyRoomRecallMenu_RelianceMenuItemMethods:IMyRoomRecallMenu_RelianceMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094980usize)as*mut u8,();
+(MyRoomRecallMenu_RelianceMenuItem)__receiver,(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20949c0usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094a40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094a50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094ba0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-myroomrecallmenu")]impl<__T:IMyRoomRecallMenu_RelianceMenuItem>IMyRoomRecallMenu_RelianceMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_RelianceMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_RelianceMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomRecallMenu_RelianceMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomRecallMenu_RelianceMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
+#[cfg(feature="app-myroomrecallmenu")]pub trait IMyRoomRecallMenu_DecideEventHandlerMethods:IMyRoomRecallMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MyRoomRecallMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094210usize)as*mut u8,();
+(MyRoomRecallMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult>)->(){unsafe{let __receiver= <MyRoomRecallMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094230usize)as*mut u8,();
+(MyRoomRecallMenu_DecideEventHandler)__receiver,(crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-myroomrecallmenu")]impl<__T:IMyRoomRecallMenu_DecideEventHandler>IMyRoomRecallMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomRecallMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IMyRoomRecallMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-myroomrecallmenu")]pub trait IMyRoomRecallMenu_GodRelianceMenuItemMethods:IMyRoomRecallMenu_GodRelianceMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomRecallMenu_GodRelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2094530usize)as*mut u8,();
@@ -107,44 +168,6 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(MyRoomRecallMenu_GodRelianceMenuItem), ::core::stringify!(new),));
  <Self as IMyRoomRecallMenu_GodRelianceMenuItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-myroomrecallmenu")]pub trait IMyRoomRecallMenu_MusicMenuItemMethods:IMyRoomRecallMenu_MusicMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094870usize)as*mut u8,();
-(MyRoomRecallMenu_MusicMenuItem)__receiver,(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20948b0usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomRecallMenu_MusicMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094930usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomRecallMenu_MusicMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094940usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomRecallMenu_MusicMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094970usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomRecallMenu_MusicMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomrecallmenu")]impl<__T:IMyRoomRecallMenu_MusicMenuItem>IMyRoomRecallMenu_MusicMenuItemMethods for __T{}
-
-#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_MusicMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_MusicMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomRecallMenu_MusicMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomRecallMenu_MusicMenuItemMethods> ::ctor(this,event_handler);
 this}
 }
 
@@ -186,64 +209,41 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-myroomrecallmenu")]pub trait IMyRoomRecallMenu_DecideEventHandlerMethods:IMyRoomRecallMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MyRoomRecallMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094210usize)as*mut u8,();
-(MyRoomRecallMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-myroomrecallmenu")]pub trait IMyRoomRecallMenu_MusicMenuItemMethods:IMyRoomRecallMenu_MusicMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094870usize)as*mut u8,();
+(MyRoomRecallMenu_MusicMenuItem)__receiver,(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
-#[doc="`Invoke(crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult>)->(){unsafe{let __receiver= <MyRoomRecallMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094230usize)as*mut u8,();
-(MyRoomRecallMenu_DecideEventHandler)__receiver,(crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult)::core::convert::Into::into(result))}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20948b0usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomRecallMenu_MusicMenuItem)__receiver)}
 }
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094930usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MyRoomRecallMenu_MusicMenuItem)__receiver)}
 }
-
-#[cfg(feature="app-myroomrecallmenu")]impl<__T:IMyRoomRecallMenu_DecideEventHandler>IMyRoomRecallMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094940usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomRecallMenu_MusicMenuItem)__receiver)}
 }
-
-#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomRecallMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IMyRoomRecallMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-myroomrecallmenu")]pub trait IMyRoomRecallMenu_RelianceMenuItemMethods:IMyRoomRecallMenu_RelianceMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094980usize)as*mut u8,();
-(MyRoomRecallMenu_RelianceMenuItem)__receiver,(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20949c0usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094a40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094a50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2094ba0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomRecallMenu_RelianceMenuItem)__receiver)}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRecallMenu_MusicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2094970usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomRecallMenu_MusicMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-myroomrecallmenu")]impl<__T:IMyRoomRecallMenu_RelianceMenuItem>IMyRoomRecallMenu_RelianceMenuItemMethods for __T{}
+#[cfg(feature="app-myroomrecallmenu")]impl<__T:IMyRoomRecallMenu_MusicMenuItem>IMyRoomRecallMenu_MusicMenuItemMethods for __T{}
 
-#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_RelianceMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_MusicMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_RelianceMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-myroomrecallmenu")]impl MyRoomRecallMenu_MusicMenuItem{#[doc="`.ctor(crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomrecallmenu::MyRoomRecallMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomRecallMenu_RelianceMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomRecallMenu_RelianceMenuItemMethods> ::ctor(this,event_handler);
+ failed to instantiate", ::core::stringify!(MyRoomRecallMenu_MusicMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomRecallMenu_MusicMenuItemMethods> ::ctor(this,event_handler);
 this}
 }
 
@@ -337,22 +337,22 @@ this}
 #[cfg(feature = "app-myroomrecallmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomRecallMenu_RelianceMenuItem;
+    pub use super::IMyRoomRecallMenu_RelianceMenuItem;
+    pub use super::IMyRoomRecallMenu_RelianceMenuItemMethods;
+    pub use super::MyRoomRecallMenu_DecideEventHandler;
+    pub use super::IMyRoomRecallMenu_DecideEventHandler;
+    pub use super::IMyRoomRecallMenu_DecideEventHandlerMethods;
     pub use super::MyRoomRecallMenu_GodRelianceMenuItem;
     pub use super::IMyRoomRecallMenu_GodRelianceMenuItem;
     pub use super::IMyRoomRecallMenu_GodRelianceMenuItemMethods;
-    pub use super::MyRoomRecallMenu_MusicMenuItem;
-    pub use super::IMyRoomRecallMenu_MusicMenuItem;
-    pub use super::IMyRoomRecallMenu_MusicMenuItemMethods;
     pub use super::MyRoomRecallMenu_WakeupMenuItem;
     pub use super::IMyRoomRecallMenu_WakeupMenuItem;
     pub use super::IMyRoomRecallMenu_WakeupMenuItemMethods;
     pub use super::MyRoomRecallMenu_MenuResult;
-    pub use super::MyRoomRecallMenu_DecideEventHandler;
-    pub use super::IMyRoomRecallMenu_DecideEventHandler;
-    pub use super::IMyRoomRecallMenu_DecideEventHandlerMethods;
-    pub use super::MyRoomRecallMenu_RelianceMenuItem;
-    pub use super::IMyRoomRecallMenu_RelianceMenuItem;
-    pub use super::IMyRoomRecallMenu_RelianceMenuItemMethods;
+    pub use super::MyRoomRecallMenu_MusicMenuItem;
+    pub use super::IMyRoomRecallMenu_MusicMenuItem;
+    pub use super::IMyRoomRecallMenu_MusicMenuItemMethods;
     pub use super::MyRoomRecallMenu;
     pub use super::IMyRoomRecallMenu;
     pub use super::IMyRoomRecallMenuMethods;

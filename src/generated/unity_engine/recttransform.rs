@@ -23,22 +23,6 @@ use crate::unity_engine::transform::{ITransform,Transform}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/recttransform/RectTransform_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RectTransform_Axis{pub value:i32,}
-impl::unity2::ClassIdentity for RectTransform_Axis{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="RectTransform.Axis";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RectTransform_Axis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl RectTransform_Axis{pub fn horizontal()->Self{Self{value:0}
-}
-pub fn vertical()->Self{Self{value:1}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/recttransform/RectTransform_Edge.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RectTransform_Edge{pub value:i32,}
 impl::unity2::ClassIdentity for RectTransform_Edge{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="RectTransform.Edge";
@@ -59,38 +43,31 @@ pub fn bottom()->Self{Self{value:3}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/recttransform/RectTransform.md"))]#[::unity2::class(namespace="UnityEngine",name="RectTransform")]#[parent(crate::unity_engine::transform::Transform)]pub struct RectTransform{#[static_field]#[rename(name="reapplyDrivenProperties")]pub reapply_driven_properties:crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md"))]#[::unity2::class(namespace="UnityEngine",name="RectTransform.ReapplyDrivenProperties")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RectTransform_ReapplyDrivenProperties{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/recttransform/RectTransform.md"))]#[::unity2::class(namespace="UnityEngine",name="RectTransform")]#[parent(crate::unity_engine::transform::Transform)]pub struct RectTransform{#[static_field]#[rename(name="reapplyDrivenProperties")]pub reapply_driven_properties:crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/recttransform/RectTransform_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RectTransform_Axis{pub value:i32,}
+impl::unity2::ClassIdentity for RectTransform_Axis{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="RectTransform.Axis";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RectTransform_Axis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RectTransform_Axis{pub fn horizontal()->Self{Self{value:0}
+}
+pub fn vertical()->Self{Self{value:1}
+}
+}
 
 }
 
 #[cfg(feature = "unity_engine-recttransform-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-recttransform")]pub trait IRectTransform_ReapplyDrivenPropertiesMethods:IRectTransform_ReapplyDrivenProperties{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RectTransform_ReapplyDrivenProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379e430usize)as*mut u8,();
-(RectTransform_ReapplyDrivenProperties)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::recttransform::RectTransform)` overload"]fn invoke(self,driven:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <RectTransform_ReapplyDrivenProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379e450usize)as*mut u8,();
-(RectTransform_ReapplyDrivenProperties)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(driven))}
-}
-}
-
-#[cfg(feature="unity_engine-recttransform")]impl<__T:IRectTransform_ReapplyDrivenProperties>IRectTransform_ReapplyDrivenPropertiesMethods for __T{}
-
-#[cfg(feature="unity_engine-recttransform")]impl RectTransform_ReapplyDrivenProperties{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-recttransform")]impl RectTransform_ReapplyDrivenProperties{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RectTransform_ReapplyDrivenProperties), ::core::stringify!(new),));
- <Self as IRectTransform_ReapplyDrivenPropertiesMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="unity_engine-recttransform")]impl RectTransform{#[doc="`add_reapplyDrivenProperties(crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties)` overload"]pub fn add_reapply_driven_properties(value:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7c270usize)as*mut u8,();
 (crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties)::core::convert::Into::into(value))}
@@ -341,17 +318,40 @@ pub fn set_pivot_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 this}
 }
 
+#[cfg(feature="unity_engine-recttransform")]pub trait IRectTransform_ReapplyDrivenPropertiesMethods:IRectTransform_ReapplyDrivenProperties{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RectTransform_ReapplyDrivenProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379e430usize)as*mut u8,();
+(RectTransform_ReapplyDrivenProperties)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::recttransform::RectTransform)` overload"]fn invoke(self,driven:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <RectTransform_ReapplyDrivenProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379e450usize)as*mut u8,();
+(RectTransform_ReapplyDrivenProperties)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(driven))}
+}
+}
+
+#[cfg(feature="unity_engine-recttransform")]impl<__T:IRectTransform_ReapplyDrivenProperties>IRectTransform_ReapplyDrivenPropertiesMethods for __T{}
+
+#[cfg(feature="unity_engine-recttransform")]impl RectTransform_ReapplyDrivenProperties{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-recttransform")]impl RectTransform_ReapplyDrivenProperties{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RectTransform_ReapplyDrivenProperties), ::core::stringify!(new),));
+ <Self as IRectTransform_ReapplyDrivenPropertiesMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "unity_engine-recttransform")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RectTransform_Axis;
     pub use super::RectTransform_Edge;
-    pub use super::RectTransform_ReapplyDrivenProperties;
-    pub use super::IRectTransform_ReapplyDrivenProperties;
-    pub use super::IRectTransform_ReapplyDrivenPropertiesMethods;
     pub use super::RectTransform;
     pub use super::IRectTransform;
     pub use super::IRectTransformMethods;
+    pub use super::RectTransform_ReapplyDrivenProperties;
+    pub use super::IRectTransform_ReapplyDrivenProperties;
+    pub use super::IRectTransform_ReapplyDrivenPropertiesMethods;
+    pub use super::RectTransform_Axis;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

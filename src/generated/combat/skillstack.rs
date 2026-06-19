@@ -9,15 +9,73 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/skillstack/SkillStack.md"))]#[::unity2::class(namespace="Combat",name="SkillStack")]#[parent(crate::system::object::Object)]pub struct SkillStack{#[offset(16)]#[rename(name="list")]pub list:crate::system::collections::generic::list_1::List_1<crate::combat::skillstack::SkillStack_Packet> , #[offset(24)]#[rename(name="damages")]pub damages_field: ::unity2::Array<i32> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/skillstack/SkillStack_Packet.md"))]#[::unity2::class(namespace="Combat",name="SkillStack.Packet")]#[parent(crate::system::object::Object)]pub struct SkillStack_Packet{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/skillstack/SkillStack.md"))]#[::unity2::class(namespace="Combat",name="SkillStack")]#[parent(crate::system::object::Object)]pub struct SkillStack{#[offset(16)]#[rename(name="list")]pub list:crate::system::collections::generic::list_1::List_1<crate::combat::skillstack::SkillStack_Packet> , #[offset(24)]#[rename(name="damages")]pub damages_field: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "combat-skillstack-types")]
 pub use __types::*;
+
+#[cfg(feature="combat-skillstack")]pub trait ISkillStack_PacketMethods:ISkillStack_Packet{#[doc="`get_FromSide()` overload"]fn get_from_side(self,)->i32{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f420usize)as*mut u8,i32;
+(SkillStack_Packet)__receiver)}
+}
+#[doc="`set_FromSide(i32)` overload"]fn set_from_side(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f430usize)as*mut u8,();
+(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToSide()` overload"]fn get_to_side(self,)->i32{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f440usize)as*mut u8,i32;
+(SkillStack_Packet)__receiver)}
+}
+#[doc="`set_ToSide(i32)` overload"]fn set_to_side(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f450usize)as*mut u8,();
+(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`ChangeSideFromTo_For絆神竜破(i32, i32)` overload"]fn change_side_from_to_for絆神竜破(self,old:impl::core::convert::Into<i32> ,new:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f460usize)as*mut u8,();
+(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(old),(i32)::core::convert::Into::into(new))}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f4a0usize)as*mut u8,crate::app::skilldata::SkillData;
+(SkillStack_Packet)__receiver)}
+}
+#[doc="`set_Data(crate::app::skilldata::SkillData)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f4b0usize)as*mut u8,();
+(SkillStack_Packet)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, i32, crate::app::skilldata::SkillData)` overload"]fn ctor(self,from_side:impl::core::convert::Into<i32> ,to_side:impl::core::convert::Into<i32> ,data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f4c0usize)as*mut u8,();
+(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(from_side),(i32)::core::convert::Into::into(to_side),(crate::app::skilldata::SkillData)::core::convert::Into::into(data))}
+}
+#[doc="`IsEqualTo(i32, i32, crate::app::skilldata::SkillData)` overload"]fn is_equal_to(self,from_side:impl::core::convert::Into<i32> ,to_side:impl::core::convert::Into<i32> ,data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f510usize)as*mut u8,bool;
+(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(from_side),(i32)::core::convert::Into::into(to_side),(crate::app::skilldata::SkillData)::core::convert::Into::into(data))}
+}
+}
+
+#[cfg(feature="combat-skillstack")]impl<__T:ISkillStack_Packet>ISkillStack_PacketMethods for __T{}
+
+#[cfg(feature="combat-skillstack")]impl SkillStack_Packet{pub fn get_from_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_from_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_to_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_to_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn change_side_from_to_for絆神竜破_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_equal_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="combat-skillstack")]impl SkillStack_Packet{#[doc="`.ctor(i32, i32, crate::app::skilldata::SkillData)` — overload selector"]pub fn new(from_side:i32,to_side:i32,data:crate::app::skilldata::SkillData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillStack_Packet), ::core::stringify!(new),));
+ <Self as ISkillStack_PacketMethods> ::ctor(this,from_side,to_side,data);
+this}
+}
 
 #[cfg(feature="combat-skillstack")]pub trait ISkillStackMethods:ISkillStack{#[doc="`get_DebuggerDisplay()` overload"]fn get_debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fda090usize)as*mut u8, ::unity2::Il2CppString;
@@ -87,73 +145,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="combat-skillstack")]pub trait ISkillStack_PacketMethods:ISkillStack_Packet{#[doc="`get_FromSide()` overload"]fn get_from_side(self,)->i32{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f420usize)as*mut u8,i32;
-(SkillStack_Packet)__receiver)}
-}
-#[doc="`set_FromSide(i32)` overload"]fn set_from_side(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f430usize)as*mut u8,();
-(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ToSide()` overload"]fn get_to_side(self,)->i32{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f440usize)as*mut u8,i32;
-(SkillStack_Packet)__receiver)}
-}
-#[doc="`set_ToSide(i32)` overload"]fn set_to_side(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f450usize)as*mut u8,();
-(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`ChangeSideFromTo_For絆神竜破(i32, i32)` overload"]fn change_side_from_to_for絆神竜破(self,old:impl::core::convert::Into<i32> ,new:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f460usize)as*mut u8,();
-(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(old),(i32)::core::convert::Into::into(new))}
-}
-#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f4a0usize)as*mut u8,crate::app::skilldata::SkillData;
-(SkillStack_Packet)__receiver)}
-}
-#[doc="`set_Data(crate::app::skilldata::SkillData)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f4b0usize)as*mut u8,();
-(SkillStack_Packet)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(i32, i32, crate::app::skilldata::SkillData)` overload"]fn ctor(self,from_side:impl::core::convert::Into<i32> ,to_side:impl::core::convert::Into<i32> ,data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f4c0usize)as*mut u8,();
-(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(from_side),(i32)::core::convert::Into::into(to_side),(crate::app::skilldata::SkillData)::core::convert::Into::into(data))}
-}
-#[doc="`IsEqualTo(i32, i32, crate::app::skilldata::SkillData)` overload"]fn is_equal_to(self,from_side:impl::core::convert::Into<i32> ,to_side:impl::core::convert::Into<i32> ,data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{let __receiver= <SkillStack_Packet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6f510usize)as*mut u8,bool;
-(SkillStack_Packet)__receiver,(i32)::core::convert::Into::into(from_side),(i32)::core::convert::Into::into(to_side),(crate::app::skilldata::SkillData)::core::convert::Into::into(data))}
-}
-}
-
-#[cfg(feature="combat-skillstack")]impl<__T:ISkillStack_Packet>ISkillStack_PacketMethods for __T{}
-
-#[cfg(feature="combat-skillstack")]impl SkillStack_Packet{pub fn get_from_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_from_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_to_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_to_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn change_side_from_to_for絆神竜破_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn is_equal_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="combat-skillstack")]impl SkillStack_Packet{#[doc="`.ctor(i32, i32, crate::app::skilldata::SkillData)` — overload selector"]pub fn new(from_side:i32,to_side:i32,data:crate::app::skilldata::SkillData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SkillStack_Packet), ::core::stringify!(new),));
- <Self as ISkillStack_PacketMethods> ::ctor(this,from_side,to_side,data);
-this}
-}
-
 #[cfg(feature = "combat-skillstack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkillStack;
-    pub use super::ISkillStack;
-    pub use super::ISkillStackMethods;
     pub use super::SkillStack_Packet;
     pub use super::ISkillStack_Packet;
     pub use super::ISkillStack_PacketMethods;
+    pub use super::SkillStack;
+    pub use super::ISkillStack;
+    pub use super::ISkillStackMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -17,10 +17,10 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentnationdatamenu/InvestmentNationDataMenu.md"))]#[::unity2::class(namespace="App",name="InvestmentNationDataMenu")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InvestmentNationDataMenu{#[offset(24)]#[rename(name="m_nationTitle")]pub m_nation_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_arrowL")]pub m_arrow_l:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_arrowR")]pub m_arrow_r:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_bgSymbol")]pub m_bg_symbol:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_materialTitle")]pub m_material_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_foodTitle")]pub m_food_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_animalTitle")]pub m_animal_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_ironData")]pub m_iron_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(88)]#[rename(name="m_steelData")]pub m_steel_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(96)]#[rename(name="m_silverData")]pub m_silver_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(104)]#[rename(name="m_pieceOfBondData")]pub m_piece_of_bond_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(112)]#[rename(name="m_foodstuffData")]pub m_foodstuff_data:crate::system::collections::generic::list_1::List_1<crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo> , #[offset(120)]#[rename(name="m_animalData")]pub m_animal_data:crate::system::collections::generic::list_1::List_1<crate::app::investmentnationdatamenu::InvestmentNationDataMenu_AnimalInfo> , #[offset(128)]#[rename(name="m_pageIcon")]pub m_page_icon:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(136)]#[rename(name="m_index")]pub m_index:i32, #[offset(140)]#[rename(name="m_investmentEnableCnt")]pub m_investment_enable_cnt:i32, #[offset(144)]#[rename(name="m_isClose")]pub m_is_close:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentnationdatamenu/InvestmentNationDataMenu_AnimalInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentNationDataMenu.AnimalInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentNationDataMenu_AnimalInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_checkEnable")]pub m_check_enable:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentnationdatamenu/InvestmentNationDataMenu.md"))]#[::unity2::class(namespace="App",name="InvestmentNationDataMenu")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InvestmentNationDataMenu{#[offset(24)]#[rename(name="m_nationTitle")]pub m_nation_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_arrowL")]pub m_arrow_l:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_arrowR")]pub m_arrow_r:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_bgSymbol")]pub m_bg_symbol:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_materialTitle")]pub m_material_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_foodTitle")]pub m_food_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_animalTitle")]pub m_animal_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_ironData")]pub m_iron_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(88)]#[rename(name="m_steelData")]pub m_steel_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(96)]#[rename(name="m_silverData")]pub m_silver_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(104)]#[rename(name="m_pieceOfBondData")]pub m_piece_of_bond_data:crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo, #[offset(112)]#[rename(name="m_foodstuffData")]pub m_foodstuff_data:crate::system::collections::generic::list_1::List_1<crate::app::investmentnationdatamenu::InvestmentNationDataMenu_ItemInfo> , #[offset(120)]#[rename(name="m_animalData")]pub m_animal_data:crate::system::collections::generic::list_1::List_1<crate::app::investmentnationdatamenu::InvestmentNationDataMenu_AnimalInfo> , #[offset(128)]#[rename(name="m_pageIcon")]pub m_page_icon:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(136)]#[rename(name="m_index")]pub m_index:i32, #[offset(140)]#[rename(name="m_investmentEnableCnt")]pub m_investment_enable_cnt:i32, #[offset(144)]#[rename(name="m_isClose")]pub m_is_close:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentnationdatamenu/InvestmentNationDataMenu_ItemInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentNationDataMenu.ItemInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentNationDataMenu_ItemInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_itemName")]pub m_item_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_itemNum")]pub m_item_num:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
@@ -29,6 +29,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 #[cfg(feature = "app-investmentnationdatamenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-investmentnationdatamenu")]pub trait IInvestmentNationDataMenu_AnimalInfoMethods:IInvestmentNationDataMenu_AnimalInfo{#[doc="`Setup(::unity2::Il2CppString, bool)` overload"]fn setup(self,animal_id:impl::core::convert::Into< ::unity2::Il2CppString> ,b_capture:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce000usize)as*mut u8,();
+(InvestmentNationDataMenu_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(animal_id),(bool)::core::convert::Into::into(b_capture))}
+}
+#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce4b0usize)as*mut u8,();
+(InvestmentNationDataMenu_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`SetVisible(bool)` overload"]fn set_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce430usize)as*mut u8,();
+(InvestmentNationDataMenu_AnimalInfo)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce590usize)as*mut u8,();
+(InvestmentNationDataMenu_AnimalInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-investmentnationdatamenu")]impl<__T:IInvestmentNationDataMenu_AnimalInfo>IInvestmentNationDataMenu_AnimalInfoMethods for __T{}
+
+#[cfg(feature="app-investmentnationdatamenu")]impl InvestmentNationDataMenu_AnimalInfo{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-investmentnationdatamenu")]impl InvestmentNationDataMenu_AnimalInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentNationDataMenu_AnimalInfo), ::core::stringify!(new),));
+ <Self as IInvestmentNationDataMenu_AnimalInfoMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-investmentnationdatamenu")]pub trait IInvestmentNationDataMenuMethods:IInvestmentNationDataMenu{#[doc="`Setup(i32)` overload"]fn setup(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentNationDataMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27a2e90usize)as*mut u8,();
@@ -70,39 +103,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(InvestmentNationDataMenu), ::core::stringify!(new),));
  <Self as IInvestmentNationDataMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-investmentnationdatamenu")]pub trait IInvestmentNationDataMenu_AnimalInfoMethods:IInvestmentNationDataMenu_AnimalInfo{#[doc="`Setup(::unity2::Il2CppString, bool)` overload"]fn setup(self,animal_id:impl::core::convert::Into< ::unity2::Il2CppString> ,b_capture:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce000usize)as*mut u8,();
-(InvestmentNationDataMenu_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(animal_id),(bool)::core::convert::Into::into(b_capture))}
-}
-#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce4b0usize)as*mut u8,();
-(InvestmentNationDataMenu_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
-}
-#[doc="`SetVisible(bool)` overload"]fn set_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce430usize)as*mut u8,();
-(InvestmentNationDataMenu_AnimalInfo)__receiver,(bool)::core::convert::Into::into(is_visible))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentNationDataMenu_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fce590usize)as*mut u8,();
-(InvestmentNationDataMenu_AnimalInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-investmentnationdatamenu")]impl<__T:IInvestmentNationDataMenu_AnimalInfo>IInvestmentNationDataMenu_AnimalInfoMethods for __T{}
-
-#[cfg(feature="app-investmentnationdatamenu")]impl InvestmentNationDataMenu_AnimalInfo{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-investmentnationdatamenu")]impl InvestmentNationDataMenu_AnimalInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InvestmentNationDataMenu_AnimalInfo), ::core::stringify!(new),));
- <Self as IInvestmentNationDataMenu_AnimalInfoMethods> ::ctor(this,);
 this}
 }
 
@@ -157,12 +157,12 @@ this}
 #[cfg(feature = "app-investmentnationdatamenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InvestmentNationDataMenu;
-    pub use super::IInvestmentNationDataMenu;
-    pub use super::IInvestmentNationDataMenuMethods;
     pub use super::InvestmentNationDataMenu_AnimalInfo;
     pub use super::IInvestmentNationDataMenu_AnimalInfo;
     pub use super::IInvestmentNationDataMenu_AnimalInfoMethods;
+    pub use super::InvestmentNationDataMenu;
+    pub use super::IInvestmentNationDataMenu;
+    pub use super::IInvestmentNationDataMenuMethods;
     pub use super::InvestmentNationDataMenu_ItemInfo;
     pub use super::IInvestmentNationDataMenu_ItemInfo;
     pub use super::IInvestmentNationDataMenu_ItemInfoMethods;

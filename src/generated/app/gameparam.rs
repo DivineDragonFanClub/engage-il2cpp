@@ -23,15 +23,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam.md"))]#[::unity2::class(namespace="App",name="GameParam")]#[parent(crate::app::structdata_1::StructData_1<crate::app::gameparam::GameParam>)]pub struct GameParam{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_Holder.md"))]#[::unity2::class(namespace="App",name="GameParam.Holder")]#[parent(crate::system::object::Object)]pub struct GameParam_Holder{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Param")]pub m_param:crate::app::gameparam::GameParam,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_ParamFunction.md"))]#[::unity2::class(namespace="App",name="GameParam.ParamFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GameParam_ParamFunction{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameParam_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for GameParam_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameParam.Kind";
@@ -50,6 +41,15 @@ pub fn open()->Self{Self{value:2}
 pub fn close()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam.md"))]#[::unity2::class(namespace="App",name="GameParam")]#[parent(crate::app::structdata_1::StructData_1<crate::app::gameparam::GameParam>)]pub struct GameParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_ParamFunction.md"))]#[::unity2::class(namespace="App",name="GameParam.ParamFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GameParam_ParamFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_Holder.md"))]#[::unity2::class(namespace="App",name="GameParam.Holder")]#[parent(crate::system::object::Object)]pub struct GameParam_Holder{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Param")]pub m_param:crate::app::gameparam::GameParam,}
 
 }
 
@@ -222,6 +222,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-gameparam")]pub trait IGameParam_ParamFunctionMethods:IGameParam_ParamFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GameParam_ParamFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66900usize)as*mut u8,();
+(GameParam_ParamFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::gameparam::GameParam, ::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,param:impl::core::convert::Into<crate::app::gameparam::GameParam> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <GameParam_ParamFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66920usize)as*mut u8,();
+(GameParam_ParamFunction)__receiver,(crate::app::gameparam::GameParam)::core::convert::Into::into(param),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+}
+
+#[cfg(feature="app-gameparam")]impl<__T:IGameParam_ParamFunction>IGameParam_ParamFunctionMethods for __T{}
+
+#[cfg(feature="app-gameparam")]impl GameParam_ParamFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gameparam")]impl GameParam_ParamFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameParam_ParamFunction), ::core::stringify!(new),));
+ <Self as IGameParam_ParamFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="app-gameparam")]pub trait IGameParam_HolderMethods:IGameParam_Holder{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameParam_Holder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66580usize)as*mut u8,();
 (GameParam_Holder)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
@@ -265,42 +288,19 @@ pub fn get_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="app-gameparam")]pub trait IGameParam_ParamFunctionMethods:IGameParam_ParamFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GameParam_ParamFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66900usize)as*mut u8,();
-(GameParam_ParamFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::gameparam::GameParam, ::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,param:impl::core::convert::Into<crate::app::gameparam::GameParam> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <GameParam_ParamFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66920usize)as*mut u8,();
-(GameParam_ParamFunction)__receiver,(crate::app::gameparam::GameParam)::core::convert::Into::into(param),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
-}
-}
-
-#[cfg(feature="app-gameparam")]impl<__T:IGameParam_ParamFunction>IGameParam_ParamFunctionMethods for __T{}
-
-#[cfg(feature="app-gameparam")]impl GameParam_ParamFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-gameparam")]impl GameParam_ParamFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameParam_ParamFunction), ::core::stringify!(new),));
- <Self as IGameParam_ParamFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-gameparam")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GameParam_Kind;
     pub use super::GameParam;
     pub use super::IGameParam;
     pub use super::IGameParamMethods;
-    pub use super::GameParam_Holder;
-    pub use super::IGameParam_Holder;
-    pub use super::IGameParam_HolderMethods;
     pub use super::GameParam_ParamFunction;
     pub use super::IGameParam_ParamFunction;
     pub use super::IGameParam_ParamFunctionMethods;
-    pub use super::GameParam_Kind;
+    pub use super::GameParam_Holder;
+    pub use super::IGameParam_Holder;
+    pub use super::IGameParam_HolderMethods;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

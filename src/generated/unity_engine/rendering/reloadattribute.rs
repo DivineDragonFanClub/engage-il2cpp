@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/reloadattribute/ReloadAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ReloadAttribute")]pub struct ReloadAttribute{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/reloadattribute/ReloadAttribute_Package.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ReloadAttribute_Package{pub value:i32,}
 impl::unity2::ClassIdentity for ReloadAttribute_Package{const NAMESPACE: &'static str="UnityEngine.Rendering";
 const NAME: &'static str="ReloadAttribute.Package";
@@ -30,6 +27,9 @@ impl ReloadAttribute_Package{pub fn builtin()->Self{Self{value:0}
 pub fn root()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/reloadattribute/ReloadAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ReloadAttribute")]pub struct ReloadAttribute{}
 
 }
 
@@ -77,10 +77,10 @@ this}
 #[cfg(feature = "unity_engine-rendering-reloadattribute")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ReloadAttribute_Package;
     pub use super::ReloadAttribute;
     pub use super::IReloadAttribute;
     pub use super::IReloadAttributeMethods;
-    pub use super::ReloadAttribute_Package;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

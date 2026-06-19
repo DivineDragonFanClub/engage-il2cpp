@@ -21,38 +21,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectshoot/EffectShoot_Callback.md"))]#[::unity2::class(namespace="App",name="EffectShoot.Callback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EffectShoot_Callback{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectshoot/EffectShoot.md"))]#[::unity2::class(namespace="App",name="EffectShoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EffectShoot{#[offset(24)]#[rename(name="m_Start")]pub m_start:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="m_Goal")]pub m_goal:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="m_Time")]pub m_time:f32, #[offset(52)]#[rename(name="m_TotalTime")]pub m_total_time:f32, #[offset(56)]#[rename(name="m_DeltaTime")]pub m_delta_time:f32, #[offset(60)]#[rename(name="m_Position0")]pub m_position0:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="m_Position1")]pub m_position1:crate::unity_engine::vector3::Vector3, #[offset(84)]#[rename(name="m_Position2")]pub m_position2:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="m_Position3")]pub m_position3:crate::unity_engine::vector3::Vector3, #[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::app::effectshoot::EffectShoot_Callback, #[offset(120)]#[rename(name="m_ParticleSystems")]pub m_particle_systems: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectshoot/EffectShoot_Callback.md"))]#[::unity2::class(namespace="App",name="EffectShoot.Callback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EffectShoot_Callback{}
 
 }
 
 #[cfg(feature = "app-effectshoot-types")]
 pub use __types::*;
-
-#[cfg(feature="app-effectshoot")]pub trait IEffectShoot_CallbackMethods:IEffectShoot_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EffectShoot_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6600usize)as*mut u8,();
-(EffectShoot_Callback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::effectshoot::EffectShoot)` overload"]fn invoke(self,shoot:impl::core::convert::Into<crate::app::effectshoot::EffectShoot>)->(){unsafe{let __receiver= <EffectShoot_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6620usize)as*mut u8,();
-(EffectShoot_Callback)__receiver,(crate::app::effectshoot::EffectShoot)::core::convert::Into::into(shoot))}
-}
-}
-
-#[cfg(feature="app-effectshoot")]impl<__T:IEffectShoot_Callback>IEffectShoot_CallbackMethods for __T{}
-
-#[cfg(feature="app-effectshoot")]impl EffectShoot_Callback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-effectshoot")]impl EffectShoot_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EffectShoot_Callback), ::core::stringify!(new),));
- <Self as IEffectShoot_CallbackMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-effectshoot")]pub trait IEffectShootMethods:IEffectShoot{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EffectShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22d9bc0usize)as*mut u8,();
@@ -97,15 +74,38 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-effectshoot")]pub trait IEffectShoot_CallbackMethods:IEffectShoot_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EffectShoot_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6600usize)as*mut u8,();
+(EffectShoot_Callback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::effectshoot::EffectShoot)` overload"]fn invoke(self,shoot:impl::core::convert::Into<crate::app::effectshoot::EffectShoot>)->(){unsafe{let __receiver= <EffectShoot_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6620usize)as*mut u8,();
+(EffectShoot_Callback)__receiver,(crate::app::effectshoot::EffectShoot)::core::convert::Into::into(shoot))}
+}
+}
+
+#[cfg(feature="app-effectshoot")]impl<__T:IEffectShoot_Callback>IEffectShoot_CallbackMethods for __T{}
+
+#[cfg(feature="app-effectshoot")]impl EffectShoot_Callback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-effectshoot")]impl EffectShoot_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectShoot_Callback), ::core::stringify!(new),));
+ <Self as IEffectShoot_CallbackMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-effectshoot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EffectShoot_Callback;
-    pub use super::IEffectShoot_Callback;
-    pub use super::IEffectShoot_CallbackMethods;
     pub use super::EffectShoot;
     pub use super::IEffectShoot;
     pub use super::IEffectShootMethods;
+    pub use super::EffectShoot_Callback;
+    pub use super::IEffectShoot_Callback;
+    pub use super::IEffectShoot_CallbackMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

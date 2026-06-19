@@ -17,33 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorydetailinfowindow/AccessoryDetailInfoWindow_BodyParts.md"))]#[::unity2::class(namespace="App",name="AccessoryDetailInfoWindow.BodyParts")]#[parent(crate::system::object::Object)]pub struct AccessoryDetailInfoWindow_BodyParts{#[offset(16)]#[rename(name="m_Object")]pub m_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorydetailinfowindow/AccessoryDetailInfoWindow.md"))]#[::unity2::class(namespace="App",name="AccessoryDetailInfoWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AccessoryDetailInfoWindow{#[offset(24)]#[rename(name="m_AccessoryName")]pub m_accessory_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_BodyParts")]pub m_body_parts: ::unity2::Array<crate::app::accessorydetailinfowindow::AccessoryDetailInfoWindow_BodyParts> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorydetailinfowindow/AccessoryDetailInfoWindow_BodyParts.md"))]#[::unity2::class(namespace="App",name="AccessoryDetailInfoWindow.BodyParts")]#[parent(crate::system::object::Object)]pub struct AccessoryDetailInfoWindow_BodyParts{#[offset(16)]#[rename(name="m_Object")]pub m_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-accessorydetailinfowindow-types")]
 pub use __types::*;
-
-#[cfg(feature="app-accessorydetailinfowindow")]pub trait IAccessoryDetailInfoWindow_BodyPartsMethods:IAccessoryDetailInfoWindow_BodyParts{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryDetailInfoWindow_BodyParts as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2901ac0usize)as*mut u8,();
-(AccessoryDetailInfoWindow_BodyParts)__receiver)}
-}
-}
-
-#[cfg(feature="app-accessorydetailinfowindow")]impl<__T:IAccessoryDetailInfoWindow_BodyParts>IAccessoryDetailInfoWindow_BodyPartsMethods for __T{}
-
-#[cfg(feature="app-accessorydetailinfowindow")]impl AccessoryDetailInfoWindow_BodyParts{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-accessorydetailinfowindow")]impl AccessoryDetailInfoWindow_BodyParts{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryDetailInfoWindow_BodyParts), ::core::stringify!(new),));
- <Self as IAccessoryDetailInfoWindow_BodyPartsMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-accessorydetailinfowindow")]pub trait IAccessoryDetailInfoWindowMethods:IAccessoryDetailInfoWindow{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryDetailInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27b5a90usize)as*mut u8,();
@@ -83,15 +65,33 @@ pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
+#[cfg(feature="app-accessorydetailinfowindow")]pub trait IAccessoryDetailInfoWindow_BodyPartsMethods:IAccessoryDetailInfoWindow_BodyParts{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryDetailInfoWindow_BodyParts as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2901ac0usize)as*mut u8,();
+(AccessoryDetailInfoWindow_BodyParts)__receiver)}
+}
+}
+
+#[cfg(feature="app-accessorydetailinfowindow")]impl<__T:IAccessoryDetailInfoWindow_BodyParts>IAccessoryDetailInfoWindow_BodyPartsMethods for __T{}
+
+#[cfg(feature="app-accessorydetailinfowindow")]impl AccessoryDetailInfoWindow_BodyParts{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-accessorydetailinfowindow")]impl AccessoryDetailInfoWindow_BodyParts{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryDetailInfoWindow_BodyParts), ::core::stringify!(new),));
+ <Self as IAccessoryDetailInfoWindow_BodyPartsMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-accessorydetailinfowindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryDetailInfoWindow_BodyParts;
-    pub use super::IAccessoryDetailInfoWindow_BodyParts;
-    pub use super::IAccessoryDetailInfoWindow_BodyPartsMethods;
     pub use super::AccessoryDetailInfoWindow;
     pub use super::IAccessoryDetailInfoWindow;
     pub use super::IAccessoryDetailInfoWindowMethods;
+    pub use super::AccessoryDetailInfoWindow_BodyParts;
+    pub use super::IAccessoryDetailInfoWindow_BodyParts;
+    pub use super::IAccessoryDetailInfoWindow_BodyPartsMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

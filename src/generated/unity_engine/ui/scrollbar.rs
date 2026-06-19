@@ -29,6 +29,9 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Scrollbar.ScrollEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct Scrollbar_ScrollEvent{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Scrollbar")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Scrollbar{#[offset(248)]#[rename(name="m_HandleRect")]pub m_handle_rect:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_Direction")]pub m_direction:crate::unity_engine::ui::scrollbar::Scrollbar_Direction, #[offset(260)]#[rename(name="m_Value")]pub m_value:f32, #[offset(264)]#[rename(name="m_Size")]pub m_size:f32, #[offset(268)]#[rename(name="m_NumberOfSteps")]pub m_number_of_steps:i32, #[offset(272)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::scrollbar::Scrollbar_ScrollEvent, #[offset(280)]#[rename(name="m_ContainerRect")]pub m_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(288)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector2::Vector2, #[offset(296)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker, #[offset(304)]#[rename(name="m_PointerDownRepeat")]pub m_pointer_down_repeat:crate::unity_engine::coroutine::Coroutine, #[offset(312)]#[rename(name="isPointerDownAndNotDragging")]pub is_pointer_down_and_not_dragging:bool, #[offset(313)]#[rename(name="m_DelayedUpdateVisuals")]pub m_delayed_update_visuals:bool,}
 
 
@@ -67,13 +70,28 @@ pub fn vertical()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Scrollbar.ScrollEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct Scrollbar_ScrollEvent{}
-
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-scrollbar")]pub trait IScrollbar_ScrollEventMethods:IScrollbar_ScrollEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Scrollbar_ScrollEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c10120usize)as*mut u8,();
+(Scrollbar_ScrollEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-scrollbar")]impl<__T:IScrollbar_ScrollEvent>IScrollbar_ScrollEventMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar_ScrollEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar_ScrollEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Scrollbar_ScrollEvent), ::core::stringify!(new),));
+ <Self as IScrollbar_ScrollEventMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="unity_engine-ui-scrollbar")]pub trait IScrollbarMethods:IScrollbar{#[doc="`get_handleRect()` overload"]fn get_handle_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3729240usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
@@ -308,35 +326,17 @@ pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static:
 this}
 }
 
-#[cfg(feature="unity_engine-ui-scrollbar")]pub trait IScrollbar_ScrollEventMethods:IScrollbar_ScrollEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Scrollbar_ScrollEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c10120usize)as*mut u8,();
-(Scrollbar_ScrollEvent)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-ui-scrollbar")]impl<__T:IScrollbar_ScrollEvent>IScrollbar_ScrollEventMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar_ScrollEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-ui-scrollbar")]impl Scrollbar_ScrollEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Scrollbar_ScrollEvent), ::core::stringify!(new),));
- <Self as IScrollbar_ScrollEventMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Scrollbar_ScrollEvent;
+    pub use super::IScrollbar_ScrollEvent;
+    pub use super::IScrollbar_ScrollEventMethods;
     pub use super::Scrollbar;
     pub use super::IScrollbar;
     pub use super::IScrollbarMethods;
     pub use super::Scrollbar_Direction;
     pub use super::Scrollbar_Axis;
-    pub use super::Scrollbar_ScrollEvent;
-    pub use super::IScrollbar_ScrollEvent;
-    pub use super::IScrollbar_ScrollEventMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

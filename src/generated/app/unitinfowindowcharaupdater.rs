@@ -19,9 +19,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))]#[::unity2::class(namespace="App",name="UnitInfoWindowCharaUpdater")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitInfoWindowCharaUpdater{#[offset(24)]#[rename(name="m_IsRequestToPlayBody")]pub m_is_request_to_play_body:bool, #[offset(25)]#[rename(name="m_IsRequestToPlayFace")]pub m_is_request_to_play_face:bool, #[offset(28)]#[rename(name="m_BodyAnimHash")]pub m_body_anim_hash:i32, #[offset(32)]#[rename(name="m_BodyAnimTransitionDuration")]pub m_body_anim_transition_duration:f32, #[offset(36)]#[rename(name="m_FaceAnimHash")]pub m_face_anim_hash:i32, #[offset(40)]#[rename(name="m_IsRequestToSetParam")]pub m_is_request_to_set_param:bool, #[offset(44)]#[rename(name="m_BodyParamHash")]pub m_body_param_hash:i32, #[offset(48)]#[rename(name="m_BodyParamValue")]pub m_body_param_value:bool, #[offset(49)]#[rename(name="m_IsRequestToWeapon")]pub m_is_request_to_weapon:bool, #[offset(56)]#[rename(name="m_RequestWeapon")]pub m_request_weapon:crate::app::itemdata::ItemData, #[offset(64)]#[rename(name="m_AnimeChangeWaitCount")]pub m_anime_change_wait_count:i32, #[offset(72)]#[rename(name="m_CameraObject")]pub m_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_CharaImageSimple")]pub m_chara_image_simple:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_DefaultZoomCameraLocalHeight")]pub m_default_zoom_camera_local_height:f32, #[offset(96)]#[rename(name="m_HeadLookAtObj")]pub m_head_look_at_obj:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_IsRequestToOffset")]pub m_is_request_to_offset:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater_StatusScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UnitInfoWindowCharaUpdater_StatusScope{pub m_character:crate::combat::character::Character,pub m_play_hash:i32,}
 impl::unity2::ClassIdentity for UnitInfoWindowCharaUpdater_StatusScope{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitInfoWindowCharaUpdater.StatusScope";
@@ -40,10 +37,31 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"StatusHash")
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))]#[::unity2::class(namespace="App",name="UnitInfoWindowCharaUpdater")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitInfoWindowCharaUpdater{#[offset(24)]#[rename(name="m_IsRequestToPlayBody")]pub m_is_request_to_play_body:bool, #[offset(25)]#[rename(name="m_IsRequestToPlayFace")]pub m_is_request_to_play_face:bool, #[offset(28)]#[rename(name="m_BodyAnimHash")]pub m_body_anim_hash:i32, #[offset(32)]#[rename(name="m_BodyAnimTransitionDuration")]pub m_body_anim_transition_duration:f32, #[offset(36)]#[rename(name="m_FaceAnimHash")]pub m_face_anim_hash:i32, #[offset(40)]#[rename(name="m_IsRequestToSetParam")]pub m_is_request_to_set_param:bool, #[offset(44)]#[rename(name="m_BodyParamHash")]pub m_body_param_hash:i32, #[offset(48)]#[rename(name="m_BodyParamValue")]pub m_body_param_value:bool, #[offset(49)]#[rename(name="m_IsRequestToWeapon")]pub m_is_request_to_weapon:bool, #[offset(56)]#[rename(name="m_RequestWeapon")]pub m_request_weapon:crate::app::itemdata::ItemData, #[offset(64)]#[rename(name="m_AnimeChangeWaitCount")]pub m_anime_change_wait_count:i32, #[offset(72)]#[rename(name="m_CameraObject")]pub m_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_CharaImageSimple")]pub m_chara_image_simple:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_DefaultZoomCameraLocalHeight")]pub m_default_zoom_camera_local_height:f32, #[offset(96)]#[rename(name="m_HeadLookAtObj")]pub m_head_look_at_obj:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_IsRequestToOffset")]pub m_is_request_to_offset:bool,}
+
 }
 
 #[cfg(feature = "app-unitinfowindowcharaupdater-types")]
 pub use __types::*;
+
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b52aa0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{#[doc="`.ctor(crate::combat::character::Character)` overload"]pub fn ctor(&mut self,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b528f0usize)as*mut u8,();
+(*mut UnitInfoWindowCharaUpdater_StatusScope)self as*mut UnitInfoWindowCharaUpdater_StatusScope,(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b529e0usize)as*mut u8,();
+(*mut UnitInfoWindowCharaUpdater_StatusScope)self as*mut UnitInfoWindowCharaUpdater_StatusScope)}
+}
+}
+
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature="app-unitinfowindowcharaupdater")]pub trait IUnitInfoWindowCharaUpdaterMethods:IUnitInfoWindowCharaUpdater{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1facf60usize)as*mut u8,();
@@ -143,31 +161,13 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b52aa0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{#[doc="`.ctor(crate::combat::character::Character)` overload"]pub fn ctor(&mut self,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b528f0usize)as*mut u8,();
-(*mut UnitInfoWindowCharaUpdater_StatusScope)self as*mut UnitInfoWindowCharaUpdater_StatusScope,(crate::combat::character::Character)::core::convert::Into::into(chara))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b529e0usize)as*mut u8,();
-(*mut UnitInfoWindowCharaUpdater_StatusScope)self as*mut UnitInfoWindowCharaUpdater_StatusScope)}
-}
-}
-
-#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
 #[cfg(feature = "app-unitinfowindowcharaupdater")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitInfoWindowCharaUpdater_StatusScope;
     pub use super::UnitInfoWindowCharaUpdater;
     pub use super::IUnitInfoWindowCharaUpdater;
     pub use super::IUnitInfoWindowCharaUpdaterMethods;
-    pub use super::UnitInfoWindowCharaUpdater_StatusScope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

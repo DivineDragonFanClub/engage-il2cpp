@@ -15,18 +15,64 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringmenuitem/RingMenuItem.md"))]#[::unity2::class(namespace="App",name="RingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingMenuItem{#[offset(136)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, #[offset(144)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::ringmenuitem::RingMenuItem_DecideEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringmenuitem/RingMenuItem_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RingMenuItem.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingMenuItem_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringmenuitem/RingMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RingMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingMenuItem_SelectEventHandler{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringmenuitem/RingMenuItem.md"))]#[::unity2::class(namespace="App",name="RingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingMenuItem{#[offset(136)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, #[offset(144)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::ringmenuitem::RingMenuItem_DecideEventHandler,}
+
 }
 
 #[cfg(feature = "app-ringmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItem_DecideEventHandlerMethods:IRingMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f170usize)as*mut u8,();
+(RingMenuItem_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]fn invoke(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData> ,base_ring_count:impl::core::convert::Into<i32> ,piece_of_bonds_count:impl::core::convert::Into<i32> ,god_unit_index:impl::core::convert::Into<i32> ,menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>)->(){unsafe{let __receiver= <RingMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f190usize)as*mut u8,();
+(RingMenuItem_DecideEventHandler)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data),(i32)::core::convert::Into::into(base_ring_count),(i32)::core::convert::Into::into(piece_of_bonds_count),(i32)::core::convert::Into::into(god_unit_index),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(menu_select))}
+}
+}
+
+#[cfg(feature="app-ringmenuitem")]impl<__T:IRingMenuItem_DecideEventHandler>IRingMenuItem_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingMenuItem_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRingMenuItem_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItem_SelectEventHandlerMethods:IRingMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f640usize)as*mut u8,();
+(RingMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::ringdata::RingData)` overload"]fn invoke(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f660usize)as*mut u8,();
+(RingMenuItem_SelectEventHandler)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+}
+
+#[cfg(feature="app-ringmenuitem")]impl<__T:IRingMenuItem_SelectEventHandler>IRingMenuItem_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingMenuItem_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IRingMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItemMethods:IRingMenuItem{#[doc="`get_m_RingData()` overload"]fn get_m_ring_data(self,)->crate::app::ringdata::RingData{unsafe{let __receiver= <RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2430ec0usize)as*mut u8,crate::app::ringdata::RingData;
@@ -156,64 +202,18 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItem_DecideEventHandlerMethods:IRingMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f170usize)as*mut u8,();
-(RingMenuItem_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]fn invoke(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData> ,base_ring_count:impl::core::convert::Into<i32> ,piece_of_bonds_count:impl::core::convert::Into<i32> ,god_unit_index:impl::core::convert::Into<i32> ,menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>)->(){unsafe{let __receiver= <RingMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f190usize)as*mut u8,();
-(RingMenuItem_DecideEventHandler)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data),(i32)::core::convert::Into::into(base_ring_count),(i32)::core::convert::Into::into(piece_of_bonds_count),(i32)::core::convert::Into::into(god_unit_index),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(menu_select))}
-}
-}
-
-#[cfg(feature="app-ringmenuitem")]impl<__T:IRingMenuItem_DecideEventHandler>IRingMenuItem_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingMenuItem_DecideEventHandler), ::core::stringify!(new),));
- <Self as IRingMenuItem_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-ringmenuitem")]pub trait IRingMenuItem_SelectEventHandlerMethods:IRingMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f640usize)as*mut u8,();
-(RingMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::ringdata::RingData)` overload"]fn invoke(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f660usize)as*mut u8,();
-(RingMenuItem_SelectEventHandler)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
-}
-}
-
-#[cfg(feature="app-ringmenuitem")]impl<__T:IRingMenuItem_SelectEventHandler>IRingMenuItem_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ringmenuitem")]impl RingMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingMenuItem_SelectEventHandler), ::core::stringify!(new),));
- <Self as IRingMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-ringmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingMenuItem;
-    pub use super::IRingMenuItem;
-    pub use super::IRingMenuItemMethods;
     pub use super::RingMenuItem_DecideEventHandler;
     pub use super::IRingMenuItem_DecideEventHandler;
     pub use super::IRingMenuItem_DecideEventHandlerMethods;
     pub use super::RingMenuItem_SelectEventHandler;
     pub use super::IRingMenuItem_SelectEventHandler;
     pub use super::IRingMenuItem_SelectEventHandlerMethods;
+    pub use super::RingMenuItem;
+    pub use super::IRingMenuItem;
+    pub use super::IRingMenuItemMethods;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

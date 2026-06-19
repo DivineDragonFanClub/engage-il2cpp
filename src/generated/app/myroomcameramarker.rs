@@ -19,6 +19,9 @@ use crate::unity_engine::timeline::marker::{IMarker,Marker}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomcameramarker/MyRoomCameraMarker.md"))]#[::unity2::class(namespace="App",name="MyRoomCameraMarker")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct MyRoomCameraMarker{#[offset(40)]#[rename(name="CameraType")]pub camera_type:crate::app::myroomcameramarker::MyRoomCameraMarker_Type, #[offset(48)]#[rename(name="CameraName")]pub camera_name: ::unity2::Il2CppString, #[offset(56)]#[rename(name="AnimName")]pub anim_name: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomcameramarker/MyRoomCameraMarker_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomCameraMarker_Type{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomCameraMarker_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomCameraMarker.Type";
@@ -33,9 +36,6 @@ impl MyRoomCameraMarker_Type{pub fn chara_camera()->Self{Self{value:0}
 pub fn scene_camera()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomcameramarker/MyRoomCameraMarker.md"))]#[::unity2::class(namespace="App",name="MyRoomCameraMarker")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct MyRoomCameraMarker{#[offset(40)]#[rename(name="CameraType")]pub camera_type:crate::app::myroomcameramarker::MyRoomCameraMarker_Type, #[offset(48)]#[rename(name="CameraName")]pub camera_name: ::unity2::Il2CppString, #[offset(56)]#[rename(name="AnimName")]pub anim_name: ::unity2::Il2CppString,}
 
 }
 
@@ -68,10 +68,10 @@ this}
 #[cfg(feature = "app-myroomcameramarker")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomCameraMarker_Type;
     pub use super::MyRoomCameraMarker;
     pub use super::IMyRoomCameraMarker;
     pub use super::IMyRoomCameraMarkerMethods;
+    pub use super::MyRoomCameraMarker_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

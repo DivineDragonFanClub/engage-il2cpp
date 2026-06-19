@@ -11,42 +11,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu")]#[parent(crate::system::object::Object)]pub struct DebugTransporterItemMenu{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_EditMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu.EditMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugTransporterItemMenu_EditMenuItem{#[offset(32)]#[rename(name="m_TransporterIndex")]pub m_transporter_index:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_SelectMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu.SelectMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugTransporterItemMenu_SelectMenuItem{#[offset(32)]#[rename(name="m_TransporterIndex")]pub m_transporter_index:i32, #[offset(36)]#[rename(name="m_ItemIndex")]pub m_item_index:i32,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu")]#[parent(crate::system::object::Object)]pub struct DebugTransporterItemMenu{}
+
 }
 
 #[cfg(feature = "app-debugtransporteritemmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a107c0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenuMethods:IDebugTransporterItemMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a10940usize)as*mut u8,();
-(DebugTransporterItemMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl<__T:IDebugTransporterItemMenu>IDebugTransporterItemMenuMethods for __T{}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterItemMenu), ::core::stringify!(new),));
- <Self as IDebugTransporterItemMenuMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenu_EditMenuItemMethods:IDebugTransporterItemMenu_EditMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9ee0usize)as*mut u8,();
@@ -184,18 +160,42 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a107c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenuMethods:IDebugTransporterItemMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a10940usize)as*mut u8,();
+(DebugTransporterItemMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl<__T:IDebugTransporterItemMenu>IDebugTransporterItemMenuMethods for __T{}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterItemMenu), ::core::stringify!(new),));
+ <Self as IDebugTransporterItemMenuMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-debugtransporteritemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugTransporterItemMenu;
-    pub use super::IDebugTransporterItemMenu;
-    pub use super::IDebugTransporterItemMenuMethods;
     pub use super::DebugTransporterItemMenu_EditMenuItem;
     pub use super::IDebugTransporterItemMenu_EditMenuItem;
     pub use super::IDebugTransporterItemMenu_EditMenuItemMethods;
     pub use super::DebugTransporterItemMenu_SelectMenuItem;
     pub use super::IDebugTransporterItemMenu_SelectMenuItem;
     pub use super::IDebugTransporterItemMenu_SelectMenuItemMethods;
+    pub use super::DebugTransporterItemMenu;
+    pub use super::IDebugTransporterItemMenu;
+    pub use super::IDebugTransporterItemMenuMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;

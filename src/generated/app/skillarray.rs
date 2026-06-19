@@ -11,15 +11,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillarray/SkillArray_Entity.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SkillArray_Entity{pub value:u32,}
-impl::unity2::ClassIdentity for SkillArray_Entity{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillArray.Entity";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillArray_Entity{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillarray/SkillArray.md"))]#[::unity2::class(namespace="App",name="SkillArray")]#[parent(crate::system::object::Object)]pub struct SkillArray{#[static_field]#[rename(name="MaxCount")]pub max_count:i32, #[static_field]#[rename(name="Capacity")]pub capacity:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Mask")]pub m_mask:crate::app::bitstruct::BitStruct, #[offset(24)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::skillarray::SkillArray_Entity> , #[offset(32)]#[rename(name="m_Flags")]pub m_flags:crate::app::skilldata::SkillData_Flags, #[offset(40)]#[rename(name="m_Cycles")]pub m_cycles:crate::app::skilldata::SkillData_CycleMasks, #[offset(44)]#[rename(name="m_Timings")]pub m_timings:crate::app::skilldata::SkillData_TimingMasks, #[offset(48)]#[rename(name="m_Efficacys")]pub m_efficacys:crate::app::skilldata::SkillData_Attrs, #[offset(52)]#[rename(name="m_EfficacyIgnores")]pub m_efficacy_ignores:crate::app::skilldata::SkillData_Attrs, #[offset(56)]#[rename(name="m_BadStates")]pub m_bad_states:crate::app::skilldata::SkillData_States, #[offset(60)]#[rename(name="m_BadIgnore")]pub m_bad_ignore:crate::app::skilldata::SkillData_States, #[offset(64)]#[rename(name="m_WeaponLevels")]pub m_weapon_levels:crate::app::weaponlevels::WeaponLevels, #[offset(72)]#[rename(name="m_IsEquipSkillFirstNull")]pub m_is_equip_skill_first_null:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillarray/SkillArray_Enumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SkillArray_Enumerator{pub m_array:crate::app::skillarray::SkillArray,pub m_current:crate::app::skilldata::SkillData,pub m_index:i32,}
@@ -33,84 +25,20 @@ impl::unity2::IlType for SkillArray_Enumerator{fn il_type()-> &'static::unity2::
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillarray/SkillArray.md"))]#[::unity2::class(namespace="App",name="SkillArray")]#[parent(crate::system::object::Object)]pub struct SkillArray{#[static_field]#[rename(name="MaxCount")]pub max_count:i32, #[static_field]#[rename(name="Capacity")]pub capacity:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Mask")]pub m_mask:crate::app::bitstruct::BitStruct, #[offset(24)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::skillarray::SkillArray_Entity> , #[offset(32)]#[rename(name="m_Flags")]pub m_flags:crate::app::skilldata::SkillData_Flags, #[offset(40)]#[rename(name="m_Cycles")]pub m_cycles:crate::app::skilldata::SkillData_CycleMasks, #[offset(44)]#[rename(name="m_Timings")]pub m_timings:crate::app::skilldata::SkillData_TimingMasks, #[offset(48)]#[rename(name="m_Efficacys")]pub m_efficacys:crate::app::skilldata::SkillData_Attrs, #[offset(52)]#[rename(name="m_EfficacyIgnores")]pub m_efficacy_ignores:crate::app::skilldata::SkillData_Attrs, #[offset(56)]#[rename(name="m_BadStates")]pub m_bad_states:crate::app::skilldata::SkillData_States, #[offset(60)]#[rename(name="m_BadIgnore")]pub m_bad_ignore:crate::app::skilldata::SkillData_States, #[offset(64)]#[rename(name="m_WeaponLevels")]pub m_weapon_levels:crate::app::weaponlevels::WeaponLevels, #[offset(72)]#[rename(name="m_IsEquipSkillFirstNull")]pub m_is_equip_skill_first_null:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillarray/SkillArray_Entity.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SkillArray_Entity{pub value:u32,}
+impl::unity2::ClassIdentity for SkillArray_Entity{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillArray.Entity";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillArray_Entity{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
 
 }
 
 #[cfg(feature = "app-skillarray-types")]
 pub use __types::*;
-
-#[cfg(feature="app-skillarray")]impl SkillArray_Entity{#[doc="`.ctor(i32, i32, crate::app::skilldata::SkillData_Categorys, i32)` overload"]pub fn ctor(&mut self,index:impl::core::convert::Into<i32> ,group:impl::core::convert::Into<i32> ,category:impl::core::convert::Into<crate::app::skilldata::SkillData_Categorys> ,age:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e080usize)as*mut u8,();
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(group),(crate::app::skilldata::SkillData_Categorys)::core::convert::Into::into(category),(i32)::core::convert::Into::into(age))}
-}
-#[doc="`get_Index()` overload"]pub fn get_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0a0usize)as*mut u8,i32;
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
-}
-#[doc="`set_Index(i32)` overload"]pub fn set_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0b0usize)as*mut u8,();
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Group()` overload"]pub fn get_group(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0c0usize)as*mut u8,i32;
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
-}
-#[doc="`set_Group(i32)` overload"]pub fn set_group(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0d0usize)as*mut u8,();
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Age()` overload"]pub fn get_age(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0e0usize)as*mut u8,i32;
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
-}
-#[doc="`set_Age(i32)` overload"]pub fn set_age(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0f0usize)as*mut u8,();
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Category()` overload"]pub fn get_category(&mut self,)->crate::app::skilldata::SkillData_Categorys{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e100usize)as*mut u8,crate::app::skilldata::SkillData_Categorys;
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
-}
-#[doc="`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]pub fn set_category(&mut self,value:impl::core::convert::Into<crate::app::skilldata::SkillData_Categorys>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e110usize)as*mut u8,();
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(crate::app::skilldata::SkillData_Categorys)::core::convert::Into::into(value))}
-}
-#[doc="`get_Skill()` overload"]pub fn get_skill(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e120usize)as*mut u8,crate::app::skilldata::SkillData;
-(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
-}
-}
-
-#[cfg(feature="app-skillarray")]impl SkillArray_Entity{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_age_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_age_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-skillarray")]impl SkillArray_Enumerator{#[doc="`.ctor(crate::app::skillarray::SkillArray)` overload"]pub fn ctor(&mut self,skill_array:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e1b0usize)as*mut u8,();
-(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator,(crate::app::skillarray::SkillArray)::core::convert::Into::into(skill_array))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e1f0usize)as*mut u8,();
-(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
-}
-#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e230usize)as*mut u8,bool;
-(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
-}
-#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e380usize)as*mut u8,();
-(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
-}
-#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e390usize)as*mut u8,crate::system::object::Object;
-(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
-}
-#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e3a0usize)as*mut u8,crate::app::skilldata::SkillData;
-(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
-}
-}
-
-#[cfg(feature="app-skillarray")]impl SkillArray_Enumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
 
 #[cfg(feature="app-skillarray")]pub trait ISkillArrayMethods:ISkillArray{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x247dca0usize)as*mut u8,();
@@ -555,14 +483,86 @@ this}
 this}
 }
 
+#[cfg(feature="app-skillarray")]impl SkillArray_Enumerator{#[doc="`.ctor(crate::app::skillarray::SkillArray)` overload"]pub fn ctor(&mut self,skill_array:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e1b0usize)as*mut u8,();
+(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator,(crate::app::skillarray::SkillArray)::core::convert::Into::into(skill_array))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e1f0usize)as*mut u8,();
+(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
+}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e230usize)as*mut u8,bool;
+(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
+}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e380usize)as*mut u8,();
+(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e390usize)as*mut u8,crate::system::object::Object;
+(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
+}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e3a0usize)as*mut u8,crate::app::skilldata::SkillData;
+(*mut SkillArray_Enumerator)self as*mut SkillArray_Enumerator)}
+}
+}
+
+#[cfg(feature="app-skillarray")]impl SkillArray_Enumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-skillarray")]impl SkillArray_Entity{#[doc="`.ctor(i32, i32, crate::app::skilldata::SkillData_Categorys, i32)` overload"]pub fn ctor(&mut self,index:impl::core::convert::Into<i32> ,group:impl::core::convert::Into<i32> ,category:impl::core::convert::Into<crate::app::skilldata::SkillData_Categorys> ,age:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e080usize)as*mut u8,();
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(group),(crate::app::skilldata::SkillData_Categorys)::core::convert::Into::into(category),(i32)::core::convert::Into::into(age))}
+}
+#[doc="`get_Index()` overload"]pub fn get_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0a0usize)as*mut u8,i32;
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
+}
+#[doc="`set_Index(i32)` overload"]pub fn set_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0b0usize)as*mut u8,();
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Group()` overload"]pub fn get_group(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0c0usize)as*mut u8,i32;
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
+}
+#[doc="`set_Group(i32)` overload"]pub fn set_group(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0d0usize)as*mut u8,();
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Age()` overload"]pub fn get_age(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0e0usize)as*mut u8,i32;
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
+}
+#[doc="`set_Age(i32)` overload"]pub fn set_age(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e0f0usize)as*mut u8,();
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Category()` overload"]pub fn get_category(&mut self,)->crate::app::skilldata::SkillData_Categorys{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e100usize)as*mut u8,crate::app::skilldata::SkillData_Categorys;
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
+}
+#[doc="`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]pub fn set_category(&mut self,value:impl::core::convert::Into<crate::app::skilldata::SkillData_Categorys>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e110usize)as*mut u8,();
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity,(crate::app::skilldata::SkillData_Categorys)::core::convert::Into::into(value))}
+}
+#[doc="`get_Skill()` overload"]pub fn get_skill(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e120usize)as*mut u8,crate::app::skilldata::SkillData;
+(*mut SkillArray_Entity)self as*mut SkillArray_Entity)}
+}
+}
+
+#[cfg(feature="app-skillarray")]impl SkillArray_Entity{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_age_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_age_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
 #[cfg(feature = "app-skillarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkillArray_Entity;
-    pub use super::SkillArray_Enumerator;
     pub use super::SkillArray;
     pub use super::ISkillArray;
     pub use super::ISkillArrayMethods;
+    pub use super::SkillArray_Enumerator;
+    pub use super::SkillArray_Entity;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

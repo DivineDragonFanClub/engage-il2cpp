@@ -17,38 +17,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpproc/HelpProc_EventHandler.md"))]#[::unity2::class(namespace="App",name="HelpProc.EventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct HelpProc_EventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpproc/HelpProc.md"))]#[::unity2::class(namespace="App",name="HelpProc")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::helpproc::HelpProc>)]pub struct HelpProc{#[static_field]#[rename(name="m_isTempGod")]pub m_is_temp_god:bool, #[static_field]#[rename(name="m_TempGod")]pub m_temp_god:crate::app::godunit::GodUnit, #[static_field]#[rename(name="m_isTempCommon")]pub m_is_temp_common:bool, #[static_field]#[rename(name="m_TempCommon")]pub m_temp_common:crate::app::unitring::UnitRing, #[static_field]#[rename(name="m_isTempUnit")]pub m_is_temp_unit:bool, #[static_field]#[rename(name="m_TempUnit")]pub m_temp_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_helpManager")]pub m_help_manager:crate::app::helpmanager::HelpManager, #[offset(128)]#[rename(name="m_helpParamSetter")]pub m_help_param_setter:crate::app::helpparamsetter::HelpParamSetter, #[static_field]#[rename(name="m_enter")]pub m_enter:crate::app::helpproc::HelpProc_EventHandler, #[static_field]#[rename(name="m_exit")]pub m_exit:crate::app::helpproc::HelpProc_EventHandler, #[static_field]#[rename(name="m_isDisable")]pub m_is_disable:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpproc/HelpProc_EventHandler.md"))]#[::unity2::class(namespace="App",name="HelpProc.EventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct HelpProc_EventHandler{}
 
 }
 
 #[cfg(feature = "app-helpproc-types")]
 pub use __types::*;
-
-#[cfg(feature="app-helpproc")]pub trait IHelpProc_EventHandlerMethods:IHelpProc_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <HelpProc_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce13c0usize)as*mut u8,();
-(HelpProc_EventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <HelpProc_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce13e0usize)as*mut u8,();
-(HelpProc_EventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-helpproc")]impl<__T:IHelpProc_EventHandler>IHelpProc_EventHandlerMethods for __T{}
-
-#[cfg(feature="app-helpproc")]impl HelpProc_EventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-helpproc")]impl HelpProc_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HelpProc_EventHandler), ::core::stringify!(new),));
- <Self as IHelpProc_EventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-helpproc")]impl HelpProc{#[doc="`Enable()` overload"]pub fn enable()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2164b00usize)as*mut u8,();
 )}
@@ -130,15 +107,38 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-helpproc")]pub trait IHelpProc_EventHandlerMethods:IHelpProc_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <HelpProc_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce13c0usize)as*mut u8,();
+(HelpProc_EventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <HelpProc_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce13e0usize)as*mut u8,();
+(HelpProc_EventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-helpproc")]impl<__T:IHelpProc_EventHandler>IHelpProc_EventHandlerMethods for __T{}
+
+#[cfg(feature="app-helpproc")]impl HelpProc_EventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-helpproc")]impl HelpProc_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpProc_EventHandler), ::core::stringify!(new),));
+ <Self as IHelpProc_EventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-helpproc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HelpProc_EventHandler;
-    pub use super::IHelpProc_EventHandler;
-    pub use super::IHelpProc_EventHandlerMethods;
     pub use super::HelpProc;
     pub use super::IHelpProc;
     pub use super::IHelpProcMethods;
+    pub use super::HelpProc_EventHandler;
+    pub use super::IHelpProc_EventHandler;
+    pub use super::IHelpProc_EventHandlerMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::delegate::IDelegate;

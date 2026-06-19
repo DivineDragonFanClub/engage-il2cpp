@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))]#[::unity2::class(namespace="App",name="DragonRidePresetParamData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::dragonridepresetparamdata::DragonRidePresetParamData>)]pub struct DragonRidePresetParamData{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridepresetparamdata/DragonRidePresetParamData_CourseData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DragonRidePresetParamData_CourseData{pub course_id:i32,pub suicide_time:f32,pub suicide_random:f32,}
 impl::unity2::ClassIdentity for DragonRidePresetParamData_CourseData{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DragonRidePresetParamData.CourseData";
@@ -26,9 +29,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for DragonRidePresetParamData_CourseData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))]#[::unity2::class(namespace="App",name="DragonRidePresetParamData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::dragonridepresetparamdata::DragonRidePresetParamData>)]pub struct DragonRidePresetParamData{}
 
 }
 
@@ -347,10 +347,10 @@ this}
 #[cfg(feature = "app-dragonridepresetparamdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRidePresetParamData_CourseData;
     pub use super::DragonRidePresetParamData;
     pub use super::IDragonRidePresetParamData;
     pub use super::IDragonRidePresetParamDataMethods;
+    pub use super::DragonRidePresetParamData_CourseData;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

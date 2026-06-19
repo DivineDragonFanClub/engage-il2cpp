@@ -8,6 +8,7 @@
       "nintendo",
       "nn",
       "root",
+      "root_motion",
       "system",
       "tm_pro",
       "unity_engine"
@@ -7119,6 +7120,7 @@
       "app-weightfader-types",
       "combat-character-types",
       "combat-characterjoint-types",
+      "root_motion-final_ik-lookatik-types",
       "system-object-types",
       "system-single-types",
       "system-void-types",
@@ -7767,6 +7769,7 @@
       "app-procinst-types",
       "app-procscenesequence_1-types",
       "combat-character-types",
+      "root_motion-final_ik-lookatik-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-enum-types",
@@ -10258,6 +10261,7 @@
       "app-hubaccessoryroom-types",
       "app-resourcehandle_2-types",
       "combat-character-types",
+      "root_motion-final_ik-lookatik-types",
       "system-boolean-types",
       "system-int32-types",
       "system-single-types",
@@ -10672,6 +10676,7 @@
     ],
     "app-hublookatcontroller-types": [
       "app-interpolatorfloat-types",
+      "root_motion-final_ik-lookatik-types",
       "system-boolean-types",
       "system-single-types",
       "system-valuetype-types",
@@ -11021,6 +11026,7 @@
       "app-hubunitcontroller-types",
       "combat-character-types",
       "combat-characterjoint-types",
+      "root_motion-final_ik-lookatik-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-collections-ienumerator-types",
@@ -16947,6 +16953,7 @@
       "app-photographspotdata-types",
       "app-unit-types",
       "combat-character-types",
+      "root_motion-final_ik-lookatik-types",
       "system-boolean-types",
       "system-collections-generic-dictionary_2-types",
       "system-collections-generic-list_1-types",
@@ -28768,6 +28775,7 @@
       "combat-weaponstyle-types",
       "root-iron19characterfader-types",
       "root-iron19charactersuperengage-types",
+      "root_motion-final_ik-lookatik-types",
       "system-action-types",
       "system-boolean-types",
       "system-int32-types",
@@ -28929,6 +28937,7 @@
       "combat-charactereyedart-types"
     ],
     "combat-charactereyedart-types": [
+      "root_motion-final_ik-lookatik-types",
       "system-enum-types",
       "system-void-types",
       "unity_engine-monobehaviour-types"
@@ -29006,6 +29015,7 @@
     "combat-characterikaim-types": [
       "combat-character-types",
       "combat-parabola-types",
+      "root_motion-final_ik-aimik-types",
       "system-single-types",
       "system-void-types",
       "unity_engine-monobehaviour-types",
@@ -29027,6 +29037,7 @@
     ],
     "combat-characteriklookat-types": [
       "combat-character-types",
+      "root_motion-final_ik-lookatik-types",
       "system-boolean-types",
       "system-single-types",
       "system-void-types",
@@ -30277,6 +30288,7 @@
       "combat-lookatikrotationlimit-types"
     ],
     "combat-lookatikrotationlimit-types": [
+      "root_motion-final_ik-rotationlimit-types",
       "system-void-types",
       "unity_engine-monobehaviour-types"
     ],
@@ -38722,6 +38734,7 @@
       "app-skinqualitylodadjuster-types",
       "combat-character-types",
       "combat-characterproportion-types",
+      "root_motion-solvermanager-types",
       "system-boolean-types",
       "system-collections-generic-list_1-types",
       "system-int32-types",
@@ -40113,6 +40126,1606 @@
       "root-wwiseobjectreference-types",
       "root-wwiseobjecttype-types",
       "system-void-types"
+    ],
+    "root_motion": [
+      "root_motion-avatarutility",
+      "root_motion-axis_2",
+      "root_motion-axistools",
+      "root_motion-baker",
+      "root_motion-bakerhumanoidqt",
+      "root_motion-bakermuscle",
+      "root_motion-bakertransform",
+      "root_motion-bakerutilities",
+      "root_motion-bipedlimborientations",
+      "root_motion-bipednaming",
+      "root_motion-bipedreferences",
+      "root_motion-comments",
+      "root_motion-demoguimessage",
+      "root_motion-demos-fkoffset",
+      "root_motion-demos-navigator",
+      "root_motion-final_ik-aimcontroller",
+      "root_motion-final_ik-aimik",
+      "root_motion-final_ik-aimposer",
+      "root_motion-final_ik-amplifier",
+      "root_motion-final_ik-armik",
+      "root_motion-final_ik-bipedik",
+      "root_motion-final_ik-bipediksolvers",
+      "root_motion-final_ik-bodytilt",
+      "root_motion-final_ik-ccdbendgoal",
+      "root_motion-final_ik-ccdik",
+      "root_motion-final_ik-constraint",
+      "root_motion-final_ik-constraintposition",
+      "root_motion-final_ik-constraintpositionoffset",
+      "root_motion-final_ik-constraintrotation",
+      "root_motion-final_ik-constraintrotationoffset",
+      "root_motion-final_ik-constraints",
+      "root_motion-final_ik-editorik",
+      "root_motion-final_ik-editorikpose",
+      "root_motion-final_ik-fabrik",
+      "root_motion-final_ik-fabrikchain",
+      "root_motion-final_ik-fabrikroot",
+      "root_motion-final_ik-fbbikarmbending",
+      "root_motion-final_ik-fbbikheadeffector",
+      "root_motion-final_ik-fbikchain",
+      "root_motion-final_ik-finger",
+      "root_motion-final_ik-fingerrig",
+      "root_motion-final_ik-fullbodybipedchain",
+      "root_motion-final_ik-fullbodybipedeffector",
+      "root_motion-final_ik-fullbodybipedik",
+      "root_motion-final_ik-genericposer",
+      "root_motion-final_ik-grounder",
+      "root_motion-final_ik-grounderbipedik",
+      "root_motion-final_ik-grounderfbbik",
+      "root_motion-final_ik-grounderik",
+      "root_motion-final_ik-grounderquadruped",
+      "root_motion-final_ik-groundervrik",
+      "root_motion-final_ik-grounding",
+      "root_motion-final_ik-handposer",
+      "root_motion-final_ik-hitreaction",
+      "root_motion-final_ik-hitreactionvrik",
+      "root_motion-final_ik-ik",
+      "root_motion-final_ik-ikconstraintbend",
+      "root_motion-final_ik-ikeffector",
+      "root_motion-final_ik-ikexecutionorder",
+      "root_motion-final_ik-ikmapping",
+      "root_motion-final_ik-ikmappingbone",
+      "root_motion-final_ik-ikmappinglimb",
+      "root_motion-final_ik-ikmappingspine",
+      "root_motion-final_ik-iksolver",
+      "root_motion-final_ik-iksolveraim",
+      "root_motion-final_ik-iksolverarm",
+      "root_motion-final_ik-iksolverccd",
+      "root_motion-final_ik-iksolverfabrik",
+      "root_motion-final_ik-iksolverfabrikroot",
+      "root_motion-final_ik-iksolverfullbody",
+      "root_motion-final_ik-iksolverfullbodybiped",
+      "root_motion-final_ik-iksolverheuristic",
+      "root_motion-final_ik-iksolverleg",
+      "root_motion-final_ik-iksolverlimb",
+      "root_motion-final_ik-iksolverlookat",
+      "root_motion-final_ik-iksolvertrigonometric",
+      "root_motion-final_ik-iksolvervr",
+      "root_motion-final_ik-inertia",
+      "root_motion-final_ik-interactioneffector",
+      "root_motion-final_ik-interactionlookat",
+      "root_motion-final_ik-interactionobject",
+      "root_motion-final_ik-interactionsystem",
+      "root_motion-final_ik-interactiontarget",
+      "root_motion-final_ik-interactiontrigger",
+      "root_motion-final_ik-legik",
+      "root_motion-final_ik-limbik",
+      "root_motion-final_ik-lookatcontroller",
+      "root_motion-final_ik-lookatik",
+      "root_motion-final_ik-offsetmodifier",
+      "root_motion-final_ik-offsetmodifiervrik",
+      "root_motion-final_ik-offsetpose",
+      "root_motion-final_ik-penetrationavoidance",
+      "root_motion-final_ik-poser",
+      "root_motion-final_ik-ragdollutility",
+      "root_motion-final_ik-recoil",
+      "root_motion-final_ik-rotationlimit",
+      "root_motion-final_ik-rotationlimitangle",
+      "root_motion-final_ik-rotationlimithinge",
+      "root_motion-final_ik-rotationlimitpolygonal",
+      "root_motion-final_ik-rotationlimitspline",
+      "root_motion-final_ik-shoulderrotator",
+      "root_motion-final_ik-trigonometricik",
+      "root_motion-final_ik-twistrelaxer",
+      "root_motion-final_ik-twistsolver",
+      "root_motion-final_ik-vrik",
+      "root_motion-final_ik-vrikcalibrator",
+      "root_motion-final_ik-vriklodcontroller",
+      "root_motion-final_ik-vrikrootcontroller",
+      "root_motion-genericbaker",
+      "root_motion-hierarchy",
+      "root_motion-humanoidbaker",
+      "root_motion-inspectorcomment",
+      "root_motion-interp",
+      "root_motion-interpolationmode",
+      "root_motion-largeheader",
+      "root_motion-layermaskextensions",
+      "root_motion-quatools",
+      "root_motion-singleton_1",
+      "root_motion-solvermanager",
+      "root_motion-tq",
+      "root_motion-triggereventbroadcaster",
+      "root_motion-v2tools",
+      "root_motion-v3tools",
+      "root_motion-warning"
+    ],
+    "root_motion-avatarutility": [
+      "root_motion-avatarutility-types"
+    ],
+    "root_motion-avatarutility-types": [
+      "root_motion-tq-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-avatar-types",
+      "unity_engine-avatarikgoal-types",
+      "unity_engine-humanbodybones-types",
+      "unity_engine-quaternion-types"
+    ],
+    "root_motion-axis_2": [
+      "root_motion-axis_2-types"
+    ],
+    "root_motion-axis_2-types": [
+      "system-enum-types"
+    ],
+    "root_motion-axistools": [
+      "root_motion-axistools-types"
+    ],
+    "root_motion-axistools-types": [
+      "root_motion-axis_2-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-baker": [
+      "root_motion-baker-types"
+    ],
+    "root_motion-baker-types": [
+      "system-boolean-types",
+      "system-enum-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-animator-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-playables-playabledirector-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-bakerhumanoidqt": [
+      "root_motion-bakerhumanoidqt-types"
+    ],
+    "root_motion-bakerhumanoidqt-types": [
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-avatar-types",
+      "unity_engine-avatarikgoal-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-bakermuscle": [
+      "root_motion-bakermuscle-types"
+    ],
+    "root_motion-bakermuscle-types": [
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-animationcurve-types"
+    ],
+    "root_motion-bakertransform": [
+      "root_motion-bakertransform-types"
+    ],
+    "root_motion-bakertransform-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-bakerutilities": [
+      "root_motion-bakerutilities-types"
+    ],
+    "root_motion-bakerutilities-types": [
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-keyframe-types",
+      "unity_engine-quaternion-types"
+    ],
+    "root_motion-bipedlimborientations": [
+      "root_motion-bipedlimborientations-types"
+    ],
+    "root_motion-bipedlimborientations-types": [
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-bipednaming": [
+      "root_motion-bipednaming-types"
+    ],
+    "root_motion-bipednaming-types": [
+      "system-boolean-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-bipedreferences": [
+      "root_motion-bipedreferences-types"
+    ],
+    "root_motion-bipedreferences-types": [
+      "root_motion-bipednaming-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-comments": [
+      "root_motion-comments-types"
+    ],
+    "root_motion-comments-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-demoguimessage": [
+      "root_motion-demoguimessage-types"
+    ],
+    "root_motion-demoguimessage-types": [
+      "system-void-types",
+      "unity_engine-color-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-demos-fkoffset": [
+      "root_motion-demos-fkoffset-types"
+    ],
+    "root_motion-demos-fkoffset-types": [
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-humanbodybones-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-demos-navigator": [
+      "root_motion-demos-navigator-types"
+    ],
+    "root_motion-demos-navigator-types": [
+      "system-boolean-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-ai-navmeshpath-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-aimcontroller": [
+      "root_motion-final_ik-aimcontroller-types"
+    ],
+    "root_motion-final_ik-aimcontroller-types": [
+      "root_motion-final_ik-aimik-types",
+      "system-collections-ienumerator-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-aimik": [
+      "root_motion-final_ik-aimik-types"
+    ],
+    "root_motion-final_ik-aimik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolveraim-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-aimposer": [
+      "root_motion-final_ik-aimposer-types"
+    ],
+    "root_motion-final_ik-aimposer-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-amplifier": [
+      "root_motion-final_ik-amplifier-types"
+    ],
+    "root_motion-final_ik-amplifier-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "root_motion-final_ik-offsetmodifier-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-armik": [
+      "root_motion-final_ik-armik-types"
+    ],
+    "root_motion-final_ik-armik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverarm-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-bipedik": [
+      "root_motion-final_ik-bipedik-types"
+    ],
+    "root_motion-final_ik-bipedik-types": [
+      "root_motion-bipedreferences-types",
+      "root_motion-final_ik-bipediksolvers-types",
+      "root_motion-final_ik-iksolverlimb-types",
+      "root_motion-solvermanager-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-avatarikgoal-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-bipediksolvers": [
+      "root_motion-final_ik-bipediksolvers-types"
+    ],
+    "root_motion-final_ik-bipediksolvers-types": [
+      "root_motion-bipedreferences-types",
+      "root_motion-final_ik-constraints-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolveraim-types",
+      "root_motion-final_ik-iksolverfabrik-types",
+      "root_motion-final_ik-iksolverlimb-types",
+      "root_motion-final_ik-iksolverlookat-types",
+      "system-object-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-bodytilt": [
+      "root_motion-final_ik-bodytilt-types"
+    ],
+    "root_motion-final_ik-bodytilt-types": [
+      "root_motion-final_ik-offsetmodifier-types",
+      "root_motion-final_ik-offsetpose-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-ccdbendgoal": [
+      "root_motion-final_ik-ccdbendgoal-types"
+    ],
+    "root_motion-final_ik-ccdbendgoal-types": [
+      "root_motion-final_ik-ccdik-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-final_ik-ccdik": [
+      "root_motion-final_ik-ccdik-types"
+    ],
+    "root_motion-final_ik-ccdik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverccd-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-constraint": [
+      "root_motion-final_ik-constraint-types"
+    ],
+    "root_motion-final_ik-constraint-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-constraintposition": [
+      "root_motion-final_ik-constraintposition-types"
+    ],
+    "root_motion-final_ik-constraintposition-types": [
+      "root_motion-final_ik-constraint-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-constraintpositionoffset": [
+      "root_motion-final_ik-constraintpositionoffset-types"
+    ],
+    "root_motion-final_ik-constraintpositionoffset-types": [
+      "root_motion-final_ik-constraint-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-constraintrotation": [
+      "root_motion-final_ik-constraintrotation-types"
+    ],
+    "root_motion-final_ik-constraintrotation-types": [
+      "root_motion-final_ik-constraint-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-constraintrotationoffset": [
+      "root_motion-final_ik-constraintrotationoffset-types"
+    ],
+    "root_motion-final_ik-constraintrotationoffset-types": [
+      "root_motion-final_ik-constraint-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-constraints": [
+      "root_motion-final_ik-constraints-types"
+    ],
+    "root_motion-final_ik-constraints-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-editorik": [
+      "root_motion-final_ik-editorik-types"
+    ],
+    "root_motion-final_ik-editorik-types": [
+      "root_motion-final_ik-editorikpose-types",
+      "root_motion-final_ik-ik-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-editorikpose": [
+      "root_motion-final_ik-editorikpose-types"
+    ],
+    "root_motion-final_ik-editorikpose-types": [
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-scriptableobject-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-fabrik": [
+      "root_motion-final_ik-fabrik-types"
+    ],
+    "root_motion-final_ik-fabrik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfabrik-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-fabrikchain": [
+      "root_motion-final_ik-fabrikchain-types"
+    ],
+    "root_motion-final_ik-fabrikchain-types": [
+      "root_motion-final_ik-fabrik-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-fabrikroot": [
+      "root_motion-final_ik-fabrikroot-types"
+    ],
+    "root_motion-final_ik-fabrikroot-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfabrikroot-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-fbbikarmbending": [
+      "root_motion-final_ik-fbbikarmbending-types"
+    ],
+    "root_motion-final_ik-fbbikarmbending-types": [
+      "root_motion-final_ik-fullbodybipedik-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-fbbikheadeffector": [
+      "root_motion-final_ik-fbbikheadeffector-types"
+    ],
+    "root_motion-final_ik-fbbikheadeffector-types": [
+      "root_motion-final_ik-fullbodybipedik-types",
+      "root_motion-final_ik-ikeffector-types",
+      "root_motion-final_ik-iksolver-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-fbikchain": [
+      "root_motion-final_ik-fbikchain-types"
+    ],
+    "root_motion-final_ik-fbikchain-types": [
+      "root_motion-final_ik-ikconstraintbend-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfullbody-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-finger": [
+      "root_motion-final_ik-finger-types"
+    ],
+    "root_motion-final_ik-finger-types": [
+      "root_motion-final_ik-iksolverlimb-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-fingerrig": [
+      "root_motion-final_ik-fingerrig-types"
+    ],
+    "root_motion-final_ik-fingerrig-types": [
+      "root_motion-final_ik-finger-types",
+      "root_motion-solvermanager-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-fullbodybipedchain": [
+      "root_motion-final_ik-fullbodybipedchain-types"
+    ],
+    "root_motion-final_ik-fullbodybipedchain-types": [
+      "system-enum-types"
+    ],
+    "root_motion-final_ik-fullbodybipedeffector": [
+      "root_motion-final_ik-fullbodybipedeffector-types"
+    ],
+    "root_motion-final_ik-fullbodybipedeffector-types": [
+      "system-enum-types"
+    ],
+    "root_motion-final_ik-fullbodybipedik": [
+      "root_motion-final_ik-fullbodybipedik-types"
+    ],
+    "root_motion-final_ik-fullbodybipedik-types": [
+      "root_motion-bipedreferences-types",
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-genericposer": [
+      "root_motion-final_ik-genericposer-types"
+    ],
+    "root_motion-final_ik-genericposer-types": [
+      "root_motion-final_ik-poser-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-grounder": [
+      "root_motion-final_ik-grounder-types"
+    ],
+    "root_motion-final_ik-grounder-types": [
+      "root_motion-final_ik-grounding-types",
+      "system-boolean-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-grounderbipedik": [
+      "root_motion-final_ik-grounderbipedik-types"
+    ],
+    "root_motion-final_ik-grounderbipedik-types": [
+      "root_motion-final_ik-bipedik-types",
+      "root_motion-final_ik-grounder-types",
+      "root_motion-final_ik-iksolverlimb-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-grounderfbbik": [
+      "root_motion-final_ik-grounderfbbik-types"
+    ],
+    "root_motion-final_ik-grounderfbbik-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-fullbodybipedik-types",
+      "root_motion-final_ik-grounder-types",
+      "root_motion-final_ik-grounding-types",
+      "root_motion-final_ik-ikeffector-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-grounderik": [
+      "root_motion-final_ik-grounderik-types"
+    ],
+    "root_motion-final_ik-grounderik-types": [
+      "root_motion-final_ik-grounder-types",
+      "root_motion-final_ik-ik-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-rigidbody-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-grounderquadruped": [
+      "root_motion-final_ik-grounderquadruped-types"
+    ],
+    "root_motion-final_ik-grounderquadruped-types": [
+      "root_motion-final_ik-grounder-types",
+      "root_motion-final_ik-grounding-types",
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-rigidbody-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-groundervrik": [
+      "root_motion-final_ik-groundervrik-types"
+    ],
+    "root_motion-final_ik-groundervrik-types": [
+      "root_motion-final_ik-grounder-types",
+      "root_motion-final_ik-grounding-types",
+      "root_motion-final_ik-iksolvervr-types",
+      "root_motion-final_ik-vrik-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-grounding": [
+      "root_motion-final_ik-grounding-types"
+    ],
+    "root_motion-final_ik-grounding-types": [
+      "system-boolean-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-layermask-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-raycasthit-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-handposer": [
+      "root_motion-final_ik-handposer-types"
+    ],
+    "root_motion-final_ik-handposer-types": [
+      "root_motion-final_ik-poser-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-hitreaction": [
+      "root_motion-final_ik-hitreaction-types"
+    ],
+    "root_motion-final_ik-hitreaction-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "root_motion-final_ik-offsetmodifier-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-collider-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-rigidbody-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-hitreactionvrik": [
+      "root_motion-final_ik-hitreactionvrik-types"
+    ],
+    "root_motion-final_ik-hitreactionvrik-types": [
+      "root_motion-final_ik-iksolvervr-types",
+      "root_motion-final_ik-offsetmodifiervrik-types",
+      "root_motion-final_ik-vrik-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-collider-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-rigidbody-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-ik": [
+      "root_motion-final_ik-ik-types"
+    ],
+    "root_motion-final_ik-ik-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-solvermanager-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-ikconstraintbend": [
+      "root_motion-final_ik-ikconstraintbend-types"
+    ],
+    "root_motion-final_ik-ikconstraintbend-types": [
+      "root_motion-final_ik-iksolverfullbody-types",
+      "root_motion-warning-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-ikeffector": [
+      "root_motion-final_ik-ikeffector-types"
+    ],
+    "root_motion-final_ik-ikeffector-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfullbody-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-ikexecutionorder": [
+      "root_motion-final_ik-ikexecutionorder-types"
+    ],
+    "root_motion-final_ik-ikexecutionorder-types": [
+      "root_motion-final_ik-ik-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-final_ik-ikmapping": [
+      "root_motion-final_ik-ikmapping-types"
+    ],
+    "root_motion-final_ik-ikmapping-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfullbody-types",
+      "root_motion-warning-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-ikmappingbone": [
+      "root_motion-final_ik-ikmappingbone-types"
+    ],
+    "root_motion-final_ik-ikmappingbone-types": [
+      "root_motion-final_ik-ikmapping-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfullbody-types",
+      "system-boolean-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-ikmappinglimb": [
+      "root_motion-final_ik-ikmappinglimb-types"
+    ],
+    "root_motion-final_ik-ikmappinglimb-types": [
+      "root_motion-final_ik-ikmapping-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfullbody-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-ikmappingspine": [
+      "root_motion-final_ik-ikmappingspine-types"
+    ],
+    "root_motion-final_ik-ikmappingspine-types": [
+      "root_motion-final_ik-ikmapping-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverfullbody-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolver": [
+      "root_motion-final_ik-iksolver-types"
+    ],
+    "root_motion-final_ik-iksolver-types": [
+      "root_motion-final_ik-rotationlimit-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolveraim": [
+      "root_motion-final_ik-iksolveraim-types"
+    ],
+    "root_motion-final_ik-iksolveraim-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverheuristic-types",
+      "root_motion-final_ik-rotationlimit-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverarm": [
+      "root_motion-final_ik-iksolverarm-types"
+    ],
+    "root_motion-final_ik-iksolverarm-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolvervr-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverccd": [
+      "root_motion-final_ik-iksolverccd-types"
+    ],
+    "root_motion-final_ik-iksolverccd-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverheuristic-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverfabrik": [
+      "root_motion-final_ik-iksolverfabrik-types"
+    ],
+    "root_motion-final_ik-iksolverfabrik-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverheuristic-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverfabrikroot": [
+      "root_motion-final_ik-iksolverfabrikroot-types"
+    ],
+    "root_motion-final_ik-iksolverfabrikroot-types": [
+      "root_motion-final_ik-fabrikchain-types",
+      "root_motion-final_ik-iksolver-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverfullbody": [
+      "root_motion-final_ik-iksolverfullbody-types"
+    ],
+    "root_motion-final_ik-iksolverfullbody-types": [
+      "root_motion-final_ik-fbikchain-types",
+      "root_motion-final_ik-ikeffector-types",
+      "root_motion-final_ik-ikmappingbone-types",
+      "root_motion-final_ik-ikmappinglimb-types",
+      "root_motion-final_ik-ikmappingspine-types",
+      "root_motion-final_ik-iksolver-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-iksolverfullbodybiped": [
+      "root_motion-final_ik-iksolverfullbodybiped-types"
+    ],
+    "root_motion-final_ik-iksolverfullbodybiped-types": [
+      "root_motion-bipedlimborientations-types",
+      "root_motion-bipedreferences-types",
+      "root_motion-final_ik-fbikchain-types",
+      "root_motion-final_ik-fullbodybipedchain-types",
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-ikconstraintbend-types",
+      "root_motion-final_ik-ikeffector-types",
+      "root_motion-final_ik-ikmappingbone-types",
+      "root_motion-final_ik-ikmappinglimb-types",
+      "root_motion-final_ik-ikmappingspine-types",
+      "root_motion-final_ik-iksolverfullbody-types",
+      "system-boolean-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverheuristic": [
+      "root_motion-final_ik-iksolverheuristic-types"
+    ],
+    "root_motion-final_ik-iksolverheuristic-types": [
+      "root_motion-final_ik-iksolver-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverleg": [
+      "root_motion-final_ik-iksolverleg-types"
+    ],
+    "root_motion-final_ik-iksolverleg-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolvervr-types",
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverlimb": [
+      "root_motion-final_ik-iksolverlimb-types"
+    ],
+    "root_motion-final_ik-iksolverlimb-types": [
+      "root_motion-final_ik-iksolvertrigonometric-types",
+      "system-enum-types",
+      "system-valuetype-types",
+      "system-void-types",
+      "unity_engine-avatarikgoal-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolverlookat": [
+      "root_motion-final_ik-iksolverlookat-types"
+    ],
+    "root_motion-final_ik-iksolverlookat-types": [
+      "root_motion-final_ik-iksolver-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolvertrigonometric": [
+      "root_motion-final_ik-iksolvertrigonometric-types"
+    ],
+    "root_motion-final_ik-iksolvertrigonometric-types": [
+      "root_motion-final_ik-iksolver-types",
+      "system-boolean-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-iksolvervr": [
+      "root_motion-final_ik-iksolvervr-types"
+    ],
+    "root_motion-final_ik-iksolvervr-types": [
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-vrik-types",
+      "root_motion-interpolationmode-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-color-types",
+      "unity_engine-events-unityevent-types",
+      "unity_engine-keyframe-types",
+      "unity_engine-layermask-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-inertia": [
+      "root_motion-final_ik-inertia-types"
+    ],
+    "root_motion-final_ik-inertia-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "root_motion-final_ik-offsetmodifier-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-interactioneffector": [
+      "root_motion-final_ik-interactioneffector-types"
+    ],
+    "root_motion-final_ik-interactioneffector-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-ikeffector-types",
+      "root_motion-final_ik-interactionobject-types",
+      "root_motion-final_ik-interactionsystem-types",
+      "root_motion-final_ik-interactiontarget-types",
+      "root_motion-final_ik-poser-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-interactionlookat": [
+      "root_motion-final_ik-interactionlookat-types"
+    ],
+    "root_motion-final_ik-interactionlookat-types": [
+      "root_motion-final_ik-lookatik-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-interactionobject": [
+      "root_motion-final_ik-interactionobject-types"
+    ],
+    "root_motion-final_ik-interactionobject-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "root_motion-final_ik-interactionsystem-types",
+      "root_motion-final_ik-interactiontarget-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animation-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-animator-types",
+      "unity_engine-events-unityevent-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-interactionsystem": [
+      "root_motion-final_ik-interactionsystem-types"
+    ],
+    "root_motion-final_ik-interactionsystem-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-fullbodybipedik-types",
+      "root_motion-final_ik-interactioneffector-types",
+      "root_motion-final_ik-interactionlookat-types",
+      "root_motion-final_ik-interactionobject-types",
+      "root_motion-final_ik-interactiontarget-types",
+      "root_motion-final_ik-interactiontrigger-types",
+      "system-boolean-types",
+      "system-collections-generic-list_1-types",
+      "system-int32-types",
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-layermask-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-raycasthit-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-interactiontarget": [
+      "root_motion-final_ik-interactiontarget-types"
+    ],
+    "root_motion-final_ik-interactiontarget-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-interactionobject-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-interactiontrigger": [
+      "root_motion-final_ik-interactiontrigger-types"
+    ],
+    "root_motion-final_ik-interactiontrigger-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-interactionobject-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-raycasthit-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-legik": [
+      "root_motion-final_ik-legik-types"
+    ],
+    "root_motion-final_ik-legik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverleg-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-limbik": [
+      "root_motion-final_ik-limbik-types"
+    ],
+    "root_motion-final_ik-limbik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverlimb-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-lookatcontroller": [
+      "root_motion-final_ik-lookatcontroller-types"
+    ],
+    "root_motion-final_ik-lookatcontroller-types": [
+      "root_motion-final_ik-lookatik-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-lookatik": [
+      "root_motion-final_ik-lookatik-types"
+    ],
+    "root_motion-final_ik-lookatik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolverlookat-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-offsetmodifier": [
+      "root_motion-final_ik-offsetmodifier-types"
+    ],
+    "root_motion-final_ik-offsetmodifier-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-fullbodybipedik-types",
+      "root_motion-final_ik-ikeffector-types",
+      "system-boolean-types",
+      "system-collections-ienumerator-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types"
+    ],
+    "root_motion-final_ik-offsetmodifiervrik": [
+      "root_motion-final_ik-offsetmodifiervrik-types"
+    ],
+    "root_motion-final_ik-offsetmodifiervrik-types": [
+      "root_motion-final_ik-vrik-types",
+      "system-collections-ienumerator-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-final_ik-offsetpose": [
+      "root_motion-final_ik-offsetpose-types"
+    ],
+    "root_motion-final_ik-offsetpose-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-penetrationavoidance": [
+      "root_motion-final_ik-penetrationavoidance-types"
+    ],
+    "root_motion-final_ik-penetrationavoidance-types": [
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "root_motion-final_ik-offsetmodifier-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-layermask-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-poser": [
+      "root_motion-final_ik-poser-types"
+    ],
+    "root_motion-final_ik-poser-types": [
+      "root_motion-solvermanager-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-ragdollutility": [
+      "root_motion-final_ik-ragdollutility-types"
+    ],
+    "root_motion-final_ik-ragdollutility-types": [
+      "root_motion-final_ik-ik-types",
+      "system-boolean-types",
+      "system-collections-ienumerator-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animator-types",
+      "unity_engine-animatorupdatemode-types",
+      "unity_engine-collider-types",
+      "unity_engine-joint-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-rigidbody-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-recoil": [
+      "root_motion-final_ik-recoil-types"
+    ],
+    "root_motion-final_ik-recoil-types": [
+      "root_motion-final_ik-aimik-types",
+      "root_motion-final_ik-fullbodybipedeffector-types",
+      "root_motion-final_ik-ikeffector-types",
+      "root_motion-final_ik-iksolverfullbodybiped-types",
+      "root_motion-final_ik-offsetmodifier-types",
+      "system-boolean-types",
+      "system-enum-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-rotationlimit": [
+      "root_motion-final_ik-rotationlimit-types"
+    ],
+    "root_motion-final_ik-rotationlimit-types": [
+      "system-boolean-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-rotationlimitangle": [
+      "root_motion-final_ik-rotationlimitangle-types"
+    ],
+    "root_motion-final_ik-rotationlimitangle-types": [
+      "root_motion-final_ik-rotationlimit-types",
+      "system-void-types",
+      "unity_engine-quaternion-types"
+    ],
+    "root_motion-final_ik-rotationlimithinge": [
+      "root_motion-final_ik-rotationlimithinge-types"
+    ],
+    "root_motion-final_ik-rotationlimithinge-types": [
+      "root_motion-final_ik-rotationlimit-types",
+      "system-void-types",
+      "unity_engine-quaternion-types"
+    ],
+    "root_motion-final_ik-rotationlimitpolygonal": [
+      "root_motion-final_ik-rotationlimitpolygonal-types"
+    ],
+    "root_motion-final_ik-rotationlimitpolygonal-types": [
+      "root_motion-final_ik-rotationlimit-types",
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-rotationlimitspline": [
+      "root_motion-final_ik-rotationlimitspline-types"
+    ],
+    "root_motion-final_ik-rotationlimitspline-types": [
+      "root_motion-final_ik-rotationlimit-types",
+      "system-void-types",
+      "unity_engine-animationcurve-types",
+      "unity_engine-keyframe-types",
+      "unity_engine-quaternion-types"
+    ],
+    "root_motion-final_ik-shoulderrotator": [
+      "root_motion-final_ik-shoulderrotator-types"
+    ],
+    "root_motion-final_ik-shoulderrotator-types": [
+      "root_motion-final_ik-fullbodybipedchain-types",
+      "root_motion-final_ik-fullbodybipedik-types",
+      "root_motion-final_ik-ikmapping-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-final_ik-trigonometricik": [
+      "root_motion-final_ik-trigonometricik-types"
+    ],
+    "root_motion-final_ik-trigonometricik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolvertrigonometric-types",
+      "system-void-types"
+    ],
+    "root_motion-final_ik-twistrelaxer": [
+      "root_motion-final_ik-twistrelaxer-types"
+    ],
+    "root_motion-final_ik-twistrelaxer-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-twistsolver-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-final_ik-twistsolver": [
+      "root_motion-final_ik-twistsolver-types"
+    ],
+    "root_motion-final_ik-twistsolver-types": [
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-vrik": [
+      "root_motion-final_ik-vrik-types"
+    ],
+    "root_motion-final_ik-vrik-types": [
+      "root_motion-final_ik-ik-types",
+      "root_motion-final_ik-iksolver-types",
+      "root_motion-final_ik-iksolvervr-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-final_ik-vrikcalibrator": [
+      "root_motion-final_ik-vrikcalibrator-types"
+    ],
+    "root_motion-final_ik-vrikcalibrator-types": [
+      "root_motion-final_ik-iksolvervr-types",
+      "root_motion-final_ik-vrik-types",
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-final_ik-vriklodcontroller": [
+      "root_motion-final_ik-vriklodcontroller-types"
+    ],
+    "root_motion-final_ik-vriklodcontroller-types": [
+      "root_motion-final_ik-vrik-types",
+      "system-int32-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-renderer-types"
+    ],
+    "root_motion-final_ik-vrikrootcontroller": [
+      "root_motion-final_ik-vrikrootcontroller-types"
+    ],
+    "root_motion-final_ik-vrikrootcontroller-types": [
+      "root_motion-final_ik-vrik-types",
+      "root_motion-final_ik-vrikcalibrator-types",
+      "system-void-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-genericbaker": [
+      "root_motion-genericbaker-types"
+    ],
+    "root_motion-genericbaker-types": [
+      "root_motion-baker-types",
+      "root_motion-bakertransform-types",
+      "system-boolean-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-hierarchy": [
+      "root_motion-hierarchy-types"
+    ],
+    "root_motion-hierarchy-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-object_2-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-humanoidbaker": [
+      "root_motion-humanoidbaker-types"
+    ],
+    "root_motion-humanoidbaker-types": [
+      "root_motion-baker-types",
+      "root_motion-bakerhumanoidqt-types",
+      "root_motion-bakermuscle-types",
+      "system-boolean-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-animationclip-types",
+      "unity_engine-humanpose-types",
+      "unity_engine-humanposehandler-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-inspectorcomment": [
+      "root_motion-inspectorcomment-types"
+    ],
+    "root_motion-inspectorcomment-types": [
+      "system-void-types",
+      "unity_engine-propertyattribute-types"
+    ],
+    "root_motion-interp": [
+      "root_motion-interp-types"
+    ],
+    "root_motion-interp-types": [
+      "root_motion-interpolationmode-types",
+      "system-object-types",
+      "system-single-types",
+      "system-void-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-interpolationmode": [
+      "root_motion-interpolationmode-types"
+    ],
+    "root_motion-interpolationmode-types": [
+      "system-enum-types"
+    ],
+    "root_motion-largeheader": [
+      "root_motion-largeheader-types"
+    ],
+    "root_motion-largeheader-types": [
+      "system-void-types",
+      "unity_engine-propertyattribute-types"
+    ],
+    "root_motion-layermaskextensions": [
+      "root_motion-layermaskextensions-types"
+    ],
+    "root_motion-layermaskextensions-types": [
+      "system-boolean-types",
+      "system-int32-types",
+      "system-object-types",
+      "unity_engine-layermask-types"
+    ],
+    "root_motion-quatools": [
+      "root_motion-quatools-types"
+    ],
+    "root_motion-quatools-types": [
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-singleton_1": [
+      "root_motion-singleton_1-types"
+    ],
+    "root_motion-singleton_1-types": [
+      "system-void-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-solvermanager": [
+      "root_motion-solvermanager-types"
+    ],
+    "root_motion-solvermanager-types": [
+      "system-boolean-types",
+      "system-void-types",
+      "unity_engine-animation-types",
+      "unity_engine-animator-types",
+      "unity_engine-monobehaviour-types",
+      "unity_engine-transform-types"
+    ],
+    "root_motion-tq": [
+      "root_motion-tq-types"
+    ],
+    "root_motion-tq-types": [
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-triggereventbroadcaster": [
+      "root_motion-triggereventbroadcaster-types"
+    ],
+    "root_motion-triggereventbroadcaster-types": [
+      "system-void-types",
+      "unity_engine-collider-types",
+      "unity_engine-gameobject-types",
+      "unity_engine-monobehaviour-types"
+    ],
+    "root_motion-v2tools": [
+      "root_motion-v2tools-types"
+    ],
+    "root_motion-v2tools-types": [
+      "system-boolean-types",
+      "system-object-types",
+      "system-single-types",
+      "unity_engine-vector2-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-v3tools": [
+      "root_motion-v3tools-types"
+    ],
+    "root_motion-v3tools-types": [
+      "system-int32-types",
+      "system-object-types",
+      "system-single-types",
+      "unity_engine-quaternion-types",
+      "unity_engine-transform-types",
+      "unity_engine-vector3-types"
+    ],
+    "root_motion-warning": [
+      "root_motion-warning-types"
+    ],
+    "root_motion-warning-types": [
+      "system-multicastdelegate-types",
+      "system-object-types",
+      "system-void-types",
+      "unity_engine-transform-types"
     ],
     "system": [
       "system-action",
@@ -67973,6 +69586,214 @@
     "engage_il2cpp::root::wwiseswitchgroupreference::WwiseSwitchGroupReference": "root-wwiseswitchgroupreference",
     "engage_il2cpp::root::wwiseswitchreference::WwiseSwitchReference": "root-wwiseswitchreference",
     "engage_il2cpp::root::wwisetriggerreference::WwiseTriggerReference": "root-wwisetriggerreference",
+    "engage_il2cpp::root_motion::avatarutility::AvatarUtility": "root_motion-avatarutility",
+    "engage_il2cpp::root_motion::axis_2::Axis_2": "root_motion-axis_2",
+    "engage_il2cpp::root_motion::axistools::AxisTools": "root_motion-axistools",
+    "engage_il2cpp::root_motion::baker::Baker": "root_motion-baker",
+    "engage_il2cpp::root_motion::baker::Baker_Mode": "root_motion-baker",
+    "engage_il2cpp::root_motion::bakerhumanoidqt::BakerHumanoidQT": "root_motion-bakerhumanoidqt",
+    "engage_il2cpp::root_motion::bakermuscle::BakerMuscle": "root_motion-bakermuscle",
+    "engage_il2cpp::root_motion::bakertransform::BakerTransform": "root_motion-bakertransform",
+    "engage_il2cpp::root_motion::bakerutilities::BakerUtilities": "root_motion-bakerutilities",
+    "engage_il2cpp::root_motion::bipedlimborientations::BipedLimbOrientations": "root_motion-bipedlimborientations",
+    "engage_il2cpp::root_motion::bipedlimborientations::BipedLimbOrientations_LimbOrientation": "root_motion-bipedlimborientations",
+    "engage_il2cpp::root_motion::bipednaming::BipedNaming": "root_motion-bipednaming",
+    "engage_il2cpp::root_motion::bipednaming::BipedNaming_BoneSide": "root_motion-bipednaming",
+    "engage_il2cpp::root_motion::bipednaming::BipedNaming_BoneType": "root_motion-bipednaming",
+    "engage_il2cpp::root_motion::bipedreferences::BipedReferences": "root_motion-bipedreferences",
+    "engage_il2cpp::root_motion::bipedreferences::BipedReferences_AutoDetectParams": "root_motion-bipedreferences",
+    "engage_il2cpp::root_motion::comments::Comments": "root_motion-comments",
+    "engage_il2cpp::root_motion::demoguimessage::DemoGUIMessage": "root_motion-demoguimessage",
+    "engage_il2cpp::root_motion::demos::fkoffset::FKOffset": "root_motion-demos-fkoffset",
+    "engage_il2cpp::root_motion::demos::fkoffset::FKOffset_Offset": "root_motion-demos-fkoffset",
+    "engage_il2cpp::root_motion::demos::navigator::Navigator": "root_motion-demos-navigator",
+    "engage_il2cpp::root_motion::demos::navigator::Navigator_State": "root_motion-demos-navigator",
+    "engage_il2cpp::root_motion::final_ik::aimcontroller::AimController": "root_motion-final_ik-aimcontroller",
+    "engage_il2cpp::root_motion::final_ik::aimik::AimIK": "root_motion-final_ik-aimik",
+    "engage_il2cpp::root_motion::final_ik::aimposer::AimPoser": "root_motion-final_ik-aimposer",
+    "engage_il2cpp::root_motion::final_ik::aimposer::AimPoser_Pose": "root_motion-final_ik-aimposer",
+    "engage_il2cpp::root_motion::final_ik::amplifier::Amplifier": "root_motion-final_ik-amplifier",
+    "engage_il2cpp::root_motion::final_ik::amplifier::Amplifier_Body": "root_motion-final_ik-amplifier",
+    "engage_il2cpp::root_motion::final_ik::amplifier::Amplifier_Body_EffectorLink": "root_motion-final_ik-amplifier",
+    "engage_il2cpp::root_motion::final_ik::armik::ArmIK": "root_motion-final_ik-armik",
+    "engage_il2cpp::root_motion::final_ik::bipedik::BipedIK": "root_motion-final_ik-bipedik",
+    "engage_il2cpp::root_motion::final_ik::bipediksolvers::BipedIKSolvers": "root_motion-final_ik-bipediksolvers",
+    "engage_il2cpp::root_motion::final_ik::bodytilt::BodyTilt": "root_motion-final_ik-bodytilt",
+    "engage_il2cpp::root_motion::final_ik::ccdbendgoal::CCDBendGoal": "root_motion-final_ik-ccdbendgoal",
+    "engage_il2cpp::root_motion::final_ik::ccdik::CCDIK": "root_motion-final_ik-ccdik",
+    "engage_il2cpp::root_motion::final_ik::constraint::Constraint": "root_motion-final_ik-constraint",
+    "engage_il2cpp::root_motion::final_ik::constraintposition::ConstraintPosition": "root_motion-final_ik-constraintposition",
+    "engage_il2cpp::root_motion::final_ik::constraintpositionoffset::ConstraintPositionOffset": "root_motion-final_ik-constraintpositionoffset",
+    "engage_il2cpp::root_motion::final_ik::constraintrotation::ConstraintRotation": "root_motion-final_ik-constraintrotation",
+    "engage_il2cpp::root_motion::final_ik::constraintrotationoffset::ConstraintRotationOffset": "root_motion-final_ik-constraintrotationoffset",
+    "engage_il2cpp::root_motion::final_ik::constraints::Constraints": "root_motion-final_ik-constraints",
+    "engage_il2cpp::root_motion::final_ik::editorik::EditorIK": "root_motion-final_ik-editorik",
+    "engage_il2cpp::root_motion::final_ik::editorikpose::EditorIKPose": "root_motion-final_ik-editorikpose",
+    "engage_il2cpp::root_motion::final_ik::fabrik::FABRIK": "root_motion-final_ik-fabrik",
+    "engage_il2cpp::root_motion::final_ik::fabrikchain::FABRIKChain": "root_motion-final_ik-fabrikchain",
+    "engage_il2cpp::root_motion::final_ik::fabrikroot::FABRIKRoot": "root_motion-final_ik-fabrikroot",
+    "engage_il2cpp::root_motion::final_ik::fbbikarmbending::FBBIKArmBending": "root_motion-final_ik-fbbikarmbending",
+    "engage_il2cpp::root_motion::final_ik::fbbikheadeffector::FBBIKHeadEffector": "root_motion-final_ik-fbbikheadeffector",
+    "engage_il2cpp::root_motion::final_ik::fbbikheadeffector::FBBIKHeadEffector_BendBone": "root_motion-final_ik-fbbikheadeffector",
+    "engage_il2cpp::root_motion::final_ik::fbikchain::FBIKChain": "root_motion-final_ik-fbikchain",
+    "engage_il2cpp::root_motion::final_ik::fbikchain::FBIKChain_ChildConstraint": "root_motion-final_ik-fbikchain",
+    "engage_il2cpp::root_motion::final_ik::fbikchain::FBIKChain_Smoothing": "root_motion-final_ik-fbikchain",
+    "engage_il2cpp::root_motion::final_ik::finger::Finger": "root_motion-final_ik-finger",
+    "engage_il2cpp::root_motion::final_ik::finger::Finger_DOF": "root_motion-final_ik-finger",
+    "engage_il2cpp::root_motion::final_ik::fingerrig::FingerRig": "root_motion-final_ik-fingerrig",
+    "engage_il2cpp::root_motion::final_ik::fullbodybipedchain::FullBodyBipedChain": "root_motion-final_ik-fullbodybipedchain",
+    "engage_il2cpp::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector": "root_motion-final_ik-fullbodybipedeffector",
+    "engage_il2cpp::root_motion::final_ik::fullbodybipedik::FullBodyBipedIK": "root_motion-final_ik-fullbodybipedik",
+    "engage_il2cpp::root_motion::final_ik::genericposer::GenericPoser": "root_motion-final_ik-genericposer",
+    "engage_il2cpp::root_motion::final_ik::genericposer::GenericPoser_Map": "root_motion-final_ik-genericposer",
+    "engage_il2cpp::root_motion::final_ik::grounder::Grounder": "root_motion-final_ik-grounder",
+    "engage_il2cpp::root_motion::final_ik::grounder::Grounder_GrounderDelegate": "root_motion-final_ik-grounder",
+    "engage_il2cpp::root_motion::final_ik::grounderbipedik::GrounderBipedIK": "root_motion-final_ik-grounderbipedik",
+    "engage_il2cpp::root_motion::final_ik::grounderfbbik::GrounderFBBIK": "root_motion-final_ik-grounderfbbik",
+    "engage_il2cpp::root_motion::final_ik::grounderfbbik::GrounderFBBIK_SpineEffector": "root_motion-final_ik-grounderfbbik",
+    "engage_il2cpp::root_motion::final_ik::grounderik::GrounderIK": "root_motion-final_ik-grounderik",
+    "engage_il2cpp::root_motion::final_ik::grounderquadruped::GrounderQuadruped": "root_motion-final_ik-grounderquadruped",
+    "engage_il2cpp::root_motion::final_ik::grounderquadruped::GrounderQuadruped_Foot": "root_motion-final_ik-grounderquadruped",
+    "engage_il2cpp::root_motion::final_ik::groundervrik::GrounderVRIK": "root_motion-final_ik-groundervrik",
+    "engage_il2cpp::root_motion::final_ik::grounding::Grounding": "root_motion-final_ik-grounding",
+    "engage_il2cpp::root_motion::final_ik::grounding::Grounding_Leg": "root_motion-final_ik-grounding",
+    "engage_il2cpp::root_motion::final_ik::grounding::Grounding_Pelvis": "root_motion-final_ik-grounding",
+    "engage_il2cpp::root_motion::final_ik::grounding::Grounding_Quality": "root_motion-final_ik-grounding",
+    "engage_il2cpp::root_motion::final_ik::handposer::HandPoser": "root_motion-final_ik-handposer",
+    "engage_il2cpp::root_motion::final_ik::hitreaction::HitReaction": "root_motion-final_ik-hitreaction",
+    "engage_il2cpp::root_motion::final_ik::hitreaction::HitReaction_HitPoint": "root_motion-final_ik-hitreaction",
+    "engage_il2cpp::root_motion::final_ik::hitreaction::HitReaction_HitPointBone": "root_motion-final_ik-hitreaction",
+    "engage_il2cpp::root_motion::final_ik::hitreaction::HitReaction_HitPointBone_BoneLink": "root_motion-final_ik-hitreaction",
+    "engage_il2cpp::root_motion::final_ik::hitreaction::HitReaction_HitPointEffector": "root_motion-final_ik-hitreaction",
+    "engage_il2cpp::root_motion::final_ik::hitreaction::HitReaction_HitPointEffector_EffectorLink": "root_motion-final_ik-hitreaction",
+    "engage_il2cpp::root_motion::final_ik::hitreactionvrik::HitReactionVRIK": "root_motion-final_ik-hitreactionvrik",
+    "engage_il2cpp::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_Offset": "root_motion-final_ik-hitreactionvrik",
+    "engage_il2cpp::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_PositionOffset": "root_motion-final_ik-hitreactionvrik",
+    "engage_il2cpp::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_PositionOffset_PositionOffsetLink": "root_motion-final_ik-hitreactionvrik",
+    "engage_il2cpp::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_RotationOffset": "root_motion-final_ik-hitreactionvrik",
+    "engage_il2cpp::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_RotationOffset_RotationOffsetLink": "root_motion-final_ik-hitreactionvrik",
+    "engage_il2cpp::root_motion::final_ik::ik::IK": "root_motion-final_ik-ik",
+    "engage_il2cpp::root_motion::final_ik::ikconstraintbend::IKConstraintBend": "root_motion-final_ik-ikconstraintbend",
+    "engage_il2cpp::root_motion::final_ik::ikeffector::IKEffector": "root_motion-final_ik-ikeffector",
+    "engage_il2cpp::root_motion::final_ik::ikexecutionorder::IKExecutionOrder": "root_motion-final_ik-ikexecutionorder",
+    "engage_il2cpp::root_motion::final_ik::ikmapping::IKMapping": "root_motion-final_ik-ikmapping",
+    "engage_il2cpp::root_motion::final_ik::ikmapping::IKMapping_BoneMap": "root_motion-final_ik-ikmapping",
+    "engage_il2cpp::root_motion::final_ik::ikmappingbone::IKMappingBone": "root_motion-final_ik-ikmappingbone",
+    "engage_il2cpp::root_motion::final_ik::ikmappinglimb::IKMappingLimb": "root_motion-final_ik-ikmappinglimb",
+    "engage_il2cpp::root_motion::final_ik::ikmappinglimb::IKMappingLimb_BoneMapType": "root_motion-final_ik-ikmappinglimb",
+    "engage_il2cpp::root_motion::final_ik::ikmappingspine::IKMappingSpine": "root_motion-final_ik-ikmappingspine",
+    "engage_il2cpp::root_motion::final_ik::iksolver::IKSolver": "root_motion-final_ik-iksolver",
+    "engage_il2cpp::root_motion::final_ik::iksolver::IKSolver_Bone": "root_motion-final_ik-iksolver",
+    "engage_il2cpp::root_motion::final_ik::iksolver::IKSolver_IterationDelegate": "root_motion-final_ik-iksolver",
+    "engage_il2cpp::root_motion::final_ik::iksolver::IKSolver_Node": "root_motion-final_ik-iksolver",
+    "engage_il2cpp::root_motion::final_ik::iksolver::IKSolver_Point": "root_motion-final_ik-iksolver",
+    "engage_il2cpp::root_motion::final_ik::iksolver::IKSolver_UpdateDelegate": "root_motion-final_ik-iksolver",
+    "engage_il2cpp::root_motion::final_ik::iksolveraim::IKSolverAim": "root_motion-final_ik-iksolveraim",
+    "engage_il2cpp::root_motion::final_ik::iksolverarm::IKSolverArm": "root_motion-final_ik-iksolverarm",
+    "engage_il2cpp::root_motion::final_ik::iksolverccd::IKSolverCCD": "root_motion-final_ik-iksolverccd",
+    "engage_il2cpp::root_motion::final_ik::iksolverfabrik::IKSolverFABRIK": "root_motion-final_ik-iksolverfabrik",
+    "engage_il2cpp::root_motion::final_ik::iksolverfabrikroot::IKSolverFABRIKRoot": "root_motion-final_ik-iksolverfabrikroot",
+    "engage_il2cpp::root_motion::final_ik::iksolverfullbody::IKSolverFullBody": "root_motion-final_ik-iksolverfullbody",
+    "engage_il2cpp::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped": "root_motion-final_ik-iksolverfullbodybiped",
+    "engage_il2cpp::root_motion::final_ik::iksolverheuristic::IKSolverHeuristic": "root_motion-final_ik-iksolverheuristic",
+    "engage_il2cpp::root_motion::final_ik::iksolverleg::IKSolverLeg": "root_motion-final_ik-iksolverleg",
+    "engage_il2cpp::root_motion::final_ik::iksolverlimb::IKSolverLimb": "root_motion-final_ik-iksolverlimb",
+    "engage_il2cpp::root_motion::final_ik::iksolverlimb::IKSolverLimb_AxisDirection": "root_motion-final_ik-iksolverlimb",
+    "engage_il2cpp::root_motion::final_ik::iksolverlimb::IKSolverLimb_BendModifier": "root_motion-final_ik-iksolverlimb",
+    "engage_il2cpp::root_motion::final_ik::iksolverlookat::IKSolverLookAt": "root_motion-final_ik-iksolverlookat",
+    "engage_il2cpp::root_motion::final_ik::iksolverlookat::IKSolverLookAt_LookAtBone": "root_motion-final_ik-iksolverlookat",
+    "engage_il2cpp::root_motion::final_ik::iksolvertrigonometric::IKSolverTrigonometric": "root_motion-final_ik-iksolvertrigonometric",
+    "engage_il2cpp::root_motion::final_ik::iksolvertrigonometric::IKSolverTrigonometric_TrigonometricBone": "root_motion-final_ik-iksolvertrigonometric",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_Arm": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_Arm_ShoulderRotationMode": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_BodyPart": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_Footstep": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_Leg": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_Locomotion": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_Spine": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone": "root_motion-final_ik-iksolvervr",
+    "engage_il2cpp::root_motion::final_ik::inertia::Inertia": "root_motion-final_ik-inertia",
+    "engage_il2cpp::root_motion::final_ik::inertia::Inertia_Body": "root_motion-final_ik-inertia",
+    "engage_il2cpp::root_motion::final_ik::inertia::Inertia_Body_EffectorLink": "root_motion-final_ik-inertia",
+    "engage_il2cpp::root_motion::final_ik::interactioneffector::InteractionEffector": "root_motion-final_ik-interactioneffector",
+    "engage_il2cpp::root_motion::final_ik::interactionlookat::InteractionLookAt": "root_motion-final_ik-interactionlookat",
+    "engage_il2cpp::root_motion::final_ik::interactionobject::InteractionObject": "root_motion-final_ik-interactionobject",
+    "engage_il2cpp::root_motion::final_ik::interactionobject::InteractionObject_AnimatorEvent": "root_motion-final_ik-interactionobject",
+    "engage_il2cpp::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent": "root_motion-final_ik-interactionobject",
+    "engage_il2cpp::root_motion::final_ik::interactionobject::InteractionObject_Message": "root_motion-final_ik-interactionobject",
+    "engage_il2cpp::root_motion::final_ik::interactionobject::InteractionObject_Multiplier": "root_motion-final_ik-interactionobject",
+    "engage_il2cpp::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve": "root_motion-final_ik-interactionobject",
+    "engage_il2cpp::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type": "root_motion-final_ik-interactionobject",
+    "engage_il2cpp::root_motion::final_ik::interactionsystem::InteractionSystem": "root_motion-final_ik-interactionsystem",
+    "engage_il2cpp::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate": "root_motion-final_ik-interactionsystem",
+    "engage_il2cpp::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionEventDelegate": "root_motion-final_ik-interactionsystem",
+    "engage_il2cpp::root_motion::final_ik::interactiontarget::InteractionTarget": "root_motion-final_ik-interactiontarget",
+    "engage_il2cpp::root_motion::final_ik::interactiontarget::InteractionTarget_Multiplier": "root_motion-final_ik-interactiontarget",
+    "engage_il2cpp::root_motion::final_ik::interactiontarget::InteractionTarget_RotationMode": "root_motion-final_ik-interactiontarget",
+    "engage_il2cpp::root_motion::final_ik::interactiontrigger::InteractionTrigger": "root_motion-final_ik-interactiontrigger",
+    "engage_il2cpp::root_motion::final_ik::interactiontrigger::InteractionTrigger_CameraPosition": "root_motion-final_ik-interactiontrigger",
+    "engage_il2cpp::root_motion::final_ik::interactiontrigger::InteractionTrigger_CharacterPosition": "root_motion-final_ik-interactiontrigger",
+    "engage_il2cpp::root_motion::final_ik::interactiontrigger::InteractionTrigger_Range": "root_motion-final_ik-interactiontrigger",
+    "engage_il2cpp::root_motion::final_ik::interactiontrigger::InteractionTrigger_Range_Interaction": "root_motion-final_ik-interactiontrigger",
+    "engage_il2cpp::root_motion::final_ik::legik::LegIK": "root_motion-final_ik-legik",
+    "engage_il2cpp::root_motion::final_ik::limbik::LimbIK": "root_motion-final_ik-limbik",
+    "engage_il2cpp::root_motion::final_ik::lookatcontroller::LookAtController": "root_motion-final_ik-lookatcontroller",
+    "engage_il2cpp::root_motion::final_ik::lookatik::LookAtIK": "root_motion-final_ik-lookatik",
+    "engage_il2cpp::root_motion::final_ik::offsetmodifier::OffsetModifier": "root_motion-final_ik-offsetmodifier",
+    "engage_il2cpp::root_motion::final_ik::offsetmodifier::OffsetModifier_OffsetLimits": "root_motion-final_ik-offsetmodifier",
+    "engage_il2cpp::root_motion::final_ik::offsetmodifiervrik::OffsetModifierVRIK": "root_motion-final_ik-offsetmodifiervrik",
+    "engage_il2cpp::root_motion::final_ik::offsetpose::OffsetPose": "root_motion-final_ik-offsetpose",
+    "engage_il2cpp::root_motion::final_ik::offsetpose::OffsetPose_EffectorLink": "root_motion-final_ik-offsetpose",
+    "engage_il2cpp::root_motion::final_ik::penetrationavoidance::PenetrationAvoidance": "root_motion-final_ik-penetrationavoidance",
+    "engage_il2cpp::root_motion::final_ik::penetrationavoidance::PenetrationAvoidance_Avoider": "root_motion-final_ik-penetrationavoidance",
+    "engage_il2cpp::root_motion::final_ik::penetrationavoidance::PenetrationAvoidance_Avoider_EffectorLink": "root_motion-final_ik-penetrationavoidance",
+    "engage_il2cpp::root_motion::final_ik::poser::Poser": "root_motion-final_ik-poser",
+    "engage_il2cpp::root_motion::final_ik::ragdollutility::RagdollUtility": "root_motion-final_ik-ragdollutility",
+    "engage_il2cpp::root_motion::final_ik::ragdollutility::RagdollUtility_Child": "root_motion-final_ik-ragdollutility",
+    "engage_il2cpp::root_motion::final_ik::ragdollutility::RagdollUtility_Rigidbone": "root_motion-final_ik-ragdollutility",
+    "engage_il2cpp::root_motion::final_ik::recoil::Recoil": "root_motion-final_ik-recoil",
+    "engage_il2cpp::root_motion::final_ik::recoil::Recoil_Handedness": "root_motion-final_ik-recoil",
+    "engage_il2cpp::root_motion::final_ik::recoil::Recoil_RecoilOffset": "root_motion-final_ik-recoil",
+    "engage_il2cpp::root_motion::final_ik::recoil::Recoil_RecoilOffset_EffectorLink": "root_motion-final_ik-recoil",
+    "engage_il2cpp::root_motion::final_ik::rotationlimit::RotationLimit": "root_motion-final_ik-rotationlimit",
+    "engage_il2cpp::root_motion::final_ik::rotationlimitangle::RotationLimitAngle": "root_motion-final_ik-rotationlimitangle",
+    "engage_il2cpp::root_motion::final_ik::rotationlimithinge::RotationLimitHinge": "root_motion-final_ik-rotationlimithinge",
+    "engage_il2cpp::root_motion::final_ik::rotationlimitpolygonal::RotationLimitPolygonal": "root_motion-final_ik-rotationlimitpolygonal",
+    "engage_il2cpp::root_motion::final_ik::rotationlimitpolygonal::RotationLimitPolygonal_LimitPoint": "root_motion-final_ik-rotationlimitpolygonal",
+    "engage_il2cpp::root_motion::final_ik::rotationlimitpolygonal::RotationLimitPolygonal_ReachCone": "root_motion-final_ik-rotationlimitpolygonal",
+    "engage_il2cpp::root_motion::final_ik::rotationlimitspline::RotationLimitSpline": "root_motion-final_ik-rotationlimitspline",
+    "engage_il2cpp::root_motion::final_ik::shoulderrotator::ShoulderRotator": "root_motion-final_ik-shoulderrotator",
+    "engage_il2cpp::root_motion::final_ik::trigonometricik::TrigonometricIK": "root_motion-final_ik-trigonometricik",
+    "engage_il2cpp::root_motion::final_ik::twistrelaxer::TwistRelaxer": "root_motion-final_ik-twistrelaxer",
+    "engage_il2cpp::root_motion::final_ik::twistsolver::TwistSolver": "root_motion-final_ik-twistsolver",
+    "engage_il2cpp::root_motion::final_ik::vrik::VRIK": "root_motion-final_ik-vrik",
+    "engage_il2cpp::root_motion::final_ik::vrik::VRIK_References": "root_motion-final_ik-vrik",
+    "engage_il2cpp::root_motion::final_ik::vrikcalibrator::VRIKCalibrator": "root_motion-final_ik-vrikcalibrator",
+    "engage_il2cpp::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData": "root_motion-final_ik-vrikcalibrator",
+    "engage_il2cpp::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target": "root_motion-final_ik-vrikcalibrator",
+    "engage_il2cpp::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_Settings": "root_motion-final_ik-vrikcalibrator",
+    "engage_il2cpp::root_motion::final_ik::vriklodcontroller::VRIKLODController": "root_motion-final_ik-vriklodcontroller",
+    "engage_il2cpp::root_motion::final_ik::vrikrootcontroller::VRIKRootController": "root_motion-final_ik-vrikrootcontroller",
+    "engage_il2cpp::root_motion::genericbaker::GenericBaker": "root_motion-genericbaker",
+    "engage_il2cpp::root_motion::hierarchy::Hierarchy": "root_motion-hierarchy",
+    "engage_il2cpp::root_motion::humanoidbaker::HumanoidBaker": "root_motion-humanoidbaker",
+    "engage_il2cpp::root_motion::inspectorcomment::InspectorComment": "root_motion-inspectorcomment",
+    "engage_il2cpp::root_motion::interp::Interp": "root_motion-interp",
+    "engage_il2cpp::root_motion::interpolationmode::InterpolationMode": "root_motion-interpolationmode",
+    "engage_il2cpp::root_motion::largeheader::LargeHeader": "root_motion-largeheader",
+    "engage_il2cpp::root_motion::layermaskextensions::LayerMaskExtensions": "root_motion-layermaskextensions",
+    "engage_il2cpp::root_motion::quatools::QuaTools": "root_motion-quatools",
+    "engage_il2cpp::root_motion::singleton_1::Singleton_1": "root_motion-singleton_1",
+    "engage_il2cpp::root_motion::solvermanager::SolverManager": "root_motion-solvermanager",
+    "engage_il2cpp::root_motion::tq::TQ": "root_motion-tq",
+    "engage_il2cpp::root_motion::triggereventbroadcaster::TriggerEventBroadcaster": "root_motion-triggereventbroadcaster",
+    "engage_il2cpp::root_motion::v2tools::V2Tools": "root_motion-v2tools",
+    "engage_il2cpp::root_motion::v3tools::V3Tools": "root_motion-v3tools",
+    "engage_il2cpp::root_motion::warning::Warning": "root_motion-warning",
+    "engage_il2cpp::root_motion::warning::Warning_Logger": "root_motion-warning",
     "engage_il2cpp::system::action::Action": "system-action",
     "engage_il2cpp::system::action_10::Action_10": "system-action_10",
     "engage_il2cpp::system::action_11::Action_11": "system-action_11",

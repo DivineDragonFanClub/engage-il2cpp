@@ -15,7 +15,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayuserglobaldata/RelayUserGlobalData_Ticket.md"))]#[::unity2::class(namespace="App",name="RelayUserGlobalData.Ticket")]#[parent(crate::system::object::Object)]pub struct RelayUserGlobalData_Ticket{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayuserglobaldata/RelayUserGlobalData_ProcCleanupUnused.md"))]#[::unity2::class(namespace="App",name="RelayUserGlobalData.ProcCleanupUnused")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayUserGlobalData_ProcCleanupUnused{#[offset(112)]#[rename(name="m_HeaderReader")]pub m_header_reader:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayuserglobaldata/RelayUserGlobalData.md"))]#[::unity2::class(namespace="App",name="RelayUserGlobalData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::relayuserglobaldata::RelayUserGlobalData>)]pub struct RelayUserGlobalData{#[static_field]#[rename(name="MaxTicketCount")]pub max_ticket_count:u32, #[static_field]#[rename(name="InitTicketLastTime")]pub init_ticket_last_time:i64, #[static_field]#[rename(name="InitDailyTicketCount")]pub init_daily_ticket_count:i32, #[offset(28)]#[rename(name="m_DailyTicketCount")]pub m_daily_ticket_count:u32, #[offset(32)]#[rename(name="m_TicketDict")]pub m_ticket_dict:crate::system::collections::generic::dictionary_2::Dictionary_2<u64,crate::app::relayuserglobaldata::RelayUserGlobalData_Ticket> , #[offset(40)]#[rename(name="m_Uncommitted")]pub m_uncommitted:crate::app::relayuserglobaldata::RelayUserGlobalData_Uncommitted,}
@@ -40,58 +40,54 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Version");
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayuserglobaldata/RelayUserGlobalData_ProcCleanupUnused.md"))]#[::unity2::class(namespace="App",name="RelayUserGlobalData.ProcCleanupUnused")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayUserGlobalData_ProcCleanupUnused{#[offset(112)]#[rename(name="m_HeaderReader")]pub m_header_reader:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayuserglobaldata/RelayUserGlobalData_Ticket.md"))]#[::unity2::class(namespace="App",name="RelayUserGlobalData.Ticket")]#[parent(crate::system::object::Object)]pub struct RelayUserGlobalData_Ticket{}
 
 }
 
 #[cfg(feature = "app-relayuserglobaldata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-relayuserglobaldata")]pub trait IRelayUserGlobalData_TicketMethods:IRelayUserGlobalData_Ticket{#[doc="`get_Count()` overload"]fn get_count(self,)->u32{unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8c0usize)as*mut u8,u32;
-(RelayUserGlobalData_Ticket)__receiver)}
-}
-#[doc="`set_Count(u32)` overload"]fn set_count(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8d0usize)as*mut u8,();
-(RelayUserGlobalData_Ticket)__receiver,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_LastTime()` overload"]fn get_last_time(self,)->i64{unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8e0usize)as*mut u8,i64;
-(RelayUserGlobalData_Ticket)__receiver)}
-}
-#[doc="`set_LastTime(i64)` overload"]fn set_last_time(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8f0usize)as*mut u8,();
-(RelayUserGlobalData_Ticket)__receiver,(i64)::core::convert::Into::into(value))}
-}
-#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d900usize)as*mut u8,();
-(RelayUserGlobalData_Ticket)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d940usize)as*mut u8,();
-(RelayUserGlobalData_Ticket)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0da90usize)as*mut u8,();
-(RelayUserGlobalData_Ticket)__receiver)}
+#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_ProcCleanupUnused{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d600usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
-#[cfg(feature="app-relayuserglobaldata")]impl<__T:IRelayUserGlobalData_Ticket>IRelayUserGlobalData_TicketMethods for __T{}
-
-#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_Ticket{pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_last_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_last_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature="app-relayuserglobaldata")]pub trait IRelayUserGlobalData_ProcCleanupUnusedMethods:IRelayUserGlobalData_ProcCleanupUnused{#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d140usize)as*mut u8,();
+(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
+}
+#[doc="`ReadHeader()` overload"]fn read_header(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d190usize)as*mut u8,();
+(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
+}
+#[doc="`IsReadingHeader()` overload"]fn is_reading_header(self,)->bool{unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d210usize)as*mut u8,bool;
+(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d2e0usize)as*mut u8,();
+(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8b0usize)as*mut u8,();
+(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
+}
 }
 
-#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_Ticket{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-relayuserglobaldata")]impl<__T:IRelayUserGlobalData_ProcCleanupUnused>IRelayUserGlobalData_ProcCleanupUnusedMethods for __T{}
+
+#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_ProcCleanupUnused{pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn read_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_reading_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_ProcCleanupUnused{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RelayUserGlobalData_Ticket), ::core::stringify!(new),));
- <Self as IRelayUserGlobalData_TicketMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RelayUserGlobalData_ProcCleanupUnused), ::core::stringify!(new),));
+ <Self as IRelayUserGlobalData_ProcCleanupUnusedMethods> ::ctor(this,);
 this}
 }
 
@@ -239,63 +235,67 @@ pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_ProcCleanupUnused{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d600usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+#[cfg(feature="app-relayuserglobaldata")]pub trait IRelayUserGlobalData_TicketMethods:IRelayUserGlobalData_Ticket{#[doc="`get_Count()` overload"]fn get_count(self,)->u32{unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8c0usize)as*mut u8,u32;
+(RelayUserGlobalData_Ticket)__receiver)}
+}
+#[doc="`set_Count(u32)` overload"]fn set_count(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8d0usize)as*mut u8,();
+(RelayUserGlobalData_Ticket)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LastTime()` overload"]fn get_last_time(self,)->i64{unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8e0usize)as*mut u8,i64;
+(RelayUserGlobalData_Ticket)__receiver)}
+}
+#[doc="`set_LastTime(i64)` overload"]fn set_last_time(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8f0usize)as*mut u8,();
+(RelayUserGlobalData_Ticket)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d900usize)as*mut u8,();
+(RelayUserGlobalData_Ticket)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d940usize)as*mut u8,();
+(RelayUserGlobalData_Ticket)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_Ticket as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0da90usize)as*mut u8,();
+(RelayUserGlobalData_Ticket)__receiver)}
 }
 }
 
-#[cfg(feature="app-relayuserglobaldata")]pub trait IRelayUserGlobalData_ProcCleanupUnusedMethods:IRelayUserGlobalData_ProcCleanupUnused{#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d140usize)as*mut u8,();
-(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
-}
-#[doc="`ReadHeader()` overload"]fn read_header(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d190usize)as*mut u8,();
-(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
-}
-#[doc="`IsReadingHeader()` overload"]fn is_reading_header(self,)->bool{unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d210usize)as*mut u8,bool;
-(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
-}
-#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d2e0usize)as*mut u8,();
-(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayUserGlobalData_ProcCleanupUnused as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0d8b0usize)as*mut u8,();
-(RelayUserGlobalData_ProcCleanupUnused)__receiver)}
-}
+#[cfg(feature="app-relayuserglobaldata")]impl<__T:IRelayUserGlobalData_Ticket>IRelayUserGlobalData_TicketMethods for __T{}
+
+#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_Ticket{pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_last_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_last_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
-#[cfg(feature="app-relayuserglobaldata")]impl<__T:IRelayUserGlobalData_ProcCleanupUnused>IRelayUserGlobalData_ProcCleanupUnusedMethods for __T{}
-
-#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_ProcCleanupUnused{pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn read_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_reading_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_ProcCleanupUnused{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-relayuserglobaldata")]impl RelayUserGlobalData_Ticket{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RelayUserGlobalData_ProcCleanupUnused), ::core::stringify!(new),));
- <Self as IRelayUserGlobalData_ProcCleanupUnusedMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RelayUserGlobalData_Ticket), ::core::stringify!(new),));
+ <Self as IRelayUserGlobalData_TicketMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-relayuserglobaldata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayUserGlobalData_Ticket;
-    pub use super::IRelayUserGlobalData_Ticket;
-    pub use super::IRelayUserGlobalData_TicketMethods;
+    pub use super::RelayUserGlobalData_ProcCleanupUnused;
+    pub use super::IRelayUserGlobalData_ProcCleanupUnused;
+    pub use super::IRelayUserGlobalData_ProcCleanupUnusedMethods;
     pub use super::RelayUserGlobalData;
     pub use super::IRelayUserGlobalData;
     pub use super::IRelayUserGlobalDataMethods;
     pub use super::RelayUserGlobalData_Uncommitted;
-    pub use super::RelayUserGlobalData_ProcCleanupUnused;
-    pub use super::IRelayUserGlobalData_ProcCleanupUnused;
-    pub use super::IRelayUserGlobalData_ProcCleanupUnusedMethods;
+    pub use super::RelayUserGlobalData_Ticket;
+    pub use super::IRelayUserGlobalData_Ticket;
+    pub use super::IRelayUserGlobalData_TicketMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;

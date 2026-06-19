@@ -43,15 +43,75 @@ pub fn none()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo.md"))]#[::unity2::class(namespace="App",name="MapBattleInfoSequence.AttackInfo")]#[parent(crate::system::object::Object)]pub struct MapBattleInfoSequence_AttackInfo{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattleinfosequence/MapBattleInfoSequence.md"))]#[::unity2::class(namespace="App",name="MapBattleInfoSequence")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapBattleInfoSequence{#[offset(24)]#[rename(name="m_AttackList")]pub m_attack_list: ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack> , #[offset(32)]#[rename(name="m_HealRoot")]pub m_heal_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Heal")]pub m_heal:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo.md"))]#[::unity2::class(namespace="App",name="MapBattleInfoSequence.AttackInfo")]#[parent(crate::system::object::Object)]pub struct MapBattleInfoSequence_AttackInfo{}
 
 }
 
 #[cfg(feature = "app-mapbattleinfosequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapbattleinfosequence")]impl MapBattleInfoSequence{#[doc="`GetSequenceAttack(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *mutcrate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>, bool)` overload"]pub fn get_sequence_attack(info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,is_separator:impl::core::convert::Into<bool>)->crate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0c670usize)as*mut u8,();
+(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(*mut crate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(is_separator));
+__out_0.assume_init()}
+}
+#[doc="`SetAttackInfo(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *muti32, *muti32, *muti32, *mutcrate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo)` overload"]pub fn set_attack_info(info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList>)->(bool,i32,i32,i32,crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1f0cd20usize)as*mut u8,bool;
+(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr(),(*mut i32)__out_2.as_mut_ptr(),(*mut crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo)__out_3.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+#[doc="`GetChainAttackCount(crate::app::battlescenelist::BattleSceneList, *muti32, *mutbool)` overload"]pub fn get_chain_attack_count(scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList>)->(i32,i32,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1f0d9d0usize)as*mut u8,i32;
+(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(*mut i32)__out_0.as_mut_ptr(),(*mut bool)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`NextPushAttack(crate::app::battlescenelist::BattleSceneList, i32, *mutbool)` overload"]pub fn next_push_attack(scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,start_idx:impl::core::convert::Into<i32>)->(i32,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1f0dc50usize)as*mut u8,i32;
+(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(i32)::core::convert::Into::into(start_idx),(*mut bool)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`PrePopOrder(crate::app::battlescenelist::BattleSceneList, i32)` overload"]pub fn pre_pop_order(scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,start_idx:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f0dd70usize)as*mut u8,i32;
+(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(i32)::core::convert::Into::into(start_idx))}
+}
+}
+
+#[cfg(feature="app-mapbattleinfosequence")]pub trait IMapBattleInfoSequenceMethods:IMapBattleInfoSequence{#[doc="`SetBattleInfo(bool, crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"]fn set_battle_info(self,b_show_wdw:impl::core::convert::Into<bool> ,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList>)->(){unsafe{let __receiver= <MapBattleInfoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0bf60usize)as*mut u8,();
+(MapBattleInfoSequence)__receiver,(bool)::core::convert::Into::into(b_show_wdw),(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBattleInfoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0de10usize)as*mut u8,();
+(MapBattleInfoSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapbattleinfosequence")]impl<__T:IMapBattleInfoSequence>IMapBattleInfoSequenceMethods for __T{}
+
+#[cfg(feature="app-mapbattleinfosequence")]impl MapBattleInfoSequence{pub fn set_battle_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_sequence_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_attack_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn next_push_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn pre_pop_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapbattleinfosequence")]impl MapBattleInfoSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapBattleInfoSequence), ::core::stringify!(new),));
+ <Self as IMapBattleInfoSequenceMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-mapbattleinfosequence")]pub trait IMapBattleInfoSequence_AttackInfoMethods:IMapBattleInfoSequence_AttackInfo{#[doc="`get_sideType()` overload"]fn get_side_type(self,)->crate::app::battleside::BattleSide_Type{unsafe{let __receiver= <MapBattleInfoSequence_AttackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd0b0usize)as*mut u8,crate::app::battleside::BattleSide_Type;
@@ -189,76 +249,16 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapbattleinfosequence")]impl MapBattleInfoSequence{#[doc="`GetSequenceAttack(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *mutcrate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>, bool)` overload"]pub fn get_sequence_attack(info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,is_separator:impl::core::convert::Into<bool>)->crate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo> > ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0c670usize)as*mut u8,();
-(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(*mut crate::system::collections::generic::list_1::List_1<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo>)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(is_separator));
-__out_0.assume_init()}
-}
-#[doc="`SetAttackInfo(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList, *muti32, *muti32, *muti32, *mutcrate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo)` overload"]pub fn set_attack_info(info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList>)->(bool,i32,i32,i32,crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let mut __out_2= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let mut __out_3= ::core::mem::MaybeUninit:: <crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1f0cd20usize)as*mut u8,bool;
-(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr(),(*mut i32)__out_2.as_mut_ptr(),(*mut crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo)__out_3.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
-}
-#[doc="`GetChainAttackCount(crate::app::battlescenelist::BattleSceneList, *muti32, *mutbool)` overload"]pub fn get_chain_attack_count(scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList>)->(i32,i32,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <bool> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1f0d9d0usize)as*mut u8,i32;
-(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(*mut i32)__out_0.as_mut_ptr(),(*mut bool)__out_1.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`NextPushAttack(crate::app::battlescenelist::BattleSceneList, i32, *mutbool)` overload"]pub fn next_push_attack(scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,start_idx:impl::core::convert::Into<i32>)->(i32,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1f0dc50usize)as*mut u8,i32;
-(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(i32)::core::convert::Into::into(start_idx),(*mut bool)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`PrePopOrder(crate::app::battlescenelist::BattleSceneList, i32)` overload"]pub fn pre_pop_order(scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,start_idx:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f0dd70usize)as*mut u8,i32;
-(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list),(i32)::core::convert::Into::into(start_idx))}
-}
-}
-
-#[cfg(feature="app-mapbattleinfosequence")]pub trait IMapBattleInfoSequenceMethods:IMapBattleInfoSequence{#[doc="`SetBattleInfo(bool, crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"]fn set_battle_info(self,b_show_wdw:impl::core::convert::Into<bool> ,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList>)->(){unsafe{let __receiver= <MapBattleInfoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0bf60usize)as*mut u8,();
-(MapBattleInfoSequence)__receiver,(bool)::core::convert::Into::into(b_show_wdw),(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBattleInfoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0de10usize)as*mut u8,();
-(MapBattleInfoSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapbattleinfosequence")]impl<__T:IMapBattleInfoSequence>IMapBattleInfoSequenceMethods for __T{}
-
-#[cfg(feature="app-mapbattleinfosequence")]impl MapBattleInfoSequence{pub fn set_battle_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_sequence_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_attack_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn next_push_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn pre_pop_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mapbattleinfosequence")]impl MapBattleInfoSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapBattleInfoSequence), ::core::stringify!(new),));
- <Self as IMapBattleInfoSequenceMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapbattleinfosequence")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapBattleInfoSequence_AttackInfo_SceneResult;
-    pub use super::MapBattleInfoSequence_AttackInfo;
-    pub use super::IMapBattleInfoSequence_AttackInfo;
-    pub use super::IMapBattleInfoSequence_AttackInfoMethods;
     pub use super::MapBattleInfoSequence;
     pub use super::IMapBattleInfoSequence;
     pub use super::IMapBattleInfoSequenceMethods;
+    pub use super::MapBattleInfoSequence_AttackInfo;
+    pub use super::IMapBattleInfoSequence_AttackInfo;
+    pub use super::IMapBattleInfoSequence_AttackInfoMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

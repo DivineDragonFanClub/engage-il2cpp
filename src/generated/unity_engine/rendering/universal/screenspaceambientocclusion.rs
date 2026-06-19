@@ -21,6 +21,9 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScreenSpaceAmbientOcclusion")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature)]pub struct ScreenSpaceAmbientOcclusion{#[offset(32)]#[rename(name="m_Shader")]pub m_shader:crate::unity_engine::shader::Shader, #[offset(40)]#[rename(name="m_Settings")]pub m_settings:crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings, #[offset(48)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(56)]#[rename(name="m_SSAOPass")]pub m_ssao_pass:crate::unity_engine::rendering::universal::screenspaceambientocclusion::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass, #[static_field]#[rename(name="k_ShaderName")]pub k_shader_name: ::unity2::Il2CppString, #[static_field]#[rename(name="k_OrthographicCameraKeyword")]pub k_orthographic_camera_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_NormalReconstructionLowKeyword")]pub k_normal_reconstruction_low_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_NormalReconstructionMediumKeyword")]pub k_normal_reconstruction_medium_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_NormalReconstructionHighKeyword")]pub k_normal_reconstruction_high_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SourceDepthKeyword")]pub k_source_depth_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SourceDepthNormalsKeyword")]pub k_source_depth_normals_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SourceGBufferKeyword")]pub k_source_g_buffer_keyword: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScreenSpaceAmbientOcclusion.ScreenSpaceAmbientOcclusionPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass{#[offset(112)]#[rename(name="profilerTag")]pub profiler_tag: ::unity2::Il2CppString, #[offset(120)]#[rename(name="material")]pub material:crate::unity_engine::material::Material, #[offset(128)]#[rename(name="m_CurrentSettings")]pub m_current_settings:crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings, #[offset(136)]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[offset(144)]#[rename(name="m_SSAOTexture1Target")]pub m_ssao_texture1_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[offset(184)]#[rename(name="m_SSAOTexture2Target")]pub m_ssao_texture2_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[offset(224)]#[rename(name="m_SSAOTexture3Target")]pub m_ssao_texture3_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[offset(264)]#[rename(name="m_Descriptor")]pub m_descriptor:crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, #[static_field]#[rename(name="k_SSAOAmbientOcclusionParamName")]pub k_ssao_ambient_occlusion_param_name: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SSAOTextureName")]pub k_ssao_texture_name: ::unity2::Il2CppString, #[static_field]#[rename(name="s_BaseMapID")]pub s_base_map_id:i32, #[static_field]#[rename(name="s_SSAOParamsID")]pub s_ssao_params_id:i32, #[static_field]#[rename(name="s_SSAOTexture1ID")]pub s_ssao_texture1_id:i32, #[static_field]#[rename(name="s_SSAOTexture2ID")]pub s_ssao_texture2_id:i32, #[static_field]#[rename(name="s_SSAOTexture3ID")]pub s_ssao_texture3_id:i32,}
 
 
@@ -43,13 +46,50 @@ pub fn blur_final()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScreenSpaceAmbientOcclusion")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature)]pub struct ScreenSpaceAmbientOcclusion{#[offset(32)]#[rename(name="m_Shader")]pub m_shader:crate::unity_engine::shader::Shader, #[offset(40)]#[rename(name="m_Settings")]pub m_settings:crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings, #[offset(48)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(56)]#[rename(name="m_SSAOPass")]pub m_ssao_pass:crate::unity_engine::rendering::universal::screenspaceambientocclusion::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass, #[static_field]#[rename(name="k_ShaderName")]pub k_shader_name: ::unity2::Il2CppString, #[static_field]#[rename(name="k_OrthographicCameraKeyword")]pub k_orthographic_camera_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_NormalReconstructionLowKeyword")]pub k_normal_reconstruction_low_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_NormalReconstructionMediumKeyword")]pub k_normal_reconstruction_medium_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_NormalReconstructionHighKeyword")]pub k_normal_reconstruction_high_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SourceDepthKeyword")]pub k_source_depth_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SourceDepthNormalsKeyword")]pub k_source_depth_normals_keyword: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SourceGBufferKeyword")]pub k_source_g_buffer_keyword: ::unity2::Il2CppString,}
-
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]pub trait IScreenSpaceAmbientOcclusionMethods:IScreenSpaceAmbientOcclusion{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ece620usize)as*mut u8,();
+(ScreenSpaceAmbientOcclusion)__receiver)}
+}
+#[doc="`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn add_render_passes(self,renderer:impl::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ece890usize)as*mut u8,();
+(ScreenSpaceAmbientOcclusion)__receiver,(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)::core::convert::Into::into(renderer),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2eceac0usize)as*mut u8,();
+(ScreenSpaceAmbientOcclusion)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`GetMaterial()` overload"]fn get_material(self,)->bool{unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ece6d0usize)as*mut u8,bool;
+(ScreenSpaceAmbientOcclusion)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2eceb30usize)as*mut u8,();
+(ScreenSpaceAmbientOcclusion)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]impl<__T:IScreenSpaceAmbientOcclusion>IScreenSpaceAmbientOcclusionMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]impl ScreenSpaceAmbientOcclusion{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_render_passes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]impl ScreenSpaceAmbientOcclusion{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScreenSpaceAmbientOcclusion), ::core::stringify!(new),));
+ <Self as IScreenSpaceAmbientOcclusionMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb9ba0usize)as*mut u8,();
 )}
@@ -109,56 +149,16 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]pub trait IScreenSpaceAmbientOcclusionMethods:IScreenSpaceAmbientOcclusion{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ece620usize)as*mut u8,();
-(ScreenSpaceAmbientOcclusion)__receiver)}
-}
-#[doc="`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn add_render_passes(self,renderer:impl::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ece890usize)as*mut u8,();
-(ScreenSpaceAmbientOcclusion)__receiver,(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)::core::convert::Into::into(renderer),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2eceac0usize)as*mut u8,();
-(ScreenSpaceAmbientOcclusion)__receiver,(bool)::core::convert::Into::into(disposing))}
-}
-#[doc="`GetMaterial()` overload"]fn get_material(self,)->bool{unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ece6d0usize)as*mut u8,bool;
-(ScreenSpaceAmbientOcclusion)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScreenSpaceAmbientOcclusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2eceb30usize)as*mut u8,();
-(ScreenSpaceAmbientOcclusion)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]impl<__T:IScreenSpaceAmbientOcclusion>IScreenSpaceAmbientOcclusionMethods for __T{}
-
-#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]impl ScreenSpaceAmbientOcclusion{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_render_passes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-screenspaceambientocclusion")]impl ScreenSpaceAmbientOcclusion{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ScreenSpaceAmbientOcclusion), ::core::stringify!(new),));
- <Self as IScreenSpaceAmbientOcclusionMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusion")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ScreenSpaceAmbientOcclusion;
+    pub use super::IScreenSpaceAmbientOcclusion;
+    pub use super::IScreenSpaceAmbientOcclusionMethods;
     pub use super::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass;
     pub use super::IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass;
     pub use super::IScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPassMethods;
     pub use super::ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses;
-    pub use super::ScreenSpaceAmbientOcclusion;
-    pub use super::IScreenSpaceAmbientOcclusion;
-    pub use super::IScreenSpaceAmbientOcclusionMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

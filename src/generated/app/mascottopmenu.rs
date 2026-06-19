@@ -23,16 +23,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascottopmenu/MascotTopMenu_CustomMenuItem.md"))]#[::unity2::class(namespace="App",name="MascotTopMenu.CustomMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MascotTopMenu_CustomMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascottopmenu/MascotTopMenu_MealMenuItem.md"))]#[::unity2::class(namespace="App",name="MascotTopMenu.MealMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MascotTopMenu_MealMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascottopmenu/MascotTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MascotTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MascotTopMenu_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascottopmenu/MascotTopMenu.md"))]#[::unity2::class(namespace="App",name="MascotTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MascotTopMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascottopmenu/MascotTopMenu_MealMenuItem.md"))]#[::unity2::class(namespace="App",name="MascotTopMenu.MealMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MascotTopMenu_MealMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascottopmenu/MascotTopMenu_StrokMenuItem.md"))]#[::unity2::class(namespace="App",name="MascotTopMenu.StrokMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MascotTopMenu_StrokMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,}
@@ -57,86 +54,13 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascottopmenu/MascotTopMenu_CustomMenuItem.md"))]#[::unity2::class(namespace="App",name="MascotTopMenu.CustomMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MascotTopMenu_CustomMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler,}
+
 }
 
 #[cfg(feature = "app-mascottopmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mascottopmenu")]pub trait IMascotTopMenu_CustomMenuItemMethods:IMascotTopMenu_CustomMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208cda0usize)as*mut u8,();
-(MascotTopMenu_CustomMenuItem)__receiver,(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208cde0usize)as*mut u8, ::unity2::Il2CppString;
-(MascotTopMenu_CustomMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208ce60usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MascotTopMenu_CustomMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208ce70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MascotTopMenu_CustomMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d100usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MascotTopMenu_CustomMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mascottopmenu")]impl<__T:IMascotTopMenu_CustomMenuItem>IMascotTopMenu_CustomMenuItemMethods for __T{}
-
-#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_CustomMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_CustomMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MascotTopMenu_CustomMenuItem), ::core::stringify!(new),));
- <Self as IMascotTopMenu_CustomMenuItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-mascottopmenu")]pub trait IMascotTopMenu_MealMenuItemMethods:IMascotTopMenu_MealMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d1d0usize)as*mut u8,();
-(MascotTopMenu_MealMenuItem)__receiver,(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d210usize)as*mut u8, ::unity2::Il2CppString;
-(MascotTopMenu_MealMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d290usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MascotTopMenu_MealMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d2a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MascotTopMenu_MealMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d2d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MascotTopMenu_MealMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mascottopmenu")]impl<__T:IMascotTopMenu_MealMenuItem>IMascotTopMenu_MealMenuItemMethods for __T{}
-
-#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_MealMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_MealMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MascotTopMenu_MealMenuItem), ::core::stringify!(new),));
- <Self as IMascotTopMenu_MealMenuItemMethods> ::ctor(this,event_handler);
-this}
-}
 
 #[cfg(feature="app-mascottopmenu")]pub trait IMascotTopMenu_DecideEventHandlerMethods:IMascotTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MascotTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x208d110usize)as*mut u8,();
@@ -210,6 +134,44 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-mascottopmenu")]pub trait IMascotTopMenu_MealMenuItemMethods:IMascotTopMenu_MealMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d1d0usize)as*mut u8,();
+(MascotTopMenu_MealMenuItem)__receiver,(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d210usize)as*mut u8, ::unity2::Il2CppString;
+(MascotTopMenu_MealMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d290usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MascotTopMenu_MealMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d2a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MascotTopMenu_MealMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_MealMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d2d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MascotTopMenu_MealMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mascottopmenu")]impl<__T:IMascotTopMenu_MealMenuItem>IMascotTopMenu_MealMenuItemMethods for __T{}
+
+#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_MealMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_MealMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotTopMenu_MealMenuItem), ::core::stringify!(new),));
+ <Self as IMascotTopMenu_MealMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
 #[cfg(feature="app-mascottopmenu")]pub trait IMascotTopMenu_StrokMenuItemMethods:IMascotTopMenu_StrokMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MascotTopMenu_StrokMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x208d2e0usize)as*mut u8,();
 (MascotTopMenu_StrokMenuItem)__receiver,(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
@@ -248,25 +210,63 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-mascottopmenu")]pub trait IMascotTopMenu_CustomMenuItemMethods:IMascotTopMenu_CustomMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208cda0usize)as*mut u8,();
+(MascotTopMenu_CustomMenuItem)__receiver,(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208cde0usize)as*mut u8, ::unity2::Il2CppString;
+(MascotTopMenu_CustomMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208ce60usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MascotTopMenu_CustomMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208ce70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MascotTopMenu_CustomMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotTopMenu_CustomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d100usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MascotTopMenu_CustomMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mascottopmenu")]impl<__T:IMascotTopMenu_CustomMenuItem>IMascotTopMenu_CustomMenuItemMethods for __T{}
+
+#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_CustomMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mascottopmenu")]impl MascotTopMenu_CustomMenuItem{#[doc="`.ctor(crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::mascottopmenu::MascotTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotTopMenu_CustomMenuItem), ::core::stringify!(new),));
+ <Self as IMascotTopMenu_CustomMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
 #[cfg(feature = "app-mascottopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MascotTopMenu_CustomMenuItem;
-    pub use super::IMascotTopMenu_CustomMenuItem;
-    pub use super::IMascotTopMenu_CustomMenuItemMethods;
-    pub use super::MascotTopMenu_MealMenuItem;
-    pub use super::IMascotTopMenu_MealMenuItem;
-    pub use super::IMascotTopMenu_MealMenuItemMethods;
     pub use super::MascotTopMenu_DecideEventHandler;
     pub use super::IMascotTopMenu_DecideEventHandler;
     pub use super::IMascotTopMenu_DecideEventHandlerMethods;
     pub use super::MascotTopMenu;
     pub use super::IMascotTopMenu;
     pub use super::IMascotTopMenuMethods;
+    pub use super::MascotTopMenu_MealMenuItem;
+    pub use super::IMascotTopMenu_MealMenuItem;
+    pub use super::IMascotTopMenu_MealMenuItemMethods;
     pub use super::MascotTopMenu_StrokMenuItem;
     pub use super::IMascotTopMenu_StrokMenuItem;
     pub use super::IMascotTopMenu_StrokMenuItemMethods;
     pub use super::MascotTopMenu_MenuResult;
+    pub use super::MascotTopMenu_CustomMenuItem;
+    pub use super::IMascotTopMenu_CustomMenuItem;
+    pub use super::IMascotTopMenu_CustomMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

@@ -17,69 +17,18 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_CharaPhoto.md"))]#[::unity2::class(namespace="App",name="SynthesisRingInfoWindow.CharaPhoto")]#[parent(crate::system::object::Object)]pub struct SynthesisRingInfoWindow_CharaPhoto{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_CharaImage")]pub m_chara_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_IsSetup")]pub m_is_setup:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringinfowindow/SynthesisRingInfoWindow.md"))]#[::unity2::class(namespace="App",name="SynthesisRingInfoWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SynthesisRingInfoWindow{#[offset(24)]#[rename(name="m_NeededTitleText")]pub m_needed_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_NeededRingIconImage")]pub m_needed_ring_icon_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_CharacterNameText")]pub m_character_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_NeededValueText")]pub m_needed_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_PiecesOfBondText")]pub m_pieces_of_bond_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_PiecesOfBondValueText")]pub m_pieces_of_bond_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_BasePhotos")]pub m_base_photos: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto> , #[offset(80)]#[rename(name="m_BasePhotoIdx")]pub m_base_photo_idx:i32, #[offset(88)]#[rename(name="m_BaseRingImage")]pub m_base_ring_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_BaseRingNameText")]pub m_base_ring_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_BaseRingEnhances")]pub m_base_ring_enhances: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance> , #[offset(112)]#[rename(name="m_BaseRingCountCaptionText")]pub m_base_ring_count_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_BaseRingCountBeforeText")]pub m_base_ring_count_before_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_BaseRingCountAfterText")]pub m_base_ring_count_after_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(136)]#[rename(name="m_SynthesisedPhotos")]pub m_synthesised_photos: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto> , #[offset(144)]#[rename(name="m_SynthesisedPhotoIdx")]pub m_synthesised_photo_idx:i32, #[offset(152)]#[rename(name="m_SynthesisedRingImage")]pub m_synthesised_ring_image:crate::unity_engine::ui::image::Image, #[offset(160)]#[rename(name="m_SynthesisedRingNameText")]pub m_synthesised_ring_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_SynthesisedRingEnhances")]pub m_synthesised_ring_enhances: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance> , #[offset(176)]#[rename(name="m_SynthesisedRingCountCaptionText")]pub m_synthesised_ring_count_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_SynthesisedRingCountBeforeText")]pub m_synthesised_ring_count_before_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_SynthesisedRingCountAfterText")]pub m_synthesised_ring_count_after_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(200)]#[rename(name="m_SkillParentObject")]pub m_skill_parent_object:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(216)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(224)]#[rename(name="m_SkillHelpText")]pub m_skill_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(232)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(240)]#[rename(name="m_MaterialBefore")]pub m_material_before:crate::unity_engine::material::Material, #[offset(248)]#[rename(name="m_MaterialAfter")]pub m_material_after:crate::unity_engine::material::Material,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_RingEnhance.md"))]#[::unity2::class(namespace="App",name="SynthesisRingInfoWindow.RingEnhance")]#[parent(crate::system::object::Object)]pub struct SynthesisRingInfoWindow_RingEnhance{#[offset(16)]#[rename(name="m_ParentObject")]pub m_parent_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_ArrowImage")]pub m_arrow_image:crate::unity_engine::ui::image::Image,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringinfowindow/SynthesisRingInfoWindow.md"))]#[::unity2::class(namespace="App",name="SynthesisRingInfoWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SynthesisRingInfoWindow{#[offset(24)]#[rename(name="m_NeededTitleText")]pub m_needed_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_NeededRingIconImage")]pub m_needed_ring_icon_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_CharacterNameText")]pub m_character_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_NeededValueText")]pub m_needed_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_PiecesOfBondText")]pub m_pieces_of_bond_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_PiecesOfBondValueText")]pub m_pieces_of_bond_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_BasePhotos")]pub m_base_photos: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto> , #[offset(80)]#[rename(name="m_BasePhotoIdx")]pub m_base_photo_idx:i32, #[offset(88)]#[rename(name="m_BaseRingImage")]pub m_base_ring_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_BaseRingNameText")]pub m_base_ring_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_BaseRingEnhances")]pub m_base_ring_enhances: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance> , #[offset(112)]#[rename(name="m_BaseRingCountCaptionText")]pub m_base_ring_count_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_BaseRingCountBeforeText")]pub m_base_ring_count_before_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_BaseRingCountAfterText")]pub m_base_ring_count_after_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(136)]#[rename(name="m_SynthesisedPhotos")]pub m_synthesised_photos: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto> , #[offset(144)]#[rename(name="m_SynthesisedPhotoIdx")]pub m_synthesised_photo_idx:i32, #[offset(152)]#[rename(name="m_SynthesisedRingImage")]pub m_synthesised_ring_image:crate::unity_engine::ui::image::Image, #[offset(160)]#[rename(name="m_SynthesisedRingNameText")]pub m_synthesised_ring_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_SynthesisedRingEnhances")]pub m_synthesised_ring_enhances: ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance> , #[offset(176)]#[rename(name="m_SynthesisedRingCountCaptionText")]pub m_synthesised_ring_count_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_SynthesisedRingCountBeforeText")]pub m_synthesised_ring_count_before_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_SynthesisedRingCountAfterText")]pub m_synthesised_ring_count_after_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(200)]#[rename(name="m_SkillParentObject")]pub m_skill_parent_object:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(216)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(224)]#[rename(name="m_SkillHelpText")]pub m_skill_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(232)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(240)]#[rename(name="m_MaterialBefore")]pub m_material_before:crate::unity_engine::material::Material, #[offset(248)]#[rename(name="m_MaterialAfter")]pub m_material_after:crate::unity_engine::material::Material,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_CharaPhoto.md"))]#[::unity2::class(namespace="App",name="SynthesisRingInfoWindow.CharaPhoto")]#[parent(crate::system::object::Object)]pub struct SynthesisRingInfoWindow_CharaPhoto{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_CharaImage")]pub m_chara_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_IsSetup")]pub m_is_setup:bool,}
 
 }
 
 #[cfg(feature = "app-synthesisringinfowindow-types")]
 pub use __types::*;
-
-#[cfg(feature="app-synthesisringinfowindow")]pub trait ISynthesisRingInfoWindow_CharaPhotoMethods:ISynthesisRingInfoWindow_CharaPhoto{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7670usize)as*mut u8,();
-(SynthesisRingInfoWindow_CharaPhoto)__receiver)}
-}
-#[doc="`FadeIn()` overload"]fn fade_in(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f76f0usize)as*mut u8,();
-(SynthesisRingInfoWindow_CharaPhoto)__receiver)}
-}
-#[doc="`FadeOut()` overload"]fn fade_out(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f77d0usize)as*mut u8,();
-(SynthesisRingInfoWindow_CharaPhoto)__receiver)}
-}
-#[doc="`SetRingChara(crate::app::ringdata::RingData)` overload"]fn set_ring_chara(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7860usize)as*mut u8,();
-(SynthesisRingInfoWindow_CharaPhoto)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
-}
-}
-
-#[cfg(feature="app-synthesisringinfowindow")]impl<__T:ISynthesisRingInfoWindow_CharaPhoto>ISynthesisRingInfoWindow_CharaPhotoMethods for __T{}
-
-#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_CharaPhoto{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_ring_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_CharaPhoto{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SynthesisRingInfoWindow_CharaPhoto), ::core::stringify!(new),));
- <Self as ISynthesisRingInfoWindow_CharaPhotoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-synthesisringinfowindow")]pub trait ISynthesisRingInfoWindow_RingEnhanceMethods:ISynthesisRingInfoWindow_RingEnhance{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_RingEnhance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f79d0usize)as*mut u8,();
-(SynthesisRingInfoWindow_RingEnhance)__receiver)}
-}
-}
-
-#[cfg(feature="app-synthesisringinfowindow")]impl<__T:ISynthesisRingInfoWindow_RingEnhance>ISynthesisRingInfoWindow_RingEnhanceMethods for __T{}
-
-#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_RingEnhance{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_RingEnhance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SynthesisRingInfoWindow_RingEnhance), ::core::stringify!(new),));
- <Self as ISynthesisRingInfoWindow_RingEnhanceMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-synthesisringinfowindow")]pub trait ISynthesisRingInfoWindowMethods:ISynthesisRingInfoWindow{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20b2d20usize)as*mut u8,();
@@ -131,18 +80,69 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-synthesisringinfowindow")]pub trait ISynthesisRingInfoWindow_RingEnhanceMethods:ISynthesisRingInfoWindow_RingEnhance{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_RingEnhance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f79d0usize)as*mut u8,();
+(SynthesisRingInfoWindow_RingEnhance)__receiver)}
+}
+}
+
+#[cfg(feature="app-synthesisringinfowindow")]impl<__T:ISynthesisRingInfoWindow_RingEnhance>ISynthesisRingInfoWindow_RingEnhanceMethods for __T{}
+
+#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_RingEnhance{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_RingEnhance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SynthesisRingInfoWindow_RingEnhance), ::core::stringify!(new),));
+ <Self as ISynthesisRingInfoWindow_RingEnhanceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-synthesisringinfowindow")]pub trait ISynthesisRingInfoWindow_CharaPhotoMethods:ISynthesisRingInfoWindow_CharaPhoto{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7670usize)as*mut u8,();
+(SynthesisRingInfoWindow_CharaPhoto)__receiver)}
+}
+#[doc="`FadeIn()` overload"]fn fade_in(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f76f0usize)as*mut u8,();
+(SynthesisRingInfoWindow_CharaPhoto)__receiver)}
+}
+#[doc="`FadeOut()` overload"]fn fade_out(self,)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f77d0usize)as*mut u8,();
+(SynthesisRingInfoWindow_CharaPhoto)__receiver)}
+}
+#[doc="`SetRingChara(crate::app::ringdata::RingData)` overload"]fn set_ring_chara(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <SynthesisRingInfoWindow_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7860usize)as*mut u8,();
+(SynthesisRingInfoWindow_CharaPhoto)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+}
+
+#[cfg(feature="app-synthesisringinfowindow")]impl<__T:ISynthesisRingInfoWindow_CharaPhoto>ISynthesisRingInfoWindow_CharaPhotoMethods for __T{}
+
+#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_CharaPhoto{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_ring_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-synthesisringinfowindow")]impl SynthesisRingInfoWindow_CharaPhoto{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SynthesisRingInfoWindow_CharaPhoto), ::core::stringify!(new),));
+ <Self as ISynthesisRingInfoWindow_CharaPhotoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-synthesisringinfowindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SynthesisRingInfoWindow_CharaPhoto;
-    pub use super::ISynthesisRingInfoWindow_CharaPhoto;
-    pub use super::ISynthesisRingInfoWindow_CharaPhotoMethods;
-    pub use super::SynthesisRingInfoWindow_RingEnhance;
-    pub use super::ISynthesisRingInfoWindow_RingEnhance;
-    pub use super::ISynthesisRingInfoWindow_RingEnhanceMethods;
     pub use super::SynthesisRingInfoWindow;
     pub use super::ISynthesisRingInfoWindow;
     pub use super::ISynthesisRingInfoWindowMethods;
+    pub use super::SynthesisRingInfoWindow_RingEnhance;
+    pub use super::ISynthesisRingInfoWindow_RingEnhance;
+    pub use super::ISynthesisRingInfoWindow_RingEnhanceMethods;
+    pub use super::SynthesisRingInfoWindow_CharaPhoto;
+    pub use super::ISynthesisRingInfoWindow_CharaPhoto;
+    pub use super::ISynthesisRingInfoWindow_CharaPhotoMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

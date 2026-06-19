@@ -9,15 +9,53 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/bitarray/BitArray.md"))]#[::unity2::class(namespace="System.Collections",name="BitArray")]#[parent(crate::system::object::Object)]pub struct BitArray{#[static_field]#[rename(name="BitsPerInt32")]pub bits_per_int32:i32, #[static_field]#[rename(name="BytesPerInt32")]pub bytes_per_int32:i32, #[static_field]#[rename(name="BitsPerByte")]pub bits_per_byte:i32, #[offset(16)]#[rename(name="m_array")]pub m_array: ::unity2::Array<i32> , #[offset(24)]#[rename(name="m_length")]pub m_length:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="_ShrinkThreshold")]pub shrink_threshold:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md"))]#[::unity2::class(namespace="System.Collections",name="BitArray.BitArrayEnumeratorSimple")]#[parent(crate::system::object::Object)]pub struct BitArray_BitArrayEnumeratorSimple{#[offset(16)]#[rename(name="bitarray")]pub bitarray:crate::system::collections::bitarray::BitArray, #[offset(24)]#[rename(name="index")]pub index:i32, #[offset(28)]#[rename(name="version")]pub version:i32, #[offset(32)]#[rename(name="currentElement")]pub current_element:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/bitarray/BitArray.md"))]#[::unity2::class(namespace="System.Collections",name="BitArray")]#[parent(crate::system::object::Object)]pub struct BitArray{#[static_field]#[rename(name="BitsPerInt32")]pub bits_per_int32:i32, #[static_field]#[rename(name="BytesPerInt32")]pub bytes_per_int32:i32, #[static_field]#[rename(name="BitsPerByte")]pub bits_per_byte:i32, #[offset(16)]#[rename(name="m_array")]pub m_array: ::unity2::Array<i32> , #[offset(24)]#[rename(name="m_length")]pub m_length:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="_ShrinkThreshold")]pub shrink_threshold:i32,}
 
 }
 
 #[cfg(feature = "system-collections-bitarray-types")]
 pub use __types::*;
+
+#[cfg(feature="system-collections-bitarray")]pub trait IBitArray_BitArrayEnumeratorSimpleMethods:IBitArray_BitArrayEnumeratorSimple{#[doc="`.ctor(crate::system::collections::bitarray::BitArray)` overload"]fn ctor(self,bitarray:impl::core::convert::Into<crate::system::collections::bitarray::BitArray>)->(){unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0b70usize)as*mut u8,();
+(BitArray_BitArrayEnumeratorSimple)__receiver,(crate::system::collections::bitarray::BitArray)::core::convert::Into::into(bitarray))}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0bc0usize)as*mut u8,crate::system::object::Object;
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0bd0usize)as*mut u8,bool;
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0ca0usize)as*mut u8,crate::system::object::Object;
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0d80usize)as*mut u8,();
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-bitarray")]impl<__T:IBitArray_BitArrayEnumeratorSimple>IBitArray_BitArrayEnumeratorSimpleMethods for __T{}
+
+#[cfg(feature="system-collections-bitarray")]impl BitArray_BitArrayEnumeratorSimple{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="system-collections-bitarray")]impl BitArray_BitArrayEnumeratorSimple{#[doc="`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"]pub fn new(bitarray:crate::system::collections::bitarray::BitArray)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitArray_BitArrayEnumeratorSimple), ::core::stringify!(new),));
+ <Self as IBitArray_BitArrayEnumeratorSimpleMethods> ::ctor(this,bitarray);
+this}
+}
 
 #[cfg(feature="system-collections-bitarray")]impl BitArray{#[doc="`GetArrayLength(i32, i32)` overload"]pub fn get_array_length(n:impl::core::convert::Into<i32> ,div:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3390d90usize)as*mut u8,i32;
 (i32)::core::convert::Into::into(n),(i32)::core::convert::Into::into(div))}
@@ -118,53 +156,15 @@ this}
 this}
 }
 
-#[cfg(feature="system-collections-bitarray")]pub trait IBitArray_BitArrayEnumeratorSimpleMethods:IBitArray_BitArrayEnumeratorSimple{#[doc="`.ctor(crate::system::collections::bitarray::BitArray)` overload"]fn ctor(self,bitarray:impl::core::convert::Into<crate::system::collections::bitarray::BitArray>)->(){unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0b70usize)as*mut u8,();
-(BitArray_BitArrayEnumeratorSimple)__receiver,(crate::system::collections::bitarray::BitArray)::core::convert::Into::into(bitarray))}
-}
-#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0bc0usize)as*mut u8,crate::system::object::Object;
-(BitArray_BitArrayEnumeratorSimple)__receiver)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0bd0usize)as*mut u8,bool;
-(BitArray_BitArrayEnumeratorSimple)__receiver)}
-}
-#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0ca0usize)as*mut u8,crate::system::object::Object;
-(BitArray_BitArrayEnumeratorSimple)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0d80usize)as*mut u8,();
-(BitArray_BitArrayEnumeratorSimple)__receiver)}
-}
-}
-
-#[cfg(feature="system-collections-bitarray")]impl<__T:IBitArray_BitArrayEnumeratorSimple>IBitArray_BitArrayEnumeratorSimpleMethods for __T{}
-
-#[cfg(feature="system-collections-bitarray")]impl BitArray_BitArrayEnumeratorSimple{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="system-collections-bitarray")]impl BitArray_BitArrayEnumeratorSimple{#[doc="`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"]pub fn new(bitarray:crate::system::collections::bitarray::BitArray)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BitArray_BitArrayEnumeratorSimple), ::core::stringify!(new),));
- <Self as IBitArray_BitArrayEnumeratorSimpleMethods> ::ctor(this,bitarray);
-this}
-}
-
 #[cfg(feature = "system-collections-bitarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BitArray;
-    pub use super::IBitArray;
-    pub use super::IBitArrayMethods;
     pub use super::BitArray_BitArrayEnumeratorSimple;
     pub use super::IBitArray_BitArrayEnumeratorSimple;
     pub use super::IBitArray_BitArrayEnumeratorSimpleMethods;
+    pub use super::BitArray;
+    pub use super::IBitArray;
+    pub use super::IBitArrayMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

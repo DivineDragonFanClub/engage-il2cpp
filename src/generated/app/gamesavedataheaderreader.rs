@@ -37,13 +37,13 @@ pub fn failed()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_ProcRead.md"))]#[::unity2::class(namespace="App",name="GameSaveDataHeaderReader.ProcRead")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSaveDataHeaderReader_ProcRead{#[offset(112)]#[rename(name="m_Handle")]pub m_handle:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, #[offset(120)]#[rename(name="m_SaveDataHandle")]pub m_save_data_handle:crate::app::savedatareadhandle::SaveDataReadHandle,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_HandleList.md"))]#[::unity2::class(namespace="App",name="GameSaveDataHeaderReader.HandleList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)]pub struct GameSaveDataHeaderReader_HandleList{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader.md"))]#[::unity2::class(namespace="App",name="GameSaveDataHeaderReader")]#[parent(crate::system::object::Object)]pub struct GameSaveDataHeaderReader{#[offset(16)]#[rename(name="m_Handles")]pub m_handles:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_HandleList,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_ProcRead.md"))]#[::unity2::class(namespace="App",name="GameSaveDataHeaderReader.ProcRead")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSaveDataHeaderReader_ProcRead{#[offset(112)]#[rename(name="m_Handle")]pub m_handle:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle, #[offset(120)]#[rename(name="m_SaveDataHandle")]pub m_save_data_handle:crate::app::savedatareadhandle::SaveDataReadHandle,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_Handle.md"))]#[::unity2::class(namespace="App",name="GameSaveDataHeaderReader.Handle")]#[parent(crate::system::object::Object)]pub struct GameSaveDataHeaderReader_Handle{}
@@ -55,45 +55,6 @@ pub fn failed()->Self{Self{value:3}
 
 #[cfg(feature = "app-gamesavedataheaderreader-types")]
 pub use __types::*;
-
-#[cfg(feature="app-gamesavedataheaderreader")]impl GameSaveDataHeaderReader_ProcRead{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,handle:impl::core::convert::Into<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6bad0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)::core::convert::Into::into(handle))}
-}
-}
-
-#[cfg(feature="app-gamesavedataheaderreader")]pub trait IGameSaveDataHeaderReader_ProcReadMethods:IGameSaveDataHeaderReader_ProcRead{#[doc="`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]fn ctor(self,handle:impl::core::convert::Into<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)->(){unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6be40usize)as*mut u8,();
-(GameSaveDataHeaderReader_ProcRead)__receiver,(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)::core::convert::Into::into(handle))}
-}
-#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6be80usize)as*mut u8,();
-(GameSaveDataHeaderReader_ProcRead)__receiver)}
-}
-#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6bfe0usize)as*mut u8,bool;
-(GameSaveDataHeaderReader_ProcRead)__receiver)}
-}
-#[doc="`Result()` overload"]fn result(self,)->(){unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6c000usize)as*mut u8,();
-(GameSaveDataHeaderReader_ProcRead)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamesavedataheaderreader")]impl<__T:IGameSaveDataHeaderReader_ProcRead>IGameSaveDataHeaderReader_ProcReadMethods for __T{}
-
-#[cfg(feature="app-gamesavedataheaderreader")]impl GameSaveDataHeaderReader_ProcRead{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gamesavedataheaderreader")]impl GameSaveDataHeaderReader_ProcRead{#[doc="`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]pub fn new(handle:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameSaveDataHeaderReader_ProcRead), ::core::stringify!(new),));
- <Self as IGameSaveDataHeaderReader_ProcReadMethods> ::ctor(this,handle);
-this}
-}
 
 #[cfg(feature="app-gamesavedataheaderreader")]pub trait IGameSaveDataHeaderReader_HandleListMethods:IGameSaveDataHeaderReader_HandleList{#[doc="`AddAndReadAsync(crate::app::gamesavedata::GameSaveData_Types)` overload"]fn add_and_read_async(self,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>)->(){unsafe{let __receiver= <GameSaveDataHeaderReader_HandleList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6b910usize)as*mut u8,();
@@ -163,6 +124,45 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(GameSaveDataHeaderReader), ::core::stringify!(new),));
  <Self as IGameSaveDataHeaderReaderMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gamesavedataheaderreader")]impl GameSaveDataHeaderReader_ProcRead{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,handle:impl::core::convert::Into<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6bad0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)::core::convert::Into::into(handle))}
+}
+}
+
+#[cfg(feature="app-gamesavedataheaderreader")]pub trait IGameSaveDataHeaderReader_ProcReadMethods:IGameSaveDataHeaderReader_ProcRead{#[doc="`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` overload"]fn ctor(self,handle:impl::core::convert::Into<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)->(){unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6be40usize)as*mut u8,();
+(GameSaveDataHeaderReader_ProcRead)__receiver,(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)::core::convert::Into::into(handle))}
+}
+#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6be80usize)as*mut u8,();
+(GameSaveDataHeaderReader_ProcRead)__receiver)}
+}
+#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6bfe0usize)as*mut u8,bool;
+(GameSaveDataHeaderReader_ProcRead)__receiver)}
+}
+#[doc="`Result()` overload"]fn result(self,)->(){unsafe{let __receiver= <GameSaveDataHeaderReader_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6c000usize)as*mut u8,();
+(GameSaveDataHeaderReader_ProcRead)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesavedataheaderreader")]impl<__T:IGameSaveDataHeaderReader_ProcRead>IGameSaveDataHeaderReader_ProcReadMethods for __T{}
+
+#[cfg(feature="app-gamesavedataheaderreader")]impl GameSaveDataHeaderReader_ProcRead{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gamesavedataheaderreader")]impl GameSaveDataHeaderReader_ProcRead{#[doc="`.ctor(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)` — overload selector"]pub fn new(handle:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataHeaderReader_ProcRead), ::core::stringify!(new),));
+ <Self as IGameSaveDataHeaderReader_ProcReadMethods> ::ctor(this,handle);
 this}
 }
 
@@ -282,15 +282,15 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GameSaveDataHeaderReader_States;
-    pub use super::GameSaveDataHeaderReader_ProcRead;
-    pub use super::IGameSaveDataHeaderReader_ProcRead;
-    pub use super::IGameSaveDataHeaderReader_ProcReadMethods;
     pub use super::GameSaveDataHeaderReader_HandleList;
     pub use super::IGameSaveDataHeaderReader_HandleList;
     pub use super::IGameSaveDataHeaderReader_HandleListMethods;
     pub use super::GameSaveDataHeaderReader;
     pub use super::IGameSaveDataHeaderReader;
     pub use super::IGameSaveDataHeaderReaderMethods;
+    pub use super::GameSaveDataHeaderReader_ProcRead;
+    pub use super::IGameSaveDataHeaderReader_ProcRead;
+    pub use super::IGameSaveDataHeaderReader_ProcReadMethods;
     pub use super::GameSaveDataHeaderReader_Handle;
     pub use super::IGameSaveDataHeaderReader_Handle;
     pub use super::IGameSaveDataHeaderReader_HandleMethods;

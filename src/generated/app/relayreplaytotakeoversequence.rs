@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence.md"))]#[::unity2::class(namespace="App",name="RelayReplayToTakeOverSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayreplaytotakeoversequence::RelayReplayToTakeOverSequence>)]pub struct RelayReplayToTakeOverSequence{#[offset(120)]#[rename(name="m_SetupFieldFunc")]pub m_setup_field_func:crate::system::action::Action,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayReplayToTakeOverSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for RelayReplayToTakeOverSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RelayReplayToTakeOverSequence.Label";
@@ -34,6 +31,9 @@ impl RelayReplayToTakeOverSequence_Label{pub fn skip_load()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaytotakeoversequence/RelayReplayToTakeOverSequence.md"))]#[::unity2::class(namespace="App",name="RelayReplayToTakeOverSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayreplaytotakeoversequence::RelayReplayToTakeOverSequence>)]pub struct RelayReplayToTakeOverSequence{#[offset(120)]#[rename(name="m_SetupFieldFunc")]pub m_setup_field_func:crate::system::action::Action,}
 
 }
 
@@ -97,10 +97,10 @@ this}
 #[cfg(feature = "app-relayreplaytotakeoversequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RelayReplayToTakeOverSequence_Label;
     pub use super::RelayReplayToTakeOverSequence;
     pub use super::IRelayReplayToTakeOverSequence;
     pub use super::IRelayReplayToTakeOverSequenceMethods;
-    pub use super::RelayReplayToTakeOverSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -11,10 +11,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage_ProcCloseWait.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage.ProcCloseWait")]#[parent(crate::app::procinst::ProcInst)]pub struct NetWaitMessage_ProcCloseWait{#[offset(112)]#[rename(name="m_IsSuccess")]pub m_is_success:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage")]#[parent(crate::system::object::Object)]pub struct NetWaitMessage{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage_ProcCloseWait.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage.ProcCloseWait")]#[parent(crate::app::procinst::ProcInst)]pub struct NetWaitMessage_ProcCloseWait{#[offset(112)]#[rename(name="m_IsSuccess")]pub m_is_success:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage_ProcOpen.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage.ProcOpen")]#[parent(crate::app::procinst::ProcInst)]pub struct NetWaitMessage_ProcOpen{}
@@ -23,35 +23,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-netwaitmessage-types")]
 pub use __types::*;
-
-#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcCloseWait{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x209e300usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_success))}
-}
-}
-
-#[cfg(feature="app-netwaitmessage")]pub trait INetWaitMessage_ProcCloseWaitMethods:INetWaitMessage_ProcCloseWait{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_success:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NetWaitMessage_ProcCloseWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209e2c0usize)as*mut u8,();
-(NetWaitMessage_ProcCloseWait)__receiver,(bool)::core::convert::Into::into(is_success))}
-}
-#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <NetWaitMessage_ProcCloseWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209e2f0usize)as*mut u8,();
-(NetWaitMessage_ProcCloseWait)__receiver)}
-}
-}
-
-#[cfg(feature="app-netwaitmessage")]impl<__T:INetWaitMessage_ProcCloseWait>INetWaitMessage_ProcCloseWaitMethods for __T{}
-
-#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcCloseWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcCloseWait{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_success:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NetWaitMessage_ProcCloseWait), ::core::stringify!(new),));
- <Self as INetWaitMessage_ProcCloseWaitMethods> ::ctor(this,is_success);
-this}
-}
 
 #[cfg(feature="app-netwaitmessage")]impl NetWaitMessage{#[doc="`Open(crate::app::procinst::ProcInst)` overload"]pub fn open(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f12150usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -83,6 +54,35 @@ pub fn close_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn close_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn close_wait_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn close_wait_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcCloseWait{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x209e300usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_success))}
+}
+}
+
+#[cfg(feature="app-netwaitmessage")]pub trait INetWaitMessage_ProcCloseWaitMethods:INetWaitMessage_ProcCloseWait{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_success:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NetWaitMessage_ProcCloseWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209e2c0usize)as*mut u8,();
+(NetWaitMessage_ProcCloseWait)__receiver,(bool)::core::convert::Into::into(is_success))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <NetWaitMessage_ProcCloseWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209e2f0usize)as*mut u8,();
+(NetWaitMessage_ProcCloseWait)__receiver)}
+}
+}
+
+#[cfg(feature="app-netwaitmessage")]impl<__T:INetWaitMessage_ProcCloseWait>INetWaitMessage_ProcCloseWaitMethods for __T{}
+
+#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcCloseWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcCloseWait{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_success:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NetWaitMessage_ProcCloseWait), ::core::stringify!(new),));
+ <Self as INetWaitMessage_ProcCloseWaitMethods> ::ctor(this,is_success);
+this}
 }
 
 #[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcOpen{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x209e5e0usize)as*mut u8,();
@@ -117,11 +117,11 @@ this}
 #[cfg(feature = "app-netwaitmessage")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NetWaitMessage;
+    pub use super::INetWaitMessage;
     pub use super::NetWaitMessage_ProcCloseWait;
     pub use super::INetWaitMessage_ProcCloseWait;
     pub use super::INetWaitMessage_ProcCloseWaitMethods;
-    pub use super::NetWaitMessage;
-    pub use super::INetWaitMessage;
     pub use super::NetWaitMessage_ProcOpen;
     pub use super::INetWaitMessage_ProcOpen;
     pub use super::INetWaitMessage_ProcOpenMethods;

@@ -9,18 +9,36 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectEntry")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectEntry{#[offset(16)]#[rename(name="Key")]pub key: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Value")]pub value: ::unity2::IlInstance,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectKeysEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectKeysEnumerator")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectKeysEnumerator{#[offset(16)]#[rename(name="_pos")]pub pos:i32, #[offset(24)]#[rename(name="_coll")]pub coll:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase, #[offset(32)]#[rename(name="_version")]pub version:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase{#[offset(16)]#[rename(name="_readOnly")]pub read_only:bool, #[offset(24)]#[rename(name="_entriesArray")]pub entries_array:crate::system::collections::arraylist::ArrayList, #[offset(32)]#[rename(name="_keyComparer")]pub key_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer, #[offset(40)]#[rename(name="_entriesTable")]pub entries_table:crate::system::collections::hashtable::Hashtable, #[offset(48)]#[rename(name="_nullKeyEntry")]pub null_key_entry:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase_NameObjectEntry, #[offset(64)]#[rename(name="_version")]pub version:i32, #[offset(72)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="defaultComparer")]pub default_comparer: ::unity2::IlInstance,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectEntry")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectEntry{#[offset(16)]#[rename(name="Key")]pub key: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Value")]pub value: ::unity2::IlInstance,}
-
 }
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase-types")]
 pub use __types::*;
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectEntryMethods:INameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85bb0usize)as*mut u8,();
+(NameObjectCollectionBase_NameObjectEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl<__T:INameObjectCollectionBase_NameObjectEntry>INameObjectCollectionBase_NameObjectEntryMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,value:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameObjectCollectionBase_NameObjectEntry), ::core::stringify!(new),));
+ <Self as INameObjectCollectionBase_NameObjectEntryMethods> ::ctor(this,name,value);
+this}
+}
 
 #[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectKeysEnumeratorMethods:INameObjectCollectionBase_NameObjectKeysEnumerator{#[doc="`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"]fn ctor(self,coll:impl::core::convert::Into<crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85c00usize)as*mut u8,();
@@ -179,36 +197,18 @@ this}
 this}
 }
 
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectEntryMethods:INameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85bb0usize)as*mut u8,();
-(NameObjectCollectionBase_NameObjectEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl<__T:INameObjectCollectionBase_NameObjectEntry>INameObjectCollectionBase_NameObjectEntryMethods for __T{}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,value:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NameObjectCollectionBase_NameObjectEntry), ::core::stringify!(new),));
- <Self as INameObjectCollectionBase_NameObjectEntryMethods> ::ctor(this,name,value);
-this}
-}
-
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NameObjectCollectionBase_NameObjectEntry;
+    pub use super::INameObjectCollectionBase_NameObjectEntry;
+    pub use super::INameObjectCollectionBase_NameObjectEntryMethods;
     pub use super::NameObjectCollectionBase_NameObjectKeysEnumerator;
     pub use super::INameObjectCollectionBase_NameObjectKeysEnumerator;
     pub use super::INameObjectCollectionBase_NameObjectKeysEnumeratorMethods;
     pub use super::NameObjectCollectionBase;
     pub use super::INameObjectCollectionBase;
     pub use super::INameObjectCollectionBaseMethods;
-    pub use super::NameObjectCollectionBase_NameObjectEntry;
-    pub use super::INameObjectCollectionBase_NameObjectEntry;
-    pub use super::INameObjectCollectionBase_NameObjectEntryMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

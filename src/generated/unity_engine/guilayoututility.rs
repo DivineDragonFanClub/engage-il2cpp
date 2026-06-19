@@ -9,38 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayoututility/GUILayoutUtility_LayoutCache.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayoutUtility.LayoutCache")]#[parent(crate::system::object::Object)]pub struct GUILayoutUtility_LayoutCache{#[offset(24)]#[rename(name="topLevel")]pub top_level:crate::unity_engine::guilayoutgroup::GUILayoutGroup, #[offset(40)]#[rename(name="windows")]pub windows:crate::unity_engine::guilayoutgroup::GUILayoutGroup,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayoututility/GUILayoutUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayoutUtility")]#[parent(crate::system::object::Object)]pub struct GUILayoutUtility{#[static_field]#[rename(name="s_StoredLayouts")]pub s_stored_layouts:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::unity_engine::guilayoututility::GUILayoutUtility_LayoutCache> , #[static_field]#[rename(name="s_StoredWindows")]pub s_stored_windows:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::unity_engine::guilayoututility::GUILayoutUtility_LayoutCache> , #[static_field]#[rename(name="current")]pub current:crate::unity_engine::guilayoututility::GUILayoutUtility_LayoutCache, #[static_field]#[rename(name="kDummyRect")]pub k_dummy_rect:crate::unity_engine::rect::Rect,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayoututility/GUILayoutUtility_LayoutCache.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayoutUtility.LayoutCache")]#[parent(crate::system::object::Object)]pub struct GUILayoutUtility_LayoutCache{#[offset(24)]#[rename(name="topLevel")]pub top_level:crate::unity_engine::guilayoutgroup::GUILayoutGroup, #[offset(40)]#[rename(name="windows")]pub windows:crate::unity_engine::guilayoutgroup::GUILayoutGroup,}
 
 }
 
 #[cfg(feature = "unity_engine-guilayoututility-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-guilayoututility")]pub trait IGUILayoutUtility_LayoutCacheMethods:IGUILayoutUtility_LayoutCache{#[doc="`set_id(i32)` overload"]fn set_id(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUILayoutUtility_LayoutCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ca50usize)as*mut u8,();
-(GUILayoutUtility_LayoutCache)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(i32)` overload"]fn ctor(self,instance_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUILayoutUtility_LayoutCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ca60usize)as*mut u8,();
-(GUILayoutUtility_LayoutCache)__receiver,(i32)::core::convert::Into::into(instance_id))}
-}
-}
-
-#[cfg(feature="unity_engine-guilayoututility")]impl<__T:IGUILayoutUtility_LayoutCache>IGUILayoutUtility_LayoutCacheMethods for __T{}
-
-#[cfg(feature="unity_engine-guilayoututility")]impl GUILayoutUtility_LayoutCache{pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-guilayoututility")]impl GUILayoutUtility_LayoutCache{#[doc="`.ctor(i32)` — overload selector"]pub fn new(instance_id:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GUILayoutUtility_LayoutCache), ::core::stringify!(new),));
- <Self as IGUILayoutUtility_LayoutCacheMethods> ::ctor(this,instance_id);
-this}
-}
 
 #[cfg(feature="unity_engine-guilayoututility")]impl GUILayoutUtility{#[doc="`Internal_GetWindowRect(i32)` overload"]pub fn internal_get_window_rect(window_id:impl::core::convert::Into<i32>)->crate::unity_engine::rect::Rect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c49980usize)as*mut u8,crate::unity_engine::rect::Rect;
 (i32)::core::convert::Into::into(window_id))}
@@ -122,14 +99,37 @@ pub fn internal_get_window_rect_injected_method_info()-> & 'static::unity2::il2c
 pub fn internal_move_window_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 }
 
+#[cfg(feature="unity_engine-guilayoututility")]pub trait IGUILayoutUtility_LayoutCacheMethods:IGUILayoutUtility_LayoutCache{#[doc="`set_id(i32)` overload"]fn set_id(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUILayoutUtility_LayoutCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ca50usize)as*mut u8,();
+(GUILayoutUtility_LayoutCache)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor(self,instance_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUILayoutUtility_LayoutCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ca60usize)as*mut u8,();
+(GUILayoutUtility_LayoutCache)__receiver,(i32)::core::convert::Into::into(instance_id))}
+}
+}
+
+#[cfg(feature="unity_engine-guilayoututility")]impl<__T:IGUILayoutUtility_LayoutCache>IGUILayoutUtility_LayoutCacheMethods for __T{}
+
+#[cfg(feature="unity_engine-guilayoututility")]impl GUILayoutUtility_LayoutCache{pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-guilayoututility")]impl GUILayoutUtility_LayoutCache{#[doc="`.ctor(i32)` — overload selector"]pub fn new(instance_id:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUILayoutUtility_LayoutCache), ::core::stringify!(new),));
+ <Self as IGUILayoutUtility_LayoutCacheMethods> ::ctor(this,instance_id);
+this}
+}
+
 #[cfg(feature = "unity_engine-guilayoututility")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GUILayoutUtility;
+    pub use super::IGUILayoutUtility;
     pub use super::GUILayoutUtility_LayoutCache;
     pub use super::IGUILayoutUtility_LayoutCache;
     pub use super::IGUILayoutUtility_LayoutCacheMethods;
-    pub use super::GUILayoutUtility;
-    pub use super::IGUILayoutUtility;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

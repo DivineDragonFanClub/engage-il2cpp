@@ -19,6 +19,12 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainSEManager.md"))]#[::unity2::class(namespace="App",name="DragonRideTargetGroup.ChainSEManager")]#[parent(crate::system::object::Object)]pub struct DragonRideTargetGroup_ChainSEManager{#[static_field]#[rename(name="cBigChainSE_Normal")]pub c_big_chain_se_normal: ::unity2::Il2CppString, #[static_field]#[rename(name="cBigChainSE_Special")]pub c_big_chain_se_special: ::unity2::Il2CppString, #[static_field]#[rename(name="cBigChainSE_Double")]pub c_big_chain_se_double: ::unity2::Il2CppString, #[offset(16)]#[rename(name="cLinkChainSE")]pub c_link_chain_se: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="cLinkSETable")]pub c_link_se_table: ::unity2::Array<i32> , #[offset(32)]#[rename(name="m_RootID")]pub m_root_id: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_ChainCount")]pub m_chain_count:i32, #[offset(44)]#[rename(name="m_IsLink")]pub m_is_link:bool, #[offset(45)]#[rename(name="m_IsSpecial")]pub m_is_special:bool, #[offset(46)]#[rename(name="m_IsDoubleEx")]pub m_is_double_ex:bool, #[offset(48)]#[rename(name="m_AliveLimitCounter")]pub m_alive_limit_counter:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetgroup/DragonRideTargetGroup.md"))]#[::unity2::class(namespace="App",name="DragonRideTargetGroup")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideTargetGroup{#[static_field]#[rename(name="cTargetPrefabPath")]pub c_target_prefab_path: ::unity2::Il2CppString, #[offset(28)]#[rename(name="m_BillboardType")]pub m_billboard_type:crate::app::dragon_ride::billboardtypes::BillboardTypes, #[offset(32)]#[rename(name="m_MapWidth")]pub m_map_width:i32, #[offset(36)]#[rename(name="m_MapHeight")]pub m_map_height:i32, #[offset(56)]#[rename(name="m_ChainIntervalTimer")]pub m_chain_interval_timer:f32, #[offset(64)]#[rename(name="m_GameCamera")]pub m_game_camera:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_CameraScript")]pub m_camera_script:crate::app::dragonridecamera::DragonRideCamera, #[offset(80)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig, #[offset(88)]#[rename(name="m_TargetSpace")]pub m_target_space:crate::unity_engine::vector2::Vector2, #[offset(96)]#[rename(name="m_ChainPlayer")]pub m_chain_player:crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainSEManager> , #[offset(104)]#[rename(name="m_ChainChecker")]pub m_chain_checker:crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainParam> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainParam.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DragonRideTargetGroup_ChainParam{pub script:crate::app::dragonridetarget::DragonRideTarget,pub is_link:bool,pub is_double_ex:bool,}
 impl::unity2::ClassIdentity for DragonRideTargetGroup_ChainParam{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DragonRideTargetGroup.ChainParam";
@@ -28,12 +34,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for DragonRideTargetGroup_ChainParam{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainSEManager.md"))]#[::unity2::class(namespace="App",name="DragonRideTargetGroup.ChainSEManager")]#[parent(crate::system::object::Object)]pub struct DragonRideTargetGroup_ChainSEManager{#[static_field]#[rename(name="cBigChainSE_Normal")]pub c_big_chain_se_normal: ::unity2::Il2CppString, #[static_field]#[rename(name="cBigChainSE_Special")]pub c_big_chain_se_special: ::unity2::Il2CppString, #[static_field]#[rename(name="cBigChainSE_Double")]pub c_big_chain_se_double: ::unity2::Il2CppString, #[offset(16)]#[rename(name="cLinkChainSE")]pub c_link_chain_se: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="cLinkSETable")]pub c_link_se_table: ::unity2::Array<i32> , #[offset(32)]#[rename(name="m_RootID")]pub m_root_id: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_ChainCount")]pub m_chain_count:i32, #[offset(44)]#[rename(name="m_IsLink")]pub m_is_link:bool, #[offset(45)]#[rename(name="m_IsSpecial")]pub m_is_special:bool, #[offset(46)]#[rename(name="m_IsDoubleEx")]pub m_is_double_ex:bool, #[offset(48)]#[rename(name="m_AliveLimitCounter")]pub m_alive_limit_counter:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetgroup/DragonRideTargetGroup.md"))]#[::unity2::class(namespace="App",name="DragonRideTargetGroup")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideTargetGroup{#[static_field]#[rename(name="cTargetPrefabPath")]pub c_target_prefab_path: ::unity2::Il2CppString, #[offset(28)]#[rename(name="m_BillboardType")]pub m_billboard_type:crate::app::dragon_ride::billboardtypes::BillboardTypes, #[offset(32)]#[rename(name="m_MapWidth")]pub m_map_width:i32, #[offset(36)]#[rename(name="m_MapHeight")]pub m_map_height:i32, #[offset(56)]#[rename(name="m_ChainIntervalTimer")]pub m_chain_interval_timer:f32, #[offset(64)]#[rename(name="m_GameCamera")]pub m_game_camera:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_CameraScript")]pub m_camera_script:crate::app::dragonridecamera::DragonRideCamera, #[offset(80)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig, #[offset(88)]#[rename(name="m_TargetSpace")]pub m_target_space:crate::unity_engine::vector2::Vector2, #[offset(96)]#[rename(name="m_ChainPlayer")]pub m_chain_player:crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainSEManager> , #[offset(104)]#[rename(name="m_ChainChecker")]pub m_chain_checker:crate::system::collections::generic::list_1::List_1<crate::app::dragonridetargetgroup::DragonRideTargetGroup_ChainParam> ,}
 
 }
 
@@ -256,13 +256,13 @@ this}
 #[cfg(feature = "app-dragonridetargetgroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideTargetGroup_ChainParam;
     pub use super::DragonRideTargetGroup_ChainSEManager;
     pub use super::IDragonRideTargetGroup_ChainSEManager;
     pub use super::IDragonRideTargetGroup_ChainSEManagerMethods;
     pub use super::DragonRideTargetGroup;
     pub use super::IDragonRideTargetGroup;
     pub use super::IDragonRideTargetGroupMethods;
+    pub use super::DragonRideTargetGroup_ChainParam;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

@@ -29,6 +29,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusReportSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for VersusReportSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="VersusReportSequence.Label";
@@ -50,18 +53,38 @@ pub fn end()->Self{Self{value:2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusReportSequence{#[offset(112)]#[rename(name="m_Content")]pub m_content:crate::app::versusviolationtopcontent::VersusViolationTopContent, #[offset(120)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(128)]#[rename(name="m_MapTexture")]pub m_map_texture:crate::unity_engine::texture2d::Texture2D, #[offset(144)]#[rename(name="m_Reason")]pub m_reason: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_ReasonDisplay")]pub m_reason_display: ::unity2::Il2CppString, #[offset(160)]#[rename(name="m_IsReported")]pub m_is_reported:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct VersusReportSequence_ConfirmDialog{#[offset(216)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::action::Action,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-versusreportsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6790usize)as*mut u8,();
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(action))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f67d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes>IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,action);
+this}
+}
 
 #[cfg(feature="app-versusreportsequence")]impl VersusReportSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b2630usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -162,29 +185,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6720usize)as*mut u8,();
-(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo)__receiver,(crate::system::action::Action)::core::convert::Into::into(action))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6760usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo>IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
- <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,action);
-this}
-}
-
 #[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b61ec0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(decide_callback),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
 }
@@ -214,45 +214,45 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6790usize)as*mut u8,();
-(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(action))}
+#[cfg(feature="app-versusreportsequence")]pub trait IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6720usize)as*mut u8,();
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo)__receiver,(crate::system::action::Action)::core::convert::Into::into(action))}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f67d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6760usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo)__receiver)}
 }
 }
 
-#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes>IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
+#[cfg(feature="app-versusreportsequence")]impl<__T:IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo>IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods for __T{}
 
-#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versusreportsequence")]impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
- <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,action);
+ failed to instantiate", ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,action);
 this}
 }
 
 #[cfg(feature = "app-versusreportsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods;
     pub use super::VersusReportSequence_Label;
     pub use super::VersusReportSequence;
     pub use super::IVersusReportSequence;
     pub use super::IVersusReportSequenceMethods;
-    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods;
     pub use super::VersusReportSequence_ConfirmDialog;
     pub use super::IVersusReportSequence_ConfirmDialog;
     pub use super::IVersusReportSequence_ConfirmDialogMethods;
-    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods;
+    pub use super::VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

@@ -39,78 +39,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusTopMenu_Result2{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_VersusTopMenu_Result2{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.VersusTopMenu.Result2";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VersusSequence_VersusTopMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl VersusSequence_VersusTopMenu_Result2{pub fn casual()->Self{Self{value:0}
-}
-pub fn ranked()->Self{Self{value:1}
-}
-pub fn end()->Self{Self{value:2}
-}
-pub fn top()->Self{Self{value:0}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog_SelectMenu.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_ResultDialog_SelectMenu{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_ResultDialog_SelectMenu{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.ResultDialog.SelectMenu";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VersusSequence_ResultDialog_SelectMenu{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl VersusSequence_ResultDialog_SelectMenu{pub fn replay()->Self{Self{value:0}
-}
-pub fn result()->Self{Self{value:1}
-}
-pub fn back()->Self{Self{value:2}
-}
-pub fn end()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.VersusSequenceNet.SelectReplaySequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusYesNoDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusYesNoDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct VersusSequence_VersusYesNoDialog_YesItem{#[offset(112)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> , #[offset(128)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendRankedMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusFriendMenu.FriendRankedMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusFriendMenu_FriendRankedMenuItem{#[offset(104)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(112)]#[rename(name="m_FriendNumber")]pub m_friend_number:i32, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusTopMenu_CasualMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusTopMenu.CasualMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusTopMenu_CasualMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.SelectReplayMetaMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{#[offset(32)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(40)]#[rename(name="m_MetaPath")]pub m_meta_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_SlotId")]pub m_slot_id:u16, #[offset(56)]#[rename(name="m_ACallback")]pub m_a_callback:crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback, #[offset(64)]#[rename(name="m_IsUpload")]pub m_is_upload:bool, #[offset(65)]#[rename(name="m_IsPlay")]pub m_is_play:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusProfileMenu_VersusProfileMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusProfileMenu.VersusProfileMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusProfileMenu_VersusProfileMenuItem{#[offset(100)]#[rename(name="m_Index")]pub m_index:i32, #[offset(104)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard, #[offset(112)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_PrincipalID")]pub m_principal_id:u64,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ResultDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusSequence_ResultDialog_DecideEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusFriendMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusFriendMenu{#[static_field]#[rename(name="c_FriendShowMax")]pub c_friend_show_max:i32, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusSequenceNet_UploadReplaySequence_Label{pub value:i32,}
@@ -129,119 +61,61 @@ pub fn end()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ProfileDownloadSequence.DownloadYesNoDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_IVersusSequenceBase.md"))]#[::unity2::class(namespace="App",name="VersusSequence.IVersusSequenceBase")]pub struct VersusSequence_IVersusSequenceBase{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendCasualMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusFriendMenu.FriendCasualMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusFriendMenu_FriendCasualMenuItem{#[offset(104)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(112)]#[rename(name="m_FriendNumber")]pub m_friend_number:i32, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_RandomMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.RandomMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_RandomMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.VersusSequenceNet.UploadEditMapSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_ProfileMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.ProfileMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_ProfileMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_LocalRate.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.LocalRate")]#[parent(crate::system::object::Object)]pub struct VersusSequence_VersusSequenceLocal_LocalRate{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_MapEditMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu.MapEditMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusRankedMenu_MapEditMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_MetaDataPack.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.MetaDataPack")]#[parent(crate::system::object::Object)]pub struct VersusSequence_VersusSequenceLocal_MetaDataPack{#[offset(16)]#[rename(name="path")]pub path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="data")]pub data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_StartMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu.StartMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusRankedMenu_StartMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_ResultMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu.ResultMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusRankedMenu_ResultMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusYesNoDialog_NoItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusYesNoDialog.NoItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct VersusSequence_VersusYesNoDialog_NoItem{#[offset(112)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusProfileMenu_VersusProfileMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusProfileMenu.VersusProfileMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusProfileMenu_VersusProfileMenuItem{#[offset(100)]#[rename(name="m_Index")]pub m_index:i32, #[offset(104)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard, #[offset(112)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_PrincipalID")]pub m_principal_id:u64,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_StartMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu.StartMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusRankedMenu_StartMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusProfileMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusProfileMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusProfileMenu{#[static_field]#[rename(name="c_FriendShowMax")]pub c_friend_show_max:i32, #[static_field]#[rename(name="s_InitialSelected")]pub s_initial_selected:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusTopMenu_RankedMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusTopMenu.RankedMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusTopMenu_RankedMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_MapEditMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu.MapEditMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusRankedMenu_MapEditMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.SelectReplaySequence.Callback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.SelectReplayMetaMenuItem.ACallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusFriendMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusFriendMenu{#[static_field]#[rename(name="c_FriendShowMax")]pub c_friend_show_max:i32, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_MockBattleMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu.MockBattleMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusRankedMenu_MockBattleMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.DownloadMetaFromDataCodeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_DataType")]pub m_data_type:crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet")]#[parent(crate::app::versussequence::VersusSequence_VersusSequenceBase_1<crate::app::versussequence::VersusSequence_VersusSequenceNet>)]pub struct VersusSequence_VersusSequenceNet{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusMatchingMenu{#[static_field]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::versustopmenucontent::VersusTopMenuContent, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ProfileDownloadSequence.DownloadYesNoDialog")]#[parent(crate::system::object::Object)]pub struct VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_FriendMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.FriendMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_FriendMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_ProfileMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.ProfileMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_ProfileMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileDownloadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_ProfileDownloadSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_ProfileDownloadSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.ProfileDownloadSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VersusSequence_ProfileDownloadSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl VersusSequence_ProfileDownloadSequence_Label{pub fn sanitize()->Self{Self{value:0}
-}
-pub fn save()->Self{Self{value:1}
-}
-pub fn end()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_IVersusSequenceBase.md"))]#[::unity2::class(namespace="App",name="VersusSequence.IVersusSequenceBase")]pub struct VersusSequence_IVersusSequenceBase{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusTopMenu_RankedMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusTopMenu.RankedMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusTopMenu_RankedMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusYesNoDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusYesNoDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct VersusSequence_VersusYesNoDialog_YesItem{#[offset(112)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> , #[offset(128)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusYesNoDialog_NoItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusYesNoDialog.NoItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct VersusSequence_VersusYesNoDialog_NoItem{#[offset(112)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusYesNoDialog.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct VersusSequence_VersusYesNoDialog{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusMatchingMenu_Result2{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_VersusMatchingMenu_Result2{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.VersusMatchingMenu.Result2";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusRankedMenu_Result2{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_VersusRankedMenu_Result2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.VersusRankedMenu.Result2";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for VersusSequence_VersusMatchingMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for VersusSequence_VersusRankedMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl VersusSequence_VersusMatchingMenu_Result2{pub fn random()->Self{Self{value:0}
+impl VersusSequence_VersusRankedMenu_Result2{pub fn start()->Self{Self{value:0}
 }
-pub fn friend()->Self{Self{value:1}
+pub fn map_edit()->Self{Self{value:1}
 }
-pub fn code()->Self{Self{value:2}
+pub fn result()->Self{Self{value:2}
 }
-pub fn profile()->Self{Self{value:3}
+pub fn mock_battle()->Self{Self{value:3}
 }
 pub fn end()->Self{Self{value:4}
 }
@@ -250,59 +124,7 @@ pub fn top()->Self{Self{value:0}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_CodeMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.CodeMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_CodeMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal")]#[parent(crate::app::versussequence::VersusSequence_VersusSequenceBase_1<crate::app::versussequence::VersusSequence_VersusSequenceLocal>)]pub struct VersusSequence_VersusSequenceLocal{#[offset(248)]#[rename(name="m_RootPath")]pub m_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="RateTop")]pub rate_top:i32, #[static_field]#[rename(name="RateBottom")]pub rate_bottom:i32, #[offset(256)]#[rename(name="m_MyCasualMetaDataPath")]pub m_my_casual_meta_data_path: ::unity2::Il2CppString, #[offset(264)]#[rename(name="m_MyEditDataPath")]pub m_my_edit_data_path: ::unity2::Il2CppString, #[offset(272)]#[rename(name="m_SelectedReplayMetaPath")]pub m_selected_replay_meta_path: ::unity2::Il2CppString, #[offset(280)]#[rename(name="m_IsSucceededLastUpload")]pub m_is_succeeded_last_upload:bool, #[offset(282)]#[rename(name="m_LastReplayGetSlot")]pub m_last_replay_get_slot:u16,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceBase_1.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceBase`1")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<T0>)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct VersusSequence_VersusSequenceBase_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_IsStartedCasual")]pub m_is_started_casual:bool, #[rename(name="m_SearchCasualResults")]pub m_search_casual_results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> , #[rename(name="m_SearchFriendCasualResults")]pub m_search_friend_casual_results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> , #[rename(name="m_ProfileCasualResults")]pub m_profile_casual_results:crate::app::nexversus::NexVersus_TargetSlotList, #[rename(name="m_IsStartedRanked")]pub m_is_started_ranked:bool, #[rename(name="m_SearchRankedResults")]pub m_search_ranked_results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> , #[rename(name="m_SearchFriendRankedResults")]pub m_search_friend_ranked_results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> , #[rename(name="m_ProfileRankedResults")]pub m_profile_ranked_results:crate::app::nexversus::NexVersus_TargetSlotList, #[rename(name="m_MyEditDataId")]pub m_my_edit_data_id:u64, #[rename(name="m_IsReported")]pub m_is_reported:bool, #[rename(name="m_IsShowReportedWindow")]pub m_is_show_reported_window:bool, #[static_field]#[rename(name="s_RateDataType")]pub s_rate_data_type:u16, #[static_field]#[rename(name="m_MyCasualDataCode")]pub m_my_casual_data_code: ::unity2::Il2CppString, #[rename(name="m_SelectedReplayMetaData")]pub m_selected_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[rename(name="m_ReplayResult")]pub m_replay_result:crate::app::versus::Versus_MapResult, #[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[rename(name="m_MyInfo")]pub m_my_info:crate::app::versusmyinfocontent::VersusMyInfoContent, #[rename(name="m_IsInitialized")]pub m_is_initialized:bool, #[rename(name="m_TargetDataCode")]pub m_target_data_code: ::unity2::Il2CppString, #[rename(name="m_ProfileTarget")]pub m_profile_target:crate::app::profilecard::ProfileCard, #[static_field]#[rename(name="MaxGettableFriendCount")]pub max_gettable_friend_count:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusProfileMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusProfileMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusProfileMenu{#[static_field]#[rename(name="c_FriendShowMax")]pub c_friend_show_max:i32, #[static_field]#[rename(name="s_InitialSelected")]pub s_initial_selected:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusCasualMenu_SelectMapMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusCasualMenu.SelectMapMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusCasualMenu_SelectMapMenuItem{#[offset(100)]#[rename(name="m_MapNumber")]pub m_map_number:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.VersusSequenceNet.DownloadMetaFromDataCodeSequence.DataType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{pub fn casual()->Self{Self{value:0}
-}
-pub fn ranked()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusTopMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusTopMenu{#[static_field]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::versustopmenucontent::VersusTopMenuContent, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusCasualMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusCasualMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusCasualMenu{#[static_field]#[rename(name="c_MapMax")]pub c_map_max:i32, #[static_field]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::versusmapmenucontent::VersusMapMenuContent, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileUploadSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ProfileUploadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_ProfileUploadSequence{#[offset(112)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.SelectReplaySequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback, #[offset(120)]#[rename(name="m_ResultData")]pub m_result_data:crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ResultDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct VersusSequence_ResultDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.UploadEditMapSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence{#[offset(112)]#[rename(name="m_IsNewUpload")]pub m_is_new_upload:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadReplaySequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.UploadReplaySequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_UploadReplaySequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(120)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverreplaydata::VersusServerReplayData, #[offset(128)]#[rename(name="m_OpponentPrincipalId")]pub m_opponent_principal_id:u64, #[offset(136)]#[rename(name="m_OpponentMetaData")]pub m_opponent_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(144)]#[rename(name="m_TargetMetaData")]pub m_target_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusMatchingMenu{#[static_field]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::versustopmenucontent::VersusTopMenuContent, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ResultDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusSequence_ResultDialog_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_Label{pub value:i32,}
@@ -377,25 +199,44 @@ pub fn end()->Self{Self{value:29}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.SelectReplaySequence.SelectReplayMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{#[offset(32)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(40)]#[rename(name="m_Callback")]pub m_callback:crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback, #[offset(48)]#[rename(name="m_Index")]pub m_index:i32, #[offset(52)]#[rename(name="m_IsUpload")]pub m_is_upload:bool, #[offset(53)]#[rename(name="m_IsPlay")]pub m_is_play:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog_AssistItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ResultDialog.AssistItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct VersusSequence_ResultDialog_AssistItem{#[offset(112)]#[rename(name="m_SelectId")]pub m_select_id:crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusRankedMenu_Result2{pub value:i32,}
-impl::unity2::ClassIdentity for VersusSequence_VersusRankedMenu_Result2{const NAMESPACE: &'static str="App";
-const NAME: &'static str="VersusSequence.VersusRankedMenu.Result2";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendRankedMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusFriendMenu.FriendRankedMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusFriendMenu_FriendRankedMenuItem{#[offset(104)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(112)]#[rename(name="m_FriendNumber")]pub m_friend_number:i32, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.VersusSequenceNet.SelectReplaySequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for VersusSequence_VersusRankedMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl VersusSequence_VersusRankedMenu_Result2{pub fn start()->Self{Self{value:0}
+impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Label{pub fn error()->Self{Self{value:0}
 }
-pub fn map_edit()->Self{Self{value:1}
+pub fn end()->Self{Self{value:1}
 }
-pub fn result()->Self{Self{value:2}
 }
-pub fn mock_battle()->Self{Self{value:3}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusMatchingMenu_Result2{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_VersusMatchingMenu_Result2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.VersusMatchingMenu.Result2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusSequence_VersusMatchingMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusSequence_VersusMatchingMenu_Result2{pub fn random()->Self{Self{value:0}
+}
+pub fn friend()->Self{Self{value:1}
+}
+pub fn code()->Self{Self{value:2}
+}
+pub fn profile()->Self{Self{value:3}
 }
 pub fn end()->Self{Self{value:4}
 }
@@ -404,100 +245,183 @@ pub fn top()->Self{Self{value:0}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_DebugPersistentMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.DebugPersistentMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct VersusSequence_DebugPersistentMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusCasualMenu_SelectMapMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusCasualMenu.SelectMapMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusCasualMenu_SelectMapMenuItem{#[offset(100)]#[rename(name="m_MapNumber")]pub m_map_number:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog_AssistItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ResultDialog.AssistItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct VersusSequence_ResultDialog_AssistItem{#[offset(112)]#[rename(name="m_SelectId")]pub m_select_id:crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu_MockBattleMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu.MockBattleMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusRankedMenu_MockBattleMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal")]#[parent(crate::app::versussequence::VersusSequence_VersusSequenceBase_1<crate::app::versussequence::VersusSequence_VersusSequenceLocal>)]pub struct VersusSequence_VersusSequenceLocal{#[offset(248)]#[rename(name="m_RootPath")]pub m_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="RateTop")]pub rate_top:i32, #[static_field]#[rename(name="RateBottom")]pub rate_bottom:i32, #[offset(256)]#[rename(name="m_MyCasualMetaDataPath")]pub m_my_casual_meta_data_path: ::unity2::Il2CppString, #[offset(264)]#[rename(name="m_MyEditDataPath")]pub m_my_edit_data_path: ::unity2::Il2CppString, #[offset(272)]#[rename(name="m_SelectedReplayMetaPath")]pub m_selected_replay_meta_path: ::unity2::Il2CppString, #[offset(280)]#[rename(name="m_IsSucceededLastUpload")]pub m_is_succeeded_last_upload:bool, #[offset(282)]#[rename(name="m_LastReplayGetSlot")]pub m_last_replay_get_slot:u16,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileUploadSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ProfileUploadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_ProfileUploadSequence{#[offset(112)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.DownloadMetaFromDataCodeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_DataType")]pub m_data_type:crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusTopMenu_Result2{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_VersusTopMenu_Result2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.VersusTopMenu.Result2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusSequence_VersusTopMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusSequence_VersusTopMenu_Result2{pub fn casual()->Self{Self{value:0}
+}
+pub fn ranked()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+pub fn top()->Self{Self{value:0}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.SelectReplaySequence.Callback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ResultDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct VersusSequence_ResultDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceBase_1.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceBase`1")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<T0>)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct VersusSequence_VersusSequenceBase_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_IsStartedCasual")]pub m_is_started_casual:bool, #[rename(name="m_SearchCasualResults")]pub m_search_casual_results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> , #[rename(name="m_SearchFriendCasualResults")]pub m_search_friend_casual_results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> , #[rename(name="m_ProfileCasualResults")]pub m_profile_casual_results:crate::app::nexversus::NexVersus_TargetSlotList, #[rename(name="m_IsStartedRanked")]pub m_is_started_ranked:bool, #[rename(name="m_SearchRankedResults")]pub m_search_ranked_results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> , #[rename(name="m_SearchFriendRankedResults")]pub m_search_friend_ranked_results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> , #[rename(name="m_ProfileRankedResults")]pub m_profile_ranked_results:crate::app::nexversus::NexVersus_TargetSlotList, #[rename(name="m_MyEditDataId")]pub m_my_edit_data_id:u64, #[rename(name="m_IsReported")]pub m_is_reported:bool, #[rename(name="m_IsShowReportedWindow")]pub m_is_show_reported_window:bool, #[static_field]#[rename(name="s_RateDataType")]pub s_rate_data_type:u16, #[static_field]#[rename(name="m_MyCasualDataCode")]pub m_my_casual_data_code: ::unity2::Il2CppString, #[rename(name="m_SelectedReplayMetaData")]pub m_selected_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[rename(name="m_ReplayResult")]pub m_replay_result:crate::app::versus::Versus_MapResult, #[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[rename(name="m_MyInfo")]pub m_my_info:crate::app::versusmyinfocontent::VersusMyInfoContent, #[rename(name="m_IsInitialized")]pub m_is_initialized:bool, #[rename(name="m_TargetDataCode")]pub m_target_data_code: ::unity2::Il2CppString, #[rename(name="m_ProfileTarget")]pub m_profile_target:crate::app::profilecard::ProfileCard, #[static_field]#[rename(name="MaxGettableFriendCount")]pub max_gettable_friend_count:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.SelectReplaySequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback, #[offset(120)]#[rename(name="m_ResultData")]pub m_result_data:crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.UploadEditMapSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence{#[offset(112)]#[rename(name="m_IsNewUpload")]pub m_is_new_upload:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_FriendMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.FriendMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_FriendMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.SelectReplayMetaMenuItem.ACallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadReplaySequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.UploadReplaySequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_VersusSequenceNet_UploadReplaySequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(120)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverreplaydata::VersusServerReplayData, #[offset(128)]#[rename(name="m_OpponentPrincipalId")]pub m_opponent_principal_id:u64, #[offset(136)]#[rename(name="m_OpponentMetaData")]pub m_opponent_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(144)]#[rename(name="m_TargetMetaData")]pub m_target_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.VersusSequenceNet.UploadEditMapSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileDownloadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_ProfileDownloadSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_ProfileDownloadSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.ProfileDownloadSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusSequence_ProfileDownloadSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusSequence_ProfileDownloadSequence_Label{pub fn sanitize()->Self{Self{value:0}
+}
+pub fn save()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet")]#[parent(crate::app::versussequence::VersusSequence_VersusSequenceBase_1<crate::app::versussequence::VersusSequence_VersusSequenceNet>)]pub struct VersusSequence_VersusSequenceNet{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_CodeMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.CodeMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_CodeMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusTopMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusTopMenu{#[static_field]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::versustopmenucontent::VersusTopMenuContent, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusRankedMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusRankedMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusRankedMenu{#[static_field]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::versustopmenucontent::VersusTopMenuContent, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence")]#[parent(crate::system::object::Object)]pub struct VersusSequence{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusCasualMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusCasualMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusSequence_VersusCasualMenu{#[static_field]#[rename(name="c_MapMax")]pub c_map_max:i32, #[static_field]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::versusmapmenucontent::VersusMapMenuContent, #[static_field]#[rename(name="m_InitialSelected")]pub m_initial_selected:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.SelectReplayMetaMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{#[offset(32)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(40)]#[rename(name="m_MetaPath")]pub m_meta_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_SlotId")]pub m_slot_id:u16, #[offset(56)]#[rename(name="m_ACallback")]pub m_a_callback:crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback, #[offset(64)]#[rename(name="m_IsUpload")]pub m_is_upload:bool, #[offset(65)]#[rename(name="m_IsPlay")]pub m_is_play:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_DebugPersistentMenu.md"))]#[::unity2::class(namespace="App",name="VersusSequence.DebugPersistentMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct VersusSequence_DebugPersistentMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceNet.SelectReplaySequence.SelectReplayMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{#[offset(32)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(40)]#[rename(name="m_Callback")]pub m_callback:crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback, #[offset(48)]#[rename(name="m_Index")]pub m_index:i32, #[offset(52)]#[rename(name="m_IsUpload")]pub m_is_upload:bool, #[offset(53)]#[rename(name="m_IsPlay")]pub m_is_play:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileDownloadSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ProfileDownloadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSequence_ProfileDownloadSequence{#[offset(112)]#[rename(name="m_ReplayMetaData")]pub m_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.VersusSequenceNet.DownloadMetaFromDataCodeSequence.DataType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType{pub fn casual()->Self{Self{value:0}
+}
+pub fn ranked()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ResultDialog_SelectMenu.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSequence_ResultDialog_SelectMenu{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSequence_ResultDialog_SelectMenu{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSequence.ResultDialog.SelectMenu";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusSequence_ResultDialog_SelectMenu{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusSequence_ResultDialog_SelectMenu{pub fn replay()->Self{Self{value:0}
+}
+pub fn result()->Self{Self{value:1}
+}
+pub fn back()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendCasualMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusFriendMenu.FriendCasualMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusFriendMenu_FriendCasualMenuItem{#[offset(104)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(112)]#[rename(name="m_FriendNumber")]pub m_friend_number:i32, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_MetaDataPack.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.MetaDataPack")]#[parent(crate::system::object::Object)]pub struct VersusSequence_VersusSequenceLocal_MetaDataPack{#[offset(16)]#[rename(name="path")]pub path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="data")]pub data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence.md"))]#[::unity2::class(namespace="App",name="VersusSequence")]#[parent(crate::system::object::Object)]pub struct VersusSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusMatchingMenu_RandomMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusMatchingMenu.RandomMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusSequence_VersusMatchingMenu_RandomMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="VersusSequence.ProfileDownloadSequence.DownloadYesNoDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussequence/VersusSequence_VersusSequenceLocal_LocalRate.md"))]#[::unity2::class(namespace="App",name="VersusSequence.VersusSequenceLocal.LocalRate")]#[parent(crate::system::object::Object)]pub struct VersusSequence_VersusSequenceLocal_LocalRate{}
 
 }
 
 #[cfg(feature = "app-versussequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusYesNoDialog_YesItemMethods:IVersusSequence_VersusYesNoDialog_YesItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd250usize)as*mut u8,();
-(VersusSequence_VersusYesNoDialog_YesItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::action::Action)::core::convert::Into::into(decide_callback),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> > ,cancel_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> >)->(){unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd3d0usize)as*mut u8,();
-(VersusSequence_VersusYesNoDialog_YesItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(decide_callback),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(cancel_callback))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd440usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusYesNoDialog_YesItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd4b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusYesNoDialog_YesItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd520usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusYesNoDialog_YesItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusYesNoDialog_YesItem>IVersusSequence_VersusYesNoDialog_YesItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog_YesItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,decide_callback:crate::system::action::Action,cancel_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods> ::ctor(this,name,decide_callback,cancel_callback);
-this}
-#[doc="`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString,decide_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> ,cancel_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem), ::core::stringify!(new_2),));
- <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods> ::ctor_2(this,name,decide_callback,cancel_callback);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods:IVersusSequence_VersusFriendMenu_FriendRankedMenuItem{#[doc="`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f74d0usize)as*mut u8,();
-(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver,(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(i32)::core::convert::Into::into(num))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f75e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver)}
-}
-#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7830usize)as*mut u8,();
-(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver)}
-}
-#[doc="`StartBattleDialog()` overload"]fn start_battle_dialog(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7600usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusFriendMenu_FriendRankedMenuItem>IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn start_battle_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem{#[doc="`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` — overload selector"]pub fn new(meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusFriendMenu_FriendRankedMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods> ::ctor(this,meta_data,num);
-this}
-}
 
 #[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusTopMenu_CasualMenuItemMethods:IVersusSequence_VersusTopMenu_CasualMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusTopMenu_CasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22fc9c0usize)as*mut u8,();
@@ -527,41 +451,115 @@ pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,slot_id:impl::core::convert::Into<u16> ,is_upload:impl::core::convert::Into<bool> ,is_play:impl::core::convert::Into<bool> ,callback:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9770usize)as*mut u8,();
-(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(u16)::core::convert::Into::into(slot_id),(bool)::core::convert::Into::into(is_upload),(bool)::core::convert::Into::into(is_play),(crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)::core::convert::Into::into(callback))}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d200usize)as*mut u8,();
+)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9840usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d270usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(meta_data_list))}
 }
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9be0usize)as*mut u8,bool;
-(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d5a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)::core::convert::Into::into(meta_data_list))}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9c00usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9c60usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d840usize)as*mut u8,();
+)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem>IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusFriendMenuMethods:IVersusSequence_VersusFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusfriendmenucontent::VersusFriendMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versusfriendmenucontent::VersusFriendMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d4a0usize)as*mut u8,();
+(VersusSequence_VersusFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusfriendmenucontent::VersusFriendMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d7d0usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusFriendMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d820usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusFriendMenu)__receiver)}
+}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,slot_id:u16,is_upload:bool,is_play:bool,callback:crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusFriendMenu>IVersusSequence_VersusFriendMenuMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusfriendmenucontent::VersusFriendMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versusfriendmenucontent::VersusFriendMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods> ::ctor(this,path,meta_data,slot_id,is_upload,is_play,callback);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusFriendMenu), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenu_StartMenuItemMethods:IVersusSequence_VersusRankedMenu_StartMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9310usize)as*mut u8,();
+(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f93b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f94d0usize)as*mut u8,();
+(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f95e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu_StartMenuItem>IVersusSequence_VersusRankedMenu_StartMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_StartMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_StartMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu_StartMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusRankedMenu_StartMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenu_ResultMenuItemMethods:IVersusSequence_VersusRankedMenu_ResultMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8fe0usize)as*mut u8,();
+(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9080usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9170usize)as*mut u8,();
+(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9280usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu_ResultMenuItem>IVersusSequence_VersusRankedMenu_ResultMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_ResultMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_ResultMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu_ResultMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusRankedMenu_ResultMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -603,49 +601,172 @@ pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ResultDialog_DecideEventHandlerMethods:IVersusSequence_ResultDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6c60usize)as*mut u8,();
-(VersusSequence_ResultDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusProfileMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dd50usize)as*mut u8,();
+)}
 }
-#[doc="`Invoke(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)` overload"]fn invoke(self,set:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6a00usize)as*mut u8,();
-(VersusSequence_ResultDialog_DecideEventHandler)__receiver,(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)::core::convert::Into::into(set))}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::nexversus::NexVersus_TargetSlotList)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ddc0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_list))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e1c0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusProfileMenuMethods:IVersusSequence_VersusProfileMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusprofilemenucontent::VersusProfileMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versusprofilemenucontent::VersusProfileMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusProfileMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e050usize)as*mut u8,();
+(VersusSequence_VersusProfileMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusprofilemenucontent::VersusProfileMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusProfileMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e150usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusProfileMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusProfileMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e1a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusProfileMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ResultDialog_DecideEventHandler>IVersusSequence_ResultDialog_DecideEventHandlerMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusProfileMenu>IVersusSequence_VersusProfileMenuMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusProfileMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusProfileMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusprofilemenucontent::VersusProfileMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versusprofilemenucontent::VersusProfileMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_ResultDialog_DecideEventHandler), ::core::stringify!(new),));
- <Self as IVersusSequence_ResultDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusProfileMenu), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusProfileMenuMethods> ::ctor(this,menu_item_list,menu_content);
 this}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed98f0usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods:IVersusSequence_VersusRankedMenu_MapEditMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_MapEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8a30usize)as*mut u8,();
+(VersusSequence_VersusRankedMenu_MapEditMenuItem)__receiver)}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9930usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_MapEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8ad0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusRankedMenu_MapEditMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_MapEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8ba0usize)as*mut u8,();
+(VersusSequence_VersusRankedMenu_MapEditMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem>IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu_MapEditMenuItem>IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_MapEditMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(decide_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_MapEditMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem), ::core::stringify!(new),));
- <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods> ::ctor(this,decide_callback);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu_MapEditMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d850usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d8c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dd40usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenuMethods:IVersusSequence_VersusMatchingMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versustopmenucontent::VersusTopMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dac0usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versustopmenucontent::VersusTopMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dbc0usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusMatchingMenu)__receiver)}
+}
+#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dc10usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusMatchingMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dc90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusMatchingMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu>IVersusSequence_VersusMatchingMenuMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versustopmenucontent::VersusTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusMatchingMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mess:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f6830usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mess),(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f68c0usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog>IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog), ::core::stringify!(new),));
+ <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods:IVersusSequence_VersusMatchingMenu_ProfileMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_ProfileMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7fa0usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_ProfileMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_ProfileMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8040usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusMatchingMenu_ProfileMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_ProfileMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8110usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_ProfileMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_ProfileMenuItem>IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_ProfileMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_ProfileMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_ProfileMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -702,191 +823,79 @@ pub fn get_now_rate_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn set_profile_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods:IVersusSequence_VersusFriendMenu_FriendCasualMenuItem{#[doc="`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7090usize)as*mut u8,();
-(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver,(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)::core::convert::Into::into(meta_data),(i32)::core::convert::Into::into(num))}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusTopMenu_RankedMenuItemMethods:IVersusSequence_VersusTopMenu_RankedMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fcc70usize)as*mut u8,();
+(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f71a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fcd10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
 }
-#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f73f0usize)as*mut u8,();
-(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver)}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fce90usize)as*mut u8,bool;
+(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
 }
-#[doc="`StartBattleDialog()` overload"]fn start_battle_dialog(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f71c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver)}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fcec0usize)as*mut u8,();
+(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusFriendMenu_FriendCasualMenuItem>IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusTopMenu_RankedMenuItem>IVersusSequence_VersusTopMenu_RankedMenuItemMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu_RankedMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn start_battle_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem{#[doc="`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` — overload selector"]pub fn new(meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu_RankedMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusFriendMenu_FriendCasualMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods> ::ctor(this,meta_data,num);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusTopMenu_RankedMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusTopMenu_RankedMenuItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods:IVersusSequence_VersusMatchingMenu_RandomMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f82d0usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_RandomMenuItem)__receiver)}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusYesNoDialog_YesItemMethods:IVersusSequence_VersusYesNoDialog_YesItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd250usize)as*mut u8,();
+(VersusSequence_VersusYesNoDialog_YesItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::action::Action)::core::convert::Into::into(decide_callback),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusMatchingMenu_RandomMenuItem)__receiver)}
+#[doc="`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> > ,cancel_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> >)->(){unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd3d0usize)as*mut u8,();
+(VersusSequence_VersusYesNoDialog_YesItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(decide_callback),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(cancel_callback))}
 }
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8440usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_RandomMenuItem)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd440usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusYesNoDialog_YesItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd4b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusYesNoDialog_YesItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd520usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusYesNoDialog_YesItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_RandomMenuItem>IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusYesNoDialog_YesItem>IVersusSequence_VersusYesNoDialog_YesItemMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_RandomMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_RandomMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog_YesItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,decide_callback:crate::system::action::Action,cancel_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_RandomMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods> ::ctor(this,name,decide_callback,cancel_callback);
 this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods:IVersusSequence_VersusMatchingMenu_ProfileMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_ProfileMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7fa0usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_ProfileMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_ProfileMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8040usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusMatchingMenu_ProfileMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_ProfileMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8110usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_ProfileMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_ProfileMenuItem>IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_ProfileMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_ProfileMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[doc="`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString,decide_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> ,cancel_callback:crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_ProfileMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_LocalRate{#[doc="`ParseToNumber(u16)` overload"]pub fn parse_to_number(rate_data_type:impl::core::convert::Into<u16>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9670usize)as*mut u8,i32;
-(u16)::core::convert::Into::into(rate_data_type))}
-}
-#[doc="`ParseToDataType(i32)` overload"]pub fn parse_to_data_type(rate_number:impl::core::convert::Into<i32>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9690usize)as*mut u8,u16;
-(i32)::core::convert::Into::into(rate_number))}
-}
-#[doc="`ParseToSlotId(i32)` overload"]pub fn parse_to_slot_id(index:impl::core::convert::Into<i32>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f96e0usize)as*mut u8,u16;
-(i32)::core::convert::Into::into(index))}
-}
-#[doc="`PerseToSlotIndex(u16)` overload"]pub fn perse_to_slot_index(slot_id:impl::core::convert::Into<u16>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9700usize)as*mut u8,i32;
-(u16)::core::convert::Into::into(slot_id))}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_LocalRate{pub fn parse_to_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn parse_to_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn parse_to_slot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn perse_to_slot_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods:IVersusSequence_VersusRankedMenu_MapEditMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_MapEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8a30usize)as*mut u8,();
-(VersusSequence_VersusRankedMenu_MapEditMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_MapEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8ad0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusRankedMenu_MapEditMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_MapEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8ba0usize)as*mut u8,();
-(VersusSequence_VersusRankedMenu_MapEditMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu_MapEditMenuItem>IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_MapEditMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_MapEditMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu_MapEditMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceLocal_MetaDataPackMethods:IVersusSequence_VersusSequenceLocal_MetaDataPack{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_MetaDataPack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9720usize)as*mut u8,();
-(VersusSequence_VersusSequenceLocal_MetaDataPack)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(data),(::unity2::Il2CppString)::core::convert::Into::into(path))}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceLocal_MetaDataPack>IVersusSequence_VersusSequenceLocal_MetaDataPackMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_MetaDataPack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_MetaDataPack{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` — overload selector"]pub fn new(data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,path: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceLocal_MetaDataPack), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusSequenceLocal_MetaDataPackMethods> ::ctor(this,data,path);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenu_ResultMenuItemMethods:IVersusSequence_VersusRankedMenu_ResultMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8fe0usize)as*mut u8,();
-(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9080usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9170usize)as*mut u8,();
-(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_ResultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9280usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(VersusSequence_VersusRankedMenu_ResultMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu_ResultMenuItem>IVersusSequence_VersusRankedMenu_ResultMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_ResultMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_ResultMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu_ResultMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusRankedMenu_ResultMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem), ::core::stringify!(new_2),));
+ <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods> ::ctor_2(this,name,decide_callback,cancel_callback);
 this}
 }
 
@@ -933,161 +942,142 @@ this}
 this}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenu_StartMenuItemMethods:IVersusSequence_VersusRankedMenu_StartMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9310usize)as*mut u8,();
-(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_name:impl::core::convert::Into< ::unity2::Il2CppString> ,no_name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->crate::app::versussequence::VersusSequence_VersusYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27f00usize)as*mut u8,crate::app::versussequence::VersusSequence_VersusYesNoDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(::unity2::Il2CppString)::core::convert::Into::into(yes_name),(::unity2::Il2CppString)::core::convert::Into::into(no_name),(crate::system::action::Action)::core::convert::Into::into(decide_callback),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f93b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_name:impl::core::convert::Into< ::unity2::Il2CppString> ,no_name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> > ,cancel_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> >)->crate::app::versussequence::VersusSequence_VersusYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28160usize)as*mut u8,crate::app::versussequence::VersusSequence_VersusYesNoDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(::unity2::Il2CppString)::core::convert::Into::into(yes_name),(::unity2::Il2CppString)::core::convert::Into::into(no_name),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(decide_callback),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(cancel_callback))}
 }
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f94d0usize)as*mut u8,();
-(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <VersusSequence_VersusRankedMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f95e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(VersusSequence_VersusRankedMenu_StartMenuItem)__receiver)}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem, crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_name:impl::core::convert::Into< ::unity2::Il2CppString> ,no_name:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_item:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem> ,no_item:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem>)->crate::app::versussequence::VersusSequence_VersusYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27fe0usize)as*mut u8,crate::app::versussequence::VersusSequence_VersusYesNoDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(::unity2::Il2CppString)::core::convert::Into::into(yes_name),(::unity2::Il2CppString)::core::convert::Into::into(no_name),(crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem)::core::convert::Into::into(yes_item),(crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem)::core::convert::Into::into(no_item))}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu_StartMenuItem>IVersusSequence_VersusRankedMenu_StartMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_StartMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu_StartMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu_StartMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusRankedMenu_StartMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusTopMenu_RankedMenuItemMethods:IVersusSequence_VersusTopMenu_RankedMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fcc70usize)as*mut u8,();
-(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fcd10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
-}
-#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fce90usize)as*mut u8,bool;
-(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusTopMenu_RankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fcec0usize)as*mut u8,();
-(VersusSequence_VersusTopMenu_RankedMenuItem)__receiver)}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusYesNoDialogMethods:IVersusSequence_VersusYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <VersusSequence_VersusYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27ef0usize)as*mut u8,();
+(VersusSequence_VersusYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusTopMenu_RankedMenuItem>IVersusSequence_VersusTopMenu_RankedMenuItemMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusYesNoDialog>IVersusSequence_VersusYesNoDialogMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu_RankedMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu_RankedMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusTopMenu_RankedMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusTopMenu_RankedMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods:IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda430usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda160usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data))}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback>IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9b20usize)as*mut u8,();
-(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString, u16)` overload"]fn invoke(self,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,meta_path:impl::core::convert::Into< ::unity2::Il2CppString> ,slot_id:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9b40usize)as*mut u8,();
-(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(::unity2::Il2CppString)::core::convert::Into::into(meta_path),(u16)::core::convert::Into::into(slot_id))}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback>IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d200usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d270usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(meta_data_list))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d5a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)::core::convert::Into::into(meta_data_list))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d840usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusFriendMenuMethods:IVersusSequence_VersusFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusfriendmenucontent::VersusFriendMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versusfriendmenucontent::VersusFriendMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d4a0usize)as*mut u8,();
-(VersusSequence_VersusFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusfriendmenucontent::VersusFriendMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d7d0usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusFriendMenu)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d820usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusFriendMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusFriendMenu>IVersusSequence_VersusFriendMenuMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusfriendmenucontent::VersusFriendMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versusfriendmenucontent::VersusFriendMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusFriendMenu), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusYesNoDialog), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusYesNoDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ResultDialog_DecideEventHandlerMethods:IVersusSequence_ResultDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6c60usize)as*mut u8,();
+(VersusSequence_ResultDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)` overload"]fn invoke(self,set:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6a00usize)as*mut u8,();
+(VersusSequence_ResultDialog_DecideEventHandler)__receiver,(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)::core::convert::Into::into(set))}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ResultDialog_DecideEventHandler>IVersusSequence_ResultDialog_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_ResultDialog_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IVersusSequence_ResultDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ResultDialog_AssistItemMethods:IVersusSequence_ResultDialog_AssistItem{#[doc="`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` overload"]fn ctor(self,select_id:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu> ,messege:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f68d0usize)as*mut u8,();
+(VersusSequence_ResultDialog_AssistItem)__receiver,(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)::core::convert::Into::into(select_id),(::unity2::Il2CppString)::core::convert::Into::into(messege))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_ResultDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6900usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_ResultDialog_AssistItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ResultDialog_AssistItem>IVersusSequence_ResultDialog_AssistItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_AssistItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_AssistItem{#[doc="`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` — overload selector"]pub fn new(select_id:crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,messege: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_ResultDialog_AssistItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_ResultDialog_AssistItemMethods> ::ctor(this,select_id,messege);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods:IVersusSequence_VersusFriendMenu_FriendRankedMenuItem{#[doc="`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f74d0usize)as*mut u8,();
+(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver,(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f75e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7830usize)as*mut u8,();
+(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver)}
+}
+#[doc="`StartBattleDialog()` overload"]fn start_battle_dialog(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendRankedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7600usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusFriendMenu_FriendRankedMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusFriendMenu_FriendRankedMenuItem>IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_battle_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem{#[doc="`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` — overload selector"]pub fn new(meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusFriendMenu_FriendRankedMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods> ::ctor(this,meta_data,num);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods:IVersusSequence_VersusCasualMenu_SelectMapMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,map_number:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusSequence_VersusCasualMenu_SelectMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6d20usize)as*mut u8,();
+(VersusSequence_VersusCasualMenu_SelectMapMenuItem)__receiver,(i32)::core::convert::Into::into(map_number))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusCasualMenu_SelectMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6e10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusCasualMenu_SelectMapMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusCasualMenu_SelectMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6f20usize)as*mut u8,();
+(VersusSequence_VersusCasualMenu_SelectMapMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusCasualMenu_SelectMapMenuItem>IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu_SelectMapMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu_SelectMapMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(map_number:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusCasualMenu_SelectMapMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods> ::ctor(this,map_number);
 this}
 }
 
@@ -1121,401 +1111,6 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 ::{}
  failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu_MockBattleMenuItem), ::core::stringify!(new),));
  <Self as IVersusSequence_VersusRankedMenu_MockBattleMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[doc="`get_IsSucceed()` overload"]pub fn get_is_succeed()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9e30usize)as*mut u8,bool;
-)}
-}
-#[doc="`set_IsSucceed(bool)` overload"]pub fn set_is_succeed(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9ea0usize)as*mut u8,();
-(bool)::core::convert::Into::into(value))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fa400usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)::core::convert::Into::into(data_type))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fa640usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods:IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[doc="`.ctor(u64, crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9f20usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)::core::convert::Into::into(data_type))}
-}
-#[doc="`Download()` overload"]fn download(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9f60usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence)__receiver)}
-}
-#[doc="`SetVersus()` overload"]fn set_versus(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fa050usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence>IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{pub fn get_is_succeed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_is_succeed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_versus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[doc="`.ctor(u64, crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)` — overload selector"]pub fn new(data_id:u64,data_type:crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods> ::ctor(this,data_id,data_type);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b256e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`CreateBindUploadEditData(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_upload_edit_data(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b25760usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`CreateBindUploadCasualData(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_upload_casual_data(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b257e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNetMethods:IVersusSequence_VersusSequenceNet{#[doc="`InitImpl()` overload"]fn init_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25170usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`FinalImpl()` overload"]fn final_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25230usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`IsFailedJumpToTopImpl()` overload"]fn is_failed_jump_to_top_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b252f0usize)as*mut u8,bool;
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`IsReportedEditMapImpl()` overload"]fn is_reported_edit_map_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b253e0usize)as*mut u8,bool;
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`UploadReportDataImpl()` overload"]fn upload_report_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b255b0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`GetMyCasualMetaDataImpl()` overload"]fn get_my_casual_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25860usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`PostGetMyCasualMetaDataImpl()` overload"]fn post_get_my_casual_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b258f0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`GetEditMetaDataImpl()` overload"]fn get_edit_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25aa0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`PostGetEditMetaDataImpl()` overload"]fn post_get_edit_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25b30usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`UpdateRateImpl()` overload"]fn update_rate_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25c50usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`SetRankedInfoImpl()` overload"]fn set_ranked_info_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25da0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`UploadEditDataImpl()` overload"]fn upload_edit_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25ed0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`PostUploadEditDataImpl()` overload"]fn post_upload_edit_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25ee0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`UploadReplayImpl()` overload"]fn upload_replay_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25fe0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`UploadCasualImpl()` overload"]fn upload_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b260a0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`ChangeCasualImpl()` overload"]fn change_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b261b0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`ChangeCasualOpponentImpl()` overload"]fn change_casual_opponent_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b262b0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`SearchSameRateImpl()` overload"]fn search_same_rate_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b263b0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`SearchRankedFriendImpl()` overload"]fn search_ranked_friend_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26480usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`ExcludeMySearchRankedData()` overload"]fn exclude_my_search_ranked_data(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b265c0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`SearchCasualImpl()` overload"]fn search_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26700usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`SearchCasualFriendImpl()` overload"]fn search_casual_friend_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26790usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`ExcludeMySearchCasualData(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]fn exclude_my_search_casual_data(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26880usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(data_list))}
-}
-#[doc="`DownloadImpl()` overload"]fn download_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b269b0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`DownloadMyEditImpl()` overload"]fn download_my_edit_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26ab0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`DownloadMetaCasualFromDataCodeImpl()` overload"]fn download_meta_casual_from_data_code_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26bc0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`DownloadMetaRankedFromDataCodeImpl()` overload"]fn download_meta_ranked_from_data_code_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26c90usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`CheckAccessibleProfileImpl(crate::app::versus::Versus_Mode, crate::app::nexversus::NexVersus_TargetSlotList)` overload"]fn check_accessible_profile_impl(self,mode:impl::core::convert::Into<crate::app::versus::Versus_Mode> ,target_slot_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26d60usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver,(crate::app::versus::Versus_Mode)::core::convert::Into::into(mode),(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_slot_list))}
-}
-#[doc="`DownloadMetaProfileImpl(crate::app::versus::Versus_Mode, crate::app::profilecard::ProfileCard)` overload"]fn download_meta_profile_impl(self,mode:impl::core::convert::Into<crate::app::versus::Versus_Mode> ,profile:impl::core::convert::Into<crate::app::profilecard::ProfileCard>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26e70usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver,(crate::app::versus::Versus_Mode)::core::convert::Into::into(mode),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(profile))}
-}
-#[doc="`DownloadCasualImpl()` overload"]fn download_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b271f0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`SelectReplayImpl()` overload"]fn select_replay_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b272f0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`DownloadReplayImpl()` overload"]fn download_replay_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27380usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`ChangeReplayMetaImpl()` overload"]fn change_replay_meta_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b274f0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`GetLastUploadedResultImpl()` overload"]fn get_last_uploaded_result_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27590usize)as*mut u8,bool;
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`GetDownloadedEditMetaDataImpl()` overload"]fn get_downloaded_edit_meta_data_impl(self,)->crate::app::versusserverrankedmetadata::VersusServerRankedMetaData{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27610usize)as*mut u8,crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`ChangeRankedMetaDataImpl(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]fn change_ranked_meta_data_impl(self,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27690usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver,(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data))}
-}
-#[doc="`ChangeDataTypeImpl(u64, u16)` overload"]fn change_data_type_impl(self,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27730usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver,(u64)::core::convert::Into::into(data_id),(u16)::core::convert::Into::into(data_type))}
-}
-#[doc="`InitEditDataImpl()` overload"]fn init_edit_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b277d0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`CheckParentalControlImpl()` overload"]fn check_parental_control_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b277e0usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`IsParentalControlAvailableImpl()` overload"]fn is_parental_control_available_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27850usize)as*mut u8,bool;
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`EndParentalControlImpl()` overload"]fn end_parental_control_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27910usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27980usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet>IVersusSequence_VersusSequenceNetMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet{pub fn init_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn final_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_failed_jump_to_top_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_reported_edit_map_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn upload_report_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_upload_edit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn create_bind_upload_casual_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_my_casual_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn post_get_my_casual_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_edit_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn post_get_edit_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn update_rate_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_ranked_info_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn upload_edit_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn post_upload_edit_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn upload_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn upload_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn change_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn change_casual_opponent_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn search_same_rate_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn search_ranked_friend_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn exclude_my_search_ranked_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn search_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn search_casual_friend_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn exclude_my_search_casual_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn download_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn download_my_edit_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn download_meta_casual_from_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn download_meta_ranked_from_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn check_accessible_profile_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn download_meta_profile_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn download_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-pub fn select_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
-pub fn download_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
-pub fn change_replay_meta_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
-pub fn get_last_uploaded_result_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
-pub fn get_downloaded_edit_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
-pub fn change_ranked_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
-pub fn change_data_type_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
-pub fn init_edit_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
-pub fn check_parental_control_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
-pub fn is_parental_control_available_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
-pub fn end_parental_control_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusSequenceNetMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mess:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f6830usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mess),(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f68c0usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog>IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog), ::core::stringify!(new),));
- <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods:IVersusSequence_VersusMatchingMenu_FriendMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7c40usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_FriendMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7ce0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusMatchingMenu_FriendMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7de0usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_FriendMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_FriendMenuItem>IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_FriendMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_FriendMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_FriendMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_name:impl::core::convert::Into< ::unity2::Il2CppString> ,no_name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->crate::app::versussequence::VersusSequence_VersusYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27f00usize)as*mut u8,crate::app::versussequence::VersusSequence_VersusYesNoDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(::unity2::Il2CppString)::core::convert::Into::into(yes_name),(::unity2::Il2CppString)::core::convert::Into::into(no_name),(crate::system::action::Action)::core::convert::Into::into(decide_callback),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_name:impl::core::convert::Into< ::unity2::Il2CppString> ,no_name:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> > ,cancel_callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result> >)->crate::app::versussequence::VersusSequence_VersusYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b28160usize)as*mut u8,crate::app::versussequence::VersusSequence_VersusYesNoDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(::unity2::Il2CppString)::core::convert::Into::into(yes_name),(::unity2::Il2CppString)::core::convert::Into::into(no_name),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(decide_callback),(crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)::core::convert::Into::into(cancel_callback))}
-}
-#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem, crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_name:impl::core::convert::Into< ::unity2::Il2CppString> ,no_name:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_item:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem> ,no_item:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem>)->crate::app::versussequence::VersusSequence_VersusYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27fe0usize)as*mut u8,crate::app::versussequence::VersusSequence_VersusYesNoDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(::unity2::Il2CppString)::core::convert::Into::into(yes_name),(::unity2::Il2CppString)::core::convert::Into::into(no_name),(crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem)::core::convert::Into::into(yes_item),(crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem)::core::convert::Into::into(no_item))}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusYesNoDialogMethods:IVersusSequence_VersusYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <VersusSequence_VersusYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27ef0usize)as*mut u8,();
-(VersusSequence_VersusYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusYesNoDialog>IVersusSequence_VersusYesNoDialogMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusYesNoDialog), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusYesNoDialogMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods:IVersusSequence_VersusMatchingMenu_CodeMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_CodeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7910usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_CodeMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_CodeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f79b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusMatchingMenu_CodeMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_CodeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7a80usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu_CodeMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_CodeMenuItem>IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_CodeMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_CodeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_CodeMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -1905,6 +1500,155 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileUploadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c5e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileUploadSequenceMethods:IVersusSequence_ProfileUploadSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileUploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c410usize)as*mut u8,();
+(VersusSequence_ProfileUploadSequence)__receiver)}
+}
+#[doc="`Sanitize()` overload"]fn sanitize(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileUploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c4b0usize)as*mut u8,();
+(VersusSequence_ProfileUploadSequence)__receiver)}
+}
+#[doc="`Upload()` overload"]fn upload(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileUploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c550usize)as*mut u8,();
+(VersusSequence_ProfileUploadSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileUploadSequence>IVersusSequence_ProfileUploadSequenceMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileUploadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn sanitize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileUploadSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_ProfileUploadSequence), ::core::stringify!(new),));
+ <Self as IVersusSequence_ProfileUploadSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[doc="`get_IsSucceed()` overload"]pub fn get_is_succeed()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9e30usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsSucceed(bool)` overload"]pub fn set_is_succeed(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9ea0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fa400usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fa640usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods:IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[doc="`.ctor(u64, crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9f20usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`Download()` overload"]fn download(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9f60usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence)__receiver)}
+}
+#[doc="`SetVersus()` overload"]fn set_versus(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fa050usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence>IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{pub fn get_is_succeed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_succeed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_versus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence{#[doc="`.ctor(u64, crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)` — overload selector"]pub fn new(data_id:u64,data_type:crate::app::versussequence::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods> ::ctor(this,data_id,data_type);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods:IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda430usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda160usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data))}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback>IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog{#[doc="`get_EventHandler()` overload"]pub fn get_event_handler()->crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c8a0usize)as*mut u8,crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler;
+)}
+}
+#[doc="`set_EventHandler(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]pub fn set_event_handler(value:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c910usize)as*mut u8,();
+(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)::core::convert::Into::into(value))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,event_handler:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler>)->crate::app::versussequence::VersusSequence_ResultDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c9d0usize)as*mut u8,crate::app::versussequence::VersusSequence_ResultDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cd90usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ResultDialogMethods:IVersusSequence_ResultDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c990usize)as*mut u8,();
+(VersusSequence_ResultDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_ResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cd20usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_ResultDialog)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_ResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cd70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_ResultDialog)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ResultDialog>IVersusSequence_ResultDialogMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog{pub fn get_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_ResultDialog), ::core::stringify!(new),));
+ <Self as IVersusSequence_ResultDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
 #[cfg(feature="app-versussequence")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>VersusSequence_VersusSequenceBase_1<T0>{#[doc="`get_RateDataTypeName()` overload"]#[method(name="get_RateDataTypeName",args=0)]pub fn get_rate_data_type_name()-> ::unity2::Il2CppString;
  #[doc="`OnCreate()` overload"]#[method(name="OnCreate",args=0)]pub fn on_create(self,)->();
  #[doc="`OnDispose()` overload"]#[method(name="OnDispose",args=0)]pub fn on_dispose(self,)->();
@@ -2060,204 +1804,6 @@ this}
 this}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusProfileMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dd50usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::nexversus::NexVersus_TargetSlotList)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ddc0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_list))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e1c0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusProfileMenuMethods:IVersusSequence_VersusProfileMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusprofilemenucontent::VersusProfileMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versusprofilemenucontent::VersusProfileMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusProfileMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e050usize)as*mut u8,();
-(VersusSequence_VersusProfileMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusprofilemenucontent::VersusProfileMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusProfileMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e150usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusProfileMenu)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusProfileMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e1a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusProfileMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusProfileMenu>IVersusSequence_VersusProfileMenuMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusProfileMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusProfileMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusprofilemenucontent::VersusProfileMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versusprofilemenucontent::VersusProfileMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusProfileMenu), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusProfileMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods:IVersusSequence_VersusCasualMenu_SelectMapMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,map_number:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusSequence_VersusCasualMenu_SelectMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6d20usize)as*mut u8,();
-(VersusSequence_VersusCasualMenu_SelectMapMenuItem)__receiver,(i32)::core::convert::Into::into(map_number))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusCasualMenu_SelectMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6e10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusCasualMenu_SelectMapMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusCasualMenu_SelectMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6f20usize)as*mut u8,();
-(VersusSequence_VersusCasualMenu_SelectMapMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusCasualMenu_SelectMapMenuItem>IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu_SelectMapMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu_SelectMapMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(map_number:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusCasualMenu_SelectMapMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods> ::ctor(this,map_number);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27b20usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27b90usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27ee0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusTopMenuMethods:IVersusSequence_VersusTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versustopmenucontent::VersusTopMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27d20usize)as*mut u8,();
-(VersusSequence_VersusTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versustopmenucontent::VersusTopMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27e20usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusTopMenu)__receiver)}
-}
-#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27e70usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusTopMenu)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27ec0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusTopMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusTopMenu>IVersusSequence_VersusTopMenuMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versustopmenucontent::VersusTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusTopMenu), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusTopMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cda0usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ce10usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d1f0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusCasualMenuMethods:IVersusSequence_VersusCasualMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versusmapmenucontent::VersusMapMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d030usize)as*mut u8,();
-(VersusSequence_VersusCasualMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusmapmenucontent::VersusMapMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d130usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusCasualMenu)__receiver)}
-}
-#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d180usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusCasualMenu)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d1d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusCasualMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusCasualMenu>IVersusSequence_VersusCasualMenuMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versusmapmenucontent::VersusMapMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusCasualMenu), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusCasualMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileUploadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c5e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileUploadSequenceMethods:IVersusSequence_ProfileUploadSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileUploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c410usize)as*mut u8,();
-(VersusSequence_ProfileUploadSequence)__receiver)}
-}
-#[doc="`Sanitize()` overload"]fn sanitize(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileUploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c4b0usize)as*mut u8,();
-(VersusSequence_ProfileUploadSequence)__receiver)}
-}
-#[doc="`Upload()` overload"]fn upload(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileUploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c550usize)as*mut u8,();
-(VersusSequence_ProfileUploadSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileUploadSequence>IVersusSequence_ProfileUploadSequenceMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileUploadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn sanitize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileUploadSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_ProfileUploadSequence), ::core::stringify!(new),));
- <Self as IVersusSequence_ProfileUploadSequenceMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,callback:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fa960usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)::core::convert::Into::into(callback))}
 }
@@ -2303,52 +1849,6 @@ pub fn create_select_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 ::{}
  failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence), ::core::stringify!(new),));
  <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequenceMethods> ::ctor(this,callback);
-this}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog{#[doc="`get_EventHandler()` overload"]pub fn get_event_handler()->crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c8a0usize)as*mut u8,crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler;
-)}
-}
-#[doc="`set_EventHandler(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]pub fn set_event_handler(value:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c910usize)as*mut u8,();
-(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)::core::convert::Into::into(value))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,event_handler:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler>)->crate::app::versussequence::VersusSequence_ResultDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c9d0usize)as*mut u8,crate::app::versussequence::VersusSequence_ResultDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cd90usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ResultDialogMethods:IVersusSequence_ResultDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1c990usize)as*mut u8,();
-(VersusSequence_ResultDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_ResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cd20usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_ResultDialog)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_ResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cd70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_ResultDialog)__receiver)}
-}
-}
-
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ResultDialog>IVersusSequence_ResultDialogMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog{pub fn get_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusSequence_ResultDialog), ::core::stringify!(new),));
- <Self as IVersusSequence_ResultDialogMethods> ::ctor(this,menu_item_list,menu_content);
 this}
 }
 
@@ -2419,6 +1919,57 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods:IVersusSequence_VersusMatchingMenu_FriendMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7c40usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_FriendMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7ce0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusMatchingMenu_FriendMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7de0usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_FriendMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_FriendMenuItem>IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_FriendMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_FriendMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_FriendMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9b20usize)as*mut u8,();
+(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString, u16)` overload"]fn invoke(self,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,meta_path:impl::core::convert::Into< ::unity2::Il2CppString> ,slot_id:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9b40usize)as*mut u8,();
+(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(::unity2::Il2CppString)::core::convert::Into::into(meta_path),(u16)::core::convert::Into::into(slot_id))}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback>IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_UploadReplaySequence{#[doc="`get_Result()` overload"]pub fn get_result()->crate::app::nexversus::NexVersus_Results{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fbd20usize)as*mut u8,crate::app::nexversus::NexVersus_Results;
 )}
 }
@@ -2486,38 +2037,303 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d850usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d8c0usize)as*mut u8,();
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b256e0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dd40usize)as*mut u8,();
+#[doc="`CreateBindUploadEditData(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_upload_edit_data(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b25760usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindUploadCasualData(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_upload_casual_data(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b257e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNetMethods:IVersusSequence_VersusSequenceNet{#[doc="`InitImpl()` overload"]fn init_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25170usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`FinalImpl()` overload"]fn final_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25230usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`IsFailedJumpToTopImpl()` overload"]fn is_failed_jump_to_top_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b252f0usize)as*mut u8,bool;
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`IsReportedEditMapImpl()` overload"]fn is_reported_edit_map_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b253e0usize)as*mut u8,bool;
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`UploadReportDataImpl()` overload"]fn upload_report_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b255b0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`GetMyCasualMetaDataImpl()` overload"]fn get_my_casual_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25860usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`PostGetMyCasualMetaDataImpl()` overload"]fn post_get_my_casual_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b258f0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`GetEditMetaDataImpl()` overload"]fn get_edit_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25aa0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`PostGetEditMetaDataImpl()` overload"]fn post_get_edit_meta_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25b30usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`UpdateRateImpl()` overload"]fn update_rate_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25c50usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`SetRankedInfoImpl()` overload"]fn set_ranked_info_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25da0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`UploadEditDataImpl()` overload"]fn upload_edit_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25ed0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`PostUploadEditDataImpl()` overload"]fn post_upload_edit_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25ee0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`UploadReplayImpl()` overload"]fn upload_replay_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b25fe0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`UploadCasualImpl()` overload"]fn upload_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b260a0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`ChangeCasualImpl()` overload"]fn change_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b261b0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`ChangeCasualOpponentImpl()` overload"]fn change_casual_opponent_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b262b0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`SearchSameRateImpl()` overload"]fn search_same_rate_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b263b0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`SearchRankedFriendImpl()` overload"]fn search_ranked_friend_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26480usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`ExcludeMySearchRankedData()` overload"]fn exclude_my_search_ranked_data(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b265c0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`SearchCasualImpl()` overload"]fn search_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26700usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`SearchCasualFriendImpl()` overload"]fn search_casual_friend_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26790usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`ExcludeMySearchCasualData(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]fn exclude_my_search_casual_data(self,data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26880usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(data_list))}
+}
+#[doc="`DownloadImpl()` overload"]fn download_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b269b0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`DownloadMyEditImpl()` overload"]fn download_my_edit_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26ab0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`DownloadMetaCasualFromDataCodeImpl()` overload"]fn download_meta_casual_from_data_code_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26bc0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`DownloadMetaRankedFromDataCodeImpl()` overload"]fn download_meta_ranked_from_data_code_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26c90usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`CheckAccessibleProfileImpl(crate::app::versus::Versus_Mode, crate::app::nexversus::NexVersus_TargetSlotList)` overload"]fn check_accessible_profile_impl(self,mode:impl::core::convert::Into<crate::app::versus::Versus_Mode> ,target_slot_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26d60usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver,(crate::app::versus::Versus_Mode)::core::convert::Into::into(mode),(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_slot_list))}
+}
+#[doc="`DownloadMetaProfileImpl(crate::app::versus::Versus_Mode, crate::app::profilecard::ProfileCard)` overload"]fn download_meta_profile_impl(self,mode:impl::core::convert::Into<crate::app::versus::Versus_Mode> ,profile:impl::core::convert::Into<crate::app::profilecard::ProfileCard>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b26e70usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver,(crate::app::versus::Versus_Mode)::core::convert::Into::into(mode),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(profile))}
+}
+#[doc="`DownloadCasualImpl()` overload"]fn download_casual_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b271f0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`SelectReplayImpl()` overload"]fn select_replay_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b272f0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`DownloadReplayImpl()` overload"]fn download_replay_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27380usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`ChangeReplayMetaImpl()` overload"]fn change_replay_meta_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b274f0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`GetLastUploadedResultImpl()` overload"]fn get_last_uploaded_result_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27590usize)as*mut u8,bool;
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`GetDownloadedEditMetaDataImpl()` overload"]fn get_downloaded_edit_meta_data_impl(self,)->crate::app::versusserverrankedmetadata::VersusServerRankedMetaData{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27610usize)as*mut u8,crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`ChangeRankedMetaDataImpl(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]fn change_ranked_meta_data_impl(self,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27690usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver,(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`ChangeDataTypeImpl(u64, u16)` overload"]fn change_data_type_impl(self,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27730usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver,(u64)::core::convert::Into::into(data_id),(u16)::core::convert::Into::into(data_type))}
+}
+#[doc="`InitEditDataImpl()` overload"]fn init_edit_data_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b277d0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`CheckParentalControlImpl()` overload"]fn check_parental_control_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b277e0usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`IsParentalControlAvailableImpl()` overload"]fn is_parental_control_available_impl(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27850usize)as*mut u8,bool;
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`EndParentalControlImpl()` overload"]fn end_parental_control_impl(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27910usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27980usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet>IVersusSequence_VersusSequenceNetMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet{pub fn init_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn final_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_failed_jump_to_top_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_reported_edit_map_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn upload_report_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_upload_edit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_upload_casual_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_my_casual_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn post_get_my_casual_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_edit_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn post_get_edit_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_rate_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_ranked_info_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn upload_edit_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn post_upload_edit_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn upload_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn upload_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn change_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn change_casual_opponent_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn search_same_rate_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn search_ranked_friend_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn exclude_my_search_ranked_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn search_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn search_casual_friend_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn exclude_my_search_casual_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn download_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn download_my_edit_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn download_meta_casual_from_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn download_meta_ranked_from_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn check_accessible_profile_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn download_meta_profile_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn download_casual_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn select_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn download_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn change_replay_meta_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_last_uploaded_result_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_downloaded_edit_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn change_ranked_meta_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn change_data_type_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn init_edit_data_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn check_parental_control_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn is_parental_control_available_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn end_parental_control_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusSequenceNetMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods:IVersusSequence_VersusMatchingMenu_CodeMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_CodeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7910usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_CodeMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_CodeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f79b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusMatchingMenu_CodeMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_CodeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7a80usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_CodeMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_CodeMenuItem>IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_CodeMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_CodeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_CodeMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27b20usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27b90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b27ee0usize)as*mut u8,();
 )}
 }
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenuMethods:IVersusSequence_VersusMatchingMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versustopmenucontent::VersusTopMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dac0usize)as*mut u8,();
-(VersusSequence_VersusMatchingMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versustopmenucontent::VersusTopMenuContent)::core::convert::Into::into(menu_content))}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusTopMenuMethods:IVersusSequence_VersusTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versustopmenucontent::VersusTopMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27d20usize)as*mut u8,();
+(VersusSequence_VersusTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versustopmenucontent::VersusTopMenuContent)::core::convert::Into::into(menu_content))}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dbc0usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusMatchingMenu)__receiver)}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27e20usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusTopMenu)__receiver)}
 }
-#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dc10usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusMatchingMenu)__receiver)}
+#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27e70usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusTopMenu)__receiver)}
 }
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1dc90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusMatchingMenu)__receiver)}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b27ec0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusTopMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu>IVersusSequence_VersusMatchingMenuMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusTopMenu>IVersusSequence_VersusTopMenuMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -2526,48 +2342,142 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versustopmenucontent::VersusTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versustopmenucontent::VersusTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusMatchingMenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusTopMenu), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusTopMenuMethods> ::ctor(this,menu_item_list,menu_content);
 this}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods:IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,index:impl::core::convert::Into<i32> ,is_upload:impl::core::convert::Into<bool> ,is_play:impl::core::convert::Into<bool> ,callback:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda500usize)as*mut u8,();
-(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(is_upload),(bool)::core::convert::Into::into(is_play),(crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)::core::convert::Into::into(callback))}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e1d0usize)as*mut u8,();
+)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda580usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e240usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda5d0usize)as*mut u8,bool;
-(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda5e0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda640usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e690usize)as*mut u8,();
+)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem>IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods for __T{}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenuMethods:IVersusSequence_VersusRankedMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versustopmenucontent::VersusTopMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e440usize)as*mut u8,();
+(VersusSequence_VersusRankedMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versustopmenucontent::VersusTopMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e540usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusRankedMenu)__receiver)}
+}
+#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e590usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusRankedMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e670usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusRankedMenu)__receiver)}
+}
+}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu>IVersusSequence_VersusRankedMenuMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versustopmenucontent::VersusTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusRankedMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1cda0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ce10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d1f0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusCasualMenuMethods:IVersusSequence_VersusCasualMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versusmapmenucontent::VersusMapMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d030usize)as*mut u8,();
+(VersusSequence_VersusCasualMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusmapmenucontent::VersusMapMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d130usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusCasualMenu)__receiver)}
+}
+#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d180usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusCasualMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusCasualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1d1d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusCasualMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusCasualMenu>IVersusSequence_VersusCasualMenuMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusCasualMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versusmapmenucontent::VersusMapMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusCasualMenu), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusCasualMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,slot_id:impl::core::convert::Into<u16> ,is_upload:impl::core::convert::Into<bool> ,is_play:impl::core::convert::Into<bool> ,callback:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9770usize)as*mut u8,();
+(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(u16)::core::convert::Into::into(slot_id),(bool)::core::convert::Into::into(is_upload),(bool)::core::convert::Into::into(is_play),(crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)::core::convert::Into::into(callback))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9840usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9be0usize)as*mut u8,bool;
+(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9c00usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9c60usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem>IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` — overload selector"]pub fn new(meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,index:i32,is_upload:bool,is_play:bool,callback:crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,slot_id:u16,is_upload:bool,is_play:bool,callback:crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods> ::ctor(this,meta_data,index,is_upload,is_play,callback);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods> ::ctor(this,path,meta_data,slot_id,is_upload,is_play,callback);
 this}
 }
 
@@ -2647,73 +2557,150 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ResultDialog_AssistItemMethods:IVersusSequence_ResultDialog_AssistItem{#[doc="`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` overload"]fn ctor(self,select_id:impl::core::convert::Into<crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu> ,messege:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusSequence_ResultDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f68d0usize)as*mut u8,();
-(VersusSequence_ResultDialog_AssistItem)__receiver,(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)::core::convert::Into::into(select_id),(::unity2::Il2CppString)::core::convert::Into::into(messege))}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods:IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,index:impl::core::convert::Into<i32> ,is_upload:impl::core::convert::Into<bool> ,is_play:impl::core::convert::Into<bool> ,callback:impl::core::convert::Into<crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda500usize)as*mut u8,();
+(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(is_upload),(bool)::core::convert::Into::into(is_play),(crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)::core::convert::Into::into(callback))}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_ResultDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6900usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_ResultDialog_AssistItem)__receiver)}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda580usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda5d0usize)as*mut u8,bool;
+(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda5e0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eda640usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ResultDialog_AssistItem>IVersusSequence_ResultDialog_AssistItemMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem>IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_AssistItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_ResultDialog_AssistItem{#[doc="`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` — overload selector"]pub fn new(select_id:crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,messege: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` — overload selector"]pub fn new(meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,index:i32,is_upload:bool,is_play:bool,callback:crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_ResultDialog_AssistItem), ::core::stringify!(new),));
- <Self as IVersusSequence_ResultDialog_AssistItemMethods> ::ctor(this,select_id,messege);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods> ::ctor(this,meta_data,index,is_upload,is_play,callback);
 this}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu{#[doc="`InitializedSelected()` overload"]pub fn initialized_selected()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e1d0usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e240usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e690usize)as*mut u8,();
-)}
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,replay_meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1be40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(replay_meta_data))}
 }
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusRankedMenuMethods:IVersusSequence_VersusRankedMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::versustopmenucontent::VersusTopMenuContent>)->(){unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e440usize)as*mut u8,();
-(VersusSequence_VersusRankedMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versustopmenucontent::VersusTopMenuContent)::core::convert::Into::into(menu_content))}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileDownloadSequenceMethods:IVersusSequence_ProfileDownloadSequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn ctor(self,replay_meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b770usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(replay_meta_data))}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e540usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusRankedMenu)__receiver)}
+#[doc="`TryGetOpponentInfo(*mut::unity2::Il2CppString, *mutu64)` overload"]fn try_get_opponent_info(self,)->(bool, ::unity2::Il2CppString,u64){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b7b0usize)as*mut u8,bool;
+(VersusSequence_ProfileDownloadSequence)__receiver,(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
 }
-#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e590usize)as*mut u8, ::unity2::Il2CppString;
-(VersusSequence_VersusRankedMenu)__receiver)}
+#[doc="`Download()` overload"]fn download(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b890usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence)__receiver)}
 }
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusRankedMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1e670usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(VersusSequence_VersusRankedMenu)__receiver)}
+#[doc="`PostDownload()` overload"]fn post_download(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b990usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence)__receiver)}
+}
+#[doc="`Sanitize()` overload"]fn sanitize(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ba70usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence)__receiver)}
+}
+#[doc="`OpenDialog()` overload"]fn open_dialog(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1bb90usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence)__receiver)}
+}
+#[doc="`Save()` overload"]fn save(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1bca0usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusRankedMenu>IVersusSequence_VersusRankedMenuMethods for __T{}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileDownloadSequence>IVersusSequence_ProfileDownloadSequenceMethods for __T{}
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu{pub fn initialized_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_get_opponent_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn post_download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn sanitize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_VersusRankedMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::versustopmenucontent::VersusTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` — overload selector"]pub fn new(replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_VersusRankedMenu), ::core::stringify!(new),));
- <Self as IVersusSequence_VersusRankedMenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(VersusSequence_ProfileDownloadSequence), ::core::stringify!(new),));
+ <Self as IVersusSequence_ProfileDownloadSequenceMethods> ::ctor(this,replay_meta_data);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods:IVersusSequence_VersusFriendMenu_FriendCasualMenuItem{#[doc="`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f7090usize)as*mut u8,();
+(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver,(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)::core::convert::Into::into(meta_data),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f71a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f73f0usize)as*mut u8,();
+(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver)}
+}
+#[doc="`StartBattleDialog()` overload"]fn start_battle_dialog(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusFriendMenu_FriendCasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f71c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusFriendMenu_FriendCasualMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusFriendMenu_FriendCasualMenuItem>IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_battle_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem{#[doc="`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` — overload selector"]pub fn new(meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusFriendMenu_FriendCasualMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods> ::ctor(this,meta_data,num);
+this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusSequenceLocal_MetaDataPackMethods:IVersusSequence_VersusSequenceLocal_MetaDataPack{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusSequence_VersusSequenceLocal_MetaDataPack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f9720usize)as*mut u8,();
+(VersusSequence_VersusSequenceLocal_MetaDataPack)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(data),(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusSequenceLocal_MetaDataPack>IVersusSequence_VersusSequenceLocal_MetaDataPackMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_MetaDataPack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_MetaDataPack{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` — overload selector"]pub fn new(data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,path: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusSequenceLocal_MetaDataPack), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusSequenceLocal_MetaDataPackMethods> ::ctor(this,data,path);
 this}
 }
 
@@ -2789,213 +2776,226 @@ pub fn jump_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn get_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 }
 
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,replay_meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b1be40usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(replay_meta_data))}
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods:IVersusSequence_VersusMatchingMenu_RandomMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f82d0usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_RandomMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_VersusMatchingMenu_RandomMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusSequence_VersusMatchingMenu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f8440usize)as*mut u8,();
+(VersusSequence_VersusMatchingMenu_RandomMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileDownloadSequenceMethods:IVersusSequence_ProfileDownloadSequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn ctor(self,replay_meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b770usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(replay_meta_data))}
-}
-#[doc="`TryGetOpponentInfo(*mut::unity2::Il2CppString, *mutu64)` overload"]fn try_get_opponent_info(self,)->(bool, ::unity2::Il2CppString,u64){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b7b0usize)as*mut u8,bool;
-(VersusSequence_ProfileDownloadSequence)__receiver,(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`Download()` overload"]fn download(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b890usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence)__receiver)}
-}
-#[doc="`PostDownload()` overload"]fn post_download(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b990usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence)__receiver)}
-}
-#[doc="`Sanitize()` overload"]fn sanitize(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ba70usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence)__receiver)}
-}
-#[doc="`OpenDialog()` overload"]fn open_dialog(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1bb90usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence)__receiver)}
-}
-#[doc="`Save()` overload"]fn save(self,)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1bca0usize)as*mut u8,();
-(VersusSequence_ProfileDownloadSequence)__receiver)}
-}
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_VersusMatchingMenu_RandomMenuItem>IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_RandomMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileDownloadSequence>IVersusSequence_ProfileDownloadSequenceMethods for __T{}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn try_get_opponent_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn post_download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn sanitize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` — overload selector"]pub fn new(replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusMatchingMenu_RandomMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusSequence_ProfileDownloadSequence), ::core::stringify!(new),));
- <Self as IVersusSequence_ProfileDownloadSequenceMethods> ::ctor(this,replay_meta_data);
+ failed to instantiate", ::core::stringify!(VersusSequence_VersusMatchingMenu_RandomMenuItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="app-versussequence")]pub trait IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed98f0usize)as*mut u8,();
+(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9930usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl<__T:IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem>IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods for __T{}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(decide_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem), ::core::stringify!(new),));
+ <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods> ::ctor(this,decide_callback);
+this}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_LocalRate{#[doc="`ParseToNumber(u16)` overload"]pub fn parse_to_number(rate_data_type:impl::core::convert::Into<u16>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9670usize)as*mut u8,i32;
+(u16)::core::convert::Into::into(rate_data_type))}
+}
+#[doc="`ParseToDataType(i32)` overload"]pub fn parse_to_data_type(rate_number:impl::core::convert::Into<i32>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9690usize)as*mut u8,u16;
+(i32)::core::convert::Into::into(rate_number))}
+}
+#[doc="`ParseToSlotId(i32)` overload"]pub fn parse_to_slot_id(index:impl::core::convert::Into<i32>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f96e0usize)as*mut u8,u16;
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`PerseToSlotIndex(u16)` overload"]pub fn perse_to_slot_index(slot_id:impl::core::convert::Into<u16>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f9700usize)as*mut u8,i32;
+(u16)::core::convert::Into::into(slot_id))}
+}
+}
+
+#[cfg(feature="app-versussequence")]impl VersusSequence_VersusSequenceLocal_LocalRate{pub fn parse_to_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn parse_to_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn parse_to_slot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn perse_to_slot_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
 #[cfg(feature = "app-versussequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VersusSequence_VersusTopMenu_Result2;
-    pub use super::VersusSequence_ResultDialog_SelectMenu;
-    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence_Label;
-    pub use super::VersusSequence_VersusYesNoDialog_YesItem;
-    pub use super::IVersusSequence_VersusYesNoDialog_YesItem;
-    pub use super::IVersusSequence_VersusYesNoDialog_YesItemMethods;
-    pub use super::VersusSequence_VersusFriendMenu_FriendRankedMenuItem;
-    pub use super::IVersusSequence_VersusFriendMenu_FriendRankedMenuItem;
-    pub use super::IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods;
     pub use super::VersusSequence_VersusTopMenu_CasualMenuItem;
     pub use super::IVersusSequence_VersusTopMenu_CasualMenuItem;
     pub use super::IVersusSequence_VersusTopMenu_CasualMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem;
-    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem;
-    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods;
-    pub use super::VersusSequence_VersusProfileMenu_VersusProfileMenuItem;
-    pub use super::IVersusSequence_VersusProfileMenu_VersusProfileMenuItem;
-    pub use super::IVersusSequence_VersusProfileMenu_VersusProfileMenuItemMethods;
-    pub use super::VersusSequence_ResultDialog_DecideEventHandler;
-    pub use super::IVersusSequence_ResultDialog_DecideEventHandler;
-    pub use super::IVersusSequence_ResultDialog_DecideEventHandlerMethods;
-    pub use super::VersusSequence_VersusSequenceNet_UploadReplaySequence_Label;
-    pub use super::VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem;
-    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem;
-    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods;
-    pub use super::VersusSequence_IVersusSequenceBase;
-    pub use super::IVersusSequence_IVersusSequenceBase;
-    pub use super::IVersusSequence_IVersusSequenceBaseMethods;
-    pub use super::VersusSequence_VersusFriendMenu_FriendCasualMenuItem;
-    pub use super::IVersusSequence_VersusFriendMenu_FriendCasualMenuItem;
-    pub use super::IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods;
-    pub use super::VersusSequence_VersusMatchingMenu_RandomMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_RandomMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label;
-    pub use super::VersusSequence_VersusMatchingMenu_ProfileMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_ProfileMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceLocal_LocalRate;
-    pub use super::IVersusSequence_VersusSequenceLocal_LocalRate;
-    pub use super::VersusSequence_VersusRankedMenu_MapEditMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_MapEditMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceLocal_MetaDataPack;
-    pub use super::IVersusSequence_VersusSequenceLocal_MetaDataPack;
-    pub use super::IVersusSequence_VersusSequenceLocal_MetaDataPackMethods;
-    pub use super::VersusSequence_VersusRankedMenu_ResultMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_ResultMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_ResultMenuItemMethods;
-    pub use super::VersusSequence_VersusYesNoDialog_NoItem;
-    pub use super::IVersusSequence_VersusYesNoDialog_NoItem;
-    pub use super::IVersusSequence_VersusYesNoDialog_NoItemMethods;
-    pub use super::VersusSequence_VersusRankedMenu_StartMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_StartMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_StartMenuItemMethods;
-    pub use super::VersusSequence_VersusTopMenu_RankedMenuItem;
-    pub use super::IVersusSequence_VersusTopMenu_RankedMenuItem;
-    pub use super::IVersusSequence_VersusTopMenu_RankedMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback;
-    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback;
-    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods;
-    pub use super::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback;
-    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback;
-    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods;
     pub use super::VersusSequence_VersusFriendMenu;
     pub use super::IVersusSequence_VersusFriendMenu;
     pub use super::IVersusSequence_VersusFriendMenuMethods;
-    pub use super::VersusSequence_VersusRankedMenu_MockBattleMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_MockBattleMenuItem;
-    pub use super::IVersusSequence_VersusRankedMenu_MockBattleMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence;
-    pub use super::IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence;
-    pub use super::IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods;
-    pub use super::VersusSequence_VersusSequenceNet;
-    pub use super::IVersusSequence_VersusSequenceNet;
-    pub use super::IVersusSequence_VersusSequenceNetMethods;
-    pub use super::VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog;
-    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog;
-    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods;
-    pub use super::VersusSequence_VersusMatchingMenu_FriendMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_FriendMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods;
-    pub use super::VersusSequence_ProfileDownloadSequence_Label;
-    pub use super::VersusSequence_VersusYesNoDialog;
-    pub use super::IVersusSequence_VersusYesNoDialog;
-    pub use super::IVersusSequence_VersusYesNoDialogMethods;
-    pub use super::VersusSequence_VersusMatchingMenu_Result2;
-    pub use super::VersusSequence_VersusMatchingMenu_CodeMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_CodeMenuItem;
-    pub use super::IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceLocal;
-    pub use super::IVersusSequence_VersusSequenceLocal;
-    pub use super::IVersusSequence_VersusSequenceLocalMethods;
-    pub use super::VersusSequence_VersusSequenceBase_1;
-    pub use super::IVersusSequence_VersusSequenceBase_1;
-    pub use super::IVersusSequence_VersusSequenceBase_1Methods;
+    pub use super::VersusSequence_VersusSequenceNet_UploadReplaySequence_Label;
+    pub use super::VersusSequence_VersusRankedMenu_StartMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_StartMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_StartMenuItemMethods;
+    pub use super::VersusSequence_VersusRankedMenu_ResultMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_ResultMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_ResultMenuItemMethods;
+    pub use super::VersusSequence_VersusProfileMenu_VersusProfileMenuItem;
+    pub use super::IVersusSequence_VersusProfileMenu_VersusProfileMenuItem;
+    pub use super::IVersusSequence_VersusProfileMenu_VersusProfileMenuItemMethods;
     pub use super::VersusSequence_VersusProfileMenu;
     pub use super::IVersusSequence_VersusProfileMenu;
     pub use super::IVersusSequence_VersusProfileMenuMethods;
-    pub use super::VersusSequence_VersusCasualMenu_SelectMapMenuItem;
-    pub use super::IVersusSequence_VersusCasualMenu_SelectMapMenuItem;
-    pub use super::IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods;
-    pub use super::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType;
-    pub use super::VersusSequence_VersusTopMenu;
-    pub use super::IVersusSequence_VersusTopMenu;
-    pub use super::IVersusSequence_VersusTopMenuMethods;
-    pub use super::VersusSequence_VersusCasualMenu;
-    pub use super::IVersusSequence_VersusCasualMenu;
-    pub use super::IVersusSequence_VersusCasualMenuMethods;
-    pub use super::VersusSequence_ProfileUploadSequence;
-    pub use super::IVersusSequence_ProfileUploadSequence;
-    pub use super::IVersusSequence_ProfileUploadSequenceMethods;
-    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence;
-    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence;
-    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequenceMethods;
-    pub use super::VersusSequence_ResultDialog;
-    pub use super::IVersusSequence_ResultDialog;
-    pub use super::IVersusSequence_ResultDialogMethods;
-    pub use super::VersusSequence_VersusSequenceNet_UploadEditMapSequence;
-    pub use super::IVersusSequence_VersusSequenceNet_UploadEditMapSequence;
-    pub use super::IVersusSequence_VersusSequenceNet_UploadEditMapSequenceMethods;
-    pub use super::VersusSequence_VersusSequenceNet_UploadReplaySequence;
-    pub use super::IVersusSequence_VersusSequenceNet_UploadReplaySequence;
-    pub use super::IVersusSequence_VersusSequenceNet_UploadReplaySequenceMethods;
+    pub use super::VersusSequence_VersusRankedMenu_MapEditMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_MapEditMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods;
     pub use super::VersusSequence_VersusMatchingMenu;
     pub use super::IVersusSequence_VersusMatchingMenu;
     pub use super::IVersusSequence_VersusMatchingMenuMethods;
-    pub use super::VersusSequence_Label;
-    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem;
-    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem;
-    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods;
+    pub use super::VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog;
+    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog;
+    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods;
+    pub use super::VersusSequence_VersusMatchingMenu_ProfileMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_ProfileMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods;
+    pub use super::VersusSequence_IVersusSequenceBase;
+    pub use super::IVersusSequence_IVersusSequenceBase;
+    pub use super::IVersusSequence_IVersusSequenceBaseMethods;
+    pub use super::VersusSequence_VersusTopMenu_RankedMenuItem;
+    pub use super::IVersusSequence_VersusTopMenu_RankedMenuItem;
+    pub use super::IVersusSequence_VersusTopMenu_RankedMenuItemMethods;
+    pub use super::VersusSequence_VersusYesNoDialog_YesItem;
+    pub use super::IVersusSequence_VersusYesNoDialog_YesItem;
+    pub use super::IVersusSequence_VersusYesNoDialog_YesItemMethods;
+    pub use super::VersusSequence_VersusYesNoDialog_NoItem;
+    pub use super::IVersusSequence_VersusYesNoDialog_NoItem;
+    pub use super::IVersusSequence_VersusYesNoDialog_NoItemMethods;
+    pub use super::VersusSequence_VersusYesNoDialog;
+    pub use super::IVersusSequence_VersusYesNoDialog;
+    pub use super::IVersusSequence_VersusYesNoDialogMethods;
     pub use super::VersusSequence_VersusRankedMenu_Result2;
-    pub use super::VersusSequence_DebugPersistentMenu;
-    pub use super::IVersusSequence_DebugPersistentMenu;
-    pub use super::IVersusSequence_DebugPersistentMenuMethods;
+    pub use super::VersusSequence_ResultDialog_DecideEventHandler;
+    pub use super::IVersusSequence_ResultDialog_DecideEventHandler;
+    pub use super::IVersusSequence_ResultDialog_DecideEventHandlerMethods;
+    pub use super::VersusSequence_Label;
     pub use super::VersusSequence_ResultDialog_AssistItem;
     pub use super::IVersusSequence_ResultDialog_AssistItem;
     pub use super::IVersusSequence_ResultDialog_AssistItemMethods;
+    pub use super::VersusSequence_VersusFriendMenu_FriendRankedMenuItem;
+    pub use super::IVersusSequence_VersusFriendMenu_FriendRankedMenuItem;
+    pub use super::IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods;
+    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence_Label;
+    pub use super::VersusSequence_VersusMatchingMenu_Result2;
+    pub use super::VersusSequence_VersusCasualMenu_SelectMapMenuItem;
+    pub use super::IVersusSequence_VersusCasualMenu_SelectMapMenuItem;
+    pub use super::IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods;
+    pub use super::VersusSequence_VersusRankedMenu_MockBattleMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_MockBattleMenuItem;
+    pub use super::IVersusSequence_VersusRankedMenu_MockBattleMenuItemMethods;
+    pub use super::VersusSequence_VersusSequenceLocal;
+    pub use super::IVersusSequence_VersusSequenceLocal;
+    pub use super::IVersusSequence_VersusSequenceLocalMethods;
+    pub use super::VersusSequence_ProfileUploadSequence;
+    pub use super::IVersusSequence_ProfileUploadSequence;
+    pub use super::IVersusSequence_ProfileUploadSequenceMethods;
+    pub use super::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence;
+    pub use super::IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence;
+    pub use super::IVersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequenceMethods;
+    pub use super::VersusSequence_VersusTopMenu_Result2;
+    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback;
+    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_Callback;
+    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods;
+    pub use super::VersusSequence_ResultDialog;
+    pub use super::IVersusSequence_ResultDialog;
+    pub use super::IVersusSequence_ResultDialogMethods;
+    pub use super::VersusSequence_VersusSequenceBase_1;
+    pub use super::IVersusSequence_VersusSequenceBase_1;
+    pub use super::IVersusSequence_VersusSequenceBase_1Methods;
+    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence;
+    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence;
+    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequenceMethods;
+    pub use super::VersusSequence_VersusSequenceNet_UploadEditMapSequence;
+    pub use super::IVersusSequence_VersusSequenceNet_UploadEditMapSequence;
+    pub use super::IVersusSequence_VersusSequenceNet_UploadEditMapSequenceMethods;
+    pub use super::VersusSequence_VersusMatchingMenu_FriendMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_FriendMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods;
+    pub use super::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback;
+    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback;
+    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallbackMethods;
+    pub use super::VersusSequence_VersusSequenceNet_UploadReplaySequence;
+    pub use super::IVersusSequence_VersusSequenceNet_UploadReplaySequence;
+    pub use super::IVersusSequence_VersusSequenceNet_UploadReplaySequenceMethods;
+    pub use super::VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label;
+    pub use super::VersusSequence_ProfileDownloadSequence_Label;
+    pub use super::VersusSequence_VersusSequenceNet;
+    pub use super::IVersusSequence_VersusSequenceNet;
+    pub use super::IVersusSequence_VersusSequenceNetMethods;
+    pub use super::VersusSequence_VersusMatchingMenu_CodeMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_CodeMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods;
+    pub use super::VersusSequence_VersusTopMenu;
+    pub use super::IVersusSequence_VersusTopMenu;
+    pub use super::IVersusSequence_VersusTopMenuMethods;
     pub use super::VersusSequence_VersusRankedMenu;
     pub use super::IVersusSequence_VersusRankedMenu;
     pub use super::IVersusSequence_VersusRankedMenuMethods;
-    pub use super::VersusSequence;
-    pub use super::IVersusSequence;
+    pub use super::VersusSequence_VersusCasualMenu;
+    pub use super::IVersusSequence_VersusCasualMenu;
+    pub use super::IVersusSequence_VersusCasualMenuMethods;
+    pub use super::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem;
+    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem;
+    pub use super::IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods;
+    pub use super::VersusSequence_DebugPersistentMenu;
+    pub use super::IVersusSequence_DebugPersistentMenu;
+    pub use super::IVersusSequence_DebugPersistentMenuMethods;
+    pub use super::VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem;
+    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem;
+    pub use super::IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods;
     pub use super::VersusSequence_ProfileDownloadSequence;
     pub use super::IVersusSequence_ProfileDownloadSequence;
     pub use super::IVersusSequence_ProfileDownloadSequenceMethods;
+    pub use super::VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType;
+    pub use super::VersusSequence_ResultDialog_SelectMenu;
+    pub use super::VersusSequence_VersusFriendMenu_FriendCasualMenuItem;
+    pub use super::IVersusSequence_VersusFriendMenu_FriendCasualMenuItem;
+    pub use super::IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods;
+    pub use super::VersusSequence_VersusSequenceLocal_MetaDataPack;
+    pub use super::IVersusSequence_VersusSequenceLocal_MetaDataPack;
+    pub use super::IVersusSequence_VersusSequenceLocal_MetaDataPackMethods;
+    pub use super::VersusSequence;
+    pub use super::IVersusSequence;
+    pub use super::VersusSequence_VersusMatchingMenu_RandomMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_RandomMenuItem;
+    pub use super::IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods;
+    pub use super::VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem;
+    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem;
+    pub use super::IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods;
+    pub use super::VersusSequence_VersusSequenceLocal_LocalRate;
+    pub use super::IVersusSequence_VersusSequenceLocal_LocalRate;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

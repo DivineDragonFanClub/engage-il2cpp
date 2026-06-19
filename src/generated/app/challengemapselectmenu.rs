@@ -17,21 +17,67 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectmenu/ChallengeMapSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeMapSelectMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectmenu/ChallengeMapSelectMenu.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ChallengeMapSelectMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectmenu/ChallengeMapSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeMapSelectMenu_SelectEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectmenu/ChallengeMapSelectMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeMapSelectMenu_RequestCloseEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectmenu/ChallengeMapSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeMapSelectMenu_SelectEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectmenu/ChallengeMapSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeMapSelectMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectmenu/ChallengeMapSelectMenu.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ChallengeMapSelectMenu{}
 
 }
 
 #[cfg(feature = "app-challengemapselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-challengemapselectmenu")]pub trait IChallengeMapSelectMenu_SelectEventHandlerMethods:IChallengeMapSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bfb30usize)as*mut u8,();
+(ChallengeMapSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::challengedata::ChallengeData)` overload"]fn invoke(self,chapter_data:impl::core::convert::Into<crate::app::challengedata::ChallengeData>)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bfb50usize)as*mut u8,();
+(ChallengeMapSelectMenu_SelectEventHandler)__receiver,(crate::app::challengedata::ChallengeData)::core::convert::Into::into(chapter_data))}
+}
+}
+
+#[cfg(feature="app-challengemapselectmenu")]impl<__T:IChallengeMapSelectMenu_SelectEventHandler>IChallengeMapSelectMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChallengeMapSelectMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IChallengeMapSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-challengemapselectmenu")]pub trait IChallengeMapSelectMenu_RequestCloseEventHandlerMethods:IChallengeMapSelectMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bf8c0usize)as*mut u8,();
+(ChallengeMapSelectMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bf8e0usize)as*mut u8,();
+(ChallengeMapSelectMenu_RequestCloseEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-challengemapselectmenu")]impl<__T:IChallengeMapSelectMenu_RequestCloseEventHandler>IChallengeMapSelectMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChallengeMapSelectMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IChallengeMapSelectMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-challengemapselectmenu")]pub trait IChallengeMapSelectMenu_DecideEventHandlerMethods:IChallengeMapSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19bf500usize)as*mut u8,();
@@ -95,67 +141,21 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-challengemapselectmenu")]pub trait IChallengeMapSelectMenu_RequestCloseEventHandlerMethods:IChallengeMapSelectMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bf8c0usize)as*mut u8,();
-(ChallengeMapSelectMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bf8e0usize)as*mut u8,();
-(ChallengeMapSelectMenu_RequestCloseEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-challengemapselectmenu")]impl<__T:IChallengeMapSelectMenu_RequestCloseEventHandler>IChallengeMapSelectMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ChallengeMapSelectMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IChallengeMapSelectMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-challengemapselectmenu")]pub trait IChallengeMapSelectMenu_SelectEventHandlerMethods:IChallengeMapSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bfb30usize)as*mut u8,();
-(ChallengeMapSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::challengedata::ChallengeData)` overload"]fn invoke(self,chapter_data:impl::core::convert::Into<crate::app::challengedata::ChallengeData>)->(){unsafe{let __receiver= <ChallengeMapSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bfb50usize)as*mut u8,();
-(ChallengeMapSelectMenu_SelectEventHandler)__receiver,(crate::app::challengedata::ChallengeData)::core::convert::Into::into(chapter_data))}
-}
-}
-
-#[cfg(feature="app-challengemapselectmenu")]impl<__T:IChallengeMapSelectMenu_SelectEventHandler>IChallengeMapSelectMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-challengemapselectmenu")]impl ChallengeMapSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ChallengeMapSelectMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IChallengeMapSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-challengemapselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ChallengeMapSelectMenu_SelectEventHandler;
+    pub use super::IChallengeMapSelectMenu_SelectEventHandler;
+    pub use super::IChallengeMapSelectMenu_SelectEventHandlerMethods;
+    pub use super::ChallengeMapSelectMenu_RequestCloseEventHandler;
+    pub use super::IChallengeMapSelectMenu_RequestCloseEventHandler;
+    pub use super::IChallengeMapSelectMenu_RequestCloseEventHandlerMethods;
     pub use super::ChallengeMapSelectMenu_DecideEventHandler;
     pub use super::IChallengeMapSelectMenu_DecideEventHandler;
     pub use super::IChallengeMapSelectMenu_DecideEventHandlerMethods;
     pub use super::ChallengeMapSelectMenu;
     pub use super::IChallengeMapSelectMenu;
     pub use super::IChallengeMapSelectMenuMethods;
-    pub use super::ChallengeMapSelectMenu_RequestCloseEventHandler;
-    pub use super::IChallengeMapSelectMenu_RequestCloseEventHandler;
-    pub use super::IChallengeMapSelectMenu_RequestCloseEventHandlerMethods;
-    pub use super::ChallengeMapSelectMenu_SelectEventHandler;
-    pub use super::IChallengeMapSelectMenu_SelectEventHandler;
-    pub use super::IChallengeMapSelectMenu_SelectEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

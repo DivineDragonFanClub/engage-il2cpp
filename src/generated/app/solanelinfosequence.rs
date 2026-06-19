@@ -22,6 +22,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfosequence/SolanelInfoSequence.md"))]#[::unity2::class(namespace="App",name="SolanelInfoSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct SolanelInfoSequence{#[offset(120)]#[rename(name="m_InfoMenuResult")]pub m_info_menu_result:crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SolanelInfoSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SolanelInfoSequence_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfosequence/SolanelInfoSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SolanelInfoSequence_Label2{pub value:i32,}
 impl::unity2::ClassIdentity for SolanelInfoSequence_Label2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SolanelInfoSequence.Label2";
@@ -36,9 +39,6 @@ impl SolanelInfoSequence_Label2{pub fn entry()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SolanelInfoSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SolanelInfoSequence_DecideEventHandler{}
 
 }
 
@@ -138,10 +138,10 @@ pub mod prelude {
     pub use super::SolanelInfoSequence;
     pub use super::ISolanelInfoSequence;
     pub use super::ISolanelInfoSequenceMethods;
-    pub use super::SolanelInfoSequence_Label2;
     pub use super::SolanelInfoSequence_DecideEventHandler;
     pub use super::ISolanelInfoSequence_DecideEventHandler;
     pub use super::ISolanelInfoSequence_DecideEventHandlerMethods;
+    pub use super::SolanelInfoSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

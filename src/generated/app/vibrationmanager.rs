@@ -9,68 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/vibrationmanager/VibrationManager_VibHandle.md"))]#[::unity2::class(namespace="App",name="VibrationManager.VibHandle")]#[parent(crate::system::object::Object)]pub struct VibrationManager_VibHandle{#[static_field]#[rename(name="DEVICE_COUNT_MAX")]pub device_count_max:i32, #[offset(16)]#[rename(name="m_deviceCount")]pub m_device_count:i32, #[offset(24)]#[rename(name="m_deviceHandles")]pub m_device_handles: ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle> , #[offset(32)]#[rename(name="m_deviceInfos")]pub m_device_infos: ::unity2::Array<crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo> , #[offset(40)]#[rename(name="m_value")]pub m_value:crate::nn::hid::vibrationvalue::VibrationValue, #[offset(56)]#[rename(name="m_amplitudeMagnitude")]pub m_amplitude_magnitude:f32, #[offset(64)]#[rename(name="m_file")]pub m_file:crate::app::vibrationfile::VibrationFile, #[offset(72)]#[rename(name="m_sample")]pub m_sample:i32, #[offset(76)]#[rename(name="m_sampleLoop")]pub m_sample_loop:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/vibrationmanager/VibrationManager.md"))]#[::unity2::class(namespace="App",name="VibrationManager")]#[parent(crate::system::object::Object)]pub struct VibrationManager{#[offset(16)]#[rename(name="m_vibrationFileDictionary")]pub m_vibration_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::vibrationfile::VibrationFile> , #[offset(24)]#[rename(name="m_handle")]pub m_handle:crate::app::vibrationmanager::VibrationManager_VibHandle,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/vibrationmanager/VibrationManager_VibHandle.md"))]#[::unity2::class(namespace="App",name="VibrationManager.VibHandle")]#[parent(crate::system::object::Object)]pub struct VibrationManager_VibHandle{#[static_field]#[rename(name="DEVICE_COUNT_MAX")]pub device_count_max:i32, #[offset(16)]#[rename(name="m_deviceCount")]pub m_device_count:i32, #[offset(24)]#[rename(name="m_deviceHandles")]pub m_device_handles: ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle> , #[offset(32)]#[rename(name="m_deviceInfos")]pub m_device_infos: ::unity2::Array<crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo> , #[offset(40)]#[rename(name="m_value")]pub m_value:crate::nn::hid::vibrationvalue::VibrationValue, #[offset(56)]#[rename(name="m_amplitudeMagnitude")]pub m_amplitude_magnitude:f32, #[offset(64)]#[rename(name="m_file")]pub m_file:crate::app::vibrationfile::VibrationFile, #[offset(72)]#[rename(name="m_sample")]pub m_sample:i32, #[offset(76)]#[rename(name="m_sampleLoop")]pub m_sample_loop:bool,}
 
 }
 
 #[cfg(feature = "app-vibrationmanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-vibrationmanager")]pub trait IVibrationManager_VibHandleMethods:IVibrationManager_VibHandle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29a20usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver)}
-}
-#[doc="`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]fn setup_pad(self,npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId> ,npad_style:impl::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29b00usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver,(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id),(crate::nn::hid::npadstyle::NpadStyle)::core::convert::Into::into(npad_style))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29bd0usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver)}
-}
-#[doc="`Set(crate::app::vibrationfile::VibrationFile, bool)` overload"]fn set(self,file:impl::core::convert::Into<crate::app::vibrationfile::VibrationFile> ,is_loop:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c10usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver,(crate::app::vibrationfile::VibrationFile)::core::convert::Into::into(file),(bool)::core::convert::Into::into(is_loop))}
-}
-#[doc="`SetAmplitudeMagnitude(f32)` overload"]fn set_amplitude_magnitude(self,amplitude_magnitude:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c50usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver,(f32)::core::convert::Into::into(amplitude_magnitude))}
-}
-#[doc="`SetAmplitude(f32, f32)` overload"]fn set_amplitude(self,amp_low:impl::core::convert::Into<f32> ,amp_high:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c60usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver,(f32)::core::convert::Into::into(amp_low),(f32)::core::convert::Into::into(amp_high))}
-}
-#[doc="`SetFrequecy(f32, f32)` overload"]fn set_frequecy(self,freq_low:impl::core::convert::Into<f32> ,freq_high:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c70usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver,(f32)::core::convert::Into::into(freq_low),(f32)::core::convert::Into::into(freq_high))}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c80usize)as*mut u8,();
-(VibrationManager_VibHandle)__receiver)}
-}
-}
-
-#[cfg(feature="app-vibrationmanager")]impl<__T:IVibrationManager_VibHandle>IVibrationManager_VibHandleMethods for __T{}
-
-#[cfg(feature="app-vibrationmanager")]impl VibrationManager_VibHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn setup_pad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_amplitude_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_amplitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_frequecy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-vibrationmanager")]impl VibrationManager_VibHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VibrationManager_VibHandle), ::core::stringify!(new),));
- <Self as IVibrationManager_VibHandleMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-vibrationmanager")]pub trait IVibrationManagerMethods:IVibrationManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VibrationManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21bff40usize)as*mut u8,();
@@ -145,15 +92,68 @@ pub fn setup_pad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="app-vibrationmanager")]pub trait IVibrationManager_VibHandleMethods:IVibrationManager_VibHandle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29a20usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver)}
+}
+#[doc="`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]fn setup_pad(self,npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId> ,npad_style:impl::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29b00usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver,(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id),(crate::nn::hid::npadstyle::NpadStyle)::core::convert::Into::into(npad_style))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29bd0usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver)}
+}
+#[doc="`Set(crate::app::vibrationfile::VibrationFile, bool)` overload"]fn set(self,file:impl::core::convert::Into<crate::app::vibrationfile::VibrationFile> ,is_loop:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c10usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver,(crate::app::vibrationfile::VibrationFile)::core::convert::Into::into(file),(bool)::core::convert::Into::into(is_loop))}
+}
+#[doc="`SetAmplitudeMagnitude(f32)` overload"]fn set_amplitude_magnitude(self,amplitude_magnitude:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c50usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver,(f32)::core::convert::Into::into(amplitude_magnitude))}
+}
+#[doc="`SetAmplitude(f32, f32)` overload"]fn set_amplitude(self,amp_low:impl::core::convert::Into<f32> ,amp_high:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c60usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver,(f32)::core::convert::Into::into(amp_low),(f32)::core::convert::Into::into(amp_high))}
+}
+#[doc="`SetFrequecy(f32, f32)` overload"]fn set_frequecy(self,freq_low:impl::core::convert::Into<f32> ,freq_high:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c70usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver,(f32)::core::convert::Into::into(freq_low),(f32)::core::convert::Into::into(freq_high))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <VibrationManager_VibHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b29c80usize)as*mut u8,();
+(VibrationManager_VibHandle)__receiver)}
+}
+}
+
+#[cfg(feature="app-vibrationmanager")]impl<__T:IVibrationManager_VibHandle>IVibrationManager_VibHandleMethods for __T{}
+
+#[cfg(feature="app-vibrationmanager")]impl VibrationManager_VibHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_pad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_amplitude_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_amplitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_frequecy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-vibrationmanager")]impl VibrationManager_VibHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VibrationManager_VibHandle), ::core::stringify!(new),));
+ <Self as IVibrationManager_VibHandleMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-vibrationmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VibrationManager_VibHandle;
-    pub use super::IVibrationManager_VibHandle;
-    pub use super::IVibrationManager_VibHandleMethods;
     pub use super::VibrationManager;
     pub use super::IVibrationManager;
     pub use super::IVibrationManagerMethods;
+    pub use super::VibrationManager_VibHandle;
+    pub use super::IVibrationManager_VibHandle;
+    pub use super::IVibrationManager_VibHandleMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -21,9 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformbillboard/TransformBillboard.md"))]#[::unity2::class(namespace="App",name="TransformBillboard")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TransformBillboard{#[offset(24)]#[rename(name="m_Axis")]pub m_axis:crate::app::transformbillboard::TransformBillboard_Axis, #[offset(28)]#[rename(name="m_IsScaling")]pub m_is_scaling:bool, #[offset(32)]#[rename(name="m_BaseScale")]pub m_base_scale:f32, #[static_field]#[rename(name="BaseDistance")]pub base_distance:f32, #[static_field]#[rename(name="BaseFov")]pub base_fov:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformbillboard/TransformBillboard_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TransformBillboard_Axis{pub value:i32,}
 impl::unity2::ClassIdentity for TransformBillboard_Axis{const NAMESPACE: &'static str="App";
 const NAME: &'static str="TransformBillboard.Axis";
@@ -40,6 +37,9 @@ pub fn all()->Self{Self{value:1}
 pub fn y()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformbillboard/TransformBillboard.md"))]#[::unity2::class(namespace="App",name="TransformBillboard")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TransformBillboard{#[offset(24)]#[rename(name="m_Axis")]pub m_axis:crate::app::transformbillboard::TransformBillboard_Axis, #[offset(28)]#[rename(name="m_IsScaling")]pub m_is_scaling:bool, #[offset(32)]#[rename(name="m_BaseScale")]pub m_base_scale:f32, #[static_field]#[rename(name="BaseDistance")]pub base_distance:f32, #[static_field]#[rename(name="BaseFov")]pub base_fov:f32,}
 
 }
 
@@ -72,10 +72,10 @@ this}
 #[cfg(feature = "app-transformbillboard")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TransformBillboard_Axis;
     pub use super::TransformBillboard;
     pub use super::ITransformBillboard;
     pub use super::ITransformBillboardMethods;
-    pub use super::TransformBillboard_Axis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

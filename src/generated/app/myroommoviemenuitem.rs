@@ -37,15 +37,53 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomMovieMenuItem.MyRoomMovieCallSequence")]#[parent(crate::app::stackprocinst_1::StackProcInst_1<crate::app::myroommoviemenuitem::MyRoomMovieMenuItem_MyRoomMovieCallSequence>)]pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenuitem/MyRoomMovieMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomMovieMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomMovieMenuItem{#[offset(104)]#[rename(name="m_movieFileName")]pub m_movie_file_name: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_help")]pub m_help: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_label")]pub m_label: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomMovieMenuItem.MyRoomMovieCallSequence")]#[parent(crate::app::stackprocinst_1::StackProcInst_1<crate::app::myroommoviemenuitem::MyRoomMovieMenuItem_MyRoomMovieCallSequence>)]pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence{}
 
 }
 
 #[cfg(feature = "app-myroommoviemenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-myroommoviemenuitem")]pub trait IMyRoomMovieMenuItemMethods:IMyRoomMovieMenuItem{#[doc="`.ctor(crate::app::moviedefinedata::MovieDefineData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::moviedefinedata::MovieDefineData>)->(){unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2390fe0usize)as*mut u8,();
+(MyRoomMovieMenuItem)__receiver,(crate::app::moviedefinedata::MovieDefineData)::core::convert::Into::into(data))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2392220usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomMovieMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2392230usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MyRoomMovieMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2392240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomMovieMenuItem)__receiver)}
+}
+#[doc="`SetCurrentMovieInfo()` overload"]fn set_current_movie_info(self,)->(){unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2392270usize)as*mut u8,();
+(MyRoomMovieMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-myroommoviemenuitem")]impl<__T:IMyRoomMovieMenuItem>IMyRoomMovieMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroommoviemenuitem")]impl MyRoomMovieMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_current_movie_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-myroommoviemenuitem")]impl MyRoomMovieMenuItem{#[doc="`.ctor(crate::app::moviedefinedata::MovieDefineData)` — overload selector"]pub fn new(data:crate::app::moviedefinedata::MovieDefineData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomMovieMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomMovieMenuItemMethods> ::ctor(this,data);
+this}
+}
 
 #[cfg(feature="app-myroommoviemenuitem")]impl MyRoomMovieMenuItem_MyRoomMovieCallSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,movei_file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2093890usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(movei_file_name))}
@@ -101,54 +139,16 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-myroommoviemenuitem")]pub trait IMyRoomMovieMenuItemMethods:IMyRoomMovieMenuItem{#[doc="`.ctor(crate::app::moviedefinedata::MovieDefineData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::moviedefinedata::MovieDefineData>)->(){unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2390fe0usize)as*mut u8,();
-(MyRoomMovieMenuItem)__receiver,(crate::app::moviedefinedata::MovieDefineData)::core::convert::Into::into(data))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2392220usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomMovieMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2392230usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomMovieMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2392240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomMovieMenuItem)__receiver)}
-}
-#[doc="`SetCurrentMovieInfo()` overload"]fn set_current_movie_info(self,)->(){unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2392270usize)as*mut u8,();
-(MyRoomMovieMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroommoviemenuitem")]impl<__T:IMyRoomMovieMenuItem>IMyRoomMovieMenuItemMethods for __T{}
-
-#[cfg(feature="app-myroommoviemenuitem")]impl MyRoomMovieMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_current_movie_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-myroommoviemenuitem")]impl MyRoomMovieMenuItem{#[doc="`.ctor(crate::app::moviedefinedata::MovieDefineData)` — overload selector"]pub fn new(data:crate::app::moviedefinedata::MovieDefineData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomMovieMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomMovieMenuItemMethods> ::ctor(this,data);
-this}
-}
-
 #[cfg(feature = "app-myroommoviemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label;
-    pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence;
-    pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequence;
-    pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequenceMethods;
     pub use super::MyRoomMovieMenuItem;
     pub use super::IMyRoomMovieMenuItem;
     pub use super::IMyRoomMovieMenuItemMethods;
+    pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence;
+    pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequence;
+    pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequenceMethods;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::stackprocinst_1::IStackProcInst_1;

@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/curve/Curve.md"))]#[::unity2::class(namespace="App",name="Curve")]#[parent(crate::system::object::Object)]pub struct Curve{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/curve/Curve_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Curve_Type{pub value:i32,}
 impl::unity2::ClassIdentity for Curve_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Curve.Type";
@@ -41,9 +44,6 @@ pub fn decel_linear()->Self{Self{value:7}
 pub fn accel_linear()->Self{Self{value:8}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/curve/Curve.md"))]#[::unity2::class(namespace="App",name="Curve")]#[parent(crate::system::object::Object)]pub struct Curve{}
 
 }
 
@@ -149,10 +149,10 @@ this}
 #[cfg(feature = "app-curve")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Curve_Type;
     pub use super::Curve;
     pub use super::ICurve;
     pub use super::ICurveMethods;
+    pub use super::Curve_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -13,20 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivalue/AIValue_Value.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIValue_Value{pub value:i32,}
-impl::unity2::ClassIdentity for AIValue_Value{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIValue.Value";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIValue_Value{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AIValue_Value{pub fn num()->Self{Self{value:4}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivalue/AIValue_Order.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIValue_Order{pub value:i32,}
 impl::unity2::ClassIdentity for AIValue_Order{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIValue.Order";
@@ -45,6 +31,20 @@ pub fn attack()->Self{Self{value:2}
 pub fn r#move()->Self{Self{value:3}
 }
 pub fn num()->Self{Self{value:4}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivalue/AIValue_Value.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIValue_Value{pub value:i32,}
+impl::unity2::ClassIdentity for AIValue_Value{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIValue.Value";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIValue_Value{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AIValue_Value{pub fn num()->Self{Self{value:4}
 }
 }
 
@@ -228,8 +228,8 @@ this}
 #[cfg(feature = "app-aivalue")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AIValue_Value;
     pub use super::AIValue_Order;
+    pub use super::AIValue_Value;
     pub use super::AIValue;
     pub use super::IAIValue;
     pub use super::IAIValueMethods;

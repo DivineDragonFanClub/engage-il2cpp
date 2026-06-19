@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomreliancesequence::MyRoomRelianceSequence>)]pub struct MyRoomRelianceSequence{#[offset(144)]#[rename(name="m_mainContent")]pub m_main_content:crate::unity_engine::gameobject::GameObject,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomRelianceSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomRelianceSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomRelianceSequence.Label";
@@ -40,6 +37,9 @@ pub fn reliance()->Self{Self{value:3}
 pub fn end()->Self{Self{value:4}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomreliancesequence::MyRoomRelianceSequence>)]pub struct MyRoomRelianceSequence{#[offset(144)]#[rename(name="m_mainContent")]pub m_main_content:crate::unity_engine::gameobject::GameObject,}
 
 }
 
@@ -148,10 +148,10 @@ this}
 #[cfg(feature = "app-myroomreliancesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomRelianceSequence_Label;
     pub use super::MyRoomRelianceSequence;
     pub use super::IMyRoomRelianceSequence;
     pub use super::IMyRoomRelianceSequenceMethods;
-    pub use super::MyRoomRelianceSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

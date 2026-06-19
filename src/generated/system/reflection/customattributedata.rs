@@ -9,33 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributedata/CustomAttributeData_LazyCAttrData.md"))]#[::unity2::class(namespace="System.Reflection",name="CustomAttributeData.LazyCAttrData")]#[parent(crate::system::object::Object)]pub struct CustomAttributeData_LazyCAttrData{#[offset(16)]#[rename(name="assembly")]pub assembly:crate::system::reflection::assembly::Assembly, #[offset(24)]#[rename(name="data")]pub data: ::unity2::IntPtr, #[offset(32)]#[rename(name="data_length")]pub data_length:u32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributedata/CustomAttributeData.md"))]#[::unity2::class(namespace="System.Reflection",name="CustomAttributeData")]#[parent(crate::system::object::Object)]pub struct CustomAttributeData{#[offset(16)]#[rename(name="ctorInfo")]pub ctor_info:crate::system::reflection::constructorinfo::ConstructorInfo, #[offset(24)]#[rename(name="ctorArgs")]pub ctor_args:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributetypedargument::CustomAttributeTypedArgument> , #[offset(32)]#[rename(name="namedArgs")]pub named_args:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributenamedargument::CustomAttributeNamedArgument> , #[offset(40)]#[rename(name="lazyData")]pub lazy_data:crate::system::reflection::customattributedata::CustomAttributeData_LazyCAttrData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributedata/CustomAttributeData_LazyCAttrData.md"))]#[::unity2::class(namespace="System.Reflection",name="CustomAttributeData.LazyCAttrData")]#[parent(crate::system::object::Object)]pub struct CustomAttributeData_LazyCAttrData{#[offset(16)]#[rename(name="assembly")]pub assembly:crate::system::reflection::assembly::Assembly, #[offset(24)]#[rename(name="data")]pub data: ::unity2::IntPtr, #[offset(32)]#[rename(name="data_length")]pub data_length:u32,}
 
 }
 
 #[cfg(feature = "system-reflection-customattributedata-types")]
 pub use __types::*;
-
-#[cfg(feature="system-reflection-customattributedata")]pub trait ICustomAttributeData_LazyCAttrDataMethods:ICustomAttributeData_LazyCAttrData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomAttributeData_LazyCAttrData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d3570usize)as*mut u8,();
-(CustomAttributeData_LazyCAttrData)__receiver)}
-}
-}
-
-#[cfg(feature="system-reflection-customattributedata")]impl<__T:ICustomAttributeData_LazyCAttrData>ICustomAttributeData_LazyCAttrDataMethods for __T{}
-
-#[cfg(feature="system-reflection-customattributedata")]impl CustomAttributeData_LazyCAttrData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="system-reflection-customattributedata")]impl CustomAttributeData_LazyCAttrData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CustomAttributeData_LazyCAttrData), ::core::stringify!(new),));
- <Self as ICustomAttributeData_LazyCAttrDataMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="system-reflection-customattributedata")]impl CustomAttributeData{#[doc="`ResolveArgumentsInternal(crate::system::reflection::constructorinfo::ConstructorInfo, crate::system::reflection::assembly::Assembly, ::unity2::IntPtr, u32, *mut::unity2::Array<crate::system::object::Object>, *mut::unity2::Array<crate::system::object::Object>)` overload"]pub fn resolve_arguments_internal(ctor:impl::core::convert::Into<crate::system::reflection::constructorinfo::ConstructorInfo> ,assembly:impl::core::convert::Into<crate::system::reflection::assembly::Assembly> ,data:impl::core::convert::Into< ::unity2::IntPtr> ,data_length:impl::core::convert::Into<u32>)->(::unity2::Array<crate::system::object::Object> , ::unity2::Array<crate::system::object::Object>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::system::object::Object> > ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::system::object::Object> > ::uninit();
@@ -154,15 +136,33 @@ this}
 this}
 }
 
+#[cfg(feature="system-reflection-customattributedata")]pub trait ICustomAttributeData_LazyCAttrDataMethods:ICustomAttributeData_LazyCAttrData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomAttributeData_LazyCAttrData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d3570usize)as*mut u8,();
+(CustomAttributeData_LazyCAttrData)__receiver)}
+}
+}
+
+#[cfg(feature="system-reflection-customattributedata")]impl<__T:ICustomAttributeData_LazyCAttrData>ICustomAttributeData_LazyCAttrDataMethods for __T{}
+
+#[cfg(feature="system-reflection-customattributedata")]impl CustomAttributeData_LazyCAttrData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-reflection-customattributedata")]impl CustomAttributeData_LazyCAttrData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomAttributeData_LazyCAttrData), ::core::stringify!(new),));
+ <Self as ICustomAttributeData_LazyCAttrDataMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "system-reflection-customattributedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomAttributeData_LazyCAttrData;
-    pub use super::ICustomAttributeData_LazyCAttrData;
-    pub use super::ICustomAttributeData_LazyCAttrDataMethods;
     pub use super::CustomAttributeData;
     pub use super::ICustomAttributeData;
     pub use super::ICustomAttributeDataMethods;
+    pub use super::CustomAttributeData_LazyCAttrData;
+    pub use super::ICustomAttributeData_LazyCAttrData;
+    pub use super::ICustomAttributeData_LazyCAttrDataMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

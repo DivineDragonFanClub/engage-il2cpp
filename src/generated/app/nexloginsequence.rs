@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence.md"))]#[::unity2::class(namespace="App",name="NexLoginSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexLoginSequence{#[offset(112)]#[rename(name="m_IsShowError")]pub m_is_show_error:bool, #[static_field]#[rename(name="s_LastResult")]pub s_last_result:crate::app::nexloginsequence::NexLoginSequence_Result, #[static_field]#[rename(name="s_IsGotIntegerSettings")]pub s_is_got_integer_settings:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexLoginSequence_Result{pub value:i32,}
 impl::unity2::ClassIdentity for NexLoginSequence_Result{const NAMESPACE: &'static str="App";
 const NAME: &'static str="NexLoginSequence.Result";
@@ -64,6 +61,9 @@ pub fn error_and_cleanup()->Self{Self{value:7}
 pub fn end()->Self{Self{value:8}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence.md"))]#[::unity2::class(namespace="App",name="NexLoginSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexLoginSequence{#[offset(112)]#[rename(name="m_IsShowError")]pub m_is_show_error:bool, #[static_field]#[rename(name="s_LastResult")]pub s_last_result:crate::app::nexloginsequence::NexLoginSequence_Result, #[static_field]#[rename(name="s_IsGotIntegerSettings")]pub s_is_got_integer_settings:bool,}
 
 }
 
@@ -160,11 +160,11 @@ this}
 #[cfg(feature = "app-nexloginsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NexLoginSequence_Result;
+    pub use super::NexLoginSequence_Label;
     pub use super::NexLoginSequence;
     pub use super::INexLoginSequence;
     pub use super::INexLoginSequenceMethods;
-    pub use super::NexLoginSequence_Result;
-    pub use super::NexLoginSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -9,15 +9,63 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal.md"))]#[::unity2::class(namespace="System.Collections",name="EmptyReadOnlyDictionaryInternal")]#[parent(crate::system::object::Object)]pub struct EmptyReadOnlyDictionaryInternal{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal_NodeEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="EmptyReadOnlyDictionaryInternal.NodeEnumerator")]#[parent(crate::system::object::Object)]pub struct EmptyReadOnlyDictionaryInternal_NodeEnumerator{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal.md"))]#[::unity2::class(namespace="System.Collections",name="EmptyReadOnlyDictionaryInternal")]#[parent(crate::system::object::Object)]pub struct EmptyReadOnlyDictionaryInternal{}
 
 }
 
 #[cfg(feature = "system-collections-emptyreadonlydictionaryinternal-types")]
 pub use __types::*;
+
+#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]pub trait IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods:IEmptyReadOnlyDictionaryInternal_NodeEnumerator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4290usize)as*mut u8,();
+(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d42a0usize)as*mut u8,bool;
+(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d42b0usize)as*mut u8,crate::system::object::Object;
+(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4310usize)as*mut u8,();
+(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
+}
+#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4320usize)as*mut u8,crate::system::object::Object;
+(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4380usize)as*mut u8,crate::system::object::Object;
+(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
+}
+#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d43e0usize)as*mut u8,crate::system::collections::dictionaryentry::DictionaryEntry;
+(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]impl<__T:IEmptyReadOnlyDictionaryInternal_NodeEnumerator>IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods for __T{}
+
+#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]impl EmptyReadOnlyDictionaryInternal_NodeEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]impl EmptyReadOnlyDictionaryInternal_NodeEnumerator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EmptyReadOnlyDictionaryInternal_NodeEnumerator), ::core::stringify!(new),));
+ <Self as IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]pub trait IEmptyReadOnlyDictionaryInternalMethods:IEmptyReadOnlyDictionaryInternal{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3641090usize)as*mut u8,();
@@ -112,63 +160,15 @@ pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]pub trait IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods:IEmptyReadOnlyDictionaryInternal_NodeEnumerator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4290usize)as*mut u8,();
-(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d42a0usize)as*mut u8,bool;
-(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
-}
-#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d42b0usize)as*mut u8,crate::system::object::Object;
-(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4310usize)as*mut u8,();
-(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
-}
-#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4320usize)as*mut u8,crate::system::object::Object;
-(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4380usize)as*mut u8,crate::system::object::Object;
-(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
-}
-#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <EmptyReadOnlyDictionaryInternal_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d43e0usize)as*mut u8,crate::system::collections::dictionaryentry::DictionaryEntry;
-(EmptyReadOnlyDictionaryInternal_NodeEnumerator)__receiver)}
-}
-}
-
-#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]impl<__T:IEmptyReadOnlyDictionaryInternal_NodeEnumerator>IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods for __T{}
-
-#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]impl EmptyReadOnlyDictionaryInternal_NodeEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="system-collections-emptyreadonlydictionaryinternal")]impl EmptyReadOnlyDictionaryInternal_NodeEnumerator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EmptyReadOnlyDictionaryInternal_NodeEnumerator), ::core::stringify!(new),));
- <Self as IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "system-collections-emptyreadonlydictionaryinternal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EmptyReadOnlyDictionaryInternal;
-    pub use super::IEmptyReadOnlyDictionaryInternal;
-    pub use super::IEmptyReadOnlyDictionaryInternalMethods;
     pub use super::EmptyReadOnlyDictionaryInternal_NodeEnumerator;
     pub use super::IEmptyReadOnlyDictionaryInternal_NodeEnumerator;
     pub use super::IEmptyReadOnlyDictionaryInternal_NodeEnumeratorMethods;
+    pub use super::EmptyReadOnlyDictionaryInternal;
+    pub use super::IEmptyReadOnlyDictionaryInternal;
+    pub use super::IEmptyReadOnlyDictionaryInternalMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

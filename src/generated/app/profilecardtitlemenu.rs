@@ -17,38 +17,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtitlemenu/ProfileCardTitleMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardTitleMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardTitleMenu_DisposeEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtitlemenu/ProfileCardTitleMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardTitleMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardTitleMenu{#[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[static_field]#[rename(name="m_MenuItemIndexEmpty")]pub m_menu_item_index_empty:i32, #[offset(200)]#[rename(name="m_CardRoot")]pub m_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(208)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardtitlemenu::ProfileCardTitleMenu_DisposeEventHandler, #[offset(216)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(224)]#[rename(name="m_DecidedMenuItemIndex")]pub m_decided_menu_item_index:i32, #[offset(228)]#[rename(name="m_Sorted")]pub m_sorted:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtitlemenu/ProfileCardTitleMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardTitleMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardTitleMenu_DisposeEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardtitlemenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardtitlemenu")]pub trait IProfileCardTitleMenu_DisposeEventHandlerMethods:IProfileCardTitleMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardTitleMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226d080usize)as*mut u8,();
-(ProfileCardTitleMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226d0a0usize)as*mut u8,();
-(ProfileCardTitleMenu_DisposeEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardtitlemenu")]impl<__T:IProfileCardTitleMenu_DisposeEventHandler>IProfileCardTitleMenu_DisposeEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardtitlemenu")]impl ProfileCardTitleMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardtitlemenu")]impl ProfileCardTitleMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardTitleMenu_DisposeEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardTitleMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-profilecardtitlemenu")]impl ProfileCardTitleMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardtitlemenu::ProfileCardTitleMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent> ,card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardtitlemenu::ProfileCardTitleMenu_DisposeEventHandler>)->crate::app::profilecardtitlemenu::ProfileCardTitleMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bfdf70usize)as*mut u8,crate::app::profilecardtitlemenu::ProfileCardTitleMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(crate::app::profilecardtitlemenu::ProfileCardTitleMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
@@ -125,15 +102,38 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-profilecardtitlemenu")]pub trait IProfileCardTitleMenu_DisposeEventHandlerMethods:IProfileCardTitleMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardTitleMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226d080usize)as*mut u8,();
+(ProfileCardTitleMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226d0a0usize)as*mut u8,();
+(ProfileCardTitleMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardtitlemenu")]impl<__T:IProfileCardTitleMenu_DisposeEventHandler>IProfileCardTitleMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardtitlemenu")]impl ProfileCardTitleMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardtitlemenu")]impl ProfileCardTitleMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTitleMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardTitleMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-profilecardtitlemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardTitleMenu_DisposeEventHandler;
-    pub use super::IProfileCardTitleMenu_DisposeEventHandler;
-    pub use super::IProfileCardTitleMenu_DisposeEventHandlerMethods;
     pub use super::ProfileCardTitleMenu;
     pub use super::IProfileCardTitleMenu;
     pub use super::IProfileCardTitleMenuMethods;
+    pub use super::ProfileCardTitleMenu_DisposeEventHandler;
+    pub use super::IProfileCardTitleMenu_DisposeEventHandler;
+    pub use super::IProfileCardTitleMenu_DisposeEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_UI.md"))]#[::unity2::class(namespace="App",name="KeyHelp.UI")]#[parent(crate::system::object::Object)]pub struct KeyHelp_UI{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="ElementNames")]pub element_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(16)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(24)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Elements")]pub m_elements:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::keyhelp::KeyHelp_Type,crate::app::keyhelp::KeyHelp_UI_Element> , #[offset(40)]#[rename(name="m_Index")]pub m_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KeyHelp_Type{pub value:i32,}
 impl::unity2::ClassIdentity for KeyHelp_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="KeyHelp.Type";
@@ -54,10 +51,13 @@ pub fn num()->Self{Self{value:11}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_UI_Element.md"))]#[::unity2::class(namespace="App",name="KeyHelp.UI.Element")]#[parent(crate::system::object::Object)]pub struct KeyHelp_UI_Element{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_UI.md"))]#[::unity2::class(namespace="App",name="KeyHelp.UI")]#[parent(crate::system::object::Object)]pub struct KeyHelp_UI{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="ElementNames")]pub element_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(16)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(24)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Elements")]pub m_elements:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::keyhelp::KeyHelp_Type,crate::app::keyhelp::KeyHelp_UI_Element> , #[offset(40)]#[rename(name="m_Index")]pub m_index:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp.md"))]#[::unity2::class(namespace="App",name="KeyHelp")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::keyhelp::KeyHelp>)]pub struct KeyHelp{#[offset(32)]#[rename(name="m_UI")]pub m_ui:crate::app::keyhelp::KeyHelp_UI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_UI_Element.md"))]#[::unity2::class(namespace="App",name="KeyHelp.UI.Element")]#[parent(crate::system::object::Object)]pub struct KeyHelp_UI_Element{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
@@ -128,39 +128,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-keyhelp")]pub trait IKeyHelp_UI_ElementMethods:IKeyHelp_UI_Element{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67590usize)as*mut u8,();
-(KeyHelp_UI_Element)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
-}
-#[doc="`SetVisible(bool)` overload"]fn set_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67630usize)as*mut u8,();
-(KeyHelp_UI_Element)__receiver,(bool)::core::convert::Into::into(is_visible))}
-}
-#[doc="`SetIndex(i32)` overload"]fn set_index(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67640usize)as*mut u8,();
-(KeyHelp_UI_Element)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67670usize)as*mut u8,();
-(KeyHelp_UI_Element)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-}
-
-#[cfg(feature="app-keyhelp")]impl<__T:IKeyHelp_UI_Element>IKeyHelp_UI_ElementMethods for __T{}
-
-#[cfg(feature="app-keyhelp")]impl KeyHelp_UI_Element{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-keyhelp")]impl KeyHelp_UI_Element{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(KeyHelp_UI_Element), ::core::stringify!(new),));
- <Self as IKeyHelp_UI_ElementMethods> ::ctor(this,root);
-this}
-}
-
 #[cfg(feature="app-keyhelp")]impl KeyHelp{#[doc="`IsCreating()` overload"]pub fn is_creating()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8fe0usize)as*mut u8,bool;
 )}
 }
@@ -211,19 +178,52 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-keyhelp")]pub trait IKeyHelp_UI_ElementMethods:IKeyHelp_UI_Element{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67590usize)as*mut u8,();
+(KeyHelp_UI_Element)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`SetVisible(bool)` overload"]fn set_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67630usize)as*mut u8,();
+(KeyHelp_UI_Element)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`SetIndex(i32)` overload"]fn set_index(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67640usize)as*mut u8,();
+(KeyHelp_UI_Element)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67670usize)as*mut u8,();
+(KeyHelp_UI_Element)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+}
+
+#[cfg(feature="app-keyhelp")]impl<__T:IKeyHelp_UI_Element>IKeyHelp_UI_ElementMethods for __T{}
+
+#[cfg(feature="app-keyhelp")]impl KeyHelp_UI_Element{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-keyhelp")]impl KeyHelp_UI_Element{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KeyHelp_UI_Element), ::core::stringify!(new),));
+ <Self as IKeyHelp_UI_ElementMethods> ::ctor(this,root);
+this}
+}
+
 #[cfg(feature = "app-keyhelp")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::KeyHelp_Type;
     pub use super::KeyHelp_UI;
     pub use super::IKeyHelp_UI;
     pub use super::IKeyHelp_UIMethods;
-    pub use super::KeyHelp_Type;
-    pub use super::KeyHelp_UI_Element;
-    pub use super::IKeyHelp_UI_Element;
-    pub use super::IKeyHelp_UI_ElementMethods;
     pub use super::KeyHelp;
     pub use super::IKeyHelp;
     pub use super::IKeyHelpMethods;
+    pub use super::KeyHelp_UI_Element;
+    pub use super::IKeyHelp_UI_Element;
+    pub use super::IKeyHelp_UI_ElementMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

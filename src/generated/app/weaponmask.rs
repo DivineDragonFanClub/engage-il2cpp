@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask.md"))]#[::unity2::class(namespace="App",name="WeaponMask")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::weaponmask::WeaponMask_Flag>)]pub struct WeaponMask{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask_Flag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WeaponMask_Flag{pub value:i32,}
 impl::unity2::ClassIdentity for WeaponMask_Flag{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WeaponMask.Flag";
@@ -52,6 +49,9 @@ pub fn fist()->Self{Self{value:256}
 pub fn special()->Self{Self{value:512}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask.md"))]#[::unity2::class(namespace="App",name="WeaponMask")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::weaponmask::WeaponMask_Flag>)]pub struct WeaponMask{}
 
 }
 
@@ -139,10 +139,10 @@ this}
 #[cfg(feature = "app-weaponmask")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::WeaponMask_Flag;
     pub use super::WeaponMask;
     pub use super::IWeaponMask;
     pub use super::IWeaponMaskMethods;
-    pub use super::WeaponMask_Flag;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

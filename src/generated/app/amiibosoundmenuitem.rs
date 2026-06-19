@@ -15,15 +15,38 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem.md"))]#[::unity2::class(namespace="App",name="AmiiboSoundMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AmiiboSoundMenuItem{#[offset(104)]#[rename(name="m_musicData")]pub m_music_data:crate::app::musicdata::MusicData,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem_YesItem.md"))]#[::unity2::class(namespace="App",name="AmiiboSoundMenuItem.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct AmiiboSoundMenuItem_YesItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem.md"))]#[::unity2::class(namespace="App",name="AmiiboSoundMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AmiiboSoundMenuItem{#[offset(104)]#[rename(name="m_musicData")]pub m_music_data:crate::app::musicdata::MusicData,}
 
 }
 
 #[cfg(feature = "app-amiibosoundmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-amiibosoundmenuitem")]pub trait IAmiiboSoundMenuItem_YesItemMethods:IAmiiboSoundMenuItem_YesItem{#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AmiiboSoundMenuItem_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3760usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AmiiboSoundMenuItem_YesItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboSoundMenuItem_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3770usize)as*mut u8,();
+(AmiiboSoundMenuItem_YesItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-amiibosoundmenuitem")]impl<__T:IAmiiboSoundMenuItem_YesItem>IAmiiboSoundMenuItem_YesItemMethods for __T{}
+
+#[cfg(feature="app-amiibosoundmenuitem")]impl AmiiboSoundMenuItem_YesItem{pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-amiibosoundmenuitem")]impl AmiiboSoundMenuItem_YesItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboSoundMenuItem_YesItem), ::core::stringify!(new),));
+ <Self as IAmiiboSoundMenuItem_YesItemMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-amiibosoundmenuitem")]pub trait IAmiiboSoundMenuItemMethods:IAmiiboSoundMenuItem{#[doc="`get_IsEmpty()` overload"]fn get_is_empty(self,)->bool{unsafe{let __receiver= <AmiiboSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89dc0usize)as*mut u8,bool;
@@ -88,38 +111,15 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-amiibosoundmenuitem")]pub trait IAmiiboSoundMenuItem_YesItemMethods:IAmiiboSoundMenuItem_YesItem{#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AmiiboSoundMenuItem_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3760usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(AmiiboSoundMenuItem_YesItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboSoundMenuItem_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3770usize)as*mut u8,();
-(AmiiboSoundMenuItem_YesItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-amiibosoundmenuitem")]impl<__T:IAmiiboSoundMenuItem_YesItem>IAmiiboSoundMenuItem_YesItemMethods for __T{}
-
-#[cfg(feature="app-amiibosoundmenuitem")]impl AmiiboSoundMenuItem_YesItem{pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-amiibosoundmenuitem")]impl AmiiboSoundMenuItem_YesItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AmiiboSoundMenuItem_YesItem), ::core::stringify!(new),));
- <Self as IAmiiboSoundMenuItem_YesItemMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-amiibosoundmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AmiiboSoundMenuItem;
-    pub use super::IAmiiboSoundMenuItem;
-    pub use super::IAmiiboSoundMenuItemMethods;
     pub use super::AmiiboSoundMenuItem_YesItem;
     pub use super::IAmiiboSoundMenuItem_YesItem;
     pub use super::IAmiiboSoundMenuItem_YesItemMethods;
+    pub use super::AmiiboSoundMenuItem;
+    pub use super::IAmiiboSoundMenuItem;
+    pub use super::IAmiiboSoundMenuItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

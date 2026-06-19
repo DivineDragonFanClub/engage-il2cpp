@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedatahandle/SaveDataHandle.md"))]#[::unity2::class(namespace="App",name="SaveDataHandle")]#[parent(crate::system::object::Object)]pub struct SaveDataHandle{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedatahandle/SaveDataHandle_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SaveDataHandle_States{pub value:i32,}
 impl::unity2::ClassIdentity for SaveDataHandle_States{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SaveDataHandle.States";
@@ -29,9 +32,6 @@ pub fn succeeded()->Self{Self{value:1}
 pub fn failed()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedatahandle/SaveDataHandle.md"))]#[::unity2::class(namespace="App",name="SaveDataHandle")]#[parent(crate::system::object::Object)]pub struct SaveDataHandle{}
 
 }
 
@@ -89,10 +89,10 @@ this}
 #[cfg(feature = "app-savedatahandle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SaveDataHandle_States;
     pub use super::SaveDataHandle;
     pub use super::ISaveDataHandle;
     pub use super::ISaveDataHandleMethods;
+    pub use super::SaveDataHandle_States;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

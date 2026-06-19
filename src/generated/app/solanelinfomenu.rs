@@ -21,6 +21,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SolanelInfoMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SolanelInfoMenu_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu_InfoResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SolanelInfoMenu_InfoResult{pub value:i32,}
 impl::unity2::ClassIdentity for SolanelInfoMenu_InfoResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SolanelInfoMenu.InfoResult";
@@ -35,12 +41,6 @@ impl SolanelInfoMenu_InfoResult{pub fn jump()->Self{Self{value:0}
 pub fn cancel()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SolanelInfoMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenu/SolanelInfoMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SolanelInfoMenu_DecideEventHandler{}
 
 }
 
@@ -132,13 +132,13 @@ this}
 #[cfg(feature = "app-solanelinfomenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SolanelInfoMenu_InfoResult;
     pub use super::SolanelInfoMenu;
     pub use super::ISolanelInfoMenu;
     pub use super::ISolanelInfoMenuMethods;
     pub use super::SolanelInfoMenu_DecideEventHandler;
     pub use super::ISolanelInfoMenu_DecideEventHandler;
     pub use super::ISolanelInfoMenu_DecideEventHandlerMethods;
+    pub use super::SolanelInfoMenu_InfoResult;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

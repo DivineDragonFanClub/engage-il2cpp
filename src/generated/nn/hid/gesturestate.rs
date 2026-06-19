@@ -11,6 +11,17 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/gesturestate/GestureState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GestureState{}
+impl::unity2::ClassIdentity for GestureState{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="GestureState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GestureState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/gesturestate/GestureState_GesturePointArray4.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GestureState_GesturePointArray4{pub value0:crate::nn::hid::gesturepoint::GesturePoint,pub value1:crate::nn::hid::gesturepoint::GesturePoint,pub value2:crate::nn::hid::gesturepoint::GesturePoint,pub value3:crate::nn::hid::gesturepoint::GesturePoint,}
 impl::unity2::ClassIdentity for GestureState_GesturePointArray4{const NAMESPACE: &'static str="nn.hid";
 const NAME: &'static str="GestureState.GesturePointArray4";
@@ -29,21 +40,34 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/gesturestate/GestureState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GestureState{}
-impl::unity2::ClassIdentity for GestureState{const NAMESPACE: &'static str="nn.hid";
-const NAME: &'static str="GestureState";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GestureState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
 }
 
 #[cfg(feature = "nn-hid-gesturestate-types")]
 pub use __types::*;
+
+#[cfg(feature="nn-hid-gesturestate")]impl GestureState{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c20usize)as*mut u8,();
+(*mut GestureState)self as*mut GestureState)}
+}
+#[doc="`get_type()` overload"]pub fn get_type(&mut self,)->crate::nn::hid::gesturetype::GestureType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c30usize)as*mut u8,crate::nn::hid::gesturetype::GestureType;
+(*mut GestureState)self as*mut GestureState)}
+}
+#[doc="`get_direction()` overload"]pub fn get_direction(&mut self,)->crate::nn::hid::gesturedirection::GestureDirection{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c40usize)as*mut u8,crate::nn::hid::gesturedirection::GestureDirection;
+(*mut GestureState)self as*mut GestureState)}
+}
+#[doc="`get_isDoubleTap()` overload"]pub fn get_is_double_tap(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c50usize)as*mut u8,bool;
+(*mut GestureState)self as*mut GestureState)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c60usize)as*mut u8, ::unity2::Il2CppString;
+(*mut GestureState)self as*mut GestureState)}
+}
+}
+
+#[cfg(feature="nn-hid-gesturestate")]impl GestureState{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_double_tap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature="nn-hid-gesturestate")]impl GestureState_GesturePointArray4{#[doc="`get_Length()` overload"]pub fn get_length(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70e20usize)as*mut u8,i32;
 (*mut GestureState_GesturePointArray4)self as*mut GestureState_GesturePointArray4)}
@@ -113,35 +137,11 @@ pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
-#[cfg(feature="nn-hid-gesturestate")]impl GestureState{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c20usize)as*mut u8,();
-(*mut GestureState)self as*mut GestureState)}
-}
-#[doc="`get_type()` overload"]pub fn get_type(&mut self,)->crate::nn::hid::gesturetype::GestureType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c30usize)as*mut u8,crate::nn::hid::gesturetype::GestureType;
-(*mut GestureState)self as*mut GestureState)}
-}
-#[doc="`get_direction()` overload"]pub fn get_direction(&mut self,)->crate::nn::hid::gesturedirection::GestureDirection{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c40usize)as*mut u8,crate::nn::hid::gesturedirection::GestureDirection;
-(*mut GestureState)self as*mut GestureState)}
-}
-#[doc="`get_isDoubleTap()` overload"]pub fn get_is_double_tap(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c50usize)as*mut u8,bool;
-(*mut GestureState)self as*mut GestureState)}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2521c60usize)as*mut u8, ::unity2::Il2CppString;
-(*mut GestureState)self as*mut GestureState)}
-}
-}
-
-#[cfg(feature="nn-hid-gesturestate")]impl GestureState{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_is_double_tap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
 #[cfg(feature = "nn-hid-gesturestate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GestureState_GesturePointArray4;
     pub use super::GestureState;
+    pub use super::GestureState_GesturePointArray4;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

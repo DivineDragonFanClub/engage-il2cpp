@@ -17,15 +17,38 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeSourceMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefineShopExchangeSourceMenu{#[offset(232)]#[rename(name="m_TargetMaterialId")]pub m_target_material_id: ::unity2::Il2CppString, #[offset(240)]#[rename(name="m_SourceMaterialId")]pub m_source_material_id: ::unity2::Il2CppString, #[offset(248)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, #[offset(256)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeSourceMenu.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopExchangeSourceMenu_CloseEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeSourceMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefineShopExchangeSourceMenu{#[offset(232)]#[rename(name="m_TargetMaterialId")]pub m_target_material_id: ::unity2::Il2CppString, #[offset(240)]#[rename(name="m_SourceMaterialId")]pub m_source_material_id: ::unity2::Il2CppString, #[offset(248)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, #[offset(256)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler,}
 
 }
 
 #[cfg(feature = "app-refineshopexchangesourcemenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-refineshopexchangesourcemenu")]pub trait IRefineShopExchangeSourceMenu_CloseEventHandlerMethods:IRefineShopExchangeSourceMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afb750usize)as*mut u8,();
+(RefineShopExchangeSourceMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afb770usize)as*mut u8,();
+(RefineShopExchangeSourceMenu_CloseEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineshopexchangesourcemenu")]impl<__T:IRefineShopExchangeSourceMenu_CloseEventHandler>IRefineShopExchangeSourceMenu_CloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refineshopexchangesourcemenu")]impl RefineShopExchangeSourceMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refineshopexchangesourcemenu")]impl RefineShopExchangeSourceMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeSourceMenu_CloseEventHandler), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeSourceMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-refineshopexchangesourcemenu")]impl RefineShopExchangeSourceMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler, crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent> ,target_material_id:impl::core::convert::Into< ::unity2::Il2CppString> ,initial_source_material_id:impl::core::convert::Into< ::unity2::Il2CppString> ,select_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler> ,close_event_handler:impl::core::convert::Into<crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler>)->crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2962b60usize)as*mut u8,crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::refineshopexchangesourcemenucontent::RefineShopExchangeSourceMenuContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(target_material_id),(::unity2::Il2CppString)::core::convert::Into::into(initial_source_material_id),(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu_CloseEventHandler)::core::convert::Into::into(close_event_handler))}
@@ -126,38 +149,15 @@ pub fn calc_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-refineshopexchangesourcemenu")]pub trait IRefineShopExchangeSourceMenu_CloseEventHandlerMethods:IRefineShopExchangeSourceMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afb750usize)as*mut u8,();
-(RefineShopExchangeSourceMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineShopExchangeSourceMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afb770usize)as*mut u8,();
-(RefineShopExchangeSourceMenu_CloseEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-refineshopexchangesourcemenu")]impl<__T:IRefineShopExchangeSourceMenu_CloseEventHandler>IRefineShopExchangeSourceMenu_CloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-refineshopexchangesourcemenu")]impl RefineShopExchangeSourceMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refineshopexchangesourcemenu")]impl RefineShopExchangeSourceMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefineShopExchangeSourceMenu_CloseEventHandler), ::core::stringify!(new),));
- <Self as IRefineShopExchangeSourceMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-refineshopexchangesourcemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineShopExchangeSourceMenu;
-    pub use super::IRefineShopExchangeSourceMenu;
-    pub use super::IRefineShopExchangeSourceMenuMethods;
     pub use super::RefineShopExchangeSourceMenu_CloseEventHandler;
     pub use super::IRefineShopExchangeSourceMenu_CloseEventHandler;
     pub use super::IRefineShopExchangeSourceMenu_CloseEventHandlerMethods;
+    pub use super::RefineShopExchangeSourceMenu;
+    pub use super::IRefineShopExchangeSourceMenu;
+    pub use super::IRefineShopExchangeSourceMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

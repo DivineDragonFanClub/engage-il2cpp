@@ -23,6 +23,15 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu_SellMenuItem.md"))]#[::unity2::class(namespace="App",name="WeaponShopTopMenu.SellMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WeaponShopTopMenu_SellMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu.md"))]#[::unity2::class(namespace="App",name="WeaponShopTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct WeaponShopTopMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu_BuyMenuItem.md"))]#[::unity2::class(namespace="App",name="WeaponShopTopMenu.BuyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WeaponShopTopMenu_BuyMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WeaponShopTopMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for WeaponShopTopMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WeaponShopTopMenu.Result2";
@@ -41,16 +50,7 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu_SellMenuItem.md"))]#[::unity2::class(namespace="App",name="WeaponShopTopMenu.SellMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WeaponShopTopMenu_SellMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu_BuyMenuItem.md"))]#[::unity2::class(namespace="App",name="WeaponShopTopMenu.BuyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct WeaponShopTopMenu_BuyMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopTopMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshoptopmenu/WeaponShopTopMenu.md"))]#[::unity2::class(namespace="App",name="WeaponShopTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct WeaponShopTopMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,}
 
 }
 
@@ -77,6 +77,40 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(WeaponShopTopMenu_SellMenuItem), ::core::stringify!(new),));
  <Self as IWeaponShopTopMenu_SellMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-weaponshoptopmenu")]impl WeaponShopTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2, crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d31a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+}
+
+#[cfg(feature="app-weaponshoptopmenu")]pub trait IWeaponShopTopMenuMethods:IWeaponShopTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2, crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::shoptopmenucontent::ShopTopMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <WeaponShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d3380usize)as*mut u8,();
+(WeaponShopTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::shoptopmenucontent::ShopTopMenuContent)::core::convert::Into::into(menu_content),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WeaponShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d3410usize)as*mut u8, ::unity2::Il2CppString;
+(WeaponShopTopMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WeaponShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d3460usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(WeaponShopTopMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-weaponshoptopmenu")]impl<__T:IWeaponShopTopMenu>IWeaponShopTopMenuMethods for __T{}
+
+#[cfg(feature="app-weaponshoptopmenu")]impl WeaponShopTopMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-weaponshoptopmenu")]impl WeaponShopTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2, crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::shoptopmenucontent::ShopTopMenuContent,initial_selected:crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2,decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopTopMenu), ::core::stringify!(new),));
+ <Self as IWeaponShopTopMenuMethods> ::ctor(this,menu_item_list,menu_content,initial_selected,decide_event_handler);
 this}
 }
 
@@ -126,56 +160,22 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-weaponshoptopmenu")]impl WeaponShopTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2, crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d31a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-}
-
-#[cfg(feature="app-weaponshoptopmenu")]pub trait IWeaponShopTopMenuMethods:IWeaponShopTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2, crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::shoptopmenucontent::ShopTopMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <WeaponShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d3380usize)as*mut u8,();
-(WeaponShopTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::shoptopmenucontent::ShopTopMenuContent)::core::convert::Into::into(menu_content),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WeaponShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d3410usize)as*mut u8, ::unity2::Il2CppString;
-(WeaponShopTopMenu)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WeaponShopTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d3460usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(WeaponShopTopMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-weaponshoptopmenu")]impl<__T:IWeaponShopTopMenu>IWeaponShopTopMenuMethods for __T{}
-
-#[cfg(feature="app-weaponshoptopmenu")]impl WeaponShopTopMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-weaponshoptopmenu")]impl WeaponShopTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2, crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::shoptopmenucontent::ShopTopMenuContent,initial_selected:crate::app::weaponshoptopmenu::WeaponShopTopMenu_Result2,decide_event_handler:crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WeaponShopTopMenu), ::core::stringify!(new),));
- <Self as IWeaponShopTopMenuMethods> ::ctor(this,menu_item_list,menu_content,initial_selected,decide_event_handler);
-this}
-}
-
 #[cfg(feature = "app-weaponshoptopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeaponShopTopMenu_Result2;
     pub use super::WeaponShopTopMenu_SellMenuItem;
     pub use super::IWeaponShopTopMenu_SellMenuItem;
     pub use super::IWeaponShopTopMenu_SellMenuItemMethods;
-    pub use super::WeaponShopTopMenu_BuyMenuItem;
-    pub use super::IWeaponShopTopMenu_BuyMenuItem;
-    pub use super::IWeaponShopTopMenu_BuyMenuItemMethods;
-    pub use super::WeaponShopTopMenu_DecideEventHandler;
-    pub use super::IWeaponShopTopMenu_DecideEventHandler;
-    pub use super::IWeaponShopTopMenu_DecideEventHandlerMethods;
     pub use super::WeaponShopTopMenu;
     pub use super::IWeaponShopTopMenu;
     pub use super::IWeaponShopTopMenuMethods;
+    pub use super::WeaponShopTopMenu_BuyMenuItem;
+    pub use super::IWeaponShopTopMenu_BuyMenuItem;
+    pub use super::IWeaponShopTopMenu_BuyMenuItemMethods;
+    pub use super::WeaponShopTopMenu_Result2;
+    pub use super::WeaponShopTopMenu_DecideEventHandler;
+    pub use super::IWeaponShopTopMenu_DecideEventHandler;
+    pub use super::IWeaponShopTopMenu_DecideEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

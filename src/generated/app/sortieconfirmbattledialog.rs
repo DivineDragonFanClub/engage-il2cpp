@@ -27,9 +27,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md"))]#[::unity2::class(namespace="App",name="SortieConfirmBattleDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct SortieConfirmBattleDialog{#[static_field]#[rename(name="m_from")]pub m_from:crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_From.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieConfirmBattleDialog_From{pub value:i32,}
 impl::unity2::ClassIdentity for SortieConfirmBattleDialog_From{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SortieConfirmBattleDialog.From";
@@ -48,6 +45,9 @@ pub fn troop_list()->Self{Self{value:2}
 pub fn num()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md"))]#[::unity2::class(namespace="App",name="SortieConfirmBattleDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct SortieConfirmBattleDialog{#[static_field]#[rename(name="m_from")]pub m_from:crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="SortieConfirmBattleDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SortieConfirmBattleDialog_ConfirmYesDialogItem{}
@@ -111,10 +111,10 @@ this}
 #[cfg(feature = "app-sortieconfirmbattledialog")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SortieConfirmBattleDialog_From;
     pub use super::SortieConfirmBattleDialog;
     pub use super::ISortieConfirmBattleDialog;
     pub use super::ISortieConfirmBattleDialogMethods;
-    pub use super::SortieConfirmBattleDialog_From;
     pub use super::SortieConfirmBattleDialog_ConfirmYesDialogItem;
     pub use super::ISortieConfirmBattleDialog_ConfirmYesDialogItem;
     pub use super::ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods;

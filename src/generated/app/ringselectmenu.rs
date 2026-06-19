@@ -15,15 +15,79 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectmenu/RingSelectMenu.md"))]#[::unity2::class(namespace="App",name="RingSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RingSelectMenu{#[static_field]#[rename(name="GidMax")]pub gid_max:i32, #[offset(200)]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_statusSetter")]pub m_status_setter:crate::app::unitstatussetter::UnitStatusSetter, #[offset(216)]#[rename(name="m_ringSelectRoot")]pub m_ring_select_root:crate::app::ringselectroot::RingSelectRoot, #[offset(224)]#[rename(name="m_menuSelect")]pub m_menu_select:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(232)]#[rename(name="m_selectPage")]pub m_select_page:i32, #[static_field]#[rename(name="m_gidPageName")]pub m_gid_page_name:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="m_isUnitChangeAnim")]pub m_is_unit_change_anim:bool, #[static_field]#[rename(name="m_isUnitChangeEquip")]pub m_is_unit_change_equip:bool, #[static_field]#[rename(name="m_ringUnitList")]pub m_ring_unit_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectmenu/RingSelectMenu_RingMenuItem.md"))]#[::unity2::class(namespace="App",name="RingSelectMenu.RingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingSelectMenu_RingMenuItem{#[offset(100)]#[rename(name="m_isGod")]pub m_is_god:bool, #[offset(104)]#[rename(name="m_god")]pub m_god:crate::app::godunit::GodUnit, #[offset(112)]#[rename(name="m_ring")]pub m_ring:crate::app::unitring::UnitRing,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectmenu/RingSelectMenu.md"))]#[::unity2::class(namespace="App",name="RingSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RingSelectMenu{#[static_field]#[rename(name="GidMax")]pub gid_max:i32, #[offset(200)]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_statusSetter")]pub m_status_setter:crate::app::unitstatussetter::UnitStatusSetter, #[offset(216)]#[rename(name="m_ringSelectRoot")]pub m_ring_select_root:crate::app::ringselectroot::RingSelectRoot, #[offset(224)]#[rename(name="m_menuSelect")]pub m_menu_select:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(232)]#[rename(name="m_selectPage")]pub m_select_page:i32, #[static_field]#[rename(name="m_gidPageName")]pub m_gid_page_name:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="m_isUnitChangeAnim")]pub m_is_unit_change_anim:bool, #[static_field]#[rename(name="m_isUnitChangeEquip")]pub m_is_unit_change_equip:bool, #[static_field]#[rename(name="m_ringUnitList")]pub m_ring_unit_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit, ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-ringselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-ringselectmenu")]impl RingSelectMenu_RingMenuItem{#[doc="`CalcAttribute(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]pub fn calc_attribute(unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d60e90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
+}
+}
+
+#[cfg(feature="app-ringselectmenu")]pub trait IRingSelectMenu_RingMenuItemMethods:IRingSelectMenu_RingMenuItem{#[doc="`get_RingSortId()` overload"]fn get_ring_sort_id(self,)->i32{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60d30usize)as*mut u8,i32;
+(RingSelectMenu_RingMenuItem)__receiver)}
+}
+#[doc="`set_RingSortId(i32)` overload"]fn set_ring_sort_id(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60d40usize)as*mut u8,();
+(RingSelectMenu_RingMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` overload"]fn ctor(self,is_god:impl::core::convert::Into<bool> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing> ,ring_sort_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60d50usize)as*mut u8,();
+(RingSelectMenu_RingMenuItem)__receiver,(bool)::core::convert::Into::into(is_god),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring),(i32)::core::convert::Into::into(ring_sort_id))}
+}
+#[doc="`IsGod()` overload"]fn is_god(self,)->bool{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60dc0usize)as*mut u8,bool;
+(RingSelectMenu_RingMenuItem)__receiver)}
+}
+#[doc="`GetGod()` overload"]fn get_god(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60dd0usize)as*mut u8,crate::app::godunit::GodUnit;
+(RingSelectMenu_RingMenuItem)__receiver)}
+}
+#[doc="`GetCommon()` overload"]fn get_common(self,)->crate::app::unitring::UnitRing{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60de0usize)as*mut u8,crate::app::unitring::UnitRing;
+(RingSelectMenu_RingMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60df0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RingSelectMenu_RingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingSelectMenu_RingMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d616d0usize)as*mut u8,();
+(RingSelectMenu_RingMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringselectmenu")]impl<__T:IRingSelectMenu_RingMenuItem>IRingSelectMenu_RingMenuItemMethods for __T{}
+
+#[cfg(feature="app-ringselectmenu")]impl RingSelectMenu_RingMenuItem{pub fn get_ring_sort_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_ring_sort_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-ringselectmenu")]impl RingSelectMenu_RingMenuItem{#[doc="`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` — overload selector"]pub fn new(is_god:bool,god:crate::app::godunit::GodUnit,ring:crate::app::unitring::UnitRing,ring_sort_id:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSelectMenu_RingMenuItem), ::core::stringify!(new),));
+ <Self as IRingSelectMenu_RingMenuItemMethods> ::ctor(this,is_god,god,ring,ring_sort_id);
+this}
+}
 
 #[cfg(feature="app-ringselectmenu")]impl RingSelectMenu{#[doc="`GetPoolGodNum()` overload"]pub fn get_pool_god_num()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1eb79e0usize)as*mut u8,i32;
 )}
@@ -162,79 +226,15 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-ringselectmenu")]impl RingSelectMenu_RingMenuItem{#[doc="`CalcAttribute(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]pub fn calc_attribute(unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d60e90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
-}
-}
-
-#[cfg(feature="app-ringselectmenu")]pub trait IRingSelectMenu_RingMenuItemMethods:IRingSelectMenu_RingMenuItem{#[doc="`get_RingSortId()` overload"]fn get_ring_sort_id(self,)->i32{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60d30usize)as*mut u8,i32;
-(RingSelectMenu_RingMenuItem)__receiver)}
-}
-#[doc="`set_RingSortId(i32)` overload"]fn set_ring_sort_id(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60d40usize)as*mut u8,();
-(RingSelectMenu_RingMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` overload"]fn ctor(self,is_god:impl::core::convert::Into<bool> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing> ,ring_sort_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60d50usize)as*mut u8,();
-(RingSelectMenu_RingMenuItem)__receiver,(bool)::core::convert::Into::into(is_god),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring),(i32)::core::convert::Into::into(ring_sort_id))}
-}
-#[doc="`IsGod()` overload"]fn is_god(self,)->bool{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60dc0usize)as*mut u8,bool;
-(RingSelectMenu_RingMenuItem)__receiver)}
-}
-#[doc="`GetGod()` overload"]fn get_god(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60dd0usize)as*mut u8,crate::app::godunit::GodUnit;
-(RingSelectMenu_RingMenuItem)__receiver)}
-}
-#[doc="`GetCommon()` overload"]fn get_common(self,)->crate::app::unitring::UnitRing{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60de0usize)as*mut u8,crate::app::unitring::UnitRing;
-(RingSelectMenu_RingMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60df0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RingSelectMenu_RingMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RingSelectMenu_RingMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingSelectMenu_RingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d616d0usize)as*mut u8,();
-(RingSelectMenu_RingMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringselectmenu")]impl<__T:IRingSelectMenu_RingMenuItem>IRingSelectMenu_RingMenuItemMethods for __T{}
-
-#[cfg(feature="app-ringselectmenu")]impl RingSelectMenu_RingMenuItem{pub fn get_ring_sort_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_ring_sort_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn calc_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-ringselectmenu")]impl RingSelectMenu_RingMenuItem{#[doc="`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` — overload selector"]pub fn new(is_god:bool,god:crate::app::godunit::GodUnit,ring:crate::app::unitring::UnitRing,ring_sort_id:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingSelectMenu_RingMenuItem), ::core::stringify!(new),));
- <Self as IRingSelectMenu_RingMenuItemMethods> ::ctor(this,is_god,god,ring,ring_sort_id);
-this}
-}
-
 #[cfg(feature = "app-ringselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingSelectMenu;
-    pub use super::IRingSelectMenu;
-    pub use super::IRingSelectMenuMethods;
     pub use super::RingSelectMenu_RingMenuItem;
     pub use super::IRingSelectMenu_RingMenuItem;
     pub use super::IRingSelectMenu_RingMenuItemMethods;
+    pub use super::RingSelectMenu;
+    pub use super::IRingSelectMenu;
+    pub use super::IRingSelectMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

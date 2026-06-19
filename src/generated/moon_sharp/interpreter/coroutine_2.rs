@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="Coroutine")]#[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]pub struct Coroutine_2{#[offset(24)]#[rename(name="m_ClrCallback")]pub m_clr_callback:crate::moon_sharp::interpreter::callbackfunction::CallbackFunction, #[offset(32)]#[rename(name="m_Processor")]pub m_processor:crate::moon_sharp::interpreter::execution::vm::processor::Processor,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/coroutine_2/Coroutine_CoroutineType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Coroutine_CoroutineType{pub value:i32,}
 impl::unity2::ClassIdentity for Coroutine_CoroutineType{const NAMESPACE: &'static str="MoonSharp.Interpreter";
 const NAME: &'static str="Coroutine.CoroutineType";
@@ -34,6 +31,9 @@ pub fn clr_callback()->Self{Self{value:1}
 pub fn clr_callback_dead()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="Coroutine")]#[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]pub struct Coroutine_2{#[offset(24)]#[rename(name="m_ClrCallback")]pub m_clr_callback:crate::moon_sharp::interpreter::callbackfunction::CallbackFunction, #[offset(32)]#[rename(name="m_Processor")]pub m_processor:crate::moon_sharp::interpreter::execution::vm::processor::Processor,}
 
 }
 
@@ -364,10 +364,10 @@ this}
 #[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Coroutine_CoroutineType;
     pub use super::Coroutine_2;
     pub use super::ICoroutine_2;
     pub use super::ICoroutine_2Methods;
-    pub use super::Coroutine_CoroutineType;
     pub use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

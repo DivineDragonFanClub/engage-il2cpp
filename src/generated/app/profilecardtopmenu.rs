@@ -26,22 +26,16 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardTopMenu_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_PhotoMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.PhotoMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_PhotoMenuItem{#[offset(100)]#[rename(name="m_Enabled")]pub m_enabled:bool, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_MyCardMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.MyCardMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_MyCardMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_StampVisibilitySettingMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.StampVisibilitySettingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_StampVisibilitySettingMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_PublicSettingMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.PublicSettingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_PublicSettingMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_AlbumMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.AlbumMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_AlbumMenuItem{#[offset(100)]#[rename(name="m_Enabled")]pub m_enabled:bool, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardTopMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler, #[offset(208)]#[rename(name="m_Root")]pub m_root:crate::app::profilecardtopmenuroot::ProfileCardTopMenuRoot,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_PhotoMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.PhotoMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_PhotoMenuItem{#[offset(100)]#[rename(name="m_Enabled")]pub m_enabled:bool, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_MyCardMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.MyCardMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_MyCardMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardTopMenu_Result2{pub value:i32,}
@@ -66,6 +60,12 @@ pub fn stamp_visibility_setting()->Self{Self{value:4}
 pub fn end()->Self{Self{value:5}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_PublicSettingMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.PublicSettingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_PublicSettingMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenu/ProfileCardTopMenu_StampVisibilitySettingMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenu.StampVisibilitySettingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTopMenu_StampVisibilitySettingMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler,}
 
 }
 
@@ -92,143 +92,6 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(ProfileCardTopMenu_DecideEventHandler), ::core::stringify!(new),));
  <Self as IProfileCardTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_PhotoMenuItemMethods:IProfileCardTopMenu_PhotoMenuItem{#[doc="`.ctor(bool, crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,enabled:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226da70usize)as*mut u8,();
-(ProfileCardTopMenu_PhotoMenuItem)__receiver,(bool)::core::convert::Into::into(enabled),(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226dac0usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226db40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226db60usize)as*mut u8,();
-(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226dca0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_PhotoMenuItem>IProfileCardTopMenu_PhotoMenuItemMethods for __T{}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PhotoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PhotoMenuItem{#[doc="`.ctor(bool, crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(enabled:bool,decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardTopMenu_PhotoMenuItem), ::core::stringify!(new),));
- <Self as IProfileCardTopMenu_PhotoMenuItemMethods> ::ctor(this,enabled,decide_event_handler);
-this}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_MyCardMenuItemMethods:IProfileCardTopMenu_MyCardMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226d8b0usize)as*mut u8,();
-(ProfileCardTopMenu_MyCardMenuItem)__receiver,(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226d8f0usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardTopMenu_MyCardMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226d970usize)as*mut u8,();
-(ProfileCardTopMenu_MyCardMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226da40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardTopMenu_MyCardMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_MyCardMenuItem>IProfileCardTopMenu_MyCardMenuItemMethods for __T{}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_MyCardMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_MyCardMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardTopMenu_MyCardMenuItem), ::core::stringify!(new),));
- <Self as IProfileCardTopMenu_MyCardMenuItemMethods> ::ctor(this,decide_event_handler);
-this}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods:IProfileCardTopMenu_StampVisibilitySettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226dfa0usize)as*mut u8,();
-(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver,(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226dfe0usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226e060usize)as*mut u8,();
-(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226e210usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_StampVisibilitySettingMenuItem>IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods for __T{}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_StampVisibilitySettingMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_StampVisibilitySettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardTopMenu_StampVisibilitySettingMenuItem), ::core::stringify!(new),));
- <Self as IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods> ::ctor(this,decide_event_handler);
-this}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_PublicSettingMenuItemMethods:IProfileCardTopMenu_PublicSettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226dcf0usize)as*mut u8,();
-(ProfileCardTopMenu_PublicSettingMenuItem)__receiver,(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226dd30usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardTopMenu_PublicSettingMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226ddb0usize)as*mut u8,();
-(ProfileCardTopMenu_PublicSettingMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226df70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardTopMenu_PublicSettingMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_PublicSettingMenuItem>IProfileCardTopMenu_PublicSettingMenuItemMethods for __T{}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PublicSettingMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PublicSettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardTopMenu_PublicSettingMenuItem), ::core::stringify!(new),));
- <Self as IProfileCardTopMenu_PublicSettingMenuItemMethods> ::ctor(this,decide_event_handler);
 this}
 }
 
@@ -319,31 +182,168 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_PhotoMenuItemMethods:IProfileCardTopMenu_PhotoMenuItem{#[doc="`.ctor(bool, crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,enabled:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226da70usize)as*mut u8,();
+(ProfileCardTopMenu_PhotoMenuItem)__receiver,(bool)::core::convert::Into::into(enabled),(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226dac0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226db40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226db60usize)as*mut u8,();
+(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_PhotoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226dca0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardTopMenu_PhotoMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_PhotoMenuItem>IProfileCardTopMenu_PhotoMenuItemMethods for __T{}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PhotoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PhotoMenuItem{#[doc="`.ctor(bool, crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(enabled:bool,decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTopMenu_PhotoMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardTopMenu_PhotoMenuItemMethods> ::ctor(this,enabled,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_MyCardMenuItemMethods:IProfileCardTopMenu_MyCardMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226d8b0usize)as*mut u8,();
+(ProfileCardTopMenu_MyCardMenuItem)__receiver,(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226d8f0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTopMenu_MyCardMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226d970usize)as*mut u8,();
+(ProfileCardTopMenu_MyCardMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_MyCardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226da40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardTopMenu_MyCardMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_MyCardMenuItem>IProfileCardTopMenu_MyCardMenuItemMethods for __T{}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_MyCardMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_MyCardMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTopMenu_MyCardMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardTopMenu_MyCardMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_PublicSettingMenuItemMethods:IProfileCardTopMenu_PublicSettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226dcf0usize)as*mut u8,();
+(ProfileCardTopMenu_PublicSettingMenuItem)__receiver,(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226dd30usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTopMenu_PublicSettingMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ddb0usize)as*mut u8,();
+(ProfileCardTopMenu_PublicSettingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_PublicSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226df70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardTopMenu_PublicSettingMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_PublicSettingMenuItem>IProfileCardTopMenu_PublicSettingMenuItemMethods for __T{}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PublicSettingMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_PublicSettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTopMenu_PublicSettingMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardTopMenu_PublicSettingMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]pub trait IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods:IProfileCardTopMenu_StampVisibilitySettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226dfa0usize)as*mut u8,();
+(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver,(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226dfe0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226e060usize)as*mut u8,();
+(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTopMenu_StampVisibilitySettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226e210usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardTopMenu_StampVisibilitySettingMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl<__T:IProfileCardTopMenu_StampVisibilitySettingMenuItem>IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods for __T{}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_StampVisibilitySettingMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-profilecardtopmenu")]impl ProfileCardTopMenu_StampVisibilitySettingMenuItem{#[doc="`.ctor(crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::profilecardtopmenu::ProfileCardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTopMenu_StampVisibilitySettingMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
+}
+
 #[cfg(feature = "app-profilecardtopmenu")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ProfileCardTopMenu_DecideEventHandler;
     pub use super::IProfileCardTopMenu_DecideEventHandler;
     pub use super::IProfileCardTopMenu_DecideEventHandlerMethods;
-    pub use super::ProfileCardTopMenu_PhotoMenuItem;
-    pub use super::IProfileCardTopMenu_PhotoMenuItem;
-    pub use super::IProfileCardTopMenu_PhotoMenuItemMethods;
-    pub use super::ProfileCardTopMenu_MyCardMenuItem;
-    pub use super::IProfileCardTopMenu_MyCardMenuItem;
-    pub use super::IProfileCardTopMenu_MyCardMenuItemMethods;
-    pub use super::ProfileCardTopMenu_StampVisibilitySettingMenuItem;
-    pub use super::IProfileCardTopMenu_StampVisibilitySettingMenuItem;
-    pub use super::IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods;
-    pub use super::ProfileCardTopMenu_PublicSettingMenuItem;
-    pub use super::IProfileCardTopMenu_PublicSettingMenuItem;
-    pub use super::IProfileCardTopMenu_PublicSettingMenuItemMethods;
     pub use super::ProfileCardTopMenu_AlbumMenuItem;
     pub use super::IProfileCardTopMenu_AlbumMenuItem;
     pub use super::IProfileCardTopMenu_AlbumMenuItemMethods;
     pub use super::ProfileCardTopMenu;
     pub use super::IProfileCardTopMenu;
     pub use super::IProfileCardTopMenuMethods;
+    pub use super::ProfileCardTopMenu_PhotoMenuItem;
+    pub use super::IProfileCardTopMenu_PhotoMenuItem;
+    pub use super::IProfileCardTopMenu_PhotoMenuItemMethods;
+    pub use super::ProfileCardTopMenu_MyCardMenuItem;
+    pub use super::IProfileCardTopMenu_MyCardMenuItem;
+    pub use super::IProfileCardTopMenu_MyCardMenuItemMethods;
     pub use super::ProfileCardTopMenu_Result2;
+    pub use super::ProfileCardTopMenu_PublicSettingMenuItem;
+    pub use super::IProfileCardTopMenu_PublicSettingMenuItem;
+    pub use super::IProfileCardTopMenu_PublicSettingMenuItemMethods;
+    pub use super::ProfileCardTopMenu_StampVisibilitySettingMenuItem;
+    pub use super::IProfileCardTopMenu_StampVisibilitySettingMenuItem;
+    pub use super::IProfileCardTopMenu_StampVisibilitySettingMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

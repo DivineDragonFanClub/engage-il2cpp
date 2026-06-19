@@ -29,37 +29,22 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.TutorialItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GmapMenuMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.InventoryItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_InventoryItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu.WeaponShopMenuItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.EnterChapterItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_EnterChapterItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GoToMapSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GoToMapSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_FriendItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.FriendItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_FriendItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GoToSolanelItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GoToSolanelItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_GoToSolanelItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SystemItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SystemItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapMenuSequence_GoToMapSequence_Label{pub value:i32,}
@@ -80,13 +65,25 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.EnterChapterItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_EnterChapterItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.KizunaItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GmapMenuMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_RankingItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapMenuSequence_Label{pub value:i32,}
@@ -119,84 +116,349 @@ pub fn end()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.MaterialListItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_MaterialListItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_FriendItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.FriendItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_FriendItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.TutorialItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GoToMapSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GoToMapSequence{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SystemItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SystemItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::gmapmenusequence::GmapMenuSequence>)]pub struct GmapMenuSequence{#[offset(120)]#[rename(name="m_OpenTopCallback")]pub m_open_top_callback:crate::system::action::Action, #[offset(128)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action, #[offset(136)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu.ItemShopMenuItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GoToSolanelItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GoToSolanelItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_GoToSolanelItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.JumpToRankingSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[offset(112)]#[rename(name="m_JumpFunc")]pub m_jump_func:crate::system::action::Action,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu.ItemShopMenuItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.InventoryItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_InventoryItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu.WeaponShopMenuItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GodItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GodItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_GodItem{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.MaterialListItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_MaterialListItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::gmapmenusequence::GmapMenuSequence>)]pub struct GmapMenuSequence{#[offset(120)]#[rename(name="m_OpenTopCallback")]pub m_open_top_callback:crate::system::action::Action, #[offset(128)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action, #[offset(136)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SaveItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SaveItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SaveItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_ShopItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.ShopItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_ShopItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_RankingItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu{}
 
 }
 
 #[cfg(feature = "app-gmapmenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d270usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0f0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff170usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff1f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff200usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff330usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff340usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenuMethods:IGmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d4c0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubShopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d4d0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubShopMenu)__receiver)}
-}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubShopMenu>IGmapMenuSequence_GmapMenu_SubShopMenuMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_InventoryItemMethods:IGmapMenuSequence_GmapMenu_InventoryItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c210usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c290usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c310usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c320usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c520usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_InventoryItem>IGmapMenuSequence_GmapMenu_InventoryItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_InventoryItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb0e0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb120usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb1a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods> ::ctor(this,result_func);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`get_Type()` overload"]pub fn get_type()->crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3aab0usize)as*mut u8,crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
+)}
+}
+#[doc="`set_Type(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]pub fn set_type(value:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab00usize)as*mut u8,();
+(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_EnterChapterItemMethods:IGmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab60usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver,(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3abd0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ada0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3af70usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b010usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b020usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_EnterChapterItem>IGmapMenuSequence_GmapMenu_EnterChapterItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` — overload selector"]pub fn new(r#type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_EnterChapterItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_EnterChapterItemMethods> ::ctor(this,r#type);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef70usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22feff0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff070usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff080usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0e0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SystemItemMethods:IGmapMenuSequence_GmapMenu_SystemItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d7a0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d7f0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d870usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d8f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d900usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d9c0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SystemItem>IGmapMenuSequence_GmapMenu_SystemItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SystemItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SystemItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdd10usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdd90usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fde10usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fde20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe040usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe050usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
 this}
 }
 
@@ -258,6 +520,409 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe060usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe0e0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe160usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe170usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2b0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItemMethods:IGmapMenuSequence_GmapMenu_RankingItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c850usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c8d0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c950usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ca00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3cb60usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem>IGmapMenuSequence_GmapMenu_RankingItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d580usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenuMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d520usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d530usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubSystemMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu>IGmapMenuSequence_GmapMenu_SubSystemMenuMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fd870usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd730usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`Confirm()` overload"]fn confirm(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd770usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods> ::ctor(this,result_func);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d270usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenuMethods:IGmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d4c0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubShopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d4d0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubShopMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubShopMenu>IGmapMenuSequence_GmapMenu_SubShopMenuMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_FriendItemMethods:IGmapMenuSequence_GmapMenu_FriendItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b2c0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b310usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b390usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b410usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b420usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b830usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_FriendItem>IGmapMenuSequence_GmapMenu_FriendItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_FriendItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_FriendItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GoToMapSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ccdaf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GoToMapSequenceMethods:IGmapMenuSequence_GoToMapSequence{#[doc="`OpenDialog()` overload"]fn open_dialog(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd5c0usize)as*mut u8,();
+(GmapMenuSequence_GoToMapSequence)__receiver)}
+}
+#[doc="`MoveSolanel()` overload"]fn move_solanel(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd760usize)as*mut u8,();
+(GmapMenuSequence_GoToMapSequence)__receiver)}
+}
+#[doc="`MoveGmap()` overload"]fn move_gmap(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd940usize)as*mut u8,();
+(GmapMenuSequence_GoToMapSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccdfa0usize)as*mut u8,();
+(GmapMenuSequence_GoToMapSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GoToMapSequence>IGmapMenuSequence_GoToMapSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GoToMapSequence{pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn move_solanel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_gmap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GoToMapSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GoToMapSequence), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GoToMapSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods:IGmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bb30usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bc50usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bd70usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bd80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bee0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_GoToSolanelItem>IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GoToSolanelItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GoToSolanelItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fdaf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(jump_func))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fda90usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver,(crate::system::action::Action)::core::convert::Into::into(jump_func))}
+}
+#[doc="`JumpToRanking()` overload"]fn jump_to_ranking(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdad0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence>IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn jump_to_ranking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(jump_func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods> ::ctor(this,jump_func);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods:IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe890usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe910usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe990usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fea40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22feab0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22feac0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem>IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2c0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe340usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe3c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe3d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe5f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe600usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods:IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22fead0usize)as*mut u8, ::unity2::Il2CppString;
 (GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem)__receiver)}
@@ -298,6 +963,44 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem), ::core::stringify!(new),));
  <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GodItemMethods:IGmapMenuSequence_GmapMenu_GodItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bef0usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bf70usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bff0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c000usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c200usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_GodItem>IGmapMenuSequence_GmapMenu_GodItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GodItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_GodItemMethods> ::ctor(this,);
 this}
 }
 
@@ -348,406 +1051,26 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fed10usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb050usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem)__receiver)}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fed90usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fee10usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fee20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef60usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb0d0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods for __T{}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GoToMapSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ccdaf0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GoToMapSequenceMethods:IGmapMenuSequence_GoToMapSequence{#[doc="`OpenDialog()` overload"]fn open_dialog(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd5c0usize)as*mut u8,();
-(GmapMenuSequence_GoToMapSequence)__receiver)}
-}
-#[doc="`MoveSolanel()` overload"]fn move_solanel(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd760usize)as*mut u8,();
-(GmapMenuSequence_GoToMapSequence)__receiver)}
-}
-#[doc="`MoveGmap()` overload"]fn move_gmap(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd940usize)as*mut u8,();
-(GmapMenuSequence_GoToMapSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GoToMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccdfa0usize)as*mut u8,();
-(GmapMenuSequence_GoToMapSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GoToMapSequence>IGmapMenuSequence_GoToMapSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GoToMapSequence{pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn move_solanel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_gmap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GoToMapSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GoToMapSequence), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GoToMapSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_FriendItemMethods:IGmapMenuSequence_GmapMenu_FriendItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b2c0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b310usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b390usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b410usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b420usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b830usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_FriendItem>IGmapMenuSequence_GmapMenu_FriendItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_FriendItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_FriendItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d580usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenuMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d520usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d530usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubSystemMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu>IGmapMenuSequence_GmapMenu_SubSystemMenuMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe610usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe690usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe710usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe740usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe870usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe880usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fd870usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd730usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
-}
-#[doc="`Confirm()` overload"]fn confirm(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd770usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods> ::ctor(this,result_func);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods:IGmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bb30usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bc50usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bd70usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bd80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bee0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_GoToSolanelItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_GoToSolanelItem>IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GoToSolanelItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GoToSolanelItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`get_Type()` overload"]pub fn get_type()->crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3aab0usize)as*mut u8,crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
-)}
-}
-#[doc="`set_Type(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]pub fn set_type(value:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab00usize)as*mut u8,();
-(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_EnterChapterItemMethods:IGmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab60usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver,(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3abd0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ada0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3af70usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b010usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b020usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_EnterChapterItem>IGmapMenuSequence_GmapMenu_EnterChapterItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` — overload selector"]pub fn new(r#type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_EnterChapterItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_EnterChapterItemMethods> ::ctor(this,r#type);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2c0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe340usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe3c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe3d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe5f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe600usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdd10usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdd90usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fde10usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fde20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe040usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe050usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -786,121 +1109,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_MaterialListItem), ::core::stringify!(new),));
  <Self as IGmapMenuSequence_GmapMenu_MaterialListItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0f0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff170usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff1f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff200usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff330usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff340usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SystemItemMethods:IGmapMenuSequence_GmapMenu_SystemItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d7a0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d7f0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d870usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d8f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d900usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d9c0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SystemItem>IGmapMenuSequence_GmapMenu_SystemItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SystemItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SystemItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b5e0usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenuMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d460usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d470usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu>IGmapMenuSequence_GmapMenu_SubFriendMenuMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
 this}
 }
 
@@ -958,291 +1166,6 @@ pub fn final_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb050usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb0d0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods:IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe890usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe910usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe990usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fea40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22feab0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22feac0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem>IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe060usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe0e0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe160usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe170usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2b0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb0e0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb120usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb1a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods> ::ctor(this,result_func);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fdaf0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(jump_func))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fda90usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver,(crate::system::action::Action)::core::convert::Into::into(jump_func))}
-}
-#[doc="`JumpToRanking()` overload"]fn jump_to_ranking(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdad0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence>IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn jump_to_ranking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(jump_func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods> ::ctor(this,jump_func);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef70usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22feff0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff070usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff080usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0e0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_InventoryItemMethods:IGmapMenuSequence_GmapMenu_InventoryItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c210usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c290usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c310usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c320usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c520usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_InventoryItem>IGmapMenuSequence_GmapMenu_InventoryItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_InventoryItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GodItemMethods:IGmapMenuSequence_GmapMenu_GodItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bef0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bf70usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bff0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c000usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c200usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_GodItem>IGmapMenuSequence_GmapMenu_GodItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GodItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_GodItemMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SaveItemMethods:IGmapMenuSequence_GmapMenu_SaveItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ce20usize)as*mut u8, ::unity2::Il2CppString;
 (GmapMenuSequence_GmapMenu_SaveItem)__receiver)}
@@ -1278,6 +1201,49 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SaveItem), ::core::stringify!(new),));
  <Self as IGmapMenuSequence_GmapMenu_SaveItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fed10usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fed90usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fee10usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fee20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef60usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods> ::ctor(this,);
 this}
 }
 
@@ -1319,139 +1285,173 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItemMethods:IGmapMenuSequence_GmapMenu_RankingItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c850usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe610usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c8d0usize)as*mut u8, ::unity2::Il2CppString;
-(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe690usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
 }
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c950usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe710usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ca00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe740usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3cb60usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem)__receiver)}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe870usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe880usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem>IGmapMenuSequence_GmapMenu_RankingItemMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods for __T{}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b5e0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenuMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d460usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d470usize)as*mut u8, ::unity2::Il2CppString;
+(GmapMenuSequence_GmapMenu_SubFriendMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu>IGmapMenuSequence_GmapMenu_SubFriendMenuMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
 this}
 }
 
 #[cfg(feature = "app-gmapmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenuMethods;
-    pub use super::GmapMenuSequence_GmapMenu_GmapMenuMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu;
-    pub use super::IGmapMenuSequence_GmapMenu;
-    pub use super::IGmapMenuSequence_GmapMenuMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods;
-    pub use super::GmapMenuSequence_GoToMapSequence;
-    pub use super::IGmapMenuSequence_GoToMapSequence;
-    pub use super::IGmapMenuSequence_GoToMapSequenceMethods;
-    pub use super::GmapMenuSequence_GmapMenu_FriendItem;
-    pub use super::IGmapMenuSequence_GmapMenu_FriendItem;
-    pub use super::IGmapMenuSequence_GmapMenu_FriendItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenuMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods;
-    pub use super::GmapMenuSequence_GmapMenu_GoToSolanelItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods;
-    pub use super::GmapMenuSequence_GoToMapSequence_Label;
-    pub use super::GmapMenuSequence_GmapMenu_EnterChapterItem;
-    pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItem;
-    pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods;
-    pub use super::GmapMenuSequence_Label;
-    pub use super::GmapMenuSequence_GmapMenu_MaterialListItem;
-    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItem;
-    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItemMethods;
     pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
     pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
     pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SystemItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SystemItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SystemItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenuMethods;
-    pub use super::GmapMenuSequence;
-    pub use super::IGmapMenuSequence;
-    pub use super::IGmapMenuSequenceMethods;
-    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods;
     pub use super::GmapMenuSequence_GmapMenu_InventoryItem;
     pub use super::IGmapMenuSequence_GmapMenu_InventoryItem;
     pub use super::IGmapMenuSequence_GmapMenu_InventoryItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_GodItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GodItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GodItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SaveItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SaveItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SaveItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_ShopItem;
-    pub use super::IGmapMenuSequence_GmapMenu_ShopItem;
-    pub use super::IGmapMenuSequence_GmapMenu_ShopItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_EnterChapterItem;
+    pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItem;
+    pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SystemItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SystemItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SystemItemMethods;
+    pub use super::GmapMenuSequence_GoToMapSequence_Label;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GmapMenuMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods;
     pub use super::GmapMenuSequence_GmapMenu_RankingItem;
     pub use super::IGmapMenuSequence_GmapMenu_RankingItem;
     pub use super::IGmapMenuSequence_GmapMenu_RankingItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenuMethods;
+    pub use super::GmapMenuSequence_Label;
+    pub use super::GmapMenuSequence_GmapMenu_FriendItem;
+    pub use super::IGmapMenuSequence_GmapMenu_FriendItem;
+    pub use super::IGmapMenuSequence_GmapMenu_FriendItemMethods;
+    pub use super::GmapMenuSequence_GoToMapSequence;
+    pub use super::IGmapMenuSequence_GoToMapSequence;
+    pub use super::IGmapMenuSequence_GoToMapSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GoToSolanelItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GodItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GodItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GodItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu;
+    pub use super::IGmapMenuSequence_GmapMenu;
+    pub use super::IGmapMenuSequence_GmapMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_MaterialListItem;
+    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItem;
+    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItemMethods;
+    pub use super::GmapMenuSequence;
+    pub use super::IGmapMenuSequence;
+    pub use super::IGmapMenuSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SaveItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SaveItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SaveItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_ShopItem;
+    pub use super::IGmapMenuSequence_GmapMenu_ShopItem;
+    pub use super::IGmapMenuSequence_GmapMenu_ShopItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenuMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

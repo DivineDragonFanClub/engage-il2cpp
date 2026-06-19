@@ -28,13 +28,13 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeInCharacter.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkCharacterManager.ProcFadeInCharacter")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkCharacterManager_ProcFadeInCharacter{#[offset(112)]#[rename(name="m_talkCharacterController")]pub m_talk_character_controller:crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, #[offset(120)]#[rename(name="m_fadeTime")]pub m_fade_time:f32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeOutCharacter.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkCharacterManager.ProcFadeOutCharacter")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkCharacterManager_ProcFadeOutCharacter{#[offset(112)]#[rename(name="m_talkCharacterController")]pub m_talk_character_controller:crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, #[offset(120)]#[rename(name="m_fadeTime")]pub m_fade_time:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkcharactermanager/TalkCharacterManager.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkCharacterManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::talk3_d::talkcharactermanager::TalkCharacterManager>)]pub struct TalkCharacterManager{#[static_field]#[rename(name="PositionLocatorName")]pub position_locator_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_FadeTime")]pub m_fade_time:f32, #[offset(36)]#[rename(name="m_ChangeLookAtTime")]pub m_change_look_at_time:f32, #[offset(40)]#[rename(name="m_IsPlayFirstTransition")]pub m_is_play_first_transition:bool, #[offset(44)]#[rename(name="m_VoiceThresholdToLip")]pub m_voice_threshold_to_lip:f32, #[offset(48)]#[rename(name="m_VoiceMagnificationToLip")]pub m_voice_magnification_to_lip:f32, #[offset(52)]#[rename(name="m_PauseChangeCrossFadeTime")]pub m_pause_change_cross_fade_time:f32, #[offset(56)]#[rename(name="m_ModelPoolObject")]pub m_model_pool_object:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_StandPositions")]pub m_stand_positions:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_StandRoot")]pub m_stand_root:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_StandPositionRoot")]pub m_stand_position_root:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_FaceRoot")]pub m_face_root:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_DirectRoot")]pub m_direct_root:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_FrameCanvas")]pub m_frame_canvas:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_LookAtTargetRoot")]pub m_look_at_target_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_TopFaceCameraObject")]pub m_top_face_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_BottomFaceCameraObject")]pub m_bottom_face_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_LoadPidList")]pub m_load_pid_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_onLoad.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkCharacterManager.onLoad")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TalkCharacterManager_onLoad{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkcharactermanager/TalkCharacterManager.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkCharacterManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::talk3_d::talkcharactermanager::TalkCharacterManager>)]pub struct TalkCharacterManager{#[static_field]#[rename(name="PositionLocatorName")]pub position_locator_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_FadeTime")]pub m_fade_time:f32, #[offset(36)]#[rename(name="m_ChangeLookAtTime")]pub m_change_look_at_time:f32, #[offset(40)]#[rename(name="m_IsPlayFirstTransition")]pub m_is_play_first_transition:bool, #[offset(44)]#[rename(name="m_VoiceThresholdToLip")]pub m_voice_threshold_to_lip:f32, #[offset(48)]#[rename(name="m_VoiceMagnificationToLip")]pub m_voice_magnification_to_lip:f32, #[offset(52)]#[rename(name="m_PauseChangeCrossFadeTime")]pub m_pause_change_cross_fade_time:f32, #[offset(56)]#[rename(name="m_ModelPoolObject")]pub m_model_pool_object:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_StandPositions")]pub m_stand_positions:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_StandRoot")]pub m_stand_root:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_StandPositionRoot")]pub m_stand_position_root:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_FaceRoot")]pub m_face_root:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_DirectRoot")]pub m_direct_root:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_FrameCanvas")]pub m_frame_canvas:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_LookAtTargetRoot")]pub m_look_at_target_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_TopFaceCameraObject")]pub m_top_face_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_BottomFaceCameraObject")]pub m_bottom_face_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_LoadPidList")]pub m_load_pid_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeOutCharacter.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkCharacterManager.ProcFadeOutCharacter")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkCharacterManager_ProcFadeOutCharacter{#[offset(112)]#[rename(name="m_talkCharacterController")]pub m_talk_character_controller:crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, #[offset(120)]#[rename(name="m_fadeTime")]pub m_fade_time:f32,}
 
 }
 
@@ -77,73 +77,6 @@ pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(TalkCharacterManager_ProcFadeInCharacter), ::core::stringify!(new),));
  <Self as ITalkCharacterManager_ProcFadeInCharacterMethods> ::ctor(this,talk_character_controller,fade_time);
-this}
-}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_ProcFadeOutCharacter{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,talk_character_controller:impl::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController> ,fade_time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21faee0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController)::core::convert::Into::into(talk_character_controller),(f32)::core::convert::Into::into(fade_time))}
-}
-}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]pub trait ITalkCharacterManager_ProcFadeOutCharacterMethods:ITalkCharacterManager_ProcFadeOutCharacter{#[doc="`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]fn ctor(self,talk_character_controller:impl::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController> ,fade_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fabc0usize)as*mut u8,();
-(TalkCharacterManager_ProcFadeOutCharacter)__receiver,(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController)::core::convert::Into::into(talk_character_controller),(f32)::core::convert::Into::into(fade_time))}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fac10usize)as*mut u8,();
-(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
-}
-#[doc="`StartFadeOutCharacter()` overload"]fn start_fade_out_character(self,)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fad40usize)as*mut u8,();
-(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
-}
-#[doc="`IsFadingCharacter()` overload"]fn is_fading_character(self,)->bool{unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fae40usize)as*mut u8,bool;
-(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
-}
-#[doc="`DeleteCharacter()` overload"]fn delete_character(self,)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fac20usize)as*mut u8,();
-(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
-}
-}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]impl<__T:ITalkCharacterManager_ProcFadeOutCharacter>ITalkCharacterManager_ProcFadeOutCharacterMethods for __T{}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_ProcFadeOutCharacter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn start_fade_out_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_fading_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn delete_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_ProcFadeOutCharacter{#[doc="`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` — overload selector"]pub fn new(talk_character_controller:crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,fade_time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkCharacterManager_ProcFadeOutCharacter), ::core::stringify!(new),));
- <Self as ITalkCharacterManager_ProcFadeOutCharacterMethods> ::ctor(this,talk_character_controller,fade_time);
-this}
-}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]pub trait ITalkCharacterManager_onLoadMethods:ITalkCharacterManager_onLoad{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TalkCharacterManager_onLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb140usize)as*mut u8,();
-(TalkCharacterManager_onLoad)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn invoke(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,location_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkCharacterManager_onLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa3f0usize)as*mut u8,();
-(TalkCharacterManager_onLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(location_name))}
-}
-}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]impl<__T:ITalkCharacterManager_onLoad>ITalkCharacterManager_onLoadMethods for __T{}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_onLoad{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_onLoad{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkCharacterManager_onLoad), ::core::stringify!(new),));
- <Self as ITalkCharacterManager_onLoadMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -300,21 +233,88 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-talk3_d-talkcharactermanager")]pub trait ITalkCharacterManager_onLoadMethods:ITalkCharacterManager_onLoad{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TalkCharacterManager_onLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb140usize)as*mut u8,();
+(TalkCharacterManager_onLoad)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn invoke(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,location_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkCharacterManager_onLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa3f0usize)as*mut u8,();
+(TalkCharacterManager_onLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(location_name))}
+}
+}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]impl<__T:ITalkCharacterManager_onLoad>ITalkCharacterManager_onLoadMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_onLoad{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_onLoad{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkCharacterManager_onLoad), ::core::stringify!(new),));
+ <Self as ITalkCharacterManager_onLoadMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_ProcFadeOutCharacter{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,talk_character_controller:impl::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController> ,fade_time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21faee0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController)::core::convert::Into::into(talk_character_controller),(f32)::core::convert::Into::into(fade_time))}
+}
+}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]pub trait ITalkCharacterManager_ProcFadeOutCharacterMethods:ITalkCharacterManager_ProcFadeOutCharacter{#[doc="`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]fn ctor(self,talk_character_controller:impl::core::convert::Into<crate::app::talk3_d::talkcharactercontroller::TalkCharacterController> ,fade_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fabc0usize)as*mut u8,();
+(TalkCharacterManager_ProcFadeOutCharacter)__receiver,(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController)::core::convert::Into::into(talk_character_controller),(f32)::core::convert::Into::into(fade_time))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fac10usize)as*mut u8,();
+(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
+}
+#[doc="`StartFadeOutCharacter()` overload"]fn start_fade_out_character(self,)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fad40usize)as*mut u8,();
+(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
+}
+#[doc="`IsFadingCharacter()` overload"]fn is_fading_character(self,)->bool{unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fae40usize)as*mut u8,bool;
+(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
+}
+#[doc="`DeleteCharacter()` overload"]fn delete_character(self,)->(){unsafe{let __receiver= <TalkCharacterManager_ProcFadeOutCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fac20usize)as*mut u8,();
+(TalkCharacterManager_ProcFadeOutCharacter)__receiver)}
+}
+}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]impl<__T:ITalkCharacterManager_ProcFadeOutCharacter>ITalkCharacterManager_ProcFadeOutCharacterMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_ProcFadeOutCharacter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_fade_out_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_fading_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn delete_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-talk3_d-talkcharactermanager")]impl TalkCharacterManager_ProcFadeOutCharacter{#[doc="`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` — overload selector"]pub fn new(talk_character_controller:crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,fade_time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkCharacterManager_ProcFadeOutCharacter), ::core::stringify!(new),));
+ <Self as ITalkCharacterManager_ProcFadeOutCharacterMethods> ::ctor(this,talk_character_controller,fade_time);
+this}
+}
+
 #[cfg(feature = "app-talk3_d-talkcharactermanager")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TalkCharacterManager_ProcFadeInCharacter;
     pub use super::ITalkCharacterManager_ProcFadeInCharacter;
     pub use super::ITalkCharacterManager_ProcFadeInCharacterMethods;
-    pub use super::TalkCharacterManager_ProcFadeOutCharacter;
-    pub use super::ITalkCharacterManager_ProcFadeOutCharacter;
-    pub use super::ITalkCharacterManager_ProcFadeOutCharacterMethods;
-    pub use super::TalkCharacterManager_onLoad;
-    pub use super::ITalkCharacterManager_onLoad;
-    pub use super::ITalkCharacterManager_onLoadMethods;
     pub use super::TalkCharacterManager;
     pub use super::ITalkCharacterManager;
     pub use super::ITalkCharacterManagerMethods;
+    pub use super::TalkCharacterManager_onLoad;
+    pub use super::ITalkCharacterManager_onLoad;
+    pub use super::ITalkCharacterManager_onLoadMethods;
+    pub use super::TalkCharacterManager_ProcFadeOutCharacter;
+    pub use super::ITalkCharacterManager_ProcFadeOutCharacter;
+    pub use super::ITalkCharacterManager_ProcFadeOutCharacterMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::delegate::IDelegate;

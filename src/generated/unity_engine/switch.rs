@@ -14,13 +14,13 @@
  #[cfg(feature="unity_engine-switch-networkinterfacewrapper")]pub use networkinterfacewrapper::{INetworkInterfaceWrapper_NetworkConnectedHandlerMethods}
 ;
  #[cfg(any(feature="unity_engine-switch-notification-types"))]pub mod notification;
- #[cfg(feature="unity_engine-switch-notification-types")]pub use notification::{Notification_FocusHandlingMode,Notification_Message,Notification,INotification,Notification_FocusState}
+ #[cfg(feature="unity_engine-switch-notification-types")]pub use notification::{Notification_FocusHandlingMode,Notification_FocusState,Notification_Message,Notification,INotification}
 ;
  #[cfg(any(feature="unity_engine-switch-operation-types"))]pub mod operation;
  #[cfg(feature="unity_engine-switch-operation-types")]pub use operation::{Operation_OperationMode,Operation,IOperation}
 ;
  #[cfg(any(feature="unity_engine-switch-performance-types"))]pub mod performance;
- #[cfg(feature="unity_engine-switch-performance-types")]pub use performance::{Performance_Debug_HudMode,Performance_CpuBoostMode,Performance_PerformanceMode,Performance,IPerformance,Performance_Debug,IPerformance_Debug}
+ #[cfg(feature="unity_engine-switch-performance-types")]pub use performance::{Performance,IPerformance,Performance_PerformanceMode,Performance_Debug,IPerformance_Debug,Performance_Debug_HudMode,Performance_CpuBoostMode}
 ;
  #[cfg(any(feature="unity_engine-switch-switchvideoplayer-types"))]pub mod switchvideoplayer;
  #[cfg(feature="unity_engine-switch-switchvideoplayer-types")]pub use switchvideoplayer::{SwitchVideoPlayer_Event,SwitchVideoPlayer,ISwitchVideoPlayer,SwitchVideoPlayer_MovieEventDelegate,ISwitchVideoPlayer_MovieEventDelegate}

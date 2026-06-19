@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmode/GmapMode.md"))]#[::unity2::class(namespace="App",name="GmapMode")]#[parent(crate::system::object::Object)]pub struct GmapMode{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmode/GmapMode_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapMode_Mode{pub value:i32,}
 impl::unity2::ClassIdentity for GmapMode_Mode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapMode.Mode";
@@ -29,9 +32,6 @@ pub fn dlc_god()->Self{Self{value:1}
 pub fn dlc_evil()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmode/GmapMode.md"))]#[::unity2::class(namespace="App",name="GmapMode")]#[parent(crate::system::object::Object)]pub struct GmapMode{}
 
 }
 
@@ -137,10 +137,10 @@ this}
 #[cfg(feature = "app-gmapmode")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapMode_Mode;
     pub use super::GmapMode;
     pub use super::IGmapMode;
     pub use super::IGmapModeMethods;
+    pub use super::GmapMode_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

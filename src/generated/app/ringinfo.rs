@@ -13,96 +13,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringinfo/RingInfo_RingInfoWindowRingModel.md"))]#[::unity2::class(namespace="App",name="RingInfo.RingInfoWindowRingModel")]#[parent(crate::system::object::Object)]pub struct RingInfo_RingInfoWindowRingModel{#[offset(16)]#[rename(name="m_Index")]pub m_index:i32, #[offset(24)]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CameraObject")]pub m_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(64)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringinfo/RingInfo.md"))]#[::unity2::class(namespace="App",name="RingInfo")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringinfo::RingInfo>)]pub struct RingInfo{#[offset(120)]#[rename(name="m_RingInfoWindows")]pub m_ring_info_windows: ::unity2::Array<crate::app::ringinfo::RingInfo_RingInfoWindowRingModel> , #[static_field]#[rename(name="s_IsPlayAnimation")]pub s_is_play_animation:bool, #[static_field]#[rename(name="LoadStartWait")]pub load_start_wait:i32, #[static_field]#[rename(name="s_IsVisibleDirty")]pub s_is_visible_dirty:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringinfo/RingInfo_RingPrefabObject.md"))]#[::unity2::class(namespace="App",name="RingInfo.RingPrefabObject")]#[parent(crate::system::object::Object)]pub struct RingInfo_RingPrefabObject{#[static_field]#[rename(name="s_RingPrefabObjectDict")]pub s_ring_prefab_object_dict:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::ringinfo::RingInfo_RingPrefabObject> , #[offset(16)]#[rename(name="m_RingInfoWindow")]pub m_ring_info_window:crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, #[offset(32)]#[rename(name="m_ResourceHandle")]pub m_resource_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_RingObject")]pub m_ring_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_God")]pub m_god:crate::app::godunit::GodUnit, #[offset(56)]#[rename(name="m_Materials")]pub m_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(64)]#[rename(name="m_RingData")]pub m_ring_data:crate::app::ringdata::RingData,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringinfo/RingInfo_RingInfoWindowRingModel.md"))]#[::unity2::class(namespace="App",name="RingInfo.RingInfoWindowRingModel")]#[parent(crate::system::object::Object)]pub struct RingInfo_RingInfoWindowRingModel{#[offset(16)]#[rename(name="m_Index")]pub m_index:i32, #[offset(24)]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CameraObject")]pub m_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(64)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
+
 }
 
 #[cfg(feature = "app-ringinfo-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ringinfo")]pub trait IRingInfo_RingInfoWindowRingModelMethods:IRingInfo_RingInfoWindowRingModel{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13110usize)as*mut u8,();
-(RingInfo_RingInfoWindowRingModel)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`CreateAsync()` overload"]fn create_async(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13190usize)as*mut u8,();
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`IsCreating()` overload"]fn is_creating(self,)->bool{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b132b0usize)as*mut u8,bool;
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b132e0usize)as*mut u8,();
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`CreateImpl()` overload"]fn create_impl(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b133b0usize)as*mut u8,();
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`Setup()` overload"]fn setup(self,)->bool{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b134f0usize)as*mut u8,bool;
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`GetRenderTexture()` overload"]fn get_render_texture(self,)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b137c0usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`get_PrefabObject()` overload"]fn get_prefab_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13850usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`get_RingModelRoot()` overload"]fn get_ring_model_root(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13860usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`SetAnimatorEnable(bool)` overload"]fn set_animator_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b138d0usize)as*mut u8,();
-(RingInfo_RingInfoWindowRingModel)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`GetDirtyTextureValue(i32)` overload"]fn get_dirty_texture_value(self,dirty:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13960usize)as*mut u8,f32;
-(RingInfo_RingInfoWindowRingModel)__receiver,(i32)::core::convert::Into::into(dirty))}
-}
-#[doc="`PlayDecisionAnim()` overload"]fn play_decision_anim(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b139e0usize)as*mut u8,();
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-#[doc="`GetModelPosition()` overload"]fn get_model_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13770usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(RingInfo_RingInfoWindowRingModel)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringinfo")]impl<__T:IRingInfo_RingInfoWindowRingModel>IRingInfo_RingInfoWindowRingModelMethods for __T{}
-
-#[cfg(feature="app-ringinfo")]impl RingInfo_RingInfoWindowRingModel{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_prefab_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_ring_model_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_animator_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_dirty_texture_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn play_decision_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_model_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-ringinfo")]impl RingInfo_RingInfoWindowRingModel{#[doc="`.ctor(i32)` — overload selector"]pub fn new(index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingInfo_RingInfoWindowRingModel), ::core::stringify!(new),));
- <Self as IRingInfo_RingInfoWindowRingModelMethods> ::ctor(this,index);
-this}
-}
 
 #[cfg(feature="app-ringinfo")]impl RingInfo{#[doc="`get_God()` overload"]pub fn get_god()->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242a5d0usize)as*mut u8,crate::app::godunit::GodUnit;
 )}
@@ -334,18 +256,96 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-ringinfo")]pub trait IRingInfo_RingInfoWindowRingModelMethods:IRingInfo_RingInfoWindowRingModel{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13110usize)as*mut u8,();
+(RingInfo_RingInfoWindowRingModel)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`CreateAsync()` overload"]fn create_async(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13190usize)as*mut u8,();
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`IsCreating()` overload"]fn is_creating(self,)->bool{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b132b0usize)as*mut u8,bool;
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b132e0usize)as*mut u8,();
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`CreateImpl()` overload"]fn create_impl(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b133b0usize)as*mut u8,();
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->bool{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b134f0usize)as*mut u8,bool;
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`GetRenderTexture()` overload"]fn get_render_texture(self,)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b137c0usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`get_PrefabObject()` overload"]fn get_prefab_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13850usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`get_RingModelRoot()` overload"]fn get_ring_model_root(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13860usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`SetAnimatorEnable(bool)` overload"]fn set_animator_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b138d0usize)as*mut u8,();
+(RingInfo_RingInfoWindowRingModel)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`GetDirtyTextureValue(i32)` overload"]fn get_dirty_texture_value(self,dirty:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13960usize)as*mut u8,f32;
+(RingInfo_RingInfoWindowRingModel)__receiver,(i32)::core::convert::Into::into(dirty))}
+}
+#[doc="`PlayDecisionAnim()` overload"]fn play_decision_anim(self,)->(){unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b139e0usize)as*mut u8,();
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+#[doc="`GetModelPosition()` overload"]fn get_model_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <RingInfo_RingInfoWindowRingModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b13770usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(RingInfo_RingInfoWindowRingModel)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringinfo")]impl<__T:IRingInfo_RingInfoWindowRingModel>IRingInfo_RingInfoWindowRingModelMethods for __T{}
+
+#[cfg(feature="app-ringinfo")]impl RingInfo_RingInfoWindowRingModel{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_prefab_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_ring_model_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_animator_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_dirty_texture_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn play_decision_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_model_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-ringinfo")]impl RingInfo_RingInfoWindowRingModel{#[doc="`.ctor(i32)` — overload selector"]pub fn new(index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingInfo_RingInfoWindowRingModel), ::core::stringify!(new),));
+ <Self as IRingInfo_RingInfoWindowRingModelMethods> ::ctor(this,index);
+this}
+}
+
 #[cfg(feature = "app-ringinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingInfo_RingInfoWindowRingModel;
-    pub use super::IRingInfo_RingInfoWindowRingModel;
-    pub use super::IRingInfo_RingInfoWindowRingModelMethods;
     pub use super::RingInfo;
     pub use super::IRingInfo;
     pub use super::IRingInfoMethods;
     pub use super::RingInfo_RingPrefabObject;
     pub use super::IRingInfo_RingPrefabObject;
     pub use super::IRingInfo_RingPrefabObjectMethods;
+    pub use super::RingInfo_RingInfoWindowRingModel;
+    pub use super::IRingInfo_RingInfoWindowRingModel;
+    pub use super::IRingInfo_RingInfoWindowRingModelMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

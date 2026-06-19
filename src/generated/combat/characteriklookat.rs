@@ -17,7 +17,7 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characteriklookat/CharacterIKLookAt.md"))]#[::unity2::class(namespace="Combat",name="CharacterIKLookAt")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIKLookAt{#[offset(32)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(48)]#[rename(name="m_LookTargetGO")]pub m_look_target_go:crate::unity_engine::gameobject::GameObject,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characteriklookat/CharacterIKLookAt.md"))]#[::unity2::class(namespace="Combat",name="CharacterIKLookAt")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIKLookAt{#[offset(32)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(40)]#[rename(name="m_IKArray")]pub m_ik_array: ::unity2::Array<crate::root_motion::final_ik::lookatik::LookAtIK> , #[offset(48)]#[rename(name="m_LookTargetGO")]pub m_look_target_go:crate::unity_engine::gameobject::GameObject,}
 
 }
 

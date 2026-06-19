@@ -21,35 +21,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_ConditionFlags.md"))]#[::unity2::class(namespace="App",name="AssetTable.ConditionFlags")]#[parent(crate::system::object::Object)]pub struct AssetTable_ConditionFlags{#[offset(16)]#[rename(name="m_Bits")]pub m_bits:crate::app::bitstruct::BitStruct, #[offset(24)]#[rename(name="m_Keys")]pub m_keys:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_Hits")]pub m_hits:crate::system::collections::generic::list_1::List_1<i32> , #[offset(40)]#[rename(name="m_Dics")]pub m_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Result.md"))]#[::unity2::class(namespace="App",name="AssetTable.Result")]#[parent(crate::system::object::Object)]pub struct AssetTable_Result{#[offset(360)]#[rename(name="m_InfoAnim")]pub m_info_anim: ::unity2::Il2CppString, #[offset(368)]#[rename(name="m_TalkAnim")]pub m_talk_anim: ::unity2::Il2CppString, #[offset(376)]#[rename(name="m_DemoAnim")]pub m_demo_anim: ::unity2::Il2CppString, #[offset(384)]#[rename(name="m_HubAnim")]pub m_hub_anim: ::unity2::Il2CppString, #[offset(392)]#[rename(name="m_ForceID")]pub m_force_id: ::unity2::Il2CppString, #[offset(400)]#[rename(name="m_WeaponID")]pub m_weapon_id: ::unity2::Il2CppString, #[offset(408)]#[rename(name="m_BodyAnims")]pub m_body_anims:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(416)]#[rename(name="m_Accessories")]pub m_accessories:crate::app::assettable::AssetTable_AccessoryList, #[offset(424)]#[rename(name="m_AccessoryDictionary")]pub m_accessory_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::assettable::AssetTable_Accessory> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Accessory.md"))]#[::unity2::class(namespace="App",name="AssetTable.Accessory")]#[parent(crate::system::object::Object)]pub struct AssetTable_Accessory{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AssetTable_States{pub value:i32,}
-impl::unity2::ClassIdentity for AssetTable_States{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AssetTable.States";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AssetTable_States{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AssetTable_States{pub fn none()->Self{Self{value:0}
-}
-pub fn engaging()->Self{Self{value:1}
-}
-pub fn engage_attack()->Self{Self{value:2}
-}
-pub fn engage_link_attack_main()->Self{Self{value:3}
-}
-pub fn engage_link_attack_sub()->Self{Self{value:4}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable.md"))]#[::unity2::class(namespace="App",name="AssetTable")]#[parent(crate::app::structdata_1::StructData_1<crate::app::assettable::AssetTable>)]pub struct AssetTable{#[static_field]#[rename(name="s_PresetNames")]pub s_preset_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(208)]#[rename(name="HairColor")]pub hair_color:crate::unity_engine::color::Color, #[offset(224)]#[rename(name="GradColor")]pub grad_color:crate::unity_engine::color::Color, #[offset(240)]#[rename(name="SkinColor")]pub skin_color:crate::unity_engine::color::Color, #[offset(256)]#[rename(name="ToonShadowColor")]pub toon_shadow_color:crate::unity_engine::color::Color, #[offset(272)]#[rename(name="MaskColor100")]pub mask_color100:crate::unity_engine::color::Color, #[offset(288)]#[rename(name="MaskColor075")]pub mask_color075:crate::unity_engine::color::Color, #[offset(304)]#[rename(name="MaskColor050")]pub mask_color050:crate::unity_engine::color::Color, #[offset(320)]#[rename(name="MaskColor025")]pub mask_color025:crate::unity_engine::color::Color, #[offset(520)]#[rename(name="m_ConditionIndexes")]pub m_condition_indexes:crate::app::assettable::AssetTable_ConditionIndexes, #[static_field]#[rename(name="BitCount")]pub bit_count:i32, #[static_field]#[rename(name="s_SearchLists")]pub s_search_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::assettable::AssetTable> > , #[static_field]#[rename(name="s_ConditionIndexes")]pub s_condition_indexes:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> , #[static_field]#[rename(name="s_ConditionFlags")]pub s_condition_flags:crate::app::assettable::AssetTable_ConditionFlags, #[static_field]#[rename(name="NullSound")]pub null_sound:crate::app::assettable::AssetTable_Sound, #[static_field]#[rename(name="NullColor")]pub null_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="Shared")]pub shared:crate::app::assettable::AssetTable_Result,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AssetTable_Modes{pub value:i32,}
@@ -74,7 +46,16 @@ pub fn num()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable.md"))]#[::unity2::class(namespace="App",name="AssetTable")]#[parent(crate::app::structdata_1::StructData_1<crate::app::assettable::AssetTable>)]pub struct AssetTable{#[static_field]#[rename(name="s_PresetNames")]pub s_preset_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(208)]#[rename(name="HairColor")]pub hair_color:crate::unity_engine::color::Color, #[offset(224)]#[rename(name="GradColor")]pub grad_color:crate::unity_engine::color::Color, #[offset(240)]#[rename(name="SkinColor")]pub skin_color:crate::unity_engine::color::Color, #[offset(256)]#[rename(name="ToonShadowColor")]pub toon_shadow_color:crate::unity_engine::color::Color, #[offset(272)]#[rename(name="MaskColor100")]pub mask_color100:crate::unity_engine::color::Color, #[offset(288)]#[rename(name="MaskColor075")]pub mask_color075:crate::unity_engine::color::Color, #[offset(304)]#[rename(name="MaskColor050")]pub mask_color050:crate::unity_engine::color::Color, #[offset(320)]#[rename(name="MaskColor025")]pub mask_color025:crate::unity_engine::color::Color, #[offset(520)]#[rename(name="m_ConditionIndexes")]pub m_condition_indexes:crate::app::assettable::AssetTable_ConditionIndexes, #[static_field]#[rename(name="BitCount")]pub bit_count:i32, #[static_field]#[rename(name="s_SearchLists")]pub s_search_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::assettable::AssetTable> > , #[static_field]#[rename(name="s_ConditionIndexes")]pub s_condition_indexes:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> , #[static_field]#[rename(name="s_ConditionFlags")]pub s_condition_flags:crate::app::assettable::AssetTable_ConditionFlags, #[static_field]#[rename(name="NullSound")]pub null_sound:crate::app::assettable::AssetTable_Sound, #[static_field]#[rename(name="NullColor")]pub null_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="Shared")]pub shared:crate::app::assettable::AssetTable_Result,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_AccessoryList.md"))]#[::unity2::class(namespace="App",name="AssetTable.AccessoryList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::assettable::AssetTable_Accessory>)]pub struct AssetTable_AccessoryList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Accessory.md"))]#[::unity2::class(namespace="App",name="AssetTable.Accessory")]#[parent(crate::system::object::Object)]pub struct AssetTable_Accessory{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_ConditionFlags.md"))]#[::unity2::class(namespace="App",name="AssetTable.ConditionFlags")]#[parent(crate::system::object::Object)]pub struct AssetTable_ConditionFlags{#[offset(16)]#[rename(name="m_Bits")]pub m_bits:crate::app::bitstruct::BitStruct, #[offset(24)]#[rename(name="m_Keys")]pub m_keys:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_Hits")]pub m_hits:crate::system::collections::generic::list_1::List_1<i32> , #[offset(40)]#[rename(name="m_Dics")]pub m_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Result.md"))]#[::unity2::class(namespace="App",name="AssetTable.Result")]#[parent(crate::system::object::Object)]pub struct AssetTable_Result{#[offset(360)]#[rename(name="m_InfoAnim")]pub m_info_anim: ::unity2::Il2CppString, #[offset(368)]#[rename(name="m_TalkAnim")]pub m_talk_anim: ::unity2::Il2CppString, #[offset(376)]#[rename(name="m_DemoAnim")]pub m_demo_anim: ::unity2::Il2CppString, #[offset(384)]#[rename(name="m_HubAnim")]pub m_hub_anim: ::unity2::Il2CppString, #[offset(392)]#[rename(name="m_ForceID")]pub m_force_id: ::unity2::Il2CppString, #[offset(400)]#[rename(name="m_WeaponID")]pub m_weapon_id: ::unity2::Il2CppString, #[offset(408)]#[rename(name="m_BodyAnims")]pub m_body_anims:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(416)]#[rename(name="m_Accessories")]pub m_accessories:crate::app::assettable::AssetTable_AccessoryList, #[offset(424)]#[rename(name="m_AccessoryDictionary")]pub m_accessory_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::assettable::AssetTable_Accessory> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Sound.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AssetTable_Sound{pub voice_id: ::unity2::Il2CppString,pub footstep_id: ::unity2::Il2CppString,pub material_id: ::unity2::Il2CppString,}
@@ -88,15 +69,929 @@ impl::unity2::IlType for AssetTable_Sound{fn il_type()-> &'static::unity2::il2cp
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_AccessoryList.md"))]#[::unity2::class(namespace="App",name="AssetTable.AccessoryList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::assettable::AssetTable_Accessory>)]pub struct AssetTable_AccessoryList{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_ConditionIndexes.md"))]#[::unity2::class(namespace="App",name="AssetTable.ConditionIndexes")]#[parent(crate::system::object::Object)]pub struct AssetTable_ConditionIndexes{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<i32> > ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AssetTable_States{pub value:i32,}
+impl::unity2::ClassIdentity for AssetTable_States{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AssetTable.States";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AssetTable_States{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AssetTable_States{pub fn none()->Self{Self{value:0}
+}
+pub fn engaging()->Self{Self{value:1}
+}
+pub fn engage_attack()->Self{Self{value:2}
+}
+pub fn engage_link_attack_main()->Self{Self{value:3}
+}
+pub fn engage_link_attack_sub()->Self{Self{value:4}
+}
+}
 
 }
 
 #[cfg(feature = "app-assettable-types")]
 pub use __types::*;
+
+#[cfg(feature="app-assettable")]impl AssetTable{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b5c0usize)as*mut u8,();
+)}
+}
+#[doc="`get_PresetNames()` overload"]pub fn get_preset_names()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b670usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`get_ConditionNames()` overload"]pub fn get_condition_names()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d240usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`get_ConditionHits()` overload"]pub fn get_condition_hits()->crate::system::collections::generic::list_1::List_1<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d2b0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<i32> ;
+)}
+}
+#[doc="`HasColor(crate::unity_engine::color::Color)` overload"]pub fn has_color(color:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d450usize)as*mut u8,bool;
+(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d470usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-assettable")]pub trait IAssetTableMethods:IAssetTable{#[doc="`DebuggerDisplay()` overload"]fn debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b450usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`get_PresetName()` overload"]fn get_preset_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b6f0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_PresetName(::unity2::Il2CppString)` overload"]fn set_preset_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b700usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Mode()` overload"]fn get_mode(self,)->crate::app::assettable::AssetTable_Modes{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b710usize)as*mut u8,crate::app::assettable::AssetTable_Modes;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Mode(crate::app::assettable::AssetTable_Modes)` overload"]fn set_mode(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Modes>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b720usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Modes)::core::convert::Into::into(value))}
+}
+#[doc="`get_Conditions()` overload"]fn get_conditions(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b730usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Conditions(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_conditions(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b740usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_BodyModel()` overload"]fn get_body_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b750usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_BodyModel(::unity2::Il2CppString)` overload"]fn set_body_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b760usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DressModel()` overload"]fn get_dress_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b770usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_DressModel(::unity2::Il2CppString)` overload"]fn set_dress_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b780usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_HeadModel()` overload"]fn get_head_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b790usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_HeadModel(::unity2::Il2CppString)` overload"]fn set_head_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7a0usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_HairModel()` overload"]fn get_hair_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7b0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_HairModel(::unity2::Il2CppString)` overload"]fn set_hair_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7c0usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_RideModel()` overload"]fn get_ride_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7d0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_RideModel(::unity2::Il2CppString)` overload"]fn set_ride_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7e0usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_RideDressModel()` overload"]fn get_ride_dress_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7f0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_RideDressModel(::unity2::Il2CppString)` overload"]fn set_ride_dress_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b800usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LeftHand()` overload"]fn get_left_hand(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b810usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_LeftHand(::unity2::Il2CppString)` overload"]fn set_left_hand(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b820usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_RightHand()` overload"]fn get_right_hand(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b830usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_RightHand(::unity2::Il2CppString)` overload"]fn set_right_hand(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b840usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Trail()` overload"]fn get_trail(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b850usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Trail(::unity2::Il2CppString)` overload"]fn set_trail(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b860usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Magic()` overload"]fn get_magic(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b870usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Magic(::unity2::Il2CppString)` overload"]fn set_magic(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b880usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BodyAnim()` overload"]fn get_body_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b890usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_BodyAnim(::unity2::Il2CppString)` overload"]fn set_body_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8a0usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_RideAnim()` overload"]fn get_ride_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8b0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_RideAnim(::unity2::Il2CppString)` overload"]fn set_ride_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8c0usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_InfoAnim()` overload"]fn get_info_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8d0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_InfoAnim(::unity2::Il2CppString)` overload"]fn set_info_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8e0usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_TalkAnim()` overload"]fn get_talk_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8f0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_TalkAnim(::unity2::Il2CppString)` overload"]fn set_talk_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b900usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DemoAnim()` overload"]fn get_demo_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b910usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_DemoAnim(::unity2::Il2CppString)` overload"]fn set_demo_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b920usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_HubAnim()` overload"]fn get_hub_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b930usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_HubAnim(::unity2::Il2CppString)` overload"]fn set_hub_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b940usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_HairR()` overload"]fn get_hair_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b950usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_HairR(u8)` overload"]fn set_hair_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b960usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_HairG()` overload"]fn get_hair_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b970usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_HairG(u8)` overload"]fn set_hair_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b980usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_HairB()` overload"]fn get_hair_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b990usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_HairB(u8)` overload"]fn set_hair_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9a0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_GradR()` overload"]fn get_grad_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9b0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_GradR(u8)` overload"]fn set_grad_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9c0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_GradG()` overload"]fn get_grad_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9d0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_GradG(u8)` overload"]fn set_grad_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9e0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_GradB()` overload"]fn get_grad_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9f0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_GradB(u8)` overload"]fn set_grad_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba00usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_SkinR()` overload"]fn get_skin_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba10usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_SkinR(u8)` overload"]fn set_skin_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba20usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_SkinG()` overload"]fn get_skin_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba30usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_SkinG(u8)` overload"]fn set_skin_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba40usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_SkinB()` overload"]fn get_skin_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba50usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_SkinB(u8)` overload"]fn set_skin_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba60usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToonR()` overload"]fn get_toon_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba70usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ToonR(u8)` overload"]fn set_toon_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba80usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToonG()` overload"]fn get_toon_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba90usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ToonG(u8)` overload"]fn set_toon_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211baa0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToonB()` overload"]fn get_toon_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bab0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ToonB(u8)` overload"]fn set_toon_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bac0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor100R()` overload"]fn get_mask_color100_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bad0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor100R(u8)` overload"]fn set_mask_color100_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bae0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor100G()` overload"]fn get_mask_color100_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211baf0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor100G(u8)` overload"]fn set_mask_color100_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb00usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor100B()` overload"]fn get_mask_color100_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb10usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor100B(u8)` overload"]fn set_mask_color100_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb20usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor075R()` overload"]fn get_mask_color075_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb30usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor075R(u8)` overload"]fn set_mask_color075_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb40usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor075G()` overload"]fn get_mask_color075_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb50usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor075G(u8)` overload"]fn set_mask_color075_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb60usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor075B()` overload"]fn get_mask_color075_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb70usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor075B(u8)` overload"]fn set_mask_color075_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb80usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor050R()` overload"]fn get_mask_color050_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb90usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor050R(u8)` overload"]fn set_mask_color050_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bba0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor050G()` overload"]fn get_mask_color050_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbb0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor050G(u8)` overload"]fn set_mask_color050_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbc0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor050B()` overload"]fn get_mask_color050_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbd0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor050B(u8)` overload"]fn set_mask_color050_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbe0usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor025R()` overload"]fn get_mask_color025_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbf0usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor025R(u8)` overload"]fn set_mask_color025_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc00usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor025G()` overload"]fn get_mask_color025_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc10usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor025G(u8)` overload"]fn set_mask_color025_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc20usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaskColor025B()` overload"]fn get_mask_color025_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc30usize)as*mut u8,u8;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MaskColor025B(u8)` overload"]fn set_mask_color025_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc40usize)as*mut u8,();
+(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc1()` overload"]fn get_acc1(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc50usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc1(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc1(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc60usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc2()` overload"]fn get_acc2(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc70usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc2(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc2(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc80usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc3()` overload"]fn get_acc3(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc90usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc3(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc3(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bca0usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc4()` overload"]fn get_acc4(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcb0usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc4(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc4(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcc0usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc5()` overload"]fn get_acc5(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcd0usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc5(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc5(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bce0usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc6()` overload"]fn get_acc6(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcf0usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc6(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc6(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd00usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc7()` overload"]fn get_acc7(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd10usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc7(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc7(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd20usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Acc8()` overload"]fn get_acc8(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd30usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Acc8(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc8(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd40usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
+}
+#[doc="`get_Accessories()` overload"]fn get_accessories(self,)->crate::app::assettable::AssetTable_AccessoryList{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd50usize)as*mut u8,crate::app::assettable::AssetTable_AccessoryList;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Accessories(crate::app::assettable::AssetTable_AccessoryList)` overload"]fn set_accessories(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_AccessoryList>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd60usize)as*mut u8,();
+(AssetTable)__receiver,(crate::app::assettable::AssetTable_AccessoryList)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleAll()` overload"]fn get_scale_all(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd70usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleAll(f32)` overload"]fn set_scale_all(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd80usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleHead()` overload"]fn get_scale_head(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd90usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleHead(f32)` overload"]fn set_scale_head(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bda0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleNeck()` overload"]fn get_scale_neck(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdb0usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleNeck(f32)` overload"]fn set_scale_neck(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdc0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleTorso()` overload"]fn get_scale_torso(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdd0usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleTorso(f32)` overload"]fn set_scale_torso(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bde0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleShoulders()` overload"]fn get_scale_shoulders(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdf0usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleShoulders(f32)` overload"]fn set_scale_shoulders(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be00usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleArms()` overload"]fn get_scale_arms(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be10usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleArms(f32)` overload"]fn set_scale_arms(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be20usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleHands()` overload"]fn get_scale_hands(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be30usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleHands(f32)` overload"]fn set_scale_hands(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be40usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleLegs()` overload"]fn get_scale_legs(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be50usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleLegs(f32)` overload"]fn set_scale_legs(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be60usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScaleFeet()` overload"]fn get_scale_feet(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be70usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_ScaleFeet(f32)` overload"]fn set_scale_feet(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be80usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_VolumeArms()` overload"]fn get_volume_arms(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211be90usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_VolumeArms(f32)` overload"]fn set_volume_arms(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bea0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_VolumeLegs()` overload"]fn get_volume_legs(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211beb0usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_VolumeLegs(f32)` overload"]fn set_volume_legs(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bec0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_VolumeBust()` overload"]fn get_volume_bust(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bed0usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_VolumeBust(f32)` overload"]fn set_volume_bust(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bee0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_VolumeAbdomen()` overload"]fn get_volume_abdomen(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bef0usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_VolumeAbdomen(f32)` overload"]fn set_volume_abdomen(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf00usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_VolumeTorso()` overload"]fn get_volume_torso(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf10usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_VolumeTorso(f32)` overload"]fn set_volume_torso(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf20usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_VolumeScaleArms()` overload"]fn get_volume_scale_arms(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf30usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_VolumeScaleArms(f32)` overload"]fn set_volume_scale_arms(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf40usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_VolumeScaleLegs()` overload"]fn get_volume_scale_legs(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf50usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_VolumeScaleLegs(f32)` overload"]fn set_volume_scale_legs(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf60usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MapScaleAll()` overload"]fn get_map_scale_all(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf70usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MapScaleAll(f32)` overload"]fn set_map_scale_all(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf80usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MapScaleHead()` overload"]fn get_map_scale_head(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf90usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MapScaleHead(f32)` overload"]fn set_map_scale_head(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfa0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MapScaleWing()` overload"]fn get_map_scale_wing(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfb0usize)as*mut u8,f32;
+(AssetTable)__receiver)}
+}
+#[doc="`set_MapScaleWing(f32)` overload"]fn set_map_scale_wing(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfc0usize)as*mut u8,();
+(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Voice()` overload"]fn get_voice(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfd0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Voice(::unity2::Il2CppString)` overload"]fn set_voice(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfe0usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_FootStep()` overload"]fn get_foot_step(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211bff0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_FootStep(::unity2::Il2CppString)` overload"]fn set_foot_step(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c000usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Material()` overload"]fn get_material(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c010usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Material(::unity2::Il2CppString)` overload"]fn set_material(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c020usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Comment()` overload"]fn get_comment(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c030usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+#[doc="`set_Comment(::unity2::Il2CppString)` overload"]fn set_comment(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c040usize)as*mut u8,();
+(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c050usize)as*mut u8,();
+(AssetTable)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c290usize)as*mut u8,();
+(AssetTable)__receiver)}
+}
+#[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c790usize)as*mut u8,();
+(AssetTable)__receiver)}
+}
+#[doc="`OnCompletedEnd()` overload"]fn on_completed_end(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211c840usize)as*mut u8,();
+(AssetTable)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211d320usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable)__receiver)}
+}
+}
+
+#[cfg(feature="app-assettable")]impl<__T:IAssetTable>IAssetTableMethods for __T{}
+
+#[cfg(feature="app-assettable")]impl AssetTable{pub fn debugger_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_preset_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_preset_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_preset_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_conditions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_conditions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_body_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_body_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_head_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_head_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_hair_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_hair_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_ride_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_ride_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_ride_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_ride_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_left_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_left_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_right_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_right_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_trail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_trail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_ride_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_ride_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_info_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn set_info_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_talk_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_talk_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_demo_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn set_demo_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_hub_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn set_hub_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_hair_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn set_hair_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_hair_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn set_hair_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_hair_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn set_hair_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_grad_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn set_grad_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_grad_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn set_grad_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn get_grad_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn set_grad_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn get_skin_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn set_skin_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn get_skin_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn set_skin_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn get_skin_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn set_skin_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn get_toon_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn set_toon_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn get_toon_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn set_toon_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn get_toon_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn set_toon_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn get_mask_color100_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn set_mask_color100_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn get_mask_color100_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn set_mask_color100_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn get_mask_color100_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn set_mask_color100_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn get_mask_color075_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn set_mask_color075_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn get_mask_color075_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn set_mask_color075_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn get_mask_color075_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn set_mask_color075_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn get_mask_color050_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn set_mask_color050_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn get_mask_color050_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn set_mask_color050_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn get_mask_color050_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn set_mask_color050_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn get_mask_color025_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn set_mask_color025_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn get_mask_color025_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn set_mask_color025_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn get_mask_color025_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn set_mask_color025_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn get_acc1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn set_acc1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn get_acc2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn set_acc2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
+pub fn get_acc3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
+pub fn set_acc3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
+pub fn get_acc4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn set_acc4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+pub fn get_acc5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
+pub fn set_acc5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
+pub fn get_acc6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+pub fn set_acc6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
+pub fn get_acc7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
+pub fn set_acc7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[102]}
+pub fn get_acc8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[103]}
+pub fn set_acc8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[104]}
+pub fn get_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[105]}
+pub fn set_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[106]}
+pub fn get_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[107]}
+pub fn set_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[108]}
+pub fn get_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[109]}
+pub fn set_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[110]}
+pub fn get_scale_neck_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[111]}
+pub fn set_scale_neck_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[112]}
+pub fn get_scale_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[113]}
+pub fn set_scale_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[114]}
+pub fn get_scale_shoulders_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[115]}
+pub fn set_scale_shoulders_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[116]}
+pub fn get_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[117]}
+pub fn set_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[118]}
+pub fn get_scale_hands_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[119]}
+pub fn set_scale_hands_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[120]}
+pub fn get_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[121]}
+pub fn set_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[122]}
+pub fn get_scale_feet_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[123]}
+pub fn set_scale_feet_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[124]}
+pub fn get_volume_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[125]}
+pub fn set_volume_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[126]}
+pub fn get_volume_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[127]}
+pub fn set_volume_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[128]}
+pub fn get_volume_bust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[129]}
+pub fn set_volume_bust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[130]}
+pub fn get_volume_abdomen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[131]}
+pub fn set_volume_abdomen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[132]}
+pub fn get_volume_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[133]}
+pub fn set_volume_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[134]}
+pub fn get_volume_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[135]}
+pub fn set_volume_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[136]}
+pub fn get_volume_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[137]}
+pub fn set_volume_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[138]}
+pub fn get_map_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[139]}
+pub fn set_map_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[140]}
+pub fn get_map_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[141]}
+pub fn set_map_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[142]}
+pub fn get_map_scale_wing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[143]}
+pub fn set_map_scale_wing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[144]}
+pub fn get_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[145]}
+pub fn set_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[146]}
+pub fn get_foot_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[147]}
+pub fn set_foot_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[148]}
+pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[149]}
+pub fn set_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[150]}
+pub fn get_comment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[151]}
+pub fn set_comment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[152]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[153]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[154]}
+pub fn on_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[155]}
+pub fn on_completed_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[156]}
+pub fn get_condition_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[157]}
+pub fn get_condition_hits_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[158]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[159]}
+pub fn has_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[160]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[161]}
+}
+
+#[cfg(feature="app-assettable")]impl AssetTable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetTable), ::core::stringify!(new),));
+ <Self as IAssetTableMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryListMethods:IAssetTable_AccessoryList{#[doc="`TryAdd(crate::app::assettable::AssetTable_Accessory)` overload"]fn try_add(self,accessory:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf640usize)as*mut u8,();
+(AssetTable_AccessoryList)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(accessory))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf6c0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable_AccessoryList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf830usize)as*mut u8,();
+(AssetTable_AccessoryList)__receiver)}
+}
+}
+
+#[cfg(feature="app-assettable")]impl<__T:IAssetTable_AccessoryList>IAssetTable_AccessoryListMethods for __T{}
+
+#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetTable_AccessoryList), ::core::stringify!(new),));
+ <Self as IAssetTable_AccessoryListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryMethods:IAssetTable_Accessory{#[doc="`get_Locator()` overload"]fn get_locator(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf560usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable_Accessory)__receiver)}
+}
+#[doc="`set_Locator(::unity2::Il2CppString)` overload"]fn set_locator(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf570usize)as*mut u8,();
+(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Model()` overload"]fn get_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf580usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable_Accessory)__receiver)}
+}
+#[doc="`set_Model(::unity2::Il2CppString)` overload"]fn set_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf590usize)as*mut u8,();
+(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf5a0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable_Accessory)__receiver)}
+}
+#[doc="`get_Exist()` overload"]fn get_exist(self,)->bool{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf600usize)as*mut u8,bool;
+(AssetTable_Accessory)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf630usize)as*mut u8,();
+(AssetTable_Accessory)__receiver)}
+}
+}
+
+#[cfg(feature="app-assettable")]impl<__T:IAssetTable_Accessory>IAssetTable_AccessoryMethods for __T{}
+
+#[cfg(feature="app-assettable")]impl AssetTable_Accessory{pub fn get_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-assettable")]impl AssetTable_Accessory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetTable_Accessory), ::core::stringify!(new),));
+ <Self as IAssetTable_AccessoryMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-assettable")]impl AssetTable_ConditionFlags{#[doc="`GetState(crate::app::unit::Unit)` overload"]pub fn get_state(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::assettable::AssetTable_States{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bb0100usize)as*mut u8,crate::app::assettable::AssetTable_States;
 (crate::app::unit::Unit)::core::convert::Into::into(unit))}
@@ -933,907 +1828,12 @@ pub fn get_from_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
-#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryMethods:IAssetTable_Accessory{#[doc="`get_Locator()` overload"]fn get_locator(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf560usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable_Accessory)__receiver)}
-}
-#[doc="`set_Locator(::unity2::Il2CppString)` overload"]fn set_locator(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf570usize)as*mut u8,();
-(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Model()` overload"]fn get_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf580usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable_Accessory)__receiver)}
-}
-#[doc="`set_Model(::unity2::Il2CppString)` overload"]fn set_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf590usize)as*mut u8,();
-(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf5a0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable_Accessory)__receiver)}
-}
-#[doc="`get_Exist()` overload"]fn get_exist(self,)->bool{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf600usize)as*mut u8,bool;
-(AssetTable_Accessory)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf630usize)as*mut u8,();
-(AssetTable_Accessory)__receiver)}
-}
-}
-
-#[cfg(feature="app-assettable")]impl<__T:IAssetTable_Accessory>IAssetTable_AccessoryMethods for __T{}
-
-#[cfg(feature="app-assettable")]impl AssetTable_Accessory{pub fn get_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-assettable")]impl AssetTable_Accessory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AssetTable_Accessory), ::core::stringify!(new),));
- <Self as IAssetTable_AccessoryMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-assettable")]impl AssetTable{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b5c0usize)as*mut u8,();
-)}
-}
-#[doc="`get_PresetNames()` overload"]pub fn get_preset_names()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b670usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
-)}
-}
-#[doc="`get_ConditionNames()` overload"]pub fn get_condition_names()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d240usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
-)}
-}
-#[doc="`get_ConditionHits()` overload"]pub fn get_condition_hits()->crate::system::collections::generic::list_1::List_1<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d2b0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<i32> ;
-)}
-}
-#[doc="`HasColor(crate::unity_engine::color::Color)` overload"]pub fn has_color(color:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d450usize)as*mut u8,bool;
-(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211d470usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-assettable")]pub trait IAssetTableMethods:IAssetTable{#[doc="`DebuggerDisplay()` overload"]fn debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b450usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`get_PresetName()` overload"]fn get_preset_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b6f0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_PresetName(::unity2::Il2CppString)` overload"]fn set_preset_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b700usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Mode()` overload"]fn get_mode(self,)->crate::app::assettable::AssetTable_Modes{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b710usize)as*mut u8,crate::app::assettable::AssetTable_Modes;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Mode(crate::app::assettable::AssetTable_Modes)` overload"]fn set_mode(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Modes>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b720usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Modes)::core::convert::Into::into(value))}
-}
-#[doc="`get_Conditions()` overload"]fn get_conditions(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b730usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Conditions(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_conditions(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b740usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
-}
-#[doc="`get_BodyModel()` overload"]fn get_body_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b750usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_BodyModel(::unity2::Il2CppString)` overload"]fn set_body_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b760usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_DressModel()` overload"]fn get_dress_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b770usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_DressModel(::unity2::Il2CppString)` overload"]fn set_dress_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b780usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_HeadModel()` overload"]fn get_head_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b790usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_HeadModel(::unity2::Il2CppString)` overload"]fn set_head_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7a0usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_HairModel()` overload"]fn get_hair_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7b0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_HairModel(::unity2::Il2CppString)` overload"]fn set_hair_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7c0usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_RideModel()` overload"]fn get_ride_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7d0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_RideModel(::unity2::Il2CppString)` overload"]fn set_ride_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7e0usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_RideDressModel()` overload"]fn get_ride_dress_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b7f0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_RideDressModel(::unity2::Il2CppString)` overload"]fn set_ride_dress_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b800usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_LeftHand()` overload"]fn get_left_hand(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b810usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_LeftHand(::unity2::Il2CppString)` overload"]fn set_left_hand(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b820usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_RightHand()` overload"]fn get_right_hand(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b830usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_RightHand(::unity2::Il2CppString)` overload"]fn set_right_hand(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b840usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Trail()` overload"]fn get_trail(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b850usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Trail(::unity2::Il2CppString)` overload"]fn set_trail(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b860usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Magic()` overload"]fn get_magic(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b870usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Magic(::unity2::Il2CppString)` overload"]fn set_magic(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b880usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_BodyAnim()` overload"]fn get_body_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b890usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_BodyAnim(::unity2::Il2CppString)` overload"]fn set_body_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8a0usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_RideAnim()` overload"]fn get_ride_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8b0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_RideAnim(::unity2::Il2CppString)` overload"]fn set_ride_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8c0usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_InfoAnim()` overload"]fn get_info_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8d0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_InfoAnim(::unity2::Il2CppString)` overload"]fn set_info_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8e0usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_TalkAnim()` overload"]fn get_talk_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b8f0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_TalkAnim(::unity2::Il2CppString)` overload"]fn set_talk_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b900usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_DemoAnim()` overload"]fn get_demo_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b910usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_DemoAnim(::unity2::Il2CppString)` overload"]fn set_demo_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b920usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_HubAnim()` overload"]fn get_hub_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b930usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_HubAnim(::unity2::Il2CppString)` overload"]fn set_hub_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b940usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_HairR()` overload"]fn get_hair_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b950usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_HairR(u8)` overload"]fn set_hair_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b960usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_HairG()` overload"]fn get_hair_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b970usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_HairG(u8)` overload"]fn set_hair_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b980usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_HairB()` overload"]fn get_hair_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b990usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_HairB(u8)` overload"]fn set_hair_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9a0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_GradR()` overload"]fn get_grad_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9b0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_GradR(u8)` overload"]fn set_grad_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9c0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_GradG()` overload"]fn get_grad_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9d0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_GradG(u8)` overload"]fn set_grad_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9e0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_GradB()` overload"]fn get_grad_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211b9f0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_GradB(u8)` overload"]fn set_grad_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba00usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_SkinR()` overload"]fn get_skin_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba10usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_SkinR(u8)` overload"]fn set_skin_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba20usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_SkinG()` overload"]fn get_skin_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba30usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_SkinG(u8)` overload"]fn set_skin_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba40usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_SkinB()` overload"]fn get_skin_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba50usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_SkinB(u8)` overload"]fn set_skin_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba60usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_ToonR()` overload"]fn get_toon_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba70usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ToonR(u8)` overload"]fn set_toon_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba80usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_ToonG()` overload"]fn get_toon_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211ba90usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ToonG(u8)` overload"]fn set_toon_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211baa0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_ToonB()` overload"]fn get_toon_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bab0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ToonB(u8)` overload"]fn set_toon_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bac0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor100R()` overload"]fn get_mask_color100_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bad0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor100R(u8)` overload"]fn set_mask_color100_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bae0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor100G()` overload"]fn get_mask_color100_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211baf0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor100G(u8)` overload"]fn set_mask_color100_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb00usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor100B()` overload"]fn get_mask_color100_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb10usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor100B(u8)` overload"]fn set_mask_color100_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb20usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor075R()` overload"]fn get_mask_color075_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb30usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor075R(u8)` overload"]fn set_mask_color075_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb40usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor075G()` overload"]fn get_mask_color075_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb50usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor075G(u8)` overload"]fn set_mask_color075_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb60usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor075B()` overload"]fn get_mask_color075_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb70usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor075B(u8)` overload"]fn set_mask_color075_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb80usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor050R()` overload"]fn get_mask_color050_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bb90usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor050R(u8)` overload"]fn set_mask_color050_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bba0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor050G()` overload"]fn get_mask_color050_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbb0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor050G(u8)` overload"]fn set_mask_color050_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbc0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor050B()` overload"]fn get_mask_color050_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbd0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor050B(u8)` overload"]fn set_mask_color050_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbe0usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor025R()` overload"]fn get_mask_color025_r(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bbf0usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor025R(u8)` overload"]fn set_mask_color025_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc00usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor025G()` overload"]fn get_mask_color025_g(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc10usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor025G(u8)` overload"]fn set_mask_color025_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc20usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaskColor025B()` overload"]fn get_mask_color025_b(self,)->u8{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc30usize)as*mut u8,u8;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MaskColor025B(u8)` overload"]fn set_mask_color025_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc40usize)as*mut u8,();
-(AssetTable)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc1()` overload"]fn get_acc1(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc50usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc1(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc1(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc60usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc2()` overload"]fn get_acc2(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc70usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc2(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc2(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc80usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc3()` overload"]fn get_acc3(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bc90usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc3(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc3(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bca0usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc4()` overload"]fn get_acc4(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcb0usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc4(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc4(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcc0usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc5()` overload"]fn get_acc5(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcd0usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc5(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc5(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bce0usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc6()` overload"]fn get_acc6(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bcf0usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc6(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc6(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd00usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc7()` overload"]fn get_acc7(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd10usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc7(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc7(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd20usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Acc8()` overload"]fn get_acc8(self,)->crate::app::assettable::AssetTable_Accessory{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd30usize)as*mut u8,crate::app::assettable::AssetTable_Accessory;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Acc8(crate::app::assettable::AssetTable_Accessory)` overload"]fn set_acc8(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd40usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(value))}
-}
-#[doc="`get_Accessories()` overload"]fn get_accessories(self,)->crate::app::assettable::AssetTable_AccessoryList{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd50usize)as*mut u8,crate::app::assettable::AssetTable_AccessoryList;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Accessories(crate::app::assettable::AssetTable_AccessoryList)` overload"]fn set_accessories(self,value:impl::core::convert::Into<crate::app::assettable::AssetTable_AccessoryList>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd60usize)as*mut u8,();
-(AssetTable)__receiver,(crate::app::assettable::AssetTable_AccessoryList)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleAll()` overload"]fn get_scale_all(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd70usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleAll(f32)` overload"]fn set_scale_all(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd80usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleHead()` overload"]fn get_scale_head(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bd90usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleHead(f32)` overload"]fn set_scale_head(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bda0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleNeck()` overload"]fn get_scale_neck(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdb0usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleNeck(f32)` overload"]fn set_scale_neck(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdc0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleTorso()` overload"]fn get_scale_torso(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdd0usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleTorso(f32)` overload"]fn set_scale_torso(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bde0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleShoulders()` overload"]fn get_scale_shoulders(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bdf0usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleShoulders(f32)` overload"]fn set_scale_shoulders(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be00usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleArms()` overload"]fn get_scale_arms(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be10usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleArms(f32)` overload"]fn set_scale_arms(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be20usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleHands()` overload"]fn get_scale_hands(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be30usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleHands(f32)` overload"]fn set_scale_hands(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be40usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleLegs()` overload"]fn get_scale_legs(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be50usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleLegs(f32)` overload"]fn set_scale_legs(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be60usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ScaleFeet()` overload"]fn get_scale_feet(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be70usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_ScaleFeet(f32)` overload"]fn set_scale_feet(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be80usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_VolumeArms()` overload"]fn get_volume_arms(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211be90usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_VolumeArms(f32)` overload"]fn set_volume_arms(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bea0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_VolumeLegs()` overload"]fn get_volume_legs(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211beb0usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_VolumeLegs(f32)` overload"]fn set_volume_legs(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bec0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_VolumeBust()` overload"]fn get_volume_bust(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bed0usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_VolumeBust(f32)` overload"]fn set_volume_bust(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bee0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_VolumeAbdomen()` overload"]fn get_volume_abdomen(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bef0usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_VolumeAbdomen(f32)` overload"]fn set_volume_abdomen(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf00usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_VolumeTorso()` overload"]fn get_volume_torso(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf10usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_VolumeTorso(f32)` overload"]fn set_volume_torso(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf20usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_VolumeScaleArms()` overload"]fn get_volume_scale_arms(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf30usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_VolumeScaleArms(f32)` overload"]fn set_volume_scale_arms(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf40usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_VolumeScaleLegs()` overload"]fn get_volume_scale_legs(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf50usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_VolumeScaleLegs(f32)` overload"]fn set_volume_scale_legs(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf60usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MapScaleAll()` overload"]fn get_map_scale_all(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf70usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MapScaleAll(f32)` overload"]fn set_map_scale_all(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf80usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MapScaleHead()` overload"]fn get_map_scale_head(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bf90usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MapScaleHead(f32)` overload"]fn set_map_scale_head(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfa0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MapScaleWing()` overload"]fn get_map_scale_wing(self,)->f32{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfb0usize)as*mut u8,f32;
-(AssetTable)__receiver)}
-}
-#[doc="`set_MapScaleWing(f32)` overload"]fn set_map_scale_wing(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfc0usize)as*mut u8,();
-(AssetTable)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Voice()` overload"]fn get_voice(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfd0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Voice(::unity2::Il2CppString)` overload"]fn set_voice(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bfe0usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_FootStep()` overload"]fn get_foot_step(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211bff0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_FootStep(::unity2::Il2CppString)` overload"]fn set_foot_step(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c000usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Material()` overload"]fn get_material(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c010usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Material(::unity2::Il2CppString)` overload"]fn set_material(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c020usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Comment()` overload"]fn get_comment(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c030usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-#[doc="`set_Comment(::unity2::Il2CppString)` overload"]fn set_comment(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c040usize)as*mut u8,();
-(AssetTable)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c050usize)as*mut u8,();
-(AssetTable)__receiver)}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c290usize)as*mut u8,();
-(AssetTable)__receiver)}
-}
-#[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c790usize)as*mut u8,();
-(AssetTable)__receiver)}
-}
-#[doc="`OnCompletedEnd()` overload"]fn on_completed_end(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211c840usize)as*mut u8,();
-(AssetTable)__receiver)}
-}
-#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211d320usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable)__receiver)}
-}
-}
-
-#[cfg(feature="app-assettable")]impl<__T:IAssetTable>IAssetTableMethods for __T{}
-
-#[cfg(feature="app-assettable")]impl AssetTable{pub fn debugger_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_preset_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_preset_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_preset_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_conditions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_conditions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_body_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_body_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_head_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn set_head_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_hair_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_hair_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn get_ride_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn set_ride_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_ride_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn set_ride_dress_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn get_left_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn set_left_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn get_right_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn set_right_hand_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn get_trail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn set_trail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn get_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn set_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn get_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn set_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn get_ride_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn set_ride_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-pub fn get_info_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
-pub fn set_info_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
-pub fn get_talk_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
-pub fn set_talk_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
-pub fn get_demo_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
-pub fn set_demo_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
-pub fn get_hub_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
-pub fn set_hub_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
-pub fn get_hair_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
-pub fn set_hair_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
-pub fn get_hair_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
-pub fn set_hair_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
-pub fn get_hair_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
-pub fn set_hair_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
-pub fn get_grad_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
-pub fn set_grad_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
-pub fn get_grad_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
-pub fn set_grad_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
-pub fn get_grad_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
-pub fn set_grad_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
-pub fn get_skin_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
-pub fn set_skin_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
-pub fn get_skin_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
-pub fn set_skin_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
-pub fn get_skin_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
-pub fn set_skin_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
-pub fn get_toon_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
-pub fn set_toon_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
-pub fn get_toon_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
-pub fn set_toon_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
-pub fn get_toon_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
-pub fn set_toon_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
-pub fn get_mask_color100_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
-pub fn set_mask_color100_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
-pub fn get_mask_color100_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
-pub fn set_mask_color100_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
-pub fn get_mask_color100_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
-pub fn set_mask_color100_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
-pub fn get_mask_color075_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
-pub fn set_mask_color075_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
-pub fn get_mask_color075_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
-pub fn set_mask_color075_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
-pub fn get_mask_color075_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
-pub fn set_mask_color075_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
-pub fn get_mask_color050_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
-pub fn set_mask_color050_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
-pub fn get_mask_color050_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
-pub fn set_mask_color050_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
-pub fn get_mask_color050_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
-pub fn set_mask_color050_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
-pub fn get_mask_color025_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
-pub fn set_mask_color025_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
-pub fn get_mask_color025_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
-pub fn set_mask_color025_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
-pub fn get_mask_color025_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
-pub fn set_mask_color025_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
-pub fn get_acc1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
-pub fn set_acc1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
-pub fn get_acc2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
-pub fn set_acc2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
-pub fn get_acc3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
-pub fn set_acc3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
-pub fn get_acc4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
-pub fn set_acc4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
-pub fn get_acc5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
-pub fn set_acc5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
-pub fn get_acc6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
-pub fn set_acc6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
-pub fn get_acc7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
-pub fn set_acc7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[102]}
-pub fn get_acc8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[103]}
-pub fn set_acc8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[104]}
-pub fn get_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[105]}
-pub fn set_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[106]}
-pub fn get_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[107]}
-pub fn set_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[108]}
-pub fn get_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[109]}
-pub fn set_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[110]}
-pub fn get_scale_neck_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[111]}
-pub fn set_scale_neck_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[112]}
-pub fn get_scale_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[113]}
-pub fn set_scale_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[114]}
-pub fn get_scale_shoulders_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[115]}
-pub fn set_scale_shoulders_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[116]}
-pub fn get_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[117]}
-pub fn set_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[118]}
-pub fn get_scale_hands_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[119]}
-pub fn set_scale_hands_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[120]}
-pub fn get_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[121]}
-pub fn set_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[122]}
-pub fn get_scale_feet_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[123]}
-pub fn set_scale_feet_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[124]}
-pub fn get_volume_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[125]}
-pub fn set_volume_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[126]}
-pub fn get_volume_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[127]}
-pub fn set_volume_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[128]}
-pub fn get_volume_bust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[129]}
-pub fn set_volume_bust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[130]}
-pub fn get_volume_abdomen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[131]}
-pub fn set_volume_abdomen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[132]}
-pub fn get_volume_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[133]}
-pub fn set_volume_torso_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[134]}
-pub fn get_volume_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[135]}
-pub fn set_volume_scale_arms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[136]}
-pub fn get_volume_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[137]}
-pub fn set_volume_scale_legs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[138]}
-pub fn get_map_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[139]}
-pub fn set_map_scale_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[140]}
-pub fn get_map_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[141]}
-pub fn set_map_scale_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[142]}
-pub fn get_map_scale_wing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[143]}
-pub fn set_map_scale_wing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[144]}
-pub fn get_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[145]}
-pub fn set_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[146]}
-pub fn get_foot_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[147]}
-pub fn set_foot_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[148]}
-pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[149]}
-pub fn set_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[150]}
-pub fn get_comment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[151]}
-pub fn set_comment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[152]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[153]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[154]}
-pub fn on_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[155]}
-pub fn on_completed_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[156]}
-pub fn get_condition_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[157]}
-pub fn get_condition_hits_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[158]}
-pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[159]}
-pub fn has_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[160]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[161]}
-}
-
-#[cfg(feature="app-assettable")]impl AssetTable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AssetTable), ::core::stringify!(new),));
- <Self as IAssetTableMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-assettable")]impl AssetTable_Sound{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bb84b0usize)as*mut u8, ::unity2::Il2CppString;
 (*mut AssetTable_Sound)self as*mut AssetTable_Sound)}
 }
 }
 
 #[cfg(feature="app-assettable")]impl AssetTable_Sound{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryListMethods:IAssetTable_AccessoryList{#[doc="`TryAdd(crate::app::assettable::AssetTable_Accessory)` overload"]fn try_add(self,accessory:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf640usize)as*mut u8,();
-(AssetTable_AccessoryList)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(accessory))}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf6c0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable_AccessoryList)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf830usize)as*mut u8,();
-(AssetTable_AccessoryList)__receiver)}
-}
-}
-
-#[cfg(feature="app-assettable")]impl<__T:IAssetTable_AccessoryList>IAssetTable_AccessoryListMethods for __T{}
-
-#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AssetTable_AccessoryList), ::core::stringify!(new),));
- <Self as IAssetTable_AccessoryListMethods> ::ctor(this,);
-this}
 }
 
 #[cfg(feature="app-assettable")]pub trait IAssetTable_ConditionIndexesMethods:IAssetTable_ConditionIndexes{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1877,27 +1877,27 @@ this}
 #[cfg(feature = "app-assettable")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AssetTable;
+    pub use super::IAssetTable;
+    pub use super::IAssetTableMethods;
+    pub use super::AssetTable_Modes;
+    pub use super::AssetTable_AccessoryList;
+    pub use super::IAssetTable_AccessoryList;
+    pub use super::IAssetTable_AccessoryListMethods;
+    pub use super::AssetTable_Accessory;
+    pub use super::IAssetTable_Accessory;
+    pub use super::IAssetTable_AccessoryMethods;
     pub use super::AssetTable_ConditionFlags;
     pub use super::IAssetTable_ConditionFlags;
     pub use super::IAssetTable_ConditionFlagsMethods;
     pub use super::AssetTable_Result;
     pub use super::IAssetTable_Result;
     pub use super::IAssetTable_ResultMethods;
-    pub use super::AssetTable_Accessory;
-    pub use super::IAssetTable_Accessory;
-    pub use super::IAssetTable_AccessoryMethods;
-    pub use super::AssetTable_States;
-    pub use super::AssetTable_Modes;
-    pub use super::AssetTable;
-    pub use super::IAssetTable;
-    pub use super::IAssetTableMethods;
     pub use super::AssetTable_Sound;
-    pub use super::AssetTable_AccessoryList;
-    pub use super::IAssetTable_AccessoryList;
-    pub use super::IAssetTable_AccessoryListMethods;
     pub use super::AssetTable_ConditionIndexes;
     pub use super::IAssetTable_ConditionIndexes;
     pub use super::IAssetTable_ConditionIndexesMethods;
+    pub use super::AssetTable_States;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

@@ -17,38 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akobstructionocclusion/AkObstructionOcclusion_ObstructionOcclusionValue.md"))]#[::unity2::class(namespace="",name="AkObstructionOcclusion.ObstructionOcclusionValue")]#[parent(crate::system::object::Object)]pub struct AkObstructionOcclusion_ObstructionOcclusionValue{#[offset(16)]#[rename(name="currentValue")]pub current_value:f32, #[offset(20)]#[rename(name="targetValue")]pub target_value:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akobstructionocclusion/AkObstructionOcclusion.md"))]#[::unity2::class(namespace="",name="AkObstructionOcclusion")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkObstructionOcclusion{#[offset(24)]#[rename(name="listenersToRemove")]pub listeners_to_remove:crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener> , #[offset(32)]#[rename(name="currentListenerList")]pub current_listener_list:crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener> , #[offset(40)]#[rename(name="ObstructionOcclusionValues")]pub obstruction_occlusion_values:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue> , #[offset(48)]#[rename(name="fadeRate")]pub fade_rate:f32, #[offset(52)]#[rename(name="fadeTime")]pub fade_time:f32, #[offset(56)]#[rename(name="LayerMask")]pub layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(60)]#[rename(name="maxDistance")]pub max_distance:f32, #[offset(64)]#[rename(name="refreshInterval")]pub refresh_interval:f32, #[offset(68)]#[rename(name="refreshTime")]pub refresh_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akobstructionocclusion/AkObstructionOcclusion_ObstructionOcclusionValue.md"))]#[::unity2::class(namespace="",name="AkObstructionOcclusion.ObstructionOcclusionValue")]#[parent(crate::system::object::Object)]pub struct AkObstructionOcclusion_ObstructionOcclusionValue{#[offset(16)]#[rename(name="currentValue")]pub current_value:f32, #[offset(20)]#[rename(name="targetValue")]pub target_value:f32,}
 
 }
 
 #[cfg(feature = "root-akobstructionocclusion-types")]
 pub use __types::*;
-
-#[cfg(feature="root-akobstructionocclusion")]pub trait IAkObstructionOcclusion_ObstructionOcclusionValueMethods:IAkObstructionOcclusion_ObstructionOcclusionValue{#[doc="`Update(f32)` overload"]fn update(self,fade_rate:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <AkObstructionOcclusion_ObstructionOcclusionValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1110usize)as*mut u8,bool;
-(AkObstructionOcclusion_ObstructionOcclusionValue)__receiver,(f32)::core::convert::Into::into(fade_rate))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkObstructionOcclusion_ObstructionOcclusionValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba11a0usize)as*mut u8,();
-(AkObstructionOcclusion_ObstructionOcclusionValue)__receiver)}
-}
-}
-
-#[cfg(feature="root-akobstructionocclusion")]impl<__T:IAkObstructionOcclusion_ObstructionOcclusionValue>IAkObstructionOcclusion_ObstructionOcclusionValueMethods for __T{}
-
-#[cfg(feature="root-akobstructionocclusion")]impl AkObstructionOcclusion_ObstructionOcclusionValue{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root-akobstructionocclusion")]impl AkObstructionOcclusion_ObstructionOcclusionValue{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkObstructionOcclusion_ObstructionOcclusionValue), ::core::stringify!(new),));
- <Self as IAkObstructionOcclusion_ObstructionOcclusionValueMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root-akobstructionocclusion")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkObstructionOcclusion_unity2_raw{use super:: * ;
 pub unsafe fn update_current_listener_list(this:AkObstructionOcclusion,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UpdateCurrentListenerList").unwrap_or_else(||panic!("unity2: abstract method `{}
@@ -113,15 +90,38 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root-akobstructionocclusion")]pub trait IAkObstructionOcclusion_ObstructionOcclusionValueMethods:IAkObstructionOcclusion_ObstructionOcclusionValue{#[doc="`Update(f32)` overload"]fn update(self,fade_rate:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <AkObstructionOcclusion_ObstructionOcclusionValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1110usize)as*mut u8,bool;
+(AkObstructionOcclusion_ObstructionOcclusionValue)__receiver,(f32)::core::convert::Into::into(fade_rate))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkObstructionOcclusion_ObstructionOcclusionValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba11a0usize)as*mut u8,();
+(AkObstructionOcclusion_ObstructionOcclusionValue)__receiver)}
+}
+}
+
+#[cfg(feature="root-akobstructionocclusion")]impl<__T:IAkObstructionOcclusion_ObstructionOcclusionValue>IAkObstructionOcclusion_ObstructionOcclusionValueMethods for __T{}
+
+#[cfg(feature="root-akobstructionocclusion")]impl AkObstructionOcclusion_ObstructionOcclusionValue{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akobstructionocclusion")]impl AkObstructionOcclusion_ObstructionOcclusionValue{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkObstructionOcclusion_ObstructionOcclusionValue), ::core::stringify!(new),));
+ <Self as IAkObstructionOcclusion_ObstructionOcclusionValueMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root-akobstructionocclusion")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkObstructionOcclusion_ObstructionOcclusionValue;
-    pub use super::IAkObstructionOcclusion_ObstructionOcclusionValue;
-    pub use super::IAkObstructionOcclusion_ObstructionOcclusionValueMethods;
     pub use super::AkObstructionOcclusion;
     pub use super::IAkObstructionOcclusion;
     pub use super::IAkObstructionOcclusionMethods;
+    pub use super::AkObstructionOcclusion_ObstructionOcclusionValue;
+    pub use super::IAkObstructionOcclusion_ObstructionOcclusionValue;
+    pub use super::IAkObstructionOcclusion_ObstructionOcclusionValueMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

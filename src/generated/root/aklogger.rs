@@ -13,38 +13,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aklogger/AkLogger_ErrorLoggerInteropDelegate.md"))]#[::unity2::class(namespace="",name="AkLogger.ErrorLoggerInteropDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkLogger_ErrorLoggerInteropDelegate{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aklogger/AkLogger.md"))]#[::unity2::class(namespace="",name="AkLogger")]#[parent(crate::system::object::Object)]pub struct AkLogger{#[static_field]#[rename(name="ms_Instance")]pub ms_instance:crate::root::aklogger::AkLogger, #[offset(16)]#[rename(name="errorLoggerDelegate")]pub error_logger_delegate:crate::root::aklogger::AkLogger_ErrorLoggerInteropDelegate,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aklogger/AkLogger_ErrorLoggerInteropDelegate.md"))]#[::unity2::class(namespace="",name="AkLogger.ErrorLoggerInteropDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkLogger_ErrorLoggerInteropDelegate{}
 
 }
 
 #[cfg(feature = "root-aklogger-types")]
 pub use __types::*;
-
-#[cfg(feature="root-aklogger")]pub trait IAkLogger_ErrorLoggerInteropDelegateMethods:IAkLogger_ErrorLoggerInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e7f0usize)as*mut u8,();
-(AkLogger_ErrorLoggerInteropDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e810usize)as*mut u8,();
-(AkLogger_ErrorLoggerInteropDelegate)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-}
-
-#[cfg(feature="root-aklogger")]impl<__T:IAkLogger_ErrorLoggerInteropDelegate>IAkLogger_ErrorLoggerInteropDelegateMethods for __T{}
-
-#[cfg(feature="root-aklogger")]impl AkLogger_ErrorLoggerInteropDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root-aklogger")]impl AkLogger_ErrorLoggerInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkLogger_ErrorLoggerInteropDelegate), ::core::stringify!(new),));
- <Self as IAkLogger_ErrorLoggerInteropDelegateMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="root-aklogger")]impl AkLogger{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::root::aklogger::AkLogger{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f22ee0usize)as*mut u8,crate::root::aklogger::AkLogger;
 )}
@@ -100,15 +77,38 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="root-aklogger")]pub trait IAkLogger_ErrorLoggerInteropDelegateMethods:IAkLogger_ErrorLoggerInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e7f0usize)as*mut u8,();
+(AkLogger_ErrorLoggerInteropDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e810usize)as*mut u8,();
+(AkLogger_ErrorLoggerInteropDelegate)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+}
+
+#[cfg(feature="root-aklogger")]impl<__T:IAkLogger_ErrorLoggerInteropDelegate>IAkLogger_ErrorLoggerInteropDelegateMethods for __T{}
+
+#[cfg(feature="root-aklogger")]impl AkLogger_ErrorLoggerInteropDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-aklogger")]impl AkLogger_ErrorLoggerInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkLogger_ErrorLoggerInteropDelegate), ::core::stringify!(new),));
+ <Self as IAkLogger_ErrorLoggerInteropDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "root-aklogger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkLogger_ErrorLoggerInteropDelegate;
-    pub use super::IAkLogger_ErrorLoggerInteropDelegate;
-    pub use super::IAkLogger_ErrorLoggerInteropDelegateMethods;
     pub use super::AkLogger;
     pub use super::IAkLogger;
     pub use super::IAkLoggerMethods;
+    pub use super::AkLogger_ErrorLoggerInteropDelegate;
+    pub use super::IAkLogger_ErrorLoggerInteropDelegate;
+    pub use super::IAkLogger_ErrorLoggerInteropDelegateMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -16,10 +16,10 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect_LocationNode.md"))]#[::unity2::class(namespace="App",name="MapEffect.LocationNode")]#[parent(crate::app::pool::Pool_Node)]pub struct MapEffect_LocationNode{#[offset(16)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Position")]pub position:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="Rotation")]pub rotation:crate::unity_engine::quaternion::Quaternion, #[offset(56)]#[rename(name="Effect")]pub effect:crate::app::resourceobject::ResourceObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect.md"))]#[::unity2::class(namespace="App",name="MapEffect")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapeffect::MapEffect>)]pub struct MapEffect{#[static_field]#[rename(name="s_Root")]pub s_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Pool")]pub m_pool:crate::app::mapeffect::MapEffect_LocationPool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect_LocationPool.md"))]#[::unity2::class(namespace="App",name="MapEffect.LocationPool")]#[parent(crate::app::pool::Pool_List_1<crate::app::mapeffect::MapEffect_LocationNode>)]pub struct MapEffect_LocationPool{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect.md"))]#[::unity2::class(namespace="App",name="MapEffect")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapeffect::MapEffect>)]pub struct MapEffect{#[static_field]#[rename(name="s_Root")]pub s_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Pool")]pub m_pool:crate::app::mapeffect::MapEffect_LocationPool,}
 
 }
 
@@ -66,6 +66,24 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(MapEffect_LocationNode), ::core::stringify!(new),));
  <Self as IMapEffect_LocationNodeMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapeffect")]pub trait IMapEffect_LocationPoolMethods:IMapEffect_LocationPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEffect_LocationPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c47f0usize)as*mut u8,();
+(MapEffect_LocationPool)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapeffect")]impl<__T:IMapEffect_LocationPool>IMapEffect_LocationPoolMethods for __T{}
+
+#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEffect_LocationPool), ::core::stringify!(new),));
+ <Self as IMapEffect_LocationPoolMethods> ::ctor(this,);
 this}
 }
 
@@ -227,36 +245,18 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-mapeffect")]pub trait IMapEffect_LocationPoolMethods:IMapEffect_LocationPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEffect_LocationPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c47f0usize)as*mut u8,();
-(MapEffect_LocationPool)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapeffect")]impl<__T:IMapEffect_LocationPool>IMapEffect_LocationPoolMethods for __T{}
-
-#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEffect_LocationPool), ::core::stringify!(new),));
- <Self as IMapEffect_LocationPoolMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapeffect")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapEffect_LocationNode;
     pub use super::IMapEffect_LocationNode;
     pub use super::IMapEffect_LocationNodeMethods;
-    pub use super::MapEffect;
-    pub use super::IMapEffect;
-    pub use super::IMapEffectMethods;
     pub use super::MapEffect_LocationPool;
     pub use super::IMapEffect_LocationPool;
     pub use super::IMapEffect_LocationPoolMethods;
+    pub use super::MapEffect;
+    pub use super::IMapEffect;
+    pub use super::IMapEffectMethods;
     pub use crate::app::pool::IPool_List_1;
     pub use crate::app::pool::IPool_Node;
     pub use crate::app::singletonclass_1::ISingletonClass_1;

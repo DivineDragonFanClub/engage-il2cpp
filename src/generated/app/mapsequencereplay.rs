@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencereplay::MapSequenceReplay>)]pub struct MapSequenceReplay{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceReplay_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceReplay_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceReplay.Label";
@@ -45,9 +48,6 @@ pub fn cancel()->Self{Self{value:7}
 pub fn end()->Self{Self{value:8}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencereplay::MapSequenceReplay>)]pub struct MapSequenceReplay{}
 
 }
 
@@ -151,10 +151,10 @@ this}
 #[cfg(feature = "app-mapsequencereplay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceReplay_Label;
     pub use super::MapSequenceReplay;
     pub use super::IMapSequenceReplay;
     pub use super::IMapSequenceReplayMethods;
+    pub use super::MapSequenceReplay_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -13,19 +13,19 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.GetRayIntersectionAllNonAllocCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast2DCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.Raycast2DCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_Raycast2DCallback{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRaycastNonAllocCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.GetRaycastNonAllocCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_GetRaycastNonAllocCallback{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_RaycastAllCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.RaycastAllCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_RaycastAllCallback{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.GetRayIntersectionAllNonAllocCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast3DCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.Raycast3DCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_Raycast3DCallback{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_RaycastAllCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.RaycastAllCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_RaycastAllCallback{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ReflectionMethodsCache.GetRayIntersectionAllCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ReflectionMethodsCache_GetRayIntersectionAllCallback{}
@@ -37,6 +37,29 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]pub trait IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods:IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e700usize)as*mut u8,();
+(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, f32, i32)` overload"]fn invoke(self,r:impl::core::convert::Into<crate::unity_engine::ray::Ray> ,results:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D> > ,f:impl::core::convert::Into<f32> ,i:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e720usize)as*mut u8,i32;
+(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback)__receiver,(crate::unity_engine::ray::Ray)::core::convert::Into::into(r),(::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)::core::convert::Into::into(results),(f32)::core::convert::Into::into(f),(i32)::core::convert::Into::into(i))}
+}
+}
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl<__T:IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback>IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback), ::core::stringify!(new),));
+ <Self as IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="unity_engine-ui-reflectionmethodscache")]pub trait IReflectionMethodsCache_Raycast2DCallbackMethods:IReflectionMethodsCache_Raycast2DCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ReflectionMethodsCache_Raycast2DCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0f080usize)as*mut u8,();
@@ -84,52 +107,6 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]pub trait IReflectionMethodsCache_RaycastAllCallbackMethods:IReflectionMethodsCache_RaycastAllCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ReflectionMethodsCache_RaycastAllCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0f9e0usize)as*mut u8,();
-(ReflectionMethodsCache_RaycastAllCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::ray::Ray, f32, i32)` overload"]fn invoke(self,r:impl::core::convert::Into<crate::unity_engine::ray::Ray> ,f:impl::core::convert::Into<f32> ,i:impl::core::convert::Into<i32>)-> ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>{unsafe{let __receiver= <ReflectionMethodsCache_RaycastAllCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0fa00usize)as*mut u8, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> ;
-(ReflectionMethodsCache_RaycastAllCallback)__receiver,(crate::unity_engine::ray::Ray)::core::convert::Into::into(r),(f32)::core::convert::Into::into(f),(i32)::core::convert::Into::into(i))}
-}
-}
-
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl<__T:IReflectionMethodsCache_RaycastAllCallback>IReflectionMethodsCache_RaycastAllCallbackMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_RaycastAllCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_RaycastAllCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ReflectionMethodsCache_RaycastAllCallback), ::core::stringify!(new),));
- <Self as IReflectionMethodsCache_RaycastAllCallbackMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]pub trait IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods:IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e700usize)as*mut u8,();
-(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, f32, i32)` overload"]fn invoke(self,r:impl::core::convert::Into<crate::unity_engine::ray::Ray> ,results:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D> > ,f:impl::core::convert::Into<f32> ,i:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e720usize)as*mut u8,i32;
-(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback)__receiver,(crate::unity_engine::ray::Ray)::core::convert::Into::into(r),(::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>)::core::convert::Into::into(results),(f32)::core::convert::Into::into(f),(i32)::core::convert::Into::into(i))}
-}
-}
-
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl<__T:IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback>IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback), ::core::stringify!(new),));
- <Self as IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature="unity_engine-ui-reflectionmethodscache")]pub trait IReflectionMethodsCache_Raycast3DCallbackMethods:IReflectionMethodsCache_Raycast3DCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ReflectionMethodsCache_Raycast3DCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0f4f0usize)as*mut u8,();
 (ReflectionMethodsCache_Raycast3DCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -153,6 +130,29 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(ReflectionMethodsCache_Raycast3DCallback), ::core::stringify!(new),));
  <Self as IReflectionMethodsCache_Raycast3DCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]pub trait IReflectionMethodsCache_RaycastAllCallbackMethods:IReflectionMethodsCache_RaycastAllCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ReflectionMethodsCache_RaycastAllCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0f9e0usize)as*mut u8,();
+(ReflectionMethodsCache_RaycastAllCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::ray::Ray, f32, i32)` overload"]fn invoke(self,r:impl::core::convert::Into<crate::unity_engine::ray::Ray> ,f:impl::core::convert::Into<f32> ,i:impl::core::convert::Into<i32>)-> ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>{unsafe{let __receiver= <ReflectionMethodsCache_RaycastAllCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0fa00usize)as*mut u8, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> ;
+(ReflectionMethodsCache_RaycastAllCallback)__receiver,(crate::unity_engine::ray::Ray)::core::convert::Into::into(r),(f32)::core::convert::Into::into(f),(i32)::core::convert::Into::into(i))}
+}
+}
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl<__T:IReflectionMethodsCache_RaycastAllCallback>IReflectionMethodsCache_RaycastAllCallbackMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_RaycastAllCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-ui-reflectionmethodscache")]impl ReflectionMethodsCache_RaycastAllCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReflectionMethodsCache_RaycastAllCallback), ::core::stringify!(new),));
+ <Self as IReflectionMethodsCache_RaycastAllCallbackMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -210,21 +210,21 @@ this}
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback;
+    pub use super::IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback;
+    pub use super::IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods;
     pub use super::ReflectionMethodsCache_Raycast2DCallback;
     pub use super::IReflectionMethodsCache_Raycast2DCallback;
     pub use super::IReflectionMethodsCache_Raycast2DCallbackMethods;
     pub use super::ReflectionMethodsCache_GetRaycastNonAllocCallback;
     pub use super::IReflectionMethodsCache_GetRaycastNonAllocCallback;
     pub use super::IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods;
-    pub use super::ReflectionMethodsCache_RaycastAllCallback;
-    pub use super::IReflectionMethodsCache_RaycastAllCallback;
-    pub use super::IReflectionMethodsCache_RaycastAllCallbackMethods;
-    pub use super::ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback;
-    pub use super::IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback;
-    pub use super::IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods;
     pub use super::ReflectionMethodsCache_Raycast3DCallback;
     pub use super::IReflectionMethodsCache_Raycast3DCallback;
     pub use super::IReflectionMethodsCache_Raycast3DCallbackMethods;
+    pub use super::ReflectionMethodsCache_RaycastAllCallback;
+    pub use super::IReflectionMethodsCache_RaycastAllCallback;
+    pub use super::IReflectionMethodsCache_RaycastAllCallbackMethods;
     pub use super::ReflectionMethodsCache_GetRayIntersectionAllCallback;
     pub use super::IReflectionMethodsCache_GetRayIntersectionAllCallback;
     pub use super::IReflectionMethodsCache_GetRayIntersectionAllCallbackMethods;

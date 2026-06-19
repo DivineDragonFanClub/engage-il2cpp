@@ -38,9 +38,6 @@ impl::unity2::IlType for DynamicMesh_State{fn il_type()-> &'static::unity2::il2c
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]#[::unity2::class(namespace="App",name="DynamicMesh.StaticIndices")]#[parent(crate::system::object::Object)]pub struct DynamicMesh_StaticIndices{#[static_field]#[rename(name="s_Indices")]pub s_indices: ::unity2::Array< ::unity2::Array<u16> > ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DynamicMesh_Mode{pub value:i32,}
 impl::unity2::ClassIdentity for DynamicMesh_Mode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DynamicMesh.Mode";
@@ -69,6 +66,9 @@ pub fn lines()->Self{Self{value:7}
 pub fn cell()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]#[::unity2::class(namespace="App",name="DynamicMesh.StaticIndices")]#[parent(crate::system::object::Object)]pub struct DynamicMesh_StaticIndices{#[static_field]#[rename(name="s_Indices")]pub s_indices: ::unity2::Array< ::unity2::Array<u16> > ,}
 
 }
 
@@ -319,10 +319,10 @@ pub mod prelude {
     pub use super::IDynamicMeshMethods;
     pub use super::DynamicMesh_Scope;
     pub use super::DynamicMesh_State;
+    pub use super::DynamicMesh_Mode;
     pub use super::DynamicMesh_StaticIndices;
     pub use super::IDynamicMesh_StaticIndices;
     pub use super::IDynamicMesh_StaticIndicesMethods;
-    pub use super::DynamicMesh_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -31,49 +31,43 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_RotateFader.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.RotateFader")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_RotateFader{#[offset(16)]#[rename(name="m_rot")]pub m_rot:f32, #[offset(20)]#[rename(name="m_rotFrom")]pub m_rot_from:f32, #[offset(24)]#[rename(name="m_rotTo")]pub m_rot_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_CmdInfo.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.CmdInfo")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_CmdInfo{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.SoundEnv")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventDemoSequence_SoundEnv{#[offset(24)]#[rename(name="m_EventNameDataList")]pub m_event_name_data_list:crate::system::collections::generic::list_1::List_1<crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData> , #[offset(32)]#[rename(name="m_EventNameDictionary")]pub m_event_name_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_SoundEventName")]pub m_sound_event_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::eventdemosequence::EventDemoSequence>)]pub struct EventDemoSequence{#[static_field]#[rename(name="CameraGroupName")]pub camera_group_name: ::unity2::Il2CppString, #[static_field]#[rename(name="CurrentCameraName")]pub current_camera_name: ::unity2::Il2CppString, #[static_field]#[rename(name="LightDefaultRotateOffsetX")]pub light_default_rotate_offset_x:f32, #[static_field]#[rename(name="LightDefaultRotateOffsetY")]pub light_default_rotate_offset_y:f32, #[static_field]#[rename(name="LightDefaultRotateOffsetZ")]pub light_default_rotate_offset_z:f32, #[static_field]#[rename(name="LightGroupName")]pub light_group_name: ::unity2::Il2CppString, #[static_field]#[rename(name="CurrentLightName")]pub current_light_name: ::unity2::Il2CppString, #[static_field]#[rename(name="UseSceneName")]pub use_scene_name: ::unity2::Il2CppString, #[static_field]#[rename(name="UseLayerName")]pub use_layer_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_demoName")]pub m_demo_name: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_messFileName")]pub m_mess_file_name: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_curMessLabelIndex")]pub m_cur_mess_label_index:i32, #[offset(160)]#[rename(name="m_curMessLabel")]pub m_cur_mess_label: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_cmdInfosExecBefore")]pub m_cmd_infos_exec_before: ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo> , #[offset(176)]#[rename(name="m_cmdInfosExecAfter")]pub m_cmd_infos_exec_after: ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo> , #[offset(184)]#[rename(name="m_curCmdInfoIndex")]pub m_cur_cmd_info_index:i32, #[offset(188)]#[rename(name="m_eventCmdSeq")]pub m_event_cmd_seq:crate::app::eventdemosequence::EventDemoSequence_EventCmdSeq, #[offset(192)]#[rename(name="m_eventCmdTextExecBefore")]pub m_event_cmd_text_exec_before:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(200)]#[rename(name="m_eventCmdTextExecAfter")]pub m_event_cmd_text_exec_after:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(208)]#[rename(name="m_funcDictionary")]pub m_func_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_CmdFunc> , #[offset(216)]#[rename(name="m_isPuppetTalkPause")]pub m_is_puppet_talk_pause:bool, #[offset(217)]#[rename(name="m_isFadeOutInStart")]pub m_is_fade_out_in_start:bool, #[offset(232)]#[rename(name="m_lightSetupInfo")]pub m_light_setup_info:crate::app::eventdemosequence::EventDemoSequence_LightSetupInfo, #[offset(240)]#[rename(name="m_cubeMaterialHandle")]pub m_cube_material_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(248)]#[rename(name="m_messLoadedList")]pub m_mess_loaded_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(256)]#[rename(name="m_characterWorkDictionary")]pub m_character_work_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_CharacterWork> , #[offset(264)]#[rename(name="m_splitViewWorkDictionary")]pub m_split_view_work_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_SplitViewWork> , #[offset(272)]#[rename(name="m_effectWorkDictionary")]pub m_effect_work_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_EffectWork> , #[offset(280)]#[rename(name="m_telopEffectResourceObject")]pub m_telop_effect_resource_object:crate::app::resourceobject::ResourceObject, #[offset(288)]#[rename(name="m_PictureController")]pub m_picture_controller:crate::app::eventpicturecontroller::EventPictureController,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_CmdFunc.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.CmdFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventDemoSequence_CmdFunc{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_ClothType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventDemoSequence_ClothType{pub value:i32,}
+impl::unity2::ClassIdentity for EventDemoSequence_ClothType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EventDemoSequence.ClothType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EventDemoSequence_ClothType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EventDemoSequence_ClothType{pub fn normal()->Self{Self{value:0}
+}
+pub fn default_job()->Self{Self{value:1}
+}
+pub fn plain()->Self{Self{value:2}
+}
+}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_EffectWork.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.EffectWork")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_EffectWork{#[offset(16)]#[rename(name="m_effectResourceObject")]pub m_effect_resource_object:crate::app::resourceobject::ResourceObject,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.LightSetupInfo")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_LightSetupInfo{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_RotateFader.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.RotateFader")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_RotateFader{#[offset(16)]#[rename(name="m_rot")]pub m_rot:f32, #[offset(20)]#[rename(name="m_rotFrom")]pub m_rot_from:f32, #[offset(24)]#[rename(name="m_rotTo")]pub m_rot_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_SplitViewWork.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.SplitViewWork")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_SplitViewWork{#[offset(72)]#[rename(name="m_renderTextureHandle")]pub m_render_texture_handle:crate::app::resourcehandle_2::ResourceHandle_2,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_SoundEnv_EventNameData.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.SoundEnv.EventNameData")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_SoundEnv_EventNameData{#[offset(16)]#[rename(name="m_MaterialName")]pub m_material_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_EventName")]pub m_event_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_CharacterWork.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.CharacterWork")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_CharacterWork{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_EventCmdSeq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventDemoSequence_EventCmdSeq{pub value:i32,}
-impl::unity2::ClassIdentity for EventDemoSequence_EventCmdSeq{const NAMESPACE: &'static str="App";
-const NAME: &'static str="EventDemoSequence.EventCmdSeq";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for EventDemoSequence_EventCmdSeq{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl EventDemoSequence_EventCmdSeq{pub fn before_talk()->Self{Self{value:0}
-}
-pub fn talk()->Self{Self{value:1}
-}
-pub fn after_talk()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_CmdFunc.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.CmdFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventDemoSequence_CmdFunc{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::eventdemosequence::EventDemoSequence>)]pub struct EventDemoSequence{#[static_field]#[rename(name="CameraGroupName")]pub camera_group_name: ::unity2::Il2CppString, #[static_field]#[rename(name="CurrentCameraName")]pub current_camera_name: ::unity2::Il2CppString, #[static_field]#[rename(name="LightDefaultRotateOffsetX")]pub light_default_rotate_offset_x:f32, #[static_field]#[rename(name="LightDefaultRotateOffsetY")]pub light_default_rotate_offset_y:f32, #[static_field]#[rename(name="LightDefaultRotateOffsetZ")]pub light_default_rotate_offset_z:f32, #[static_field]#[rename(name="LightGroupName")]pub light_group_name: ::unity2::Il2CppString, #[static_field]#[rename(name="CurrentLightName")]pub current_light_name: ::unity2::Il2CppString, #[static_field]#[rename(name="UseSceneName")]pub use_scene_name: ::unity2::Il2CppString, #[static_field]#[rename(name="UseLayerName")]pub use_layer_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_demoName")]pub m_demo_name: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_messFileName")]pub m_mess_file_name: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_curMessLabelIndex")]pub m_cur_mess_label_index:i32, #[offset(160)]#[rename(name="m_curMessLabel")]pub m_cur_mess_label: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_cmdInfosExecBefore")]pub m_cmd_infos_exec_before: ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo> , #[offset(176)]#[rename(name="m_cmdInfosExecAfter")]pub m_cmd_infos_exec_after: ::unity2::Array<crate::app::eventdemosequence::EventDemoSequence_CmdInfo> , #[offset(184)]#[rename(name="m_curCmdInfoIndex")]pub m_cur_cmd_info_index:i32, #[offset(188)]#[rename(name="m_eventCmdSeq")]pub m_event_cmd_seq:crate::app::eventdemosequence::EventDemoSequence_EventCmdSeq, #[offset(192)]#[rename(name="m_eventCmdTextExecBefore")]pub m_event_cmd_text_exec_before:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(200)]#[rename(name="m_eventCmdTextExecAfter")]pub m_event_cmd_text_exec_after:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(208)]#[rename(name="m_funcDictionary")]pub m_func_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_CmdFunc> , #[offset(216)]#[rename(name="m_isPuppetTalkPause")]pub m_is_puppet_talk_pause:bool, #[offset(217)]#[rename(name="m_isFadeOutInStart")]pub m_is_fade_out_in_start:bool, #[offset(232)]#[rename(name="m_lightSetupInfo")]pub m_light_setup_info:crate::app::eventdemosequence::EventDemoSequence_LightSetupInfo, #[offset(240)]#[rename(name="m_cubeMaterialHandle")]pub m_cube_material_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(248)]#[rename(name="m_messLoadedList")]pub m_mess_loaded_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(256)]#[rename(name="m_characterWorkDictionary")]pub m_character_work_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_CharacterWork> , #[offset(264)]#[rename(name="m_splitViewWorkDictionary")]pub m_split_view_work_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_SplitViewWork> , #[offset(272)]#[rename(name="m_effectWorkDictionary")]pub m_effect_work_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::eventdemosequence::EventDemoSequence_EffectWork> , #[offset(280)]#[rename(name="m_telopEffectResourceObject")]pub m_telop_effect_resource_object:crate::app::resourceobject::ResourceObject, #[offset(288)]#[rename(name="m_PictureController")]pub m_picture_controller:crate::app::eventpicturecontroller::EventPictureController,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_ColorFader.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.ColorFader")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_ColorFader{#[offset(16)]#[rename(name="m_color")]pub m_color:crate::unity_engine::color::Color, #[offset(32)]#[rename(name="m_colorFrom")]pub m_color_from:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="m_colorTo")]pub m_color_to:crate::unity_engine::color::Color, #[offset(64)]#[rename(name="m_time")]pub m_time:f32, #[offset(68)]#[rename(name="m_duration")]pub m_duration:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_EventCmdResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventDemoSequence_EventCmdResult{pub value:i32,}
@@ -98,74 +92,42 @@ pub fn cmd_not_found()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_CharacterWork.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.CharacterWork")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_CharacterWork{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.SoundEnv")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventDemoSequence_SoundEnv{#[offset(24)]#[rename(name="m_EventNameDataList")]pub m_event_name_data_list:crate::system::collections::generic::list_1::List_1<crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData> , #[offset(32)]#[rename(name="m_EventNameDictionary")]pub m_event_name_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_SoundEventName")]pub m_sound_event_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_SoundEnv_EventNameData.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.SoundEnv.EventNameData")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_SoundEnv_EventNameData{#[offset(16)]#[rename(name="m_MaterialName")]pub m_material_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_EventName")]pub m_event_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_EventCmdSeq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventDemoSequence_EventCmdSeq{pub value:i32,}
+impl::unity2::ClassIdentity for EventDemoSequence_EventCmdSeq{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EventDemoSequence.EventCmdSeq";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EventDemoSequence_EventCmdSeq{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EventDemoSequence_EventCmdSeq{pub fn before_talk()->Self{Self{value:0}
+}
+pub fn talk()->Self{Self{value:1}
+}
+pub fn after_talk()->Self{Self{value:2}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_WeightFader.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.WeightFader")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_WeightFader{#[offset(16)]#[rename(name="m_wgt")]pub m_wgt:f32, #[offset(20)]#[rename(name="m_wgtFrom")]pub m_wgt_from:f32, #[offset(24)]#[rename(name="m_wgtTo")]pub m_wgt_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_ColorFader.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.ColorFader")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_ColorFader{#[offset(16)]#[rename(name="m_color")]pub m_color:crate::unity_engine::color::Color, #[offset(32)]#[rename(name="m_colorFrom")]pub m_color_from:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="m_colorTo")]pub m_color_to:crate::unity_engine::color::Color, #[offset(64)]#[rename(name="m_time")]pub m_time:f32, #[offset(68)]#[rename(name="m_duration")]pub m_duration:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.LightSetupInfo")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_LightSetupInfo{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_ClothType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventDemoSequence_ClothType{pub value:i32,}
-impl::unity2::ClassIdentity for EventDemoSequence_ClothType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="EventDemoSequence.ClothType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for EventDemoSequence_ClothType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl EventDemoSequence_ClothType{pub fn normal()->Self{Self{value:0}
-}
-pub fn default_job()->Self{Self{value:1}
-}
-pub fn plain()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdemosequence/EventDemoSequence_EffectWork.md"))]#[::unity2::class(namespace="App",name="EventDemoSequence.EffectWork")]#[parent(crate::system::object::Object)]pub struct EventDemoSequence_EffectWork{#[offset(16)]#[rename(name="m_effectResourceObject")]pub m_effect_resource_object:crate::app::resourceobject::ResourceObject,}
 
 }
 
 #[cfg(feature = "app-eventdemosequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_RotateFaderMethods:IEventDemoSequence_RotateFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55c50usize)as*mut u8,();
-(EventDemoSequence_RotateFader)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56f60usize)as*mut u8,();
-(EventDemoSequence_RotateFader)__receiver)}
-}
-#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56f70usize)as*mut u8,f32;
-(EventDemoSequence_RotateFader)__receiver)}
-}
-#[doc="`Set(f32, f32)` overload"]fn set(self,rot:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55c80usize)as*mut u8,();
-(EventDemoSequence_RotateFader)__receiver,(f32)::core::convert::Into::into(rot),(f32)::core::convert::Into::into(msec))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->f32{unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e563d0usize)as*mut u8,f32;
-(EventDemoSequence_RotateFader)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_RotateFader>IEventDemoSequence_RotateFaderMethods for __T{}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_RotateFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_RotateFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_RotateFader), ::core::stringify!(new),));
- <Self as IEventDemoSequence_RotateFaderMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_CmdInfoMethods:IEventDemoSequence_CmdInfo{#[doc="`get_Func()` overload"]fn get_func(self,)->crate::app::eventdemosequence::EventDemoSequence_CmdFunc{unsafe{let __receiver= <EventDemoSequence_CmdInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56880usize)as*mut u8,crate::app::eventdemosequence::EventDemoSequence_CmdFunc;
@@ -227,305 +189,6 @@ pub fn inc_repet_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 ::{}
  failed to instantiate", ::core::stringify!(EventDemoSequence_CmdInfo), ::core::stringify!(new),));
  <Self as IEventDemoSequence_CmdInfoMethods> ::ctor(this,func,cmd_name,args);
-this}
-}
-
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_SoundEnvMethods:IEventDemoSequence_SoundEnv{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56f80usize)as*mut u8,();
-(EventDemoSequence_SoundEnv)__receiver)}
-}
-#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e570b0usize)as*mut u8,();
-(EventDemoSequence_SoundEnv)__receiver)}
-}
-#[doc="`GetEventName(::unity2::Il2CppString)` overload"]fn get_event_name(self,material_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57170usize)as*mut u8, ::unity2::Il2CppString;
-(EventDemoSequence_SoundEnv)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_name))}
-}
-#[doc="`PlayEnv(::unity2::Il2CppString)` overload"]fn play_env(self,material_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e557d0usize)as*mut u8,();
-(EventDemoSequence_SoundEnv)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_name))}
-}
-#[doc="`StopCurrentEnv()` overload"]fn stop_current_env(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e570c0usize)as*mut u8,();
-(EventDemoSequence_SoundEnv)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e571f0usize)as*mut u8,();
-(EventDemoSequence_SoundEnv)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_SoundEnv>IEventDemoSequence_SoundEnvMethods for __T{}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn play_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn stop_current_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_SoundEnv), ::core::stringify!(new),));
- <Self as IEventDemoSequence_SoundEnvMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_CmdFuncMethods:IEventDemoSequence_CmdFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventDemoSequence_CmdFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e564a0usize)as*mut u8,();
-(EventDemoSequence_CmdFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]fn invoke(self,cmd_func_info:impl::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>)->crate::app::eventdemosequence::EventDemoSequence_EventCmdResult{unsafe{let __receiver= <EventDemoSequence_CmdFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e564c0usize)as*mut u8,crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-(EventDemoSequence_CmdFunc)__receiver,(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)::core::convert::Into::into(cmd_func_info))}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_CmdFunc>IEventDemoSequence_CmdFuncMethods for __T{}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_CmdFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_CmdFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_CmdFunc), ::core::stringify!(new),));
- <Self as IEventDemoSequence_CmdFuncMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_EffectWork{#[doc="`SetupAfterLoad(crate::unity_engine::gameobject::GameObject)` overload"]pub fn setup_after_load(effect_prefab_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e56d50usize)as*mut u8,();
-(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(effect_prefab_object))}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_EffectWorkMethods:IEventDemoSequence_EffectWork{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]fn ctor(self,effect_path:impl::core::convert::Into< ::unity2::Il2CppString> ,parent_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <EventDemoSequence_EffectWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56c10usize)as*mut u8,();
-(EventDemoSequence_EffectWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(effect_path),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent_trans))}
-}
-#[doc="`LoadEffect(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]fn load_effect(self,effect_path:impl::core::convert::Into< ::unity2::Il2CppString> ,parent_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <EventDemoSequence_EffectWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56c50usize)as*mut u8,();
-(EventDemoSequence_EffectWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(effect_path),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent_trans))}
-}
-#[doc="`DeleteEffect()` overload"]fn delete_effect(self,)->(){unsafe{let __receiver= <EventDemoSequence_EffectWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56de0usize)as*mut u8,();
-(EventDemoSequence_EffectWork)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_EffectWork>IEventDemoSequence_EffectWorkMethods for __T{}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_EffectWork{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn load_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn setup_after_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn delete_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_EffectWork{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(effect_path: ::unity2::Il2CppString,parent_trans:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_EffectWork), ::core::stringify!(new),));
- <Self as IEventDemoSequence_EffectWorkMethods> ::ctor(this,effect_path,parent_trans);
-this}
-}
-
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_LightSetupInfoMethods:IEventDemoSequence_LightSetupInfo{#[doc="`get_LightName()` overload"]fn get_light_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56e90usize)as*mut u8, ::unity2::Il2CppString;
-(EventDemoSequence_LightSetupInfo)__receiver)}
-}
-#[doc="`set_LightName(::unity2::Il2CppString)` overload"]fn set_light_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ea0usize)as*mut u8,();
-(EventDemoSequence_LightSetupInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_RotOffset()` overload"]fn get_rot_offset(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56eb0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(EventDemoSequence_LightSetupInfo)__receiver)}
-}
-#[doc="`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]fn set_rot_offset(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ec0usize)as*mut u8,();
-(EventDemoSequence_LightSetupInfo)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`get_ParentCameraObject()` overload"]fn get_parent_camera_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ed0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(EventDemoSequence_LightSetupInfo)__receiver)}
-}
-#[doc="`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_parent_camera_object(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ee0usize)as*mut u8,();
-(EventDemoSequence_LightSetupInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ef0usize)as*mut u8,();
-(EventDemoSequence_LightSetupInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_LightSetupInfo>IEventDemoSequence_LightSetupInfoMethods for __T{}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_LightSetupInfo{pub fn get_light_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_light_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_rot_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_rot_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_parent_camera_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_parent_camera_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_LightSetupInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_LightSetupInfo), ::core::stringify!(new),));
- <Self as IEventDemoSequence_LightSetupInfoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_SplitViewWorkMethods:IEventDemoSequence_SplitViewWork{#[doc="`get_IsInitialized()` overload"]fn get_is_initialized(self,)->bool{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e572d0usize)as*mut u8,bool;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_IsInitialized(bool)` overload"]fn set_is_initialized(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e572e0usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_IsUVRectForGpuBoostMode()` overload"]fn get_is_uv_rect_for_gpu_boost_mode(self,)->bool{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e572f0usize)as*mut u8,bool;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_IsUVRectForGpuBoostMode(bool)` overload"]fn set_is_uv_rect_for_gpu_boost_mode(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57300usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_SplitViewName()` overload"]fn get_split_view_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57310usize)as*mut u8, ::unity2::Il2CppString;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_SplitViewName(::unity2::Il2CppString)` overload"]fn set_split_view_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57320usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_SplitViewImage()` overload"]fn get_split_view_image(self,)->crate::unity_engine::ui::rawimage::RawImage{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57330usize)as*mut u8,crate::unity_engine::ui::rawimage::RawImage;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_SplitViewImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]fn set_split_view_image(self,value:impl::core::convert::Into<crate::unity_engine::ui::rawimage::RawImage>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57340usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::ui::rawimage::RawImage)::core::convert::Into::into(value))}
-}
-#[doc="`get_RenderImage()` overload"]fn get_render_image(self,)->crate::unity_engine::ui::rawimage::RawImage{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57350usize)as*mut u8,crate::unity_engine::ui::rawimage::RawImage;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_RenderImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]fn set_render_image(self,value:impl::core::convert::Into<crate::unity_engine::ui::rawimage::RawImage>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57360usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::ui::rawimage::RawImage)::core::convert::Into::into(value))}
-}
-#[doc="`get_RenderTexture()` overload"]fn get_render_texture(self,)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57370usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_RenderTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"]fn set_render_texture(self,value:impl::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57380usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::rendertexture::RenderTexture)::core::convert::Into::into(value))}
-}
-#[doc="`get_Camera()` overload"]fn get_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57390usize)as*mut u8,crate::unity_engine::camera::Camera;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_Camera(crate::unity_engine::camera::Camera)` overload"]fn set_camera(self,value:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573a0usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(value))}
-}
-#[doc="`get_ColorFader()` overload"]fn get_color_fader(self,)->crate::app::eventdemosequence::EventDemoSequence_ColorFader{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573b0usize)as*mut u8,crate::app::eventdemosequence::EventDemoSequence_ColorFader;
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`set_ColorFader(crate::app::eventdemosequence::EventDemoSequence_ColorFader)` overload"]fn set_color_fader(self,value:impl::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_ColorFader>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573c0usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(crate::app::eventdemosequence::EventDemoSequence_ColorFader)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,split_view_name:impl::core::convert::Into< ::unity2::Il2CppString> ,render_texture_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573d0usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(split_view_name),(::unity2::Il2CppString)::core::convert::Into::into(render_texture_name))}
-}
-#[doc="`InitSplitViewImage(::unity2::Il2CppString)` overload"]fn init_split_view_image(self,split_view_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57510usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(split_view_name))}
-}
-#[doc="`LoadRenderTexture(::unity2::Il2CppString)` overload"]fn load_render_texture(self,render_texture_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57760usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(render_texture_name))}
-}
-#[doc="`SetActive(bool)` overload"]fn set_active(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e578b0usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(is_active))}
-}
-#[doc="`SetRenderImageUVRectWH(bool)` overload"]fn set_render_image_uv_rect_wh(self,is_gpu_boost:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57880usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(is_gpu_boost))}
-}
-#[doc="`SetRenderImageUVRectWH(f32, f32)` overload"]fn set_render_image_uv_rect_wh_2(self,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57940usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver,(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height))}
-}
-#[doc="`DisableCamera()` overload"]fn disable_camera(self,)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57b30usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57c20usize)as*mut u8,();
-(EventDemoSequence_SplitViewWork)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_SplitViewWork>IEventDemoSequence_SplitViewWorkMethods for __T{}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SplitViewWork{pub fn get_is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_uv_rect_for_gpu_boost_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_is_uv_rect_for_gpu_boost_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_split_view_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_split_view_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_split_view_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_split_view_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_render_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_render_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_color_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_color_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn init_split_view_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn load_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn set_render_image_uv_rect_wh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn set_render_image_uv_rect_wh_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn disable_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SplitViewWork{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(split_view_name: ::unity2::Il2CppString,render_texture_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_SplitViewWork), ::core::stringify!(new),));
- <Self as IEventDemoSequence_SplitViewWorkMethods> ::ctor(this,split_view_name,render_texture_name);
-this}
-}
-
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_SoundEnv_EventNameDataMethods:IEventDemoSequence_SoundEnv_EventNameData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv_EventNameData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39f40usize)as*mut u8,();
-(EventDemoSequence_SoundEnv_EventNameData)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_SoundEnv_EventNameData>IEventDemoSequence_SoundEnv_EventNameDataMethods for __T{}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv_EventNameData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv_EventNameData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_SoundEnv_EventNameData), ::core::stringify!(new),));
- <Self as IEventDemoSequence_SoundEnv_EventNameDataMethods> ::ctor(this,);
 this}
 }
 
@@ -1086,6 +749,177 @@ pub fn get_god_reliance_mess_file_name_method_info()-> & 'static::unity2::il2cpp
 this}
 }
 
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_RotateFaderMethods:IEventDemoSequence_RotateFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55c50usize)as*mut u8,();
+(EventDemoSequence_RotateFader)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56f60usize)as*mut u8,();
+(EventDemoSequence_RotateFader)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56f70usize)as*mut u8,f32;
+(EventDemoSequence_RotateFader)__receiver)}
+}
+#[doc="`Set(f32, f32)` overload"]fn set(self,rot:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55c80usize)as*mut u8,();
+(EventDemoSequence_RotateFader)__receiver,(f32)::core::convert::Into::into(rot),(f32)::core::convert::Into::into(msec))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->f32{unsafe{let __receiver= <EventDemoSequence_RotateFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e563d0usize)as*mut u8,f32;
+(EventDemoSequence_RotateFader)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_RotateFader>IEventDemoSequence_RotateFaderMethods for __T{}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_RotateFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_RotateFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventDemoSequence_RotateFader), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_RotateFaderMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_SplitViewWorkMethods:IEventDemoSequence_SplitViewWork{#[doc="`get_IsInitialized()` overload"]fn get_is_initialized(self,)->bool{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e572d0usize)as*mut u8,bool;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_IsInitialized(bool)` overload"]fn set_is_initialized(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e572e0usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsUVRectForGpuBoostMode()` overload"]fn get_is_uv_rect_for_gpu_boost_mode(self,)->bool{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e572f0usize)as*mut u8,bool;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_IsUVRectForGpuBoostMode(bool)` overload"]fn set_is_uv_rect_for_gpu_boost_mode(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57300usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_SplitViewName()` overload"]fn get_split_view_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57310usize)as*mut u8, ::unity2::Il2CppString;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_SplitViewName(::unity2::Il2CppString)` overload"]fn set_split_view_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57320usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SplitViewImage()` overload"]fn get_split_view_image(self,)->crate::unity_engine::ui::rawimage::RawImage{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57330usize)as*mut u8,crate::unity_engine::ui::rawimage::RawImage;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_SplitViewImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]fn set_split_view_image(self,value:impl::core::convert::Into<crate::unity_engine::ui::rawimage::RawImage>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57340usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::ui::rawimage::RawImage)::core::convert::Into::into(value))}
+}
+#[doc="`get_RenderImage()` overload"]fn get_render_image(self,)->crate::unity_engine::ui::rawimage::RawImage{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57350usize)as*mut u8,crate::unity_engine::ui::rawimage::RawImage;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_RenderImage(crate::unity_engine::ui::rawimage::RawImage)` overload"]fn set_render_image(self,value:impl::core::convert::Into<crate::unity_engine::ui::rawimage::RawImage>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57360usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::ui::rawimage::RawImage)::core::convert::Into::into(value))}
+}
+#[doc="`get_RenderTexture()` overload"]fn get_render_texture(self,)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57370usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_RenderTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"]fn set_render_texture(self,value:impl::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57380usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::rendertexture::RenderTexture)::core::convert::Into::into(value))}
+}
+#[doc="`get_Camera()` overload"]fn get_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57390usize)as*mut u8,crate::unity_engine::camera::Camera;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_Camera(crate::unity_engine::camera::Camera)` overload"]fn set_camera(self,value:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573a0usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(value))}
+}
+#[doc="`get_ColorFader()` overload"]fn get_color_fader(self,)->crate::app::eventdemosequence::EventDemoSequence_ColorFader{unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573b0usize)as*mut u8,crate::app::eventdemosequence::EventDemoSequence_ColorFader;
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`set_ColorFader(crate::app::eventdemosequence::EventDemoSequence_ColorFader)` overload"]fn set_color_fader(self,value:impl::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_ColorFader>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573c0usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(crate::app::eventdemosequence::EventDemoSequence_ColorFader)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,split_view_name:impl::core::convert::Into< ::unity2::Il2CppString> ,render_texture_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e573d0usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(split_view_name),(::unity2::Il2CppString)::core::convert::Into::into(render_texture_name))}
+}
+#[doc="`InitSplitViewImage(::unity2::Il2CppString)` overload"]fn init_split_view_image(self,split_view_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57510usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(split_view_name))}
+}
+#[doc="`LoadRenderTexture(::unity2::Il2CppString)` overload"]fn load_render_texture(self,render_texture_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57760usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(render_texture_name))}
+}
+#[doc="`SetActive(bool)` overload"]fn set_active(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e578b0usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`SetRenderImageUVRectWH(bool)` overload"]fn set_render_image_uv_rect_wh(self,is_gpu_boost:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57880usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(bool)::core::convert::Into::into(is_gpu_boost))}
+}
+#[doc="`SetRenderImageUVRectWH(f32, f32)` overload"]fn set_render_image_uv_rect_wh_2(self,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57940usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver,(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height))}
+}
+#[doc="`DisableCamera()` overload"]fn disable_camera(self,)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57b30usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <EventDemoSequence_SplitViewWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57c20usize)as*mut u8,();
+(EventDemoSequence_SplitViewWork)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_SplitViewWork>IEventDemoSequence_SplitViewWorkMethods for __T{}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SplitViewWork{pub fn get_is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_uv_rect_for_gpu_boost_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_uv_rect_for_gpu_boost_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_split_view_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_split_view_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_split_view_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_split_view_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_render_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_render_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_color_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_color_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn init_split_view_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn load_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_render_image_uv_rect_wh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_render_image_uv_rect_wh_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn disable_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SplitViewWork{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(split_view_name: ::unity2::Il2CppString,render_texture_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventDemoSequence_SplitViewWork), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_SplitViewWorkMethods> ::ctor(this,split_view_name,render_texture_name);
+this}
+}
+
 #[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_CharacterWorkMethods:IEventDemoSequence_CharacterWork{#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventDemoSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e560a0usize)as*mut u8, ::unity2::Il2CppString;
 (EventDemoSequence_CharacterWork)__receiver)}
@@ -1229,41 +1063,26 @@ pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_WeightFaderMethods:IEventDemoSequence_WeightFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57e70usize)as*mut u8,();
-(EventDemoSequence_WeightFader)__receiver)}
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_CmdFuncMethods:IEventDemoSequence_CmdFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventDemoSequence_CmdFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e564a0usize)as*mut u8,();
+(EventDemoSequence_CmdFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57eb0usize)as*mut u8,();
-(EventDemoSequence_WeightFader)__receiver)}
-}
-#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57ed0usize)as*mut u8,f32;
-(EventDemoSequence_WeightFader)__receiver)}
-}
-#[doc="`Set(f32, f32)` overload"]fn set(self,wgt:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57ee0usize)as*mut u8,();
-(EventDemoSequence_WeightFader)__receiver,(f32)::core::convert::Into::into(wgt),(f32)::core::convert::Into::into(msec))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->f32{unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57f20usize)as*mut u8,f32;
-(EventDemoSequence_WeightFader)__receiver)}
+#[doc="`Invoke(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]fn invoke(self,cmd_func_info:impl::core::convert::Into<crate::app::eventdemosequence::EventDemoSequence_CmdInfo>)->crate::app::eventdemosequence::EventDemoSequence_EventCmdResult{unsafe{let __receiver= <EventDemoSequence_CmdFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e564c0usize)as*mut u8,crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
+(EventDemoSequence_CmdFunc)__receiver,(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)::core::convert::Into::into(cmd_func_info))}
 }
 }
 
-#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_WeightFader>IEventDemoSequence_WeightFaderMethods for __T{}
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_CmdFunc>IEventDemoSequence_CmdFuncMethods for __T{}
 
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_WeightFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_CmdFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_WeightFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_CmdFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EventDemoSequence_WeightFader), ::core::stringify!(new),));
- <Self as IEventDemoSequence_WeightFaderMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(EventDemoSequence_CmdFunc), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_CmdFuncMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -1305,48 +1124,229 @@ pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_SoundEnvMethods:IEventDemoSequence_SoundEnv{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56f80usize)as*mut u8,();
+(EventDemoSequence_SoundEnv)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e570b0usize)as*mut u8,();
+(EventDemoSequence_SoundEnv)__receiver)}
+}
+#[doc="`GetEventName(::unity2::Il2CppString)` overload"]fn get_event_name(self,material_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57170usize)as*mut u8, ::unity2::Il2CppString;
+(EventDemoSequence_SoundEnv)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_name))}
+}
+#[doc="`PlayEnv(::unity2::Il2CppString)` overload"]fn play_env(self,material_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e557d0usize)as*mut u8,();
+(EventDemoSequence_SoundEnv)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_name))}
+}
+#[doc="`StopCurrentEnv()` overload"]fn stop_current_env(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e570c0usize)as*mut u8,();
+(EventDemoSequence_SoundEnv)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e571f0usize)as*mut u8,();
+(EventDemoSequence_SoundEnv)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_SoundEnv>IEventDemoSequence_SoundEnvMethods for __T{}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn play_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn stop_current_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventDemoSequence_SoundEnv), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_SoundEnvMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_SoundEnv_EventNameDataMethods:IEventDemoSequence_SoundEnv_EventNameData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_SoundEnv_EventNameData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b39f40usize)as*mut u8,();
+(EventDemoSequence_SoundEnv_EventNameData)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_SoundEnv_EventNameData>IEventDemoSequence_SoundEnv_EventNameDataMethods for __T{}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv_EventNameData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_SoundEnv_EventNameData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventDemoSequence_SoundEnv_EventNameData), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_SoundEnv_EventNameDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_WeightFaderMethods:IEventDemoSequence_WeightFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57e70usize)as*mut u8,();
+(EventDemoSequence_WeightFader)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57eb0usize)as*mut u8,();
+(EventDemoSequence_WeightFader)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57ed0usize)as*mut u8,f32;
+(EventDemoSequence_WeightFader)__receiver)}
+}
+#[doc="`Set(f32, f32)` overload"]fn set(self,wgt:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57ee0usize)as*mut u8,();
+(EventDemoSequence_WeightFader)__receiver,(f32)::core::convert::Into::into(wgt),(f32)::core::convert::Into::into(msec))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->f32{unsafe{let __receiver= <EventDemoSequence_WeightFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e57f20usize)as*mut u8,f32;
+(EventDemoSequence_WeightFader)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_WeightFader>IEventDemoSequence_WeightFaderMethods for __T{}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_WeightFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_WeightFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventDemoSequence_WeightFader), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_WeightFaderMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_LightSetupInfoMethods:IEventDemoSequence_LightSetupInfo{#[doc="`get_LightName()` overload"]fn get_light_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56e90usize)as*mut u8, ::unity2::Il2CppString;
+(EventDemoSequence_LightSetupInfo)__receiver)}
+}
+#[doc="`set_LightName(::unity2::Il2CppString)` overload"]fn set_light_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ea0usize)as*mut u8,();
+(EventDemoSequence_LightSetupInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_RotOffset()` overload"]fn get_rot_offset(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56eb0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(EventDemoSequence_LightSetupInfo)__receiver)}
+}
+#[doc="`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]fn set_rot_offset(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ec0usize)as*mut u8,();
+(EventDemoSequence_LightSetupInfo)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_ParentCameraObject()` overload"]fn get_parent_camera_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ed0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(EventDemoSequence_LightSetupInfo)__receiver)}
+}
+#[doc="`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_parent_camera_object(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ee0usize)as*mut u8,();
+(EventDemoSequence_LightSetupInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventDemoSequence_LightSetupInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56ef0usize)as*mut u8,();
+(EventDemoSequence_LightSetupInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_LightSetupInfo>IEventDemoSequence_LightSetupInfoMethods for __T{}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_LightSetupInfo{pub fn get_light_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_light_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rot_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rot_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_parent_camera_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_parent_camera_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_LightSetupInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventDemoSequence_LightSetupInfo), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_LightSetupInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_EffectWork{#[doc="`SetupAfterLoad(crate::unity_engine::gameobject::GameObject)` overload"]pub fn setup_after_load(effect_prefab_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e56d50usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(effect_prefab_object))}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]pub trait IEventDemoSequence_EffectWorkMethods:IEventDemoSequence_EffectWork{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]fn ctor(self,effect_path:impl::core::convert::Into< ::unity2::Il2CppString> ,parent_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <EventDemoSequence_EffectWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56c10usize)as*mut u8,();
+(EventDemoSequence_EffectWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(effect_path),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent_trans))}
+}
+#[doc="`LoadEffect(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]fn load_effect(self,effect_path:impl::core::convert::Into< ::unity2::Il2CppString> ,parent_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <EventDemoSequence_EffectWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56c50usize)as*mut u8,();
+(EventDemoSequence_EffectWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(effect_path),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent_trans))}
+}
+#[doc="`DeleteEffect()` overload"]fn delete_effect(self,)->(){unsafe{let __receiver= <EventDemoSequence_EffectWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e56de0usize)as*mut u8,();
+(EventDemoSequence_EffectWork)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl<__T:IEventDemoSequence_EffectWork>IEventDemoSequence_EffectWorkMethods for __T{}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_EffectWork{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_after_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn delete_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-eventdemosequence")]impl EventDemoSequence_EffectWork{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(effect_path: ::unity2::Il2CppString,parent_trans:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventDemoSequence_EffectWork), ::core::stringify!(new),));
+ <Self as IEventDemoSequence_EffectWorkMethods> ::ctor(this,effect_path,parent_trans);
+this}
+}
+
 #[cfg(feature = "app-eventdemosequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventDemoSequence_RotateFader;
-    pub use super::IEventDemoSequence_RotateFader;
-    pub use super::IEventDemoSequence_RotateFaderMethods;
     pub use super::EventDemoSequence_CmdInfo;
     pub use super::IEventDemoSequence_CmdInfo;
     pub use super::IEventDemoSequence_CmdInfoMethods;
-    pub use super::EventDemoSequence_SoundEnv;
-    pub use super::IEventDemoSequence_SoundEnv;
-    pub use super::IEventDemoSequence_SoundEnvMethods;
-    pub use super::EventDemoSequence_CmdFunc;
-    pub use super::IEventDemoSequence_CmdFunc;
-    pub use super::IEventDemoSequence_CmdFuncMethods;
-    pub use super::EventDemoSequence_EffectWork;
-    pub use super::IEventDemoSequence_EffectWork;
-    pub use super::IEventDemoSequence_EffectWorkMethods;
-    pub use super::EventDemoSequence_LightSetupInfo;
-    pub use super::IEventDemoSequence_LightSetupInfo;
-    pub use super::IEventDemoSequence_LightSetupInfoMethods;
+    pub use super::EventDemoSequence;
+    pub use super::IEventDemoSequence;
+    pub use super::IEventDemoSequenceMethods;
+    pub use super::EventDemoSequence_ClothType;
+    pub use super::EventDemoSequence_RotateFader;
+    pub use super::IEventDemoSequence_RotateFader;
+    pub use super::IEventDemoSequence_RotateFaderMethods;
     pub use super::EventDemoSequence_SplitViewWork;
     pub use super::IEventDemoSequence_SplitViewWork;
     pub use super::IEventDemoSequence_SplitViewWorkMethods;
+    pub use super::EventDemoSequence_CharacterWork;
+    pub use super::IEventDemoSequence_CharacterWork;
+    pub use super::IEventDemoSequence_CharacterWorkMethods;
+    pub use super::EventDemoSequence_CmdFunc;
+    pub use super::IEventDemoSequence_CmdFunc;
+    pub use super::IEventDemoSequence_CmdFuncMethods;
+    pub use super::EventDemoSequence_ColorFader;
+    pub use super::IEventDemoSequence_ColorFader;
+    pub use super::IEventDemoSequence_ColorFaderMethods;
+    pub use super::EventDemoSequence_EventCmdResult;
+    pub use super::EventDemoSequence_SoundEnv;
+    pub use super::IEventDemoSequence_SoundEnv;
+    pub use super::IEventDemoSequence_SoundEnvMethods;
     pub use super::EventDemoSequence_SoundEnv_EventNameData;
     pub use super::IEventDemoSequence_SoundEnv_EventNameData;
     pub use super::IEventDemoSequence_SoundEnv_EventNameDataMethods;
     pub use super::EventDemoSequence_EventCmdSeq;
-    pub use super::EventDemoSequence;
-    pub use super::IEventDemoSequence;
-    pub use super::IEventDemoSequenceMethods;
-    pub use super::EventDemoSequence_EventCmdResult;
-    pub use super::EventDemoSequence_CharacterWork;
-    pub use super::IEventDemoSequence_CharacterWork;
-    pub use super::IEventDemoSequence_CharacterWorkMethods;
     pub use super::EventDemoSequence_WeightFader;
     pub use super::IEventDemoSequence_WeightFader;
     pub use super::IEventDemoSequence_WeightFaderMethods;
-    pub use super::EventDemoSequence_ColorFader;
-    pub use super::IEventDemoSequence_ColorFader;
-    pub use super::IEventDemoSequence_ColorFaderMethods;
-    pub use super::EventDemoSequence_ClothType;
+    pub use super::EventDemoSequence_LightSetupInfo;
+    pub use super::IEventDemoSequence_LightSetupInfo;
+    pub use super::IEventDemoSequence_LightSetupInfoMethods;
+    pub use super::EventDemoSequence_EffectWork;
+    pub use super::IEventDemoSequence_EffectWork;
+    pub use super::IEventDemoSequence_EffectWorkMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

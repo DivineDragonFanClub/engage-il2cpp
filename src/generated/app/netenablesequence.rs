@@ -27,10 +27,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct NetEnableSequence_ConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct NetEnableSequence_ConfirmDialog_YesMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence.ConfirmDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct NetEnableSequence_ConfirmDialog_NoMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_Arg.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NetEnableSequence_Arg{pub without_confirm:bool,pub can_write_config:bool,pub is_net_login_once:bool,pub is_reflect_net_result:bool,pub result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
@@ -44,7 +41,13 @@ impl::unity2::IlType for NetEnableSequence_Arg{fn il_type()-> &'static::unity2::
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence.ConfirmDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct NetEnableSequence_ConfirmDialog_NoMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NetEnableSequence{#[offset(112)]#[rename(name="m_WithoutConfirm")]pub m_without_confirm:bool, #[offset(113)]#[rename(name="m_CanWriteConfig")]pub m_can_write_config:bool, #[offset(114)]#[rename(name="m_IsNetLoginOnce")]pub m_is_net_login_once:bool, #[offset(115)]#[rename(name="m_IsReflectNetResult")]pub m_is_reflect_net_result:bool, #[offset(120)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction, #[offset(128)]#[rename(name="m_IsLoginSucceeded")]pub m_is_login_succeeded:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct NetEnableSequence_ConfirmDialog_YesMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct NetEnableSequence_ConfirmDialog{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NetEnableSequence_Label{pub value:i32,}
@@ -65,65 +68,10 @@ pub fn result()->Self{Self{value:1}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence.ResultFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NetEnableSequence_ResultFunction{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netenablesequence/NetEnableSequence.md"))]#[::unity2::class(namespace="App",name="NetEnableSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NetEnableSequence{#[offset(112)]#[rename(name="m_WithoutConfirm")]pub m_without_confirm:bool, #[offset(113)]#[rename(name="m_CanWriteConfig")]pub m_can_write_config:bool, #[offset(114)]#[rename(name="m_IsNetLoginOnce")]pub m_is_net_login_once:bool, #[offset(115)]#[rename(name="m_IsReflectNetResult")]pub m_is_reflect_net_result:bool, #[offset(120)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction, #[offset(128)]#[rename(name="m_IsLoginSucceeded")]pub m_is_login_succeeded:bool,}
-
 }
 
 #[cfg(feature = "app-netenablesequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x209deb0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-netenablesequence")]pub trait INetEnableSequence_ConfirmDialogMethods:INetEnableSequence_ConfirmDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NetEnableSequence_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209dfb0usize)as*mut u8,();
-(NetEnableSequence_ConfirmDialog)__receiver)}
-}
-}
-
-#[cfg(feature="app-netenablesequence")]impl<__T:INetEnableSequence_ConfirmDialog>INetEnableSequence_ConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NetEnableSequence_ConfirmDialog), ::core::stringify!(new),));
- <Self as INetEnableSequence_ConfirmDialogMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-netenablesequence")]pub trait INetEnableSequence_ConfirmDialog_YesMenuItemMethods:INetEnableSequence_ConfirmDialog_YesMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NetEnableSequence_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74400usize)as*mut u8, ::unity2::Il2CppString;
-(NetEnableSequence_ConfirmDialog_YesMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NetEnableSequence_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74480usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(NetEnableSequence_ConfirmDialog_YesMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NetEnableSequence_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74500usize)as*mut u8,();
-(NetEnableSequence_ConfirmDialog_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-netenablesequence")]impl<__T:INetEnableSequence_ConfirmDialog_YesMenuItem>INetEnableSequence_ConfirmDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog_YesMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NetEnableSequence_ConfirmDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as INetEnableSequence_ConfirmDialog_YesMenuItemMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-netenablesequence")]pub trait INetEnableSequence_ConfirmDialog_NoMenuItemMethods:INetEnableSequence_ConfirmDialog_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NetEnableSequence_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74370usize)as*mut u8, ::unity2::Il2CppString;
@@ -145,29 +93,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(NetEnableSequence_ConfirmDialog_NoMenuItem), ::core::stringify!(new),));
  <Self as INetEnableSequence_ConfirmDialog_NoMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-netenablesequence")]pub trait INetEnableSequence_ResultFunctionMethods:INetEnableSequence_ResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NetEnableSequence_ResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209dfc0usize)as*mut u8,();
-(NetEnableSequence_ResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(bool)` overload"]fn invoke(self,is_enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NetEnableSequence_ResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209dfe0usize)as*mut u8,();
-(NetEnableSequence_ResultFunction)__receiver,(bool)::core::convert::Into::into(is_enable))}
-}
-}
-
-#[cfg(feature="app-netenablesequence")]impl<__T:INetEnableSequence_ResultFunction>INetEnableSequence_ResultFunctionMethods for __T{}
-
-#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ResultFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NetEnableSequence_ResultFunction), ::core::stringify!(new),));
- <Self as INetEnableSequence_ResultFunctionMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -248,26 +173,101 @@ pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 this}
 }
 
+#[cfg(feature="app-netenablesequence")]pub trait INetEnableSequence_ConfirmDialog_YesMenuItemMethods:INetEnableSequence_ConfirmDialog_YesMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NetEnableSequence_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74400usize)as*mut u8, ::unity2::Il2CppString;
+(NetEnableSequence_ConfirmDialog_YesMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NetEnableSequence_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74480usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(NetEnableSequence_ConfirmDialog_YesMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NetEnableSequence_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74500usize)as*mut u8,();
+(NetEnableSequence_ConfirmDialog_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-netenablesequence")]impl<__T:INetEnableSequence_ConfirmDialog_YesMenuItem>INetEnableSequence_ConfirmDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog_YesMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NetEnableSequence_ConfirmDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as INetEnableSequence_ConfirmDialog_YesMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x209deb0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-netenablesequence")]pub trait INetEnableSequence_ConfirmDialogMethods:INetEnableSequence_ConfirmDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NetEnableSequence_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209dfb0usize)as*mut u8,();
+(NetEnableSequence_ConfirmDialog)__receiver)}
+}
+}
+
+#[cfg(feature="app-netenablesequence")]impl<__T:INetEnableSequence_ConfirmDialog>INetEnableSequence_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ConfirmDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NetEnableSequence_ConfirmDialog), ::core::stringify!(new),));
+ <Self as INetEnableSequence_ConfirmDialogMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-netenablesequence")]pub trait INetEnableSequence_ResultFunctionMethods:INetEnableSequence_ResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NetEnableSequence_ResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209dfc0usize)as*mut u8,();
+(NetEnableSequence_ResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool)` overload"]fn invoke(self,is_enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NetEnableSequence_ResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209dfe0usize)as*mut u8,();
+(NetEnableSequence_ResultFunction)__receiver,(bool)::core::convert::Into::into(is_enable))}
+}
+}
+
+#[cfg(feature="app-netenablesequence")]impl<__T:INetEnableSequence_ResultFunction>INetEnableSequence_ResultFunctionMethods for __T{}
+
+#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ResultFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-netenablesequence")]impl NetEnableSequence_ResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NetEnableSequence_ResultFunction), ::core::stringify!(new),));
+ <Self as INetEnableSequence_ResultFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-netenablesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NetEnableSequence_ConfirmDialog;
-    pub use super::INetEnableSequence_ConfirmDialog;
-    pub use super::INetEnableSequence_ConfirmDialogMethods;
-    pub use super::NetEnableSequence_ConfirmDialog_YesMenuItem;
-    pub use super::INetEnableSequence_ConfirmDialog_YesMenuItem;
-    pub use super::INetEnableSequence_ConfirmDialog_YesMenuItemMethods;
-    pub use super::NetEnableSequence_Arg;
     pub use super::NetEnableSequence_ConfirmDialog_NoMenuItem;
     pub use super::INetEnableSequence_ConfirmDialog_NoMenuItem;
     pub use super::INetEnableSequence_ConfirmDialog_NoMenuItemMethods;
+    pub use super::NetEnableSequence_Arg;
+    pub use super::NetEnableSequence;
+    pub use super::INetEnableSequence;
+    pub use super::INetEnableSequenceMethods;
+    pub use super::NetEnableSequence_ConfirmDialog_YesMenuItem;
+    pub use super::INetEnableSequence_ConfirmDialog_YesMenuItem;
+    pub use super::INetEnableSequence_ConfirmDialog_YesMenuItemMethods;
+    pub use super::NetEnableSequence_ConfirmDialog;
+    pub use super::INetEnableSequence_ConfirmDialog;
+    pub use super::INetEnableSequence_ConfirmDialogMethods;
     pub use super::NetEnableSequence_Label;
     pub use super::NetEnableSequence_ResultFunction;
     pub use super::INetEnableSequence_ResultFunction;
     pub use super::INetEnableSequence_ResultFunctionMethods;
-    pub use super::NetEnableSequence;
-    pub use super::INetEnableSequence;
-    pub use super::INetEnableSequenceMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

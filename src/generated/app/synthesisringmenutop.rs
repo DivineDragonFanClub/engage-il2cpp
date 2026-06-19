@@ -13,18 +13,59 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringmenutop/SynthesisRingMenuTop.md"))]#[::unity2::class(namespace="App",name="SynthesisRingMenuTop")]#[parent(crate::system::object::Object)]pub struct SynthesisRingMenuTop{#[offset(16)]#[rename(name="m_SynthesisRingRoot")]pub m_synthesis_ring_root:crate::app::synthesisringroot::SynthesisRingRoot, #[offset(24)]#[rename(name="m_SynthesisRingBaseRingMenu")]pub m_synthesis_ring_base_ring_menu:crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu, #[offset(32)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler, #[offset(40)]#[rename(name="m_RingData")]pub m_ring_data:crate::app::ringdata::RingData, #[offset(48)]#[rename(name="m_CountBaseRing")]pub m_count_base_ring:i32, #[offset(52)]#[rename(name="m_CountPieceOfBonds")]pub m_count_piece_of_bonds:i32, #[offset(56)]#[rename(name="m_GodUnitIndex")]pub m_god_unit_index:i32, #[offset(64)]#[rename(name="m_MenuSelect")]pub m_menu_select:crate::app::basicmenuselect::BasicMenuSelect,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringmenutop/SynthesisRingMenuTop_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SynthesisRingMenuTop.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SynthesisRingMenuTop_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringmenutop/SynthesisRingMenuTop_Result.md"))]#[::unity2::class(namespace="App",name="SynthesisRingMenuTop.Result")]#[parent(crate::system::object::Object)]pub struct SynthesisRingMenuTop_Result{#[offset(16)]#[rename(name="m_Rnid")]pub m_rnid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_BaseRingCount")]pub m_base_ring_count:i32, #[offset(28)]#[rename(name="m_PieceOfBondsCount")]pub m_piece_of_bonds_count:i32, #[offset(32)]#[rename(name="m_GodUnitIndex")]pub m_god_unit_index:i32, #[offset(40)]#[rename(name="m_MenuSelect")]pub m_menu_select:crate::app::basicmenuselect::BasicMenuSelect,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringmenutop/SynthesisRingMenuTop.md"))]#[::unity2::class(namespace="App",name="SynthesisRingMenuTop")]#[parent(crate::system::object::Object)]pub struct SynthesisRingMenuTop{#[offset(16)]#[rename(name="m_SynthesisRingRoot")]pub m_synthesis_ring_root:crate::app::synthesisringroot::SynthesisRingRoot, #[offset(24)]#[rename(name="m_SynthesisRingBaseRingMenu")]pub m_synthesis_ring_base_ring_menu:crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu, #[offset(32)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler, #[offset(40)]#[rename(name="m_RingData")]pub m_ring_data:crate::app::ringdata::RingData, #[offset(48)]#[rename(name="m_CountBaseRing")]pub m_count_base_ring:i32, #[offset(52)]#[rename(name="m_CountPieceOfBonds")]pub m_count_piece_of_bonds:i32, #[offset(56)]#[rename(name="m_GodUnitIndex")]pub m_god_unit_index:i32, #[offset(64)]#[rename(name="m_MenuSelect")]pub m_menu_select:crate::app::basicmenuselect::BasicMenuSelect,}
+
 }
 
 #[cfg(feature = "app-synthesisringmenutop-types")]
 pub use __types::*;
+
+#[cfg(feature="app-synthesisringmenutop")]pub trait ISynthesisRingMenuTop_DecideEventHandlerMethods:ISynthesisRingMenuTop_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f79e0usize)as*mut u8,();
+(SynthesisRingMenuTop_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7a00usize)as*mut u8,();
+(SynthesisRingMenuTop_DecideEventHandler)__receiver,(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-synthesisringmenutop")]impl<__T:ISynthesisRingMenuTop_DecideEventHandler>ISynthesisRingMenuTop_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SynthesisRingMenuTop_DecideEventHandler), ::core::stringify!(new),));
+ <Self as ISynthesisRingMenuTop_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-synthesisringmenutop")]pub trait ISynthesisRingMenuTop_ResultMethods:ISynthesisRingMenuTop_Result{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]fn ctor(self,rnid:impl::core::convert::Into< ::unity2::Il2CppString> ,base_ring_count:impl::core::convert::Into<i32> ,piece_of_bonds_count:impl::core::convert::Into<i32> ,god_unit_index:impl::core::convert::Into<i32> ,menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_Result as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7da0usize)as*mut u8,();
+(SynthesisRingMenuTop_Result)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(rnid),(i32)::core::convert::Into::into(base_ring_count),(i32)::core::convert::Into::into(piece_of_bonds_count),(i32)::core::convert::Into::into(god_unit_index),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(menu_select))}
+}
+}
+
+#[cfg(feature="app-synthesisringmenutop")]impl<__T:ISynthesisRingMenuTop_Result>ISynthesisRingMenuTop_ResultMethods for __T{}
+
+#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_Result{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_Result{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` — overload selector"]pub fn new(rnid: ::unity2::Il2CppString,base_ring_count:i32,piece_of_bonds_count:i32,god_unit_index:i32,menu_select:crate::app::basicmenuselect::BasicMenuSelect)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SynthesisRingMenuTop_Result), ::core::stringify!(new),));
+ <Self as ISynthesisRingMenuTop_ResultMethods> ::ctor(this,rnid,base_ring_count,piece_of_bonds_count,god_unit_index,menu_select);
+this}
+}
 
 #[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_god_unit_index:impl::core::convert::Into<i32> ,initial_menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect> ,decide_event_handler:impl::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler>)->crate::app::synthesisringmenutop::SynthesisRingMenuTop{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b4950usize)as*mut u8,crate::app::synthesisringmenutop::SynthesisRingMenuTop;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(initial_god_unit_index),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(initial_menu_select),(crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
@@ -75,59 +116,18 @@ pub fn on_cancel_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
-#[cfg(feature="app-synthesisringmenutop")]pub trait ISynthesisRingMenuTop_DecideEventHandlerMethods:ISynthesisRingMenuTop_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f79e0usize)as*mut u8,();
-(SynthesisRingMenuTop_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7a00usize)as*mut u8,();
-(SynthesisRingMenuTop_DecideEventHandler)__receiver,(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-synthesisringmenutop")]impl<__T:ISynthesisRingMenuTop_DecideEventHandler>ISynthesisRingMenuTop_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SynthesisRingMenuTop_DecideEventHandler), ::core::stringify!(new),));
- <Self as ISynthesisRingMenuTop_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-synthesisringmenutop")]pub trait ISynthesisRingMenuTop_ResultMethods:ISynthesisRingMenuTop_Result{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]fn ctor(self,rnid:impl::core::convert::Into< ::unity2::Il2CppString> ,base_ring_count:impl::core::convert::Into<i32> ,piece_of_bonds_count:impl::core::convert::Into<i32> ,god_unit_index:impl::core::convert::Into<i32> ,menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_Result as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7da0usize)as*mut u8,();
-(SynthesisRingMenuTop_Result)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(rnid),(i32)::core::convert::Into::into(base_ring_count),(i32)::core::convert::Into::into(piece_of_bonds_count),(i32)::core::convert::Into::into(god_unit_index),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(menu_select))}
-}
-}
-
-#[cfg(feature="app-synthesisringmenutop")]impl<__T:ISynthesisRingMenuTop_Result>ISynthesisRingMenuTop_ResultMethods for __T{}
-
-#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_Result{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-synthesisringmenutop")]impl SynthesisRingMenuTop_Result{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` — overload selector"]pub fn new(rnid: ::unity2::Il2CppString,base_ring_count:i32,piece_of_bonds_count:i32,god_unit_index:i32,menu_select:crate::app::basicmenuselect::BasicMenuSelect)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SynthesisRingMenuTop_Result), ::core::stringify!(new),));
- <Self as ISynthesisRingMenuTop_ResultMethods> ::ctor(this,rnid,base_ring_count,piece_of_bonds_count,god_unit_index,menu_select);
-this}
-}
-
 #[cfg(feature = "app-synthesisringmenutop")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SynthesisRingMenuTop;
-    pub use super::ISynthesisRingMenuTop;
-    pub use super::ISynthesisRingMenuTopMethods;
     pub use super::SynthesisRingMenuTop_DecideEventHandler;
     pub use super::ISynthesisRingMenuTop_DecideEventHandler;
     pub use super::ISynthesisRingMenuTop_DecideEventHandlerMethods;
     pub use super::SynthesisRingMenuTop_Result;
     pub use super::ISynthesisRingMenuTop_Result;
     pub use super::ISynthesisRingMenuTop_ResultMethods;
+    pub use super::SynthesisRingMenuTop;
+    pub use super::ISynthesisRingMenuTop;
+    pub use super::ISynthesisRingMenuTopMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

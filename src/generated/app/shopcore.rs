@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopcore/ShopCore.md"))]#[::unity2::class(namespace="App",name="ShopCore")]#[parent(crate::system::object::Object)]pub struct ShopCore{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopcore/ShopCore_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ShopCore_Result{pub value:i32,}
 impl::unity2::ClassIdentity for ShopCore_Result{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ShopCore.Result";
@@ -34,6 +31,9 @@ pub fn transporter()->Self{Self{value:2}
 pub fn inventory()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopcore/ShopCore.md"))]#[::unity2::class(namespace="App",name="ShopCore")]#[parent(crate::system::object::Object)]pub struct ShopCore{}
 
 }
 
@@ -179,10 +179,10 @@ this}
 #[cfg(feature = "app-shopcore")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ShopCore_Result;
     pub use super::ShopCore;
     pub use super::IShopCore;
     pub use super::IShopCoreMethods;
-    pub use super::ShopCore_Result;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

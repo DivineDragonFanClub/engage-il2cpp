@@ -17,10 +17,10 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_CommonPlatformSettings.md"))]#[::unity2::class(namespace="",name="AkWwiseInitializationSettings.CommonPlatformSettings")]#[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings)]pub struct AkWwiseInitializationSettings_CommonPlatformSettings{#[offset(48)]#[rename(name="UserSettings")]pub user_settings:crate::root::akcommonusersettings::AkCommonUserSettings, #[offset(56)]#[rename(name="AdvancedSettings")]pub advanced_settings:crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings, #[offset(64)]#[rename(name="CommsSettings")]pub comms_settings:crate::root::akcommoncommsettings::AkCommonCommSettings,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings.md"))]#[::unity2::class(namespace="",name="AkWwiseInitializationSettings")]#[parent(crate::root::akcommonplatformsettings::AkCommonPlatformSettings)]pub struct AkWwiseInitializationSettings{#[offset(24)]#[rename(name="PlatformSettingsNameList")]pub platform_settings_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="PlatformSettingsList")]pub platform_settings_list:crate::system::collections::generic::list_1::List_1<crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings> , #[offset(40)]#[rename(name="InvalidReferencePlatforms")]pub invalid_reference_platforms:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(48)]#[rename(name="UserSettings")]pub user_settings:crate::root::akcommonusersettings::AkCommonUserSettings, #[offset(56)]#[rename(name="AdvancedSettings")]pub advanced_settings:crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings, #[offset(64)]#[rename(name="CommsSettings")]pub comms_settings:crate::root::akcommoncommsettings::AkCommonCommSettings, #[static_field]#[rename(name="AllGlobalValues")]pub all_global_values: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="m_Instance")]pub m_instance:crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings, #[static_field]#[rename(name="m_ActivePlatformSettings")]pub m_active_platform_settings:crate::root::akbaseplatformsettings::AkBasePlatformSettings,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_CommonPlatformSettings.md"))]#[::unity2::class(namespace="",name="AkWwiseInitializationSettings.CommonPlatformSettings")]#[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings)]pub struct AkWwiseInitializationSettings_CommonPlatformSettings{#[offset(48)]#[rename(name="UserSettings")]pub user_settings:crate::root::akcommonusersettings::AkCommonUserSettings, #[offset(56)]#[rename(name="AdvancedSettings")]pub advanced_settings:crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings, #[offset(64)]#[rename(name="CommsSettings")]pub comms_settings:crate::root::akcommoncommsettings::AkCommonCommSettings,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_PlatformSettings.md"))]#[::unity2::class(namespace="",name="AkWwiseInitializationSettings.PlatformSettings")]#[parent(crate::root::akcommonplatformsettings::AkCommonPlatformSettings)]pub struct AkWwiseInitializationSettings_PlatformSettings{#[offset(24)]#[rename(name="IgnorePropertyNameList")]pub ignore_property_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="GlobalPropertyNameList")]pub global_property_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="_GlobalPropertyHashSet")]pub global_property_hash_set_field:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> ,}
@@ -29,39 +29,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 
 #[cfg(feature = "root-akwwiseinitializationsettings-types")]
 pub use __types::*;
-
-#[cfg(feature="root-akwwiseinitializationsettings")]pub trait IAkWwiseInitializationSettings_CommonPlatformSettingsMethods:IAkWwiseInitializationSettings_CommonPlatformSettings{#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a30usize)as*mut u8,crate::root::akcommonusersettings::AkCommonUserSettings;
-(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
-}
-#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a40usize)as*mut u8,crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings;
-(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
-}
-#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a50usize)as*mut u8,crate::root::akcommoncommsettings::AkCommonCommSettings;
-(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a60usize)as*mut u8,();
-(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
-}
-}
-
-#[cfg(feature="root-akwwiseinitializationsettings")]impl<__T:IAkWwiseInitializationSettings_CommonPlatformSettings>IAkWwiseInitializationSettings_CommonPlatformSettingsMethods for __T{}
-
-#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_CommonPlatformSettings{pub fn get_user_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_advanced_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_comms_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_CommonPlatformSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkWwiseInitializationSettings_CommonPlatformSettings), ::core::stringify!(new),));
- <Self as IAkWwiseInitializationSettings_CommonPlatformSettingsMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c690usize)as*mut u8,crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings;
 )}
@@ -145,6 +112,39 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="root-akwwiseinitializationsettings")]pub trait IAkWwiseInitializationSettings_CommonPlatformSettingsMethods:IAkWwiseInitializationSettings_CommonPlatformSettings{#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a30usize)as*mut u8,crate::root::akcommonusersettings::AkCommonUserSettings;
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
+#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a40usize)as*mut u8,crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings;
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
+#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a50usize)as*mut u8,crate::root::akcommoncommsettings::AkCommonCommSettings;
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a60usize)as*mut u8,();
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
+}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl<__T:IAkWwiseInitializationSettings_CommonPlatformSettings>IAkWwiseInitializationSettings_CommonPlatformSettingsMethods for __T{}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_CommonPlatformSettings{pub fn get_user_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_advanced_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_comms_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_CommonPlatformSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkWwiseInitializationSettings_CommonPlatformSettings), ::core::stringify!(new),));
+ <Self as IAkWwiseInitializationSettings_CommonPlatformSettingsMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="root-akwwiseinitializationsettings")]pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods:IAkWwiseInitializationSettings_PlatformSettings{#[doc="`IgnorePropertyValue(::unity2::Il2CppString)` overload"]fn ignore_property_value(self,property_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2b70usize)as*mut u8,();
 (AkWwiseInitializationSettings_PlatformSettings)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(property_path))}
@@ -201,12 +201,12 @@ this}
 #[cfg(feature = "root-akwwiseinitializationsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkWwiseInitializationSettings_CommonPlatformSettings;
-    pub use super::IAkWwiseInitializationSettings_CommonPlatformSettings;
-    pub use super::IAkWwiseInitializationSettings_CommonPlatformSettingsMethods;
     pub use super::AkWwiseInitializationSettings;
     pub use super::IAkWwiseInitializationSettings;
     pub use super::IAkWwiseInitializationSettingsMethods;
+    pub use super::AkWwiseInitializationSettings_CommonPlatformSettings;
+    pub use super::IAkWwiseInitializationSettings_CommonPlatformSettings;
+    pub use super::IAkWwiseInitializationSettings_CommonPlatformSettingsMethods;
     pub use super::AkWwiseInitializationSettings_PlatformSettings;
     pub use super::IAkWwiseInitializationSettings_PlatformSettings;
     pub use super::IAkWwiseInitializationSettings_PlatformSettingsMethods;

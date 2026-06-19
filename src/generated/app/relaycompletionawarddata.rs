@@ -25,7 +25,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData>)]pub struct RelayCompletionAwardData{#[static_field]#[rename(name="s_ShowComparer")]pub s_show_comparer:crate::app::relaycompletionawarddata::RelayCompletionAwardData_ShowComparer, #[static_field]#[rename(name="s_CalcComparer")]pub s_calc_comparer:crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcComparer,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.CalcResult")]#[parent(crate::system::object::Object)]pub struct RelayCompletionAwardData_CalcResult{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_ComparerBase.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.ComparerBase")]#[parent(crate::system::object::Object)]pub struct RelayCompletionAwardData_ComparerBase{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayCompletionAwardData_Flags{pub value:i32,}
@@ -42,10 +48,16 @@ impl RelayCompletionAwardData_Flags{pub fn show()->Self{Self{value:1}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult_Item.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.CalcResult.Item")]#[parent(crate::system::object::Object)]pub struct RelayCompletionAwardData_CalcResult_Item{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcComparer.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.CalcComparer")]#[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]pub struct RelayCompletionAwardData_CalcComparer{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_FlagField.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags>)]pub struct RelayCompletionAwardData_FlagField{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData>)]pub struct RelayCompletionAwardData{#[static_field]#[rename(name="s_ShowComparer")]pub s_show_comparer:crate::app::relaycompletionawarddata::RelayCompletionAwardData_ShowComparer, #[static_field]#[rename(name="s_CalcComparer")]pub s_calc_comparer:crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcComparer,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_ShowComparer.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.ShowComparer")]#[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]pub struct RelayCompletionAwardData_ShowComparer{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcWork.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RelayCompletionAwardData_CalcWork{pub results:crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>,pub awards:crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData>,pub max_count:i32,pub min_count:i32,pub count:i32,pub is_copied:bool,pub random:crate::app::random_2::Random_2,}
@@ -58,93 +70,10 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for RelayCompletionAwardData_CalcWork{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcComparer.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.CalcComparer")]#[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]pub struct RelayCompletionAwardData_CalcComparer{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_ShowComparer.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.ShowComparer")]#[parent(crate::app::relaycompletionawarddata::RelayCompletionAwardData_ComparerBase)]pub struct RelayCompletionAwardData_ShowComparer{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_ComparerBase.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.ComparerBase")]#[parent(crate::system::object::Object)]pub struct RelayCompletionAwardData_ComparerBase{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaycompletionawarddata/RelayCompletionAwardData_CalcResult_Item.md"))]#[::unity2::class(namespace="App",name="RelayCompletionAwardData.CalcResult.Item")]#[parent(crate::system::object::Object)]pub struct RelayCompletionAwardData_CalcResult_Item{}
-
 }
 
 #[cfg(feature = "app-relaycompletionawarddata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_CalcResultMethods:IRelayCompletionAwardData_CalcResult{#[doc="`get_MainItems()` overload"]fn get_main_items(self,)->crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>{unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d70usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> ;
-(RelayCompletionAwardData_CalcResult)__receiver)}
-}
-#[doc="`set_MainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]fn set_main_items(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> >)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d80usize)as*mut u8,();
-(RelayCompletionAwardData_CalcResult)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(value))}
-}
-#[doc="`get_SubItems()` overload"]fn get_sub_items(self,)->crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>{unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d90usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> ;
-(RelayCompletionAwardData_CalcResult)__receiver)}
-}
-#[doc="`set_SubItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]fn set_sub_items(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> >)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04da0usize)as*mut u8,();
-(RelayCompletionAwardData_CalcResult)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(i32, i32)` overload"]fn ctor(self,main_max_count:impl::core::convert::Into<i32> ,sub_max_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04db0usize)as*mut u8,();
-(RelayCompletionAwardData_CalcResult)__receiver,(i32)::core::convert::Into::into(main_max_count),(i32)::core::convert::Into::into(sub_max_count))}
-}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_CalcResult>IRelayCompletionAwardData_CalcResultMethods for __T{}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcResult{pub fn get_main_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_main_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_sub_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_sub_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcResult{#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new(main_max_count:i32,sub_max_count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayCompletionAwardData_CalcResult), ::core::stringify!(new),));
- <Self as IRelayCompletionAwardData_CalcResultMethods> ::ctor(this,main_max_count,sub_max_count);
-this}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_FlagFieldMethods:IRelayCompletionAwardData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayCompletionAwardData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04e80usize)as*mut u8,();
-(RelayCompletionAwardData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags>)->(){unsafe{let __receiver= <RelayCompletionAwardData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04ee0usize)as*mut u8,();
-(RelayCompletionAwardData_FlagField)__receiver,(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)::core::convert::Into::into(f))}
-}
-#[doc="`ToInt(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags>)->i32{unsafe{let __receiver= <RelayCompletionAwardData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04f40usize)as*mut u8,i32;
-(RelayCompletionAwardData_FlagField)__receiver,(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_FlagField>IRelayCompletionAwardData_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayCompletionAwardData_FlagField), ::core::stringify!(new),));
- <Self as IRelayCompletionAwardData_FlagFieldMethods> ::ctor(this,f);
-this}
-#[doc="`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` — overload selector"]pub fn new_2(f:crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayCompletionAwardData_FlagField), ::core::stringify!(new_2),));
- <Self as IRelayCompletionAwardData_FlagFieldMethods> ::ctor_2(this,f);
-this}
-}
 
 #[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffb660usize)as*mut u8,();
 )}
@@ -283,49 +212,41 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_CalcComparerMethods:IRelayCompletionAwardData_CalcComparer{#[doc="`Compare(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item, crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> ,b:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)->i32{unsafe{let __receiver= <RelayCompletionAwardData_CalcComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d20usize)as*mut u8,i32;
-(RelayCompletionAwardData_CalcComparer)__receiver,(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item)::core::convert::Into::into(a),(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item)::core::convert::Into::into(b))}
+#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_CalcResultMethods:IRelayCompletionAwardData_CalcResult{#[doc="`get_MainItems()` overload"]fn get_main_items(self,)->crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>{unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d70usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> ;
+(RelayCompletionAwardData_CalcResult)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d50usize)as*mut u8,();
-(RelayCompletionAwardData_CalcComparer)__receiver)}
+#[doc="`set_MainItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]fn set_main_items(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> >)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d80usize)as*mut u8,();
+(RelayCompletionAwardData_CalcResult)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(value))}
+}
+#[doc="`get_SubItems()` overload"]fn get_sub_items(self,)->crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>{unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d90usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> ;
+(RelayCompletionAwardData_CalcResult)__receiver)}
+}
+#[doc="`set_SubItems(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)` overload"]fn set_sub_items(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> >)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04da0usize)as*mut u8,();
+(RelayCompletionAwardData_CalcResult)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, i32)` overload"]fn ctor(self,main_max_count:impl::core::convert::Into<i32> ,sub_max_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04db0usize)as*mut u8,();
+(RelayCompletionAwardData_CalcResult)__receiver,(i32)::core::convert::Into::into(main_max_count),(i32)::core::convert::Into::into(sub_max_count))}
 }
 }
 
-#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_CalcComparer>IRelayCompletionAwardData_CalcComparerMethods for __T{}
+#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_CalcResult>IRelayCompletionAwardData_CalcResultMethods for __T{}
 
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcResult{pub fn get_main_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_main_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sub_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_sub_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcResult{#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new(main_max_count:i32,sub_max_count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RelayCompletionAwardData_CalcComparer), ::core::stringify!(new),));
- <Self as IRelayCompletionAwardData_CalcComparerMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_ShowComparerMethods:IRelayCompletionAwardData_ShowComparer{#[doc="`Compare(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::itemdata::ItemData> ,b:impl::core::convert::Into<crate::app::itemdata::ItemData>)->i32{unsafe{let __receiver= <RelayCompletionAwardData_ShowComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04f50usize)as*mut u8,i32;
-(RelayCompletionAwardData_ShowComparer)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(a),(crate::app::itemdata::ItemData)::core::convert::Into::into(b))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayCompletionAwardData_ShowComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04f60usize)as*mut u8,();
-(RelayCompletionAwardData_ShowComparer)__receiver)}
-}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_ShowComparer>IRelayCompletionAwardData_ShowComparerMethods for __T{}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_ShowComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_ShowComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayCompletionAwardData_ShowComparer), ::core::stringify!(new),));
- <Self as IRelayCompletionAwardData_ShowComparerMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RelayCompletionAwardData_CalcResult), ::core::stringify!(new),));
+ <Self as IRelayCompletionAwardData_CalcResultMethods> ::ctor(this,main_max_count,sub_max_count);
 this}
 }
 
@@ -395,32 +316,111 @@ pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity
 this}
 }
 
+#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_CalcComparerMethods:IRelayCompletionAwardData_CalcComparer{#[doc="`Compare(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item, crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item> ,b:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item>)->i32{unsafe{let __receiver= <RelayCompletionAwardData_CalcComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d20usize)as*mut u8,i32;
+(RelayCompletionAwardData_CalcComparer)__receiver,(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item)::core::convert::Into::into(a),(crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item)::core::convert::Into::into(b))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayCompletionAwardData_CalcComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04d50usize)as*mut u8,();
+(RelayCompletionAwardData_CalcComparer)__receiver)}
+}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_CalcComparer>IRelayCompletionAwardData_CalcComparerMethods for __T{}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_CalcComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayCompletionAwardData_CalcComparer), ::core::stringify!(new),));
+ <Self as IRelayCompletionAwardData_CalcComparerMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_FlagFieldMethods:IRelayCompletionAwardData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayCompletionAwardData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04e80usize)as*mut u8,();
+(RelayCompletionAwardData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags>)->(){unsafe{let __receiver= <RelayCompletionAwardData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04ee0usize)as*mut u8,();
+(RelayCompletionAwardData_FlagField)__receiver,(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags>)->i32{unsafe{let __receiver= <RelayCompletionAwardData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04f40usize)as*mut u8,i32;
+(RelayCompletionAwardData_FlagField)__receiver,(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_FlagField>IRelayCompletionAwardData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayCompletionAwardData_FlagField), ::core::stringify!(new),));
+ <Self as IRelayCompletionAwardData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)` — overload selector"]pub fn new_2(f:crate::app::relaycompletionawarddata::RelayCompletionAwardData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayCompletionAwardData_FlagField), ::core::stringify!(new_2),));
+ <Self as IRelayCompletionAwardData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]pub trait IRelayCompletionAwardData_ShowComparerMethods:IRelayCompletionAwardData_ShowComparer{#[doc="`Compare(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::itemdata::ItemData> ,b:impl::core::convert::Into<crate::app::itemdata::ItemData>)->i32{unsafe{let __receiver= <RelayCompletionAwardData_ShowComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04f50usize)as*mut u8,i32;
+(RelayCompletionAwardData_ShowComparer)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(a),(crate::app::itemdata::ItemData)::core::convert::Into::into(b))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayCompletionAwardData_ShowComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b04f60usize)as*mut u8,();
+(RelayCompletionAwardData_ShowComparer)__receiver)}
+}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl<__T:IRelayCompletionAwardData_ShowComparer>IRelayCompletionAwardData_ShowComparerMethods for __T{}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_ShowComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relaycompletionawarddata")]impl RelayCompletionAwardData_ShowComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayCompletionAwardData_ShowComparer), ::core::stringify!(new),));
+ <Self as IRelayCompletionAwardData_ShowComparerMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-relaycompletionawarddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayCompletionAwardData_CalcResult;
-    pub use super::IRelayCompletionAwardData_CalcResult;
-    pub use super::IRelayCompletionAwardData_CalcResultMethods;
-    pub use super::RelayCompletionAwardData_Flags;
-    pub use super::RelayCompletionAwardData_FlagField;
-    pub use super::IRelayCompletionAwardData_FlagField;
-    pub use super::IRelayCompletionAwardData_FlagFieldMethods;
     pub use super::RelayCompletionAwardData;
     pub use super::IRelayCompletionAwardData;
     pub use super::IRelayCompletionAwardDataMethods;
-    pub use super::RelayCompletionAwardData_CalcWork;
-    pub use super::RelayCompletionAwardData_CalcComparer;
-    pub use super::IRelayCompletionAwardData_CalcComparer;
-    pub use super::IRelayCompletionAwardData_CalcComparerMethods;
-    pub use super::RelayCompletionAwardData_ShowComparer;
-    pub use super::IRelayCompletionAwardData_ShowComparer;
-    pub use super::IRelayCompletionAwardData_ShowComparerMethods;
+    pub use super::RelayCompletionAwardData_CalcResult;
+    pub use super::IRelayCompletionAwardData_CalcResult;
+    pub use super::IRelayCompletionAwardData_CalcResultMethods;
     pub use super::RelayCompletionAwardData_ComparerBase;
     pub use super::IRelayCompletionAwardData_ComparerBase;
     pub use super::IRelayCompletionAwardData_ComparerBaseMethods;
+    pub use super::RelayCompletionAwardData_Flags;
     pub use super::RelayCompletionAwardData_CalcResult_Item;
     pub use super::IRelayCompletionAwardData_CalcResult_Item;
     pub use super::IRelayCompletionAwardData_CalcResult_ItemMethods;
+    pub use super::RelayCompletionAwardData_CalcComparer;
+    pub use super::IRelayCompletionAwardData_CalcComparer;
+    pub use super::IRelayCompletionAwardData_CalcComparerMethods;
+    pub use super::RelayCompletionAwardData_FlagField;
+    pub use super::IRelayCompletionAwardData_FlagField;
+    pub use super::IRelayCompletionAwardData_FlagFieldMethods;
+    pub use super::RelayCompletionAwardData_ShowComparer;
+    pub use super::IRelayCompletionAwardData_ShowComparer;
+    pub use super::IRelayCompletionAwardData_ShowComparerMethods;
+    pub use super::RelayCompletionAwardData_CalcWork;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

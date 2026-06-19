@@ -23,6 +23,27 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardStampMenu{#[offset(112)]#[rename(name="m_StampRoot")]pub m_stamp_root:crate::app::profilecardstamproot::ProfileCardStampRoot, #[offset(120)]#[rename(name="m_CardRoot")]pub m_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(128)]#[rename(name="m_StampListMenuContent")]pub m_stamp_list_menu_content:crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent, #[offset(136)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(140)]#[rename(name="m_CloseCalled")]pub m_close_called:bool, #[offset(144)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(152)]#[rename(name="m_FreeStampTempListArray")]pub m_free_stamp_temp_list_array: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> > , #[offset(160)]#[rename(name="m_CurrentStampData")]pub m_current_stamp_data:crate::app::profilecardstampdata::ProfileCardStampData, #[offset(168)]#[rename(name="m_StackStampData")]pub m_stack_stamp_data:crate::app::profilecardstampdata::ProfileCardStampData, #[offset(176)]#[rename(name="m_HoldingStamp")]pub m_holding_stamp:crate::app::profilecard::ProfileCard_FreeStamp, #[offset(184)]#[rename(name="m_OverlappedStampIndex")]pub m_overlapped_stamp_index:i32, #[offset(188)]#[rename(name="m_IsFront")]pub m_is_front:bool, #[offset(192)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardstampmenu::ProfileCardStampMenu_DisposeEventHandler, #[offset(200)]#[rename(name="m_EditMode")]pub m_edit_mode:crate::app::profilecardstampmenu::ProfileCardStampMenu_EditMode, #[offset(204)]#[rename(name="m_ArrowKeyRepeatTime")]pub m_arrow_key_repeat_time:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_DialogMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.DialogMenuItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct ProfileCardStampMenu_DialogMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToCloseDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToClearDialog.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToClearDialog")]#[parent(crate::system::object::Object)]pub struct ProfileCardStampMenu_ConfirmToClearDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampMenu_DisposeEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToCloseDialog")]#[parent(crate::system::object::Object)]pub struct ProfileCardStampMenu_ConfirmToCloseDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToClearDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_EditMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardStampMenu_EditMode{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardStampMenu_EditMode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardStampMenu.EditMode";
@@ -42,78 +63,10 @@ pub fn eraser()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToCloseDialog")]#[parent(crate::system::object::Object)]pub struct ProfileCardStampMenu_ConfirmToCloseDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampMenu_DisposeEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardStampMenu{#[offset(112)]#[rename(name="m_StampRoot")]pub m_stamp_root:crate::app::profilecardstamproot::ProfileCardStampRoot, #[offset(120)]#[rename(name="m_CardRoot")]pub m_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(128)]#[rename(name="m_StampListMenuContent")]pub m_stamp_list_menu_content:crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent, #[offset(136)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(140)]#[rename(name="m_CloseCalled")]pub m_close_called:bool, #[offset(144)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(152)]#[rename(name="m_FreeStampTempListArray")]pub m_free_stamp_temp_list_array: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> > , #[offset(160)]#[rename(name="m_CurrentStampData")]pub m_current_stamp_data:crate::app::profilecardstampdata::ProfileCardStampData, #[offset(168)]#[rename(name="m_StackStampData")]pub m_stack_stamp_data:crate::app::profilecardstampdata::ProfileCardStampData, #[offset(176)]#[rename(name="m_HoldingStamp")]pub m_holding_stamp:crate::app::profilecard::ProfileCard_FreeStamp, #[offset(184)]#[rename(name="m_OverlappedStampIndex")]pub m_overlapped_stamp_index:i32, #[offset(188)]#[rename(name="m_IsFront")]pub m_is_front:bool, #[offset(192)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardstampmenu::ProfileCardStampMenu_DisposeEventHandler, #[offset(200)]#[rename(name="m_EditMode")]pub m_edit_mode:crate::app::profilecardstampmenu::ProfileCardStampMenu_EditMode, #[offset(204)]#[rename(name="m_ArrowKeyRepeatTime")]pub m_arrow_key_repeat_time:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToClearDialog.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToClearDialog")]#[parent(crate::system::object::Object)]pub struct ProfileCardStampMenu_ConfirmToClearDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_DialogMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.DialogMenuItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct ProfileCardStampMenu_DialogMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToCloseDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampmenu/ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampMenu.ConfirmToClearDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler{}
-
 }
 
 #[cfg(feature = "app-profilecardstampmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToCloseDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_and_close_event_handler:impl::core::convert::Into<crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler> ,no_save_and_close_event_handler:impl::core::convert::Into<crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler>)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226c530usize)as*mut u8,crate::app::basicdialog::BasicDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)::core::convert::Into::into(save_and_close_event_handler),(crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)::core::convert::Into::into(no_save_and_close_event_handler))}
-}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_ConfirmToCloseDialogMethods:IProfileCardStampMenu_ConfirmToCloseDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampMenu_ConfirmToCloseDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226c800usize)as*mut u8,();
-(ProfileCardStampMenu_ConfirmToCloseDialog)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]impl<__T:IProfileCardStampMenu_ConfirmToCloseDialog>IProfileCardStampMenu_ConfirmToCloseDialogMethods for __T{}
-
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToCloseDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToCloseDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardStampMenu_ConfirmToCloseDialog), ::core::stringify!(new),));
- <Self as IProfileCardStampMenu_ConfirmToCloseDialogMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_DisposeEventHandlerMethods:IProfileCardStampMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardStampMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226c840usize)as*mut u8,();
-(ProfileCardStampMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardStampMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226c860usize)as*mut u8,();
-(ProfileCardStampMenu_DisposeEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]impl<__T:IProfileCardStampMenu_DisposeEventHandler>IProfileCardStampMenu_DisposeEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardStampMenu_DisposeEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardStampMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu{#[doc="`get_m_StampSpeed()` overload"]pub fn get_m_stamp_speed()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bf38e0usize)as*mut u8,i32;
 )}
@@ -375,30 +328,6 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToClearDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_event_handler:impl::core::convert::Into<crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler>)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226c290usize)as*mut u8,crate::app::basicdialog::BasicDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)::core::convert::Into::into(yes_event_handler))}
-}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_ConfirmToClearDialogMethods:IProfileCardStampMenu_ConfirmToClearDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampMenu_ConfirmToClearDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226c520usize)as*mut u8,();
-(ProfileCardStampMenu_ConfirmToClearDialog)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]impl<__T:IProfileCardStampMenu_ConfirmToClearDialog>IProfileCardStampMenu_ConfirmToClearDialogMethods for __T{}
-
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToClearDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToClearDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardStampMenu_ConfirmToClearDialog), ::core::stringify!(new),));
- <Self as IProfileCardStampMenu_ConfirmToClearDialogMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_DialogMenuItemMethods:IProfileCardStampMenu_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardStampMenu_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x226c4e0usize)as*mut u8,();
 (ProfileCardStampMenu_DialogMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
@@ -445,6 +374,77 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToClearDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_event_handler:impl::core::convert::Into<crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler>)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226c290usize)as*mut u8,crate::app::basicdialog::BasicDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_ConfirmToClearDialogMethods:IProfileCardStampMenu_ConfirmToClearDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampMenu_ConfirmToClearDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226c520usize)as*mut u8,();
+(ProfileCardStampMenu_ConfirmToClearDialog)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]impl<__T:IProfileCardStampMenu_ConfirmToClearDialog>IProfileCardStampMenu_ConfirmToClearDialogMethods for __T{}
+
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToClearDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToClearDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampMenu_ConfirmToClearDialog), ::core::stringify!(new),));
+ <Self as IProfileCardStampMenu_ConfirmToClearDialogMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_DisposeEventHandlerMethods:IProfileCardStampMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardStampMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226c840usize)as*mut u8,();
+(ProfileCardStampMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardStampMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226c860usize)as*mut u8,();
+(ProfileCardStampMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]impl<__T:IProfileCardStampMenu_DisposeEventHandler>IProfileCardStampMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardStampMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToCloseDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler, crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_and_close_event_handler:impl::core::convert::Into<crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler> ,no_save_and_close_event_handler:impl::core::convert::Into<crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler>)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226c530usize)as*mut u8,crate::app::basicdialog::BasicDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)::core::convert::Into::into(save_and_close_event_handler),(crate::app::profilecardstampmenu::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler)::core::convert::Into::into(no_save_and_close_event_handler))}
+}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_ConfirmToCloseDialogMethods:IProfileCardStampMenu_ConfirmToCloseDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampMenu_ConfirmToCloseDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226c800usize)as*mut u8,();
+(ProfileCardStampMenu_ConfirmToCloseDialog)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]impl<__T:IProfileCardStampMenu_ConfirmToCloseDialog>IProfileCardStampMenu_ConfirmToCloseDialogMethods for __T{}
+
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToCloseDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardstampmenu")]impl ProfileCardStampMenu_ConfirmToCloseDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampMenu_ConfirmToCloseDialog), ::core::stringify!(new),));
+ <Self as IProfileCardStampMenu_ConfirmToCloseDialogMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-profilecardstampmenu")]pub trait IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandlerMethods:IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79560usize)as*mut u8,();
 (ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -471,28 +471,28 @@ this}
 #[cfg(feature = "app-profilecardstampmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardStampMenu_EditMode;
-    pub use super::ProfileCardStampMenu_ConfirmToCloseDialog;
-    pub use super::IProfileCardStampMenu_ConfirmToCloseDialog;
-    pub use super::IProfileCardStampMenu_ConfirmToCloseDialogMethods;
-    pub use super::ProfileCardStampMenu_DisposeEventHandler;
-    pub use super::IProfileCardStampMenu_DisposeEventHandler;
-    pub use super::IProfileCardStampMenu_DisposeEventHandlerMethods;
     pub use super::ProfileCardStampMenu;
     pub use super::IProfileCardStampMenu;
     pub use super::IProfileCardStampMenuMethods;
-    pub use super::ProfileCardStampMenu_ConfirmToClearDialog;
-    pub use super::IProfileCardStampMenu_ConfirmToClearDialog;
-    pub use super::IProfileCardStampMenu_ConfirmToClearDialogMethods;
     pub use super::ProfileCardStampMenu_DialogMenuItem;
     pub use super::IProfileCardStampMenu_DialogMenuItem;
     pub use super::IProfileCardStampMenu_DialogMenuItemMethods;
     pub use super::ProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler;
     pub use super::IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandler;
     pub use super::IProfileCardStampMenu_ConfirmToCloseDialog_DecideEventHandlerMethods;
+    pub use super::ProfileCardStampMenu_ConfirmToClearDialog;
+    pub use super::IProfileCardStampMenu_ConfirmToClearDialog;
+    pub use super::IProfileCardStampMenu_ConfirmToClearDialogMethods;
+    pub use super::ProfileCardStampMenu_DisposeEventHandler;
+    pub use super::IProfileCardStampMenu_DisposeEventHandler;
+    pub use super::IProfileCardStampMenu_DisposeEventHandlerMethods;
+    pub use super::ProfileCardStampMenu_ConfirmToCloseDialog;
+    pub use super::IProfileCardStampMenu_ConfirmToCloseDialog;
+    pub use super::IProfileCardStampMenu_ConfirmToCloseDialogMethods;
     pub use super::ProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler;
     pub use super::IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandler;
     pub use super::IProfileCardStampMenu_ConfirmToClearDialog_DecideEventHandlerMethods;
+    pub use super::ProfileCardStampMenu_EditMode;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

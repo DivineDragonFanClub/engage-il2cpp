@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem_CameraList.md"))]#[::unity2::class(namespace="App",name="ScriptSystem.CameraList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera>)]pub struct ScriptSystem_CameraList{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem_DebugButton.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ScriptSystem_DebugButton{pub value:i32,}
 impl::unity2::ClassIdentity for ScriptSystem_DebugButton{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ScriptSystem.DebugButton";
@@ -55,13 +58,38 @@ pub fn minus()->Self{Self{value:2048}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem.md"))]#[::unity2::class(namespace="App",name="ScriptSystem")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct ScriptSystem{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem_CameraList.md"))]#[::unity2::class(namespace="App",name="ScriptSystem.CameraList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera>)]pub struct ScriptSystem_CameraList{}
-
 }
 
 #[cfg(feature = "app-scriptsystem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-scriptsystem")]pub trait IScriptSystem_CameraListMethods:IScriptSystem_CameraList{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,tag:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ScriptSystem_CameraList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68e80usize)as*mut u8,();
+(ScriptSystem_CameraList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(tag))}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <ScriptSystem_CameraList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69020usize)as*mut u8,crate::unity_engine::camera::Camera;
+(ScriptSystem_CameraList)__receiver)}
+}
+#[doc="`Find(::unity2::Il2CppString)` overload"]fn find(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <ScriptSystem_CameraList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d690e0usize)as*mut u8,crate::unity_engine::camera::Camera;
+(ScriptSystem_CameraList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
+
+#[cfg(feature="app-scriptsystem")]impl<__T:IScriptSystem_CameraList>IScriptSystem_CameraListMethods for __T{}
+
+#[cfg(feature="app-scriptsystem")]impl ScriptSystem_CameraList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn find_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-scriptsystem")]impl ScriptSystem_CameraList{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(tag: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptSystem_CameraList), ::core::stringify!(new),));
+ <Self as IScriptSystem_CameraListMethods> ::ctor(this,tag);
+this}
+}
 
 #[cfg(feature="app-scriptsystem")]impl ScriptSystem{#[doc="`Include(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn include(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed7d70usize)as*mut u8,();
 (::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
@@ -363,44 +391,16 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-scriptsystem")]pub trait IScriptSystem_CameraListMethods:IScriptSystem_CameraList{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,tag:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ScriptSystem_CameraList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68e80usize)as*mut u8,();
-(ScriptSystem_CameraList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(tag))}
-}
-#[doc="`get_Current()` overload"]fn get_current(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <ScriptSystem_CameraList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d69020usize)as*mut u8,crate::unity_engine::camera::Camera;
-(ScriptSystem_CameraList)__receiver)}
-}
-#[doc="`Find(::unity2::Il2CppString)` overload"]fn find(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <ScriptSystem_CameraList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d690e0usize)as*mut u8,crate::unity_engine::camera::Camera;
-(ScriptSystem_CameraList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-}
-
-#[cfg(feature="app-scriptsystem")]impl<__T:IScriptSystem_CameraList>IScriptSystem_CameraListMethods for __T{}
-
-#[cfg(feature="app-scriptsystem")]impl ScriptSystem_CameraList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn find_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-scriptsystem")]impl ScriptSystem_CameraList{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(tag: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ScriptSystem_CameraList), ::core::stringify!(new),));
- <Self as IScriptSystem_CameraListMethods> ::ctor(this,tag);
-this}
-}
-
 #[cfg(feature = "app-scriptsystem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ScriptSystem_CameraList;
+    pub use super::IScriptSystem_CameraList;
+    pub use super::IScriptSystem_CameraListMethods;
     pub use super::ScriptSystem_DebugButton;
     pub use super::ScriptSystem;
     pub use super::IScriptSystem;
     pub use super::IScriptSystemMethods;
-    pub use super::ScriptSystem_CameraList;
-    pub use super::IScriptSystem_CameraList;
-    pub use super::IScriptSystem_CameraListMethods;
     pub use crate::app::scriptutil::IScriptUtil;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;

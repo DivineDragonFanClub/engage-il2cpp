@@ -13,12 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_LipSyncDataFile.md"))]#[::unity2::class(namespace="App",name="SoundSystem.LipSyncDataFile")]#[parent(crate::system::object::Object)]pub struct SoundSystem_LipSyncDataFile{#[static_field]#[rename(name="LoadDirectoryMax")]pub load_directory_max:i32, #[offset(16)]#[rename(name="m_isExpandFileData")]pub m_is_expand_file_data:bool, #[offset(24)]#[rename(name="m_lipSyncDataList")]pub m_lip_sync_data_list:crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_LipSyncData> , #[offset(32)]#[rename(name="m_rawFileHandle")]pub m_raw_file_handle: ::unity2::Array<crate::app::rawfilehandle::RawFileHandle> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ISoundParam.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ISoundParam")]pub struct SoundSystem_ISoundParam{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ResultSoundLoad_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SoundSystem_ResultSoundLoad_Status{pub value:i32,}
 impl::unity2::ClassIdentity for SoundSystem_ResultSoundLoad_Status{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SoundSystem.ResultSoundLoad.Status";
@@ -37,25 +31,22 @@ pub fn fault()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_SoundHandle.md"))]#[::unity2::class(namespace="App",name="SoundSystem.SoundHandle")]#[parent(crate::system::object::Object)]pub struct SoundSystem_SoundHandle{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ISoundPlay.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ISoundPlay")]pub struct SoundSystem_ISoundPlay{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem.md"))]#[::unity2::class(namespace="App",name="SoundSystem")]#[parent(crate::system::object::Object)]pub struct SoundSystem{#[static_field]#[rename(name="SoundHandleCount")]pub sound_handle_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_LipSyncData.md"))]#[::unity2::class(namespace="App",name="SoundSystem.LipSyncData")]#[parent(crate::system::object::Object)]pub struct SoundSystem_LipSyncData{#[offset(16)]#[rename(name="m_data")]pub m_data:crate::app::soundsystem::SoundSystem_LipSyncStructData,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ResultSoundLoad.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ResultSoundLoad")]#[parent(crate::system::object::Object)]pub struct SoundSystem_ResultSoundLoad{#[offset(16)]#[rename(name="m_status")]pub m_status:crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_LipSyncDataFile.md"))]#[::unity2::class(namespace="App",name="SoundSystem.LipSyncDataFile")]#[parent(crate::system::object::Object)]pub struct SoundSystem_LipSyncDataFile{#[static_field]#[rename(name="LoadDirectoryMax")]pub load_directory_max:i32, #[offset(16)]#[rename(name="m_isExpandFileData")]pub m_is_expand_file_data:bool, #[offset(24)]#[rename(name="m_lipSyncDataList")]pub m_lip_sync_data_list:crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_LipSyncData> , #[offset(32)]#[rename(name="m_rawFileHandle")]pub m_raw_file_handle: ::unity2::Array<crate::app::rawfilehandle::RawFileHandle> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_SoundHandle.md"))]#[::unity2::class(namespace="App",name="SoundSystem.SoundHandle")]#[parent(crate::system::object::Object)]pub struct SoundSystem_SoundHandle{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ISoundLoad.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ISoundLoad")]pub struct SoundSystem_ISoundLoad{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ResultSoundLoadList.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ResultSoundLoadList")]#[parent(crate::system::object::Object)]pub struct SoundSystem_ResultSoundLoadList{#[offset(16)]#[rename(name="m_resultList")]pub m_result_list:crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_ResultSoundLoad> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ISoundParam.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ISoundParam")]pub struct SoundSystem_ISoundParam{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_LipSyncStructData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SoundSystem_LipSyncStructData{pub m_msec:i32,pub m_width:f32,pub m_height:f32,pub m_tongue:f32,pub m_a:f32,pub m_i:f32,pub m_u:f32,pub m_e:f32,pub m_o:f32,pub m_vol:f32,}
@@ -68,10 +59,142 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for SoundSystem_LipSyncStructData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ResultSoundLoad.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ResultSoundLoad")]#[parent(crate::system::object::Object)]pub struct SoundSystem_ResultSoundLoad{#[offset(16)]#[rename(name="m_status")]pub m_status:crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem_ISoundPlay.md"))]#[::unity2::class(namespace="App",name="SoundSystem.ISoundPlay")]pub struct SoundSystem_ISoundPlay{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundsystem/SoundSystem.md"))]#[::unity2::class(namespace="App",name="SoundSystem")]#[parent(crate::system::object::Object)]pub struct SoundSystem{#[static_field]#[rename(name="SoundHandleCount")]pub sound_handle_count:i32,}
+
 }
 
 #[cfg(feature = "app-soundsystem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_LipSyncDataMethods:ISoundSystem_LipSyncData{#[doc="`get_Msec()` overload"]fn get_msec(self,)->i32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce00usize)as*mut u8,i32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_Msec(i32)` overload"]fn set_msec(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce10usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Width()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce20usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_Width(f32)` overload"]fn set_width(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce30usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Height()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce40usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_Height(f32)` overload"]fn set_height(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce50usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Tongue()` overload"]fn get_tongue(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce60usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_Tongue(f32)` overload"]fn set_tongue(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce70usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_A()` overload"]fn get_a(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce80usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_A(f32)` overload"]fn set_a(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce90usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_I()` overload"]fn get_i(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cea0usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_I(f32)` overload"]fn set_i(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ceb0usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_U()` overload"]fn get_u(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cec0usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_U(f32)` overload"]fn set_u(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ced0usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_E()` overload"]fn get_e(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cee0usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_E(f32)` overload"]fn set_e(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cef0usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_O()` overload"]fn get_o(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf00usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_O(f32)` overload"]fn set_o(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf10usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Vol()` overload"]fn get_vol(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf20usize)as*mut u8,f32;
+(SoundSystem_LipSyncData)__receiver)}
+}
+#[doc="`set_Vol(f32)` overload"]fn set_vol(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf30usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`SetData(crate::app::soundsystem::SoundSystem_LipSyncStructData)` overload"]fn set_data(self,data:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_LipSyncStructData>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf40usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver,(crate::app::soundsystem::SoundSystem_LipSyncStructData)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf60usize)as*mut u8,();
+(SoundSystem_LipSyncData)__receiver)}
+}
+}
+
+#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_LipSyncData>ISoundSystem_LipSyncDataMethods for __T{}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_LipSyncData{pub fn get_msec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_msec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_tongue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_tongue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_i_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_i_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_u_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_u_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_e_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_e_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_o_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_o_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_vol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_vol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_LipSyncData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundSystem_LipSyncData), ::core::stringify!(new),));
+ <Self as ISoundSystem_LipSyncDataMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-soundsystem")]impl SoundSystem_LipSyncDataFile{#[doc="`GetLipSyncFilePath(::unity2::Il2CppString, i32)` overload"]pub fn get_lip_sync_file_path(file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,patch_index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf70usize)as*mut u8, ::unity2::Il2CppString;
 (::unity2::Il2CppString)::core::convert::Into::into(file_name),(i32)::core::convert::Into::into(patch_index))}
@@ -123,6 +246,384 @@ pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(SoundSystem_LipSyncDataFile), ::core::stringify!(new),));
  <Self as ISoundSystem_LipSyncDataFileMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_SoundHandleMethods:ISoundSystem_SoundHandle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e540usize)as*mut u8,();
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e5d0usize)as*mut u8,();
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`GetGameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`GetEventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6b0usize)as*mut u8, ::unity2::Il2CppString;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`GetEventId()` overload"]fn get_event_id(self,)->u32{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6c0usize)as*mut u8,u32;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`GetPlayingId()` overload"]fn get_playing_id(self,)->u32{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6d0usize)as*mut u8,u32;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6e0usize)as*mut u8,bool;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6f0usize)as*mut u8,bool;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`GetCharacter()` overload"]fn get_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e700usize)as*mut u8,crate::combat::character::Character;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`GetEventCharacterMouthController()` overload"]fn get_event_character_mouth_controller(self,)->crate::app::eventcharactermouthcontroller::EventCharacterMouthController{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e710usize)as*mut u8,crate::app::eventcharactermouthcontroller::EventCharacterMouthController;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`GetLipSyncDataFileName()` overload"]fn get_lip_sync_data_file_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e720usize)as*mut u8, ::unity2::Il2CppString;
+(SoundSystem_SoundHandle)__receiver)}
+}
+#[doc="`SetCharacter(crate::combat::character::Character)` overload"]fn set_character(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e730usize)as*mut u8,();
+(SoundSystem_SoundHandle)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
+}
+#[doc="`SetEventCharacterMouthController(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)` overload"]fn set_event_character_mouth_controller(self,event_character_mouth_controller:impl::core::convert::Into<crate::app::eventcharactermouthcontroller::EventCharacterMouthController>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e740usize)as*mut u8,();
+(SoundSystem_SoundHandle)__receiver,(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)::core::convert::Into::into(event_character_mouth_controller))}
+}
+#[doc="`Stop(i32)` overload"]fn stop(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e750usize)as*mut u8,();
+(SoundSystem_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
+}
+#[doc="`Pause(i32)` overload"]fn pause(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e760usize)as*mut u8,();
+(SoundSystem_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
+}
+#[doc="`Resume(i32)` overload"]fn resume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e770usize)as*mut u8,();
+(SoundSystem_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
+}
+}
+
+#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_SoundHandle>ISoundSystem_SoundHandleMethods for __T{}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_SoundHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_event_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_playing_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_event_character_mouth_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_lip_sync_data_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_event_character_mouth_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_SoundHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundSystem_SoundHandle), ::core::stringify!(new),));
+ <Self as ISoundSystem_SoundHandleMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-soundsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundSystem_ISoundLoad_unity2_raw{use super:: * ;
+pub unsafe fn load(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Load").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Load", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn load_async(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("LoadAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","LoadAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn is_loading(this:SoundSystem_ISoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsLoading").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsLoading", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_loading_2(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsLoading").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsLoading", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn is_loaded(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsLoaded").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsLoaded", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn unload(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Unload").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Unload", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn unload_all(this:SoundSystem_ISoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnloadAll").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","UnloadAll", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reload_by_set_language(this:SoundSystem_ISoundLoad,language:crate::app::language::Language_Voices,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ReloadBySetLanguage").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ReloadBySetLanguage", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad,crate::app::language::Language_Voices, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,language,__mi)}
+pub unsafe fn prepare_event(this:SoundSystem_ISoundLoad,event_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,__mi)}
+pub unsafe fn prepare_event_2(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name_array,__mi)}
+pub unsafe fn prepare_event_async(this:SoundSystem_ISoundLoad,event_name: ::unity2::Il2CppString,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEventAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareEventAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,result_sound_load,__mi)}
+pub unsafe fn prepare_event_async_2(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEventAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareEventAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Array< ::unity2::Il2CppString> , *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name_array,result_sound_load,__mi)}
+pub unsafe fn unprepare_event(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","UnprepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name_array,__mi)}
+pub unsafe fn unprepare_event_2(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","UnprepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name_array,__mi)}
+pub unsafe fn prepare_switch(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name,__mi)}
+pub unsafe fn prepare_switch_2(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name_array,__mi)}
+pub unsafe fn prepare_switch_async(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitchAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareSwitchAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name,result_sound_load,__mi)}
+pub unsafe fn prepare_switch_async_2(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitchAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareSwitchAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name_array,result_sound_load,__mi)}
+pub unsafe fn unprepare_switch(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","UnprepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name_array,__mi)}
+pub unsafe fn unprepare_switch_2(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","UnprepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name_array,__mi)}
+pub unsafe fn clear_prepare(this:SoundSystem_ISoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ClearPrepare").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ClearPrepare", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_ISoundLoadMethods:ISoundSystem_ISoundLoad{#[doc="`Load(::unity2::Il2CppString)` overload"]fn load(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::load(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+}
+#[doc="`LoadAsync(::unity2::Il2CppString)` overload"]fn load_async(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::load_async(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::is_loading(__receiver, ::core::option::Option::None)}
+}
+#[doc="`IsLoading(::unity2::Il2CppString)` overload"]fn is_loading_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::is_loading_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+}
+#[doc="`IsLoaded(::unity2::Il2CppString)` overload"]fn is_loaded(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::is_loaded(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+}
+#[doc="`Unload(::unity2::Il2CppString)` overload"]fn unload(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::unload(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+}
+#[doc="`UnloadAll()` overload"]fn unload_all(self,)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::unload_all(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ReloadBySetLanguage(crate::app::language::Language_Voices)` overload"]fn reload_by_set_language(self,language:impl::core::convert::Into<crate::app::language::Language_Voices>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::reload_by_set_language(__receiver, ::core::convert::Into::into(language), ::core::option::Option::None)}
+}
+#[doc="`PrepareEvent(::unity2::Il2CppString)` overload"]fn prepare_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::prepare_event(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)}
+}
+#[doc="`PrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]fn prepare_event_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::prepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
+}
+#[doc="`PrepareEventAsync(::unity2::Il2CppString, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_event_async(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
+let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_event_async(__receiver, ::core::convert::Into::into(event_name),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`PrepareEventAsync(::unity2::Array<::unity2::Il2CppString>, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_event_async_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
+let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_event_async_2(__receiver, ::core::convert::Into::into(event_name_array),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`UnprepareEvent(::unity2::Il2CppString)` overload"]fn unprepare_event(self,event_name_array:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::unprepare_event(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
+}
+#[doc="`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]fn unprepare_event_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::unprepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
+}
+#[doc="`PrepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn prepare_switch(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::prepare_switch(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name), ::core::option::Option::None)}
+}
+#[doc="`PrepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn prepare_switch_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::prepare_switch_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
+}
+#[doc="`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Il2CppString, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_switch_async(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
+let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_switch_async(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_switch_async_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
+let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_switch_async_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn unprepare_switch(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::unprepare_switch(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
+}
+#[doc="`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn unprepare_switch_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::unprepare_switch_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
+}
+#[doc="`ClearPrepare()` overload"]fn clear_prepare(self,)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundSystem_ISoundLoad_unity2_raw::clear_prepare(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_ISoundLoad>ISoundSystem_ISoundLoadMethods for __T{}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_ISoundLoad{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reload_by_set_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn prepare_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn prepare_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn prepare_event_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn prepare_event_async_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn unprepare_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn unprepare_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn prepare_switch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn prepare_switch_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn prepare_switch_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn prepare_switch_async_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn unprepare_switch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn unprepare_switch_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn clear_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_ResultSoundLoadListMethods:ISoundSystem_ResultSoundLoadList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e1a0usize)as*mut u8,();
+(SoundSystem_ResultSoundLoadList)__receiver)}
+}
+#[doc="`Add(crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn add(self,result:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_ResultSoundLoad>)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e230usize)as*mut u8,();
+(SoundSystem_ResultSoundLoadList)__receiver,(crate::app::soundsystem::SoundSystem_ResultSoundLoad)::core::convert::Into::into(result))}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e290usize)as*mut u8,bool;
+(SoundSystem_ResultSoundLoadList)__receiver)}
+}
+#[doc="`IsLoadSuccess()` overload"]fn is_load_success(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e3e0usize)as*mut u8,bool;
+(SoundSystem_ResultSoundLoadList)__receiver)}
+}
+}
+
+#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_ResultSoundLoadList>ISoundSystem_ResultSoundLoadListMethods for __T{}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoadList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_load_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoadList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundSystem_ResultSoundLoadList), ::core::stringify!(new),));
+ <Self as ISoundSystem_ResultSoundLoadListMethods> ::ctor(this,);
 this}
 }
 
@@ -554,96 +1055,47 @@ pub fn set_audio_listener_position_method_info()-> & 'static::unity2::il2cpp::Me
 pub fn set_audio_listener_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
 }
 
-#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_SoundHandleMethods:ISoundSystem_SoundHandle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e540usize)as*mut u8,();
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e5d0usize)as*mut u8,();
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`GetGameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`GetEventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6b0usize)as*mut u8, ::unity2::Il2CppString;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`GetEventId()` overload"]fn get_event_id(self,)->u32{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6c0usize)as*mut u8,u32;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`GetPlayingId()` overload"]fn get_playing_id(self,)->u32{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6d0usize)as*mut u8,u32;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6e0usize)as*mut u8,bool;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e6f0usize)as*mut u8,bool;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`GetCharacter()` overload"]fn get_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e700usize)as*mut u8,crate::combat::character::Character;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`GetEventCharacterMouthController()` overload"]fn get_event_character_mouth_controller(self,)->crate::app::eventcharactermouthcontroller::EventCharacterMouthController{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e710usize)as*mut u8,crate::app::eventcharactermouthcontroller::EventCharacterMouthController;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`GetLipSyncDataFileName()` overload"]fn get_lip_sync_data_file_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e720usize)as*mut u8, ::unity2::Il2CppString;
-(SoundSystem_SoundHandle)__receiver)}
-}
-#[doc="`SetCharacter(crate::combat::character::Character)` overload"]fn set_character(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e730usize)as*mut u8,();
-(SoundSystem_SoundHandle)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
-}
-#[doc="`SetEventCharacterMouthController(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)` overload"]fn set_event_character_mouth_controller(self,event_character_mouth_controller:impl::core::convert::Into<crate::app::eventcharactermouthcontroller::EventCharacterMouthController>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e740usize)as*mut u8,();
-(SoundSystem_SoundHandle)__receiver,(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)::core::convert::Into::into(event_character_mouth_controller))}
-}
-#[doc="`Stop(i32)` overload"]fn stop(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e750usize)as*mut u8,();
-(SoundSystem_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`Pause(i32)` overload"]fn pause(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e760usize)as*mut u8,();
-(SoundSystem_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`Resume(i32)` overload"]fn resume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e770usize)as*mut u8,();
-(SoundSystem_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
+#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoad{#[doc="`LoadAsyncCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]pub fn load_async_callback(bank_id:impl::core::convert::Into<u32> ,p_in_memory_bank_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,load_result:impl::core::convert::Into<crate::root::akresult::AKRESULT> ,cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e100usize)as*mut u8,();
+(u32)::core::convert::Into::into(bank_id),(::unity2::IntPtr)::core::convert::Into::into(p_in_memory_bank_ptr),(crate::root::akresult::AKRESULT)::core::convert::Into::into(load_result),(crate::system::object::Object)::core::convert::Into::into(cookie))}
 }
 }
 
-#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_SoundHandle>ISoundSystem_SoundHandleMethods for __T{}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_SoundHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_event_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_playing_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_event_character_mouth_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_lip_sync_data_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_event_character_mouth_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_ResultSoundLoadMethods:ISoundSystem_ResultSoundLoad{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0b0usize)as*mut u8,();
+(SoundSystem_ResultSoundLoad)__receiver)}
+}
+#[doc="`SetStatus(crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status)` overload"]fn set_status(self,status:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status>)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0c0usize)as*mut u8,();
+(SoundSystem_ResultSoundLoad)__receiver,(crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status)::core::convert::Into::into(status))}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0d0usize)as*mut u8,bool;
+(SoundSystem_ResultSoundLoad)__receiver)}
+}
+#[doc="`IsLoadSuccess()` overload"]fn is_load_success(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0e0usize)as*mut u8,bool;
+(SoundSystem_ResultSoundLoad)__receiver)}
+}
+#[doc="`IsLoadFault()` overload"]fn is_load_fault(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0f0usize)as*mut u8,bool;
+(SoundSystem_ResultSoundLoad)__receiver)}
+}
 }
 
-#[cfg(feature="app-soundsystem")]impl SoundSystem_SoundHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_ResultSoundLoad>ISoundSystem_ResultSoundLoadMethods for __T{}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoad{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_load_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_load_fault_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_async_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoad{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SoundSystem_SoundHandle), ::core::stringify!(new),));
- <Self as ISoundSystem_SoundHandleMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SoundSystem_ResultSoundLoad), ::core::stringify!(new),));
+ <Self as ISoundSystem_ResultSoundLoadMethods> ::ctor(this,);
 this}
 }
 
@@ -834,490 +1286,38 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_LipSyncDataMethods:ISoundSystem_LipSyncData{#[doc="`get_Msec()` overload"]fn get_msec(self,)->i32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce00usize)as*mut u8,i32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_Msec(i32)` overload"]fn set_msec(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce10usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Width()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce20usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_Width(f32)` overload"]fn set_width(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce30usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Height()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce40usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_Height(f32)` overload"]fn set_height(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce50usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Tongue()` overload"]fn get_tongue(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce60usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_Tongue(f32)` overload"]fn set_tongue(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce70usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_A()` overload"]fn get_a(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce80usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_A(f32)` overload"]fn set_a(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ce90usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_I()` overload"]fn get_i(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cea0usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_I(f32)` overload"]fn set_i(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ceb0usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_U()` overload"]fn get_u(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cec0usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_U(f32)` overload"]fn set_u(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7ced0usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_E()` overload"]fn get_e(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cee0usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_E(f32)` overload"]fn set_e(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cef0usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_O()` overload"]fn get_o(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf00usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_O(f32)` overload"]fn set_o(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf10usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Vol()` overload"]fn get_vol(self,)->f32{unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf20usize)as*mut u8,f32;
-(SoundSystem_LipSyncData)__receiver)}
-}
-#[doc="`set_Vol(f32)` overload"]fn set_vol(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf30usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`SetData(crate::app::soundsystem::SoundSystem_LipSyncStructData)` overload"]fn set_data(self,data:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_LipSyncStructData>)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf40usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver,(crate::app::soundsystem::SoundSystem_LipSyncStructData)::core::convert::Into::into(data))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cf60usize)as*mut u8,();
-(SoundSystem_LipSyncData)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_LipSyncData>ISoundSystem_LipSyncDataMethods for __T{}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_LipSyncData{pub fn get_msec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_msec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_tongue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_tongue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_i_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_i_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_u_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_u_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_e_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_e_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_o_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn set_o_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn get_vol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn set_vol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_LipSyncData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundSystem_LipSyncData), ::core::stringify!(new),));
- <Self as ISoundSystem_LipSyncDataMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoad{#[doc="`LoadAsyncCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]pub fn load_async_callback(bank_id:impl::core::convert::Into<u32> ,p_in_memory_bank_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,load_result:impl::core::convert::Into<crate::root::akresult::AKRESULT> ,cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e100usize)as*mut u8,();
-(u32)::core::convert::Into::into(bank_id),(::unity2::IntPtr)::core::convert::Into::into(p_in_memory_bank_ptr),(crate::root::akresult::AKRESULT)::core::convert::Into::into(load_result),(crate::system::object::Object)::core::convert::Into::into(cookie))}
-}
-}
-
-#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_ResultSoundLoadMethods:ISoundSystem_ResultSoundLoad{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0b0usize)as*mut u8,();
-(SoundSystem_ResultSoundLoad)__receiver)}
-}
-#[doc="`SetStatus(crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status)` overload"]fn set_status(self,status:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status>)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0c0usize)as*mut u8,();
-(SoundSystem_ResultSoundLoad)__receiver,(crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status)::core::convert::Into::into(status))}
-}
-#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0d0usize)as*mut u8,bool;
-(SoundSystem_ResultSoundLoad)__receiver)}
-}
-#[doc="`IsLoadSuccess()` overload"]fn is_load_success(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0e0usize)as*mut u8,bool;
-(SoundSystem_ResultSoundLoad)__receiver)}
-}
-#[doc="`IsLoadFault()` overload"]fn is_load_fault(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e0f0usize)as*mut u8,bool;
-(SoundSystem_ResultSoundLoad)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_ResultSoundLoad>ISoundSystem_ResultSoundLoadMethods for __T{}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoad{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_load_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_load_fault_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn load_async_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoad{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundSystem_ResultSoundLoad), ::core::stringify!(new),));
- <Self as ISoundSystem_ResultSoundLoadMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-soundsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundSystem_ISoundLoad_unity2_raw{use super:: * ;
-pub unsafe fn load(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Load").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Load", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn load_async(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("LoadAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","LoadAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn is_loading(this:SoundSystem_ISoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsLoading").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsLoading", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_loading_2(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsLoading").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsLoading", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn is_loaded(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsLoaded").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsLoaded", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn unload(this:SoundSystem_ISoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Unload").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Unload", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn unload_all(this:SoundSystem_ISoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnloadAll").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UnloadAll", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn reload_by_set_language(this:SoundSystem_ISoundLoad,language:crate::app::language::Language_Voices,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ReloadBySetLanguage").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ReloadBySetLanguage", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad,crate::app::language::Language_Voices, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,language,__mi)}
-pub unsafe fn prepare_event(this:SoundSystem_ISoundLoad,event_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name,__mi)}
-pub unsafe fn prepare_event_2(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name_array,__mi)}
-pub unsafe fn prepare_event_async(this:SoundSystem_ISoundLoad,event_name: ::unity2::Il2CppString,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEventAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareEventAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name,result_sound_load,__mi)}
-pub unsafe fn prepare_event_async_2(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareEventAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareEventAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Array< ::unity2::Il2CppString> , *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name_array,result_sound_load,__mi)}
-pub unsafe fn unprepare_event(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UnprepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name_array,__mi)}
-pub unsafe fn unprepare_event_2(this:SoundSystem_ISoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UnprepareEvent", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name_array,__mi)}
-pub unsafe fn prepare_switch(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,switch_group_name,switch_name,__mi)}
-pub unsafe fn prepare_switch_2(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,switch_group_name,switch_name_array,__mi)}
-pub unsafe fn prepare_switch_async(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitchAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareSwitchAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,switch_group_name,switch_name,result_sound_load,__mi)}
-pub unsafe fn prepare_switch_async_2(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareSwitchAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareSwitchAsync", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,switch_group_name,switch_name_array,result_sound_load,__mi)}
-pub unsafe fn unprepare_switch(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UnprepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,switch_group_name,switch_name_array,__mi)}
-pub unsafe fn unprepare_switch_2(this:SoundSystem_ISoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UnprepareSwitch").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UnprepareSwitch", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,switch_group_name,switch_name_array,__mi)}
-pub unsafe fn clear_prepare(this:SoundSystem_ISoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ClearPrepare").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ClearPrepare", <SoundSystem_ISoundLoad as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(SoundSystem_ISoundLoad, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_ISoundLoadMethods:ISoundSystem_ISoundLoad{#[doc="`Load(::unity2::Il2CppString)` overload"]fn load(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::load(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
-}
-#[doc="`LoadAsync(::unity2::Il2CppString)` overload"]fn load_async(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::load_async(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
-}
-#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::is_loading(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsLoading(::unity2::Il2CppString)` overload"]fn is_loading_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::is_loading_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
-}
-#[doc="`IsLoaded(::unity2::Il2CppString)` overload"]fn is_loaded(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::is_loaded(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
-}
-#[doc="`Unload(::unity2::Il2CppString)` overload"]fn unload(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::unload(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
-}
-#[doc="`UnloadAll()` overload"]fn unload_all(self,)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::unload_all(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ReloadBySetLanguage(crate::app::language::Language_Voices)` overload"]fn reload_by_set_language(self,language:impl::core::convert::Into<crate::app::language::Language_Voices>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::reload_by_set_language(__receiver, ::core::convert::Into::into(language), ::core::option::Option::None)}
-}
-#[doc="`PrepareEvent(::unity2::Il2CppString)` overload"]fn prepare_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::prepare_event(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)}
-}
-#[doc="`PrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]fn prepare_event_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::prepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
-}
-#[doc="`PrepareEventAsync(::unity2::Il2CppString, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_event_async(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_event_async(__receiver, ::core::convert::Into::into(event_name),__out_0.as_mut_ptr(), ::core::option::Option::None)}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`PrepareEventAsync(::unity2::Array<::unity2::Il2CppString>, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_event_async_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_event_async_2(__receiver, ::core::convert::Into::into(event_name_array),__out_0.as_mut_ptr(), ::core::option::Option::None)}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`UnprepareEvent(::unity2::Il2CppString)` overload"]fn unprepare_event(self,event_name_array:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::unprepare_event(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
-}
-#[doc="`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]fn unprepare_event_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::unprepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
-}
-#[doc="`PrepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn prepare_switch(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::prepare_switch(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name), ::core::option::Option::None)}
-}
-#[doc="`PrepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn prepare_switch_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::prepare_switch_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
-}
-#[doc="`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Il2CppString, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_switch_async(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_switch_async(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name),__out_0.as_mut_ptr(), ::core::option::Option::None)}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_switch_async_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={__SoundSystem_ISoundLoad_unity2_raw::prepare_switch_async_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array),__out_0.as_mut_ptr(), ::core::option::Option::None)}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn unprepare_switch(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::unprepare_switch(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
-}
-#[doc="`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn unprepare_switch_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::unprepare_switch_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
-}
-#[doc="`ClearPrepare()` overload"]fn clear_prepare(self,)->(){unsafe{let __receiver= <SoundSystem_ISoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SoundSystem_ISoundLoad_unity2_raw::clear_prepare(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_ISoundLoad>ISoundSystem_ISoundLoadMethods for __T{}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_ISoundLoad{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_loading_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn unload_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn reload_by_set_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn prepare_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn prepare_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn prepare_event_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn prepare_event_async_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn unprepare_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn unprepare_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn prepare_switch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn prepare_switch_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn prepare_switch_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn prepare_switch_async_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn unprepare_switch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn unprepare_switch_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn clear_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-}
-
-#[cfg(feature="app-soundsystem")]pub trait ISoundSystem_ResultSoundLoadListMethods:ISoundSystem_ResultSoundLoadList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e1a0usize)as*mut u8,();
-(SoundSystem_ResultSoundLoadList)__receiver)}
-}
-#[doc="`Add(crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn add(self,result:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_ResultSoundLoad>)->(){unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e230usize)as*mut u8,();
-(SoundSystem_ResultSoundLoadList)__receiver,(crate::app::soundsystem::SoundSystem_ResultSoundLoad)::core::convert::Into::into(result))}
-}
-#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e290usize)as*mut u8,bool;
-(SoundSystem_ResultSoundLoadList)__receiver)}
-}
-#[doc="`IsLoadSuccess()` overload"]fn is_load_success(self,)->bool{unsafe{let __receiver= <SoundSystem_ResultSoundLoadList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e3e0usize)as*mut u8,bool;
-(SoundSystem_ResultSoundLoadList)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundsystem")]impl<__T:ISoundSystem_ResultSoundLoadList>ISoundSystem_ResultSoundLoadListMethods for __T{}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoadList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_load_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-soundsystem")]impl SoundSystem_ResultSoundLoadList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundSystem_ResultSoundLoadList), ::core::stringify!(new),));
- <Self as ISoundSystem_ResultSoundLoadListMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-soundsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SoundSystem_LipSyncDataFile;
-    pub use super::ISoundSystem_LipSyncDataFile;
-    pub use super::ISoundSystem_LipSyncDataFileMethods;
-    pub use super::SoundSystem_ISoundParam;
-    pub use super::ISoundSystem_ISoundParam;
-    pub use super::ISoundSystem_ISoundParamMethods;
     pub use super::SoundSystem_ResultSoundLoad_Status;
-    pub use super::SoundSystem_SoundHandle;
-    pub use super::ISoundSystem_SoundHandle;
-    pub use super::ISoundSystem_SoundHandleMethods;
-    pub use super::SoundSystem_ISoundPlay;
-    pub use super::ISoundSystem_ISoundPlay;
-    pub use super::ISoundSystem_ISoundPlayMethods;
-    pub use super::SoundSystem;
-    pub use super::ISoundSystem;
-    pub use super::ISoundSystemMethods;
     pub use super::SoundSystem_LipSyncData;
     pub use super::ISoundSystem_LipSyncData;
     pub use super::ISoundSystem_LipSyncDataMethods;
-    pub use super::SoundSystem_ResultSoundLoad;
-    pub use super::ISoundSystem_ResultSoundLoad;
-    pub use super::ISoundSystem_ResultSoundLoadMethods;
+    pub use super::SoundSystem_LipSyncDataFile;
+    pub use super::ISoundSystem_LipSyncDataFile;
+    pub use super::ISoundSystem_LipSyncDataFileMethods;
+    pub use super::SoundSystem_SoundHandle;
+    pub use super::ISoundSystem_SoundHandle;
+    pub use super::ISoundSystem_SoundHandleMethods;
     pub use super::SoundSystem_ISoundLoad;
     pub use super::ISoundSystem_ISoundLoad;
     pub use super::ISoundSystem_ISoundLoadMethods;
     pub use super::SoundSystem_ResultSoundLoadList;
     pub use super::ISoundSystem_ResultSoundLoadList;
     pub use super::ISoundSystem_ResultSoundLoadListMethods;
+    pub use super::SoundSystem_ISoundParam;
+    pub use super::ISoundSystem_ISoundParam;
+    pub use super::ISoundSystem_ISoundParamMethods;
     pub use super::SoundSystem_LipSyncStructData;
+    pub use super::SoundSystem_ResultSoundLoad;
+    pub use super::ISoundSystem_ResultSoundLoad;
+    pub use super::ISoundSystem_ResultSoundLoadMethods;
+    pub use super::SoundSystem_ISoundPlay;
+    pub use super::ISoundSystem_ISoundPlay;
+    pub use super::ISoundSystem_ISoundPlayMethods;
+    pub use super::SoundSystem;
+    pub use super::ISoundSystem;
+    pub use super::ISoundSystemMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

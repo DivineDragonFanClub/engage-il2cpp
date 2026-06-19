@@ -37,23 +37,15 @@ pub fn off()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset.AnimationPlayableAssetUpgrade")]#[parent(crate::system::object::Object)]pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct AnimationPlayableAsset{#[offset(24)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::animationclip::AnimationClip, #[offset(32)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="m_EulerAngles")]pub m_euler_angles:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_UseTrackMatchFields")]pub m_use_track_match_fields:bool, #[offset(60)]#[rename(name="m_MatchTargetFields")]pub m_match_target_fields:crate::unity_engine::timeline::matchtargetfields::MatchTargetFields, #[offset(64)]#[rename(name="m_RemoveStartOffset")]pub m_remove_start_offset:bool, #[offset(65)]#[rename(name="m_ApplyFootIK")]pub m_apply_foot_ik:bool, #[offset(68)]#[rename(name="m_Loop")]pub m_loop:crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode, #[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(76)]#[rename(name="m_Version")]pub m_version:i32, #[offset(80)]#[rename(name="m_Rotation")]pub m_rotation:crate::unity_engine::quaternion::Quaternion,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset.AnimationPlayableAssetUpgrade")]#[parent(crate::system::object::Object)]pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-animationplayableasset-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade{#[doc="`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"]pub fn convert_rotation_to_euler(asset:impl::core::convert::Into<crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d0d50usize)as*mut u8,();
-(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)::core::convert::Into::into(asset))}
-}
-}
-
-#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade{pub fn convert_rotation_to_euler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, bool, crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"]pub fn create_playable_2(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip> ,position_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,euler_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,remove_start_offset:impl::core::convert::Into<bool> ,mode:impl::core::convert::Into<crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode> ,apply_foot_ik:impl::core::convert::Into<bool> ,r#loop:impl::core::convert::Into<crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode>)->crate::unity_engine::playables::playable::Playable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d04d0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
 (crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(clip),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position_offset),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(euler_offset),(bool)::core::convert::Into::into(remove_start_offset),(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(apply_foot_ik),(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)::core::convert::Into::into(r#loop))}
@@ -245,15 +237,23 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade{#[doc="`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"]pub fn convert_rotation_to_euler(asset:impl::core::convert::Into<crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d0d50usize)as*mut u8,();
+(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)::core::convert::Into::into(asset))}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade{pub fn convert_rotation_to_euler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-timeline-animationplayableasset")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimationPlayableAsset_LoopMode;
-    pub use super::AnimationPlayableAsset_AnimationPlayableAssetUpgrade;
-    pub use super::IAnimationPlayableAsset_AnimationPlayableAssetUpgrade;
     pub use super::AnimationPlayableAsset;
     pub use super::IAnimationPlayableAsset;
     pub use super::IAnimationPlayableAssetMethods;
+    pub use super::AnimationPlayableAsset_AnimationPlayableAssetUpgrade;
+    pub use super::IAnimationPlayableAsset_AnimationPlayableAssetUpgrade;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/moviesequence/MovieSequence.md"))]#[::unity2::class(namespace="App",name="MovieSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::moviesequence::MovieSequence>)]pub struct MovieSequence{#[static_field]#[rename(name="PrepareRetryCountLimit")]pub prepare_retry_count_limit:i32, #[offset(120)]#[rename(name="m_MoviePlayer")]pub m_movie_player:crate::app::movieplayer::MoviePlayer, #[offset(128)]#[rename(name="m_IsFadeOutInStart")]pub m_is_fade_out_in_start:bool, #[offset(129)]#[rename(name="m_IsWaitForPlayGOP")]pub m_is_wait_for_play_gop:bool, #[offset(130)]#[rename(name="m_IsPlayGOPFromTitle")]pub m_is_play_gop_from_title:bool, #[offset(132)]#[rename(name="m_PrepareRetryCount")]pub m_prepare_retry_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/moviesequence/MovieSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MovieSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MovieSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MovieSequence.Label";
@@ -36,6 +33,9 @@ pub fn prepare()->Self{Self{value:1}
 pub fn end()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/moviesequence/MovieSequence.md"))]#[::unity2::class(namespace="App",name="MovieSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::moviesequence::MovieSequence>)]pub struct MovieSequence{#[static_field]#[rename(name="PrepareRetryCountLimit")]pub prepare_retry_count_limit:i32, #[offset(120)]#[rename(name="m_MoviePlayer")]pub m_movie_player:crate::app::movieplayer::MoviePlayer, #[offset(128)]#[rename(name="m_IsFadeOutInStart")]pub m_is_fade_out_in_start:bool, #[offset(129)]#[rename(name="m_IsWaitForPlayGOP")]pub m_is_wait_for_play_gop:bool, #[offset(130)]#[rename(name="m_IsPlayGOPFromTitle")]pub m_is_play_gop_from_title:bool, #[offset(132)]#[rename(name="m_PrepareRetryCount")]pub m_prepare_retry_count:i32,}
 
 }
 
@@ -279,10 +279,10 @@ this}
 #[cfg(feature = "app-moviesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MovieSequence_Label;
     pub use super::MovieSequence;
     pub use super::IMovieSequence;
     pub use super::IMovieSequenceMethods;
-    pub use super::MovieSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

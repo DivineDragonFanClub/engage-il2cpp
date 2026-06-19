@@ -33,34 +33,22 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct UnitSelectAllUnitMenu_ConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog.ConfirmNoDialogItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence.EndEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_EntrustMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.EntrustMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectAllUnitMenu_EntrustMenuItem{#[offset(100)]#[rename(name="m_Result")]pub m_result:crate::app::sortieentrustresult::SortieEntrustResult,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitSelectAllUnitMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct UnitSelectAllUnitMenu_ConfirmSequence{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog.ConfirmNoDialogItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_StoreAllMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.StoreAllMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectAllUnitMenu_StoreAllMenuItem{#[offset(100)]#[rename(name="m_IsSuccess")]pub m_is_success:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_EntrustMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.EntrustMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectAllUnitMenu_EntrustMenuItem{#[offset(100)]#[rename(name="m_Result")]pub m_result:crate::app::sortieentrustresult::SortieEntrustResult,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence.FailureEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence.CheckEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler{}
@@ -83,57 +71,69 @@ impl UnitSelectAllUnitMenu_ConfirmSequence_Label{pub fn end()->Self{Self{value:0
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem{#[offset(112)]#[rename(name="m_DecideEventHander")]pub m_decide_event_hander:crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence.EndEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmSequence.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct UnitSelectAllUnitMenu_ConfirmSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_StoreAllMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.StoreAllMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectAllUnitMenu_StoreAllMenuItem{#[offset(100)]#[rename(name="m_IsSuccess")]pub m_is_success:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct UnitSelectAllUnitMenu_ConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectallunitmenu/UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectAllUnitMenu.ConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-unitselectallunitmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,msg:impl::core::convert::Into< ::unity2::Il2CppString> ,yes:impl::core::convert::Into< ::unity2::Il2CppString> ,decide:impl::core::convert::Into<crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b54300usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(msg),(::unity2::Il2CppString)::core::convert::Into::into(yes),(crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide))}
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f46f0usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4710usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler)__receiver)}
 }
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmDialogMethods:IUnitSelectAllUnitMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b54560usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler>IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods for __T{}
 
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmDialog>IUnitSelectAllUnitMenu_ConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list);
-this}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5820usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::procinst::ProcInst)` overload"]fn invoke(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4c80usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5dc00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenuMethods:IUnitSelectAllUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5dde0usize)as*mut u8,();
+(UnitSelectAllUnitMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu>IUnitSelectAllUnitMenuMethods for __T{}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenuMethods> ::ctor(this,menu_item_list);
 this}
 }
 
@@ -157,29 +157,6 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 ::{}
  failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem), ::core::stringify!(new),));
  <Self as IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItemMethods> ::ctor(this,text);
-this}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5880usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5590usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -226,27 +203,123 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5dc00usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f58e0usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::procinst::ProcInst)` overload"]fn invoke(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5220usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenuMethods:IUnitSelectAllUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5dde0usize)as*mut u8,();
-(UnitSelectAllUnitMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods for __T{}
 
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu>IUnitSelectAllUnitMenuMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenuMethods> ::ctor(this,menu_item_list);
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5820usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::procinst::ProcInst)` overload"]fn invoke(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4c80usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f57a0usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->bool{unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4ff0usize)as*mut u8,bool;
+(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods for __T{}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods:IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,decide:impl::core::convert::Into<crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4980usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f49c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f49d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem>IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods for __T{}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,decide:crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods> ::ctor(this,text,decide);
+this}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5880usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5590usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods for __T{}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -323,26 +396,27 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f58e0usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::procinst::ProcInst)` overload"]fn invoke(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5220usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,msg:impl::core::convert::Into< ::unity2::Il2CppString> ,yes:impl::core::convert::Into< ::unity2::Il2CppString> ,decide:impl::core::convert::Into<crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b54300usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(msg),(::unity2::Il2CppString)::core::convert::Into::into(yes),(crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide))}
 }
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmDialogMethods:IUnitSelectAllUnitMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b54560usize)as*mut u8,();
+(UnitSelectAllUnitMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmDialog>IUnitSelectAllUnitMenu_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IUnitSelectAllUnitMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list);
 this}
 }
 
@@ -369,113 +443,27 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f57a0usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->bool{unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4ff0usize)as*mut u8,bool;
-(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler>IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods:IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,decide:impl::core::convert::Into<crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4980usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f49c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f49d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem>IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,decide:crate::app::unitselectallunitmenu::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods> ::ctor(this,text,decide);
-this}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]pub trait IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods:IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f46f0usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f4710usize)as*mut u8,();
-(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl<__T:IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler>IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitselectallunitmenu")]impl UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-unitselectallunitmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitSelectAllUnitMenu_ConfirmDialog;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialogMethods;
-    pub use super::UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods;
-    pub use super::UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItemMethods;
-    pub use super::UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods;
-    pub use super::UnitSelectAllUnitMenu_EntrustMenuItem;
-    pub use super::IUnitSelectAllUnitMenu_EntrustMenuItem;
-    pub use super::IUnitSelectAllUnitMenu_EntrustMenuItemMethods;
+    pub use super::UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods;
     pub use super::UnitSelectAllUnitMenu;
     pub use super::IUnitSelectAllUnitMenu;
     pub use super::IUnitSelectAllUnitMenuMethods;
-    pub use super::UnitSelectAllUnitMenu_ConfirmSequence;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmSequenceMethods;
-    pub use super::UnitSelectAllUnitMenu_StoreAllMenuItem;
-    pub use super::IUnitSelectAllUnitMenu_StoreAllMenuItem;
-    pub use super::IUnitSelectAllUnitMenu_StoreAllMenuItemMethods;
+    pub use super::UnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItem;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmNoDialogItemMethods;
+    pub use super::UnitSelectAllUnitMenu_EntrustMenuItem;
+    pub use super::IUnitSelectAllUnitMenu_EntrustMenuItem;
+    pub use super::IUnitSelectAllUnitMenu_EntrustMenuItemMethods;
     pub use super::UnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler;
     pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandler;
     pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_FailureEventHandlerMethods;
-    pub use super::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandlerMethods;
+    pub use super::UnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_DecideEventHandlerMethods;
     pub use super::UnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler;
     pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandler;
     pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_CheckEventHandlerMethods;
@@ -483,9 +471,21 @@ pub mod prelude {
     pub use super::UnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem;
     pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItem;
     pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_ConfirmYesDialogItemMethods;
-    pub use super::UnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandler;
-    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_CloseEventHandlerMethods;
+    pub use super::UnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence_EndEventHandlerMethods;
+    pub use super::UnitSelectAllUnitMenu_ConfirmSequence;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmSequence;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmSequenceMethods;
+    pub use super::UnitSelectAllUnitMenu_StoreAllMenuItem;
+    pub use super::IUnitSelectAllUnitMenu_StoreAllMenuItem;
+    pub use super::IUnitSelectAllUnitMenu_StoreAllMenuItemMethods;
+    pub use super::UnitSelectAllUnitMenu_ConfirmDialog;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialogMethods;
+    pub use super::UnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandler;
+    pub use super::IUnitSelectAllUnitMenu_ConfirmDialog_DecideEventHandlerMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

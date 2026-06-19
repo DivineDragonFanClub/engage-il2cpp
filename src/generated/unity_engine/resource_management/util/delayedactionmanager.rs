@@ -21,9 +21,6 @@ use crate::unity_engine::resource_management::util::componentsingleton_1_2::{Com
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="DelayedActionManager")]#[parent(crate::unity_engine::resource_management::util::componentsingleton_1_2::ComponentSingleton_1_2<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager>)]pub struct DelayedActionManager{#[offset(24)]#[rename(name="m_Actions")]pub m_actions: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo> > , #[offset(32)]#[rename(name="m_DelayedActions")]pub m_delayed_actions:crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo> , #[offset(40)]#[rename(name="m_NodeCache")]pub m_node_cache:crate::system::collections::generic::stack_1::Stack_1<crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo> > , #[offset(48)]#[rename(name="m_CollectionIndex")]pub m_collection_index:i32, #[offset(52)]#[rename(name="m_DestroyOnCompletion")]pub m_destroy_on_completion:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager_DelegateInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DelayedActionManager_DelegateInfo{pub m_id:i32,pub m_delegate:crate::system::delegate::Delegate,pub m_target: ::unity2::Array<crate::system::object::Object>,}
 impl::unity2::ClassIdentity for DelayedActionManager_DelegateInfo{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.Util";
 const NAME: &'static str="DelayedActionManager.DelegateInfo";
@@ -42,10 +39,90 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Id");
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="DelayedActionManager")]#[parent(crate::unity_engine::resource_management::util::componentsingleton_1_2::ComponentSingleton_1_2<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager>)]pub struct DelayedActionManager{#[offset(24)]#[rename(name="m_Actions")]pub m_actions: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo> > , #[offset(32)]#[rename(name="m_DelayedActions")]pub m_delayed_actions:crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo> , #[offset(40)]#[rename(name="m_NodeCache")]pub m_node_cache:crate::system::collections::generic::stack_1::Stack_1<crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::unity_engine::resource_management::util::delayedactionmanager::DelayedActionManager_DelegateInfo> > , #[offset(48)]#[rename(name="m_CollectionIndex")]pub m_collection_index:i32, #[offset(52)]#[rename(name="m_DestroyOnCompletion")]pub m_destroy_on_completion:bool,}
+
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-resource_management-util-delayedactionmanager")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DelayedActionManager_DelegateInfo_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::delegate::Delegate as::unity2::IlType> ::il_type(), <f32 as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_invocation_time{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"get_InvocationTime",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"get_InvocationTime",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_invocation_time{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<f32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"set_InvocationTime",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"set_InvocationTime",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"Invoke",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
+}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-util-delayedactionmanager")]impl DelayedActionManager_DelegateInfo{#[doc="`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn ctor(&mut self,d:impl::core::convert::Into<crate::system::delegate::Delegate> ,invocation_time:impl::core::convert::Into<f32> ,p:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_ctor::get_method_info().method_ptr),();
+(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo,(crate::system::delegate::Delegate)::core::convert::Into::into(d),(f32)::core::convert::Into::into(invocation_time),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(p))}
+}
+#[doc="`get_InvocationTime()` overload"]pub fn get_invocation_time(&mut self,)->f32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_get_invocation_time::get_method_info().method_ptr),f32;
+(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo)}
+}
+#[doc="`set_InvocationTime(f32)` overload"]pub fn set_invocation_time(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_set_invocation_time::get_method_info().method_ptr),();
+(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_to_string::get_method_info().method_ptr), ::unity2::Il2CppString;
+(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo)}
+}
+#[doc="`Invoke()` overload"]pub fn invoke(&mut self,)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_invoke::get_method_info().method_ptr),();
+(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo)}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-util-delayedactionmanager")]impl DelayedActionManager_DelegateInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_invocation_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_invocation_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature="unity_engine-resource_management-util-delayedactionmanager")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DelayedActionManager_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_node{use super:: * ;
@@ -229,90 +306,13 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="unity_engine-resource_management-util-delayedactionmanager")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DelayedActionManager_DelegateInfo_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::delegate::Delegate as::unity2::IlType> ::il_type(), <f32 as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_invocation_time{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"get_InvocationTime",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"get_InvocationTime",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_invocation_time{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<f32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"set_InvocationTime",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"set_InvocationTime",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"ToString",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::class(),"Invoke",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <DelayedActionManager_DelegateInfo as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-util-delayedactionmanager")]impl DelayedActionManager_DelegateInfo{#[doc="`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn ctor(&mut self,d:impl::core::convert::Into<crate::system::delegate::Delegate> ,invocation_time:impl::core::convert::Into<f32> ,p:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_ctor::get_method_info().method_ptr),();
-(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo,(crate::system::delegate::Delegate)::core::convert::Into::into(d),(f32)::core::convert::Into::into(invocation_time),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(p))}
-}
-#[doc="`get_InvocationTime()` overload"]pub fn get_invocation_time(&mut self,)->f32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_get_invocation_time::get_method_info().method_ptr),f32;
-(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo)}
-}
-#[doc="`set_InvocationTime(f32)` overload"]pub fn set_invocation_time(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_set_invocation_time::get_method_info().method_ptr),();
-(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_to_string::get_method_info().method_ptr), ::unity2::Il2CppString;
-(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo)}
-}
-#[doc="`Invoke()` overload"]pub fn invoke(&mut self,)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DelayedActionManager_DelegateInfo_unity2_raw::__lookup_invoke::get_method_info().method_ptr),();
-(*mut DelayedActionManager_DelegateInfo)self as*mut DelayedActionManager_DelegateInfo)}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-util-delayedactionmanager")]impl DelayedActionManager_DelegateInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_invocation_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_invocation_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
 #[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DelayedActionManager_DelegateInfo;
     pub use super::DelayedActionManager;
     pub use super::IDelayedActionManager;
     pub use super::IDelayedActionManagerMethods;
-    pub use super::DelayedActionManager_DelegateInfo;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

@@ -19,6 +19,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardAlbumMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardAlbumMenu{#[offset(112)]#[rename(name="m_ChangeProfileEventHandler")]pub m_change_profile_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler, #[offset(128)]#[rename(name="m_CardRoot")]pub m_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(136)]#[rename(name="m_ProfileListIndex")]pub m_profile_list_index:i32, #[offset(144)]#[rename(name="m_ProfileCard")]pub m_profile_card:crate::app::profilecard::ProfileCard, #[offset(152)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(156)]#[rename(name="m_CloseCalled")]pub m_close_called:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardAlbumMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardAlbumMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardAlbumMenu.Result2";
@@ -35,18 +41,35 @@ pub fn cancel()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardAlbumMenu{#[offset(112)]#[rename(name="m_ChangeProfileEventHandler")]pub m_change_profile_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler, #[offset(128)]#[rename(name="m_CardRoot")]pub m_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(136)]#[rename(name="m_ProfileListIndex")]pub m_profile_list_index:i32, #[offset(144)]#[rename(name="m_ProfileCard")]pub m_profile_card:crate::app::profilecard::ProfileCard, #[offset(152)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(156)]#[rename(name="m_CloseCalled")]pub m_close_called:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu_ChangeProfileEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu.ChangeProfileEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardAlbumMenu_ChangeProfileEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardAlbumMenu_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardalbummenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-profilecardalbummenu")]pub trait IProfileCardAlbumMenu_DecideEventHandlerMethods:IProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2266e90usize)as*mut u8,();
+(ProfileCardAlbumMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2)` overload"]fn invoke(self,result2:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2266eb0usize)as*mut u8,();
+(ProfileCardAlbumMenu_DecideEventHandler)__receiver,(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2)::core::convert::Into::into(result2))}
+}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl<__T:IProfileCardAlbumMenu_DecideEventHandler>IProfileCardAlbumMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardroot::ProfileCardRoot, i32, crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler, crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,profiled_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,initial_profile_list_index:impl::core::convert::Into<i32> ,change_profile_event_handler:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler>)->crate::app::profilecardalbummenu::ProfileCardAlbumMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230a8c0usize)as*mut u8,crate::app::profilecardalbummenu::ProfileCardAlbumMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profiled_card_root),(i32)::core::convert::Into::into(initial_profile_list_index),(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler)::core::convert::Into::into(change_profile_event_handler),(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
@@ -185,42 +208,19 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-profilecardalbummenu")]pub trait IProfileCardAlbumMenu_DecideEventHandlerMethods:IProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2266e90usize)as*mut u8,();
-(ProfileCardAlbumMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2)` overload"]fn invoke(self,result2:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2266eb0usize)as*mut u8,();
-(ProfileCardAlbumMenu_DecideEventHandler)__receiver,(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2)::core::convert::Into::into(result2))}
-}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]impl<__T:IProfileCardAlbumMenu_DecideEventHandler>IProfileCardAlbumMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardAlbumMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardAlbumMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-profilecardalbummenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardAlbumMenu_Result2;
-    pub use super::ProfileCardAlbumMenu;
-    pub use super::IProfileCardAlbumMenu;
-    pub use super::IProfileCardAlbumMenuMethods;
-    pub use super::ProfileCardAlbumMenu_ChangeProfileEventHandler;
-    pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandler;
-    pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods;
     pub use super::ProfileCardAlbumMenu_DecideEventHandler;
     pub use super::IProfileCardAlbumMenu_DecideEventHandler;
     pub use super::IProfileCardAlbumMenu_DecideEventHandlerMethods;
+    pub use super::ProfileCardAlbumMenu;
+    pub use super::IProfileCardAlbumMenu;
+    pub use super::IProfileCardAlbumMenuMethods;
+    pub use super::ProfileCardAlbumMenu_Result2;
+    pub use super::ProfileCardAlbumMenu_ChangeProfileEventHandler;
+    pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandler;
+    pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

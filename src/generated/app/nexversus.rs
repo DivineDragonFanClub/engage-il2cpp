@@ -27,85 +27,99 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.GetMetaDataListFromPersistenceSlotSequence`1.Label";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_CasualMetaDataEndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.CasualMetaDataEndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NexVersus_CasualMetaDataEndCallback{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_RatingSpotId.md"))]#[::unity2::class(namespace="App",name="NexVersus.RatingSpotId")]#[parent(crate::system::object::Object)]pub struct NexVersus_RatingSpotId{#[static_field]#[rename(name="Win")]pub win:i8, #[static_field]#[rename(name="Lose")]pub lose:i8,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_EndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.EndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NexVersus_EndCallback{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeReplaySequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_ChangeReplaySequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.ChangeReplaySequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_ChangeReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
+impl NexVersus_ChangeReplaySequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_AddRatingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_AddRatingSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_AddRatingSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.AddRatingSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_AddRatingSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_AddRatingSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadCasualSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadCasualSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_UploadCasualSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.UploadCasualSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_UploadCasualSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_UploadCasualSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchCasualSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.SearchCasualSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_SearchCasualSequence{#[offset(112)]#[rename(name="m_Results")]pub m_results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.GetMetaDataFromPersistenceSlotSequence`1.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
 }
 pub fn end()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.SearchSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_SearchSequence{#[offset(112)]#[rename(name="m_Results")]pub m_results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> , #[offset(120)]#[rename(name="m_DataType")]pub m_data_type:u16,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeReplayMetaSequence_Mode{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Mode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.ChangeReplayMetaSequence.Mode";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusRankedMetaDataSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeVersusRankedMetaDataSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_ChangeVersusRankedMetaDataSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.ChangeVersusRankedMetaDataSequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_ChangeVersusRankedMetaDataSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexVersus_ChangeReplayMetaSequence_Mode{pub fn principal()->Self{Self{value:0}
+impl NexVersus_ChangeVersusRankedMetaDataSequence_Label{pub fn error()->Self{Self{value:0}
 }
-pub fn data_id()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="NexVersus.NexSequenceBase.ConfirmRetryDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{#[offset(112)]#[rename(name="m_Label")]pub m_label:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadMetaDataSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_DownloadMetaDataSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.DownloadMetaDataSequence`1.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaDataSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
-}
-pub fn error_app()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
-}
-pub fn end()->Self{Self{value:2,_phantom: ::core::marker::PhantomData}
+pub fn end()->Self{Self{value:1}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadMetaSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_DownloadMetaSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_DataId")]pub m_data_id:u64, #[rename(name="m_DataType")]pub m_data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_TargetSlotList_Results.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_TargetSlotList_Results{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_TargetSlotList_Results{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.TargetSlotList.Results";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_TargetSlotList_Results{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_TargetSlotList_Results{pub fn none()->Self{Self{value: -1}
-}
-pub fn valid()->Self{Self{value:0}
-}
-pub fn error_not_found()->Self{Self{value:1}
-}
-pub fn error_under_reviewing()->Self{Self{value:2}
-}
-pub fn error()->Self{Self{value:3}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeVersusDataSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_ChangeVersusDataSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_DataId")]pub m_data_id:u64, #[rename(name="m_Data")]pub m_data:T0,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
@@ -129,180 +143,79 @@ pub fn end()->Self{Self{value:2,_phantom: ::core::marker::PhantomData}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadCasualSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.UploadCasualSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_UploadCasualSequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(120)]#[rename(name="m_Data")]pub m_data:crate::app::versusservercasualdata::VersusServerCasualData,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.GetMetaDataFromPersistenceSlotSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_SlotId")]pub m_slot_id:u16, #[rename(name="m_PrincipalId")]pub m_principal_id:u64,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeVersusDataSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_ChangeVersusDataSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_DataId")]pub m_data_id:u64, #[rename(name="m_Data")]pub m_data:T0,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReportMetaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadReportMetaSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_UploadReportMetaSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.UploadReportMetaSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_UploadReportMetaSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_UploadReportMetaSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn error_app()->Self{Self{value:1}
-}
-pub fn end()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_RankedMetaDataEndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.RankedMetaDataEndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NexVersus_RankedMetaDataEndCallback{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchCasualSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_SearchCasualSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_SearchCasualSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.SearchCasualSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_SearchCasualSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_SearchCasualSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.GetRankedMetaDataFromPersistenceSlotSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ReportSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ReportSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ReportSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_ScreenShotId")]pub m_screen_shot_id:u64, #[offset(136)]#[rename(name="m_Reason")]pub m_reason: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_Language")]pub m_language: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_IsNotSendSucceed")]pub m_is_not_send_succeed:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.CheckAccessibleSlotSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_CheckAccessibleSlotSequence{#[offset(112)]#[rename(name="m_TargetInfoList")]pub m_target_info_list:crate::app::nexversus::NexVersus_TargetSlotList, #[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, #[offset(128)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::app::nexversus::NexVersus_EndCallback,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadMetaSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_DownloadMetaSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.DownloadMetaSequence`1.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
-}
-pub fn error_app()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
-}
-pub fn end()->Self{Self{value:2,_phantom: ::core::marker::PhantomData}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeVersusDataSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_ChangeVersusDataSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.ChangeVersusDataSequence`1.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_ChangeVersusDataSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl<T0: ::unity2::ClassIdentity>NexVersus_ChangeVersusDataSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
-}
-pub fn end()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_TargetSlotList.md"))]#[::unity2::class(namespace="App",name="NexVersus.TargetSlotList")]#[parent(crate::system::object::Object)]pub struct NexVersus_TargetSlotList{#[offset(16)]#[rename(name="m_Dict")]pub m_dict:crate::system::collections::generic::dictionary_2::Dictionary_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_NexSequenceBase.md"))]#[::unity2::class(namespace="App",name="NexVersus.NexSequenceBase")]#[parent(crate::app::procinst::ProcInst)]pub struct NexVersus_NexSequenceBase{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReplaySequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.UploadReplaySequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_UploadReplaySequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(120)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverreplaydata::VersusServerReplayData, #[offset(128)]#[rename(name="m_Slot")]pub m_slot:u16, #[offset(136)]#[rename(name="m_ExistsMetaData")]pub m_exists_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(144)]#[rename(name="m_PrincipalId")]pub m_principal_id:u64, #[offset(152)]#[rename(name="m_ResultData")]pub m_result_data:crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadReplaySequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_DownloadReplaySequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.DownloadReplaySequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_DownloadReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_DownloadReplaySequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeReplayMetaSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.ChangeReplayMetaSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_ChangeReplayMetaSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.GetReplayMetaDataFromPersistenceSlotSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadMetaDataSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_DownloadMetaDataSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_PrincipalID")]pub m_principal_id:u64, #[rename(name="m_Mode")]pub m_mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> , #[rename(name="m_EndCallback")]pub m_end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0> , #[rename(name="m_ResultMeta")]pub m_result_meta:T0, #[rename(name="m_Info")]pub m_info:crate::app::nexversus::NexVersus_ResultInfo,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_DownloadSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_DataId")]pub m_data_id:u64, #[rename(name="m_Result")]pub m_result:T0,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_AddRatingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_AddRatingSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_AddRatingSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.AddRatingSequence.Label";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeUpdatedTimeSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeUpdatedTimeSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_ChangeUpdatedTimeSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.ChangeUpdatedTimeSequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexVersus_AddRatingSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_ChangeUpdatedTimeSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexVersus_AddRatingSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
+impl NexVersus_ChangeUpdatedTimeSequence_Label{pub fn end()->Self{Self{value:0}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaSequence_1_DataType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadMetaSequence_1_DataType<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_DownloadMetaSequence_1_DataType<T0>{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.DownloadMetaSequence`1.DataType";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_AddRatingSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.AddRatingSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_AddRatingSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_MapResult")]pub m_map_result:crate::app::versus::Versus_MapResult,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeReplayMetaSequence_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.ChangeReplayMetaSequence.Mode";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaSequence_1_DataType<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1_DataType<T0>{pub fn casual()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
+impl NexVersus_ChangeReplayMetaSequence_Mode{pub fn principal()->Self{Self{value:0}
 }
-pub fn ranked()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
+pub fn data_id()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus.md"))]#[::unity2::class(namespace="App",name="NexVersus")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexversus::NexVersus>)]pub struct NexVersus{#[static_field]#[rename(name="Period")]pub period:u16, #[static_field]#[rename(name="MaxSearchCount")]pub max_search_count:u32, #[static_field]#[rename(name="MaxRatingSlot")]pub max_rating_slot:u32, #[offset(28)]#[rename(name="m_LastResult")]pub m_last_result:crate::app::nexversus::NexVersus_Results, #[offset(32)]#[rename(name="m_LastResultMessage")]pub m_last_result_message: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_LastUploadedDataId")]pub m_last_uploaded_data_id:u64, #[offset(48)]#[rename(name="m_LastPersistenceMetaData")]pub m_last_persistence_meta_data:crate::app::versusservermetadata::VersusServerMetaData, #[offset(56)]#[rename(name="m_LastPersistenceRatingList")]pub m_last_persistence_rating_list:crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> , #[offset(64)]#[rename(name="m_LastPersistenceDataType")]pub m_last_persistence_data_type:u16, #[offset(72)]#[rename(name="m_LastPersistenceReplayMetaData")]pub m_last_persistence_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(80)]#[rename(name="m_LastPersistenceReportMetaData")]pub m_last_persistence_report_meta_data:crate::app::versusserverreportmetadata::VersusServerReportMetaData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_NexSequenceBase.md"))]#[::unity2::class(namespace="App",name="NexVersus.NexSequenceBase")]#[parent(crate::app::procinst::ProcInst)]pub struct NexVersus_NexSequenceBase{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplaySequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeReplaySequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ChangeReplaySequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(120)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverreplaydata::VersusServerReplayData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_RatingData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NexVersus_RatingData{pub total_value:i64,pub count:u32,}
+impl::unity2::ClassIdentity for NexVersus_RatingData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.RatingData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_RatingData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_UploadSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.UploadSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_UploadSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_UploadSequence_Label{pub fn post()->Self{Self{value:0}
+}
+pub fn error()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
 }
 }
 
@@ -327,125 +240,89 @@ pub fn end()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeUpdatedTimeSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeUpdatedTimeSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_ChangeUpdatedTimeSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.ChangeUpdatedTimeSequence.Label";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchCasualSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_SearchCasualSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_SearchCasualSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.SearchCasualSequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexVersus_ChangeUpdatedTimeSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_SearchCasualSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexVersus_ChangeUpdatedTimeSequence_Label{pub fn end()->Self{Self{value:0}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadReplaySequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_UploadReplaySequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.UploadReplaySequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_UploadReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_UploadReplaySequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-pub fn post()->Self{Self{value:2}
-}
-pub fn invalid()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_RatingSpotId.md"))]#[::unity2::class(namespace="App",name="NexVersus.RatingSpotId")]#[parent(crate::system::object::Object)]pub struct NexVersus_RatingSpotId{#[static_field]#[rename(name="Win")]pub win:i8, #[static_field]#[rename(name="Lose")]pub lose:i8,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataListFromPersistenceSlotSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.GetMetaDataListFromPersistenceSlotSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_PrincipalIdList")]pub m_principal_id_list:crate::system::collections::generic::list_1::List_1<u64> , #[rename(name="m_SlotId")]pub m_slot_id:u16, #[rename(name="m_ResultList")]pub m_result_list:crate::system::collections::generic::list_1::List_1<T0> , #[rename(name="m_ResultRatingList")]pub m_result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> > ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog.md"))]#[::unity2::class(namespace="App",name="NexVersus.NexSequenceBase.ConfirmRetryDialog")]#[parent(crate::system::object::Object)]pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_AddRatingSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.AddRatingSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_AddRatingSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_MapResult")]pub m_map_result:crate::app::versus::Versus_MapResult,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadCasualSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadCasualSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_UploadCasualSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.UploadCasualSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_UploadCasualSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_UploadCasualSequence_Label{pub fn error()->Self{Self{value:0}
+impl NexVersus_SearchCasualSequence_Label{pub fn error()->Self{Self{value:0}
 }
 pub fn end()->Self{Self{value:1}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_UploadSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.UploadSequence.Label";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplayMetaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeReplayMetaSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_ChangeReplayMetaSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.ChangeReplayMetaSequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexVersus_UploadSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_ChangeReplayMetaSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexVersus_UploadSequence_Label{pub fn post()->Self{Self{value:0}
+impl NexVersus_ChangeReplayMetaSequence_Label{pub fn error()->Self{Self{value:0}
 }
-pub fn error()->Self{Self{value:1}
+pub fn end()->Self{Self{value:1}
 }
-pub fn end()->Self{Self{value:2}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_CheckAccessibleSlotSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_CheckAccessibleSlotSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.CheckAccessibleSlotSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_CheckAccessibleSlotSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_CheckAccessibleSlotSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.GetMetaDataListFromPersistenceSlotSequence`1.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
+}
+pub fn end()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadMetaDataSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_DownloadMetaDataSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.DownloadMetaDataSequence`1.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaDataSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
+}
+pub fn error_app()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
+}
+pub fn end()->Self{Self{value:2,_phantom: ::core::marker::PhantomData}
 }
 }
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetReplayMetaDataFromPersistenceSlotSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.GetReplayMetaDataFromPersistenceSlotSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_GetReplayMetaDataFromPersistenceSlotSequence{#[static_field]#[rename(name="AllSlot")]pub all_slot:u16, #[offset(112)]#[rename(name="m_PrincipalId")]pub m_principal_id:u64, #[offset(120)]#[rename(name="m_SlotId")]pub m_slot_id:u16, #[offset(128)]#[rename(name="m_PersistenceDataId")]pub m_persistence_data_id:u64, #[offset(136)]#[rename(name="m_ResultData")]pub m_result_data:crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_SearchSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_SearchSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.SearchSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_SearchSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_SearchSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_CasualMetaDataEndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.CasualMetaDataEndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NexVersus_CasualMetaDataEndCallback{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.UploadSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_UploadSequence{#[offset(112)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(128)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(136)]#[rename(name="m_DataType")]pub m_data_type:u16, #[offset(144)]#[rename(name="m_PNGBytes")]pub m_png_bytes: ::unity2::Array<u8> , #[offset(152)]#[rename(name="m_PNGDataId")]pub m_png_data_id:u64,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.GetRankedMetaDataFromPersistenceSlotSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_Results.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_Results{pub value:i32,}
@@ -470,22 +347,6 @@ pub fn failed_different_type()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeReplaySequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_ChangeReplaySequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.ChangeReplaySequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_ChangeReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_ChangeReplaySequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadType{pub value:i32,}
 impl::unity2::ClassIdentity for NexVersus_UploadType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="NexVersus.UploadType";
@@ -504,42 +365,7 @@ pub fn overwrite()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReportMetaSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.UploadReportMetaSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_UploadReportMetaSequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreportmetadata::VersusServerReportMetaData, #[offset(120)]#[rename(name="m_Type")]pub m_type:crate::app::nexversus::NexVersus_UploadType,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeMetaDataTypeSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ChangeMetaDataTypeSequence{#[offset(112)]#[rename(name="m_TargetType")]pub m_target_type:crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence_TargetType, #[offset(120)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(128)]#[rename(name="m_TargetPrincipalId")]pub m_target_principal_id:u64, #[offset(136)]#[rename(name="m_TargetSlotId")]pub m_target_slot_id:u16, #[offset(138)]#[rename(name="m_DataType")]pub m_data_type:u16,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_CheckAccessibleSlotSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_CheckAccessibleSlotSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.CheckAccessibleSlotSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexVersus_CheckAccessibleSlotSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexVersus_CheckAccessibleSlotSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.GetMetaDataFromPersistenceSlotSequence`1.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
-}
-pub fn end()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
-}
-}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeMetaDataTypeSequence_Label{pub value:i32,}
@@ -558,7 +384,159 @@ pub fn end()->Self{Self{value:1}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ReportSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ReportSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ReportSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_ScreenShotId")]pub m_screen_shot_id:u64, #[offset(136)]#[rename(name="m_Reason")]pub m_reason: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_Language")]pub m_language: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_IsNotSendSucceed")]pub m_is_not_send_succeed:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.UploadSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_UploadSequence{#[offset(112)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(128)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(136)]#[rename(name="m_DataType")]pub m_data_type:u16, #[offset(144)]#[rename(name="m_PNGBytes")]pub m_png_bytes: ::unity2::Array<u8> , #[offset(152)]#[rename(name="m_PNGDataId")]pub m_png_data_id:u64,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadMetaSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_DownloadMetaSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.DownloadMetaSequence`1.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
+}
+pub fn error_app()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
+}
+pub fn end()->Self{Self{value:2,_phantom: ::core::marker::PhantomData}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.GetRankedMetaDataFromPersistenceSlotSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReplaySequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.UploadReplaySequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_UploadReplaySequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(120)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverreplaydata::VersusServerReplayData, #[offset(128)]#[rename(name="m_Slot")]pub m_slot:u16, #[offset(136)]#[rename(name="m_ExistsMetaData")]pub m_exists_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(144)]#[rename(name="m_PrincipalId")]pub m_principal_id:u64, #[offset(152)]#[rename(name="m_ResultData")]pub m_result_data:crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.SearchSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_SearchSequence{#[offset(112)]#[rename(name="m_Results")]pub m_results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> , #[offset(120)]#[rename(name="m_DataType")]pub m_data_type:u16,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadReplaySequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadReplaySequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_DownloadReplaySequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_Result")]pub m_result:crate::app::versusserverreplaydata::VersusServerReplayData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplayMetaSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeReplayMetaSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ChangeReplayMetaSequence{#[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::nexversus::NexVersus_ChangeReplayMetaSequence_Mode, #[offset(120)]#[rename(name="m_TargetPrincipalId")]pub m_target_principal_id:u64, #[offset(128)]#[rename(name="m_TargetSlotId")]pub m_target_slot_id:u16, #[offset(136)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(144)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(152)]#[rename(name="m_IsSetMetaParam")]pub m_is_set_meta_param:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaSequence_1_DataType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadMetaSequence_1_DataType<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_DownloadMetaSequence_1_DataType<T0>{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.DownloadMetaSequence`1.DataType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_DownloadMetaSequence_1_DataType<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1_DataType<T0>{pub fn casual()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
+}
+pub fn ranked()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="NexVersus.NexSequenceBase.ConfirmRetryDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{#[offset(112)]#[rename(name="m_Label")]pub m_label:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_TargetSlotList_Results.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_TargetSlotList_Results{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_TargetSlotList_Results{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.TargetSlotList.Results";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_TargetSlotList_Results{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_TargetSlotList_Results{pub fn none()->Self{Self{value: -1}
+}
+pub fn valid()->Self{Self{value:0}
+}
+pub fn error_not_found()->Self{Self{value:1}
+}
+pub fn error_under_reviewing()->Self{Self{value:2}
+}
+pub fn error()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ReplaySlotMetaResultData.md"))]#[::unity2::class(namespace="App",name="NexVersus.ReplaySlotMetaResultData")]#[parent(crate::system::object::Object)]pub struct NexVersus_ReplaySlotMetaResultData{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReportMetaSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.UploadReportMetaSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_UploadReportMetaSequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreportmetadata::VersusServerReportMetaData, #[offset(120)]#[rename(name="m_Type")]pub m_type:crate::app::nexversus::NexVersus_UploadType,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReportMetaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadReportMetaSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_UploadReportMetaSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.UploadReportMetaSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_UploadReportMetaSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_UploadReportMetaSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn error_app()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.GetRankedMetaDataFromPersistenceSlotSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ResultInfo.md"))]#[::unity2::class(namespace="App",name="NexVersus.ResultInfo")]#[parent(crate::system::object::Object)]pub struct NexVersus_ResultInfo{#[offset(16)]#[rename(name="m_IsValid")]pub m_is_valid:bool, #[offset(24)]#[rename(name="m_DataType")]pub m_data_type:u16,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadReplaySequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_DownloadReplaySequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.DownloadReplaySequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_DownloadReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_DownloadReplaySequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusDataSequence_1_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeVersusDataSequence_1_Label<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for NexVersus_ChangeVersusDataSequence_1_Label<T0>{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.ChangeVersusDataSequence`1.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for NexVersus_ChangeVersusDataSequence_1_Label<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl<T0: ::unity2::ClassIdentity>NexVersus_ChangeVersusDataSequence_1_Label<T0>{pub fn error()->Self{Self{value:0,_phantom: ::core::marker::PhantomData}
+}
+pub fn end()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_DownloadMetaDataSequence_1_Mode<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
@@ -577,63 +555,77 @@ pub fn ranked()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadReplaySequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadReplaySequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_DownloadReplaySequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_Result")]pub m_result:crate::app::versusserverreplaydata::VersusServerReplayData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataFromPersistenceSlotSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.GetMetaDataFromPersistenceSlotSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_SlotId")]pub m_slot_id:u16, #[rename(name="m_PrincipalId")]pub m_principal_id:u64,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence_TargetType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeMetaDataTypeSequence_TargetType{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_ChangeMetaDataTypeSequence_TargetType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.ChangeMetaDataTypeSequence.TargetType";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_UploadReplaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_UploadReplaySequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_UploadReplaySequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.UploadReplaySequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexVersus_ChangeMetaDataTypeSequence_TargetType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_UploadReplaySequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexVersus_ChangeMetaDataTypeSequence_TargetType{pub fn principal_slot()->Self{Self{value:0}
+impl NexVersus_UploadReplaySequence_Label{pub fn error()->Self{Self{value:0}
 }
-pub fn data_id()->Self{Self{value:1}
+pub fn end()->Self{Self{value:1}
+}
+pub fn post()->Self{Self{value:2}
+}
+pub fn invalid()->Self{Self{value:3}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusRankedMetaDataSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeVersusRankedMetaDataSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ChangeVersusRankedMetaDataSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(128)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_NexSequenceBase_ConfirmRetryDialog.md"))]#[::unity2::class(namespace="App",name="NexVersus.NexSequenceBase.ConfirmRetryDialog")]#[parent(crate::system::object::Object)]pub struct NexVersus_NexSequenceBase_ConfirmRetryDialog{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusRankedMetaDataSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeVersusRankedMetaDataSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexVersus_ChangeVersusRankedMetaDataSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.ChangeVersusRankedMetaDataSequence.Label";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_TargetSlotList.md"))]#[::unity2::class(namespace="App",name="NexVersus.TargetSlotList")]#[parent(crate::system::object::Object)]pub struct NexVersus_TargetSlotList{#[offset(16)]#[rename(name="m_Dict")]pub m_dict:crate::system::collections::generic::dictionary_2::Dictionary_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.GetReplayMetaDataFromPersistenceSlotSequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexVersus_ChangeVersusRankedMetaDataSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexVersus_ChangeVersusRankedMetaDataSequence_Label{pub fn error()->Self{Self{value:0}
+impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label{pub fn error()->Self{Self{value:0}
 }
 pub fn end()->Self{Self{value:1}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchCasualSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.SearchCasualSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_SearchCasualSequence{#[offset(112)]#[rename(name="m_Results")]pub m_results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_SearchSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_SearchSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_SearchSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.SearchSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexVersus_SearchSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexVersus_SearchSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplayMetaSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeReplayMetaSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ChangeReplayMetaSequence{#[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::nexversus::NexVersus_ChangeReplayMetaSequence_Mode, #[offset(120)]#[rename(name="m_TargetPrincipalId")]pub m_target_principal_id:u64, #[offset(128)]#[rename(name="m_TargetSlotId")]pub m_target_slot_id:u16, #[offset(136)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(144)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(152)]#[rename(name="m_IsSetMetaParam")]pub m_is_set_meta_param:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_GetMetaDataListFromPersistenceSlotSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.GetMetaDataListFromPersistenceSlotSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_PrincipalIdList")]pub m_principal_id_list:crate::system::collections::generic::list_1::List_1<u64> , #[rename(name="m_SlotId")]pub m_slot_id:u16, #[rename(name="m_ResultList")]pub m_result_list:crate::system::collections::generic::list_1::List_1<T0> , #[rename(name="m_ResultRatingList")]pub m_result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> > ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus.md"))]#[::unity2::class(namespace="App",name="NexVersus")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexversus::NexVersus>)]pub struct NexVersus{#[static_field]#[rename(name="Period")]pub period:u16, #[static_field]#[rename(name="MaxSearchCount")]pub max_search_count:u32, #[static_field]#[rename(name="MaxRatingSlot")]pub max_rating_slot:u32, #[offset(28)]#[rename(name="m_LastResult")]pub m_last_result:crate::app::nexversus::NexVersus_Results, #[offset(32)]#[rename(name="m_LastResultMessage")]pub m_last_result_message: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_LastUploadedDataId")]pub m_last_uploaded_data_id:u64, #[offset(48)]#[rename(name="m_LastPersistenceMetaData")]pub m_last_persistence_meta_data:crate::app::versusservermetadata::VersusServerMetaData, #[offset(56)]#[rename(name="m_LastPersistenceRatingList")]pub m_last_persistence_rating_list:crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> , #[offset(64)]#[rename(name="m_LastPersistenceDataType")]pub m_last_persistence_data_type:u16, #[offset(72)]#[rename(name="m_LastPersistenceReplayMetaData")]pub m_last_persistence_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(80)]#[rename(name="m_LastPersistenceReportMetaData")]pub m_last_persistence_report_meta_data:crate::app::versusserverreportmetadata::VersusServerReportMetaData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_RankedMetaDataEndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.RankedMetaDataEndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NexVersus_RankedMetaDataEndCallback{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_EndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.EndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NexVersus_EndCallback{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeReplaySequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeReplaySequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ChangeReplaySequence{#[offset(112)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(120)]#[rename(name="m_Data")]pub m_data:crate::app::versusserverreplaydata::VersusServerReplayData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.CheckAccessibleSlotSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_CheckAccessibleSlotSequence{#[offset(112)]#[rename(name="m_TargetInfoList")]pub m_target_info_list:crate::app::nexversus::NexVersus_TargetSlotList, #[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, #[offset(128)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::app::nexversus::NexVersus_EndCallback,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeUpdatedTimeSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeUpdatedTimeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexVersus_ChangeUpdatedTimeSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadMetaDataSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_DownloadMetaDataSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_PrincipalID")]pub m_principal_id:u64, #[rename(name="m_Mode")]pub m_mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> , #[rename(name="m_EndCallback")]pub m_end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0> , #[rename(name="m_ResultMeta")]pub m_result_meta:T0, #[rename(name="m_Info")]pub m_info:crate::app::nexversus::NexVersus_ResultInfo,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_CheckAccessibleSlotSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_CheckAccessibleSlotSequence_Mode{pub value:i32,}
@@ -652,100 +644,125 @@ pub fn ranked()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_EndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadMetaDataSequence`1.EndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct NexVersus_DownloadMetaDataSequence_1_EndCallback<T0: ::unity2::ClassIdentity>{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeVersusRankedMetaDataSequence.md"))]#[::unity2::class(namespace="App",name="NexVersus.ChangeVersusRankedMetaDataSequence")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]pub struct NexVersus_ChangeVersusRankedMetaDataSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(128)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ReplaySlotMetaResultData.md"))]#[::unity2::class(namespace="App",name="NexVersus.ReplaySlotMetaResultData")]#[parent(crate::system::object::Object)]pub struct NexVersus_ReplaySlotMetaResultData{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaSequence_1.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadMetaSequence`1")]#[parent(crate::app::nexversus::NexVersus_NexSequenceBase)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct NexVersus_DownloadMetaSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_DataId")]pub m_data_id:u64, #[rename(name="m_DataType")]pub m_data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_RatingData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NexVersus_RatingData{pub total_value:i64,pub count:u32,}
-impl::unity2::ClassIdentity for NexVersus_RatingData{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexVersus.RatingData";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_ChangeMetaDataTypeSequence_TargetType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexVersus_ChangeMetaDataTypeSequence_TargetType{pub value:i32,}
+impl::unity2::ClassIdentity for NexVersus_ChangeMetaDataTypeSequence_TargetType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexVersus.ChangeMetaDataTypeSequence.TargetType";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexVersus_RatingData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexVersus_ChangeMetaDataTypeSequence_TargetType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+impl NexVersus_ChangeMetaDataTypeSequence_TargetType{pub fn principal_slot()->Self{Self{value:0}
+}
+pub fn data_id()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexversus/NexVersus_DownloadMetaDataSequence_1_EndCallback.md"))]#[::unity2::class(namespace="App",name="NexVersus.DownloadMetaDataSequence`1.EndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct NexVersus_DownloadMetaDataSequence_1_EndCallback<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "app-nexversus-types")]
 pub use __types::*;
 
-#[cfg(feature="app-nexversus")]impl NexVersus_SearchSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>, u16)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> > ,data_type:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22590b0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)::core::convert::Into::into(results),(u16)::core::convert::Into::into(data_type))}
+#[cfg(feature="app-nexversus")]pub trait INexVersus_CasualMetaDataEndCallbackMethods:INexVersus_CasualMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NexVersus_CasualMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224f630usize)as*mut u8,();
+(NexVersus_CasualMetaDataEndCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusservercasualmetadata::VersusServerCasualMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,meta_data:impl::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> ,info:impl::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>)->(){unsafe{let __receiver= <NexVersus_CasualMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224e4c0usize)as*mut u8,();
+(NexVersus_CasualMetaDataEndCallback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)::core::convert::Into::into(meta_data),(crate::app::nexversus::NexVersus_ResultInfo)::core::convert::Into::into(info))}
 }
 }
 
-#[cfg(feature="app-nexversus")]pub trait INexVersus_SearchSequenceMethods:INexVersus_SearchSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>, u16)` overload"]fn ctor(self,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> > ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_SearchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2258b60usize)as*mut u8,();
-(NexVersus_SearchSequence)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)::core::convert::Into::into(results),(u16)::core::convert::Into::into(data_type))}
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_CasualMetaDataEndCallback>INexVersus_CasualMetaDataEndCallbackMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_CasualMetaDataEndCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
-#[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <NexVersus_SearchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2258bb0usize)as*mut u8,();
-(NexVersus_SearchSequence)__receiver)}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_CasualMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_CasualMetaDataEndCallback), ::core::stringify!(new),));
+ <Self as INexVersus_CasualMetaDataEndCallbackMethods> ::ctor(this,object,method);
+this}
 }
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_SearchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22590a0usize)as*mut u8,();
-(NexVersus_SearchSequence)__receiver)}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_EndCallbackMethods:INexVersus_EndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NexVersus_EndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2254960usize)as*mut u8,();
+(NexVersus_EndCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::nexversus::NexVersus_Results)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results>)->(){unsafe{let __receiver= <NexVersus_EndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22537d0usize)as*mut u8,();
+(NexVersus_EndCallback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result))}
 }
 }
 
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_SearchSequence>INexVersus_SearchSequenceMethods for __T{}
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_EndCallback>INexVersus_EndCallbackMethods for __T{}
 
-#[cfg(feature="app-nexversus")]impl NexVersus_SearchSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-nexversus")]impl NexVersus_EndCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_EndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_EndCallback), ::core::stringify!(new),));
+ <Self as INexVersus_EndCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_SearchCasualSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22585c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(results))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_SearchCasualSequenceMethods:INexVersus_SearchCasualSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]fn ctor(self,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{let __receiver= <NexVersus_SearchCasualSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22580b0usize)as*mut u8,();
+(NexVersus_SearchCasualSequence)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(results))}
+}
+#[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <NexVersus_SearchCasualSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22580f0usize)as*mut u8,();
+(NexVersus_SearchCasualSequence)__receiver)}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_SearchCasualSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22585b0usize)as*mut u8,();
+(NexVersus_SearchCasualSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_SearchCasualSequence>INexVersus_SearchCasualSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_SearchCasualSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn search_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-nexversus")]impl NexVersus_SearchSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>, u16)` — overload selector"]pub fn new(results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,data_type:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-nexversus")]impl NexVersus_SearchCasualSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` — overload selector"]pub fn new(results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(NexVersus_SearchSequence), ::core::stringify!(new),));
- <Self as INexVersus_SearchSequenceMethods> ::ctor(this,results,data_type);
+ failed to instantiate", ::core::stringify!(NexVersus_SearchCasualSequence), ::core::stringify!(new),));
+ <Self as INexVersus_SearchCasualSequenceMethods> ::ctor(this,results);
 this}
 }
 
-#[cfg(feature="app-nexversus")]pub trait INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods:INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9260usize)as*mut u8,();
-(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem)__receiver,(i32)::core::convert::Into::into(label))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9290usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem)__receiver)}
-}
-#[doc="`GetSequence()` overload"]fn get_sequence(self,)->crate::app::procinst::ProcInst{unsafe{let __receiver= <NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed92c0usize)as*mut u8,crate::app::procinst::ProcInst;
-(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem>INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(label:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods> ::ctor(this,label);
-this}
-}
-
-#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,data_id:u64,data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)->();
+#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_ChangeVersusDataSequence_1<T0>{#[doc="`.ctor(u64, T0)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,data_id:u64,data:T0)->();
  #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
- #[doc="`GetData()` overload"]#[method(name="GetData",args=0)]pub fn get_data(self,)->();
- #[doc="`IsValidDataType(u16)` overload"]#[method(name="IsValidDataType",args=1)]pub fn is_valid_data_type(self,data_type:u16)->bool;
- #[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]#[method(name="CreateBind",args=3)]pub fn create_bind(super_:crate::app::procinst::ProcInst,data_id:u64,data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)->();
+ #[doc="`ChangeData()` overload"]#[method(name="ChangeData",args=0)]pub fn change_data(self,)->();
+ #[doc="`CreateBind(crate::app::procinst::ProcInst, u64, T0)` overload"]#[method(name="CreateBind",args=3)]pub fn create_bind(super_:crate::app::procinst::ProcInst,data_id:u64,data:T0)->();
 }
 
-#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` — overload selector"]pub fn new(data_id:u64,data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_ChangeVersusDataSequence_1<T0>{#[doc="`.ctor(u64, T0)` — overload selector"]pub fn new(data_id:u64,data:T0)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(NexVersus_DownloadMetaSequence_1), ::core::stringify!(new),));
- <Self as INexVersus_DownloadMetaSequence_1Methods<T0> > ::ctor(this,data_id,data_type);
+ failed to instantiate", ::core::stringify!(NexVersus_ChangeVersusDataSequence_1), ::core::stringify!(new),));
+ <Self as INexVersus_ChangeVersusDataSequence_1Methods<T0> > ::ctor(this,data_id,data);
 this}
 }
 
@@ -793,357 +810,19 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0>{#[doc="`GetPrincipalId()` overload"]#[method(name="GetPrincipalId",args=0)]pub fn get_principal_id(self,)->u64;
- #[doc="`.ctor(u16, u64)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,slot_id:u16,principal_id:u64)->();
+#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)` overload"]#[method(name=".ctor",args=3)]pub fn ctor(self,principal_id:u64,mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> ,end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)->();
  #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
- #[doc="`GetPersistenceMetaData()` overload"]#[method(name="GetPersistenceMetaData",args=0)]pub fn get_persistence_meta_data(self,)->();
- #[doc="`CreateBind(crate::app::procinst::ProcInst, u16, u64)` overload"]#[method(name="CreateBind",args=3)]pub fn create_bind(super_:crate::app::procinst::ProcInst,slot_id:u16,principal_id:u64)->();
+ #[doc="`GetSlot()` overload"]#[method(name="GetSlot",args=0)]pub fn get_slot(self,)->u16;
+ #[doc="`GetMeta()` overload"]#[method(name="GetMeta",args=0)]pub fn get_meta(self,)->();
+ #[doc="`IsValidDataType(u16)` overload"]#[method(name="IsValidDataType",args=1)]pub fn is_valid_data_type(self,data_type:u16)->bool;
+ #[doc="`InvokeEndCallback()` overload"]#[method(name="InvokeEndCallback",args=0)]pub fn invoke_end_callback(self,)->();
+ #[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)` overload"]#[method(name="CreateBind",args=4)]pub fn create_bind(super_:crate::app::procinst::ProcInst,principal_id:u64,mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> ,end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)->();
 }
 
-#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0>{#[doc="`.ctor(u16, u64)` — overload selector"]pub fn new(slot_id:u16,principal_id:u64)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)` — overload selector"]pub fn new(principal_id:u64,mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> ,end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(NexVersus_GetMetaDataFromPersistenceSlotSequence_1), ::core::stringify!(new),));
- <Self as INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods<T0> > ::ctor(this,slot_id,principal_id);
-this}
-}
-
-#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_ChangeVersusDataSequence_1<T0>{#[doc="`.ctor(u64, T0)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,data_id:u64,data:T0)->();
- #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
- #[doc="`ChangeData()` overload"]#[method(name="ChangeData",args=0)]pub fn change_data(self,)->();
- #[doc="`CreateBind(crate::app::procinst::ProcInst, u64, T0)` overload"]#[method(name="CreateBind",args=3)]pub fn create_bind(super_:crate::app::procinst::ProcInst,data_id:u64,data:T0)->();
-}
-
-#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_ChangeVersusDataSequence_1<T0>{#[doc="`.ctor(u64, T0)` — overload selector"]pub fn new(data_id:u64,data:T0)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_ChangeVersusDataSequence_1), ::core::stringify!(new),));
- <Self as INexVersus_ChangeVersusDataSequence_1Methods<T0> > ::ctor(this,data_id,data);
-this}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_RankedMetaDataEndCallbackMethods:INexVersus_RankedMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NexVersus_RankedMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22570a0usize)as*mut u8,();
-(NexVersus_RankedMetaDataEndCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,info:impl::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>)->(){unsafe{let __receiver= <NexVersus_RankedMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224e770usize)as*mut u8,();
-(NexVersus_RankedMetaDataEndCallback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(crate::app::nexversus::NexVersus_ResultInfo)::core::convert::Into::into(info))}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_RankedMetaDataEndCallback>INexVersus_RankedMetaDataEndCallbackMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_RankedMetaDataEndCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_RankedMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_RankedMetaDataEndCallback), ::core::stringify!(new),));
- <Self as INexVersus_RankedMetaDataEndCallbackMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22552a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods:INexVersus_GetRankedMetaDataFromPersistenceSlotSequence{#[doc="`GetPrincipalId()` overload"]fn get_principal_id(self,)->u64{unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a20usize)as*mut u8,u64;
-(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a30usize)as*mut u8,();
-(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a40usize)as*mut u8,();
-(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`GetPersistenceMetaData()` overload"]fn get_persistence_meta_data(self,)->(){unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a50usize)as*mut u8,();
-(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_GetRankedMetaDataFromPersistenceSlotSequence>INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{pub fn get_principal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_persistence_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence), ::core::stringify!(new),));
- <Self as INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_ReportSequenceMethods:INexVersus_ReportSequence{#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2257600usize)as*mut u8,();
-(NexVersus_ReportSequence)__receiver)}
-}
-#[doc="`Report()` overload"]fn report(self,)->(){unsafe{let __receiver= <NexVersus_ReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2257610usize)as*mut u8,();
-(NexVersus_ReportSequence)__receiver)}
-}
-#[doc="`ConfirmRetry()` overload"]fn confirm_retry(self,)->(){unsafe{let __receiver= <NexVersus_ReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2257980usize)as*mut u8,();
-(NexVersus_ReportSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ReportSequence>INexVersus_ReportSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ReportSequence{pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn report_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn confirm_retry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_CheckAccessibleSlotSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::nexversus::NexVersus_TargetSlotList, crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, crate::app::nexversus::NexVersus_EndCallback)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_info_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList> ,mode:impl::core::convert::Into<crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode> ,end_callback:impl::core::convert::Into<crate::app::nexversus::NexVersus_EndCallback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2253a30usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_info_list),(crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode)::core::convert::Into::into(mode),(crate::app::nexversus::NexVersus_EndCallback)::core::convert::Into::into(end_callback))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_CheckAccessibleSlotSequenceMethods:INexVersus_CheckAccessibleSlotSequence{#[doc="`GetSlot()` overload"]fn get_slot(self,)->u16{unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2252eb0usize)as*mut u8,u16;
-(NexVersus_CheckAccessibleSlotSequence)__receiver)}
-}
-#[doc="`.ctor(crate::app::nexversus::NexVersus_TargetSlotList, crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, crate::app::nexversus::NexVersus_EndCallback)` overload"]fn ctor(self,target_info_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList> ,mode:impl::core::convert::Into<crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode> ,end_callback:impl::core::convert::Into<crate::app::nexversus::NexVersus_EndCallback>)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2252f20usize)as*mut u8,();
-(NexVersus_CheckAccessibleSlotSequence)__receiver,(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_info_list),(crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode)::core::convert::Into::into(mode),(crate::app::nexversus::NexVersus_EndCallback)::core::convert::Into::into(end_callback))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2252f80usize)as*mut u8,();
-(NexVersus_CheckAccessibleSlotSequence)__receiver)}
-}
-#[doc="`GetInfo()` overload"]fn get_info(self,)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2252f90usize)as*mut u8,();
-(NexVersus_CheckAccessibleSlotSequence)__receiver)}
-}
-#[doc="`EndCallback()` overload"]fn end_callback(self,)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2253730usize)as*mut u8,();
-(NexVersus_CheckAccessibleSlotSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_CheckAccessibleSlotSequence>INexVersus_CheckAccessibleSlotSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_CheckAccessibleSlotSequence{pub fn get_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn end_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_CheckAccessibleSlotSequence{#[doc="`.ctor(crate::app::nexversus::NexVersus_TargetSlotList, crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, crate::app::nexversus::NexVersus_EndCallback)` — overload selector"]pub fn new(target_info_list:crate::app::nexversus::NexVersus_TargetSlotList,mode:crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode,end_callback:crate::app::nexversus::NexVersus_EndCallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_CheckAccessibleSlotSequence), ::core::stringify!(new),));
- <Self as INexVersus_CheckAccessibleSlotSequenceMethods> ::ctor(this,target_info_list,mode,end_callback);
-this}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_TargetSlotListMethods:INexVersus_TargetSlotList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259650usize)as*mut u8,();
-(NexVersus_TargetSlotList)__receiver)}
-}
-#[doc="`Add(u64)` overload"]fn add(self,id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22596e0usize)as*mut u8,();
-(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id))}
-}
-#[doc="`Add(crate::system::collections::generic::list_1::List_1<u64>)` overload"]fn add_2(self,list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64> >)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259780usize)as*mut u8,();
-(NexVersus_TargetSlotList)__receiver,(crate::system::collections::generic::list_1::List_1<u64>)::core::convert::Into::into(list))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259910usize)as*mut u8,();
-(NexVersus_TargetSlotList)__receiver)}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259970usize)as*mut u8,i32;
-(NexVersus_TargetSlotList)__receiver)}
-}
-#[doc="`GetCountValid()` overload"]fn get_count_valid(self,)->i32{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22599d0usize)as*mut u8,i32;
-(NexVersus_TargetSlotList)__receiver)}
-}
-#[doc="`GetIDList()` overload"]fn get_id_list(self,)->crate::system::collections::generic::list_1::List_1<u64>{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22531e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<u64> ;
-(NexVersus_TargetSlotList)__receiver)}
-}
-#[doc="`SetResult(u64, crate::app::nexversus::NexVersus_TargetSlotList_Results)` overload"]fn set_result(self,id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList_Results>)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2253680usize)as*mut u8,();
-(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id),(crate::app::nexversus::NexVersus_TargetSlotList_Results)::core::convert::Into::into(result))}
-}
-#[doc="`GetResult(u64)` overload"]fn get_result(self,id:impl::core::convert::Into<u64>)->crate::app::nexversus::NexVersus_TargetSlotList_Results{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259b20usize)as*mut u8,crate::app::nexversus::NexVersus_TargetSlotList_Results;
-(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id))}
-}
-#[doc="`IsValid(u64)` overload"]fn is_valid(self,id:impl::core::convert::Into<u64>)->bool{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259bc0usize)as*mut u8,bool;
-(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id))}
-}
-#[doc="`Dump()` overload"]fn dump(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259c70usize)as*mut u8, ::unity2::Il2CppString;
-(NexVersus_TargetSlotList)__receiver)}
-}
-#[doc="`ForEach(crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]fn for_each(self,action:impl::core::convert::Into<crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results> >)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2259f40usize)as*mut u8,();
-(NexVersus_TargetSlotList)__receiver,(crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)::core::convert::Into::into(action))}
-}
-#[doc="`ForEach(crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]fn for_each_2(self,action:impl::core::convert::Into<crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results> >)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225a0e0usize)as*mut u8,();
-(NexVersus_TargetSlotList)__receiver,(crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)::core::convert::Into::into(action))}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_TargetSlotList>INexVersus_TargetSlotListMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_TargetSlotList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_count_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_id_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn for_each_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn for_each_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_TargetSlotList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_TargetSlotList), ::core::stringify!(new),));
- <Self as INexVersus_TargetSlotListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_NexSequenceBaseMethods:INexVersus_NexSequenceBase{#[doc="`Login()` overload"]fn login(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2256e80usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver)}
-}
-#[doc="`Postlogin(i32, i32)` overload"]fn postlogin(self,label_when_cancelled:impl::core::convert::Into<i32> ,label_when_failed:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224ea60usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver,(i32)::core::convert::Into::into(label_when_cancelled),(i32)::core::convert::Into::into(label_when_failed))}
-}
-#[doc="`ShowError()` overload"]fn show_error(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2256ef0usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver)}
-}
-#[doc="`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]fn set_meta_binary(self,param_meta_bytes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8> > ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22525d0usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver,(crate::system::collections::generic::list_1::List_1<u8>)::core::convert::Into::into(param_meta_bytes),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data))}
-}
-#[doc="`SetResult(crate::app::nexversus::NexVersus_Results, ::unity2::Il2CppString)` overload"]fn set_result(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224f170usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-#[doc="`SetResultError(crate::app::neterror::NetError_App, ::unity2::Il2CppString)` overload"]fn set_result_error(self,error:impl::core::convert::Into<crate::app::neterror::NetError_App> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224ee70usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver,(crate::app::neterror::NetError_App)::core::convert::Into::into(error),(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-#[doc="`SetResultFailed(::unity2::Il2CppString)` overload"]fn set_result_failed(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2256f60usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-#[doc="`SetResultNotFound()` overload"]fn set_result_not_found(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224fb20usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver)}
-}
-#[doc="`SetResultDifferentType(::unity2::Il2CppString)` overload"]fn set_result_different_type(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2257000usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224ea40usize)as*mut u8,();
-(NexVersus_NexSequenceBase)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_NexSequenceBase>INexVersus_NexSequenceBaseMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase{pub fn login_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn show_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_meta_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_result_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_result_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_result_not_found_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_result_different_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_NexSequenceBase), ::core::stringify!(new),));
- <Self as INexVersus_NexSequenceBaseMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadReplaySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,data:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData> ,slot:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225b7e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(slot))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_UploadReplaySequenceMethods:INexVersus_UploadReplaySequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,data:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData> ,slot:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225add0usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(slot))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225ae90usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver)}
-}
-#[doc="`CheckExist()` overload"]fn check_exist(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225aea0usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver)}
-}
-#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225afe0usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver)}
-}
-#[doc="`Post()` overload"]fn post(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225b210usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver)}
-}
-#[doc="`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn set_meta_binary(self,param_meta_bytes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8> > ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225b390usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver,(crate::system::collections::generic::list_1::List_1<u8>)::core::convert::Into::into(param_meta_bytes),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data))}
-}
-#[doc="`Invalid()` overload"]fn invalid(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225b640usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver)}
-}
-#[doc="`PostInvalid()` overload"]fn post_invalid(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225b6f0usize)as*mut u8,();
-(NexVersus_UploadReplaySequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_UploadReplaySequence>INexVersus_UploadReplaySequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadReplaySequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn check_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_meta_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn invalid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn post_invalid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadReplaySequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` — overload selector"]pub fn new(meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,data:crate::app::versusserverreplaydata::VersusServerReplayData,slot:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_UploadReplaySequence), ::core::stringify!(new),));
- <Self as INexVersus_UploadReplaySequenceMethods> ::ctor(this,meta_data,data,slot);
+ failed to instantiate", ::core::stringify!(NexVersus_DownloadMetaDataSequence_1), ::core::stringify!(new),));
+ <Self as INexVersus_DownloadMetaDataSequence_1Methods<T0> > ::ctor(this,principal_id,mode,end_callback);
 this}
 }
 
@@ -1158,27 +837,6 @@ this}
  failed to instantiate", ::core::stringify!(NexVersus_DownloadSequence_1), ::core::stringify!(new),));
  <Self as INexVersus_DownloadSequence_1Methods<T0> > ::ctor(this,data_id,result);
 this}
-}
-
-#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0>{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, u16, crate::system::collections::generic::list_1::List_1<T0>, crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>>)` overload"]#[method(name=".ctor",args=4)]pub fn ctor(self,principal_id_list:crate::system::collections::generic::list_1::List_1<u64> ,slot_id:u16,result_data_list:crate::system::collections::generic::list_1::List_1<T0> ,result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> >)->();
- #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
- #[doc="`GetPersistenceMetaData()` overload"]#[method(name="GetPersistenceMetaData",args=0)]pub fn get_persistence_meta_data(self,)->();
- #[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, u16, crate::system::collections::generic::list_1::List_1<T0>, crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>>)` overload"]#[method(name="CreateBind",args=5)]pub fn create_bind(super_:crate::app::procinst::ProcInst,principal_id_list:crate::system::collections::generic::list_1::List_1<u64> ,slot_id:u16,result_data_list:crate::system::collections::generic::list_1::List_1<T0> ,result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> >)->();
-}
-
-#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0>{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, u16, crate::system::collections::generic::list_1::List_1<T0>, crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>>)` — overload selector"]pub fn new(principal_id_list:crate::system::collections::generic::list_1::List_1<u64> ,slot_id:u16,result_data_list:crate::system::collections::generic::list_1::List_1<T0> ,result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> >)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_GetMetaDataListFromPersistenceSlotSequence_1), ::core::stringify!(new),));
- <Self as INexVersus_GetMetaDataListFromPersistenceSlotSequence_1Methods<T0> > ::ctor(this,principal_id_list,slot_id,result_data_list,result_rating_list);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_label:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b78de0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(yes_label))}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature="app-nexversus")]impl NexVersus_AddRatingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versus::Versus_MapResult)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,map_result:impl::core::convert::Into<crate::app::versus::Versus_MapResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224f210usize)as*mut u8,();
@@ -1217,420 +875,6 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 ::{}
  failed to instantiate", ::core::stringify!(NexVersus_AddRatingSequence), ::core::stringify!(new),));
  <Self as INexVersus_AddRatingSequenceMethods> ::ctor(this,data_id,map_result);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16, bool, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,is_show_dialog:impl::core::convert::Into<bool> ,result_data:impl::core::convert::Into<crate::app::nexversus::NexVersus_ReplaySlotMetaResultData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2256540usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(bool)::core::convert::Into::into(is_show_dialog),(crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)::core::convert::Into::into(result_data))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2256e30usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods:INexVersus_GetReplayMetaDataFromPersistenceSlotSequence{#[doc="`IsAllSlot()` overload"]fn is_all_slot(self,)->bool{unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2255820usize)as*mut u8,bool;
-(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]fn ctor(self,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_ReplaySlotMetaResultData>)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22558a0usize)as*mut u8,();
-(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver,(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)::core::convert::Into::into(result))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22558f0usize)as*mut u8,();
-(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`GetPersistenceMetaData()` overload"]fn get_persistence_meta_data(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2255900usize)as*mut u8,();
-(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`GetAllSlot()` overload"]fn get_all_slot(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2255990usize)as*mut u8,();
-(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`GetSingleSlot()` overload"]fn get_single_slot(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2255c50usize)as*mut u8,();
-(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
-}
-#[doc="`CreateDesc(bool)` overload"]fn create_desc(self,is_show_dialog:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2256600usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver,(bool)::core::convert::Into::into(is_show_dialog))}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_GetReplayMetaDataFromPersistenceSlotSequence>INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence{pub fn is_all_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_persistence_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_all_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_single_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence{#[doc="`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` — overload selector"]pub fn new(principal_id:u64,slot_id:u16,result:crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence), ::core::stringify!(new),));
- <Self as INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods> ::ctor(this,principal_id,slot_id,result);
-this}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_CasualMetaDataEndCallbackMethods:INexVersus_CasualMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NexVersus_CasualMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224f630usize)as*mut u8,();
-(NexVersus_CasualMetaDataEndCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusservercasualmetadata::VersusServerCasualMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,meta_data:impl::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> ,info:impl::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>)->(){unsafe{let __receiver= <NexVersus_CasualMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224e4c0usize)as*mut u8,();
-(NexVersus_CasualMetaDataEndCallback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)::core::convert::Into::into(meta_data),(crate::app::nexversus::NexVersus_ResultInfo)::core::convert::Into::into(info))}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_CasualMetaDataEndCallback>INexVersus_CasualMetaDataEndCallbackMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_CasualMetaDataEndCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_CasualMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_CasualMetaDataEndCallback), ::core::stringify!(new),));
- <Self as INexVersus_CasualMetaDataEndCallbackMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,data:impl::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData> ,data_type:impl::core::convert::Into<u16> ,png_bytes:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225d560usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverrankeddata::VersusServerRankedData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(data_type),(::unity2::Array<u8>)::core::convert::Into::into(png_bytes))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_UploadSequenceMethods:INexVersus_UploadSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]fn ctor(self,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,data:impl::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData> ,data_type:impl::core::convert::Into<u16> ,png_bytes:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225cbe0usize)as*mut u8,();
-(NexVersus_UploadSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverrankeddata::VersusServerRankedData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(data_type),(::unity2::Array<u8>)::core::convert::Into::into(png_bytes))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225cc70usize)as*mut u8,();
-(NexVersus_UploadSequence)__receiver)}
-}
-#[doc="`UploadPNG()` overload"]fn upload_png(self,)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225cc80usize)as*mut u8,();
-(NexVersus_UploadSequence)__receiver)}
-}
-#[doc="`Post()` overload"]fn post(self,)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225cfe0usize)as*mut u8,();
-(NexVersus_UploadSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_UploadSequence>INexVersus_UploadSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn upload_png_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` — overload selector"]pub fn new(player_name: ::unity2::Il2CppString,meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,data:crate::app::versusserverrankeddata::VersusServerRankedData,data_type:u16,png_bytes: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_UploadSequence), ::core::stringify!(new),));
- <Self as INexVersus_UploadSequenceMethods> ::ctor(this,player_name,meta_data,data,data_type,png_bytes);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadReportMetaSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data:impl::core::convert::Into<crate::app::versusserverreportmetadata::VersusServerReportMetaData> ,r#type:impl::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225c2b0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versusserverreportmetadata::VersusServerReportMetaData)::core::convert::Into::into(data),(crate::app::nexversus::NexVersus_UploadType)::core::convert::Into::into(r#type))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_UploadReportMetaSequenceMethods:INexVersus_UploadReportMetaSequence{#[doc="`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::versusserverreportmetadata::VersusServerReportMetaData> ,r#type:impl::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225bed0usize)as*mut u8,();
-(NexVersus_UploadReportMetaSequence)__receiver,(crate::app::versusserverreportmetadata::VersusServerReportMetaData)::core::convert::Into::into(data),(crate::app::nexversus::NexVersus_UploadType)::core::convert::Into::into(r#type))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225bf20usize)as*mut u8,();
-(NexVersus_UploadReportMetaSequence)__receiver)}
-}
-#[doc="`Upload()` overload"]fn upload(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225bf30usize)as*mut u8,();
-(NexVersus_UploadReportMetaSequence)__receiver)}
-}
-#[doc="`UploadNew()` overload"]fn upload_new(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225c000usize)as*mut u8,();
-(NexVersus_UploadReportMetaSequence)__receiver)}
-}
-#[doc="`UploadOverwrite()` overload"]fn upload_overwrite(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225c170usize)as*mut u8,();
-(NexVersus_UploadReportMetaSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_UploadReportMetaSequence>INexVersus_UploadReportMetaSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadReportMetaSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn upload_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn upload_overwrite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_UploadReportMetaSequence{#[doc="`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` — overload selector"]pub fn new(data:crate::app::versusserverreportmetadata::VersusServerReportMetaData,r#type:crate::app::nexversus::NexVersus_UploadType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_UploadReportMetaSequence), ::core::stringify!(new),));
- <Self as INexVersus_UploadReportMetaSequenceMethods> ::ctor(this,data,r#type);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeMetaDataTypeSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16, u16)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_principal_id:impl::core::convert::Into<u64> ,target_slot_id:impl::core::convert::Into<u16> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224fba0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(target_principal_id),(u16)::core::convert::Into::into(target_slot_id),(u16)::core::convert::Into::into(data_type))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2250180usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(u16)::core::convert::Into::into(data_type))}
-}
-#[doc="`GetProcDescs(crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence)` overload"]pub fn get_proc_descs(p:impl::core::convert::Into<crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224fc40usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence)::core::convert::Into::into(p))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeMetaDataTypeSequenceMethods:INexVersus_ChangeMetaDataTypeSequence{#[doc="`.ctor(u64, u16, u16)` overload"]fn ctor(self,target_principal_id:impl::core::convert::Into<u64> ,target_slot_id:impl::core::convert::Into<u16> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224f710usize)as*mut u8,();
-(NexVersus_ChangeMetaDataTypeSequence)__receiver,(u64)::core::convert::Into::into(target_principal_id),(u16)::core::convert::Into::into(target_slot_id),(u16)::core::convert::Into::into(data_type))}
-}
-#[doc="`.ctor(u64, u16)` overload"]fn ctor_2(self,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224f760usize)as*mut u8,();
-(NexVersus_ChangeMetaDataTypeSequence)__receiver,(u64)::core::convert::Into::into(data_id),(u16)::core::convert::Into::into(data_type))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224f7b0usize)as*mut u8,();
-(NexVersus_ChangeMetaDataTypeSequence)__receiver)}
-}
-#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224f7c0usize)as*mut u8,();
-(NexVersus_ChangeMetaDataTypeSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeMetaDataTypeSequence>INexVersus_ChangeMetaDataTypeSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeMetaDataTypeSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn change_meta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_proc_descs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeMetaDataTypeSequence{#[doc="`.ctor(u64, u16, u16)` — overload selector"]pub fn new(target_principal_id:u64,target_slot_id:u16,data_type:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence), ::core::stringify!(new),));
- <Self as INexVersus_ChangeMetaDataTypeSequenceMethods> ::ctor(this,target_principal_id,target_slot_id,data_type);
-this}
-#[doc="`.ctor(u64, u16)` — overload selector"]pub fn new_2(data_id:u64,data_type:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence), ::core::stringify!(new_2),));
- <Self as INexVersus_ChangeMetaDataTypeSequenceMethods> ::ctor_2(this,data_id,data_type);
-this}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_ResultInfoMethods:INexVersus_ResultInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_ResultInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2258030usize)as*mut u8,();
-(NexVersus_ResultInfo)__receiver)}
-}
-#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <NexVersus_ResultInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2258080usize)as*mut u8,bool;
-(NexVersus_ResultInfo)__receiver)}
-}
-#[doc="`get_DataType()` overload"]fn get_data_type(self,)->u16{unsafe{let __receiver= <NexVersus_ResultInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22580a0usize)as*mut u8,u16;
-(NexVersus_ResultInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ResultInfo>INexVersus_ResultInfoMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ResultInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ResultInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_ResultInfo), ::core::stringify!(new),));
- <Self as INexVersus_ResultInfoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_DownloadReplaySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22543b0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_DownloadReplaySequenceMethods:INexVersus_DownloadReplaySequence{#[doc="`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>)->(){unsafe{let __receiver= <NexVersus_DownloadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2254060usize)as*mut u8,();
-(NexVersus_DownloadReplaySequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(result))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_DownloadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22540b0usize)as*mut u8,();
-(NexVersus_DownloadReplaySequence)__receiver)}
-}
-#[doc="`GetData()` overload"]fn get_data(self,)->(){unsafe{let __receiver= <NexVersus_DownloadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22540c0usize)as*mut u8,();
-(NexVersus_DownloadReplaySequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_DownloadReplaySequence>INexVersus_DownloadReplaySequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_DownloadReplaySequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_DownloadReplaySequence{#[doc="`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` — overload selector"]pub fn new(data_id:u64,result:crate::app::versusserverreplaydata::VersusServerReplayData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_DownloadReplaySequence), ::core::stringify!(new),));
- <Self as INexVersus_DownloadReplaySequenceMethods> ::ctor(this,data_id,result);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeVersusRankedMetaDataSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2252880usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(::unity2::Il2CppString)::core::convert::Into::into(player_name))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeVersusRankedMetaDataSequenceMethods:INexVersus_ChangeVersusRankedMetaDataSequence{#[doc="`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2252370usize)as*mut u8,();
-(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(::unity2::Il2CppString)::core::convert::Into::into(player_name))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22523d0usize)as*mut u8,();
-(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver)}
-}
-#[doc="`SetMetaParam()` overload"]fn set_meta_param(self,)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22523e0usize)as*mut u8,();
-(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver)}
-}
-#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22524b0usize)as*mut u8,();
-(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeVersusRankedMetaDataSequence>INexVersus_ChangeVersusRankedMetaDataSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeVersusRankedMetaDataSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_meta_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn change_meta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeVersusRankedMetaDataSequence{#[doc="`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` — overload selector"]pub fn new(data_id:u64,meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,player_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_ChangeVersusRankedMetaDataSequence), ::core::stringify!(new),));
- <Self as INexVersus_ChangeVersusRankedMetaDataSequenceMethods> ::ctor(this,data_id,meta_data,player_name);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_SearchCasualSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22585c0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(results))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_SearchCasualSequenceMethods:INexVersus_SearchCasualSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]fn ctor(self,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData> >)->(){unsafe{let __receiver= <NexVersus_SearchCasualSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22580b0usize)as*mut u8,();
-(NexVersus_SearchCasualSequence)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)::core::convert::Into::into(results))}
-}
-#[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <NexVersus_SearchCasualSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22580f0usize)as*mut u8,();
-(NexVersus_SearchCasualSequence)__receiver)}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_SearchCasualSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22585b0usize)as*mut u8,();
-(NexVersus_SearchCasualSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_SearchCasualSequence>INexVersus_SearchCasualSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_SearchCasualSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn search_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_SearchCasualSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` — overload selector"]pub fn new(results:crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_SearchCasualSequence), ::core::stringify!(new),));
- <Self as INexVersus_SearchCasualSequenceMethods> ::ctor(this,results);
-this}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeReplayMetaSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool> ,is_show_dialog:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2250800usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param),(bool)::core::convert::Into::into(is_show_dialog))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool> ,is_show_dialog:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22511f0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param),(bool)::core::convert::Into::into(is_show_dialog))}
-}
-}
-
-#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeReplayMetaSequenceMethods:INexVersus_ChangeReplayMetaSequence{#[doc="`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2250220usize)as*mut u8,();
-(NexVersus_ChangeReplayMetaSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param))}
-}
-#[doc="`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]fn ctor_2(self,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2250280usize)as*mut u8,();
-(NexVersus_ChangeReplayMetaSequence)__receiver,(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22502f0usize)as*mut u8,();
-(NexVersus_ChangeReplayMetaSequence)__receiver)}
-}
-#[doc="`SetMetaParam()` overload"]fn set_meta_param(self,)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2250300usize)as*mut u8,();
-(NexVersus_ChangeReplayMetaSequence)__receiver)}
-}
-#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2250400usize)as*mut u8,();
-(NexVersus_ChangeReplayMetaSequence)__receiver)}
-}
-#[doc="`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn set_meta_binary(self,param_meta_bytes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8> > ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2250550usize)as*mut u8,();
-(NexVersus_ChangeReplayMetaSequence)__receiver,(crate::system::collections::generic::list_1::List_1<u8>)::core::convert::Into::into(param_meta_bytes),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data))}
-}
-#[doc="`CreateDesc(bool)` overload"]fn create_desc(self,is_show_dialog:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22508d0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(NexVersus_ChangeReplayMetaSequence)__receiver,(bool)::core::convert::Into::into(is_show_dialog))}
-}
-}
-
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeReplayMetaSequence>INexVersus_ChangeReplayMetaSequenceMethods for __T{}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeReplayMetaSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_meta_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn change_meta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_meta_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeReplayMetaSequence{#[doc="`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]pub fn new(data_id:u64,meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,is_set_meta_param:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_ChangeReplayMetaSequence), ::core::stringify!(new),));
- <Self as INexVersus_ChangeReplayMetaSequenceMethods> ::ctor(this,data_id,meta_data,is_set_meta_param);
-this}
-#[doc="`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]pub fn new_2(principal_id:u64,slot_id:u16,meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,is_set_meta_param:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexVersus_ChangeReplayMetaSequence), ::core::stringify!(new_2),));
- <Self as INexVersus_ChangeReplayMetaSequenceMethods> ::ctor_2(this,principal_id,slot_id,meta_data,is_set_meta_param);
 this}
 }
 
@@ -1911,26 +1155,66 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-nexversus")]pub trait INexVersus_EndCallbackMethods:INexVersus_EndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NexVersus_EndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2254960usize)as*mut u8,();
-(NexVersus_EndCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-nexversus")]pub trait INexVersus_NexSequenceBaseMethods:INexVersus_NexSequenceBase{#[doc="`Login()` overload"]fn login(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2256e80usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver)}
 }
-#[doc="`Invoke(crate::app::nexversus::NexVersus_Results)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results>)->(){unsafe{let __receiver= <NexVersus_EndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22537d0usize)as*mut u8,();
-(NexVersus_EndCallback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result))}
+#[doc="`Postlogin(i32, i32)` overload"]fn postlogin(self,label_when_cancelled:impl::core::convert::Into<i32> ,label_when_failed:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224ea60usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver,(i32)::core::convert::Into::into(label_when_cancelled),(i32)::core::convert::Into::into(label_when_failed))}
+}
+#[doc="`ShowError()` overload"]fn show_error(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2256ef0usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver)}
+}
+#[doc="`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]fn set_meta_binary(self,param_meta_bytes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8> > ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22525d0usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver,(crate::system::collections::generic::list_1::List_1<u8>)::core::convert::Into::into(param_meta_bytes),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`SetResult(crate::app::nexversus::NexVersus_Results, ::unity2::Il2CppString)` overload"]fn set_result(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224f170usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`SetResultError(crate::app::neterror::NetError_App, ::unity2::Il2CppString)` overload"]fn set_result_error(self,error:impl::core::convert::Into<crate::app::neterror::NetError_App> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224ee70usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver,(crate::app::neterror::NetError_App)::core::convert::Into::into(error),(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`SetResultFailed(::unity2::Il2CppString)` overload"]fn set_result_failed(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2256f60usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`SetResultNotFound()` overload"]fn set_result_not_found(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224fb20usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver)}
+}
+#[doc="`SetResultDifferentType(::unity2::Il2CppString)` overload"]fn set_result_different_type(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2257000usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224ea40usize)as*mut u8,();
+(NexVersus_NexSequenceBase)__receiver)}
 }
 }
 
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_EndCallback>INexVersus_EndCallbackMethods for __T{}
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_NexSequenceBase>INexVersus_NexSequenceBaseMethods for __T{}
 
-#[cfg(feature="app-nexversus")]impl NexVersus_EndCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase{pub fn login_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn show_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_meta_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_result_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_result_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_result_not_found_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_result_different_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 }
 
-#[cfg(feature="app-nexversus")]impl NexVersus_EndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(NexVersus_EndCallback), ::core::stringify!(new),));
- <Self as INexVersus_EndCallbackMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(NexVersus_NexSequenceBase), ::core::stringify!(new),));
+ <Self as INexVersus_NexSequenceBaseMethods> ::ctor(this,);
 this}
 }
 
@@ -1968,69 +1252,430 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeUpdatedTimeSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2251f20usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id))}
+#[cfg(feature="app-nexversus")]impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16, bool, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,is_show_dialog:impl::core::convert::Into<bool> ,result_data:impl::core::convert::Into<crate::app::nexversus::NexVersus_ReplaySlotMetaResultData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2256540usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(bool)::core::convert::Into::into(is_show_dialog),(crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)::core::convert::Into::into(result_data))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2256e30usize)as*mut u8,();
+)}
 }
 }
 
-#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeUpdatedTimeSequenceMethods:INexVersus_ChangeUpdatedTimeSequence{#[doc="`.ctor(u64)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2251bc0usize)as*mut u8,();
-(NexVersus_ChangeUpdatedTimeSequence)__receiver,(u64)::core::convert::Into::into(data_id))}
+#[cfg(feature="app-nexversus")]pub trait INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods:INexVersus_GetReplayMetaDataFromPersistenceSlotSequence{#[doc="`IsAllSlot()` overload"]fn is_all_slot(self,)->bool{unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2255820usize)as*mut u8,bool;
+(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
 }
-#[doc="`Login()` overload"]fn login(self,)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2251bf0usize)as*mut u8,();
-(NexVersus_ChangeUpdatedTimeSequence)__receiver)}
+#[doc="`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` overload"]fn ctor(self,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_ReplaySlotMetaResultData>)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22558a0usize)as*mut u8,();
+(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver,(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)::core::convert::Into::into(result))}
 }
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2251c60usize)as*mut u8,();
-(NexVersus_ChangeUpdatedTimeSequence)__receiver)}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22558f0usize)as*mut u8,();
+(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
 }
-#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2251dc0usize)as*mut u8,();
-(NexVersus_ChangeUpdatedTimeSequence)__receiver)}
+#[doc="`GetPersistenceMetaData()` overload"]fn get_persistence_meta_data(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2255900usize)as*mut u8,();
+(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
+}
+#[doc="`GetAllSlot()` overload"]fn get_all_slot(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2255990usize)as*mut u8,();
+(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
+}
+#[doc="`GetSingleSlot()` overload"]fn get_single_slot(self,)->(){unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2255c50usize)as*mut u8,();
+(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver)}
+}
+#[doc="`CreateDesc(bool)` overload"]fn create_desc(self,is_show_dialog:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <NexVersus_GetReplayMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2256600usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence)__receiver,(bool)::core::convert::Into::into(is_show_dialog))}
 }
 }
 
-#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeUpdatedTimeSequence>INexVersus_ChangeUpdatedTimeSequenceMethods for __T{}
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_GetReplayMetaDataFromPersistenceSlotSequence>INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods for __T{}
 
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeUpdatedTimeSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn login_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-nexversus")]impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence{pub fn is_all_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_persistence_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_all_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_single_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_GetReplayMetaDataFromPersistenceSlotSequence{#[doc="`.ctor(u64, u16, crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)` — overload selector"]pub fn new(principal_id:u64,slot_id:u16,result:crate::app::nexversus::NexVersus_ReplaySlotMetaResultData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_GetReplayMetaDataFromPersistenceSlotSequence), ::core::stringify!(new),));
+ <Self as INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods> ::ctor(this,principal_id,slot_id,result);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeMetaDataTypeSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16, u16)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_principal_id:impl::core::convert::Into<u64> ,target_slot_id:impl::core::convert::Into<u16> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224fba0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(target_principal_id),(u16)::core::convert::Into::into(target_slot_id),(u16)::core::convert::Into::into(data_type))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2250180usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(u16)::core::convert::Into::into(data_type))}
+}
+#[doc="`GetProcDescs(crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence)` overload"]pub fn get_proc_descs(p:impl::core::convert::Into<crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224fc40usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(crate::app::nexversus::NexVersus_ChangeMetaDataTypeSequence)::core::convert::Into::into(p))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeMetaDataTypeSequenceMethods:INexVersus_ChangeMetaDataTypeSequence{#[doc="`.ctor(u64, u16, u16)` overload"]fn ctor(self,target_principal_id:impl::core::convert::Into<u64> ,target_slot_id:impl::core::convert::Into<u16> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224f710usize)as*mut u8,();
+(NexVersus_ChangeMetaDataTypeSequence)__receiver,(u64)::core::convert::Into::into(target_principal_id),(u16)::core::convert::Into::into(target_slot_id),(u16)::core::convert::Into::into(data_type))}
+}
+#[doc="`.ctor(u64, u16)` overload"]fn ctor_2(self,data_id:impl::core::convert::Into<u64> ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224f760usize)as*mut u8,();
+(NexVersus_ChangeMetaDataTypeSequence)__receiver,(u64)::core::convert::Into::into(data_id),(u16)::core::convert::Into::into(data_type))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224f7b0usize)as*mut u8,();
+(NexVersus_ChangeMetaDataTypeSequence)__receiver)}
+}
+#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeMetaDataTypeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224f7c0usize)as*mut u8,();
+(NexVersus_ChangeMetaDataTypeSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeMetaDataTypeSequence>INexVersus_ChangeMetaDataTypeSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeMetaDataTypeSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn change_meta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_proc_descs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature="app-nexversus")]impl NexVersus_ChangeUpdatedTimeSequence{#[doc="`.ctor(u64)` — overload selector"]pub fn new(data_id:u64)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeMetaDataTypeSequence{#[doc="`.ctor(u64, u16, u16)` — overload selector"]pub fn new(target_principal_id:u64,target_slot_id:u16,data_type:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(NexVersus_ChangeUpdatedTimeSequence), ::core::stringify!(new),));
- <Self as INexVersus_ChangeUpdatedTimeSequenceMethods> ::ctor(this,data_id);
+ failed to instantiate", ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence), ::core::stringify!(new),));
+ <Self as INexVersus_ChangeMetaDataTypeSequenceMethods> ::ctor(this,target_principal_id,target_slot_id,data_type);
+this}
+#[doc="`.ctor(u64, u16)` — overload selector"]pub fn new_2(data_id:u64,data_type:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_ChangeMetaDataTypeSequence), ::core::stringify!(new_2),));
+ <Self as INexVersus_ChangeMetaDataTypeSequenceMethods> ::ctor_2(this,data_id,data_type);
 this}
 }
 
-#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)` overload"]#[method(name=".ctor",args=3)]pub fn ctor(self,principal_id:u64,mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> ,end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)->();
- #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
- #[doc="`GetSlot()` overload"]#[method(name="GetSlot",args=0)]pub fn get_slot(self,)->u16;
- #[doc="`GetMeta()` overload"]#[method(name="GetMeta",args=0)]pub fn get_meta(self,)->();
- #[doc="`IsValidDataType(u16)` overload"]#[method(name="IsValidDataType",args=1)]pub fn is_valid_data_type(self,data_type:u16)->bool;
- #[doc="`InvokeEndCallback()` overload"]#[method(name="InvokeEndCallback",args=0)]pub fn invoke_end_callback(self,)->();
- #[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)` overload"]#[method(name="CreateBind",args=4)]pub fn create_bind(super_:crate::app::procinst::ProcInst,principal_id:u64,mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> ,end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)->();
+#[cfg(feature="app-nexversus")]pub trait INexVersus_ReportSequenceMethods:INexVersus_ReportSequence{#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2257600usize)as*mut u8,();
+(NexVersus_ReportSequence)__receiver)}
+}
+#[doc="`Report()` overload"]fn report(self,)->(){unsafe{let __receiver= <NexVersus_ReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2257610usize)as*mut u8,();
+(NexVersus_ReportSequence)__receiver)}
+}
+#[doc="`ConfirmRetry()` overload"]fn confirm_retry(self,)->(){unsafe{let __receiver= <NexVersus_ReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2257980usize)as*mut u8,();
+(NexVersus_ReportSequence)__receiver)}
+}
 }
 
-#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0>, crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)` — overload selector"]pub fn new(principal_id:u64,mode:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_Mode<T0> ,end_callback:crate::app::nexversus::NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ReportSequence>INexVersus_ReportSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ReportSequence{pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn report_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn confirm_retry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,data:impl::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData> ,data_type:impl::core::convert::Into<u16> ,png_bytes:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225d560usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverrankeddata::VersusServerRankedData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(data_type),(::unity2::Array<u8>)::core::convert::Into::into(png_bytes))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_UploadSequenceMethods:INexVersus_UploadSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` overload"]fn ctor(self,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,data:impl::core::convert::Into<crate::app::versusserverrankeddata::VersusServerRankedData> ,data_type:impl::core::convert::Into<u16> ,png_bytes:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225cbe0usize)as*mut u8,();
+(NexVersus_UploadSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverrankeddata::VersusServerRankedData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(data_type),(::unity2::Array<u8>)::core::convert::Into::into(png_bytes))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225cc70usize)as*mut u8,();
+(NexVersus_UploadSequence)__receiver)}
+}
+#[doc="`UploadPNG()` overload"]fn upload_png(self,)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225cc80usize)as*mut u8,();
+(NexVersus_UploadSequence)__receiver)}
+}
+#[doc="`Post()` overload"]fn post(self,)->(){unsafe{let __receiver= <NexVersus_UploadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225cfe0usize)as*mut u8,();
+(NexVersus_UploadSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_UploadSequence>INexVersus_UploadSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn upload_png_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16, ::unity2::Array<u8>)` — overload selector"]pub fn new(player_name: ::unity2::Il2CppString,meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,data:crate::app::versusserverrankeddata::VersusServerRankedData,data_type:u16,png_bytes: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(NexVersus_DownloadMetaDataSequence_1), ::core::stringify!(new),));
- <Self as INexVersus_DownloadMetaDataSequence_1Methods<T0> > ::ctor(this,principal_id,mode,end_callback);
+ failed to instantiate", ::core::stringify!(NexVersus_UploadSequence), ::core::stringify!(new),));
+ <Self as INexVersus_UploadSequenceMethods> ::ctor(this,player_name,meta_data,data,data_type,png_bytes);
 this}
 }
 
-#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
- #[doc="`Invoke(crate::app::nexversus::NexVersus_Results, T0, crate::app::nexversus::NexVersus_ResultInfo)` overload"]#[method(name="Invoke",args=3)]pub fn invoke(self,result:crate::app::nexversus::NexVersus_Results,meta_data:T0,info:crate::app::nexversus::NexVersus_ResultInfo)->();
+#[cfg(feature="app-nexversus")]impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22552a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-nexversus")]pub trait INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods:INexVersus_GetRankedMetaDataFromPersistenceSlotSequence{#[doc="`GetPrincipalId()` overload"]fn get_principal_id(self,)->u64{unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a20usize)as*mut u8,u64;
+(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a30usize)as*mut u8,();
+(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a40usize)as*mut u8,();
+(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
+}
+#[doc="`GetPersistenceMetaData()` overload"]fn get_persistence_meta_data(self,)->(){unsafe{let __receiver= <NexVersus_GetRankedMetaDataFromPersistenceSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2254a50usize)as*mut u8,();
+(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_GetRankedMetaDataFromPersistenceSlotSequence>INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{pub fn get_principal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_persistence_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_GetRankedMetaDataFromPersistenceSlotSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(NexVersus_DownloadMetaDataSequence_1_EndCallback), ::core::stringify!(new),));
- <Self as INexVersus_DownloadMetaDataSequence_1_EndCallbackMethods<T0> > ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(NexVersus_GetRankedMetaDataFromPersistenceSlotSequence), ::core::stringify!(new),));
+ <Self as INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadReplaySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,data:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData> ,slot:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225b7e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(slot))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_UploadReplaySequenceMethods:INexVersus_UploadReplaySequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,data:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData> ,slot:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225add0usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver,(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(data),(u16)::core::convert::Into::into(slot))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ae90usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver)}
+}
+#[doc="`CheckExist()` overload"]fn check_exist(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225aea0usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver)}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225afe0usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver)}
+}
+#[doc="`Post()` overload"]fn post(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225b210usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver)}
+}
+#[doc="`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn set_meta_binary(self,param_meta_bytes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8> > ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225b390usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver,(crate::system::collections::generic::list_1::List_1<u8>)::core::convert::Into::into(param_meta_bytes),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`Invalid()` overload"]fn invalid(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225b640usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver)}
+}
+#[doc="`PostInvalid()` overload"]fn post_invalid(self,)->(){unsafe{let __receiver= <NexVersus_UploadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225b6f0usize)as*mut u8,();
+(NexVersus_UploadReplaySequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_UploadReplaySequence>INexVersus_UploadReplaySequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadReplaySequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn check_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_meta_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn invalid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn post_invalid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadReplaySequence{#[doc="`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, crate::app::versusserverreplaydata::VersusServerReplayData, u16)` — overload selector"]pub fn new(meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,data:crate::app::versusserverreplaydata::VersusServerReplayData,slot:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_UploadReplaySequence), ::core::stringify!(new),));
+ <Self as INexVersus_UploadReplaySequenceMethods> ::ctor(this,meta_data,data,slot);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_SearchSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>, u16)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> > ,data_type:impl::core::convert::Into<u16>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22590b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)::core::convert::Into::into(results),(u16)::core::convert::Into::into(data_type))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_SearchSequenceMethods:INexVersus_SearchSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>, u16)` overload"]fn ctor(self,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> > ,data_type:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <NexVersus_SearchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2258b60usize)as*mut u8,();
+(NexVersus_SearchSequence)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)::core::convert::Into::into(results),(u16)::core::convert::Into::into(data_type))}
+}
+#[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <NexVersus_SearchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2258bb0usize)as*mut u8,();
+(NexVersus_SearchSequence)__receiver)}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_SearchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22590a0usize)as*mut u8,();
+(NexVersus_SearchSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_SearchSequence>INexVersus_SearchSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_SearchSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn search_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_SearchSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>, u16)` — overload selector"]pub fn new(results:crate::system::collections::generic::list_1::List_1<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,data_type:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_SearchSequence), ::core::stringify!(new),));
+ <Self as INexVersus_SearchSequenceMethods> ::ctor(this,results,data_type);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_DownloadReplaySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22543b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_DownloadReplaySequenceMethods:INexVersus_DownloadReplaySequence{#[doc="`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::versusserverreplaydata::VersusServerReplayData>)->(){unsafe{let __receiver= <NexVersus_DownloadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2254060usize)as*mut u8,();
+(NexVersus_DownloadReplaySequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaydata::VersusServerReplayData)::core::convert::Into::into(result))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_DownloadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22540b0usize)as*mut u8,();
+(NexVersus_DownloadReplaySequence)__receiver)}
+}
+#[doc="`GetData()` overload"]fn get_data(self,)->(){unsafe{let __receiver= <NexVersus_DownloadReplaySequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22540c0usize)as*mut u8,();
+(NexVersus_DownloadReplaySequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_DownloadReplaySequence>INexVersus_DownloadReplaySequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_DownloadReplaySequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_DownloadReplaySequence{#[doc="`.ctor(u64, crate::app::versusserverreplaydata::VersusServerReplayData)` — overload selector"]pub fn new(data_id:u64,result:crate::app::versusserverreplaydata::VersusServerReplayData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_DownloadReplaySequence), ::core::stringify!(new),));
+ <Self as INexVersus_DownloadReplaySequenceMethods> ::ctor(this,data_id,result);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeReplayMetaSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool> ,is_show_dialog:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2250800usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param),(bool)::core::convert::Into::into(is_show_dialog))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool, bool)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool> ,is_show_dialog:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22511f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param),(bool)::core::convert::Into::into(is_show_dialog))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeReplayMetaSequenceMethods:INexVersus_ChangeReplayMetaSequence{#[doc="`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2250220usize)as*mut u8,();
+(NexVersus_ChangeReplayMetaSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param))}
+}
+#[doc="`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` overload"]fn ctor_2(self,principal_id:impl::core::convert::Into<u64> ,slot_id:impl::core::convert::Into<u16> ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData> ,is_set_meta_param:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2250280usize)as*mut u8,();
+(NexVersus_ChangeReplayMetaSequence)__receiver,(u64)::core::convert::Into::into(principal_id),(u16)::core::convert::Into::into(slot_id),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data),(bool)::core::convert::Into::into(is_set_meta_param))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22502f0usize)as*mut u8,();
+(NexVersus_ChangeReplayMetaSequence)__receiver)}
+}
+#[doc="`SetMetaParam()` overload"]fn set_meta_param(self,)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2250300usize)as*mut u8,();
+(NexVersus_ChangeReplayMetaSequence)__receiver)}
+}
+#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2250400usize)as*mut u8,();
+(NexVersus_ChangeReplayMetaSequence)__receiver)}
+}
+#[doc="`SetMetaBinary(crate::system::collections::generic::list_1::List_1<u8>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]fn set_meta_binary(self,param_meta_bytes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8> > ,meta_data:impl::core::convert::Into<crate::app::versusserverreplaymetadata::VersusServerReplayMetaData>)->(){unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2250550usize)as*mut u8,();
+(NexVersus_ChangeReplayMetaSequence)__receiver,(crate::system::collections::generic::list_1::List_1<u8>)::core::convert::Into::into(param_meta_bytes),(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`CreateDesc(bool)` overload"]fn create_desc(self,is_show_dialog:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <NexVersus_ChangeReplayMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22508d0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(NexVersus_ChangeReplayMetaSequence)__receiver,(bool)::core::convert::Into::into(is_show_dialog))}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeReplayMetaSequence>INexVersus_ChangeReplayMetaSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeReplayMetaSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_meta_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn change_meta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_meta_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeReplayMetaSequence{#[doc="`.ctor(u64, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]pub fn new(data_id:u64,meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,is_set_meta_param:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_ChangeReplayMetaSequence), ::core::stringify!(new),));
+ <Self as INexVersus_ChangeReplayMetaSequenceMethods> ::ctor(this,data_id,meta_data,is_set_meta_param);
+this}
+#[doc="`.ctor(u64, u16, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, bool)` — overload selector"]pub fn new_2(principal_id:u64,slot_id:u16,meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,is_set_meta_param:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_ChangeReplayMetaSequence), ::core::stringify!(new_2),));
+ <Self as INexVersus_ChangeReplayMetaSequenceMethods> ::ctor_2(this,principal_id,slot_id,meta_data,is_set_meta_param);
+this}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods:INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9260usize)as*mut u8,();
+(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9290usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem)__receiver)}
+}
+#[doc="`GetSequence()` overload"]fn get_sequence(self,)->crate::app::procinst::ProcInst{unsafe{let __receiver= <NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed92c0usize)as*mut u8,crate::app::procinst::ProcInst;
+(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem>INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(label:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods> ::ctor(this,label);
 this}
 }
 
@@ -2087,144 +1732,499 @@ pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadReportMetaSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data:impl::core::convert::Into<crate::app::versusserverreportmetadata::VersusServerReportMetaData> ,r#type:impl::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x225c2b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versusserverreportmetadata::VersusServerReportMetaData)::core::convert::Into::into(data),(crate::app::nexversus::NexVersus_UploadType)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_UploadReportMetaSequenceMethods:INexVersus_UploadReportMetaSequence{#[doc="`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::versusserverreportmetadata::VersusServerReportMetaData> ,r#type:impl::core::convert::Into<crate::app::nexversus::NexVersus_UploadType>)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225bed0usize)as*mut u8,();
+(NexVersus_UploadReportMetaSequence)__receiver,(crate::app::versusserverreportmetadata::VersusServerReportMetaData)::core::convert::Into::into(data),(crate::app::nexversus::NexVersus_UploadType)::core::convert::Into::into(r#type))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225bf20usize)as*mut u8,();
+(NexVersus_UploadReportMetaSequence)__receiver)}
+}
+#[doc="`Upload()` overload"]fn upload(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225bf30usize)as*mut u8,();
+(NexVersus_UploadReportMetaSequence)__receiver)}
+}
+#[doc="`UploadNew()` overload"]fn upload_new(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225c000usize)as*mut u8,();
+(NexVersus_UploadReportMetaSequence)__receiver)}
+}
+#[doc="`UploadOverwrite()` overload"]fn upload_overwrite(self,)->(){unsafe{let __receiver= <NexVersus_UploadReportMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225c170usize)as*mut u8,();
+(NexVersus_UploadReportMetaSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_UploadReportMetaSequence>INexVersus_UploadReportMetaSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadReportMetaSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn upload_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn upload_overwrite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_UploadReportMetaSequence{#[doc="`.ctor(crate::app::versusserverreportmetadata::VersusServerReportMetaData, crate::app::nexversus::NexVersus_UploadType)` — overload selector"]pub fn new(data:crate::app::versusserverreportmetadata::VersusServerReportMetaData,r#type:crate::app::nexversus::NexVersus_UploadType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_UploadReportMetaSequence), ::core::stringify!(new),));
+ <Self as INexVersus_UploadReportMetaSequenceMethods> ::ctor(this,data,r#type);
+this}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_ResultInfoMethods:INexVersus_ResultInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_ResultInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2258030usize)as*mut u8,();
+(NexVersus_ResultInfo)__receiver)}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <NexVersus_ResultInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2258080usize)as*mut u8,bool;
+(NexVersus_ResultInfo)__receiver)}
+}
+#[doc="`get_DataType()` overload"]fn get_data_type(self,)->u16{unsafe{let __receiver= <NexVersus_ResultInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22580a0usize)as*mut u8,u16;
+(NexVersus_ResultInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ResultInfo>INexVersus_ResultInfoMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ResultInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ResultInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_ResultInfo), ::core::stringify!(new),));
+ <Self as INexVersus_ResultInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0>{#[doc="`GetPrincipalId()` overload"]#[method(name="GetPrincipalId",args=0)]pub fn get_principal_id(self,)->u64;
+ #[doc="`.ctor(u16, u64)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,slot_id:u16,principal_id:u64)->();
+ #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
+ #[doc="`GetPersistenceMetaData()` overload"]#[method(name="GetPersistenceMetaData",args=0)]pub fn get_persistence_meta_data(self,)->();
+ #[doc="`CreateBind(crate::app::procinst::ProcInst, u16, u64)` overload"]#[method(name="CreateBind",args=3)]pub fn create_bind(super_:crate::app::procinst::ProcInst,slot_id:u16,principal_id:u64)->();
+}
+
+#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataFromPersistenceSlotSequence_1<T0>{#[doc="`.ctor(u16, u64)` — overload selector"]pub fn new(slot_id:u16,principal_id:u64)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_GetMetaDataFromPersistenceSlotSequence_1), ::core::stringify!(new),));
+ <Self as INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods<T0> > ::ctor(this,slot_id,principal_id);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_label:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b78de0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(yes_label))}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_NexSequenceBase_ConfirmRetryDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_TargetSlotListMethods:INexVersus_TargetSlotList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259650usize)as*mut u8,();
+(NexVersus_TargetSlotList)__receiver)}
+}
+#[doc="`Add(u64)` overload"]fn add(self,id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22596e0usize)as*mut u8,();
+(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id))}
+}
+#[doc="`Add(crate::system::collections::generic::list_1::List_1<u64>)` overload"]fn add_2(self,list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64> >)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259780usize)as*mut u8,();
+(NexVersus_TargetSlotList)__receiver,(crate::system::collections::generic::list_1::List_1<u64>)::core::convert::Into::into(list))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259910usize)as*mut u8,();
+(NexVersus_TargetSlotList)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259970usize)as*mut u8,i32;
+(NexVersus_TargetSlotList)__receiver)}
+}
+#[doc="`GetCountValid()` overload"]fn get_count_valid(self,)->i32{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22599d0usize)as*mut u8,i32;
+(NexVersus_TargetSlotList)__receiver)}
+}
+#[doc="`GetIDList()` overload"]fn get_id_list(self,)->crate::system::collections::generic::list_1::List_1<u64>{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22531e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<u64> ;
+(NexVersus_TargetSlotList)__receiver)}
+}
+#[doc="`SetResult(u64, crate::app::nexversus::NexVersus_TargetSlotList_Results)` overload"]fn set_result(self,id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList_Results>)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2253680usize)as*mut u8,();
+(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id),(crate::app::nexversus::NexVersus_TargetSlotList_Results)::core::convert::Into::into(result))}
+}
+#[doc="`GetResult(u64)` overload"]fn get_result(self,id:impl::core::convert::Into<u64>)->crate::app::nexversus::NexVersus_TargetSlotList_Results{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259b20usize)as*mut u8,crate::app::nexversus::NexVersus_TargetSlotList_Results;
+(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id))}
+}
+#[doc="`IsValid(u64)` overload"]fn is_valid(self,id:impl::core::convert::Into<u64>)->bool{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259bc0usize)as*mut u8,bool;
+(NexVersus_TargetSlotList)__receiver,(u64)::core::convert::Into::into(id))}
+}
+#[doc="`Dump()` overload"]fn dump(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259c70usize)as*mut u8, ::unity2::Il2CppString;
+(NexVersus_TargetSlotList)__receiver)}
+}
+#[doc="`ForEach(crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]fn for_each(self,action:impl::core::convert::Into<crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results> >)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2259f40usize)as*mut u8,();
+(NexVersus_TargetSlotList)__receiver,(crate::system::action_2::Action_2<u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)::core::convert::Into::into(action))}
+}
+#[doc="`ForEach(crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)` overload"]fn for_each_2(self,action:impl::core::convert::Into<crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results> >)->(){unsafe{let __receiver= <NexVersus_TargetSlotList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225a0e0usize)as*mut u8,();
+(NexVersus_TargetSlotList)__receiver,(crate::system::action_3::Action_3<i32,u64,crate::app::nexversus::NexVersus_TargetSlotList_Results>)::core::convert::Into::into(action))}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_TargetSlotList>INexVersus_TargetSlotListMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_TargetSlotList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_count_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_id_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn for_each_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn for_each_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_TargetSlotList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_TargetSlotList), ::core::stringify!(new),));
+ <Self as INexVersus_TargetSlotListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0>{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, u16, crate::system::collections::generic::list_1::List_1<T0>, crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>>)` overload"]#[method(name=".ctor",args=4)]pub fn ctor(self,principal_id_list:crate::system::collections::generic::list_1::List_1<u64> ,slot_id:u16,result_data_list:crate::system::collections::generic::list_1::List_1<T0> ,result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> >)->();
+ #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
+ #[doc="`GetPersistenceMetaData()` overload"]#[method(name="GetPersistenceMetaData",args=0)]pub fn get_persistence_meta_data(self,)->();
+ #[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, u16, crate::system::collections::generic::list_1::List_1<T0>, crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>>)` overload"]#[method(name="CreateBind",args=5)]pub fn create_bind(super_:crate::app::procinst::ProcInst,principal_id_list:crate::system::collections::generic::list_1::List_1<u64> ,slot_id:u16,result_data_list:crate::system::collections::generic::list_1::List_1<T0> ,result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> >)->();
+}
+
+#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_GetMetaDataListFromPersistenceSlotSequence_1<T0>{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, u16, crate::system::collections::generic::list_1::List_1<T0>, crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>>)` — overload selector"]pub fn new(principal_id_list:crate::system::collections::generic::list_1::List_1<u64> ,slot_id:u16,result_data_list:crate::system::collections::generic::list_1::List_1<T0> ,result_rating_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> >)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_GetMetaDataListFromPersistenceSlotSequence_1), ::core::stringify!(new),));
+ <Self as INexVersus_GetMetaDataListFromPersistenceSlotSequence_1Methods<T0> > ::ctor(this,principal_id_list,slot_id,result_data_list,result_rating_list);
+this}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_RankedMetaDataEndCallbackMethods:INexVersus_RankedMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NexVersus_RankedMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22570a0usize)as*mut u8,();
+(NexVersus_RankedMetaDataEndCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::nexversus::NexVersus_ResultInfo)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::nexversus::NexVersus_Results> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,info:impl::core::convert::Into<crate::app::nexversus::NexVersus_ResultInfo>)->(){unsafe{let __receiver= <NexVersus_RankedMetaDataEndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224e770usize)as*mut u8,();
+(NexVersus_RankedMetaDataEndCallback)__receiver,(crate::app::nexversus::NexVersus_Results)::core::convert::Into::into(result),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(crate::app::nexversus::NexVersus_ResultInfo)::core::convert::Into::into(info))}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_RankedMetaDataEndCallback>INexVersus_RankedMetaDataEndCallbackMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_RankedMetaDataEndCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_RankedMetaDataEndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_RankedMetaDataEndCallback), ::core::stringify!(new),));
+ <Self as INexVersus_RankedMetaDataEndCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_CheckAccessibleSlotSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::nexversus::NexVersus_TargetSlotList, crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, crate::app::nexversus::NexVersus_EndCallback)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,target_info_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList> ,mode:impl::core::convert::Into<crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode> ,end_callback:impl::core::convert::Into<crate::app::nexversus::NexVersus_EndCallback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2253a30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_info_list),(crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode)::core::convert::Into::into(mode),(crate::app::nexversus::NexVersus_EndCallback)::core::convert::Into::into(end_callback))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_CheckAccessibleSlotSequenceMethods:INexVersus_CheckAccessibleSlotSequence{#[doc="`GetSlot()` overload"]fn get_slot(self,)->u16{unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2252eb0usize)as*mut u8,u16;
+(NexVersus_CheckAccessibleSlotSequence)__receiver)}
+}
+#[doc="`.ctor(crate::app::nexversus::NexVersus_TargetSlotList, crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, crate::app::nexversus::NexVersus_EndCallback)` overload"]fn ctor(self,target_info_list:impl::core::convert::Into<crate::app::nexversus::NexVersus_TargetSlotList> ,mode:impl::core::convert::Into<crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode> ,end_callback:impl::core::convert::Into<crate::app::nexversus::NexVersus_EndCallback>)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2252f20usize)as*mut u8,();
+(NexVersus_CheckAccessibleSlotSequence)__receiver,(crate::app::nexversus::NexVersus_TargetSlotList)::core::convert::Into::into(target_info_list),(crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode)::core::convert::Into::into(mode),(crate::app::nexversus::NexVersus_EndCallback)::core::convert::Into::into(end_callback))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2252f80usize)as*mut u8,();
+(NexVersus_CheckAccessibleSlotSequence)__receiver)}
+}
+#[doc="`GetInfo()` overload"]fn get_info(self,)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2252f90usize)as*mut u8,();
+(NexVersus_CheckAccessibleSlotSequence)__receiver)}
+}
+#[doc="`EndCallback()` overload"]fn end_callback(self,)->(){unsafe{let __receiver= <NexVersus_CheckAccessibleSlotSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2253730usize)as*mut u8,();
+(NexVersus_CheckAccessibleSlotSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_CheckAccessibleSlotSequence>INexVersus_CheckAccessibleSlotSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_CheckAccessibleSlotSequence{pub fn get_slot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn end_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_CheckAccessibleSlotSequence{#[doc="`.ctor(crate::app::nexversus::NexVersus_TargetSlotList, crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode, crate::app::nexversus::NexVersus_EndCallback)` — overload selector"]pub fn new(target_info_list:crate::app::nexversus::NexVersus_TargetSlotList,mode:crate::app::nexversus::NexVersus_CheckAccessibleSlotSequence_Mode,end_callback:crate::app::nexversus::NexVersus_EndCallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_CheckAccessibleSlotSequence), ::core::stringify!(new),));
+ <Self as INexVersus_CheckAccessibleSlotSequenceMethods> ::ctor(this,target_info_list,mode,end_callback);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeUpdatedTimeSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2251f20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeUpdatedTimeSequenceMethods:INexVersus_ChangeUpdatedTimeSequence{#[doc="`.ctor(u64)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2251bc0usize)as*mut u8,();
+(NexVersus_ChangeUpdatedTimeSequence)__receiver,(u64)::core::convert::Into::into(data_id))}
+}
+#[doc="`Login()` overload"]fn login(self,)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2251bf0usize)as*mut u8,();
+(NexVersus_ChangeUpdatedTimeSequence)__receiver)}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2251c60usize)as*mut u8,();
+(NexVersus_ChangeUpdatedTimeSequence)__receiver)}
+}
+#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeUpdatedTimeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2251dc0usize)as*mut u8,();
+(NexVersus_ChangeUpdatedTimeSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeUpdatedTimeSequence>INexVersus_ChangeUpdatedTimeSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeUpdatedTimeSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn login_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn change_meta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeUpdatedTimeSequence{#[doc="`.ctor(u64)` — overload selector"]pub fn new(data_id:u64)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_ChangeUpdatedTimeSequence), ::core::stringify!(new),));
+ <Self as INexVersus_ChangeUpdatedTimeSequenceMethods> ::ctor(this,data_id);
+this}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeVersusRankedMetaDataSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2252880usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(::unity2::Il2CppString)::core::convert::Into::into(player_name))}
+}
+}
+
+#[cfg(feature="app-nexversus")]pub trait INexVersus_ChangeVersusRankedMetaDataSequenceMethods:INexVersus_ChangeVersusRankedMetaDataSequence{#[doc="`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2252370usize)as*mut u8,();
+(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data),(::unity2::Il2CppString)::core::convert::Into::into(player_name))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22523d0usize)as*mut u8,();
+(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver)}
+}
+#[doc="`SetMetaParam()` overload"]fn set_meta_param(self,)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22523e0usize)as*mut u8,();
+(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver)}
+}
+#[doc="`ChangeMeta()` overload"]fn change_meta(self,)->(){unsafe{let __receiver= <NexVersus_ChangeVersusRankedMetaDataSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22524b0usize)as*mut u8,();
+(NexVersus_ChangeVersusRankedMetaDataSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexversus")]impl<__T:INexVersus_ChangeVersusRankedMetaDataSequence>INexVersus_ChangeVersusRankedMetaDataSequenceMethods for __T{}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeVersusRankedMetaDataSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_meta_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn change_meta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-nexversus")]impl NexVersus_ChangeVersusRankedMetaDataSequence{#[doc="`.ctor(u64, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, ::unity2::Il2CppString)` — overload selector"]pub fn new(data_id:u64,meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,player_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_ChangeVersusRankedMetaDataSequence), ::core::stringify!(new),));
+ <Self as INexVersus_ChangeVersusRankedMetaDataSequenceMethods> ::ctor(this,data_id,meta_data,player_name);
+this}
+}
+
+#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,data_id:u64,data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)->();
+ #[doc="`Postlogin()` overload"]#[method(name="Postlogin",args=0)]pub fn postlogin(self,)->();
+ #[doc="`GetData()` overload"]#[method(name="GetData",args=0)]pub fn get_data(self,)->();
+ #[doc="`IsValidDataType(u16)` overload"]#[method(name="IsValidDataType",args=1)]pub fn is_valid_data_type(self,data_type:u16)->bool;
+ #[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` overload"]#[method(name="CreateBind",args=3)]pub fn create_bind(super_:crate::app::procinst::ProcInst,data_id:u64,data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)->();
+}
+
+#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaSequence_1<T0>{#[doc="`.ctor(u64, crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)` — overload selector"]pub fn new(data_id:u64,data_type:crate::app::nexversus::NexVersus_DownloadMetaSequence_1_DataType<T0>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_DownloadMetaSequence_1), ::core::stringify!(new),));
+ <Self as INexVersus_DownloadMetaSequence_1Methods<T0> > ::ctor(this,data_id,data_type);
+this}
+}
+
+#[cfg(feature="app-nexversus")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(crate::app::nexversus::NexVersus_Results, T0, crate::app::nexversus::NexVersus_ResultInfo)` overload"]#[method(name="Invoke",args=3)]pub fn invoke(self,result:crate::app::nexversus::NexVersus_Results,meta_data:T0,info:crate::app::nexversus::NexVersus_ResultInfo)->();
+}
+
+#[cfg(feature="app-nexversus")]impl<T0: ::unity2::ClassIdentity>NexVersus_DownloadMetaDataSequence_1_EndCallback<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexVersus_DownloadMetaDataSequence_1_EndCallback), ::core::stringify!(new),));
+ <Self as INexVersus_DownloadMetaDataSequence_1_EndCallbackMethods<T0> > ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-nexversus")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label;
-    pub use super::NexVersus_SearchSequence;
-    pub use super::INexVersus_SearchSequence;
-    pub use super::INexVersus_SearchSequenceMethods;
-    pub use super::NexVersus_ChangeReplayMetaSequence_Mode;
-    pub use super::NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem;
-    pub use super::INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem;
-    pub use super::INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods;
-    pub use super::NexVersus_DownloadMetaDataSequence_1_Label;
-    pub use super::NexVersus_DownloadMetaSequence_1;
-    pub use super::INexVersus_DownloadMetaSequence_1;
-    pub use super::INexVersus_DownloadMetaSequence_1Methods;
-    pub use super::NexVersus_TargetSlotList_Results;
+    pub use super::NexVersus_CasualMetaDataEndCallback;
+    pub use super::INexVersus_CasualMetaDataEndCallback;
+    pub use super::INexVersus_CasualMetaDataEndCallbackMethods;
+    pub use super::NexVersus_RatingSpotId;
+    pub use super::INexVersus_RatingSpotId;
+    pub use super::NexVersus_EndCallback;
+    pub use super::INexVersus_EndCallback;
+    pub use super::INexVersus_EndCallbackMethods;
+    pub use super::NexVersus_ChangeReplaySequence_Label;
+    pub use super::NexVersus_AddRatingSequence_Label;
+    pub use super::NexVersus_UploadCasualSequence_Label;
+    pub use super::NexVersus_SearchCasualSequence;
+    pub use super::INexVersus_SearchCasualSequence;
+    pub use super::INexVersus_SearchCasualSequenceMethods;
+    pub use super::NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label;
+    pub use super::NexVersus_ChangeVersusRankedMetaDataSequence_Label;
+    pub use super::NexVersus_ChangeVersusDataSequence_1;
+    pub use super::INexVersus_ChangeVersusDataSequence_1;
+    pub use super::INexVersus_ChangeVersusDataSequence_1Methods;
     pub use super::NexVersus_DownloadSequence_1_Label;
     pub use super::NexVersus_UploadCasualSequence;
     pub use super::INexVersus_UploadCasualSequence;
     pub use super::INexVersus_UploadCasualSequenceMethods;
-    pub use super::NexVersus_GetMetaDataFromPersistenceSlotSequence_1;
-    pub use super::INexVersus_GetMetaDataFromPersistenceSlotSequence_1;
-    pub use super::INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods;
-    pub use super::NexVersus_ChangeVersusDataSequence_1;
-    pub use super::INexVersus_ChangeVersusDataSequence_1;
-    pub use super::INexVersus_ChangeVersusDataSequence_1Methods;
-    pub use super::NexVersus_UploadReportMetaSequence_Label;
-    pub use super::NexVersus_RankedMetaDataEndCallback;
-    pub use super::INexVersus_RankedMetaDataEndCallback;
-    pub use super::INexVersus_RankedMetaDataEndCallbackMethods;
-    pub use super::NexVersus_SearchCasualSequence_Label;
-    pub use super::NexVersus_GetRankedMetaDataFromPersistenceSlotSequence;
-    pub use super::INexVersus_GetRankedMetaDataFromPersistenceSlotSequence;
-    pub use super::INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods;
-    pub use super::NexVersus_ReportSequence;
-    pub use super::INexVersus_ReportSequence;
-    pub use super::INexVersus_ReportSequenceMethods;
-    pub use super::NexVersus_CheckAccessibleSlotSequence;
-    pub use super::INexVersus_CheckAccessibleSlotSequence;
-    pub use super::INexVersus_CheckAccessibleSlotSequenceMethods;
-    pub use super::NexVersus_DownloadMetaSequence_1_Label;
-    pub use super::NexVersus_ChangeVersusDataSequence_1_Label;
-    pub use super::NexVersus_TargetSlotList;
-    pub use super::INexVersus_TargetSlotList;
-    pub use super::INexVersus_TargetSlotListMethods;
-    pub use super::NexVersus_NexSequenceBase;
-    pub use super::INexVersus_NexSequenceBase;
-    pub use super::INexVersus_NexSequenceBaseMethods;
-    pub use super::NexVersus_UploadReplaySequence;
-    pub use super::INexVersus_UploadReplaySequence;
-    pub use super::INexVersus_UploadReplaySequenceMethods;
-    pub use super::NexVersus_DownloadReplaySequence_Label;
-    pub use super::NexVersus_ChangeReplayMetaSequence_Label;
-    pub use super::NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label;
-    pub use super::NexVersus_DownloadSequence_1;
-    pub use super::INexVersus_DownloadSequence_1;
-    pub use super::INexVersus_DownloadSequence_1Methods;
-    pub use super::NexVersus_AddRatingSequence_Label;
-    pub use super::NexVersus_DownloadMetaSequence_1_DataType;
-    pub use super::NexVersus_ReportSequence_Label;
-    pub use super::NexVersus_ChangeUpdatedTimeSequence_Label;
-    pub use super::NexVersus_UploadReplaySequence_Label;
-    pub use super::NexVersus_RatingSpotId;
-    pub use super::INexVersus_RatingSpotId;
-    pub use super::NexVersus_GetMetaDataListFromPersistenceSlotSequence_1;
-    pub use super::INexVersus_GetMetaDataListFromPersistenceSlotSequence_1;
-    pub use super::INexVersus_GetMetaDataListFromPersistenceSlotSequence_1Methods;
-    pub use super::NexVersus_NexSequenceBase_ConfirmRetryDialog;
-    pub use super::INexVersus_NexSequenceBase_ConfirmRetryDialog;
-    pub use super::NexVersus_AddRatingSequence;
-    pub use super::INexVersus_AddRatingSequence;
-    pub use super::INexVersus_AddRatingSequenceMethods;
-    pub use super::NexVersus_UploadCasualSequence_Label;
-    pub use super::NexVersus_UploadSequence_Label;
-    pub use super::NexVersus_GetReplayMetaDataFromPersistenceSlotSequence;
-    pub use super::INexVersus_GetReplayMetaDataFromPersistenceSlotSequence;
-    pub use super::INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods;
-    pub use super::NexVersus_SearchSequence_Label;
-    pub use super::NexVersus_CasualMetaDataEndCallback;
-    pub use super::INexVersus_CasualMetaDataEndCallback;
-    pub use super::INexVersus_CasualMetaDataEndCallbackMethods;
-    pub use super::NexVersus_UploadSequence;
-    pub use super::INexVersus_UploadSequence;
-    pub use super::INexVersus_UploadSequenceMethods;
-    pub use super::NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label;
-    pub use super::NexVersus_Results;
-    pub use super::NexVersus_ChangeReplaySequence_Label;
-    pub use super::NexVersus_UploadType;
-    pub use super::NexVersus_UploadReportMetaSequence;
-    pub use super::INexVersus_UploadReportMetaSequence;
-    pub use super::INexVersus_UploadReportMetaSequenceMethods;
-    pub use super::NexVersus_ChangeMetaDataTypeSequence;
-    pub use super::INexVersus_ChangeMetaDataTypeSequence;
-    pub use super::INexVersus_ChangeMetaDataTypeSequenceMethods;
-    pub use super::NexVersus_CheckAccessibleSlotSequence_Label;
-    pub use super::NexVersus_GetMetaDataFromPersistenceSlotSequence_1_Label;
-    pub use super::NexVersus_ChangeMetaDataTypeSequence_Label;
-    pub use super::NexVersus_ResultInfo;
-    pub use super::INexVersus_ResultInfo;
-    pub use super::INexVersus_ResultInfoMethods;
-    pub use super::NexVersus_DownloadMetaDataSequence_1_Mode;
-    pub use super::NexVersus_DownloadReplaySequence;
-    pub use super::INexVersus_DownloadReplaySequence;
-    pub use super::INexVersus_DownloadReplaySequenceMethods;
-    pub use super::NexVersus_ChangeMetaDataTypeSequence_TargetType;
-    pub use super::NexVersus_ChangeVersusRankedMetaDataSequence;
-    pub use super::INexVersus_ChangeVersusRankedMetaDataSequence;
-    pub use super::INexVersus_ChangeVersusRankedMetaDataSequenceMethods;
-    pub use super::NexVersus_ChangeVersusRankedMetaDataSequence_Label;
-    pub use super::NexVersus_SearchCasualSequence;
-    pub use super::INexVersus_SearchCasualSequence;
-    pub use super::INexVersus_SearchCasualSequenceMethods;
-    pub use super::NexVersus_ChangeReplayMetaSequence;
-    pub use super::INexVersus_ChangeReplayMetaSequence;
-    pub use super::INexVersus_ChangeReplayMetaSequenceMethods;
-    pub use super::NexVersus;
-    pub use super::INexVersus;
-    pub use super::INexVersusMethods;
-    pub use super::NexVersus_EndCallback;
-    pub use super::INexVersus_EndCallback;
-    pub use super::INexVersus_EndCallbackMethods;
-    pub use super::NexVersus_ChangeReplaySequence;
-    pub use super::INexVersus_ChangeReplaySequence;
-    pub use super::INexVersus_ChangeReplaySequenceMethods;
-    pub use super::NexVersus_ChangeUpdatedTimeSequence;
-    pub use super::INexVersus_ChangeUpdatedTimeSequence;
-    pub use super::INexVersus_ChangeUpdatedTimeSequenceMethods;
     pub use super::NexVersus_DownloadMetaDataSequence_1;
     pub use super::INexVersus_DownloadMetaDataSequence_1;
     pub use super::INexVersus_DownloadMetaDataSequence_1Methods;
-    pub use super::NexVersus_CheckAccessibleSlotSequence_Mode;
-    pub use super::NexVersus_DownloadMetaDataSequence_1_EndCallback;
-    pub use super::INexVersus_DownloadMetaDataSequence_1_EndCallback;
-    pub use super::INexVersus_DownloadMetaDataSequence_1_EndCallbackMethods;
+    pub use super::NexVersus_DownloadSequence_1;
+    pub use super::INexVersus_DownloadSequence_1;
+    pub use super::INexVersus_DownloadSequence_1Methods;
+    pub use super::NexVersus_ChangeUpdatedTimeSequence_Label;
+    pub use super::NexVersus_AddRatingSequence;
+    pub use super::INexVersus_AddRatingSequence;
+    pub use super::INexVersus_AddRatingSequenceMethods;
+    pub use super::NexVersus_ChangeReplayMetaSequence_Mode;
+    pub use super::NexVersus;
+    pub use super::INexVersus;
+    pub use super::INexVersusMethods;
+    pub use super::NexVersus_NexSequenceBase;
+    pub use super::INexVersus_NexSequenceBase;
+    pub use super::INexVersus_NexSequenceBaseMethods;
+    pub use super::NexVersus_ChangeReplaySequence;
+    pub use super::INexVersus_ChangeReplaySequence;
+    pub use super::INexVersus_ChangeReplaySequenceMethods;
+    pub use super::NexVersus_RatingData;
+    pub use super::NexVersus_UploadSequence_Label;
+    pub use super::NexVersus_ReportSequence_Label;
+    pub use super::NexVersus_SearchCasualSequence_Label;
+    pub use super::NexVersus_ChangeReplayMetaSequence_Label;
+    pub use super::NexVersus_CheckAccessibleSlotSequence_Label;
+    pub use super::NexVersus_GetMetaDataListFromPersistenceSlotSequence_1_Label;
+    pub use super::NexVersus_DownloadMetaDataSequence_1_Label;
+    pub use super::NexVersus_GetReplayMetaDataFromPersistenceSlotSequence;
+    pub use super::INexVersus_GetReplayMetaDataFromPersistenceSlotSequence;
+    pub use super::INexVersus_GetReplayMetaDataFromPersistenceSlotSequenceMethods;
+    pub use super::NexVersus_Results;
+    pub use super::NexVersus_UploadType;
+    pub use super::NexVersus_ChangeMetaDataTypeSequence;
+    pub use super::INexVersus_ChangeMetaDataTypeSequence;
+    pub use super::INexVersus_ChangeMetaDataTypeSequenceMethods;
+    pub use super::NexVersus_ChangeMetaDataTypeSequence_Label;
+    pub use super::NexVersus_ReportSequence;
+    pub use super::INexVersus_ReportSequence;
+    pub use super::INexVersus_ReportSequenceMethods;
+    pub use super::NexVersus_UploadSequence;
+    pub use super::INexVersus_UploadSequence;
+    pub use super::INexVersus_UploadSequenceMethods;
+    pub use super::NexVersus_DownloadMetaSequence_1_Label;
+    pub use super::NexVersus_GetRankedMetaDataFromPersistenceSlotSequence;
+    pub use super::INexVersus_GetRankedMetaDataFromPersistenceSlotSequence;
+    pub use super::INexVersus_GetRankedMetaDataFromPersistenceSlotSequenceMethods;
+    pub use super::NexVersus_UploadReplaySequence;
+    pub use super::INexVersus_UploadReplaySequence;
+    pub use super::INexVersus_UploadReplaySequenceMethods;
+    pub use super::NexVersus_SearchSequence;
+    pub use super::INexVersus_SearchSequence;
+    pub use super::INexVersus_SearchSequenceMethods;
+    pub use super::NexVersus_DownloadReplaySequence;
+    pub use super::INexVersus_DownloadReplaySequence;
+    pub use super::INexVersus_DownloadReplaySequenceMethods;
+    pub use super::NexVersus_ChangeReplayMetaSequence;
+    pub use super::INexVersus_ChangeReplayMetaSequence;
+    pub use super::INexVersus_ChangeReplayMetaSequenceMethods;
+    pub use super::NexVersus_DownloadMetaSequence_1_DataType;
+    pub use super::NexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem;
+    pub use super::INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItem;
+    pub use super::INexVersus_NexSequenceBase_ConfirmRetryDialog_YesMenuItemMethods;
+    pub use super::NexVersus_TargetSlotList_Results;
     pub use super::NexVersus_ReplaySlotMetaResultData;
     pub use super::INexVersus_ReplaySlotMetaResultData;
     pub use super::INexVersus_ReplaySlotMetaResultDataMethods;
-    pub use super::NexVersus_RatingData;
+    pub use super::NexVersus_UploadReportMetaSequence;
+    pub use super::INexVersus_UploadReportMetaSequence;
+    pub use super::INexVersus_UploadReportMetaSequenceMethods;
+    pub use super::NexVersus_UploadReportMetaSequence_Label;
+    pub use super::NexVersus_GetRankedMetaDataFromPersistenceSlotSequence_Label;
+    pub use super::NexVersus_ResultInfo;
+    pub use super::INexVersus_ResultInfo;
+    pub use super::INexVersus_ResultInfoMethods;
+    pub use super::NexVersus_DownloadReplaySequence_Label;
+    pub use super::NexVersus_ChangeVersusDataSequence_1_Label;
+    pub use super::NexVersus_DownloadMetaDataSequence_1_Mode;
+    pub use super::NexVersus_GetMetaDataFromPersistenceSlotSequence_1;
+    pub use super::INexVersus_GetMetaDataFromPersistenceSlotSequence_1;
+    pub use super::INexVersus_GetMetaDataFromPersistenceSlotSequence_1Methods;
+    pub use super::NexVersus_UploadReplaySequence_Label;
+    pub use super::NexVersus_NexSequenceBase_ConfirmRetryDialog;
+    pub use super::INexVersus_NexSequenceBase_ConfirmRetryDialog;
+    pub use super::NexVersus_TargetSlotList;
+    pub use super::INexVersus_TargetSlotList;
+    pub use super::INexVersus_TargetSlotListMethods;
+    pub use super::NexVersus_GetReplayMetaDataFromPersistenceSlotSequence_Label;
+    pub use super::NexVersus_SearchSequence_Label;
+    pub use super::NexVersus_GetMetaDataListFromPersistenceSlotSequence_1;
+    pub use super::INexVersus_GetMetaDataListFromPersistenceSlotSequence_1;
+    pub use super::INexVersus_GetMetaDataListFromPersistenceSlotSequence_1Methods;
+    pub use super::NexVersus_RankedMetaDataEndCallback;
+    pub use super::INexVersus_RankedMetaDataEndCallback;
+    pub use super::INexVersus_RankedMetaDataEndCallbackMethods;
+    pub use super::NexVersus_CheckAccessibleSlotSequence;
+    pub use super::INexVersus_CheckAccessibleSlotSequence;
+    pub use super::INexVersus_CheckAccessibleSlotSequenceMethods;
+    pub use super::NexVersus_ChangeUpdatedTimeSequence;
+    pub use super::INexVersus_ChangeUpdatedTimeSequence;
+    pub use super::INexVersus_ChangeUpdatedTimeSequenceMethods;
+    pub use super::NexVersus_CheckAccessibleSlotSequence_Mode;
+    pub use super::NexVersus_ChangeVersusRankedMetaDataSequence;
+    pub use super::INexVersus_ChangeVersusRankedMetaDataSequence;
+    pub use super::INexVersus_ChangeVersusRankedMetaDataSequenceMethods;
+    pub use super::NexVersus_DownloadMetaSequence_1;
+    pub use super::INexVersus_DownloadMetaSequence_1;
+    pub use super::INexVersus_DownloadMetaSequence_1Methods;
+    pub use super::NexVersus_ChangeMetaDataTypeSequence_TargetType;
+    pub use super::NexVersus_DownloadMetaDataSequence_1_EndCallback;
+    pub use super::INexVersus_DownloadMetaDataSequence_1_EndCallback;
+    pub use super::INexVersus_DownloadMetaDataSequence_1_EndCallbackMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

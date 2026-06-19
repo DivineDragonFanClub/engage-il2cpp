@@ -23,9 +23,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldebug/MapPanelDebug.md"))]#[::unity2::class(namespace="App",name="MapPanelDebug")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappaneldebug::MapPanelDebug>)]pub struct MapPanelDebug{#[offset(64)]#[rename(name="m_Entitys")]pub m_entitys:crate::system::collections::generic::list_1::List_1<crate::app::mappaneldebug::MapPanelDebug_Entity> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldebug/MapPanelDebug_Entity.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapPanelDebug_Entity{pub x:i32,pub z:i32,pub color:crate::unity_engine::color::Color,}
 impl::unity2::ClassIdentity for MapPanelDebug_Entity{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapPanelDebug.Entity";
@@ -35,6 +32,9 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for MapPanelDebug_Entity{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldebug/MapPanelDebug.md"))]#[::unity2::class(namespace="App",name="MapPanelDebug")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappaneldebug::MapPanelDebug>)]pub struct MapPanelDebug{#[offset(64)]#[rename(name="m_Entitys")]pub m_entitys:crate::system::collections::generic::list_1::List_1<crate::app::mappaneldebug::MapPanelDebug_Entity> ,}
 
 }
 
@@ -68,10 +68,10 @@ this}
 #[cfg(feature = "app-mappaneldebug")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapPanelDebug_Entity;
     pub use super::MapPanelDebug;
     pub use super::IMapPanelDebug;
     pub use super::IMapPanelDebugMethods;
-    pub use super::MapPanelDebug_Entity;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

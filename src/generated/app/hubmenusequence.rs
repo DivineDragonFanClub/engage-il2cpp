@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenusequence/HubMenuSequence.md"))]#[::unity2::class(namespace="App",name="HubMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::hubmenusequence::HubMenuSequence>)]pub struct HubMenuSequence{#[offset(114)]#[rename(name="IsGotoNext")]pub is_goto_next:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenusequence/HubMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubMenuSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for HubMenuSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubMenuSequence.Label";
@@ -47,9 +50,6 @@ pub fn goto_gmap()->Self{Self{value:8}
 pub fn end()->Self{Self{value:9}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenusequence/HubMenuSequence.md"))]#[::unity2::class(namespace="App",name="HubMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::hubmenusequence::HubMenuSequence>)]pub struct HubMenuSequence{#[offset(114)]#[rename(name="IsGotoNext")]pub is_goto_next:bool,}
 
 }
 
@@ -98,10 +98,10 @@ this}
 #[cfg(feature = "app-hubmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubMenuSequence_Label;
     pub use super::HubMenuSequence;
     pub use super::IHubMenuSequence;
     pub use super::IHubMenuSequenceMethods;
+    pub use super::HubMenuSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

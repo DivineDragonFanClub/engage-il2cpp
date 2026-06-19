@@ -15,13 +15,13 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects.CustomCameraSettings")]#[parent(crate::system::object::Object)]pub struct RenderObjects_CustomCameraSettings{#[offset(16)]#[rename(name="overrideCamera")]pub override_camera:bool, #[offset(17)]#[rename(name="restoreCamera")]pub restore_camera:bool, #[offset(20)]#[rename(name="offset")]pub offset:crate::unity_engine::vector4::Vector4, #[offset(36)]#[rename(name="cameraFieldOfView")]pub camera_field_of_view:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature)]pub struct RenderObjects{#[offset(32)]#[rename(name="settings")]pub settings:crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_RenderObjectsSettings, #[offset(40)]#[rename(name="renderObjectsPass")]pub render_objects_pass:crate::unity_engine::experimental::rendering::universal::renderobjectspass::RenderObjectsPass,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_FilterSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects.FilterSettings")]#[parent(crate::system::object::Object)]pub struct RenderObjects_FilterSettings{#[offset(16)]#[rename(name="RenderQueueType")]pub render_queue_type:crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType, #[offset(20)]#[rename(name="LayerMask")]pub layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(24)]#[rename(name="PassNames")]pub pass_names: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects.CustomCameraSettings")]#[parent(crate::system::object::Object)]pub struct RenderObjects_CustomCameraSettings{#[offset(16)]#[rename(name="overrideCamera")]pub override_camera:bool, #[offset(17)]#[rename(name="restoreCamera")]pub restore_camera:bool, #[offset(20)]#[rename(name="offset")]pub offset:crate::unity_engine::vector4::Vector4, #[offset(36)]#[rename(name="cameraFieldOfView")]pub camera_field_of_view:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects.RenderObjectsSettings")]#[parent(crate::system::object::Object)]pub struct RenderObjects_RenderObjectsSettings{#[offset(16)]#[rename(name="passTag")]pub pass_tag: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Event")]pub event:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, #[offset(32)]#[rename(name="filterSettings")]pub filter_settings:crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_FilterSettings, #[offset(40)]#[rename(name="overrideMaterial")]pub override_material:crate::unity_engine::material::Material, #[offset(48)]#[rename(name="overrideMaterialPassIndex")]pub override_material_pass_index:i32, #[offset(52)]#[rename(name="overrideDepthState")]pub override_depth_state:bool, #[offset(56)]#[rename(name="depthCompareFunction")]pub depth_compare_function:crate::unity_engine::rendering::comparefunction::CompareFunction, #[offset(60)]#[rename(name="enableWrite")]pub enable_write:bool, #[offset(64)]#[rename(name="stencilSettings")]pub stencil_settings:crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData, #[offset(72)]#[rename(name="cameraSettings")]pub camera_settings:crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_CustomCameraSettings,}
@@ -30,6 +30,24 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]pub trait IRenderObjects_CustomCameraSettingsMethods:IRenderObjects_CustomCameraSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderObjects_CustomCameraSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb8670usize)as*mut u8,();
+(RenderObjects_CustomCameraSettings)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl<__T:IRenderObjects_CustomCameraSettings>IRenderObjects_CustomCameraSettingsMethods for __T{}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RenderObjects_CustomCameraSettings), ::core::stringify!(new),));
+ <Self as IRenderObjects_CustomCameraSettingsMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]pub trait IRenderObjectsMethods:IRenderObjects{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <RenderObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31a9360usize)as*mut u8,();
@@ -79,24 +97,6 @@ this}
 this}
 }
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]pub trait IRenderObjects_CustomCameraSettingsMethods:IRenderObjects_CustomCameraSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderObjects_CustomCameraSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb8670usize)as*mut u8,();
-(RenderObjects_CustomCameraSettings)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl<__T:IRenderObjects_CustomCameraSettings>IRenderObjects_CustomCameraSettingsMethods for __T{}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RenderObjects_CustomCameraSettings), ::core::stringify!(new),));
- <Self as IRenderObjects_CustomCameraSettingsMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]pub trait IRenderObjects_RenderObjectsSettingsMethods:IRenderObjects_RenderObjectsSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderObjects_RenderObjectsSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb86d0usize)as*mut u8,();
 (RenderObjects_RenderObjectsSettings)__receiver)}
@@ -118,15 +118,15 @@ this}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RenderObjects_CustomCameraSettings;
+    pub use super::IRenderObjects_CustomCameraSettings;
+    pub use super::IRenderObjects_CustomCameraSettingsMethods;
     pub use super::RenderObjects;
     pub use super::IRenderObjects;
     pub use super::IRenderObjectsMethods;
     pub use super::RenderObjects_FilterSettings;
     pub use super::IRenderObjects_FilterSettings;
     pub use super::IRenderObjects_FilterSettingsMethods;
-    pub use super::RenderObjects_CustomCameraSettings;
-    pub use super::IRenderObjects_CustomCameraSettings;
-    pub use super::IRenderObjects_CustomCameraSettingsMethods;
     pub use super::RenderObjects_RenderObjectsSettings;
     pub use super::IRenderObjects_RenderObjectsSettings;
     pub use super::IRenderObjects_RenderObjectsSettingsMethods;

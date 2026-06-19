@@ -23,38 +23,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/confirmdialog/ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App.CookingMenu",name="ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/confirmdialog/ConfirmDialog.md"))]#[::unity2::class(namespace="App.CookingMenu",name="ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/confirmdialog/ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App.CookingMenu",name="ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-cooking_menu-confirmdialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-cooking_menu-confirmdialog")]pub trait IConfirmDialog_ConfirmDialogItemYesMethods:IConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbda0usize)as*mut u8,();
-(ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(action))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbde0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ConfirmDialog_ConfirmDialogItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-cooking_menu-confirmdialog")]impl<__T:IConfirmDialog_ConfirmDialogItemYes>IConfirmDialog_ConfirmDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-confirmdialog")]impl ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-cooking_menu-confirmdialog")]impl ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
- <Self as IConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,action);
-this}
-}
 
 #[cfg(feature="app-cooking_menu-confirmdialog")]impl ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253b050usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(action))}
@@ -85,15 +62,38 @@ pub fn get_open_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInf
 this}
 }
 
+#[cfg(feature="app-cooking_menu-confirmdialog")]pub trait IConfirmDialog_ConfirmDialogItemYesMethods:IConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbda0usize)as*mut u8,();
+(ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(action))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbde0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ConfirmDialog_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-confirmdialog")]impl<__T:IConfirmDialog_ConfirmDialogItemYes>IConfirmDialog_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-confirmdialog")]impl ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-cooking_menu-confirmdialog")]impl ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,action);
+this}
+}
+
 #[cfg(feature = "app-cooking_menu-confirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IConfirmDialog_ConfirmDialogItemYesMethods;
     pub use super::ConfirmDialog;
     pub use super::IConfirmDialog;
     pub use super::IConfirmDialogMethods;
+    pub use super::ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IConfirmDialog_ConfirmDialogItemYesMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

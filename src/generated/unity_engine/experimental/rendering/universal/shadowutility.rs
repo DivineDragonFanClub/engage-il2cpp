@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="ShadowUtility")]#[parent(crate::system::object::Object)]pub struct ShadowUtility{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility_Edge.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShadowUtility_Edge{pub vertex_index0:i32,pub vertex_index1:i32,pub tangent:crate::unity_engine::vector4::Vector4,pub compare_reversed:bool,}
 impl::unity2::ClassIdentity for ShadowUtility_Edge{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
 const NAME: &'static str="ShadowUtility.Edge";
@@ -21,29 +24,10 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for ShadowUtility_Edge{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="ShadowUtility")]#[parent(crate::system::object::Object)]pub struct ShadowUtility{}
-
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-shadowutility")]impl ShadowUtility_Edge{#[doc="`AssignVertexIndices(i32, i32)` overload"]pub fn assign_vertex_indices(&mut self,vi0:impl::core::convert::Into<i32> ,vi1:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba5f0usize)as*mut u8,();
-(*mut ShadowUtility_Edge)self as*mut ShadowUtility_Edge,(i32)::core::convert::Into::into(vi0),(i32)::core::convert::Into::into(vi1))}
-}
-#[doc="`Compare(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge, crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]pub fn compare(&mut self,a:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge> ,b:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba610usize)as*mut u8,i32;
-(*mut ShadowUtility_Edge)self as*mut ShadowUtility_Edge,(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)::core::convert::Into::into(a),(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)::core::convert::Into::into(b))}
-}
-#[doc="`CompareTo(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]pub fn compare_to(&mut self,edge_to_compare:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba650usize)as*mut u8,i32;
-(*mut ShadowUtility_Edge)self as*mut ShadowUtility_Edge,(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)::core::convert::Into::into(edge_to_compare))}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-shadowutility")]impl ShadowUtility_Edge{pub fn assign_vertex_indices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-shadowutility")]impl ShadowUtility{#[doc="`CreateEdge(i32, i32, crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, crate::system::collections::generic::list_1::List_1<i32>)` overload"]pub fn create_edge(triangle_index_a:impl::core::convert::Into<i32> ,triangle_index_b:impl::core::convert::Into<i32> ,vertices:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> > ,triangles:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32> >)->crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2edb600usize)as*mut u8,crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge;
 (i32)::core::convert::Into::into(triangle_index_a),(i32)::core::convert::Into::into(triangle_index_b),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(vertices),(crate::system::collections::generic::list_1::List_1<i32>)::core::convert::Into::into(triangles))}
@@ -97,13 +81,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-experimental-rendering-universal-shadowutility")]impl ShadowUtility_Edge{#[doc="`AssignVertexIndices(i32, i32)` overload"]pub fn assign_vertex_indices(&mut self,vi0:impl::core::convert::Into<i32> ,vi1:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba5f0usize)as*mut u8,();
+(*mut ShadowUtility_Edge)self as*mut ShadowUtility_Edge,(i32)::core::convert::Into::into(vi0),(i32)::core::convert::Into::into(vi1))}
+}
+#[doc="`Compare(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge, crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]pub fn compare(&mut self,a:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge> ,b:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba610usize)as*mut u8,i32;
+(*mut ShadowUtility_Edge)self as*mut ShadowUtility_Edge,(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)::core::convert::Into::into(a),(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)::core::convert::Into::into(b))}
+}
+#[doc="`CompareTo(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)` overload"]pub fn compare_to(&mut self,edge_to_compare:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba650usize)as*mut u8,i32;
+(*mut ShadowUtility_Edge)self as*mut ShadowUtility_Edge,(crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge)::core::convert::Into::into(edge_to_compare))}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-shadowutility")]impl ShadowUtility_Edge{pub fn assign_vertex_indices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShadowUtility_Edge;
     pub use super::ShadowUtility;
     pub use super::IShadowUtility;
     pub use super::IShadowUtilityMethods;
+    pub use super::ShadowUtility_Edge;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

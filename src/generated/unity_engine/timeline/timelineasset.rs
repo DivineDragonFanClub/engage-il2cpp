@@ -19,9 +19,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset.EditorSettings")]#[parent(crate::system::object::Object)]pub struct TimelineAsset_EditorSettings{#[static_field]#[rename(name="kMinFps")]pub k_min_fps:f32, #[static_field]#[rename(name="kMaxFps")]pub k_max_fps:f32, #[static_field]#[rename(name="kDefaultFps")]pub k_default_fps:f32, #[offset(16)]#[rename(name="m_Framerate")]pub m_framerate:f32, #[offset(20)]#[rename(name="m_ScenePreview")]pub m_scene_preview:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineAsset_DurationMode{pub value:i32,}
 impl::unity2::ClassIdentity for TimelineAsset_DurationMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
 const NAME: &'static str="TimelineAsset.DurationMode";
@@ -40,44 +37,13 @@ pub fn fixed_length()->Self{Self{value:1}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct TimelineAsset{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(24)]#[rename(name="m_Version")]pub m_version:i32, #[offset(32)]#[rename(name="m_Tracks")]pub m_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> , #[offset(40)]#[rename(name="m_FixedDuration")]pub m_fixed_duration:f64, #[offset(48)]#[rename(name="m_CacheOutputTracks")]pub m_cache_output_tracks: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(56)]#[rename(name="m_CacheRootTracks")]pub m_cache_root_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(64)]#[rename(name="m_CacheFlattenedTracks")]pub m_cache_flattened_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(72)]#[rename(name="m_EditorSettings")]pub m_editor_settings:crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings, #[offset(80)]#[rename(name="m_DurationMode")]pub m_duration_mode:crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode, #[offset(88)]#[rename(name="m_MarkerTrack")]pub m_marker_track:crate::unity_engine::timeline::markertrack::MarkerTrack,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset.EditorSettings")]#[parent(crate::system::object::Object)]pub struct TimelineAsset_EditorSettings{#[static_field]#[rename(name="kMinFps")]pub k_min_fps:f32, #[static_field]#[rename(name="kMaxFps")]pub k_max_fps:f32, #[static_field]#[rename(name="kDefaultFps")]pub k_default_fps:f32, #[offset(16)]#[rename(name="m_Framerate")]pub m_framerate:f32, #[offset(20)]#[rename(name="m_ScenePreview")]pub m_scene_preview:bool,}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineasset-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35eb750usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-timeline-timelineasset")]pub trait ITimelineAsset_EditorSettingsMethods:ITimelineAsset_EditorSettings{#[doc="`get_fps()` overload"]fn get_fps(self,)->f32{unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35eb740usize)as*mut u8,f32;
-(TimelineAsset_EditorSettings)__receiver)}
-}
-#[doc="`set_fps(f32)` overload"]fn set_fps(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd9c0usize)as*mut u8,();
-(TimelineAsset_EditorSettings)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0e90usize)as*mut u8,();
-(TimelineAsset_EditorSettings)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-timeline-timelineasset")]impl<__T:ITimelineAsset_EditorSettings>ITimelineAsset_EditorSettingsMethods for __T{}
-
-#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{pub fn get_fps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_fps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TimelineAsset_EditorSettings), ::core::stringify!(new),));
- <Self as ITimelineAsset_EditorSettingsMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset{#[doc="`GetValidFramerate(f32)` overload"]pub fn get_valid_framerate(framerate:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35dd940usize)as*mut u8,f32;
 (f32)::core::convert::Into::into(framerate))}
@@ -367,16 +333,50 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35eb750usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]pub trait ITimelineAsset_EditorSettingsMethods:ITimelineAsset_EditorSettings{#[doc="`get_fps()` overload"]fn get_fps(self,)->f32{unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35eb740usize)as*mut u8,f32;
+(TimelineAsset_EditorSettings)__receiver)}
+}
+#[doc="`set_fps(f32)` overload"]fn set_fps(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd9c0usize)as*mut u8,();
+(TimelineAsset_EditorSettings)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TimelineAsset_EditorSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35e0e90usize)as*mut u8,();
+(TimelineAsset_EditorSettings)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl<__T:ITimelineAsset_EditorSettings>ITimelineAsset_EditorSettingsMethods for __T{}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{pub fn get_fps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_fps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset_EditorSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TimelineAsset_EditorSettings), ::core::stringify!(new),));
+ <Self as ITimelineAsset_EditorSettingsMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-timeline-timelineasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TimelineAsset_EditorSettings;
-    pub use super::ITimelineAsset_EditorSettings;
-    pub use super::ITimelineAsset_EditorSettingsMethods;
     pub use super::TimelineAsset_DurationMode;
     pub use super::TimelineAsset;
     pub use super::ITimelineAsset;
     pub use super::ITimelineAssetMethods;
+    pub use super::TimelineAsset_EditorSettings;
+    pub use super::ITimelineAsset_EditorSettings;
+    pub use super::ITimelineAsset_EditorSettingsMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

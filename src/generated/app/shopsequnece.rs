@@ -16,6 +16,9 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_GoldItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.GoldItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_GoldItem{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece.md"))]#[::unity2::class(namespace="App",name="ShopSequnece")]#[parent(crate::app::procinst::ProcInst)]pub struct ShopSequnece{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_StockItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.StockItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_StockItem{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 
@@ -23,9 +26,6 @@ use crate::system::object::{IObject,Object}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_ShopItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.ShopItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_ShopItem{#[offset(32)]#[rename(name="m_Data")]pub m_data:crate::app::shopdata::ShopData, #[offset(40)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData, #[offset(48)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(56)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece.md"))]#[::unity2::class(namespace="App",name="ShopSequnece")]#[parent(crate::app::procinst::ProcInst)]pub struct ShopSequnece{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
 
 }
 
@@ -57,6 +57,35 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(ShopSequnece_GoldItem), ::core::stringify!(new),));
  <Self as IShopSequnece_GoldItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bacf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-shopsequnece")]pub trait IShopSequneceMethods:IShopSequnece{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ShopSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21baa80usize)as*mut u8,();
+(ShopSequnece)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateMenu()` overload"]fn create_menu(self,)->(){unsafe{let __receiver= <ShopSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21baad0usize)as*mut u8,();
+(ShopSequnece)__receiver)}
+}
+}
+
+#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece>IShopSequneceMethods for __T{}
+
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSequnece), ::core::stringify!(new),));
+ <Self as IShopSequneceMethods> ::ctor(this,name,unit);
 this}
 }
 
@@ -189,41 +218,15 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bacf0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-shopsequnece")]pub trait IShopSequneceMethods:IShopSequnece{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ShopSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21baa80usize)as*mut u8,();
-(ShopSequnece)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`CreateMenu()` overload"]fn create_menu(self,)->(){unsafe{let __receiver= <ShopSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21baad0usize)as*mut u8,();
-(ShopSequnece)__receiver)}
-}
-}
-
-#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece>IShopSequneceMethods for __T{}
-
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ShopSequnece), ::core::stringify!(new),));
- <Self as IShopSequneceMethods> ::ctor(this,name,unit);
-this}
-}
-
 #[cfg(feature = "app-shopsequnece")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ShopSequnece_GoldItem;
     pub use super::IShopSequnece_GoldItem;
     pub use super::IShopSequnece_GoldItemMethods;
+    pub use super::ShopSequnece;
+    pub use super::IShopSequnece;
+    pub use super::IShopSequneceMethods;
     pub use super::ShopSequnece_StockItem;
     pub use super::IShopSequnece_StockItem;
     pub use super::IShopSequnece_StockItemMethods;
@@ -233,9 +236,6 @@ pub mod prelude {
     pub use super::ShopSequnece_ShopItem;
     pub use super::IShopSequnece_ShopItem;
     pub use super::IShopSequnece_ShopItemMethods;
-    pub use super::ShopSequnece;
-    pub use super::IShopSequnece;
-    pub use super::IShopSequneceMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

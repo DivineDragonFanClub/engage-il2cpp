@@ -19,18 +19,46 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/muscledifficultmenu/MuscleDifficultMenu_MuscleDifficultMenuItem.md"))]#[::unity2::class(namespace="App",name="MuscleDifficultMenu.MuscleDifficultMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MuscleDifficultMenu_MuscleDifficultMenuItem{#[offset(104)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_IsEnable")]pub m_is_enable:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/muscledifficultmenu/MuscleDifficultMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MuscleDifficultMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MuscleDifficultMenu_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/muscledifficultmenu/MuscleDifficultMenu.md"))]#[::unity2::class(namespace="App",name="MuscleDifficultMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MuscleDifficultMenu{#[offset(200)]#[rename(name="m_EnableChecker")]pub m_enable_checker: ::unity2::Array<bool> , #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, #[offset(216)]#[rename(name="m_PastDeside")]pub m_past_deside:i32,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/muscledifficultmenu/MuscleDifficultMenu_MuscleDifficultMenuItem.md"))]#[::unity2::class(namespace="App",name="MuscleDifficultMenu.MuscleDifficultMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MuscleDifficultMenu_MuscleDifficultMenuItem{#[offset(104)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_IsEnable")]pub m_is_enable:bool,}
-
 }
 
 #[cfg(feature = "app-muscledifficultmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-muscledifficultmenu")]pub trait IMuscleDifficultMenu_MuscleDifficultMenuItemMethods:IMuscleDifficultMenu_MuscleDifficultMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_handler:impl::core::convert::Into<crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler> ,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MuscleDifficultMenu_MuscleDifficultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20913f0usize)as*mut u8,();
+(MuscleDifficultMenu_MuscleDifficultMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MuscleDifficultMenu_MuscleDifficultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2091450usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MuscleDifficultMenu_MuscleDifficultMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MuscleDifficultMenu_MuscleDifficultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2091470usize)as*mut u8, ::unity2::Il2CppString;
+(MuscleDifficultMenu_MuscleDifficultMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-muscledifficultmenu")]impl<__T:IMuscleDifficultMenu_MuscleDifficultMenuItem>IMuscleDifficultMenu_MuscleDifficultMenuItemMethods for __T{}
+
+#[cfg(feature="app-muscledifficultmenu")]impl MuscleDifficultMenu_MuscleDifficultMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-muscledifficultmenu")]impl MuscleDifficultMenu_MuscleDifficultMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,event_handler:crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,enable:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleDifficultMenu_MuscleDifficultMenuItem), ::core::stringify!(new),));
+ <Self as IMuscleDifficultMenu_MuscleDifficultMenuItemMethods> ::ctor(this,name,event_handler,enable);
+this}
+}
 
 #[cfg(feature="app-muscledifficultmenu")]pub trait IMuscleDifficultMenu_DecideEventHandlerMethods:IMuscleDifficultMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MuscleDifficultMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20910d0usize)as*mut u8,();
@@ -104,46 +132,18 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-muscledifficultmenu")]pub trait IMuscleDifficultMenu_MuscleDifficultMenuItemMethods:IMuscleDifficultMenu_MuscleDifficultMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_handler:impl::core::convert::Into<crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler> ,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MuscleDifficultMenu_MuscleDifficultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20913f0usize)as*mut u8,();
-(MuscleDifficultMenu_MuscleDifficultMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(bool)::core::convert::Into::into(enable))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MuscleDifficultMenu_MuscleDifficultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2091450usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MuscleDifficultMenu_MuscleDifficultMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MuscleDifficultMenu_MuscleDifficultMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2091470usize)as*mut u8, ::unity2::Il2CppString;
-(MuscleDifficultMenu_MuscleDifficultMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-muscledifficultmenu")]impl<__T:IMuscleDifficultMenu_MuscleDifficultMenuItem>IMuscleDifficultMenu_MuscleDifficultMenuItemMethods for __T{}
-
-#[cfg(feature="app-muscledifficultmenu")]impl MuscleDifficultMenu_MuscleDifficultMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-muscledifficultmenu")]impl MuscleDifficultMenu_MuscleDifficultMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,event_handler:crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,enable:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MuscleDifficultMenu_MuscleDifficultMenuItem), ::core::stringify!(new),));
- <Self as IMuscleDifficultMenu_MuscleDifficultMenuItemMethods> ::ctor(this,name,event_handler,enable);
-this}
-}
-
 #[cfg(feature = "app-muscledifficultmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MuscleDifficultMenu_MuscleDifficultMenuItem;
+    pub use super::IMuscleDifficultMenu_MuscleDifficultMenuItem;
+    pub use super::IMuscleDifficultMenu_MuscleDifficultMenuItemMethods;
     pub use super::MuscleDifficultMenu_DecideEventHandler;
     pub use super::IMuscleDifficultMenu_DecideEventHandler;
     pub use super::IMuscleDifficultMenu_DecideEventHandlerMethods;
     pub use super::MuscleDifficultMenu;
     pub use super::IMuscleDifficultMenu;
     pub use super::IMuscleDifficultMenuMethods;
-    pub use super::MuscleDifficultMenu_MuscleDifficultMenuItem;
-    pub use super::IMuscleDifficultMenu_MuscleDifficultMenuItem;
-    pub use super::IMuscleDifficultMenu_MuscleDifficultMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

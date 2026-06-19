@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagkeywait/TalkTagKeyWait.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagKeyWait")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagKeyWait{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagkeywait::TalkTagKeyWait_TagID, #[offset(20)]#[rename(name="m_Sec")]pub m_sec:f32, #[offset(24)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagkeywait/TalkTagKeyWait_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagKeyWait_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagKeyWait_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagKeyWait.TagID";
@@ -36,6 +33,9 @@ pub fn key_page()->Self{Self{value:2}
 pub fn time_wait()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagkeywait/TalkTagKeyWait.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagKeyWait")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagKeyWait{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagkeywait::TalkTagKeyWait_TagID, #[offset(20)]#[rename(name="m_Sec")]pub m_sec:f32, #[offset(24)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
 
 }
 
@@ -78,10 +78,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktagkeywait")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkTagKeyWait_TagID;
     pub use super::TalkTagKeyWait;
     pub use super::ITalkTagKeyWait;
     pub use super::ITalkTagKeyWaitMethods;
-    pub use super::TalkTagKeyWait_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

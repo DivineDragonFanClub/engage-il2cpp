@@ -11,10 +11,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))]#[::unity2::class(namespace="App",name="MapSequenceHelper.ProcWaitCamera")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceHelper_ProcWaitCamera{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehelper/MapSequenceHelper.md"))]#[::unity2::class(namespace="App",name="MapSequenceHelper")]#[parent(crate::system::object::Object)]pub struct MapSequenceHelper{#[static_field]#[rename(name="AroundOffsetXs")]pub around_offset_xs: ::unity2::Array<i32> , #[static_field]#[rename(name="AroundOffsetZs")]pub around_offset_zs: ::unity2::Array<i32> , #[static_field]#[rename(name="InsideScreenMin")]pub inside_screen_min:f32, #[static_field]#[rename(name="InsideScreenMax")]pub inside_screen_max:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCamera.md"))]#[::unity2::class(namespace="App",name="MapSequenceHelper.ProcWaitCamera")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceHelper_ProcWaitCamera{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehelper/MapSequenceHelper_ProcWaitCameraLoosely.md"))]#[::unity2::class(namespace="App",name="MapSequenceHelper.ProcWaitCameraLoosely")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceHelper_ProcWaitCameraLoosely{}
@@ -23,39 +23,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-mapsequencehelper-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{#[doc="`IsCameraScrolling()` overload"]pub fn is_camera_scrolling()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37930usize)as*mut u8,bool;
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37940usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mapsequencehelper")]pub trait IMapSequenceHelper_ProcWaitCameraMethods:IMapSequenceHelper_ProcWaitCamera{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e379c0usize)as*mut u8,();
-(MapSequenceHelper_ProcWaitCamera)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e379b0usize)as*mut u8,();
-(MapSequenceHelper_ProcWaitCamera)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequencehelper")]impl<__T:IMapSequenceHelper_ProcWaitCamera>IMapSequenceHelper_ProcWaitCameraMethods for __T{}
-
-#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{pub fn is_camera_scrolling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceHelper_ProcWaitCamera), ::core::stringify!(new),));
- <Self as IMapSequenceHelper_ProcWaitCameraMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper{#[doc="`GetCursorTurnFirst(crate::app::force::Force_Type, *muti32, *muti32)` overload"]pub fn get_cursor_turn_first(force:impl::core::convert::Into<crate::app::force::Force_Type>)->(bool,i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
@@ -173,6 +140,39 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{#[doc="`IsCameraScrolling()` overload"]pub fn is_camera_scrolling()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37930usize)as*mut u8,bool;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37940usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequencehelper")]pub trait IMapSequenceHelper_ProcWaitCameraMethods:IMapSequenceHelper_ProcWaitCamera{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e379c0usize)as*mut u8,();
+(MapSequenceHelper_ProcWaitCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceHelper_ProcWaitCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e379b0usize)as*mut u8,();
+(MapSequenceHelper_ProcWaitCamera)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencehelper")]impl<__T:IMapSequenceHelper_ProcWaitCamera>IMapSequenceHelper_ProcWaitCameraMethods for __T{}
+
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{pub fn is_camera_scrolling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceHelper_ProcWaitCamera), ::core::stringify!(new),));
+ <Self as IMapSequenceHelper_ProcWaitCameraMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-mapsequencehelper")]impl MapSequenceHelper_ProcWaitCameraLoosely{#[doc="`IsCameraScrolling()` overload"]pub fn is_camera_scrolling()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e37a20usize)as*mut u8,bool;
 )}
 }
@@ -209,12 +209,12 @@ this}
 #[cfg(feature = "app-mapsequencehelper")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceHelper_ProcWaitCamera;
-    pub use super::IMapSequenceHelper_ProcWaitCamera;
-    pub use super::IMapSequenceHelper_ProcWaitCameraMethods;
     pub use super::MapSequenceHelper;
     pub use super::IMapSequenceHelper;
     pub use super::IMapSequenceHelperMethods;
+    pub use super::MapSequenceHelper_ProcWaitCamera;
+    pub use super::IMapSequenceHelper_ProcWaitCamera;
+    pub use super::IMapSequenceHelper_ProcWaitCameraMethods;
     pub use super::MapSequenceHelper_ProcWaitCameraLoosely;
     pub use super::IMapSequenceHelper_ProcWaitCameraLoosely;
     pub use super::IMapSequenceHelper_ProcWaitCameraLooselyMethods;

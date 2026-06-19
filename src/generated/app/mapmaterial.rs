@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial.md"))]#[::unity2::class(namespace="App",name="MapMaterial")]#[parent(crate::system::object::Object)]pub struct MapMaterial{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::mapmaterial::MapMaterial_Node> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMaterial_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for MapMaterial_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapMaterial.Kinds";
@@ -32,6 +29,9 @@ pub fn float()->Self{Self{value:1}
 pub fn color()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial.md"))]#[::unity2::class(namespace="App",name="MapMaterial")]#[parent(crate::system::object::Object)]pub struct MapMaterial{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::mapmaterial::MapMaterial_Node> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial_Node.md"))]#[::unity2::class(namespace="App",name="MapMaterial.Node")]#[parent(crate::system::object::Object)]pub struct MapMaterial_Node{#[offset(16)]#[rename(name="kind")]pub kind:crate::app::mapmaterial::MapMaterial_Kinds, #[offset(24)]#[rename(name="material")]pub material: ::unity2::Il2CppString, #[offset(32)]#[rename(name="property")]pub property: ::unity2::Il2CppString, #[offset(40)]#[rename(name="value")]pub value:f32, #[offset(44)]#[rename(name="color")]pub color:crate::unity_engine::color::Color,}
@@ -105,10 +105,10 @@ this}
 #[cfg(feature = "app-mapmaterial")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapMaterial_Kinds;
     pub use super::MapMaterial;
     pub use super::IMapMaterial;
     pub use super::IMapMaterialMethods;
-    pub use super::MapMaterial_Kinds;
     pub use super::MapMaterial_Node;
     pub use super::IMapMaterial_Node;
     pub use super::IMapMaterial_NodeMethods;

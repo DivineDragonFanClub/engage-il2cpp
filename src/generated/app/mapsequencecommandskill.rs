@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))]#[::unity2::class(namespace="App",name="MapSequenceCommandSkill")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencecommandskill::MapSequenceCommandSkill>)]pub struct MapSequenceCommandSkill{#[offset(116)]#[rename(name="m_Action")]pub m_action:crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action, #[offset(120)]#[rename(name="m_Results")]pub m_results:crate::app::mapskill::MapSkill_Results, #[offset(176)]#[rename(name="m_Signal")]pub m_signal:crate::app::unitsignal::UnitSignal,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Action.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceCommandSkill_Action{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceCommandSkill_Action{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceCommandSkill.Action";
@@ -50,6 +47,9 @@ impl MapSequenceCommandSkill_Label{pub fn none()->Self{Self{value:0}
 pub fn impact()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecommandskill/MapSequenceCommandSkill.md"))]#[::unity2::class(namespace="App",name="MapSequenceCommandSkill")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencecommandskill::MapSequenceCommandSkill>)]pub struct MapSequenceCommandSkill{#[offset(116)]#[rename(name="m_Action")]pub m_action:crate::app::mapsequencecommandskill::MapSequenceCommandSkill_Action, #[offset(120)]#[rename(name="m_Results")]pub m_results:crate::app::mapskill::MapSkill_Results, #[offset(176)]#[rename(name="m_Signal")]pub m_signal:crate::app::unitsignal::UnitSignal,}
 
 }
 
@@ -131,11 +131,11 @@ this}
 #[cfg(feature = "app-mapsequencecommandskill")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceCommandSkill_Action;
+    pub use super::MapSequenceCommandSkill_Label;
     pub use super::MapSequenceCommandSkill;
     pub use super::IMapSequenceCommandSkill;
     pub use super::IMapSequenceCommandSkillMethods;
-    pub use super::MapSequenceCommandSkill_Action;
-    pub use super::MapSequenceCommandSkill_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

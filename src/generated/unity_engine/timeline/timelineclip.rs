@@ -13,28 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip.TimelineClipUpgrade")]#[parent(crate::system::object::Object)]pub struct TimelineClip_TimelineClipUpgrade{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip")]#[parent(crate::system::object::Object)]pub struct TimelineClip{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(16)]#[rename(name="m_Version")]pub m_version:i32, #[static_field]#[rename(name="kDefaultClipCaps")]pub k_default_clip_caps:crate::unity_engine::timeline::clipcaps::ClipCaps, #[static_field]#[rename(name="kDefaultClipDurationInSeconds")]pub k_default_clip_duration_in_seconds:f32, #[static_field]#[rename(name="kTimeScaleMin")]pub k_time_scale_min:f64, #[static_field]#[rename(name="kTimeScaleMax")]pub k_time_scale_max:f64, #[static_field]#[rename(name="kDefaultCurvesName")]pub k_default_curves_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kMinDuration")]pub k_min_duration:f64, #[static_field]#[rename(name="kMaxTimeValue")]pub k_max_time_value:f64, #[offset(24)]#[rename(name="m_Start")]pub m_start:f64, #[offset(32)]#[rename(name="m_ClipIn")]pub m_clip_in:f64, #[offset(40)]#[rename(name="m_Asset")]pub m_asset:crate::unity_engine::object_2::Object_2, #[offset(48)]#[rename(name="m_Duration")]pub m_duration:f64, #[offset(56)]#[rename(name="m_TimeScale")]pub m_time_scale:f64, #[offset(64)]#[rename(name="m_ParentTrack")]pub m_parent_track:crate::unity_engine::timeline::trackasset::TrackAsset, #[offset(72)]#[rename(name="m_EaseInDuration")]pub m_ease_in_duration:f64, #[offset(80)]#[rename(name="m_EaseOutDuration")]pub m_ease_out_duration:f64, #[offset(88)]#[rename(name="m_BlendInDuration")]pub m_blend_in_duration:f64, #[offset(96)]#[rename(name="m_BlendOutDuration")]pub m_blend_out_duration:f64, #[offset(104)]#[rename(name="m_MixInCurve")]pub m_mix_in_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(112)]#[rename(name="m_MixOutCurve")]pub m_mix_out_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(120)]#[rename(name="m_BlendInCurveMode")]pub m_blend_in_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(124)]#[rename(name="m_BlendOutCurveMode")]pub m_blend_out_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(128)]#[rename(name="m_ExposedParameterNames")]pub m_exposed_parameter_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_AnimationCurves")]pub m_animation_curves:crate::unity_engine::animationclip::AnimationClip, #[offset(144)]#[rename(name="m_Recordable")]pub m_recordable:bool, #[offset(148)]#[rename(name="m_PostExtrapolationMode")]pub m_post_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(152)]#[rename(name="m_PreExtrapolationMode")]pub m_pre_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(160)]#[rename(name="m_PostExtrapolationTime")]pub m_post_extrapolation_time:f64, #[offset(168)]#[rename(name="m_PreExtrapolationTime")]pub m_pre_extrapolation_time:f64, #[offset(176)]#[rename(name="m_DisplayName")]pub m_display_name: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineClip_BlendCurveMode{pub value:i32,}
-impl::unity2::ClassIdentity for TimelineClip_BlendCurveMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
-const NAME: &'static str="TimelineClip.BlendCurveMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TimelineClip_BlendCurveMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TimelineClip_BlendCurveMode{pub fn auto()->Self{Self{value:0}
-}
-pub fn manual()->Self{Self{value:1}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineClip_ClipExtrapolation{pub value:i32,}
 impl::unity2::ClassIdentity for TimelineClip_ClipExtrapolation{const NAMESPACE: &'static str="UnityEngine.Timeline";
 const NAME: &'static str="TimelineClip.ClipExtrapolation";
@@ -55,6 +33,28 @@ pub fn ping_pong()->Self{Self{value:3}
 pub fn r#continue()->Self{Self{value:4}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip.TimelineClipUpgrade")]#[parent(crate::system::object::Object)]pub struct TimelineClip_TimelineClipUpgrade{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineClip_BlendCurveMode{pub value:i32,}
+impl::unity2::ClassIdentity for TimelineClip_BlendCurveMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
+const NAME: &'static str="TimelineClip.BlendCurveMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TimelineClip_BlendCurveMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TimelineClip_BlendCurveMode{pub fn auto()->Self{Self{value:0}
+}
+pub fn manual()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip")]#[parent(crate::system::object::Object)]pub struct TimelineClip{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(16)]#[rename(name="m_Version")]pub m_version:i32, #[static_field]#[rename(name="kDefaultClipCaps")]pub k_default_clip_caps:crate::unity_engine::timeline::clipcaps::ClipCaps, #[static_field]#[rename(name="kDefaultClipDurationInSeconds")]pub k_default_clip_duration_in_seconds:f32, #[static_field]#[rename(name="kTimeScaleMin")]pub k_time_scale_min:f64, #[static_field]#[rename(name="kTimeScaleMax")]pub k_time_scale_max:f64, #[static_field]#[rename(name="kDefaultCurvesName")]pub k_default_curves_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kMinDuration")]pub k_min_duration:f64, #[static_field]#[rename(name="kMaxTimeValue")]pub k_max_time_value:f64, #[offset(24)]#[rename(name="m_Start")]pub m_start:f64, #[offset(32)]#[rename(name="m_ClipIn")]pub m_clip_in:f64, #[offset(40)]#[rename(name="m_Asset")]pub m_asset:crate::unity_engine::object_2::Object_2, #[offset(48)]#[rename(name="m_Duration")]pub m_duration:f64, #[offset(56)]#[rename(name="m_TimeScale")]pub m_time_scale:f64, #[offset(64)]#[rename(name="m_ParentTrack")]pub m_parent_track:crate::unity_engine::timeline::trackasset::TrackAsset, #[offset(72)]#[rename(name="m_EaseInDuration")]pub m_ease_in_duration:f64, #[offset(80)]#[rename(name="m_EaseOutDuration")]pub m_ease_out_duration:f64, #[offset(88)]#[rename(name="m_BlendInDuration")]pub m_blend_in_duration:f64, #[offset(96)]#[rename(name="m_BlendOutDuration")]pub m_blend_out_duration:f64, #[offset(104)]#[rename(name="m_MixInCurve")]pub m_mix_in_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(112)]#[rename(name="m_MixOutCurve")]pub m_mix_out_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(120)]#[rename(name="m_BlendInCurveMode")]pub m_blend_in_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(124)]#[rename(name="m_BlendOutCurveMode")]pub m_blend_out_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(128)]#[rename(name="m_ExposedParameterNames")]pub m_exposed_parameter_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_AnimationCurves")]pub m_animation_curves:crate::unity_engine::animationclip::AnimationClip, #[offset(144)]#[rename(name="m_Recordable")]pub m_recordable:bool, #[offset(148)]#[rename(name="m_PostExtrapolationMode")]pub m_post_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(152)]#[rename(name="m_PreExtrapolationMode")]pub m_pre_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(160)]#[rename(name="m_PostExtrapolationTime")]pub m_post_extrapolation_time:f64, #[offset(168)]#[rename(name="m_PreExtrapolationTime")]pub m_pre_extrapolation_time:f64, #[offset(176)]#[rename(name="m_DisplayName")]pub m_display_name: ::unity2::Il2CppString,}
 
 }
 
@@ -377,13 +377,13 @@ this}
 #[cfg(feature = "unity_engine-timeline-timelineclip")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TimelineClip_ClipExtrapolation;
     pub use super::TimelineClip_TimelineClipUpgrade;
     pub use super::ITimelineClip_TimelineClipUpgrade;
+    pub use super::TimelineClip_BlendCurveMode;
     pub use super::TimelineClip;
     pub use super::ITimelineClip;
     pub use super::ITimelineClipMethods;
-    pub use super::TimelineClip_BlendCurveMode;
-    pub use super::TimelineClip_ClipExtrapolation;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -23,43 +23,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectconfirmdialog/RingSelectConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="RingSelectConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RingSelectConfirmDialog_ConfirmYesDialogItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectconfirmdialog/RingSelectConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RingSelectConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RingSelectConfirmDialog{#[static_field]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit, #[static_field]#[rename(name="m_nextGod")]pub m_next_god:crate::app::godunit::GodUnit, #[static_field]#[rename(name="m_nextRing")]pub m_next_ring:crate::app::unitring::UnitRing,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectconfirmdialog/RingSelectConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="RingSelectConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RingSelectConfirmDialog_ConfirmYesDialogItem{}
 
 }
 
 #[cfg(feature = "app-ringselectconfirmdialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ringselectconfirmdialog")]pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods:IRingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5fa00usize)as*mut u8,();
-(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5fa10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver)}
-}
-#[doc="`RemoveOld(crate::app::unit::Unit)` overload"]fn remove_old(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60a10usize)as*mut u8,();
-(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-ringselectconfirmdialog")]impl<__T:IRingSelectConfirmDialog_ConfirmYesDialogItem>IRingSelectConfirmDialog_ConfirmYesDialogItemMethods for __T{}
-
-#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn remove_old_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingSelectConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
- <Self as IRingSelectConfirmDialog_ConfirmYesDialogItemMethods> ::ctor(this,text);
-this}
-}
 
 #[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog{#[doc="`CreateBindGod(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]pub fn create_bind_god(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2431c10usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(next_god))}
@@ -133,15 +105,43 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-ringselectconfirmdialog")]pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods:IRingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5fa00usize)as*mut u8,();
+(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5fa10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver)}
+}
+#[doc="`RemoveOld(crate::app::unit::Unit)` overload"]fn remove_old(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60a10usize)as*mut u8,();
+(RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-ringselectconfirmdialog")]impl<__T:IRingSelectConfirmDialog_ConfirmYesDialogItem>IRingSelectConfirmDialog_ConfirmYesDialogItemMethods for __T{}
+
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_old_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSelectConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
+ <Self as IRingSelectConfirmDialog_ConfirmYesDialogItemMethods> ::ctor(this,text);
+this}
+}
+
 #[cfg(feature = "app-ringselectconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingSelectConfirmDialog_ConfirmYesDialogItem;
-    pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItem;
-    pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItemMethods;
     pub use super::RingSelectConfirmDialog;
     pub use super::IRingSelectConfirmDialog;
     pub use super::IRingSelectConfirmDialogMethods;
+    pub use super::RingSelectConfirmDialog_ConfirmYesDialogItem;
+    pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItem;
+    pub use super::IRingSelectConfirmDialog_ConfirmYesDialogItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

@@ -15,41 +15,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream_WriteDelegate.md"))]#[::unity2::class(namespace="System.IO",name="FileStream.WriteDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FileStream_WriteDelegate{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream.md"))]#[::unity2::class(namespace="System.IO",name="FileStream")]#[parent(crate::system::io::stream::Stream)]pub struct FileStream{#[static_field]#[rename(name="buf_recycle")]pub buf_recycle: ::unity2::Array<u8> , #[static_field]#[rename(name="buf_recycle_lock")]pub buf_recycle_lock: ::unity2::IlInstance, #[offset(40)]#[rename(name="buf")]pub buf: ::unity2::Array<u8> , #[offset(48)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(64)]#[rename(name="isExposed")]pub is_exposed:bool, #[offset(72)]#[rename(name="append_startpos")]pub append_startpos:i64, #[offset(80)]#[rename(name="access")]pub access:crate::system::io::fileaccess::FileAccess, #[offset(84)]#[rename(name="owner")]pub owner:bool, #[offset(85)]#[rename(name="async")]pub r#async:bool, #[offset(86)]#[rename(name="canseek")]pub canseek:bool, #[offset(87)]#[rename(name="anonymous")]pub anonymous:bool, #[offset(88)]#[rename(name="buf_dirty")]pub buf_dirty:bool, #[offset(92)]#[rename(name="buf_size")]pub buf_size:i32, #[offset(96)]#[rename(name="buf_length")]pub buf_length:i32, #[offset(100)]#[rename(name="buf_offset")]pub buf_offset:i32, #[offset(104)]#[rename(name="buf_start")]pub buf_start:i64,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream_ReadDelegate.md"))]#[::unity2::class(namespace="System.IO",name="FileStream.ReadDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FileStream_ReadDelegate{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream_WriteDelegate.md"))]#[::unity2::class(namespace="System.IO",name="FileStream.WriteDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FileStream_WriteDelegate{}
+
 }
 
 #[cfg(feature = "system-io-filestream-types")]
 pub use __types::*;
-
-#[cfg(feature="system-io-filestream")]pub trait IFileStream_WriteDelegateMethods:IFileStream_WriteDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FileStream_WriteDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d6890usize)as*mut u8,();
-(FileStream_WriteDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FileStream_WriteDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d68b0usize)as*mut u8,();
-(FileStream_WriteDelegate)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
-}
-}
-
-#[cfg(feature="system-io-filestream")]impl<__T:IFileStream_WriteDelegate>IFileStream_WriteDelegateMethods for __T{}
-
-#[cfg(feature="system-io-filestream")]impl FileStream_WriteDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-io-filestream")]impl FileStream_WriteDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FileStream_WriteDelegate), ::core::stringify!(new),));
- <Self as IFileStream_WriteDelegateMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="system-io-filestream")]impl FileStream{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3812030usize)as*mut u8,();
 )}
@@ -318,18 +295,41 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="system-io-filestream")]pub trait IFileStream_WriteDelegateMethods:IFileStream_WriteDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FileStream_WriteDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d6890usize)as*mut u8,();
+(FileStream_WriteDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FileStream_WriteDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d68b0usize)as*mut u8,();
+(FileStream_WriteDelegate)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+}
+
+#[cfg(feature="system-io-filestream")]impl<__T:IFileStream_WriteDelegate>IFileStream_WriteDelegateMethods for __T{}
+
+#[cfg(feature="system-io-filestream")]impl FileStream_WriteDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-filestream")]impl FileStream_WriteDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileStream_WriteDelegate), ::core::stringify!(new),));
+ <Self as IFileStream_WriteDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "system-io-filestream")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileStream_WriteDelegate;
-    pub use super::IFileStream_WriteDelegate;
-    pub use super::IFileStream_WriteDelegateMethods;
     pub use super::FileStream;
     pub use super::IFileStream;
     pub use super::IFileStreamMethods;
     pub use super::FileStream_ReadDelegate;
     pub use super::IFileStream_ReadDelegate;
     pub use super::IFileStream_ReadDelegateMethods;
+    pub use super::FileStream_WriteDelegate;
+    pub use super::IFileStream_WriteDelegate;
+    pub use super::IFileStream_WriteDelegateMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::io::stream::IStream;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))]#[::unity2::class(namespace="App",name="MascotFoodEatSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mascotfoodeatsequence::MascotFoodEatSequence>)]pub struct MascotFoodEatSequence{#[offset(120)]#[rename(name="m_foodStuffData")]pub m_food_stuff_data:crate::app::foodstuffdata::FoodstuffData,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodeatsequence/MascotFoodEatSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MascotFoodEatSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MascotFoodEatSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MascotFoodEatSequence.Label";
@@ -34,6 +31,9 @@ impl MascotFoodEatSequence_Label{pub fn eat_food()->Self{Self{value:0}
 pub fn exit()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))]#[::unity2::class(namespace="App",name="MascotFoodEatSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mascotfoodeatsequence::MascotFoodEatSequence>)]pub struct MascotFoodEatSequence{#[offset(120)]#[rename(name="m_foodStuffData")]pub m_food_stuff_data:crate::app::foodstuffdata::FoodstuffData,}
 
 }
 
@@ -107,10 +107,10 @@ this}
 #[cfg(feature = "app-mascotfoodeatsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MascotFoodEatSequence_Label;
     pub use super::MascotFoodEatSequence;
     pub use super::IMascotFoodEatSequence;
     pub use super::IMascotFoodEatSequenceMethods;
-    pub use super::MascotFoodEatSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

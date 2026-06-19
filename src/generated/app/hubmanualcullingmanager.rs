@@ -17,53 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmanualcullingmanager/HubManualCullingManager_CullingGroup.md"))]#[::unity2::class(namespace="App",name="HubManualCullingManager.CullingGroup")]#[parent(crate::system::object::Object)]pub struct HubManualCullingManager_CullingGroup{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CullTargets")]pub m_cull_targets: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_Renderers")]pub m_renderers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmanualcullingmanager/HubManualCullingManager.md"))]#[::unity2::class(namespace="App",name="HubManualCullingManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubManualCullingManager{#[offset(24)]#[rename(name="m_CullGroups")]pub m_cull_groups: ::unity2::Array<crate::app::hubmanualcullingmanager::HubManualCullingManager_CullingGroup> , #[offset(48)]#[rename(name="m_ManualCullingStack")]pub m_manual_culling_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::hubmanualculling::HubManualCulling> , #[offset(56)]#[rename(name="m_Enable")]pub m_enable:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmanualcullingmanager/HubManualCullingManager_CullingGroup.md"))]#[::unity2::class(namespace="App",name="HubManualCullingManager.CullingGroup")]#[parent(crate::system::object::Object)]pub struct HubManualCullingManager_CullingGroup{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CullTargets")]pub m_cull_targets: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_Renderers")]pub m_renderers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer> ,}
 
 }
 
 #[cfg(feature = "app-hubmanualcullingmanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hubmanualcullingmanager")]pub trait IHubManualCullingManager_CullingGroupMethods:IHubManualCullingManager_CullingGroup{#[doc="`get_IsCulling()` overload"]fn get_is_culling(self,)->bool{unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7050usize)as*mut u8,bool;
-(HubManualCullingManager_CullingGroup)__receiver)}
-}
-#[doc="`set_IsCulling(bool)` overload"]fn set_is_culling(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7060usize)as*mut u8,();
-(HubManualCullingManager_CullingGroup)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`ChangeCullingState(bool, bool)` overload"]fn change_culling_state(self,is_next_culling:impl::core::convert::Into<bool> ,force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7070usize)as*mut u8,();
-(HubManualCullingManager_CullingGroup)__receiver,(bool)::core::convert::Into::into(is_next_culling),(bool)::core::convert::Into::into(force))}
-}
-#[doc="`CollectRenderers()` overload"]fn collect_renderers(self,)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce71b0usize)as*mut u8,();
-(HubManualCullingManager_CullingGroup)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7380usize)as*mut u8,();
-(HubManualCullingManager_CullingGroup)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubmanualcullingmanager")]impl<__T:IHubManualCullingManager_CullingGroup>IHubManualCullingManager_CullingGroupMethods for __T{}
-
-#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager_CullingGroup{pub fn get_is_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_is_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn change_culling_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn collect_renderers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager_CullingGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubManualCullingManager_CullingGroup), ::core::stringify!(new),));
- <Self as IHubManualCullingManager_CullingGroupMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-hubmanualcullingmanager")]pub trait IHubManualCullingManagerMethods:IHubManualCullingManager{#[doc="`get_StayCullings()` overload"]fn get_stay_cullings(self,)->crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling>{unsafe{let __receiver= <HubManualCullingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28b0f50usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::hubmanualculling::HubManualCulling> ;
@@ -163,15 +125,53 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-hubmanualcullingmanager")]pub trait IHubManualCullingManager_CullingGroupMethods:IHubManualCullingManager_CullingGroup{#[doc="`get_IsCulling()` overload"]fn get_is_culling(self,)->bool{unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7050usize)as*mut u8,bool;
+(HubManualCullingManager_CullingGroup)__receiver)}
+}
+#[doc="`set_IsCulling(bool)` overload"]fn set_is_culling(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7060usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`ChangeCullingState(bool, bool)` overload"]fn change_culling_state(self,is_next_culling:impl::core::convert::Into<bool> ,force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7070usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver,(bool)::core::convert::Into::into(is_next_culling),(bool)::core::convert::Into::into(force))}
+}
+#[doc="`CollectRenderers()` overload"]fn collect_renderers(self,)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce71b0usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubManualCullingManager_CullingGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7380usize)as*mut u8,();
+(HubManualCullingManager_CullingGroup)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubmanualcullingmanager")]impl<__T:IHubManualCullingManager_CullingGroup>IHubManualCullingManager_CullingGroupMethods for __T{}
+
+#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager_CullingGroup{pub fn get_is_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn change_culling_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn collect_renderers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmanualcullingmanager")]impl HubManualCullingManager_CullingGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubManualCullingManager_CullingGroup), ::core::stringify!(new),));
+ <Self as IHubManualCullingManager_CullingGroupMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-hubmanualcullingmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubManualCullingManager_CullingGroup;
-    pub use super::IHubManualCullingManager_CullingGroup;
-    pub use super::IHubManualCullingManager_CullingGroupMethods;
     pub use super::HubManualCullingManager;
     pub use super::IHubManualCullingManager;
     pub use super::IHubManualCullingManagerMethods;
+    pub use super::HubManualCullingManager_CullingGroup;
+    pub use super::IHubManualCullingManager_CullingGroup;
+    pub use super::IHubManualCullingManager_CullingGroupMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

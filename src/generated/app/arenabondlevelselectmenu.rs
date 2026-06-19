@@ -29,118 +29,33 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondLevelSelectMenu_SelectEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ArenaBondLevelSelectMenu_ConfirmDialog{#[offset(216)]#[rename(name="m_DecideAction")]pub m_decide_action:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ArenaBondLevelSelectMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, #[offset(208)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, #[offset(216)]#[rename(name="m_ChangeGodToPrevEventHandler")]pub m_change_god_to_prev_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, #[offset(224)]#[rename(name="m_ChangeGodToNextEventHandler")]pub m_change_god_to_next_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_DecideAction")]pub m_decide_action:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondLevelSelectMenu_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ChangeGodEventHandle.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.ChangeGodEventHandle")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondLevelSelectMenu_ChangeGodEventHandle{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.ArenaBondLevelSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem{#[offset(144)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, #[offset(152)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, #[offset(160)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, #[offset(168)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ArenaBondLevelSelectMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, #[offset(208)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, #[offset(216)]#[rename(name="m_ChangeGodToPrevEventHandler")]pub m_change_god_to_prev_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, #[offset(224)]#[rename(name="m_ChangeGodToNextEventHandler")]pub m_change_god_to_next_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.ConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.ArenaBondLevelSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem{#[offset(144)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, #[offset(152)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, #[offset(160)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, #[offset(168)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondLevelSelectMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondLevelSelectMenu_SelectEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ArenaBondLevelSelectMenu_ConfirmDialog{#[offset(216)]#[rename(name="m_DecideAction")]pub m_decide_action:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-arenabondlevelselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_SelectEventHandlerMethods:IArenaBondLevelSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baab20usize)as*mut u8,();
-(ArenaBondLevelSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::godunit::GodUnit, i32, i32)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,from_lv:impl::core::convert::Into<i32> ,to_lv:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba9f40usize)as*mut u8,();
-(ArenaBondLevelSelectMenu_SelectEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(i32)::core::convert::Into::into(from_lv),(i32)::core::convert::Into::into(to_lv))}
-}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_SelectEventHandler>IArenaBondLevelSelectMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IArenaBondLevelSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, i32, i32, i32, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,god_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,from_lv:impl::core::convert::Into<i32> ,to_lv:impl::core::convert::Into<i32> ,use_count:impl::core::convert::Into<i32> ,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba9680usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(god_type),(i32)::core::convert::Into::into(from_lv),(i32)::core::convert::Into::into(to_lv),(i32)::core::convert::Into::into(use_count),(crate::system::action::Action)::core::convert::Into::into(decide_action))}
-}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_ConfirmDialogMethods:IArenaBondLevelSelectMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baa940usize)as*mut u8,();
-(ArenaBondLevelSelectMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::system::action::Action)::core::convert::Into::into(decide_action))}
-}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_ConfirmDialog>IArenaBondLevelSelectMenu_ConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,decide_action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog), ::core::stringify!(new),));
- <Self as IArenaBondLevelSelectMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list,decide_action);
-this}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent> ,selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,selected_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler> ,change_god_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle> ,change_god_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle>)->crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0350usize)as*mut u8,crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::unit::Unit)::core::convert::Into::into(selected_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(selected_type),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_prev_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_next_event_handler))}
-}
-#[doc="`CreateMenuItem(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` overload"]pub fn create_menu_item(selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,selected_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle>)->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca04b0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
-(crate::app::unit::Unit)::core::convert::Into::into(selected_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(selected_type),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler))}
-}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenuMethods:IArenaBondLevelSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler> ,change_god_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle> ,change_god_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0950usize)as*mut u8,();
-(ArenaBondLevelSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_prev_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_next_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArenaBondLevelSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca09d0usize)as*mut u8, ::unity2::Il2CppString;
-(ArenaBondLevelSelectMenu)__receiver)}
-}
-#[doc="`RebuildMenu(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn rebuild_menu(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0a20usize)as*mut u8,();
-(ArenaBondLevelSelectMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
-}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu>IArenaBondLevelSelectMenuMethods for __T{}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent,decide_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,select_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler,change_god_to_prev_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle,change_god_to_next_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu), ::core::stringify!(new),));
- <Self as IArenaBondLevelSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,decide_event_handler,select_event_handler,change_god_to_prev_event_handler,change_god_to_next_event_handler);
-this}
-}
 
 #[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods:IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31c30usize)as*mut u8,();
@@ -165,29 +80,6 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_DecideEventHandlerMethods:IArenaBondLevelSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baa9e0usize)as*mut u8,();
-(ArenaBondLevelSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, bool, i32, i32)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,start:impl::core::convert::Into<bool> ,get_exp:impl::core::convert::Into<i32> ,use_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba9b30usize)as*mut u8,();
-(ArenaBondLevelSelectMenu_DecideEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(start),(i32)::core::convert::Into::into(get_exp),(i32)::core::convert::Into::into(use_count))}
-}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_DecideEventHandler>IArenaBondLevelSelectMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IArenaBondLevelSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods:IArenaBondLevelSelectMenu_ChangeGodEventHandle{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_ChangeGodEventHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1baa8e0usize)as*mut u8,();
 (ArenaBondLevelSelectMenu_ChangeGodEventHandle)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -208,24 +100,6 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_ChangeGodEventHandle), ::core::stringify!(new),));
  <Self as IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods:IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31ba0usize)as*mut u8,();
-(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo>IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
- <Self as IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,);
 this}
 }
 
@@ -362,33 +236,159 @@ pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent> ,selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,selected_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler> ,change_god_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle> ,change_god_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle>)->crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0350usize)as*mut u8,crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::unit::Unit)::core::convert::Into::into(selected_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(selected_type),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_prev_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_next_event_handler))}
+}
+#[doc="`CreateMenuItem(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` overload"]pub fn create_menu_item(selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,selected_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle>)->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca04b0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::unit::Unit)::core::convert::Into::into(selected_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(selected_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(selected_type),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_unit_to_next_event_handler))}
+}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenuMethods:IArenaBondLevelSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler> ,change_god_to_prev_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle> ,change_god_to_next_event_handler:impl::core::convert::Into<crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0950usize)as*mut u8,();
+(ArenaBondLevelSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_prev_event_handler),(crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)::core::convert::Into::into(change_god_to_next_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArenaBondLevelSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca09d0usize)as*mut u8, ::unity2::Il2CppString;
+(ArenaBondLevelSelectMenu)__receiver)}
+}
+#[doc="`RebuildMenu(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn rebuild_menu(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0a20usize)as*mut u8,();
+(ArenaBondLevelSelectMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu>IArenaBondLevelSelectMenuMethods for __T{}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle, crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::arenabondlevelselectmenucontent::ArenaBondLevelSelectMenuContent,decide_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_DecideEventHandler,select_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_SelectEventHandler,change_god_to_prev_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle,change_god_to_next_event_handler:crate::app::arenabondlevelselectmenu::ArenaBondLevelSelectMenu_ChangeGodEventHandle)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu), ::core::stringify!(new),));
+ <Self as IArenaBondLevelSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,decide_event_handler,select_event_handler,change_god_to_prev_event_handler,change_god_to_next_event_handler);
+this}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods:IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31ba0usize)as*mut u8,();
+(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo>IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods for __T{}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_DecideEventHandlerMethods:IArenaBondLevelSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baa9e0usize)as*mut u8,();
+(ArenaBondLevelSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, bool, i32, i32)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,start:impl::core::convert::Into<bool> ,get_exp:impl::core::convert::Into<i32> ,use_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba9b30usize)as*mut u8,();
+(ArenaBondLevelSelectMenu_DecideEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(start),(i32)::core::convert::Into::into(get_exp),(i32)::core::convert::Into::into(use_count))}
+}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_DecideEventHandler>IArenaBondLevelSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IArenaBondLevelSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_SelectEventHandlerMethods:IArenaBondLevelSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baab20usize)as*mut u8,();
+(ArenaBondLevelSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::godunit::GodUnit, i32, i32)` overload"]fn invoke(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,from_lv:impl::core::convert::Into<i32> ,to_lv:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba9f40usize)as*mut u8,();
+(ArenaBondLevelSelectMenu_SelectEventHandler)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(i32)::core::convert::Into::into(from_lv),(i32)::core::convert::Into::into(to_lv))}
+}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_SelectEventHandler>IArenaBondLevelSelectMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IArenaBondLevelSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, i32, i32, i32, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,god_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,from_lv:impl::core::convert::Into<i32> ,to_lv:impl::core::convert::Into<i32> ,use_count:impl::core::convert::Into<i32> ,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba9680usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(god_type),(i32)::core::convert::Into::into(from_lv),(i32)::core::convert::Into::into(to_lv),(i32)::core::convert::Into::into(use_count),(crate::system::action::Action)::core::convert::Into::into(decide_action))}
+}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]pub trait IArenaBondLevelSelectMenu_ConfirmDialogMethods:IArenaBondLevelSelectMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baa940usize)as*mut u8,();
+(ArenaBondLevelSelectMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::system::action::Action)::core::convert::Into::into(decide_action))}
+}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl<__T:IArenaBondLevelSelectMenu_ConfirmDialog>IArenaBondLevelSelectMenu_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondlevelselectmenu")]impl ArenaBondLevelSelectMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,decide_action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IArenaBondLevelSelectMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list,decide_action);
+this}
+}
+
 #[cfg(feature = "app-arenabondlevelselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods;
+    pub use super::ArenaBondLevelSelectMenu_ChangeGodEventHandle;
+    pub use super::IArenaBondLevelSelectMenu_ChangeGodEventHandle;
+    pub use super::IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods;
+    pub use super::ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem;
+    pub use super::IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem;
+    pub use super::IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItemMethods;
+    pub use super::ArenaBondLevelSelectMenu;
+    pub use super::IArenaBondLevelSelectMenu;
+    pub use super::IArenaBondLevelSelectMenuMethods;
+    pub use super::ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods;
+    pub use super::ArenaBondLevelSelectMenu_DecideEventHandler;
+    pub use super::IArenaBondLevelSelectMenu_DecideEventHandler;
+    pub use super::IArenaBondLevelSelectMenu_DecideEventHandlerMethods;
     pub use super::ArenaBondLevelSelectMenu_SelectEventHandler;
     pub use super::IArenaBondLevelSelectMenu_SelectEventHandler;
     pub use super::IArenaBondLevelSelectMenu_SelectEventHandlerMethods;
     pub use super::ArenaBondLevelSelectMenu_ConfirmDialog;
     pub use super::IArenaBondLevelSelectMenu_ConfirmDialog;
     pub use super::IArenaBondLevelSelectMenu_ConfirmDialogMethods;
-    pub use super::ArenaBondLevelSelectMenu;
-    pub use super::IArenaBondLevelSelectMenu;
-    pub use super::IArenaBondLevelSelectMenuMethods;
-    pub use super::ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods;
-    pub use super::ArenaBondLevelSelectMenu_DecideEventHandler;
-    pub use super::IArenaBondLevelSelectMenu_DecideEventHandler;
-    pub use super::IArenaBondLevelSelectMenu_DecideEventHandlerMethods;
-    pub use super::ArenaBondLevelSelectMenu_ChangeGodEventHandle;
-    pub use super::IArenaBondLevelSelectMenu_ChangeGodEventHandle;
-    pub use super::IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods;
-    pub use super::ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods;
-    pub use super::ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem;
-    pub use super::IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem;
-    pub use super::IArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

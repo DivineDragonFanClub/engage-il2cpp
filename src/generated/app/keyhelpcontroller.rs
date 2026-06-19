@@ -21,6 +21,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelpcontroller/KeyHelpController.md"))]#[::unity2::class(namespace="App",name="KeyHelpController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct KeyHelpController{#[offset(24)]#[rename(name="m_HelpObject")]pub m_help_object:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_Interval")]pub m_interval:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelpcontroller/KeyHelpController_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KeyHelpController_Type{pub value:i32,}
 impl::unity2::ClassIdentity for KeyHelpController_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="KeyHelpController.Type";
@@ -74,9 +77,6 @@ pub fn num()->Self{Self{value:20}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelpcontroller/KeyHelpController.md"))]#[::unity2::class(namespace="App",name="KeyHelpController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct KeyHelpController{#[offset(24)]#[rename(name="m_HelpObject")]pub m_help_object:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_Interval")]pub m_interval:f32,}
-
 }
 
 #[cfg(feature = "app-keyhelpcontroller-types")]
@@ -118,10 +118,10 @@ this}
 #[cfg(feature = "app-keyhelpcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::KeyHelpController_Type;
     pub use super::KeyHelpController;
     pub use super::IKeyHelpController;
     pub use super::IKeyHelpControllerMethods;
+    pub use super::KeyHelpController_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

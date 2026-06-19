@@ -25,6 +25,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelgimmick/MapPanelGimmick.md"))]#[::unity2::class(namespace="App",name="MapPanelGimmick")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelgimmick::MapPanelGimmick>)]pub struct MapPanelGimmick{#[offset(64)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(72)]#[rename(name="m_GimmickImage")]pub m_gimmick_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_GimmickColor")]pub m_gimmick_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(100)]#[rename(name="previousCount")]pub previous_count:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelgimmick/MapPanelGimmick_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelGimmick_MeshIndex{pub value:i32,}
 impl::unity2::ClassIdentity for MapPanelGimmick_MeshIndex{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapPanelGimmick.MeshIndex";
@@ -39,9 +42,6 @@ impl MapPanelGimmick_MeshIndex{pub fn gimmick()->Self{Self{value:0}
 pub fn num()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelgimmick/MapPanelGimmick.md"))]#[::unity2::class(namespace="App",name="MapPanelGimmick")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelgimmick::MapPanelGimmick>)]pub struct MapPanelGimmick{#[offset(64)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(72)]#[rename(name="m_GimmickImage")]pub m_gimmick_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_GimmickColor")]pub m_gimmick_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(100)]#[rename(name="previousCount")]pub previous_count:i32,}
 
 }
 
@@ -110,10 +110,10 @@ this}
 #[cfg(feature = "app-mappanelgimmick")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelGimmick_MeshIndex;
     pub use super::MapPanelGimmick;
     pub use super::IMapPanelGimmick;
     pub use super::IMapPanelGimmickMethods;
+    pub use super::MapPanelGimmick_MeshIndex;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

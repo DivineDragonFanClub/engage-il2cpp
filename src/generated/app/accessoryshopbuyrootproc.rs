@@ -15,76 +15,30 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.ChangeUnitToPrevEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.ChangeUnitToNextEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_EndWatchingEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.EndWatchingEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_EndWatchingEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_StartWatchingEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.StartWatchingEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_StartWatchingEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_HideUIEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.HideUIEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_HideUIEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.ChangeUnitToPrevEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc")]#[parent(crate::app::procinst::ProcInst)]pub struct AccessoryShopBuyRootProc{#[offset(112)]#[rename(name="m_KeyHelpAllObject")]pub m_key_help_all_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_KeyHelpAllAnimator")]pub m_key_help_all_animator:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler, #[offset(136)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler, #[offset(144)]#[rename(name="m_StartWatchingEventHandler")]pub m_start_watching_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_StartWatchingEventHandler, #[offset(152)]#[rename(name="m_EndWatchingEventHandler")]pub m_end_watching_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_EndWatchingEventHandler, #[offset(160)]#[rename(name="m_ShowUIEventHandler")]pub m_show_ui_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ShowUIEventHandler, #[offset(168)]#[rename(name="m_HideUIEventHandler")]pub m_hide_ui_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_HideUIEventHandler, #[offset(176)]#[rename(name="watching")]pub watching:bool, #[offset(177)]#[rename(name="visibleUI")]pub visible_ui:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.ChangeUnitToNextEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ShowUIEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.ShowUIEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_ShowUIEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc")]#[parent(crate::app::procinst::ProcInst)]pub struct AccessoryShopBuyRootProc{#[offset(112)]#[rename(name="m_KeyHelpAllObject")]pub m_key_help_all_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_KeyHelpAllAnimator")]pub m_key_help_all_animator:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler, #[offset(136)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler, #[offset(144)]#[rename(name="m_StartWatchingEventHandler")]pub m_start_watching_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_StartWatchingEventHandler, #[offset(152)]#[rename(name="m_EndWatchingEventHandler")]pub m_end_watching_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_EndWatchingEventHandler, #[offset(160)]#[rename(name="m_ShowUIEventHandler")]pub m_show_ui_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ShowUIEventHandler, #[offset(168)]#[rename(name="m_HideUIEventHandler")]pub m_hide_ui_event_handler:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_HideUIEventHandler, #[offset(176)]#[rename(name="watching")]pub watching:bool, #[offset(177)]#[rename(name="visibleUI")]pub visible_ui:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_HideUIEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRootProc.HideUIEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRootProc_HideUIEventHandler{}
 
 }
 
 #[cfg(feature = "app-accessoryshopbuyrootproc-types")]
 pub use __types::*;
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods:IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29038b0usize)as*mut u8,();
-(AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29038d0usize)as*mut u8,();
-(AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler>IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods:IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2903640usize)as*mut u8,();
-(AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2903660usize)as*mut u8,();
-(AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler>IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods:IAccessoryShopBuyRootProc_EndWatchingEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_EndWatchingEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2903b20usize)as*mut u8,();
@@ -132,49 +86,26 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_HideUIEventHandlerMethods:IAccessoryShopBuyRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2903d90usize)as*mut u8,();
-(AccessoryShopBuyRootProc_HideUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods:IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29038b0usize)as*mut u8,();
+(AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2903db0usize)as*mut u8,();
-(AccessoryShopBuyRootProc_HideUIEventHandler)__receiver)}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29038d0usize)as*mut u8,();
+(AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler)__receiver)}
 }
 }
 
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_HideUIEventHandler>IAccessoryShopBuyRootProc_HideUIEventHandlerMethods for __T{}
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler>IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods for __T{}
 
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_HideUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_HideUIEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopBuyRootProc_HideUIEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods:IAccessoryShopBuyRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2904000usize)as*mut u8,();
-(AccessoryShopBuyRootProc_ShowUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2904020usize)as*mut u8,();
-(AccessoryShopBuyRootProc_ShowUIEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_ShowUIEventHandler>IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ShowUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_ShowUIEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -211,30 +142,99 @@ pub fn key_help_all_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 this}
 }
 
+#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods:IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2903640usize)as*mut u8,();
+(AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2903660usize)as*mut u8,();
+(AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler>IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods:IAccessoryShopBuyRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2904000usize)as*mut u8,();
+(AccessoryShopBuyRootProc_ShowUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2904020usize)as*mut u8,();
+(AccessoryShopBuyRootProc_ShowUIEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_ShowUIEventHandler>IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ShowUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_ShowUIEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]pub trait IAccessoryShopBuyRootProc_HideUIEventHandlerMethods:IAccessoryShopBuyRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2903d90usize)as*mut u8,();
+(AccessoryShopBuyRootProc_HideUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2903db0usize)as*mut u8,();
+(AccessoryShopBuyRootProc_HideUIEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl<__T:IAccessoryShopBuyRootProc_HideUIEventHandler>IAccessoryShopBuyRootProc_HideUIEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_HideUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopbuyrootproc")]impl AccessoryShopBuyRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyRootProc_HideUIEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyRootProc_HideUIEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-accessoryshopbuyrootproc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods;
-    pub use super::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods;
     pub use super::AccessoryShopBuyRootProc_EndWatchingEventHandler;
     pub use super::IAccessoryShopBuyRootProc_EndWatchingEventHandler;
     pub use super::IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods;
     pub use super::AccessoryShopBuyRootProc_StartWatchingEventHandler;
     pub use super::IAccessoryShopBuyRootProc_StartWatchingEventHandler;
     pub use super::IAccessoryShopBuyRootProc_StartWatchingEventHandlerMethods;
-    pub use super::AccessoryShopBuyRootProc_HideUIEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_HideUIEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_HideUIEventHandlerMethods;
-    pub use super::AccessoryShopBuyRootProc_ShowUIEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_ShowUIEventHandler;
-    pub use super::IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods;
+    pub use super::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods;
     pub use super::AccessoryShopBuyRootProc;
     pub use super::IAccessoryShopBuyRootProc;
     pub use super::IAccessoryShopBuyRootProcMethods;
+    pub use super::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods;
+    pub use super::AccessoryShopBuyRootProc_ShowUIEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ShowUIEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods;
+    pub use super::AccessoryShopBuyRootProc_HideUIEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_HideUIEventHandler;
+    pub use super::IAccessoryShopBuyRootProc_HideUIEventHandlerMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

@@ -17,15 +17,53 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattlewindow/MapBattleWindow.md"))]#[::unity2::class(namespace="App",name="MapBattleWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapBattleWindow{#[offset(24)]#[rename(name="m_Info")]pub m_info:crate::app::battleinfo::BattleInfo, #[offset(32)]#[rename(name="m_MoveParam")]pub m_move_param: ::unity2::Array<crate::app::mapbattlewindow::MapBattleWindow_MoveParam> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattlewindow/MapBattleWindow_MoveParam.md"))]#[::unity2::class(namespace="App",name="MapBattleWindow.MoveParam")]#[parent(crate::system::object::Object)]pub struct MapBattleWindow_MoveParam{#[static_field]#[rename(name="TIME")]pub time:f32, #[offset(16)]#[rename(name="m_MoveHP")]pub m_move_hp:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(24)]#[rename(name="m_TempHP")]pub m_temp_hp:crate::app::interpolatorfloat::InterpolatorFloat,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattlewindow/MapBattleWindow.md"))]#[::unity2::class(namespace="App",name="MapBattleWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapBattleWindow{#[offset(24)]#[rename(name="m_Info")]pub m_info:crate::app::battleinfo::BattleInfo, #[offset(32)]#[rename(name="m_MoveParam")]pub m_move_param: ::unity2::Array<crate::app::mapbattlewindow::MapBattleWindow_MoveParam> ,}
 
 }
 
 #[cfg(feature = "app-mapbattlewindow-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapbattlewindow")]pub trait IMapBattleWindow_MoveParamMethods:IMapBattleWindow_MoveParam{#[doc="`GetHP()` overload"]fn get_hp(self,)->f32{unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd3b0usize)as*mut u8,f32;
+(MapBattleWindow_MoveParam)__receiver)}
+}
+#[doc="`GetTemp()` overload"]fn get_temp(self,)->f32{unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd410usize)as*mut u8,f32;
+(MapBattleWindow_MoveParam)__receiver)}
+}
+#[doc="`Set(crate::app::battleinfoside::BattleInfoSide)` overload"]fn set(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->(){unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd470usize)as*mut u8,();
+(MapBattleWindow_MoveParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+}
+#[doc="`Tick(crate::app::battleinfoside::BattleInfoSide)` overload"]fn tick(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->(){unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd4f0usize)as*mut u8,();
+(MapBattleWindow_MoveParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd7f0usize)as*mut u8,();
+(MapBattleWindow_MoveParam)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapbattlewindow")]impl<__T:IMapBattleWindow_MoveParam>IMapBattleWindow_MoveParamMethods for __T{}
+
+#[cfg(feature="app-mapbattlewindow")]impl MapBattleWindow_MoveParam{pub fn get_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_temp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mapbattlewindow")]impl MapBattleWindow_MoveParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapBattleWindow_MoveParam), ::core::stringify!(new),));
+ <Self as IMapBattleWindow_MoveParamMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-mapbattlewindow")]pub trait IMapBattleWindowMethods:IMapBattleWindow{#[doc="`Setup(crate::app::battleinfo::BattleInfo)` overload"]fn setup(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->crate::unity_engine::monobehaviour::MonoBehaviour{unsafe{let __receiver= <MapBattleWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2999390usize)as*mut u8,crate::unity_engine::monobehaviour::MonoBehaviour;
@@ -80,53 +118,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapbattlewindow")]pub trait IMapBattleWindow_MoveParamMethods:IMapBattleWindow_MoveParam{#[doc="`GetHP()` overload"]fn get_hp(self,)->f32{unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd3b0usize)as*mut u8,f32;
-(MapBattleWindow_MoveParam)__receiver)}
-}
-#[doc="`GetTemp()` overload"]fn get_temp(self,)->f32{unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd410usize)as*mut u8,f32;
-(MapBattleWindow_MoveParam)__receiver)}
-}
-#[doc="`Set(crate::app::battleinfoside::BattleInfoSide)` overload"]fn set(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->(){unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd470usize)as*mut u8,();
-(MapBattleWindow_MoveParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
-}
-#[doc="`Tick(crate::app::battleinfoside::BattleInfoSide)` overload"]fn tick(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->(){unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd4f0usize)as*mut u8,();
-(MapBattleWindow_MoveParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBattleWindow_MoveParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bd7f0usize)as*mut u8,();
-(MapBattleWindow_MoveParam)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapbattlewindow")]impl<__T:IMapBattleWindow_MoveParam>IMapBattleWindow_MoveParamMethods for __T{}
-
-#[cfg(feature="app-mapbattlewindow")]impl MapBattleWindow_MoveParam{pub fn get_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_temp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mapbattlewindow")]impl MapBattleWindow_MoveParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapBattleWindow_MoveParam), ::core::stringify!(new),));
- <Self as IMapBattleWindow_MoveParamMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapbattlewindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapBattleWindow;
-    pub use super::IMapBattleWindow;
-    pub use super::IMapBattleWindowMethods;
     pub use super::MapBattleWindow_MoveParam;
     pub use super::IMapBattleWindow_MoveParam;
     pub use super::IMapBattleWindow_MoveParamMethods;
+    pub use super::MapBattleWindow;
+    pub use super::IMapBattleWindow;
+    pub use super::IMapBattleWindowMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

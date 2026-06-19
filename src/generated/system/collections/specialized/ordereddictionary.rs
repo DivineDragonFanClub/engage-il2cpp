@@ -9,18 +9,61 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryKeyValueCollection.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary.OrderedDictionaryKeyValueCollection")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary_OrderedDictionaryKeyValueCollection{#[offset(16)]#[rename(name="_objects")]pub objects:crate::system::collections::arraylist::ArrayList, #[offset(24)]#[rename(name="isKeys")]pub is_keys:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary.OrderedDictionaryEnumerator")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary_OrderedDictionaryEnumerator{#[offset(16)]#[rename(name="_objectReturnType")]pub object_return_type:i32, #[offset(24)]#[rename(name="arrayEnumerator")]pub array_enumerator:crate::system::collections::ienumerator::IEnumerator,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary{#[offset(16)]#[rename(name="_objectsArray")]pub objects_array:crate::system::collections::arraylist::ArrayList, #[offset(24)]#[rename(name="_objectsTable")]pub objects_table:crate::system::collections::hashtable::Hashtable, #[offset(32)]#[rename(name="_initialCapacity")]pub initial_capacity:i32, #[offset(40)]#[rename(name="_comparer")]pub comparer:crate::system::collections::iequalitycomparer::IEqualityComparer, #[offset(48)]#[rename(name="_readOnly")]pub read_only:bool, #[offset(56)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryKeyValueCollection.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary.OrderedDictionaryKeyValueCollection")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary_OrderedDictionaryKeyValueCollection{#[offset(16)]#[rename(name="_objects")]pub objects:crate::system::collections::arraylist::ArrayList, #[offset(24)]#[rename(name="isKeys")]pub is_keys:bool,}
-
 }
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary-types")]
 pub use __types::*;
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]pub trait IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods:IOrderedDictionary_OrderedDictionaryKeyValueCollection{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]fn ctor(self,array:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList> ,is_keys:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a866a0usize)as*mut u8,();
+(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(array),(bool)::core::convert::Into::into(is_keys))}
+}
+#[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a866f0usize)as*mut u8,();
+(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`System.Collections.ICollection.get_Count()` overload"]fn system_collections_i_collection_get_count(self,)->i32{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86a50usize)as*mut u8,i32;
+(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
+}
+#[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86a70usize)as*mut u8,bool;
+(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
+}
+#[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86a80usize)as*mut u8,crate::system::object::Object;
+(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86aa0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl<__T:IOrderedDictionary_OrderedDictionaryKeyValueCollection>IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryKeyValueCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn system_collections_i_collection_copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn system_collections_i_collection_get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn system_collections_i_collection_get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn system_collections_i_collection_get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryKeyValueCollection{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]pub fn new(array:crate::system::collections::arraylist::ArrayList,is_keys:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection), ::core::stringify!(new),));
+ <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods> ::ctor(this,array,is_keys);
+this}
+}
 
 #[cfg(feature="system-collections-specialized-ordereddictionary")]pub trait IOrderedDictionary_OrderedDictionaryEnumeratorMethods:IOrderedDictionary_OrderedDictionaryEnumerator{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, i32)` overload"]fn ctor(self,array:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList> ,object_return_type:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85f30usize)as*mut u8,();
@@ -213,61 +256,18 @@ this}
 this}
 }
 
-#[cfg(feature="system-collections-specialized-ordereddictionary")]pub trait IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods:IOrderedDictionary_OrderedDictionaryKeyValueCollection{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]fn ctor(self,array:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList> ,is_keys:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a866a0usize)as*mut u8,();
-(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(array),(bool)::core::convert::Into::into(is_keys))}
-}
-#[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a866f0usize)as*mut u8,();
-(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`System.Collections.ICollection.get_Count()` overload"]fn system_collections_i_collection_get_count(self,)->i32{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86a50usize)as*mut u8,i32;
-(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
-}
-#[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86a70usize)as*mut u8,bool;
-(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
-}
-#[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86a80usize)as*mut u8,crate::system::object::Object;
-(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
-}
-#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a86aa0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver)}
-}
-}
-
-#[cfg(feature="system-collections-specialized-ordereddictionary")]impl<__T:IOrderedDictionary_OrderedDictionaryKeyValueCollection>IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods for __T{}
-
-#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryKeyValueCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn system_collections_i_collection_copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn system_collections_i_collection_get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn system_collections_i_collection_get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn system_collections_i_collection_get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryKeyValueCollection{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]pub fn new(array:crate::system::collections::arraylist::ArrayList,is_keys:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection), ::core::stringify!(new),));
- <Self as IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods> ::ctor(this,array,is_keys);
-this}
-}
-
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::OrderedDictionary_OrderedDictionaryKeyValueCollection;
+    pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollection;
+    pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods;
     pub use super::OrderedDictionary_OrderedDictionaryEnumerator;
     pub use super::IOrderedDictionary_OrderedDictionaryEnumerator;
     pub use super::IOrderedDictionary_OrderedDictionaryEnumeratorMethods;
     pub use super::OrderedDictionary;
     pub use super::IOrderedDictionary;
     pub use super::IOrderedDictionaryMethods;
-    pub use super::OrderedDictionary_OrderedDictionaryKeyValueCollection;
-    pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollection;
-    pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

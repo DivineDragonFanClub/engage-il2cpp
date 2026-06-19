@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditchecker/MapEditChecker.md"))]#[::unity2::class(namespace="App",name="MapEditChecker")]#[parent(crate::system::object::Object)]pub struct MapEditChecker{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditchecker/MapEditChecker_CheckRange.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapEditChecker_CheckRange{pub min_x:i32,pub max_x:i32,pub min_z:i32,pub max_z:i32,}
 impl::unity2::ClassIdentity for MapEditChecker_CheckRange{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapEditChecker.CheckRange";
@@ -24,10 +21,37 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for MapEditChecker_CheckRange{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditchecker/MapEditChecker.md"))]#[::unity2::class(namespace="App",name="MapEditChecker")]#[parent(crate::system::object::Object)]pub struct MapEditChecker{}
+
 }
 
 #[cfg(feature = "app-mapeditchecker-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapeditchecker")]impl MapEditChecker_CheckRange{#[doc="`.ctor(i32, i32, i32, i32)` overload"]pub fn ctor(&mut self,x1:impl::core::convert::Into<i32> ,x2:impl::core::convert::Into<i32> ,z1:impl::core::convert::Into<i32> ,z2:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2f40usize)as*mut u8,();
+(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange,(i32)::core::convert::Into::into(x1),(i32)::core::convert::Into::into(x2),(i32)::core::convert::Into::into(z1),(i32)::core::convert::Into::into(z2))}
+}
+#[doc="`IsRange(crate::app::mappos::MapPos)` overload"]pub fn is_range(&mut self,pos:impl::core::convert::Into<crate::app::mappos::MapPos>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2f70usize)as*mut u8,bool;
+(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange,(crate::app::mappos::MapPos)::core::convert::Into::into(pos))}
+}
+#[doc="`IsRange(i32, i32)` overload"]pub fn is_range_2(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2fc0usize)as*mut u8,bool;
+(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c3010usize)as*mut u8,();
+(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c3020usize)as*mut u8, ::unity2::Il2CppString;
+(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange)}
+}
+}
+
+#[cfg(feature="app-mapeditchecker")]impl MapEditChecker_CheckRange{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_range_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature="app-mapeditchecker")]impl MapEditChecker{#[doc="`Check(bool)` overload"]pub fn check(is_opponent:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dab9b0usize)as*mut u8,bool;
 (bool)::core::convert::Into::into(is_opponent))}
@@ -97,37 +121,13 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapeditchecker")]impl MapEditChecker_CheckRange{#[doc="`.ctor(i32, i32, i32, i32)` overload"]pub fn ctor(&mut self,x1:impl::core::convert::Into<i32> ,x2:impl::core::convert::Into<i32> ,z1:impl::core::convert::Into<i32> ,z2:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2f40usize)as*mut u8,();
-(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange,(i32)::core::convert::Into::into(x1),(i32)::core::convert::Into::into(x2),(i32)::core::convert::Into::into(z1),(i32)::core::convert::Into::into(z2))}
-}
-#[doc="`IsRange(crate::app::mappos::MapPos)` overload"]pub fn is_range(&mut self,pos:impl::core::convert::Into<crate::app::mappos::MapPos>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2f70usize)as*mut u8,bool;
-(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange,(crate::app::mappos::MapPos)::core::convert::Into::into(pos))}
-}
-#[doc="`IsRange(i32, i32)` overload"]pub fn is_range_2(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c2fc0usize)as*mut u8,bool;
-(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c3010usize)as*mut u8,();
-(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange)}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c3020usize)as*mut u8, ::unity2::Il2CppString;
-(*mut MapEditChecker_CheckRange)self as*mut MapEditChecker_CheckRange)}
-}
-}
-
-#[cfg(feature="app-mapeditchecker")]impl MapEditChecker_CheckRange{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_range_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
 #[cfg(feature = "app-mapeditchecker")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapEditChecker_CheckRange;
     pub use super::MapEditChecker;
     pub use super::IMapEditChecker;
     pub use super::IMapEditCheckerMethods;
-    pub use super::MapEditChecker_CheckRange;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

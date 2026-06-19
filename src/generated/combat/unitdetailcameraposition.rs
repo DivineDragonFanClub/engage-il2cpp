@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))]#[::unity2::class(namespace="Combat",name="UnitDetailCameraPosition")]#[parent(crate::system::object::Object)]pub struct UnitDetailCameraPosition{#[offset(16)]#[rename(name="Target")]pub target:crate::combat::camerapositiondata::CameraPositionData_TargetJoint, #[offset(20)]#[rename(name="Distance")]pub distance:f32, #[offset(24)]#[rename(name="LookatHeightFix")]pub lookat_height_fix:f32, #[offset(28)]#[rename(name="FollowHeightFix")]pub follow_height_fix:f32, #[offset(32)]#[rename(name="CameraFov")]pub camera_fov:f32, #[offset(36)]#[rename(name="SideSlipSize")]pub side_slip_size:f32, #[offset(40)]#[rename(name="Center")]pub center:crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/unitdetailcameraposition/UnitDetailCameraPosition_CenterType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitDetailCameraPosition_CenterType{pub value:i32,}
 impl::unity2::ClassIdentity for UnitDetailCameraPosition_CenterType{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="UnitDetailCameraPosition.CenterType";
@@ -36,6 +33,9 @@ pub fn midpoint()->Self{Self{value:3}
 pub fn master_target()->Self{Self{value:4}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))]#[::unity2::class(namespace="Combat",name="UnitDetailCameraPosition")]#[parent(crate::system::object::Object)]pub struct UnitDetailCameraPosition{#[offset(16)]#[rename(name="Target")]pub target:crate::combat::camerapositiondata::CameraPositionData_TargetJoint, #[offset(20)]#[rename(name="Distance")]pub distance:f32, #[offset(24)]#[rename(name="LookatHeightFix")]pub lookat_height_fix:f32, #[offset(28)]#[rename(name="FollowHeightFix")]pub follow_height_fix:f32, #[offset(32)]#[rename(name="CameraFov")]pub camera_fov:f32, #[offset(36)]#[rename(name="SideSlipSize")]pub side_slip_size:f32, #[offset(40)]#[rename(name="Center")]pub center:crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,}
 
 }
 
@@ -63,10 +63,10 @@ this}
 #[cfg(feature = "combat-unitdetailcameraposition")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitDetailCameraPosition_CenterType;
     pub use super::UnitDetailCameraPosition;
     pub use super::IUnitDetailCameraPosition;
     pub use super::IUnitDetailCameraPositionMethods;
-    pub use super::UnitDetailCameraPosition_CenterType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

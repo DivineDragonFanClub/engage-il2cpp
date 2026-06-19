@@ -25,6 +25,32 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_WeaponValues.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_WeaponValues{pub value:i32,}
+impl::unity2::ClassIdentity for JobData_WeaponValues{const NAMESPACE: &'static str="App";
+const NAME: &'static str="JobData.WeaponValues";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for JobData_WeaponValues{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl JobData_WeaponValues{pub fn none()->Self{Self{value:0}
+}
+pub fn equippable()->Self{Self{value:1}
+}
+pub fn selectable1()->Self{Self{value:2}
+}
+pub fn selectable2()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData.md"))]#[::unity2::class(namespace="App",name="JobData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::jobdata::JobData>)]pub struct JobData{#[static_field]#[rename(name="MaxHighJob")]pub max_high_job:i32, #[static_field]#[rename(name="JidMaleSuffix")]pub jid_male_suffix: ::unity2::Il2CppString, #[static_field]#[rename(name="JidFemaleSuffix")]pub jid_female_suffix: ::unity2::Il2CppString, #[offset(152)]#[rename(name="Weapons")]pub weapons: ::unity2::Array<i8> , #[offset(160)]#[rename(name="MaxWeaponLevels")]pub max_weapon_levels: ::unity2::Array< ::unity2::Il2CppString> , #[offset(168)]#[rename(name="WeaponLevels")]pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind> , #[offset(176)]#[rename(name="WeaponLevelPlusMask")]pub weapon_level_plus_mask:crate::app::weaponmask::WeaponMask, #[offset(184)]#[rename(name="HighJobs")]pub high_jobs: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_FlagField.md"))]#[::unity2::class(namespace="App",name="JobData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::jobdata::JobData_Flags>)]pub struct JobData_FlagField{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_Ranks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_Ranks{pub value:i32,}
 impl::unity2::ClassIdentity for JobData_Ranks{const NAMESPACE: &'static str="App";
 const NAME: &'static str="JobData.Ranks";
@@ -39,9 +65,6 @@ impl JobData_Ranks{pub fn low()->Self{Self{value:0}
 pub fn high()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_FlagField.md"))]#[::unity2::class(namespace="App",name="JobData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::jobdata::JobData_Flags>)]pub struct JobData_FlagField{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_MoveTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_MoveTypes{pub value:i32,}
@@ -70,29 +93,6 @@ pub fn num()->Self{Self{value:6}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_WeaponValues.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_WeaponValues{pub value:i32,}
-impl::unity2::ClassIdentity for JobData_WeaponValues{const NAMESPACE: &'static str="App";
-const NAME: &'static str="JobData.WeaponValues";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for JobData_WeaponValues{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl JobData_WeaponValues{pub fn none()->Self{Self{value:0}
-}
-pub fn equippable()->Self{Self{value:1}
-}
-pub fn selectable1()->Self{Self{value:2}
-}
-pub fn selectable2()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData.md"))]#[::unity2::class(namespace="App",name="JobData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::jobdata::JobData>)]pub struct JobData{#[static_field]#[rename(name="MaxHighJob")]pub max_high_job:i32, #[static_field]#[rename(name="JidMaleSuffix")]pub jid_male_suffix: ::unity2::Il2CppString, #[static_field]#[rename(name="JidFemaleSuffix")]pub jid_female_suffix: ::unity2::Il2CppString, #[offset(152)]#[rename(name="Weapons")]pub weapons: ::unity2::Array<i8> , #[offset(160)]#[rename(name="MaxWeaponLevels")]pub max_weapon_levels: ::unity2::Array< ::unity2::Il2CppString> , #[offset(168)]#[rename(name="WeaponLevels")]pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind> , #[offset(176)]#[rename(name="WeaponLevelPlusMask")]pub weapon_level_plus_mask:crate::app::weaponmask::WeaponMask, #[offset(184)]#[rename(name="HighJobs")]pub high_jobs: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for JobData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="JobData.Flags";
@@ -116,39 +116,6 @@ pub fn encount_map()->Self{Self{value:8}
 
 #[cfg(feature = "app-jobdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-jobdata")]pub trait IJobData_FlagFieldMethods:IJobData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1e30usize)as*mut u8,();
-(JobData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor(crate::app::jobdata::JobData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::jobdata::JobData_Flags>)->(){unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1e90usize)as*mut u8,();
-(JobData_FlagField)__receiver,(crate::app::jobdata::JobData_Flags)::core::convert::Into::into(f))}
-}
-#[doc="`ToInt(crate::app::jobdata::JobData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::jobdata::JobData_Flags>)->i32{unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1ef0usize)as*mut u8,i32;
-(JobData_FlagField)__receiver,(crate::app::jobdata::JobData_Flags)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-jobdata")]impl<__T:IJobData_FlagField>IJobData_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-jobdata")]impl JobData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-jobdata")]impl JobData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(JobData_FlagField), ::core::stringify!(new),));
- <Self as IJobData_FlagFieldMethods> ::ctor(this,f);
-this}
-#[doc="`.ctor(crate::app::jobdata::JobData_Flags)` — overload selector"]pub fn new_2(f:crate::app::jobdata::JobData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(JobData_FlagField), ::core::stringify!(new_2),));
- <Self as IJobData_FlagFieldMethods> ::ctor_2(this,f);
-this}
-}
 
 #[cfg(feature="app-jobdata")]impl JobData{#[doc="`GetMoveTypeName(crate::app::jobdata::JobData_MoveTypes)` overload"]pub fn get_move_type_name(r#type:impl::core::convert::Into<crate::app::jobdata::JobData_MoveTypes>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20538d0usize)as*mut u8, ::unity2::Il2CppString;
 (crate::app::jobdata::JobData_MoveTypes)::core::convert::Into::into(r#type))}
@@ -886,18 +853,51 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-jobdata")]pub trait IJobData_FlagFieldMethods:IJobData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1e30usize)as*mut u8,();
+(JobData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::jobdata::JobData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::jobdata::JobData_Flags>)->(){unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1e90usize)as*mut u8,();
+(JobData_FlagField)__receiver,(crate::app::jobdata::JobData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::jobdata::JobData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::jobdata::JobData_Flags>)->i32{unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1ef0usize)as*mut u8,i32;
+(JobData_FlagField)__receiver,(crate::app::jobdata::JobData_Flags)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-jobdata")]impl<__T:IJobData_FlagField>IJobData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-jobdata")]impl JobData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-jobdata")]impl JobData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JobData_FlagField), ::core::stringify!(new),));
+ <Self as IJobData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::jobdata::JobData_Flags)` — overload selector"]pub fn new_2(f:crate::app::jobdata::JobData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JobData_FlagField), ::core::stringify!(new_2),));
+ <Self as IJobData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
+
 #[cfg(feature = "app-jobdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::JobData_Ranks;
-    pub use super::JobData_FlagField;
-    pub use super::IJobData_FlagField;
-    pub use super::IJobData_FlagFieldMethods;
-    pub use super::JobData_MoveTypes;
     pub use super::JobData_WeaponValues;
     pub use super::JobData;
     pub use super::IJobData;
     pub use super::IJobDataMethods;
+    pub use super::JobData_FlagField;
+    pub use super::IJobData_FlagField;
+    pub use super::IJobData_FlagFieldMethods;
+    pub use super::JobData_Ranks;
+    pub use super::JobData_MoveTypes;
     pub use super::JobData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;

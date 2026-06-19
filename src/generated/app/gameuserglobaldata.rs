@@ -21,12 +21,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserglobaldata::GameUserGlobalData>)]pub struct GameUserGlobalData{#[offset(48)]#[rename(name="m_CompletedHash")]pub m_completed_hash:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_CompletedList")]pub m_completed_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)]pub struct GameUserGlobalData_FlagsField{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserGlobalData_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for GameUserGlobalData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameUserGlobalData.Flags";
@@ -64,10 +58,39 @@ pub fn dlc_news_patch3()->Self{Self{value:512}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)]pub struct GameUserGlobalData_FlagsField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserglobaldata::GameUserGlobalData>)]pub struct GameUserGlobalData{#[offset(48)]#[rename(name="m_CompletedHash")]pub m_completed_hash:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_CompletedList")]pub m_completed_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
+
 }
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-gameuserglobaldata")]pub trait IGameUserGlobalData_FlagsFieldMethods:IGameUserGlobalData_FlagsField{#[doc="`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)->i32{unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1e0usize)as*mut u8,i32;
+(GameUserGlobalData_FlagsField)__receiver,(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1f0usize)as*mut u8,();
+(GameUserGlobalData_FlagsField)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameuserglobaldata")]impl<__T:IGameUserGlobalData_FlagsField>IGameUserGlobalData_FlagsFieldMethods for __T{}
+
+#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData_FlagsField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData_FlagsField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserGlobalData_FlagsField), ::core::stringify!(new),));
+ <Self as IGameUserGlobalData_FlagsFieldMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData{#[doc="`CreateIdentifier()` overload"]pub fn create_identifier()->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25118c0usize)as*mut u8,u64;
 )}
@@ -193,39 +216,16 @@ pub fn create_identifier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 this}
 }
 
-#[cfg(feature="app-gameuserglobaldata")]pub trait IGameUserGlobalData_FlagsFieldMethods:IGameUserGlobalData_FlagsField{#[doc="`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)->i32{unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1e0usize)as*mut u8,i32;
-(GameUserGlobalData_FlagsField)__receiver,(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1f0usize)as*mut u8,();
-(GameUserGlobalData_FlagsField)__receiver)}
-}
-}
-
-#[cfg(feature="app-gameuserglobaldata")]impl<__T:IGameUserGlobalData_FlagsField>IGameUserGlobalData_FlagsFieldMethods for __T{}
-
-#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData_FlagsField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData_FlagsField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameUserGlobalData_FlagsField), ::core::stringify!(new),));
- <Self as IGameUserGlobalData_FlagsFieldMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-gameuserglobaldata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUserGlobalData;
-    pub use super::IGameUserGlobalData;
-    pub use super::IGameUserGlobalDataMethods;
+    pub use super::GameUserGlobalData_Flags;
     pub use super::GameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsFieldMethods;
-    pub use super::GameUserGlobalData_Flags;
+    pub use super::GameUserGlobalData;
+    pub use super::IGameUserGlobalData;
+    pub use super::IGameUserGlobalDataMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

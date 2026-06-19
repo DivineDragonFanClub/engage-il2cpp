@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdata/EventData.md"))]#[::unity2::class(namespace="App",name="EventData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::eventdata::EventData>)]pub struct EventData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdata/EventData_Commands.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventData_Commands{pub value:i32,}
 impl::unity2::ClassIdentity for EventData_Commands{const NAMESPACE: &'static str="App";
 const NAME: &'static str="EventData.Commands";
@@ -92,6 +89,9 @@ pub fn test_system_voice_unload()->Self{Self{value:101}
 pub fn test_system_voice_play()->Self{Self{value:102}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventdata/EventData.md"))]#[::unity2::class(namespace="App",name="EventData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::eventdata::EventData>)]pub struct EventData{}
 
 }
 
@@ -220,10 +220,10 @@ this}
 #[cfg(feature = "app-eventdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::EventData_Commands;
     pub use super::EventData;
     pub use super::IEventData;
     pub use super::IEventDataMethods;
-    pub use super::EventData_Commands;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

@@ -13,55 +13,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fieldbgmmanager/FieldBgmManager_ProcChangeBgm.md"))]#[::unity2::class(namespace="App",name="FieldBgmManager.ProcChangeBgm")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::fieldbgmmanager::FieldBgmManager_ProcChangeBgm>)]pub struct FieldBgmManager_ProcChangeBgm{#[offset(120)]#[rename(name="m_bgmManager")]pub m_bgm_manager:crate::app::fieldbgmmanager::FieldBgmManager, #[offset(128)]#[rename(name="m_isReturnToNormalBgm")]pub m_is_return_to_normal_bgm:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fieldbgmmanager/FieldBgmManager_BgmHandle.md"))]#[::unity2::class(namespace="App",name="FieldBgmManager.BgmHandle")]#[parent(crate::system::object::Object)]pub struct FieldBgmManager_BgmHandle{#[offset(16)]#[rename(name="m_soundHandle")]pub m_sound_handle:crate::app::soundsystem::SoundSystem_SoundHandle, #[offset(24)]#[rename(name="m_isFirstPlayed")]pub m_is_first_played:bool, #[offset(25)]#[rename(name="m_isPaused")]pub m_is_paused:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fieldbgmmanager/FieldBgmManager.md"))]#[::unity2::class(namespace="App",name="FieldBgmManager")]#[parent(crate::system::object::Object)]pub struct FieldBgmManager{#[static_field]#[rename(name="GameObjectName")]pub game_object_name: ::unity2::Il2CppString, #[static_field]#[rename(name="FadeInMsec_ChangeBgm")]pub fade_in_msec_change_bgm:i32, #[static_field]#[rename(name="FadeOutMsec_ChangeBgm")]pub fade_out_msec_change_bgm:i32, #[static_field]#[rename(name="FadeInMsec_ReturnToNormalBgm")]pub fade_in_msec_return_to_normal_bgm:i32, #[static_field]#[rename(name="FadeInMsec_SpecialBattleBgm")]pub fade_in_msec_special_battle_bgm:i32, #[static_field]#[rename(name="FadeOutMsec_SpecialBattleBgm")]pub fade_out_msec_special_battle_bgm:i32, #[static_field]#[rename(name="SpecialBattleBgmContinueTurnMax")]pub special_battle_bgm_continue_turn_max:i32, #[offset(16)]#[rename(name="m_isSetPhaseBgm")]pub m_is_set_phase_bgm:bool, #[offset(24)]#[rename(name="m_isFirstPhaseChanged")]pub m_is_first_phase_changed: ::unity2::Array<bool> , #[offset(32)]#[rename(name="m_sndMgr")]pub m_snd_mgr:crate::app::soundmanager::SoundManager, #[offset(40)]#[rename(name="m_gameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_handleNameArray")]pub m_handle_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_prevBgmHandleName")]pub m_prev_bgm_handle_name: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_curBgmHandleName")]pub m_cur_bgm_handle_name: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_bgmHandleList")]pub m_bgm_handle_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::fieldbgmmanager::FieldBgmManager_BgmHandle> , #[offset(80)]#[rename(name="m_specialCombatBgmHandleList")]pub m_special_combat_bgm_handle_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::fieldbgmmanager::FieldBgmManager_BgmHandle> , #[offset(88)]#[rename(name="m_warSituationStateName")]pub m_war_situation_state_name: ::unity2::Il2CppString, #[offset(96)]#[rename(name="m_volume")]pub m_volume:crate::app::fieldbgmmanager::FieldBgmManager_VolumeFader, #[offset(104)]#[rename(name="m_restoreEventNameArray")]pub m_restore_event_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[offset(112)]#[rename(name="m_restoreWarSituationStateName")]pub m_restore_war_situation_state_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_BattleBgmContinueTurn")]pub m_battle_bgm_continue_turn:i32, #[static_field]#[rename(name="NowStreamVersion")]pub now_stream_version:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fieldbgmmanager/FieldBgmManager_ProcChangeBgm.md"))]#[::unity2::class(namespace="App",name="FieldBgmManager.ProcChangeBgm")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::fieldbgmmanager::FieldBgmManager_ProcChangeBgm>)]pub struct FieldBgmManager_ProcChangeBgm{#[offset(120)]#[rename(name="m_bgmManager")]pub m_bgm_manager:crate::app::fieldbgmmanager::FieldBgmManager, #[offset(128)]#[rename(name="m_isReturnToNormalBgm")]pub m_is_return_to_normal_bgm:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fieldbgmmanager/FieldBgmManager_VolumeFader.md"))]#[::unity2::class(namespace="App",name="FieldBgmManager.VolumeFader")]#[parent(crate::system::object::Object)]pub struct FieldBgmManager_VolumeFader{#[offset(16)]#[rename(name="m_vol")]pub m_vol:f32, #[offset(20)]#[rename(name="m_volFrom")]pub m_vol_from:f32, #[offset(24)]#[rename(name="m_volTo")]pub m_vol_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fieldbgmmanager/FieldBgmManager.md"))]#[::unity2::class(namespace="App",name="FieldBgmManager")]#[parent(crate::system::object::Object)]pub struct FieldBgmManager{#[static_field]#[rename(name="GameObjectName")]pub game_object_name: ::unity2::Il2CppString, #[static_field]#[rename(name="FadeInMsec_ChangeBgm")]pub fade_in_msec_change_bgm:i32, #[static_field]#[rename(name="FadeOutMsec_ChangeBgm")]pub fade_out_msec_change_bgm:i32, #[static_field]#[rename(name="FadeInMsec_ReturnToNormalBgm")]pub fade_in_msec_return_to_normal_bgm:i32, #[static_field]#[rename(name="FadeInMsec_SpecialBattleBgm")]pub fade_in_msec_special_battle_bgm:i32, #[static_field]#[rename(name="FadeOutMsec_SpecialBattleBgm")]pub fade_out_msec_special_battle_bgm:i32, #[static_field]#[rename(name="SpecialBattleBgmContinueTurnMax")]pub special_battle_bgm_continue_turn_max:i32, #[offset(16)]#[rename(name="m_isSetPhaseBgm")]pub m_is_set_phase_bgm:bool, #[offset(24)]#[rename(name="m_isFirstPhaseChanged")]pub m_is_first_phase_changed: ::unity2::Array<bool> , #[offset(32)]#[rename(name="m_sndMgr")]pub m_snd_mgr:crate::app::soundmanager::SoundManager, #[offset(40)]#[rename(name="m_gameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_handleNameArray")]pub m_handle_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_prevBgmHandleName")]pub m_prev_bgm_handle_name: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_curBgmHandleName")]pub m_cur_bgm_handle_name: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_bgmHandleList")]pub m_bgm_handle_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::fieldbgmmanager::FieldBgmManager_BgmHandle> , #[offset(80)]#[rename(name="m_specialCombatBgmHandleList")]pub m_special_combat_bgm_handle_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::fieldbgmmanager::FieldBgmManager_BgmHandle> , #[offset(88)]#[rename(name="m_warSituationStateName")]pub m_war_situation_state_name: ::unity2::Il2CppString, #[offset(96)]#[rename(name="m_volume")]pub m_volume:crate::app::fieldbgmmanager::FieldBgmManager_VolumeFader, #[offset(104)]#[rename(name="m_restoreEventNameArray")]pub m_restore_event_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[offset(112)]#[rename(name="m_restoreWarSituationStateName")]pub m_restore_war_situation_state_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_BattleBgmContinueTurn")]pub m_battle_bgm_continue_turn:i32, #[static_field]#[rename(name="NowStreamVersion")]pub now_stream_version:i32,}
 
 }
 
 #[cfg(feature = "app-fieldbgmmanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_ProcChangeBgm{#[doc="`Create(crate::app::fieldbgmmanager::FieldBgmManager, crate::app::force::Force_Type, bool, crate::app::procinst::ProcInst)` overload"]pub fn create(bgm_manager:impl::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_return_to_normal_bgm:impl::core::convert::Into<bool> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e5ec90usize)as*mut u8,();
-(crate::app::fieldbgmmanager::FieldBgmManager)::core::convert::Into::into(bgm_manager),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(bool)::core::convert::Into::into(is_return_to_normal_bgm),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-fieldbgmmanager")]pub trait IFieldBgmManager_ProcChangeBgmMethods:IFieldBgmManager_ProcChangeBgm{#[doc="`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` overload"]fn ctor(self,bgm_manager:impl::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager> ,is_return_to_normal_bgm:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FieldBgmManager_ProcChangeBgm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5eb60usize)as*mut u8,();
-(FieldBgmManager_ProcChangeBgm)__receiver,(crate::app::fieldbgmmanager::FieldBgmManager)::core::convert::Into::into(bgm_manager),(bool)::core::convert::Into::into(is_return_to_normal_bgm))}
-}
-#[doc="`ProcCall_ResumeBgm()` overload"]fn proc_call_resume_bgm(self,)->(){unsafe{let __receiver= <FieldBgmManager_ProcChangeBgm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5ec10usize)as*mut u8,();
-(FieldBgmManager_ProcChangeBgm)__receiver)}
-}
-#[doc="`ProcCall_PauseBgm()` overload"]fn proc_call_pause_bgm(self,)->(){unsafe{let __receiver= <FieldBgmManager_ProcChangeBgm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5ec40usize)as*mut u8,();
-(FieldBgmManager_ProcChangeBgm)__receiver)}
-}
-}
-
-#[cfg(feature="app-fieldbgmmanager")]impl<__T:IFieldBgmManager_ProcChangeBgm>IFieldBgmManager_ProcChangeBgmMethods for __T{}
-
-#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_ProcChangeBgm{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn proc_call_resume_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn proc_call_pause_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_ProcChangeBgm{#[doc="`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` — overload selector"]pub fn new(bgm_manager:crate::app::fieldbgmmanager::FieldBgmManager,is_return_to_normal_bgm:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FieldBgmManager_ProcChangeBgm), ::core::stringify!(new),));
- <Self as IFieldBgmManager_ProcChangeBgmMethods> ::ctor(this,bgm_manager,is_return_to_normal_bgm);
-this}
-}
 
 #[cfg(feature="app-fieldbgmmanager")]pub trait IFieldBgmManager_BgmHandleMethods:IFieldBgmManager_BgmHandle{#[doc="`.ctor(crate::app::soundsystem::SoundSystem_SoundHandle)` overload"]fn ctor(self,sound_handle:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_SoundHandle>)->(){unsafe{let __receiver= <FieldBgmManager_BgmHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5ea10usize)as*mut u8,();
@@ -123,6 +89,78 @@ pub fn set_first_played_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 ::{}
  failed to instantiate", ::core::stringify!(FieldBgmManager_BgmHandle), ::core::stringify!(new),));
  <Self as IFieldBgmManager_BgmHandleMethods> ::ctor(this,sound_handle);
+this}
+}
+
+#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_ProcChangeBgm{#[doc="`Create(crate::app::fieldbgmmanager::FieldBgmManager, crate::app::force::Force_Type, bool, crate::app::procinst::ProcInst)` overload"]pub fn create(bgm_manager:impl::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_return_to_normal_bgm:impl::core::convert::Into<bool> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e5ec90usize)as*mut u8,();
+(crate::app::fieldbgmmanager::FieldBgmManager)::core::convert::Into::into(bgm_manager),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(bool)::core::convert::Into::into(is_return_to_normal_bgm),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-fieldbgmmanager")]pub trait IFieldBgmManager_ProcChangeBgmMethods:IFieldBgmManager_ProcChangeBgm{#[doc="`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` overload"]fn ctor(self,bgm_manager:impl::core::convert::Into<crate::app::fieldbgmmanager::FieldBgmManager> ,is_return_to_normal_bgm:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FieldBgmManager_ProcChangeBgm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5eb60usize)as*mut u8,();
+(FieldBgmManager_ProcChangeBgm)__receiver,(crate::app::fieldbgmmanager::FieldBgmManager)::core::convert::Into::into(bgm_manager),(bool)::core::convert::Into::into(is_return_to_normal_bgm))}
+}
+#[doc="`ProcCall_ResumeBgm()` overload"]fn proc_call_resume_bgm(self,)->(){unsafe{let __receiver= <FieldBgmManager_ProcChangeBgm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5ec10usize)as*mut u8,();
+(FieldBgmManager_ProcChangeBgm)__receiver)}
+}
+#[doc="`ProcCall_PauseBgm()` overload"]fn proc_call_pause_bgm(self,)->(){unsafe{let __receiver= <FieldBgmManager_ProcChangeBgm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5ec40usize)as*mut u8,();
+(FieldBgmManager_ProcChangeBgm)__receiver)}
+}
+}
+
+#[cfg(feature="app-fieldbgmmanager")]impl<__T:IFieldBgmManager_ProcChangeBgm>IFieldBgmManager_ProcChangeBgmMethods for __T{}
+
+#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_ProcChangeBgm{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn proc_call_resume_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn proc_call_pause_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_ProcChangeBgm{#[doc="`.ctor(crate::app::fieldbgmmanager::FieldBgmManager, bool)` — overload selector"]pub fn new(bgm_manager:crate::app::fieldbgmmanager::FieldBgmManager,is_return_to_normal_bgm:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FieldBgmManager_ProcChangeBgm), ::core::stringify!(new),));
+ <Self as IFieldBgmManager_ProcChangeBgmMethods> ::ctor(this,bgm_manager,is_return_to_normal_bgm);
+this}
+}
+
+#[cfg(feature="app-fieldbgmmanager")]pub trait IFieldBgmManager_VolumeFaderMethods:IFieldBgmManager_VolumeFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5eff0usize)as*mut u8,();
+(FieldBgmManager_VolumeFader)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f030usize)as*mut u8,();
+(FieldBgmManager_VolumeFader)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f050usize)as*mut u8,f32;
+(FieldBgmManager_VolumeFader)__receiver)}
+}
+#[doc="`Set(f32, i32)` overload"]fn set(self,vol:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f060usize)as*mut u8,();
+(FieldBgmManager_VolumeFader)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(msec))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f0a0usize)as*mut u8,();
+(FieldBgmManager_VolumeFader)__receiver)}
+}
+}
+
+#[cfg(feature="app-fieldbgmmanager")]impl<__T:IFieldBgmManager_VolumeFader>IFieldBgmManager_VolumeFaderMethods for __T{}
+
+#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_VolumeFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_VolumeFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FieldBgmManager_VolumeFader), ::core::stringify!(new),));
+ <Self as IFieldBgmManager_VolumeFaderMethods> ::ctor(this,);
 this}
 }
 
@@ -304,59 +342,21 @@ pub fn resume_bgm_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
-#[cfg(feature="app-fieldbgmmanager")]pub trait IFieldBgmManager_VolumeFaderMethods:IFieldBgmManager_VolumeFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5eff0usize)as*mut u8,();
-(FieldBgmManager_VolumeFader)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f030usize)as*mut u8,();
-(FieldBgmManager_VolumeFader)__receiver)}
-}
-#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f050usize)as*mut u8,f32;
-(FieldBgmManager_VolumeFader)__receiver)}
-}
-#[doc="`Set(f32, i32)` overload"]fn set(self,vol:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f060usize)as*mut u8,();
-(FieldBgmManager_VolumeFader)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(msec))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <FieldBgmManager_VolumeFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f0a0usize)as*mut u8,();
-(FieldBgmManager_VolumeFader)__receiver)}
-}
-}
-
-#[cfg(feature="app-fieldbgmmanager")]impl<__T:IFieldBgmManager_VolumeFader>IFieldBgmManager_VolumeFaderMethods for __T{}
-
-#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_VolumeFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-fieldbgmmanager")]impl FieldBgmManager_VolumeFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FieldBgmManager_VolumeFader), ::core::stringify!(new),));
- <Self as IFieldBgmManager_VolumeFaderMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-fieldbgmmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FieldBgmManager_ProcChangeBgm;
-    pub use super::IFieldBgmManager_ProcChangeBgm;
-    pub use super::IFieldBgmManager_ProcChangeBgmMethods;
     pub use super::FieldBgmManager_BgmHandle;
     pub use super::IFieldBgmManager_BgmHandle;
     pub use super::IFieldBgmManager_BgmHandleMethods;
-    pub use super::FieldBgmManager;
-    pub use super::IFieldBgmManager;
-    pub use super::IFieldBgmManagerMethods;
+    pub use super::FieldBgmManager_ProcChangeBgm;
+    pub use super::IFieldBgmManager_ProcChangeBgm;
+    pub use super::IFieldBgmManager_ProcChangeBgmMethods;
     pub use super::FieldBgmManager_VolumeFader;
     pub use super::IFieldBgmManager_VolumeFader;
     pub use super::IFieldBgmManager_VolumeFaderMethods;
+    pub use super::FieldBgmManager;
+    pub use super::IFieldBgmManager;
+    pub use super::IFieldBgmManagerMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

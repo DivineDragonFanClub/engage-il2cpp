@@ -15,7 +15,25 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfo/MapTerrainInfo.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfo")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapterraininfo::MapTerrainInfo>)]pub struct MapTerrainInfo{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_MapTerrainInfoSingles")]pub m_map_terrain_info_singles: ::unity2::Array<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle> , #[static_field]#[rename(name="m_CalcUnit")]pub m_calc_unit:crate::app::unit::Unit, #[static_field]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTerrainInfo_Side{pub value:i32,}
+impl::unity2::ClassIdentity for MapTerrainInfo_Side{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapTerrainInfo.Side";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapTerrainInfo_Side{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapTerrainInfo_Side{pub fn left()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfo.MapTerrainInfoSingle")]#[parent(crate::system::object::Object)]pub struct MapTerrainInfo_MapTerrainInfoSingle{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_ElemGameObjects")]pub m_elem_game_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_ElemTitleTextMeshes")]pub m_elem_title_text_meshes: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(40)]#[rename(name="m_ElemValueTextMeshes")]pub m_elem_value_text_meshes: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(48)]#[rename(name="m_IsValid")]pub m_is_valid:bool, #[offset(49)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(50)]#[rename(name="m_IsEventShow")]pub m_is_event_show:bool, #[offset(56)]#[rename(name="m_Border")]pub m_border:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_EffectRoot")]pub m_effect_root:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_SkillRoot")]pub m_skill_root:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Alignment")]pub m_alignment:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment, #[offset(88)]#[rename(name="m_Side")]pub m_side:crate::app::mapterraininfo::MapTerrainInfo_Side,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfo/MapTerrainInfo_Element.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTerrainInfo_Element{pub value:i32,}
@@ -70,30 +88,111 @@ pub fn num()->Self{Self{value:19}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTerrainInfo_Side{pub value:i32,}
-impl::unity2::ClassIdentity for MapTerrainInfo_Side{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapTerrainInfo.Side";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapTerrainInfo_Side{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapTerrainInfo_Side{pub fn left()->Self{Self{value:0}
-}
-pub fn right()->Self{Self{value:1}
-}
-pub fn num()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfo.MapTerrainInfoSingle")]#[parent(crate::system::object::Object)]pub struct MapTerrainInfo_MapTerrainInfoSingle{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_ElemGameObjects")]pub m_elem_game_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_ElemTitleTextMeshes")]pub m_elem_title_text_meshes: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(40)]#[rename(name="m_ElemValueTextMeshes")]pub m_elem_value_text_meshes: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(48)]#[rename(name="m_IsValid")]pub m_is_valid:bool, #[offset(49)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(50)]#[rename(name="m_IsEventShow")]pub m_is_event_show:bool, #[offset(56)]#[rename(name="m_Border")]pub m_border:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_EffectRoot")]pub m_effect_root:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_SkillRoot")]pub m_skill_root:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Alignment")]pub m_alignment:crate::app::mapterraininfoalignment::MapTerrainInfoAlignment, #[offset(88)]#[rename(name="m_Side")]pub m_side:crate::app::mapterraininfo::MapTerrainInfo_Side,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfo/MapTerrainInfo.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfo")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapterraininfo::MapTerrainInfo>)]pub struct MapTerrainInfo{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_MapTerrainInfoSingles")]pub m_map_terrain_info_singles: ::unity2::Array<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle> , #[static_field]#[rename(name="m_CalcUnit")]pub m_calc_unit:crate::app::unit::Unit, #[static_field]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo,}
 
 }
 
 #[cfg(feature = "app-mapterraininfo-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapterraininfo")]impl MapTerrainInfo_MapTerrainInfoSingle{#[doc="`GetTerrain(i32, i32)` overload"]pub fn get_terrain(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e43ea0usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
+
+#[cfg(feature="app-mapterraininfo")]pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:IMapTerrainInfo_MapTerrainInfoSingle{#[doc="`CreateObjects(crate::unity_engine::gameobject::GameObject, crate::app::mapterraininfo::MapTerrainInfo_Side)` overload"]fn create_objects(self,prefab_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,side:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Side>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42f20usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(prefab_obj),(crate::app::mapterraininfo::MapTerrainInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`CreateElement(crate::app::mapterraininfo::MapTerrainInfo_Element, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn create_element(self,elem:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,parent_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43780usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(elem),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent_obj),(::unity2::Il2CppString)::core::convert::Into::into(obj_name))}
+}
+#[doc="`CreatePairElement(crate::app::mapterraininfo::MapTerrainInfo_Element, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn create_pair_element(self,elem:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,parent_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e435c0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(elem),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent_obj),(::unity2::Il2CppString)::core::convert::Into::into(obj_name))}
+}
+#[doc="`DestroyObjects()` overload"]fn destroy_objects(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e438c0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e358a0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e355f0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
+}
+#[doc="`EventShow()` overload"]fn event_show(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43cb0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
+}
+#[doc="`EventHide()` overload"]fn event_hide(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43cd0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
+}
+#[doc="`IsShow()` overload"]fn is_show(self,)->bool{unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43ce0usize)as*mut u8,bool;
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
+}
+#[doc="`SetVisible(bool)` overload"]fn set_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e439c0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`Set(i32, i32)` overload"]fn set(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43ff0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Set(crate::app::terraindata_2::TerrainData_2)` overload"]fn set_2(self,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e461b0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
+}
+#[doc="`SetImpl(crate::app::terraindata_2::TerrainData_2, crate::app::terraindata_2::TerrainData_2, i32, i32)` overload"]fn set_impl(self,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,overlap:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e440e0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(overlap),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`SetElement(crate::app::mapterraininfo::MapTerrainInfo_Element, ::unity2::Il2CppString, i32, bool, bool)` overload"]fn set_element(self,element:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<i32> ,is_force:impl::core::convert::Into<bool> ,is_color_reverse:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e46370usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(element),(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(value),(bool)::core::convert::Into::into(is_force),(bool)::core::convert::Into::into(is_color_reverse))}
+}
+#[doc="`SetElement(crate::app::mapterraininfo::MapTerrainInfo_Element, ::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]fn set_element_2(self,element:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString> ,is_force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e461c0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(element),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(value),(bool)::core::convert::Into::into(is_force))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e467a0usize)as*mut u8,();
+(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapterraininfo")]impl<__T:IMapTerrainInfo_MapTerrainInfoSingle>IMapTerrainInfo_MapTerrainInfoSingleMethods for __T{}
+
+#[cfg(feature="app-mapterraininfo")]impl MapTerrainInfo_MapTerrainInfoSingle{pub fn create_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_element_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_pair_element_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn destroy_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn event_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn event_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_element_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_element_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-mapterraininfo")]impl MapTerrainInfo_MapTerrainInfoSingle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapTerrainInfo_MapTerrainInfoSingle), ::core::stringify!(new),));
+ <Self as IMapTerrainInfo_MapTerrainInfoSingleMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-mapterraininfo")]impl MapTerrainInfo{#[doc="`GetCurrentUnit(i32, i32)` overload"]pub fn get_current_unit(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x201cb30usize)as*mut u8,crate::app::unit::Unit;
 (i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
@@ -203,116 +302,17 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-mapterraininfo")]impl MapTerrainInfo_MapTerrainInfoSingle{#[doc="`GetTerrain(i32, i32)` overload"]pub fn get_terrain(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e43ea0usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-}
-
-#[cfg(feature="app-mapterraininfo")]pub trait IMapTerrainInfo_MapTerrainInfoSingleMethods:IMapTerrainInfo_MapTerrainInfoSingle{#[doc="`CreateObjects(crate::unity_engine::gameobject::GameObject, crate::app::mapterraininfo::MapTerrainInfo_Side)` overload"]fn create_objects(self,prefab_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,side:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Side>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42f20usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(prefab_obj),(crate::app::mapterraininfo::MapTerrainInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`CreateElement(crate::app::mapterraininfo::MapTerrainInfo_Element, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn create_element(self,elem:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,parent_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43780usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(elem),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent_obj),(::unity2::Il2CppString)::core::convert::Into::into(obj_name))}
-}
-#[doc="`CreatePairElement(crate::app::mapterraininfo::MapTerrainInfo_Element, crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn create_pair_element(self,elem:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,parent_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e435c0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(elem),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent_obj),(::unity2::Il2CppString)::core::convert::Into::into(obj_name))}
-}
-#[doc="`DestroyObjects()` overload"]fn destroy_objects(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e438c0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e358a0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e355f0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
-}
-#[doc="`EventShow()` overload"]fn event_show(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43cb0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
-}
-#[doc="`EventHide()` overload"]fn event_hide(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43cd0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
-}
-#[doc="`IsShow()` overload"]fn is_show(self,)->bool{unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43ce0usize)as*mut u8,bool;
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
-}
-#[doc="`SetVisible(bool)` overload"]fn set_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e439c0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(bool)::core::convert::Into::into(is_visible))}
-}
-#[doc="`Set(i32, i32)` overload"]fn set(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e43ff0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Set(crate::app::terraindata_2::TerrainData_2)` overload"]fn set_2(self,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e461b0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
-}
-#[doc="`SetImpl(crate::app::terraindata_2::TerrainData_2, crate::app::terraindata_2::TerrainData_2, i32, i32)` overload"]fn set_impl(self,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,overlap:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e440e0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(overlap),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`SetElement(crate::app::mapterraininfo::MapTerrainInfo_Element, ::unity2::Il2CppString, i32, bool, bool)` overload"]fn set_element(self,element:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<i32> ,is_force:impl::core::convert::Into<bool> ,is_color_reverse:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e46370usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(element),(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(value),(bool)::core::convert::Into::into(is_force),(bool)::core::convert::Into::into(is_color_reverse))}
-}
-#[doc="`SetElement(crate::app::mapterraininfo::MapTerrainInfo_Element, ::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]fn set_element_2(self,element:impl::core::convert::Into<crate::app::mapterraininfo::MapTerrainInfo_Element> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString> ,is_force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e461c0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver,(crate::app::mapterraininfo::MapTerrainInfo_Element)::core::convert::Into::into(element),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(value),(bool)::core::convert::Into::into(is_force))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTerrainInfo_MapTerrainInfoSingle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e467a0usize)as*mut u8,();
-(MapTerrainInfo_MapTerrainInfoSingle)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapterraininfo")]impl<__T:IMapTerrainInfo_MapTerrainInfoSingle>IMapTerrainInfo_MapTerrainInfoSingleMethods for __T{}
-
-#[cfg(feature="app-mapterraininfo")]impl MapTerrainInfo_MapTerrainInfoSingle{pub fn create_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_element_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_pair_element_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn destroy_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn event_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn event_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn is_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn set_element_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_element_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-}
-
-#[cfg(feature="app-mapterraininfo")]impl MapTerrainInfo_MapTerrainInfoSingle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapTerrainInfo_MapTerrainInfoSingle), ::core::stringify!(new),));
- <Self as IMapTerrainInfo_MapTerrainInfoSingleMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapterraininfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapTerrainInfo;
-    pub use super::IMapTerrainInfo;
-    pub use super::IMapTerrainInfoMethods;
-    pub use super::MapTerrainInfo_Element;
     pub use super::MapTerrainInfo_Side;
     pub use super::MapTerrainInfo_MapTerrainInfoSingle;
     pub use super::IMapTerrainInfo_MapTerrainInfoSingle;
     pub use super::IMapTerrainInfo_MapTerrainInfoSingleMethods;
+    pub use super::MapTerrainInfo_Element;
+    pub use super::MapTerrainInfo;
+    pub use super::IMapTerrainInfo;
+    pub use super::IMapTerrainInfoMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

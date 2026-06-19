@@ -9,21 +9,65 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/arraylist/ArrayList.md"))]#[::unity2::class(namespace="System.Collections",name="ArrayList")]#[parent(crate::system::object::Object)]pub struct ArrayList{#[offset(16)]#[rename(name="_items")]pub items: ::unity2::Array<crate::system::object::Object> , #[offset(24)]#[rename(name="_size")]pub size:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="emptyArray")]pub empty_array: ::unity2::Array<crate::system::object::Object> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/arraylist/ArrayList_ReadOnlyArrayList.md"))]#[::unity2::class(namespace="System.Collections",name="ArrayList.ReadOnlyArrayList")]#[parent(crate::system::collections::arraylist::ArrayList)]pub struct ArrayList_ReadOnlyArrayList{#[offset(40)]#[rename(name="_list")]pub list:crate::system::collections::arraylist::ArrayList,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/arraylist/ArrayList_ArrayListEnumeratorSimple.md"))]#[::unity2::class(namespace="System.Collections",name="ArrayList.ArrayListEnumeratorSimple")]#[parent(crate::system::object::Object)]pub struct ArrayList_ArrayListEnumeratorSimple{#[offset(16)]#[rename(name="list")]pub list:crate::system::collections::arraylist::ArrayList, #[offset(24)]#[rename(name="index")]pub index:i32, #[offset(28)]#[rename(name="version")]pub version:i32, #[offset(32)]#[rename(name="currentElement")]pub current_element: ::unity2::IlInstance, #[offset(40)]#[rename(name="isArrayList")]pub is_array_list:bool, #[static_field]#[rename(name="dummyObject")]pub dummy_object: ::unity2::IlInstance,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/arraylist/ArrayList_ArrayListDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="ArrayList.ArrayListDebugView")]#[parent(crate::system::object::Object)]pub struct ArrayList_ArrayListDebugView{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/arraylist/ArrayList.md"))]#[::unity2::class(namespace="System.Collections",name="ArrayList")]#[parent(crate::system::object::Object)]pub struct ArrayList{#[offset(16)]#[rename(name="_items")]pub items: ::unity2::Array<crate::system::object::Object> , #[offset(24)]#[rename(name="_size")]pub size:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="emptyArray")]pub empty_array: ::unity2::Array<crate::system::object::Object> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/arraylist/ArrayList_ReadOnlyArrayList.md"))]#[::unity2::class(namespace="System.Collections",name="ArrayList.ReadOnlyArrayList")]#[parent(crate::system::collections::arraylist::ArrayList)]pub struct ArrayList_ReadOnlyArrayList{#[offset(40)]#[rename(name="_list")]pub list:crate::system::collections::arraylist::ArrayList,}
+
 }
 
 #[cfg(feature = "system-collections-arraylist-types")]
 pub use __types::*;
+
+#[cfg(feature="system-collections-arraylist")]impl ArrayList_ArrayListEnumeratorSimple{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34cd4d0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="system-collections-arraylist")]pub trait IArrayList_ArrayListEnumeratorSimpleMethods:IArrayList_ArrayListEnumeratorSimple{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList>)->(){unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34ccfd0usize)as*mut u8,();
+(ArrayList_ArrayListEnumeratorSimple)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(list))}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd100usize)as*mut u8,crate::system::object::Object;
+(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd110usize)as*mut u8,bool;
+(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd300usize)as*mut u8,crate::system::object::Object;
+(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd3f0usize)as*mut u8,();
+(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-arraylist")]impl<__T:IArrayList_ArrayListEnumeratorSimple>IArrayList_ArrayListEnumeratorSimpleMethods for __T{}
+
+#[cfg(feature="system-collections-arraylist")]impl ArrayList_ArrayListEnumeratorSimple{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-arraylist")]impl ArrayList_ArrayListEnumeratorSimple{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList)` — overload selector"]pub fn new(list:crate::system::collections::arraylist::ArrayList)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArrayList_ArrayListEnumeratorSimple), ::core::stringify!(new),));
+ <Self as IArrayList_ArrayListEnumeratorSimpleMethods> ::ctor(this,list);
+this}
+}
 
 #[cfg(feature="system-collections-arraylist")]impl ArrayList{#[doc="`ReadOnly(crate::system::collections::arraylist::ArrayList)` overload"]pub fn read_only(list:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList>)->crate::system::collections::arraylist::ArrayList{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3400620usize)as*mut u8,crate::system::collections::arraylist::ArrayList;
 (crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(list))}
@@ -331,64 +375,20 @@ pub fn to_array_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="system-collections-arraylist")]impl ArrayList_ArrayListEnumeratorSimple{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34cd4d0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="system-collections-arraylist")]pub trait IArrayList_ArrayListEnumeratorSimpleMethods:IArrayList_ArrayListEnumeratorSimple{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList>)->(){unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34ccfd0usize)as*mut u8,();
-(ArrayList_ArrayListEnumeratorSimple)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(list))}
-}
-#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd100usize)as*mut u8,crate::system::object::Object;
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd110usize)as*mut u8,bool;
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
-}
-#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd300usize)as*mut u8,crate::system::object::Object;
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd3f0usize)as*mut u8,();
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
-}
-}
-
-#[cfg(feature="system-collections-arraylist")]impl<__T:IArrayList_ArrayListEnumeratorSimple>IArrayList_ArrayListEnumeratorSimpleMethods for __T{}
-
-#[cfg(feature="system-collections-arraylist")]impl ArrayList_ArrayListEnumeratorSimple{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="system-collections-arraylist")]impl ArrayList_ArrayListEnumeratorSimple{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList)` — overload selector"]pub fn new(list:crate::system::collections::arraylist::ArrayList)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArrayList_ArrayListEnumeratorSimple), ::core::stringify!(new),));
- <Self as IArrayList_ArrayListEnumeratorSimpleMethods> ::ctor(this,list);
-this}
-}
-
 #[cfg(feature = "system-collections-arraylist")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ArrayList_ArrayListEnumeratorSimple;
+    pub use super::IArrayList_ArrayListEnumeratorSimple;
+    pub use super::IArrayList_ArrayListEnumeratorSimpleMethods;
+    pub use super::ArrayList_ArrayListDebugView;
+    pub use super::IArrayList_ArrayListDebugView;
     pub use super::ArrayList;
     pub use super::IArrayList;
     pub use super::IArrayListMethods;
     pub use super::ArrayList_ReadOnlyArrayList;
     pub use super::IArrayList_ReadOnlyArrayList;
     pub use super::IArrayList_ReadOnlyArrayListMethods;
-    pub use super::ArrayList_ArrayListEnumeratorSimple;
-    pub use super::IArrayList_ArrayListEnumeratorSimple;
-    pub use super::IArrayList_ArrayListEnumeratorSimpleMethods;
-    pub use super::ArrayList_ArrayListDebugView;
-    pub use super::IArrayList_ArrayListDebugView;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

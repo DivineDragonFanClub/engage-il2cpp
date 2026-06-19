@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interactdata/InteractData.md"))]#[::unity2::class(namespace="App",name="InteractData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::interactdata::InteractData>)]pub struct InteractData{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interactdata/InteractData_Interacts.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InteractData_Interacts{pub value:i32,}
 impl::unity2::ClassIdentity for InteractData_Interacts{const NAMESPACE: &'static str="App";
 const NAME: &'static str="InteractData.Interacts";
@@ -35,9 +38,6 @@ pub fn good()->Self{Self{value:1}
 pub fn bad()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interactdata/InteractData.md"))]#[::unity2::class(namespace="App",name="InteractData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::interactdata::InteractData>)]pub struct InteractData{}
 
 }
 
@@ -100,10 +100,10 @@ this}
 #[cfg(feature = "app-interactdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InteractData_Interacts;
     pub use super::InteractData;
     pub use super::IInteractData;
     pub use super::IInteractDataMethods;
+    pub use super::InteractData_Interacts;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

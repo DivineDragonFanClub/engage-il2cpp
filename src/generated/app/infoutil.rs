@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil.md"))]#[::unity2::class(namespace="App",name="InfoUtil")]#[parent(crate::system::object::Object)]pub struct InfoUtil{#[static_field]#[rename(name="SKILL_SLOT_MAX")]pub skill_slot_max:i32, #[static_field]#[rename(name="s_EmptyStringBuilder")]pub s_empty_string_builder: ::unity2::IlInstance,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InfoUtil_HpStockSpriteType{pub value:i32,}
 impl::unity2::ClassIdentity for InfoUtil_HpStockSpriteType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="InfoUtil.HpStockSpriteType";
@@ -32,6 +29,9 @@ pub fn rampage()->Self{Self{value:1}
 pub fn player()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil.md"))]#[::unity2::class(namespace="App",name="InfoUtil")]#[parent(crate::system::object::Object)]pub struct InfoUtil{#[static_field]#[rename(name="SKILL_SLOT_MAX")]pub skill_slot_max:i32, #[static_field]#[rename(name="s_EmptyStringBuilder")]pub s_empty_string_builder: ::unity2::IlInstance,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil_StatusSkill.md"))]#[::unity2::class(namespace="App",name="InfoUtil.StatusSkill")]#[parent(crate::system::object::Object)]pub struct InfoUtil_StatusSkill{}
@@ -316,10 +316,10 @@ this}
 #[cfg(feature = "app-infoutil")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::InfoUtil_HpStockSpriteType;
     pub use super::InfoUtil;
     pub use super::IInfoUtil;
     pub use super::IInfoUtilMethods;
-    pub use super::InfoUtil_HpStockSpriteType;
     pub use super::InfoUtil_StatusSkill;
     pub use super::IInfoUtil_StatusSkill;
     pub use super::IInfoUtil_StatusSkillMethods;

@@ -17,67 +17,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondunitselectmenu/ArenaBondUnitSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondUnitSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondUnitSelectMenu_SelectEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondunitselectmenu/ArenaBondUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondUnitSelectMenu_DecideEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondunitselectmenu/ArenaBondUnitSelectMenu_HelpEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondUnitSelectMenu.HelpEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondUnitSelectMenu_HelpEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondunitselectmenu/ArenaBondUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="ArenaBondUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ArenaBondUnitSelectMenu{#[offset(200)]#[rename(name="m_HelpEventHandler")]pub m_help_event_handler:crate::app::arenabondunitselectmenu::ArenaBondUnitSelectMenu_HelpEventHandler,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondunitselectmenu/ArenaBondUnitSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondUnitSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondUnitSelectMenu_SelectEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondunitselectmenu/ArenaBondUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondUnitSelectMenu_DecideEventHandler{}
+
 }
 
 #[cfg(feature = "app-arenabondunitselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-arenabondunitselectmenu")]pub trait IArenaBondUnitSelectMenu_SelectEventHandlerMethods:IArenaBondUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bab380usize)as*mut u8,();
-(ArenaBondUnitSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bab3a0usize)as*mut u8,();
-(ArenaBondUnitSelectMenu_SelectEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-arenabondunitselectmenu")]impl<__T:IArenaBondUnitSelectMenu_SelectEventHandler>IArenaBondUnitSelectMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondUnitSelectMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IArenaBondUnitSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-arenabondunitselectmenu")]pub trait IArenaBondUnitSelectMenu_DecideEventHandlerMethods:IArenaBondUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baac00usize)as*mut u8,();
-(ArenaBondUnitSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baac20usize)as*mut u8,();
-(ArenaBondUnitSelectMenu_DecideEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-arenabondunitselectmenu")]impl<__T:IArenaBondUnitSelectMenu_DecideEventHandler>IArenaBondUnitSelectMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondUnitSelectMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IArenaBondUnitSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-arenabondunitselectmenu")]pub trait IArenaBondUnitSelectMenu_HelpEventHandlerMethods:IArenaBondUnitSelectMenu_HelpEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_HelpEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1baafc0usize)as*mut u8,();
@@ -136,21 +90,67 @@ pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-arenabondunitselectmenu")]pub trait IArenaBondUnitSelectMenu_SelectEventHandlerMethods:IArenaBondUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bab380usize)as*mut u8,();
+(ArenaBondUnitSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bab3a0usize)as*mut u8,();
+(ArenaBondUnitSelectMenu_SelectEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-arenabondunitselectmenu")]impl<__T:IArenaBondUnitSelectMenu_SelectEventHandler>IArenaBondUnitSelectMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondUnitSelectMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IArenaBondUnitSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-arenabondunitselectmenu")]pub trait IArenaBondUnitSelectMenu_DecideEventHandlerMethods:IArenaBondUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baac00usize)as*mut u8,();
+(ArenaBondUnitSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaBondUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baac20usize)as*mut u8,();
+(ArenaBondUnitSelectMenu_DecideEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-arenabondunitselectmenu")]impl<__T:IArenaBondUnitSelectMenu_DecideEventHandler>IArenaBondUnitSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondunitselectmenu")]impl ArenaBondUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondUnitSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IArenaBondUnitSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-arenabondunitselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaBondUnitSelectMenu_SelectEventHandler;
-    pub use super::IArenaBondUnitSelectMenu_SelectEventHandler;
-    pub use super::IArenaBondUnitSelectMenu_SelectEventHandlerMethods;
-    pub use super::ArenaBondUnitSelectMenu_DecideEventHandler;
-    pub use super::IArenaBondUnitSelectMenu_DecideEventHandler;
-    pub use super::IArenaBondUnitSelectMenu_DecideEventHandlerMethods;
     pub use super::ArenaBondUnitSelectMenu_HelpEventHandler;
     pub use super::IArenaBondUnitSelectMenu_HelpEventHandler;
     pub use super::IArenaBondUnitSelectMenu_HelpEventHandlerMethods;
     pub use super::ArenaBondUnitSelectMenu;
     pub use super::IArenaBondUnitSelectMenu;
     pub use super::IArenaBondUnitSelectMenuMethods;
+    pub use super::ArenaBondUnitSelectMenu_SelectEventHandler;
+    pub use super::IArenaBondUnitSelectMenu_SelectEventHandler;
+    pub use super::IArenaBondUnitSelectMenu_SelectEventHandlerMethods;
+    pub use super::ArenaBondUnitSelectMenu_DecideEventHandler;
+    pub use super::IArenaBondUnitSelectMenu_DecideEventHandler;
+    pub use super::IArenaBondUnitSelectMenu_DecideEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

@@ -17,93 +17,24 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentListMenu_DisposeEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardCommentListMenu{#[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[static_field]#[rename(name="m_MenuItemIndexEmpty")]pub m_menu_item_index_empty:i32, #[offset(200)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DecideEventHandler, #[offset(216)]#[rename(name="m_CancelEventHandler")]pub m_cancel_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_CancelEventHandler, #[offset(224)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DisposeEventHandler, #[offset(232)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(240)]#[rename(name="m_Category")]pub m_category:crate::app::profilecardcommentdata::ProfileCardCommentData_Categories, #[offset(248)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(256)]#[rename(name="m_DecidedMenuItemIndex")]pub m_decided_menu_item_index:i32, #[offset(260)]#[rename(name="m_DecidedCategory")]pub m_decided_category:crate::app::profilecardcommentdata::ProfileCardCommentData_Categories, #[offset(264)]#[rename(name="m_DecidedCommentData")]pub m_decided_comment_data:crate::app::profilecardcommentdata::ProfileCardCommentData, #[offset(272)]#[rename(name="m_Sorted")]pub m_sorted:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_CancelEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu.CancelEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentListMenu_CancelEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentListMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardCommentListMenu{#[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[static_field]#[rename(name="m_MenuItemIndexEmpty")]pub m_menu_item_index_empty:i32, #[offset(200)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DecideEventHandler, #[offset(216)]#[rename(name="m_CancelEventHandler")]pub m_cancel_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_CancelEventHandler, #[offset(224)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DisposeEventHandler, #[offset(232)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(240)]#[rename(name="m_Category")]pub m_category:crate::app::profilecardcommentdata::ProfileCardCommentData_Categories, #[offset(248)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(256)]#[rename(name="m_DecidedMenuItemIndex")]pub m_decided_menu_item_index:i32, #[offset(260)]#[rename(name="m_DecidedCategory")]pub m_decided_category:crate::app::profilecardcommentdata::ProfileCardCommentData_Categories, #[offset(264)]#[rename(name="m_DecidedCommentData")]pub m_decided_comment_data:crate::app::profilecardcommentdata::ProfileCardCommentData, #[offset(272)]#[rename(name="m_Sorted")]pub m_sorted:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentListMenu_SelectEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentListMenu_DisposeEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentListMenu_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardcommentlistmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardcommentlistmenu")]pub trait IProfileCardCommentListMenu_DisposeEventHandlerMethods:IProfileCardCommentListMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2267f70usize)as*mut u8,();
-(ProfileCardCommentListMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2267f90usize)as*mut u8,();
-(ProfileCardCommentListMenu_DisposeEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl<__T:IProfileCardCommentListMenu_DisposeEventHandler>IProfileCardCommentListMenu_DisposeEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardCommentListMenu_DisposeEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardCommentListMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]pub trait IProfileCardCommentListMenu_CancelEventHandlerMethods:IProfileCardCommentListMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2267940usize)as*mut u8,();
-(ProfileCardCommentListMenu_CancelEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2267960usize)as*mut u8,();
-(ProfileCardCommentListMenu_CancelEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl<__T:IProfileCardCommentListMenu_CancelEventHandler>IProfileCardCommentListMenu_CancelEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_CancelEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardCommentListMenu_CancelEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardCommentListMenu_CancelEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]pub trait IProfileCardCommentListMenu_DecideEventHandlerMethods:IProfileCardCommentListMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2267bb0usize)as*mut u8,();
-(ProfileCardCommentListMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::profilecardcommentdata::ProfileCardCommentData)` overload"]fn invoke(self,comment_data:impl::core::convert::Into<crate::app::profilecardcommentdata::ProfileCardCommentData>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2267bd0usize)as*mut u8,();
-(ProfileCardCommentListMenu_DecideEventHandler)__receiver,(crate::app::profilecardcommentdata::ProfileCardCommentData)::core::convert::Into::into(comment_data))}
-}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl<__T:IProfileCardCommentListMenu_DecideEventHandler>IProfileCardCommentListMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardCommentListMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardCommentListMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent, crate::app::profilecard::ProfileCard, crate::app::profilecardcommentdata::ProfileCardCommentData, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DecideEventHandler, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_CancelEventHandler, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,initial_comment_data:impl::core::convert::Into<crate::app::profilecardcommentdata::ProfileCardCommentData> ,select_event_handler:impl::core::convert::Into<crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DecideEventHandler> ,cancel_event_handler:impl::core::convert::Into<crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_CancelEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DisposeEventHandler>)->crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230f0f0usize)as*mut u8,crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(crate::app::profilecardcommentdata::ProfileCardCommentData)::core::convert::Into::into(initial_comment_data),(crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_CancelEventHandler)::core::convert::Into::into(cancel_event_handler),(crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
@@ -195,6 +126,29 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-profilecardcommentlistmenu")]pub trait IProfileCardCommentListMenu_CancelEventHandlerMethods:IProfileCardCommentListMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2267940usize)as*mut u8,();
+(ProfileCardCommentListMenu_CancelEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2267960usize)as*mut u8,();
+(ProfileCardCommentListMenu_CancelEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl<__T:IProfileCardCommentListMenu_CancelEventHandler>IProfileCardCommentListMenu_CancelEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_CancelEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardCommentListMenu_CancelEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardCommentListMenu_CancelEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="app-profilecardcommentlistmenu")]pub trait IProfileCardCommentListMenu_SelectEventHandlerMethods:IProfileCardCommentListMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22681e0usize)as*mut u8,();
 (ProfileCardCommentListMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -218,24 +172,70 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-profilecardcommentlistmenu")]pub trait IProfileCardCommentListMenu_DisposeEventHandlerMethods:IProfileCardCommentListMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2267f70usize)as*mut u8,();
+(ProfileCardCommentListMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2267f90usize)as*mut u8,();
+(ProfileCardCommentListMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl<__T:IProfileCardCommentListMenu_DisposeEventHandler>IProfileCardCommentListMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardCommentListMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardCommentListMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]pub trait IProfileCardCommentListMenu_DecideEventHandlerMethods:IProfileCardCommentListMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2267bb0usize)as*mut u8,();
+(ProfileCardCommentListMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::profilecardcommentdata::ProfileCardCommentData)` overload"]fn invoke(self,comment_data:impl::core::convert::Into<crate::app::profilecardcommentdata::ProfileCardCommentData>)->(){unsafe{let __receiver= <ProfileCardCommentListMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2267bd0usize)as*mut u8,();
+(ProfileCardCommentListMenu_DecideEventHandler)__receiver,(crate::app::profilecardcommentdata::ProfileCardCommentData)::core::convert::Into::into(comment_data))}
+}
+}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl<__T:IProfileCardCommentListMenu_DecideEventHandler>IProfileCardCommentListMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardcommentlistmenu")]impl ProfileCardCommentListMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardCommentListMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardCommentListMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-profilecardcommentlistmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardCommentListMenu_DisposeEventHandler;
-    pub use super::IProfileCardCommentListMenu_DisposeEventHandler;
-    pub use super::IProfileCardCommentListMenu_DisposeEventHandlerMethods;
-    pub use super::ProfileCardCommentListMenu_CancelEventHandler;
-    pub use super::IProfileCardCommentListMenu_CancelEventHandler;
-    pub use super::IProfileCardCommentListMenu_CancelEventHandlerMethods;
-    pub use super::ProfileCardCommentListMenu_DecideEventHandler;
-    pub use super::IProfileCardCommentListMenu_DecideEventHandler;
-    pub use super::IProfileCardCommentListMenu_DecideEventHandlerMethods;
     pub use super::ProfileCardCommentListMenu;
     pub use super::IProfileCardCommentListMenu;
     pub use super::IProfileCardCommentListMenuMethods;
+    pub use super::ProfileCardCommentListMenu_CancelEventHandler;
+    pub use super::IProfileCardCommentListMenu_CancelEventHandler;
+    pub use super::IProfileCardCommentListMenu_CancelEventHandlerMethods;
     pub use super::ProfileCardCommentListMenu_SelectEventHandler;
     pub use super::IProfileCardCommentListMenu_SelectEventHandler;
     pub use super::IProfileCardCommentListMenu_SelectEventHandlerMethods;
+    pub use super::ProfileCardCommentListMenu_DisposeEventHandler;
+    pub use super::IProfileCardCommentListMenu_DisposeEventHandler;
+    pub use super::IProfileCardCommentListMenu_DisposeEventHandlerMethods;
+    pub use super::ProfileCardCommentListMenu_DecideEventHandler;
+    pub use super::IProfileCardCommentListMenu_DecideEventHandler;
+    pub use super::IProfileCardCommentListMenu_DecideEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

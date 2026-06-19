@@ -13,64 +13,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application_LogCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="Application.LogCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Application_LogCallback{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application.md"))]#[::unity2::class(namespace="UnityEngine",name="Application")]#[parent(crate::system::object::Object)]pub struct Application{#[static_field]#[rename(name="lowMemory")]pub low_memory:crate::unity_engine::application::Application_LowMemoryCallback, #[static_field]#[rename(name="s_LogCallbackHandler")]pub s_log_callback_handler:crate::unity_engine::application::Application_LogCallback, #[static_field]#[rename(name="s_LogCallbackHandlerThreaded")]pub s_log_callback_handler_threaded:crate::unity_engine::application::Application_LogCallback, #[static_field]#[rename(name="focusChanged")]pub focus_changed:crate::system::action_1::Action_1<bool> , #[static_field]#[rename(name="deepLinkActivated")]pub deep_link_activated:crate::system::action_1::Action_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="wantsToQuit")]pub wants_to_quit:crate::system::func_1::Func_1<bool> , #[static_field]#[rename(name="quitting")]pub quitting:crate::system::action::Action, #[static_field]#[rename(name="unloading")]pub unloading:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application_LowMemoryCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="Application.LowMemoryCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Application_LowMemoryCallback{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application.md"))]#[::unity2::class(namespace="UnityEngine",name="Application")]#[parent(crate::system::object::Object)]pub struct Application{#[static_field]#[rename(name="lowMemory")]pub low_memory:crate::unity_engine::application::Application_LowMemoryCallback, #[static_field]#[rename(name="s_LogCallbackHandler")]pub s_log_callback_handler:crate::unity_engine::application::Application_LogCallback, #[static_field]#[rename(name="s_LogCallbackHandlerThreaded")]pub s_log_callback_handler_threaded:crate::unity_engine::application::Application_LogCallback, #[static_field]#[rename(name="focusChanged")]pub focus_changed:crate::system::action_1::Action_1<bool> , #[static_field]#[rename(name="deepLinkActivated")]pub deep_link_activated:crate::system::action_1::Action_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="wantsToQuit")]pub wants_to_quit:crate::system::func_1::Func_1<bool> , #[static_field]#[rename(name="quitting")]pub quitting:crate::system::action::Action, #[static_field]#[rename(name="unloading")]pub unloading:crate::system::action::Action,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/application/Application_LogCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="Application.LogCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Application_LogCallback{}
 
 }
 
 #[cfg(feature = "unity_engine-application-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-application")]pub trait IApplication_LogCallbackMethods:IApplication_LogCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Application_LogCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379acc0usize)as*mut u8,();
-(Application_LogCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]fn invoke(self,condition:impl::core::convert::Into< ::unity2::Il2CppString> ,stack_trace:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType>)->(){unsafe{let __receiver= <Application_LogCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379ace0usize)as*mut u8,();
-(Application_LogCallback)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(condition),(::unity2::Il2CppString)::core::convert::Into::into(stack_trace),(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type))}
-}
-}
-
-#[cfg(feature="unity_engine-application")]impl<__T:IApplication_LogCallback>IApplication_LogCallbackMethods for __T{}
-
-#[cfg(feature="unity_engine-application")]impl Application_LogCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-application")]impl Application_LogCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Application_LogCallback), ::core::stringify!(new),));
- <Self as IApplication_LogCallbackMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="unity_engine-application")]pub trait IApplication_LowMemoryCallbackMethods:IApplication_LowMemoryCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Application_LowMemoryCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379b140usize)as*mut u8,();
-(Application_LowMemoryCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Application_LowMemoryCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379b160usize)as*mut u8,();
-(Application_LowMemoryCallback)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-application")]impl<__T:IApplication_LowMemoryCallback>IApplication_LowMemoryCallbackMethods for __T{}
-
-#[cfg(feature="unity_engine-application")]impl Application_LowMemoryCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-application")]impl Application_LowMemoryCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Application_LowMemoryCallback), ::core::stringify!(new),));
- <Self as IApplication_LowMemoryCallbackMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="unity_engine-application")]impl Application{#[doc="`get_isPlaying()` overload"]pub fn get_is_playing()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c35760usize)as*mut u8,bool;
 )}
@@ -152,17 +106,63 @@ pub fn invoke_deep_link_activated_method_info()-> & 'static::unity2::il2cpp::Met
 pub fn get_is_editor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
+#[cfg(feature="unity_engine-application")]pub trait IApplication_LowMemoryCallbackMethods:IApplication_LowMemoryCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Application_LowMemoryCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379b140usize)as*mut u8,();
+(Application_LowMemoryCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Application_LowMemoryCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379b160usize)as*mut u8,();
+(Application_LowMemoryCallback)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-application")]impl<__T:IApplication_LowMemoryCallback>IApplication_LowMemoryCallbackMethods for __T{}
+
+#[cfg(feature="unity_engine-application")]impl Application_LowMemoryCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-application")]impl Application_LowMemoryCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Application_LowMemoryCallback), ::core::stringify!(new),));
+ <Self as IApplication_LowMemoryCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="unity_engine-application")]pub trait IApplication_LogCallbackMethods:IApplication_LogCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Application_LogCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379acc0usize)as*mut u8,();
+(Application_LogCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]fn invoke(self,condition:impl::core::convert::Into< ::unity2::Il2CppString> ,stack_trace:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType>)->(){unsafe{let __receiver= <Application_LogCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379ace0usize)as*mut u8,();
+(Application_LogCallback)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(condition),(::unity2::Il2CppString)::core::convert::Into::into(stack_trace),(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="unity_engine-application")]impl<__T:IApplication_LogCallback>IApplication_LogCallbackMethods for __T{}
+
+#[cfg(feature="unity_engine-application")]impl Application_LogCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-application")]impl Application_LogCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Application_LogCallback), ::core::stringify!(new),));
+ <Self as IApplication_LogCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "unity_engine-application")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Application_LogCallback;
-    pub use super::IApplication_LogCallback;
-    pub use super::IApplication_LogCallbackMethods;
+    pub use super::Application;
+    pub use super::IApplication;
     pub use super::Application_LowMemoryCallback;
     pub use super::IApplication_LowMemoryCallback;
     pub use super::IApplication_LowMemoryCallbackMethods;
-    pub use super::Application;
-    pub use super::IApplication;
+    pub use super::Application_LogCallback;
+    pub use super::IApplication_LogCallback;
+    pub use super::IApplication_LogCallbackMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

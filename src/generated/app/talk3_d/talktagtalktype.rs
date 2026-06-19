@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagTalkType")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagTalkType{#[offset(16)]#[rename(name="m_TalkType")]pub m_talk_type:crate::app::talk3_d::talk_2::Talk_TalkType, #[offset(24)]#[rename(name="m_LocationSetName")]pub m_location_set_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_IsAlreadyFrameVisible")]pub m_is_already_frame_visible:bool, #[offset(36)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagtalktype/TalkTagTalkType_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagTalkType_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagTalkType_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagTalkType.TagID";
@@ -35,9 +38,6 @@ pub fn system()->Self{Self{value:3}
 pub fn direct()->Self{Self{value:4}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagTalkType")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagTalkType{#[offset(16)]#[rename(name="m_TalkType")]pub m_talk_type:crate::app::talk3_d::talk_2::Talk_TalkType, #[offset(24)]#[rename(name="m_LocationSetName")]pub m_location_set_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_IsAlreadyFrameVisible")]pub m_is_already_frame_visible:bool, #[offset(36)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
 
 }
 
@@ -85,10 +85,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktagtalktype")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkTagTalkType_TagID;
     pub use super::TalkTagTalkType;
     pub use super::ITalkTagTalkType;
     pub use super::ITalkTagTalkTypeMethods;
+    pub use super::TalkTagTalkType_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

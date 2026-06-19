@@ -13,9 +13,6 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimeNotificationBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct TimeNotificationBehaviour{#[offset(16)]#[rename(name="m_Notifications")]pub m_notifications:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry> , #[offset(24)]#[rename(name="m_PreviousTime")]pub m_previous_time:f64, #[offset(32)]#[rename(name="m_NeedSortNotifications")]pub m_need_sort_notifications:bool, #[offset(40)]#[rename(name="m_TimeSource")]pub m_time_source:crate::unity_engine::playables::playable::Playable,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour_NotificationEntry.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TimeNotificationBehaviour_NotificationEntry{pub time:f64,pub payload:crate::unity_engine::playables::inotification::INotification,pub notification_fired:bool,pub flags:crate::unity_engine::timeline::notificationflags::NotificationFlags,}
 impl::unity2::ClassIdentity for TimeNotificationBehaviour_NotificationEntry{const NAMESPACE: &'static str="UnityEngine.Timeline";
 const NAME: &'static str="TimeNotificationBehaviour.NotificationEntry";
@@ -26,10 +23,29 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for TimeNotificationBehaviour_NotificationEntry{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimeNotificationBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct TimeNotificationBehaviour{#[offset(16)]#[rename(name="m_Notifications")]pub m_notifications:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour_NotificationEntry> , #[offset(24)]#[rename(name="m_PreviousTime")]pub m_previous_time:f64, #[offset(32)]#[rename(name="m_NeedSortNotifications")]pub m_need_sort_notifications:bool, #[offset(40)]#[rename(name="m_TimeSource")]pub m_time_source:crate::unity_engine::playables::playable::Playable,}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-timeline-timenotificationbehaviour")]impl TimeNotificationBehaviour_NotificationEntry{#[doc="`get_triggerInEditor()` overload"]pub fn get_trigger_in_editor(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35dc1f0usize)as*mut u8,bool;
+(*mut TimeNotificationBehaviour_NotificationEntry)self as*mut TimeNotificationBehaviour_NotificationEntry)}
+}
+#[doc="`get_prewarm()` overload"]pub fn get_prewarm(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35dc1e0usize)as*mut u8,bool;
+(*mut TimeNotificationBehaviour_NotificationEntry)self as*mut TimeNotificationBehaviour_NotificationEntry)}
+}
+#[doc="`get_triggerOnce()` overload"]pub fn get_trigger_once(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35db760usize)as*mut u8,bool;
+(*mut TimeNotificationBehaviour_NotificationEntry)self as*mut TimeNotificationBehaviour_NotificationEntry)}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-timenotificationbehaviour")]impl TimeNotificationBehaviour_NotificationEntry{pub fn get_trigger_in_editor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_prewarm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_trigger_once_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature="unity_engine-timeline-timenotificationbehaviour")]impl TimeNotificationBehaviour{#[doc="`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, f64, crate::unity_engine::playables::directorwrapmode::DirectorWrapMode)` overload"]pub fn create(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,duration:impl::core::convert::Into<f64> ,loop_mode:impl::core::convert::Into<crate::unity_engine::playables::directorwrapmode::DirectorWrapMode>)->crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d9010usize)as*mut u8,crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour> ;
 (crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(f64)::core::convert::Into::into(duration),(crate::unity_engine::playables::directorwrapmode::DirectorWrapMode)::core::convert::Into::into(loop_mode))}
@@ -111,29 +127,13 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="unity_engine-timeline-timenotificationbehaviour")]impl TimeNotificationBehaviour_NotificationEntry{#[doc="`get_triggerInEditor()` overload"]pub fn get_trigger_in_editor(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35dc1f0usize)as*mut u8,bool;
-(*mut TimeNotificationBehaviour_NotificationEntry)self as*mut TimeNotificationBehaviour_NotificationEntry)}
-}
-#[doc="`get_prewarm()` overload"]pub fn get_prewarm(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35dc1e0usize)as*mut u8,bool;
-(*mut TimeNotificationBehaviour_NotificationEntry)self as*mut TimeNotificationBehaviour_NotificationEntry)}
-}
-#[doc="`get_triggerOnce()` overload"]pub fn get_trigger_once(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35db760usize)as*mut u8,bool;
-(*mut TimeNotificationBehaviour_NotificationEntry)self as*mut TimeNotificationBehaviour_NotificationEntry)}
-}
-}
-
-#[cfg(feature="unity_engine-timeline-timenotificationbehaviour")]impl TimeNotificationBehaviour_NotificationEntry{pub fn get_trigger_in_editor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_prewarm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_trigger_once_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
 #[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TimeNotificationBehaviour_NotificationEntry;
     pub use super::TimeNotificationBehaviour;
     pub use super::ITimeNotificationBehaviour;
     pub use super::ITimeNotificationBehaviourMethods;
-    pub use super::TimeNotificationBehaviour_NotificationEntry;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;

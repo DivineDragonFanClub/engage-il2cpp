@@ -21,6 +21,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatskip/CombatSkip.md"))]#[::unity2::class(namespace="Combat",name="CombatSkip")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatSkip{#[offset(24)]#[rename(name="state")]pub state:crate::combat::combatskip::CombatSkip_State, #[offset(28)]#[rename(name="isSoundSkipEnable")]pub is_sound_skip_enable:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatskip/CombatSkip_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CombatSkip_State{pub value:i32,}
 impl::unity2::ClassIdentity for CombatSkip_State{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="CombatSkip.State";
@@ -47,9 +50,6 @@ pub fn fade_in()->Self{Self{value:6}
 pub fn end()->Self{Self{value:7}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatskip/CombatSkip.md"))]#[::unity2::class(namespace="Combat",name="CombatSkip")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatSkip{#[offset(24)]#[rename(name="state")]pub state:crate::combat::combatskip::CombatSkip_State, #[offset(28)]#[rename(name="isSoundSkipEnable")]pub is_sound_skip_enable:bool,}
 
 }
 
@@ -167,10 +167,10 @@ this}
 #[cfg(feature = "combat-combatskip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CombatSkip_State;
     pub use super::CombatSkip;
     pub use super::ICombatSkip;
     pub use super::ICombatSkipMethods;
+    pub use super::CombatSkip_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

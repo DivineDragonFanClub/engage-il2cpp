@@ -11,15 +11,48 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusservercasualdata/VersusServerCasualData.md"))]#[::unity2::class(namespace="App",name="VersusServerCasualData")]#[parent(crate::app::versusserverdata::VersusServerData)]pub struct VersusServerCasualData{#[static_field]#[rename(name="Version")]pub version:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusservercasualdata/VersusServerCasualData_GodBondBackup.md"))]#[::unity2::class(namespace="App",name="VersusServerCasualData.GodBondBackup")]#[parent(crate::system::object::Object)]pub struct VersusServerCasualData_GodBondBackup{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(32)]#[rename(name="m_BondsDict")]pub m_bonds_dict:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusservercasualdata/VersusServerCasualData.md"))]#[::unity2::class(namespace="App",name="VersusServerCasualData")]#[parent(crate::app::versusserverdata::VersusServerData)]pub struct VersusServerCasualData{#[static_field]#[rename(name="Version")]pub version:i32,}
 
 }
 
 #[cfg(feature = "app-versusservercasualdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-versusservercasualdata")]pub trait IVersusServerCasualData_GodBondBackupMethods:IVersusServerCasualData_GodBondBackup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28240usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28390usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+#[doc="`Save()` overload"]fn save(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b283f0usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+#[doc="`Restore()` overload"]fn restore(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b284f0usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+}
+
+#[cfg(feature="app-versusservercasualdata")]impl<__T:IVersusServerCasualData_GodBondBackup>IVersusServerCasualData_GodBondBackupMethods for __T{}
+
+#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData_GodBondBackup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData_GodBondBackup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusServerCasualData_GodBondBackup), ::core::stringify!(new),));
+ <Self as IVersusServerCasualData_GodBondBackupMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-versusservercasualdata")]pub trait IVersusServerCasualDataMethods:IVersusServerCasualData{#[doc="`get_UnitList()` overload"]fn get_unit_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b49c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ;
@@ -119,48 +152,15 @@ pub fn read_bonds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-versusservercasualdata")]pub trait IVersusServerCasualData_GodBondBackupMethods:IVersusServerCasualData_GodBondBackup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28240usize)as*mut u8,();
-(VersusServerCasualData_GodBondBackup)__receiver)}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28390usize)as*mut u8,();
-(VersusServerCasualData_GodBondBackup)__receiver)}
-}
-#[doc="`Save()` overload"]fn save(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b283f0usize)as*mut u8,();
-(VersusServerCasualData_GodBondBackup)__receiver)}
-}
-#[doc="`Restore()` overload"]fn restore(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b284f0usize)as*mut u8,();
-(VersusServerCasualData_GodBondBackup)__receiver)}
-}
-}
-
-#[cfg(feature="app-versusservercasualdata")]impl<__T:IVersusServerCasualData_GodBondBackup>IVersusServerCasualData_GodBondBackupMethods for __T{}
-
-#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData_GodBondBackup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData_GodBondBackup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusServerCasualData_GodBondBackup), ::core::stringify!(new),));
- <Self as IVersusServerCasualData_GodBondBackupMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-versusservercasualdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VersusServerCasualData;
-    pub use super::IVersusServerCasualData;
-    pub use super::IVersusServerCasualDataMethods;
     pub use super::VersusServerCasualData_GodBondBackup;
     pub use super::IVersusServerCasualData_GodBondBackup;
     pub use super::IVersusServerCasualData_GodBondBackupMethods;
+    pub use super::VersusServerCasualData;
+    pub use super::IVersusServerCasualData;
+    pub use super::IVersusServerCasualDataMethods;
     pub use crate::app::versusserverdata::IVersusServerData;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-versusserverdata")] pub use crate::app::versusserverdata::IVersusServerDataMethods;

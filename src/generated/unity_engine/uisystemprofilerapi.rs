@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]#[::unity2::class(namespace="UnityEngine",name="UISystemProfilerApi")]#[parent(crate::system::object::Object)]pub struct UISystemProfilerApi{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UISystemProfilerApi_SampleType{pub value:i32,}
 impl::unity2::ClassIdentity for UISystemProfilerApi_SampleType{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="UISystemProfilerApi.SampleType";
@@ -30,6 +27,9 @@ impl UISystemProfilerApi_SampleType{pub fn layout()->Self{Self{value:0}
 pub fn render()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]#[::unity2::class(namespace="UnityEngine",name="UISystemProfilerApi")]#[parent(crate::system::object::Object)]pub struct UISystemProfilerApi{}
 
 }
 
@@ -55,9 +55,9 @@ pub fn add_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UISystemProfilerApi_SampleType;
     pub use super::UISystemProfilerApi;
     pub use super::IUISystemProfilerApi;
-    pub use super::UISystemProfilerApi_SampleType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

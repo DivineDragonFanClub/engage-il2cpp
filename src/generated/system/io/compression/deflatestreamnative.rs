@@ -13,41 +13,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative_UnmanagedReadOrWrite.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative.UnmanagedReadOrWrite")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStreamNative_UnmanagedReadOrWrite{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative")]#[parent(crate::system::object::Object)]pub struct DeflateStreamNative{#[offset(16)]#[rename(name="feeder")]pub feeder:crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite, #[offset(24)]#[rename(name="base_stream")]pub base_stream:crate::system::io::stream::Stream, #[offset(32)]#[rename(name="z_stream")]pub z_stream:crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle, #[offset(44)]#[rename(name="disposed")]pub disposed:bool, #[offset(48)]#[rename(name="io_buffer")]pub io_buffer: ::unity2::Array<u8> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative_SafeDeflateStreamHandle.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative.SafeDeflateStreamHandle")]pub struct DeflateStreamNative_SafeDeflateStreamHandle{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative_UnmanagedReadOrWrite.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative.UnmanagedReadOrWrite")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStreamNative_UnmanagedReadOrWrite{}
+
 }
 
 #[cfg(feature = "system-io-compression-deflatestreamnative-types")]
 pub use __types::*;
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods:IDeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7fd20usize)as*mut u8,();
-(DeflateStreamNative_UnmanagedReadOrWrite)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::IntPtr, i32, ::unity2::IntPtr)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::IntPtr> ,length:impl::core::convert::Into<i32> ,data:impl::core::convert::Into< ::unity2::IntPtr>)->i32{unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7fd40usize)as*mut u8,i32;
-(DeflateStreamNative_UnmanagedReadOrWrite)__receiver,(::unity2::IntPtr)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(length),(::unity2::IntPtr)::core::convert::Into::into(data))}
-}
-}
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]impl<__T:IDeflateStreamNative_UnmanagedReadOrWrite>IDeflateStreamNative_UnmanagedReadOrWriteMethods for __T{}
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DeflateStreamNative_UnmanagedReadOrWrite), ::core::stringify!(new),));
- <Self as IDeflateStreamNative_UnmanagedReadOrWriteMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative{#[doc="`Create(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool)` overload"]pub fn create(compressed_stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode> ,gzip:impl::core::convert::Into<bool>)->crate::system::io::compression::deflatestreamnative::DeflateStreamNative{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35584f0usize)as*mut u8,crate::system::io::compression::deflatestreamnative::DeflateStreamNative;
 (crate::system::io::stream::Stream)::core::convert::Into::into(compressed_stream),(crate::system::io::compression::compressionmode::CompressionMode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(gzip))}
@@ -168,18 +145,41 @@ pub fn release_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
+#[cfg(feature="system-io-compression-deflatestreamnative")]pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods:IDeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7fd20usize)as*mut u8,();
+(DeflateStreamNative_UnmanagedReadOrWrite)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::IntPtr, i32, ::unity2::IntPtr)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::IntPtr> ,length:impl::core::convert::Into<i32> ,data:impl::core::convert::Into< ::unity2::IntPtr>)->i32{unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7fd40usize)as*mut u8,i32;
+(DeflateStreamNative_UnmanagedReadOrWrite)__receiver,(::unity2::IntPtr)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(length),(::unity2::IntPtr)::core::convert::Into::into(data))}
+}
+}
+
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl<__T:IDeflateStreamNative_UnmanagedReadOrWrite>IDeflateStreamNative_UnmanagedReadOrWriteMethods for __T{}
+
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStreamNative_UnmanagedReadOrWrite), ::core::stringify!(new),));
+ <Self as IDeflateStreamNative_UnmanagedReadOrWriteMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DeflateStreamNative_UnmanagedReadOrWrite;
-    pub use super::IDeflateStreamNative_UnmanagedReadOrWrite;
-    pub use super::IDeflateStreamNative_UnmanagedReadOrWriteMethods;
     pub use super::DeflateStreamNative;
     pub use super::IDeflateStreamNative;
     pub use super::IDeflateStreamNativeMethods;
     pub use super::DeflateStreamNative_SafeDeflateStreamHandle;
     pub use super::IDeflateStreamNative_SafeDeflateStreamHandle;
     pub use super::IDeflateStreamNative_SafeDeflateStreamHandleMethods;
+    pub use super::DeflateStreamNative_UnmanagedReadOrWrite;
+    pub use super::IDeflateStreamNative_UnmanagedReadOrWrite;
+    pub use super::IDeflateStreamNative_UnmanagedReadOrWriteMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

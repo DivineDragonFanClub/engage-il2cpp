@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomSoundSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomsoundsequence::MyRoomSoundSequence>)]pub struct MyRoomSoundSequence{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundsequence/MyRoomSoundSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomSoundSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomSoundSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomSoundSequence.Label";
@@ -36,6 +33,9 @@ pub fn main()->Self{Self{value:1}
 pub fn end()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomSoundSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomsoundsequence::MyRoomSoundSequence>)]pub struct MyRoomSoundSequence{}
 
 }
 
@@ -99,10 +99,10 @@ this}
 #[cfg(feature = "app-myroomsoundsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomSoundSequence_Label;
     pub use super::MyRoomSoundSequence;
     pub use super::IMyRoomSoundSequence;
     pub use super::IMyRoomSoundSequenceMethods;
-    pub use super::MyRoomSoundSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

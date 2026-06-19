@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/configbgmselectsequence/ConfigBgmSelectSequence.md"))]#[::unity2::class(namespace="App",name="ConfigBgmSelectSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::configbgmselectsequence::ConfigBgmSelectSequence>)]pub struct ConfigBgmSelectSequence{#[offset(120)]#[rename(name="m_selectBgm")]pub m_select_bgm: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_callback")]pub m_callback:crate::system::action_1::Action_1< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/configbgmselectsequence/ConfigBgmSelectSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ConfigBgmSelectSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for ConfigBgmSelectSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ConfigBgmSelectSequence.Label";
@@ -36,6 +33,9 @@ pub fn select()->Self{Self{value:1}
 pub fn exit()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/configbgmselectsequence/ConfigBgmSelectSequence.md"))]#[::unity2::class(namespace="App",name="ConfigBgmSelectSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::configbgmselectsequence::ConfigBgmSelectSequence>)]pub struct ConfigBgmSelectSequence{#[offset(120)]#[rename(name="m_selectBgm")]pub m_select_bgm: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_callback")]pub m_callback:crate::system::action_1::Action_1< ::unity2::Il2CppString> ,}
 
 }
 
@@ -99,10 +99,10 @@ this}
 #[cfg(feature = "app-configbgmselectsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ConfigBgmSelectSequence_Label;
     pub use super::ConfigBgmSelectSequence;
     pub use super::IConfigBgmSelectSequence;
     pub use super::IConfigBgmSelectSequenceMethods;
-    pub use super::ConfigBgmSelectSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

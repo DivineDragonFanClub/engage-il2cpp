@@ -11,238 +11,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapoverlap/MapOverlap_List.md"))]#[::unity2::class(namespace="App",name="MapOverlap.List")]#[parent(crate::system::object::Object)]pub struct MapOverlap_List{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::mapoverlap::MapOverlap_Data> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapoverlap/MapOverlap_Data.md"))]#[::unity2::class(namespace="App",name="MapOverlap.Data")]#[parent(crate::system::object::Object)]pub struct MapOverlap_Data{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapoverlap/MapOverlap.md"))]#[::unity2::class(namespace="App",name="MapOverlap")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapoverlap::MapOverlap>)]pub struct MapOverlap{#[static_field]#[rename(name="MaxCount")]pub max_count:i32, #[offset(32)]#[rename(name="m_Image")]pub m_image:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(40)]#[rename(name="m_List")]pub m_list:crate::app::mapoverlap::MapOverlap_List,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapoverlap/MapOverlap_Data.md"))]#[::unity2::class(namespace="App",name="MapOverlap.Data")]#[parent(crate::system::object::Object)]pub struct MapOverlap_Data{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapoverlap/MapOverlap_List.md"))]#[::unity2::class(namespace="App",name="MapOverlap.List")]#[parent(crate::system::object::Object)]pub struct MapOverlap_List{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::mapoverlap::MapOverlap_Data> ,}
 
 }
 
 #[cfg(feature = "app-mapoverlap-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapoverlap")]pub trait IMapOverlap_ListMethods:IMapOverlap_List{#[doc="`IndexOf(i32, i32)` overload"]fn index_of(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218c870usize)as*mut u8,i32;
-(MapOverlap_List)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Add(crate::app::mapoverlap::MapOverlap_Data)` overload"]fn add(self,data:impl::core::convert::Into<crate::app::mapoverlap::MapOverlap_Data>)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218c970usize)as*mut u8,();
-(MapOverlap_List)__receiver,(crate::app::mapoverlap::MapOverlap_Data)::core::convert::Into::into(data))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218c9d0usize)as*mut u8,();
-(MapOverlap_List)__receiver)}
-}
-#[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218cb50usize)as*mut u8,();
-(MapOverlap_List)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`CreateEffect()` overload"]fn create_effect(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218cc80usize)as*mut u8,();
-(MapOverlap_List)__receiver)}
-}
-#[doc="`UpdateEffect()` overload"]fn update_effect(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218cd20usize)as*mut u8,();
-(MapOverlap_List)__receiver)}
-}
-#[doc="`DeleteEffect()` overload"]fn delete_effect(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218ca30usize)as*mut u8,();
-(MapOverlap_List)__receiver)}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218cdc0usize)as*mut u8,i32;
-(MapOverlap_List)__receiver)}
-}
-#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218ce10usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
-(MapOverlap_List)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218ce80usize)as*mut u8,();
-(MapOverlap_List)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapoverlap")]impl<__T:IMapOverlap_List>IMapOverlap_ListMethods for __T{}
-
-#[cfg(feature="app-mapoverlap")]impl MapOverlap_List{pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn update_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn delete_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-mapoverlap")]impl MapOverlap_List{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapOverlap_List), ::core::stringify!(new),));
- <Self as IMapOverlap_ListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapoverlap")]impl MapOverlap{#[doc="`Get(i32, i32)` overload"]pub fn get(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd860usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`GetCount()` overload"]pub fn get_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd930usize)as*mut u8,i32;
-)}
-}
-#[doc="`GetTerrain(i32)` overload"]pub fn get_terrain(i:impl::core::convert::Into<i32>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd9b0usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
-(i32)::core::convert::Into::into(i))}
-}
-#[doc="`GetTerrain(i32, i32)` overload"]pub fn get_terrain_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfda90usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`GetX(i32)` overload"]pub fn get_x(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdba0usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(i))}
-}
-#[doc="`GetZ(i32)` overload"]pub fn get_z(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdc40usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(i))}
-}
-#[doc="`GetData(i32)` overload"]pub fn get_data(i:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdce0usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
-(i32)::core::convert::Into::into(i))}
-}
-#[doc="`GetData(i32, i32)` overload"]pub fn get_data_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dea110usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`GetMoveCost(i32, i32)` overload"]pub fn get_move_cost(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdd70usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`GetFlyCost(i32, i32)` overload"]pub fn get_fly_cost(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdd90usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Set(i32, i32, i32, i32, crate::app::force::Force_Type)` overload"]pub fn set(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfddb0usize)as*mut u8,bool;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase))}
-}
-#[doc="`Set(i32, i32, ::unity2::Il2CppString, i32, crate::app::force::Force_Type)` overload"]pub fn set_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,tid:impl::core::convert::Into< ::unity2::Il2CppString> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1decd40usize)as*mut u8,bool;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(tid),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase))}
-}
-#[doc="`Set(i32, i32, crate::app::terraindata_2::TerrainData_2, i32, crate::app::force::Force_Type)` overload"]pub fn set_3(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdee0usize)as*mut u8,bool;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase))}
-}
-#[doc="`Remove(i32, i32)` overload"]pub fn remove(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdfb0usize)as*mut u8,bool;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Remove(i32)` overload"]pub fn remove_2(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe040usize)as*mut u8,bool;
-(i32)::core::convert::Into::into(i))}
-}
-#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe160usize)as*mut u8,();
-)}
-}
-#[doc="`CreateEffect()` overload"]pub fn create_effect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe200usize)as*mut u8,();
-)}
-}
-#[doc="`UpdateEffect()` overload"]pub fn update_effect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe280usize)as*mut u8,();
-)}
-}
-#[doc="`CanCreation(crate::app::unit::Unit, i32, i32, ::unity2::Il2CppString)` overload"]pub fn can_creation(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,tid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1decc90usize)as*mut u8,bool;
-(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(tid))}
-}
-#[doc="`CanCreation(crate::app::unit::Unit, i32, i32, i32)` overload"]pub fn can_creation_2(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe680usize)as*mut u8,bool;
-(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`CanCreation(crate::app::unit::Unit, i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]pub fn can_creation_3(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,data:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe300usize)as*mut u8,bool;
-(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(data))}
-}
-#[doc="`CanRemove(crate::app::unit::Unit, i32, i32)` overload"]pub fn can_remove(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe730usize)as*mut u8,bool;
-(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`FindBreakable(i32, i32)` overload"]pub fn find_breakable(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe830usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-}
-
-#[cfg(feature="app-mapoverlap")]pub trait IMapOverlapMethods:IMapOverlap{#[doc="`SetImpl(i32, i32, crate::app::terraindata_2::TerrainData_2, i32, crate::app::force::Force_Type, bool)` overload"]fn set_impl(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type> ,create:impl::core::convert::Into<bool>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd310usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
-(MapOverlap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase),(bool)::core::convert::Into::into(create))}
-}
-#[doc="`RemoveImpl(i32, i32)` overload"]fn remove_impl(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd660usize)as*mut u8,bool;
-(MapOverlap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`RemoveImpl(i32)` overload"]fn remove_impl_2(self,i:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd730usize)as*mut u8,bool;
-(MapOverlap)__receiver,(i32)::core::convert::Into::into(i))}
-}
-#[doc="`ClearImpl()` overload"]fn clear_impl(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd800usize)as*mut u8,();
-(MapOverlap)__receiver)}
-}
-#[doc="`CreateEffectImpl()` overload"]fn create_effect_impl(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd840usize)as*mut u8,();
-(MapOverlap)__receiver)}
-}
-#[doc="`UpdateEffectImpl()` overload"]fn update_effect_impl(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd850usize)as*mut u8,();
-(MapOverlap)__receiver)}
-}
-#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfea70usize)as*mut u8,i32;
-(MapOverlap)__receiver)}
-}
-#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfea80usize)as*mut u8,();
-(MapOverlap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfebf0usize)as*mut u8,();
-(MapOverlap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff1e0usize)as*mut u8,();
-(MapOverlap)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapoverlap")]impl<__T:IMapOverlap>IMapOverlapMethods for __T{}
-
-#[cfg(feature="app-mapoverlap")]impl MapOverlap{pub fn set_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn remove_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn remove_impl_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_effect_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn update_effect_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_terrain_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_move_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_fly_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn set_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn remove_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn update_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn can_creation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn can_creation_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn can_creation_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn can_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn find_breakable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-}
-
-#[cfg(feature="app-mapoverlap")]impl MapOverlap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapOverlap), ::core::stringify!(new),));
- <Self as IMapOverlapMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mapoverlap")]pub trait IMapOverlap_DataMethods:IMapOverlap_Data{#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapOverlap_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x218bac0usize)as*mut u8,i32;
@@ -407,18 +187,238 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapoverlap")]impl MapOverlap{#[doc="`Get(i32, i32)` overload"]pub fn get(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd860usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetCount()` overload"]pub fn get_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd930usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetTerrain(i32)` overload"]pub fn get_terrain(i:impl::core::convert::Into<i32>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd9b0usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`GetTerrain(i32, i32)` overload"]pub fn get_terrain_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfda90usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetX(i32)` overload"]pub fn get_x(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdba0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`GetZ(i32)` overload"]pub fn get_z(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdc40usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`GetData(i32)` overload"]pub fn get_data(i:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdce0usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`GetData(i32, i32)` overload"]pub fn get_data_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dea110usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetMoveCost(i32, i32)` overload"]pub fn get_move_cost(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdd70usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetFlyCost(i32, i32)` overload"]pub fn get_fly_cost(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdd90usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Set(i32, i32, i32, i32, crate::app::force::Force_Type)` overload"]pub fn set(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfddb0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase))}
+}
+#[doc="`Set(i32, i32, ::unity2::Il2CppString, i32, crate::app::force::Force_Type)` overload"]pub fn set_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,tid:impl::core::convert::Into< ::unity2::Il2CppString> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1decd40usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(tid),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase))}
+}
+#[doc="`Set(i32, i32, crate::app::terraindata_2::TerrainData_2, i32, crate::app::force::Force_Type)` overload"]pub fn set_3(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdee0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase))}
+}
+#[doc="`Remove(i32, i32)` overload"]pub fn remove(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfdfb0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Remove(i32)` overload"]pub fn remove_2(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe040usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe160usize)as*mut u8,();
+)}
+}
+#[doc="`CreateEffect()` overload"]pub fn create_effect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe200usize)as*mut u8,();
+)}
+}
+#[doc="`UpdateEffect()` overload"]pub fn update_effect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe280usize)as*mut u8,();
+)}
+}
+#[doc="`CanCreation(crate::app::unit::Unit, i32, i32, ::unity2::Il2CppString)` overload"]pub fn can_creation(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,tid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1decc90usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(tid))}
+}
+#[doc="`CanCreation(crate::app::unit::Unit, i32, i32, i32)` overload"]pub fn can_creation_2(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe680usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`CanCreation(crate::app::unit::Unit, i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]pub fn can_creation_3(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,data:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe300usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(data))}
+}
+#[doc="`CanRemove(crate::app::unit::Unit, i32, i32)` overload"]pub fn can_remove(attacker:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe730usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`FindBreakable(i32, i32)` overload"]pub fn find_breakable(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dfe830usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
+
+#[cfg(feature="app-mapoverlap")]pub trait IMapOverlapMethods:IMapOverlap{#[doc="`SetImpl(i32, i32, crate::app::terraindata_2::TerrainData_2, i32, crate::app::force::Force_Type, bool)` overload"]fn set_impl(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2> ,turn:impl::core::convert::Into<i32> ,phase:impl::core::convert::Into<crate::app::force::Force_Type> ,create:impl::core::convert::Into<bool>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd310usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
+(MapOverlap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain),(i32)::core::convert::Into::into(turn),(crate::app::force::Force_Type)::core::convert::Into::into(phase),(bool)::core::convert::Into::into(create))}
+}
+#[doc="`RemoveImpl(i32, i32)` overload"]fn remove_impl(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd660usize)as*mut u8,bool;
+(MapOverlap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`RemoveImpl(i32)` overload"]fn remove_impl_2(self,i:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd730usize)as*mut u8,bool;
+(MapOverlap)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ClearImpl()` overload"]fn clear_impl(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd800usize)as*mut u8,();
+(MapOverlap)__receiver)}
+}
+#[doc="`CreateEffectImpl()` overload"]fn create_effect_impl(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd840usize)as*mut u8,();
+(MapOverlap)__receiver)}
+}
+#[doc="`UpdateEffectImpl()` overload"]fn update_effect_impl(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfd850usize)as*mut u8,();
+(MapOverlap)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfea70usize)as*mut u8,i32;
+(MapOverlap)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfea80usize)as*mut u8,();
+(MapOverlap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfebf0usize)as*mut u8,();
+(MapOverlap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapOverlap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff1e0usize)as*mut u8,();
+(MapOverlap)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapoverlap")]impl<__T:IMapOverlap>IMapOverlapMethods for __T{}
+
+#[cfg(feature="app-mapoverlap")]impl MapOverlap{pub fn set_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_impl_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_effect_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_effect_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_terrain_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_move_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_fly_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn remove_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn update_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn can_creation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn can_creation_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn can_creation_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn can_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn find_breakable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+}
+
+#[cfg(feature="app-mapoverlap")]impl MapOverlap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapOverlap), ::core::stringify!(new),));
+ <Self as IMapOverlapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapoverlap")]pub trait IMapOverlap_ListMethods:IMapOverlap_List{#[doc="`IndexOf(i32, i32)` overload"]fn index_of(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218c870usize)as*mut u8,i32;
+(MapOverlap_List)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Add(crate::app::mapoverlap::MapOverlap_Data)` overload"]fn add(self,data:impl::core::convert::Into<crate::app::mapoverlap::MapOverlap_Data>)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218c970usize)as*mut u8,();
+(MapOverlap_List)__receiver,(crate::app::mapoverlap::MapOverlap_Data)::core::convert::Into::into(data))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218c9d0usize)as*mut u8,();
+(MapOverlap_List)__receiver)}
+}
+#[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218cb50usize)as*mut u8,();
+(MapOverlap_List)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`CreateEffect()` overload"]fn create_effect(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218cc80usize)as*mut u8,();
+(MapOverlap_List)__receiver)}
+}
+#[doc="`UpdateEffect()` overload"]fn update_effect(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218cd20usize)as*mut u8,();
+(MapOverlap_List)__receiver)}
+}
+#[doc="`DeleteEffect()` overload"]fn delete_effect(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218ca30usize)as*mut u8,();
+(MapOverlap_List)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218cdc0usize)as*mut u8,i32;
+(MapOverlap_List)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::app::mapoverlap::MapOverlap_Data{unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218ce10usize)as*mut u8,crate::app::mapoverlap::MapOverlap_Data;
+(MapOverlap_List)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapOverlap_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218ce80usize)as*mut u8,();
+(MapOverlap_List)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapoverlap")]impl<__T:IMapOverlap_List>IMapOverlap_ListMethods for __T{}
+
+#[cfg(feature="app-mapoverlap")]impl MapOverlap_List{pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn delete_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-mapoverlap")]impl MapOverlap_List{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapOverlap_List), ::core::stringify!(new),));
+ <Self as IMapOverlap_ListMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-mapoverlap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapOverlap_List;
-    pub use super::IMapOverlap_List;
-    pub use super::IMapOverlap_ListMethods;
-    pub use super::MapOverlap;
-    pub use super::IMapOverlap;
-    pub use super::IMapOverlapMethods;
     pub use super::MapOverlap_Data;
     pub use super::IMapOverlap_Data;
     pub use super::IMapOverlap_DataMethods;
+    pub use super::MapOverlap;
+    pub use super::IMapOverlap;
+    pub use super::IMapOverlapMethods;
+    pub use super::MapOverlap_List;
+    pub use super::IMapOverlap_List;
+    pub use super::IMapOverlap_ListMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;

@@ -23,68 +23,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchangejobmenu/ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="ClassChangeJobMenu.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="ACallCallback")]pub a_call_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchangejobmenu/ClassChangeJobMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ClassChangeJobMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ClassChangeJobMenu_ConfirmDialog{#[static_field]#[rename(name="m_data")]pub m_data:crate::app::classchange::ClassChange_ChangeJobData,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchangejobmenu/ClassChangeJobMenu.md"))]#[::unity2::class(namespace="App",name="ClassChangeJobMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ClassChangeJobMenu{#[static_field]#[rename(name="c_JobSortMax")]pub c_job_sort_max:i32, #[static_field]#[rename(name="s_IsSortJobSort")]pub s_is_sort_job_sort:bool, #[offset(200)]#[rename(name="m_Root")]pub m_root:crate::app::classchangeroot::ClassChangeRoot,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchangejobmenu/ClassChangeJobMenu_ClassChangeJobMenuItem.md"))]#[::unity2::class(namespace="App",name="ClassChangeJobMenu.ClassChangeJobMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ClassChangeJobMenu_ClassChangeJobMenuItem{#[offset(104)]#[rename(name="m_JobData")]pub m_job_data:crate::app::classchange::ClassChange_ChangeJobData, #[offset(112)]#[rename(name="m_Attribute")]pub m_attribute:crate::app::basicmenuitem::BasicMenuItem_Attribute,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchangejobmenu/ClassChangeJobMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ClassChangeJobMenu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ClassChangeJobMenu_ConfirmDialog{#[static_field]#[rename(name="m_data")]pub m_data:crate::app::classchange::ClassChange_ChangeJobData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchangejobmenu/ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="ClassChangeJobMenu.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="ACallCallback")]pub a_call_callback:crate::system::action::Action,}
+
 }
 
 #[cfg(feature = "app-classchangejobmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-classchangejobmenu")]pub trait IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods:IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,a_call_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32300usize)as*mut u8,();
-(ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(a_call_callback))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32340usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-classchangejobmenu")]impl<__T:IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes>IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,a_call_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
- <Self as IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,a_call_callback);
-this}
-}
-
-#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::classchange::ClassChange_ChangeJobData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,data:impl::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19c76c0usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::classchange::ClassChange_ChangeJobData)::core::convert::Into::into(data))}
-}
-}
-
-#[cfg(feature="app-classchangejobmenu")]pub trait IClassChangeJobMenu_ConfirmDialogMethods:IClassChangeJobMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <ClassChangeJobMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19c7b80usize)as*mut u8,();
-(ClassChangeJobMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
-
-#[cfg(feature="app-classchangejobmenu")]impl<__T:IClassChangeJobMenu_ConfirmDialog>IClassChangeJobMenu_ConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ClassChangeJobMenu_ConfirmDialog), ::core::stringify!(new),));
- <Self as IClassChangeJobMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list);
-this}
-}
 
 #[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::classchangeroot::ClassChangeRoot)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,class_change_root:impl::core::convert::Into<crate::app::classchangeroot::ClassChangeRoot>)->crate::app::classchangejobmenu::ClassChangeJobMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea3100usize)as*mut u8,crate::app::classchangejobmenu::ClassChangeJobMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::classchangeroot::ClassChangeRoot)::core::convert::Into::into(class_change_root))}
@@ -211,21 +164,68 @@ pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::classchange::ClassChange_ChangeJobData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,data:impl::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19c76c0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::classchange::ClassChange_ChangeJobData)::core::convert::Into::into(data))}
+}
+}
+
+#[cfg(feature="app-classchangejobmenu")]pub trait IClassChangeJobMenu_ConfirmDialogMethods:IClassChangeJobMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <ClassChangeJobMenu_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c7b80usize)as*mut u8,();
+(ClassChangeJobMenu_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-classchangejobmenu")]impl<__T:IClassChangeJobMenu_ConfirmDialog>IClassChangeJobMenu_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ClassChangeJobMenu_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IClassChangeJobMenu_ConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-classchangejobmenu")]pub trait IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods:IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,a_call_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32300usize)as*mut u8,();
+(ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(a_call_callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32340usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-classchangejobmenu")]impl<__T:IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes>IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-classchangejobmenu")]impl ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,a_call_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,text,a_call_callback);
+this}
+}
+
 #[cfg(feature = "app-classchangejobmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes;
-    pub use super::IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods;
-    pub use super::ClassChangeJobMenu_ConfirmDialog;
-    pub use super::IClassChangeJobMenu_ConfirmDialog;
-    pub use super::IClassChangeJobMenu_ConfirmDialogMethods;
     pub use super::ClassChangeJobMenu;
     pub use super::IClassChangeJobMenu;
     pub use super::IClassChangeJobMenuMethods;
     pub use super::ClassChangeJobMenu_ClassChangeJobMenuItem;
     pub use super::IClassChangeJobMenu_ClassChangeJobMenuItem;
     pub use super::IClassChangeJobMenu_ClassChangeJobMenuItemMethods;
+    pub use super::ClassChangeJobMenu_ConfirmDialog;
+    pub use super::IClassChangeJobMenu_ConfirmDialog;
+    pub use super::IClassChangeJobMenu_ConfirmDialogMethods;
+    pub use super::ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes;
+    pub use super::IClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYesMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

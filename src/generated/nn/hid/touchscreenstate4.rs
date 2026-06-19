@@ -11,25 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/touchscreenstate4/TouchScreenState4.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TouchScreenState4{pub sampling_number:i64,pub count:i32,pub reserved:i32,pub touches:crate::nn::hid::touchscreenstate4::TouchScreenState4_TouchStateArray4,}
-impl::unity2::ClassIdentity for TouchScreenState4{const NAMESPACE: &'static str="nn.hid";
-const NAME: &'static str="TouchScreenState4";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TouchScreenState4{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TouchScreenState4{#[inline]pub fn touch_count()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TouchCount");
- ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
-#[inline]pub fn set_touch_count(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TouchCount");
- ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/touchscreenstate4/TouchScreenState4_TouchStateArray4.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TouchScreenState4_TouchStateArray4{pub value0:crate::nn::hid::touchstate::TouchState,pub value1:crate::nn::hid::touchstate::TouchState,pub value2:crate::nn::hid::touchstate::TouchState,pub value3:crate::nn::hid::touchstate::TouchState,}
 impl::unity2::ClassIdentity for TouchScreenState4_TouchStateArray4{const NAMESPACE: &'static str="nn.hid";
 const NAME: &'static str="TouchScreenState4.TouchStateArray4";
@@ -48,18 +29,29 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/touchscreenstate4/TouchScreenState4.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TouchScreenState4{pub sampling_number:i64,pub count:i32,pub reserved:i32,pub touches:crate::nn::hid::touchscreenstate4::TouchScreenState4_TouchStateArray4,}
+impl::unity2::ClassIdentity for TouchScreenState4{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="TouchScreenState4";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TouchScreenState4{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TouchScreenState4{#[inline]pub fn touch_count()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TouchCount");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_touch_count(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TouchCount");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+}
+
 }
 
 #[cfg(feature = "nn-hid-touchscreenstate4-types")]
 pub use __types::*;
-
-#[cfg(feature="nn-hid-touchscreenstate4")]impl TouchScreenState4{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229a9d0usize)as*mut u8,();
-(*mut TouchScreenState4)self as*mut TouchScreenState4)}
-}
-}
-
-#[cfg(feature="nn-hid-touchscreenstate4")]impl TouchScreenState4{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="nn-hid-touchscreenstate4")]impl TouchScreenState4_TouchStateArray4{#[doc="`get_Length()` overload"]pub fn get_length(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2212590usize)as*mut u8,i32;
 (*mut TouchScreenState4_TouchStateArray4)self as*mut TouchScreenState4_TouchStateArray4)}
@@ -129,11 +121,19 @@ pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="nn-hid-touchscreenstate4")]impl TouchScreenState4{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229a9d0usize)as*mut u8,();
+(*mut TouchScreenState4)self as*mut TouchScreenState4)}
+}
+}
+
+#[cfg(feature="nn-hid-touchscreenstate4")]impl TouchScreenState4{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "nn-hid-touchscreenstate4")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TouchScreenState4;
     pub use super::TouchScreenState4_TouchStateArray4;
+    pub use super::TouchScreenState4;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

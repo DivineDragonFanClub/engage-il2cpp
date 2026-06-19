@@ -20,10 +20,10 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareByPriority.md"))]#[::unity2::class(namespace="",name="AkEnvironment.AkEnvironment_CompareByPriority")]#[parent(crate::system::object::Object)]pub struct AkEnvironment_AkEnvironment_CompareByPriority{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akenvironment/AkEnvironment.md"))]#[::unity2::class(namespace="",name="AkEnvironment")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkEnvironment{#[static_field]#[rename(name="MAX_NB_ENVIRONMENTS")]pub max_nb_environments:i32, #[static_field]#[rename(name="s_compareByPriority")]pub s_compare_by_priority:crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority, #[static_field]#[rename(name="s_compareBySelectionAlgorithm")]pub s_compare_by_selection_algorithm:crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, #[offset(24)]#[rename(name="excludeOthers")]pub exclude_others:bool, #[offset(25)]#[rename(name="isDefault")]pub is_default:bool, #[offset(48)]#[rename(name="priority")]pub priority:i32, #[offset(52)]#[rename(name="auxBusIdInternal")]pub aux_bus_id_internal:i32, #[offset(56)]#[rename(name="valueGuidInternal")]pub value_guid_internal: ::unity2::Array<u8> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akenvironment/AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm.md"))]#[::unity2::class(namespace="",name="AkEnvironment.AkEnvironment_CompareBySelectionAlgorithm")]#[parent(crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority)]pub struct AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akenvironment/AkEnvironment.md"))]#[::unity2::class(namespace="",name="AkEnvironment")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkEnvironment{#[static_field]#[rename(name="MAX_NB_ENVIRONMENTS")]pub max_nb_environments:i32, #[static_field]#[rename(name="s_compareByPriority")]pub s_compare_by_priority:crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareByPriority, #[static_field]#[rename(name="s_compareBySelectionAlgorithm")]pub s_compare_by_selection_algorithm:crate::root::akenvironment::AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm, #[offset(24)]#[rename(name="excludeOthers")]pub exclude_others:bool, #[offset(25)]#[rename(name="isDefault")]pub is_default:bool, #[offset(48)]#[rename(name="priority")]pub priority:i32, #[offset(52)]#[rename(name="auxBusIdInternal")]pub aux_bus_id_internal:i32, #[offset(56)]#[rename(name="valueGuidInternal")]pub value_guid_internal: ::unity2::Array<u8> ,}
 
 }
 
@@ -50,6 +50,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(AkEnvironment_AkEnvironment_CompareByPriority), ::core::stringify!(new),));
  <Self as IAkEnvironment_AkEnvironment_CompareByPriorityMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-akenvironment")]pub trait IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods:IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm{#[doc="`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"]fn compare(self,a:impl::core::convert::Into<crate::root::akenvironment::AkEnvironment> ,b:impl::core::convert::Into<crate::root::akenvironment::AkEnvironment>)->i32{unsafe{let __receiver= <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e610usize)as*mut u8,i32;
+(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm)__receiver,(crate::root::akenvironment::AkEnvironment)::core::convert::Into::into(a),(crate::root::akenvironment::AkEnvironment)::core::convert::Into::into(b))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e710usize)as*mut u8,();
+(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm)__receiver)}
+}
+}
+
+#[cfg(feature="root-akenvironment")]impl<__T:IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm>IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods for __T{}
+
+#[cfg(feature="root-akenvironment")]impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akenvironment")]impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm), ::core::stringify!(new),));
+ <Self as IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods> ::ctor(this,);
 this}
 }
 
@@ -107,41 +130,18 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="root-akenvironment")]pub trait IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods:IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm{#[doc="`Compare(crate::root::akenvironment::AkEnvironment, crate::root::akenvironment::AkEnvironment)` overload"]fn compare(self,a:impl::core::convert::Into<crate::root::akenvironment::AkEnvironment> ,b:impl::core::convert::Into<crate::root::akenvironment::AkEnvironment>)->i32{unsafe{let __receiver= <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e610usize)as*mut u8,i32;
-(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm)__receiver,(crate::root::akenvironment::AkEnvironment)::core::convert::Into::into(a),(crate::root::akenvironment::AkEnvironment)::core::convert::Into::into(b))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e710usize)as*mut u8,();
-(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm)__receiver)}
-}
-}
-
-#[cfg(feature="root-akenvironment")]impl<__T:IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm>IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods for __T{}
-
-#[cfg(feature="root-akenvironment")]impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root-akenvironment")]impl AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm), ::core::stringify!(new),));
- <Self as IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root-akenvironment")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AkEnvironment_AkEnvironment_CompareByPriority;
     pub use super::IAkEnvironment_AkEnvironment_CompareByPriority;
     pub use super::IAkEnvironment_AkEnvironment_CompareByPriorityMethods;
-    pub use super::AkEnvironment;
-    pub use super::IAkEnvironment;
-    pub use super::IAkEnvironmentMethods;
     pub use super::AkEnvironment_AkEnvironment_CompareBySelectionAlgorithm;
     pub use super::IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithm;
     pub use super::IAkEnvironment_AkEnvironment_CompareBySelectionAlgorithmMethods;
+    pub use super::AkEnvironment;
+    pub use super::IAkEnvironment;
+    pub use super::IAkEnvironmentMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

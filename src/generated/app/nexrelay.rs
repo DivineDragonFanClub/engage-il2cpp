@@ -26,93 +26,27 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SearchSequence_DataTypeInfo.md"))]#[::unity2::class(namespace="App",name="NexRelay.SearchSequence.DataTypeInfo")]#[parent(crate::system::object::Object)]pub struct NexRelay_SearchSequence_DataTypeInfo{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog.md"))]#[::unity2::class(namespace="App",name="NexRelay.ServerSequenceBase.ConfirmRetryDialog")]#[parent(crate::system::object::Object)]pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SearchSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.SearchSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_SearchSequence{#[offset(112)]#[rename(name="m_Results")]pub m_results:crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> , #[offset(120)]#[rename(name="m_DataTypeInfos")]pub m_data_type_infos:crate::system::collections::generic::list_1::List_1<crate::app::nexrelay::NexRelay_SearchSequence_DataTypeInfo> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SearchSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_SearchSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexRelay_SearchSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexRelay.SearchSequence.Label";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SetPlayingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_SetPlayingSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexRelay_SetPlayingSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexRelay.SetPlayingSequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexRelay_SearchSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexRelay_SetPlayingSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexRelay_SearchSequence_Label{pub fn fix_data_type_to_relay_end()->Self{Self{value:0}
+impl NexRelay_SetPlayingSequence_Label{pub fn login()->Self{Self{value:0}
 }
 pub fn error()->Self{Self{value:1}
 }
-pub fn end()->Self{Self{value:2}
+pub fn error_app()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="NexRelay.ServerSequenceBase.ConfirmRetryDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem{#[offset(112)]#[rename(name="m_Label")]pub m_label:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_DownloadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_DownloadSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexRelay_DownloadSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexRelay.DownloadSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexRelay_DownloadSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexRelay_DownloadSequence_Label{pub fn login()->Self{Self{value:0}
-}
-pub fn get_data()->Self{Self{value:1}
-}
-pub fn error()->Self{Self{value:2}
-}
-pub fn error_app()->Self{Self{value:3}
-}
-pub fn end()->Self{Self{value:4}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_UploadTakeOverSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_UploadTakeOverSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexRelay_UploadTakeOverSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexRelay.UploadTakeOverSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexRelay_UploadTakeOverSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexRelay_UploadTakeOverSequence_Label{pub fn login()->Self{Self{value:0}
-}
-pub fn update_data()->Self{Self{value:1}
-}
-pub fn error()->Self{Self{value:2}
-}
-pub fn error_app()->Self{Self{value:3}
-}
-pub fn end()->Self{Self{value:4}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay.md"))]#[::unity2::class(namespace="App",name="NexRelay")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexrelay::NexRelay>)]pub struct NexRelay{#[static_field]#[rename(name="Period")]pub period:u16, #[static_field]#[rename(name="MaxSearchCount")]pub max_search_count:u32, #[offset(28)]#[rename(name="m_LastResult")]pub m_last_result:crate::app::nexrelay::NexRelay_Results, #[offset(32)]#[rename(name="m_LastUploadedDataId")]pub m_last_uploaded_data_id:u64,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_DownloadSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.DownloadSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_DownloadSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_Result")]pub m_result:crate::app::relayserverdata::RelayServerData, #[offset(128)]#[rename(name="m_ResultMeta")]pub m_result_meta:crate::app::relayservermetadata::RelayServerMetaData,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SetPlayingSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.SetPlayingSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_SetPlayingSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_OldMetaData")]pub m_old_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(128)]#[rename(name="m_NewMetaData")]pub m_new_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(136)]#[rename(name="m_IsComplementedNewMetaData")]pub m_is_complemented_new_meta_data:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_ServerSequenceBase.md"))]#[::unity2::class(namespace="App",name="NexRelay.ServerSequenceBase")]#[parent(crate::app::procinst::ProcInst)]pub struct NexRelay_ServerSequenceBase{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_UploadTakeOverSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.UploadTakeOverSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_UploadTakeOverSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_OldMetaData")]pub m_old_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(128)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_NewMetaData")]pub m_new_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(144)]#[rename(name="m_Data")]pub m_data:crate::app::relayserverdata::RelayServerData, #[offset(152)]#[rename(name="m_IsComplementedNewMetaData")]pub m_is_complemented_new_meta_data:bool, #[offset(153)]#[rename(name="m_IsChangeToPublic")]pub m_is_change_to_public:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_UploadNewSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.UploadNewSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_UploadNewSequence{#[offset(112)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(128)]#[rename(name="m_Data")]pub m_data:crate::app::relayserverdata::RelayServerData, #[offset(136)]#[rename(name="m_IsComplemented")]pub m_is_complemented:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_Results.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_Results{pub value:i32,}
@@ -137,7 +71,83 @@ pub fn succeeded()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SearchSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.SearchSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_SearchSequence{#[offset(112)]#[rename(name="m_Results")]pub m_results:crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> , #[offset(120)]#[rename(name="m_DataTypeInfos")]pub m_data_type_infos:crate::system::collections::generic::list_1::List_1<crate::app::nexrelay::NexRelay_SearchSequence_DataTypeInfo> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_DownloadMetaSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.DownloadMetaSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_DownloadMetaSequence{#[offset(112)]#[rename(name="m_DataIds")]pub m_data_ids:crate::system::collections::generic::list_1::List_1<u64> , #[offset(120)]#[rename(name="m_Results")]pub m_results:crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> , #[offset(128)]#[rename(name="m_DataCode")]pub m_data_code: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_DataCodeResult")]pub m_data_code_result:crate::app::relayservermetadata::RelayServerMetaData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_DownloadMetaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_DownloadMetaSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexRelay_DownloadMetaSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexRelay.DownloadMetaSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexRelay_DownloadMetaSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexRelay_DownloadMetaSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn error_app()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_DownloadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_DownloadSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexRelay_DownloadSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexRelay.DownloadSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexRelay_DownloadSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexRelay_DownloadSequence_Label{pub fn login()->Self{Self{value:0}
+}
+pub fn get_data()->Self{Self{value:1}
+}
+pub fn error()->Self{Self{value:2}
+}
+pub fn error_app()->Self{Self{value:3}
+}
+pub fn end()->Self{Self{value:4}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog.md"))]#[::unity2::class(namespace="App",name="NexRelay.ServerSequenceBase.ConfirmRetryDialog")]#[parent(crate::system::object::Object)]pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SearchSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_SearchSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexRelay_SearchSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexRelay.SearchSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexRelay_SearchSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexRelay_SearchSequence_Label{pub fn fix_data_type_to_relay_end()->Self{Self{value:0}
+}
+pub fn error()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_UploadNewSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.UploadNewSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_UploadNewSequence{#[offset(112)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(128)]#[rename(name="m_Data")]pub m_data:crate::app::relayserverdata::RelayServerData, #[offset(136)]#[rename(name="m_IsComplemented")]pub m_is_complemented:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="NexRelay.ServerSequenceBase.ConfirmRetryDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem{#[offset(112)]#[rename(name="m_Label")]pub m_label:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay.md"))]#[::unity2::class(namespace="App",name="NexRelay")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexrelay::NexRelay>)]pub struct NexRelay{#[static_field]#[rename(name="Period")]pub period:u16, #[static_field]#[rename(name="MaxSearchCount")]pub max_search_count:u32, #[offset(28)]#[rename(name="m_LastResult")]pub m_last_result:crate::app::nexrelay::NexRelay_Results, #[offset(32)]#[rename(name="m_LastUploadedDataId")]pub m_last_uploaded_data_id:u64,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SetPlayingSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.SetPlayingSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_SetPlayingSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_OldMetaData")]pub m_old_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(128)]#[rename(name="m_NewMetaData")]pub m_new_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(136)]#[rename(name="m_IsComplementedNewMetaData")]pub m_is_complemented_new_meta_data:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_UploadNewSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_UploadNewSequence_Label{pub value:i32,}
@@ -158,42 +168,32 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_SetPlayingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_SetPlayingSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexRelay_SetPlayingSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexRelay.SetPlayingSequence.Label";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_ServerSequenceBase.md"))]#[::unity2::class(namespace="App",name="NexRelay.ServerSequenceBase")]#[parent(crate::app::procinst::ProcInst)]pub struct NexRelay_ServerSequenceBase{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_UploadTakeOverSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_UploadTakeOverSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexRelay_UploadTakeOverSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexRelay.UploadTakeOverSequence.Label";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexRelay_SetPlayingSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexRelay_UploadTakeOverSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexRelay_SetPlayingSequence_Label{pub fn login()->Self{Self{value:0}
+impl NexRelay_UploadTakeOverSequence_Label{pub fn login()->Self{Self{value:0}
 }
-pub fn error()->Self{Self{value:1}
+pub fn update_data()->Self{Self{value:1}
 }
-pub fn error_app()->Self{Self{value:2}
+pub fn error()->Self{Self{value:2}
 }
-pub fn end()->Self{Self{value:3}
+pub fn error_app()->Self{Self{value:3}
+}
+pub fn end()->Self{Self{value:4}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_DownloadMetaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRelay_DownloadMetaSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for NexRelay_DownloadMetaSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexRelay.DownloadMetaSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexRelay_DownloadMetaSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl NexRelay_DownloadMetaSequence_Label{pub fn error()->Self{Self{value:0}
-}
-pub fn error_app()->Self{Self{value:1}
-}
-pub fn end()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexrelay/NexRelay_UploadTakeOverSequence.md"))]#[::unity2::class(namespace="App",name="NexRelay.UploadTakeOverSequence")]#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]pub struct NexRelay_UploadTakeOverSequence{#[offset(112)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(120)]#[rename(name="m_OldMetaData")]pub m_old_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(128)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_NewMetaData")]pub m_new_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(144)]#[rename(name="m_Data")]pub m_data:crate::app::relayserverdata::RelayServerData, #[offset(152)]#[rename(name="m_IsComplementedNewMetaData")]pub m_is_complemented_new_meta_data:bool, #[offset(153)]#[rename(name="m_IsChangeToPublic")]pub m_is_change_to_public:bool,}
 
 }
 
@@ -238,12 +238,53 @@ pub fn set_is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-nexrelay")]impl NexRelay_ServerSequenceBase_ConfirmRetryDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_label:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b78d00usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(yes_label))}
+#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,result_meta:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ab3e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(result),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result_meta))}
 }
 }
 
-#[cfg(feature="app-nexrelay")]impl NexRelay_ServerSequenceBase_ConfirmRetryDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-nexrelay")]pub trait INexRelay_DownloadSequenceMethods:INexRelay_DownloadSequence{#[doc="`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,result_meta:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aad50usize)as*mut u8,();
+(NexRelay_DownloadSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(result),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result_meta))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aade0usize)as*mut u8,();
+(NexRelay_DownloadSequence)__receiver)}
+}
+#[doc="`IsNeedToGetMetaInfo()` overload"]fn is_need_to_get_meta_info(self,)->bool{unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aadf0usize)as*mut u8,bool;
+(NexRelay_DownloadSequence)__receiver)}
+}
+#[doc="`GetMetaInfo()` overload"]fn get_meta_info(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20aae00usize)as*mut u8,();
+(NexRelay_DownloadSequence)__receiver)}
+}
+#[doc="`GetData()` overload"]fn get_data(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ab0d0usize)as*mut u8,();
+(NexRelay_DownloadSequence)__receiver)}
+}
+#[doc="`ConfirmRetry()` overload"]fn confirm_retry(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ab3d0usize)as*mut u8,();
+(NexRelay_DownloadSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexrelay")]impl<__T:INexRelay_DownloadSequence>INexRelay_DownloadSequenceMethods for __T{}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_need_to_get_meta_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_meta_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn confirm_retry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadSequence{#[doc="`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]pub fn new(data_id:u64,result:crate::app::relayserverdata::RelayServerData,result_meta:crate::app::relayservermetadata::RelayServerMetaData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexRelay_DownloadSequence), ::core::stringify!(new),));
+ <Self as INexRelay_DownloadSequenceMethods> ::ctor(this,data_id,result,result_meta);
+this}
 }
 
 #[cfg(feature="app-nexrelay")]impl NexRelay_SearchSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224b0d0usize)as*mut u8,();
@@ -282,6 +323,110 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 ::{}
  failed to instantiate", ::core::stringify!(NexRelay_SearchSequence), ::core::stringify!(new),));
  <Self as INexRelay_SearchSequenceMethods> ::ctor(this,results);
+this}
+}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadMetaSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_ids:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64> > ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aa560usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<u64>)::core::convert::Into::into(data_ids),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(results))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_code:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aacb0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(data_code),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result))}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexrelay::NexRelay_DownloadMetaSequence)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::nexrelay::NexRelay_DownloadMetaSequence>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aa640usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::nexrelay::NexRelay_DownloadMetaSequence)::core::convert::Into::into(p))}
+}
+}
+
+#[cfg(feature="app-nexrelay")]pub trait INexRelay_DownloadMetaSequenceMethods:INexRelay_DownloadMetaSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]fn ctor(self,data_ids:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64> > ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> >)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9ee0usize)as*mut u8,();
+(NexRelay_DownloadMetaSequence)__receiver,(crate::system::collections::generic::list_1::List_1<u64>)::core::convert::Into::into(data_ids),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(results))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn ctor_2(self,data_code:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9f70usize)as*mut u8,();
+(NexRelay_DownloadMetaSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(data_code),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9fc0usize)as*mut u8,();
+(NexRelay_DownloadMetaSequence)__receiver)}
+}
+#[doc="`GetMetaInfo()` overload"]fn get_meta_info(self,)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9fd0usize)as*mut u8,();
+(NexRelay_DownloadMetaSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexrelay")]impl<__T:INexRelay_DownloadMetaSequence>INexRelay_DownloadMetaSequenceMethods for __T{}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadMetaSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_meta_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadMetaSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]pub fn new(data_ids:crate::system::collections::generic::list_1::List_1<u64> ,results:crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexRelay_DownloadMetaSequence), ::core::stringify!(new),));
+ <Self as INexRelay_DownloadMetaSequenceMethods> ::ctor(this,data_ids,results);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]pub fn new_2(data_code: ::unity2::Il2CppString,result:crate::app::relayservermetadata::RelayServerMetaData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexRelay_DownloadMetaSequence), ::core::stringify!(new_2),));
+ <Self as INexRelay_DownloadMetaSequenceMethods> ::ctor_2(this,data_code,result);
+this}
+}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_ServerSequenceBase_ConfirmRetryDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,yes_label:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b78d00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(yes_label))}
+}
+}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_ServerSequenceBase_ConfirmRetryDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_UploadNewSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,data:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,is_secret:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224cda0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(data),(bool)::core::convert::Into::into(is_secret))}
+}
+}
+
+#[cfg(feature="app-nexrelay")]pub trait INexRelay_UploadNewSequenceMethods:INexRelay_UploadNewSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]fn ctor(self,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,data:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,is_secret:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224c870usize)as*mut u8,();
+(NexRelay_UploadNewSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(data),(bool)::core::convert::Into::into(is_secret))}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224c900usize)as*mut u8,();
+(NexRelay_UploadNewSequence)__receiver)}
+}
+#[doc="`Post()` overload"]fn post(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224c910usize)as*mut u8,();
+(NexRelay_UploadNewSequence)__receiver)}
+}
+#[doc="`ComplementMetaData()` overload"]fn complement_meta_data(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224cb30usize)as*mut u8,();
+(NexRelay_UploadNewSequence)__receiver)}
+}
+#[doc="`ConfirmRetry()` overload"]fn confirm_retry(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x224cd90usize)as*mut u8,();
+(NexRelay_UploadNewSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexrelay")]impl<__T:INexRelay_UploadNewSequence>INexRelay_UploadNewSequenceMethods for __T{}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_UploadNewSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn complement_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn confirm_retry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-nexrelay")]impl NexRelay_UploadNewSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` — overload selector"]pub fn new(player_name: ::unity2::Il2CppString,meta_data:crate::app::relayservermetadata::RelayServerMetaData,data:crate::app::relayserverdata::RelayServerData,is_secret:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexRelay_UploadNewSequence), ::core::stringify!(new),));
+ <Self as INexRelay_UploadNewSequenceMethods> ::ctor(this,player_name,meta_data,data,is_secret);
 this}
 }
 
@@ -392,55 +537,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(NexRelay), ::core::stringify!(new),));
  <Self as INexRelayMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,result_meta:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ab3e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(data_id),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(result),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result_meta))}
-}
-}
-
-#[cfg(feature="app-nexrelay")]pub trait INexRelay_DownloadSequenceMethods:INexRelay_DownloadSequence{#[doc="`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn ctor(self,data_id:impl::core::convert::Into<u64> ,result:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,result_meta:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20aad50usize)as*mut u8,();
-(NexRelay_DownloadSequence)__receiver,(u64)::core::convert::Into::into(data_id),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(result),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result_meta))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20aade0usize)as*mut u8,();
-(NexRelay_DownloadSequence)__receiver)}
-}
-#[doc="`IsNeedToGetMetaInfo()` overload"]fn is_need_to_get_meta_info(self,)->bool{unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20aadf0usize)as*mut u8,bool;
-(NexRelay_DownloadSequence)__receiver)}
-}
-#[doc="`GetMetaInfo()` overload"]fn get_meta_info(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20aae00usize)as*mut u8,();
-(NexRelay_DownloadSequence)__receiver)}
-}
-#[doc="`GetData()` overload"]fn get_data(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20ab0d0usize)as*mut u8,();
-(NexRelay_DownloadSequence)__receiver)}
-}
-#[doc="`ConfirmRetry()` overload"]fn confirm_retry(self,)->(){unsafe{let __receiver= <NexRelay_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20ab3d0usize)as*mut u8,();
-(NexRelay_DownloadSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexrelay")]impl<__T:INexRelay_DownloadSequence>INexRelay_DownloadSequenceMethods for __T{}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_need_to_get_meta_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_meta_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn confirm_retry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadSequence{#[doc="`.ctor(u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]pub fn new(data_id:u64,result:crate::app::relayserverdata::RelayServerData,result_meta:crate::app::relayservermetadata::RelayServerMetaData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexRelay_DownloadSequence), ::core::stringify!(new),));
- <Self as INexRelay_DownloadSequenceMethods> ::ctor(this,data_id,result,result_meta);
 this}
 }
 
@@ -600,144 +696,48 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-nexrelay")]impl NexRelay_UploadNewSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,data:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,is_secret:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x224cda0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(data),(bool)::core::convert::Into::into(is_secret))}
-}
-}
-
-#[cfg(feature="app-nexrelay")]pub trait INexRelay_UploadNewSequenceMethods:INexRelay_UploadNewSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]fn ctor(self,player_name:impl::core::convert::Into< ::unity2::Il2CppString> ,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,data:impl::core::convert::Into<crate::app::relayserverdata::RelayServerData> ,is_secret:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224c870usize)as*mut u8,();
-(NexRelay_UploadNewSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(player_name),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayserverdata::RelayServerData)::core::convert::Into::into(data),(bool)::core::convert::Into::into(is_secret))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224c900usize)as*mut u8,();
-(NexRelay_UploadNewSequence)__receiver)}
-}
-#[doc="`Post()` overload"]fn post(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224c910usize)as*mut u8,();
-(NexRelay_UploadNewSequence)__receiver)}
-}
-#[doc="`ComplementMetaData()` overload"]fn complement_meta_data(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224cb30usize)as*mut u8,();
-(NexRelay_UploadNewSequence)__receiver)}
-}
-#[doc="`ConfirmRetry()` overload"]fn confirm_retry(self,)->(){unsafe{let __receiver= <NexRelay_UploadNewSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x224cd90usize)as*mut u8,();
-(NexRelay_UploadNewSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexrelay")]impl<__T:INexRelay_UploadNewSequence>INexRelay_UploadNewSequenceMethods for __T{}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_UploadNewSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn complement_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn confirm_retry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_UploadNewSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` — overload selector"]pub fn new(player_name: ::unity2::Il2CppString,meta_data:crate::app::relayservermetadata::RelayServerMetaData,data:crate::app::relayserverdata::RelayServerData,is_secret:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexRelay_UploadNewSequence), ::core::stringify!(new),));
- <Self as INexRelay_UploadNewSequenceMethods> ::ctor(this,player_name,meta_data,data,is_secret);
-this}
-}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadMetaSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_ids:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64> > ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aa560usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<u64>)::core::convert::Into::into(data_ids),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(results))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data_code:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aacb0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(data_code),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result))}
-}
-#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexrelay::NexRelay_DownloadMetaSequence)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::nexrelay::NexRelay_DownloadMetaSequence>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20aa640usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::nexrelay::NexRelay_DownloadMetaSequence)::core::convert::Into::into(p))}
-}
-}
-
-#[cfg(feature="app-nexrelay")]pub trait INexRelay_DownloadMetaSequenceMethods:INexRelay_DownloadMetaSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]fn ctor(self,data_ids:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u64> > ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> >)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9ee0usize)as*mut u8,();
-(NexRelay_DownloadMetaSequence)__receiver,(crate::system::collections::generic::list_1::List_1<u64>)::core::convert::Into::into(data_ids),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(results))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn ctor_2(self,data_code:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9f70usize)as*mut u8,();
-(NexRelay_DownloadMetaSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(data_code),(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(result))}
-}
-#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9fc0usize)as*mut u8,();
-(NexRelay_DownloadMetaSequence)__receiver)}
-}
-#[doc="`GetMetaInfo()` overload"]fn get_meta_info(self,)->(){unsafe{let __receiver= <NexRelay_DownloadMetaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20a9fd0usize)as*mut u8,();
-(NexRelay_DownloadMetaSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexrelay")]impl<__T:INexRelay_DownloadMetaSequence>INexRelay_DownloadMetaSequenceMethods for __T{}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadMetaSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_meta_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-nexrelay")]impl NexRelay_DownloadMetaSequence{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]pub fn new(data_ids:crate::system::collections::generic::list_1::List_1<u64> ,results:crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexRelay_DownloadMetaSequence), ::core::stringify!(new),));
- <Self as INexRelay_DownloadMetaSequenceMethods> ::ctor(this,data_ids,results);
-this}
-#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]pub fn new_2(data_code: ::unity2::Il2CppString,result:crate::app::relayservermetadata::RelayServerMetaData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexRelay_DownloadMetaSequence), ::core::stringify!(new_2),));
- <Self as INexRelay_DownloadMetaSequenceMethods> ::ctor_2(this,data_code,result);
-this}
-}
-
 #[cfg(feature = "app-nexrelay")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::NexRelay_SearchSequence_DataTypeInfo;
     pub use super::INexRelay_SearchSequence_DataTypeInfo;
     pub use super::INexRelay_SearchSequence_DataTypeInfoMethods;
-    pub use super::NexRelay_ServerSequenceBase_ConfirmRetryDialog;
-    pub use super::INexRelay_ServerSequenceBase_ConfirmRetryDialog;
-    pub use super::NexRelay_SearchSequence;
-    pub use super::INexRelay_SearchSequence;
-    pub use super::INexRelay_SearchSequenceMethods;
-    pub use super::NexRelay_SearchSequence_Label;
-    pub use super::NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem;
-    pub use super::INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem;
-    pub use super::INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods;
-    pub use super::NexRelay_DownloadSequence_Label;
-    pub use super::NexRelay_UploadTakeOverSequence_Label;
-    pub use super::NexRelay;
-    pub use super::INexRelay;
-    pub use super::INexRelayMethods;
+    pub use super::NexRelay_SetPlayingSequence_Label;
     pub use super::NexRelay_DownloadSequence;
     pub use super::INexRelay_DownloadSequence;
     pub use super::INexRelay_DownloadSequenceMethods;
-    pub use super::NexRelay_SetPlayingSequence;
-    pub use super::INexRelay_SetPlayingSequence;
-    pub use super::INexRelay_SetPlayingSequenceMethods;
-    pub use super::NexRelay_ServerSequenceBase;
-    pub use super::INexRelay_ServerSequenceBase;
-    pub use super::INexRelay_ServerSequenceBaseMethods;
-    pub use super::NexRelay_UploadTakeOverSequence;
-    pub use super::INexRelay_UploadTakeOverSequence;
-    pub use super::INexRelay_UploadTakeOverSequenceMethods;
-    pub use super::NexRelay_UploadNewSequence;
-    pub use super::INexRelay_UploadNewSequence;
-    pub use super::INexRelay_UploadNewSequenceMethods;
     pub use super::NexRelay_Results;
+    pub use super::NexRelay_SearchSequence;
+    pub use super::INexRelay_SearchSequence;
+    pub use super::INexRelay_SearchSequenceMethods;
     pub use super::NexRelay_DownloadMetaSequence;
     pub use super::INexRelay_DownloadMetaSequence;
     pub use super::INexRelay_DownloadMetaSequenceMethods;
-    pub use super::NexRelay_UploadNewSequence_Label;
-    pub use super::NexRelay_SetPlayingSequence_Label;
     pub use super::NexRelay_DownloadMetaSequence_Label;
+    pub use super::NexRelay_DownloadSequence_Label;
+    pub use super::NexRelay_ServerSequenceBase_ConfirmRetryDialog;
+    pub use super::INexRelay_ServerSequenceBase_ConfirmRetryDialog;
+    pub use super::NexRelay_SearchSequence_Label;
+    pub use super::NexRelay_UploadNewSequence;
+    pub use super::INexRelay_UploadNewSequence;
+    pub use super::INexRelay_UploadNewSequenceMethods;
+    pub use super::NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem;
+    pub use super::INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem;
+    pub use super::INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods;
+    pub use super::NexRelay;
+    pub use super::INexRelay;
+    pub use super::INexRelayMethods;
+    pub use super::NexRelay_SetPlayingSequence;
+    pub use super::INexRelay_SetPlayingSequence;
+    pub use super::INexRelay_SetPlayingSequenceMethods;
+    pub use super::NexRelay_UploadNewSequence_Label;
+    pub use super::NexRelay_ServerSequenceBase;
+    pub use super::INexRelay_ServerSequenceBase;
+    pub use super::INexRelay_ServerSequenceBaseMethods;
+    pub use super::NexRelay_UploadTakeOverSequence_Label;
+    pub use super::NexRelay_UploadTakeOverSequence;
+    pub use super::INexRelay_UploadTakeOverSequence;
+    pub use super::INexRelay_UploadTakeOverSequenceMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

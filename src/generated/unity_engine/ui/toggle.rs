@@ -45,33 +45,15 @@ pub fn fade()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Toggle.ToggleEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<bool>)]pub struct Toggle_ToggleEvent{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Toggle")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Toggle{#[offset(248)]#[rename(name="toggleTransition")]pub toggle_transition:crate::unity_engine::ui::toggle::Toggle_ToggleTransition, #[offset(256)]#[rename(name="graphic")]pub graphic:crate::unity_engine::ui::graphic::Graphic, #[offset(264)]#[rename(name="m_Group")]pub m_group:crate::unity_engine::ui::togglegroup::ToggleGroup, #[offset(272)]#[rename(name="onValueChanged")]pub on_value_changed:crate::unity_engine::ui::toggle::Toggle_ToggleEvent, #[offset(280)]#[rename(name="m_IsOn")]pub m_is_on:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Toggle.ToggleEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<bool>)]pub struct Toggle_ToggleEvent{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-toggle-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-ui-toggle")]pub trait IToggle_ToggleEventMethods:IToggle_ToggleEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Toggle_ToggleEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08130usize)as*mut u8,();
-(Toggle_ToggleEvent)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-ui-toggle")]impl<__T:IToggle_ToggleEvent>IToggle_ToggleEventMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-toggle")]impl Toggle_ToggleEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-ui-toggle")]impl Toggle_ToggleEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Toggle_ToggleEvent), ::core::stringify!(new),));
- <Self as IToggle_ToggleEventMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-ui-toggle")]pub trait IToggleMethods:IToggle{#[doc="`get_group()` overload"]fn get_group(self,)->crate::unity_engine::ui::togglegroup::ToggleGroup{unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07c90usize)as*mut u8,crate::unity_engine::ui::togglegroup::ToggleGroup;
@@ -191,16 +173,34 @@ pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static:
 this}
 }
 
+#[cfg(feature="unity_engine-ui-toggle")]pub trait IToggle_ToggleEventMethods:IToggle_ToggleEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Toggle_ToggleEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08130usize)as*mut u8,();
+(Toggle_ToggleEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-toggle")]impl<__T:IToggle_ToggleEvent>IToggle_ToggleEventMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-toggle")]impl Toggle_ToggleEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-toggle")]impl Toggle_ToggleEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Toggle_ToggleEvent), ::core::stringify!(new),));
+ <Self as IToggle_ToggleEventMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-ui-toggle")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Toggle_ToggleTransition;
-    pub use super::Toggle_ToggleEvent;
-    pub use super::IToggle_ToggleEvent;
-    pub use super::IToggle_ToggleEventMethods;
     pub use super::Toggle;
     pub use super::IToggle;
     pub use super::IToggleMethods;
+    pub use super::Toggle_ToggleEvent;
+    pub use super::IToggle_ToggleEvent;
+    pub use super::IToggle_ToggleEventMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -15,13 +15,13 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorymenuitem/AccessoryMenuItem_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryMenuItem.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryMenuItem_RequestCloseEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryMenuItem_SelectEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorymenuitem/AccessoryMenuItem.md"))]#[::unity2::class(namespace="App",name="AccessoryMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AccessoryMenuItem{#[offset(124)]#[rename(name="m_AlwaysActive")]pub m_always_active:bool, #[offset(128)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler, #[offset(136)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryMenuItem_SelectEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorymenuitem/AccessoryMenuItem_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryMenuItem.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryMenuItem_RequestCloseEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorymenuitem/AccessoryMenuItem_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryMenuItem.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryMenuItem_DecideEventHandler{}
@@ -31,26 +31,26 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-accessorymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-accessorymenuitem")]pub trait IAccessoryMenuItem_RequestCloseEventHandlerMethods:IAccessoryMenuItem_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryMenuItem_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2901e90usize)as*mut u8,();
-(AccessoryMenuItem_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-accessorymenuitem")]pub trait IAccessoryMenuItem_SelectEventHandlerMethods:IAccessoryMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2902100usize)as*mut u8,();
+(AccessoryMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryMenuItem_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2901eb0usize)as*mut u8,();
-(AccessoryMenuItem_RequestCloseEventHandler)__receiver)}
+#[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2902120usize)as*mut u8,();
+(AccessoryMenuItem_SelectEventHandler)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
 }
 }
 
-#[cfg(feature="app-accessorymenuitem")]impl<__T:IAccessoryMenuItem_RequestCloseEventHandler>IAccessoryMenuItem_RequestCloseEventHandlerMethods for __T{}
+#[cfg(feature="app-accessorymenuitem")]impl<__T:IAccessoryMenuItem_SelectEventHandler>IAccessoryMenuItem_SelectEventHandlerMethods for __T{}
 
-#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AccessoryMenuItem_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryMenuItem_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(AccessoryMenuItem_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -172,26 +172,26 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-accessorymenuitem")]pub trait IAccessoryMenuItem_SelectEventHandlerMethods:IAccessoryMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2902100usize)as*mut u8,();
-(AccessoryMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-accessorymenuitem")]pub trait IAccessoryMenuItem_RequestCloseEventHandlerMethods:IAccessoryMenuItem_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryMenuItem_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2901e90usize)as*mut u8,();
+(AccessoryMenuItem_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2902120usize)as*mut u8,();
-(AccessoryMenuItem_SelectEventHandler)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryMenuItem_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2901eb0usize)as*mut u8,();
+(AccessoryMenuItem_RequestCloseEventHandler)__receiver)}
 }
 }
 
-#[cfg(feature="app-accessorymenuitem")]impl<__T:IAccessoryMenuItem_SelectEventHandler>IAccessoryMenuItem_SelectEventHandlerMethods for __T{}
+#[cfg(feature="app-accessorymenuitem")]impl<__T:IAccessoryMenuItem_RequestCloseEventHandler>IAccessoryMenuItem_RequestCloseEventHandlerMethods for __T{}
 
-#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-accessorymenuitem")]impl AccessoryMenuItem_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AccessoryMenuItem_SelectEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(AccessoryMenuItem_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryMenuItem_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -221,15 +221,15 @@ this}
 #[cfg(feature = "app-accessorymenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryMenuItem_RequestCloseEventHandler;
-    pub use super::IAccessoryMenuItem_RequestCloseEventHandler;
-    pub use super::IAccessoryMenuItem_RequestCloseEventHandlerMethods;
-    pub use super::AccessoryMenuItem;
-    pub use super::IAccessoryMenuItem;
-    pub use super::IAccessoryMenuItemMethods;
     pub use super::AccessoryMenuItem_SelectEventHandler;
     pub use super::IAccessoryMenuItem_SelectEventHandler;
     pub use super::IAccessoryMenuItem_SelectEventHandlerMethods;
+    pub use super::AccessoryMenuItem;
+    pub use super::IAccessoryMenuItem;
+    pub use super::IAccessoryMenuItemMethods;
+    pub use super::AccessoryMenuItem_RequestCloseEventHandler;
+    pub use super::IAccessoryMenuItem_RequestCloseEventHandler;
+    pub use super::IAccessoryMenuItem_RequestCloseEventHandlerMethods;
     pub use super::AccessoryMenuItem_DecideEventHandler;
     pub use super::IAccessoryMenuItem_DecideEventHandler;
     pub use super::IAccessoryMenuItem_DecideEventHandlerMethods;

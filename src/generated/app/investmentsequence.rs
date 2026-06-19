@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentsequence/InvestmentSequence.md"))]#[::unity2::class(namespace="App",name="InvestmentSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::investmentsequence::InvestmentSequence>)]pub struct InvestmentSequence{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentsequence/InvestmentSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InvestmentSequence_Label2{pub value:i32,}
 impl::unity2::ClassIdentity for InvestmentSequence_Label2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="InvestmentSequence.Label2";
@@ -33,9 +36,6 @@ pub fn r#return()->Self{Self{value:1}
 pub fn end()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentsequence/InvestmentSequence.md"))]#[::unity2::class(namespace="App",name="InvestmentSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::investmentsequence::InvestmentSequence>)]pub struct InvestmentSequence{}
 
 }
 
@@ -89,10 +89,10 @@ this}
 #[cfg(feature = "app-investmentsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InvestmentSequence_Label2;
     pub use super::InvestmentSequence;
     pub use super::IInvestmentSequence;
     pub use super::IInvestmentSequenceMethods;
+    pub use super::InvestmentSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

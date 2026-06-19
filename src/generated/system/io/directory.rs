@@ -9,33 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/directory/Directory_SearchData.md"))]#[::unity2::class(namespace="System.IO",name="Directory.SearchData")]#[parent(crate::system::object::Object)]pub struct Directory_SearchData{#[offset(16)]#[rename(name="fullPath")]pub full_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="userPath")]pub user_path: ::unity2::Il2CppString, #[offset(32)]#[rename(name="searchOption")]pub search_option:crate::system::io::searchoption::SearchOption,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/directory/Directory.md"))]#[::unity2::class(namespace="System.IO",name="Directory")]#[parent(crate::system::object::Object)]pub struct Directory{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/directory/Directory_SearchData.md"))]#[::unity2::class(namespace="System.IO",name="Directory.SearchData")]#[parent(crate::system::object::Object)]pub struct Directory_SearchData{#[offset(16)]#[rename(name="fullPath")]pub full_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="userPath")]pub user_path: ::unity2::Il2CppString, #[offset(32)]#[rename(name="searchOption")]pub search_option:crate::system::io::searchoption::SearchOption,}
 
 }
 
 #[cfg(feature = "system-io-directory-types")]
 pub use __types::*;
-
-#[cfg(feature="system-io-directory")]pub trait IDirectory_SearchDataMethods:IDirectory_SearchData{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]fn ctor(self,full_path:impl::core::convert::Into< ::unity2::Il2CppString> ,user_path:impl::core::convert::Into< ::unity2::Il2CppString> ,search_option:impl::core::convert::Into<crate::system::io::searchoption::SearchOption>)->(){unsafe{let __receiver= <Directory_SearchData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4220usize)as*mut u8,();
-(Directory_SearchData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(full_path),(::unity2::Il2CppString)::core::convert::Into::into(user_path),(crate::system::io::searchoption::SearchOption)::core::convert::Into::into(search_option))}
-}
-}
-
-#[cfg(feature="system-io-directory")]impl<__T:IDirectory_SearchData>IDirectory_SearchDataMethods for __T{}
-
-#[cfg(feature="system-io-directory")]impl Directory_SearchData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="system-io-directory")]impl Directory_SearchData{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` — overload selector"]pub fn new(full_path: ::unity2::Il2CppString,user_path: ::unity2::Il2CppString,search_option:crate::system::io::searchoption::SearchOption)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Directory_SearchData), ::core::stringify!(new),));
- <Self as IDirectory_SearchDataMethods> ::ctor(this,full_path,user_path,search_option);
-this}
-}
 
 #[cfg(feature="system-io-directory")]impl Directory{#[doc="`GetFiles(::unity2::Il2CppString)` overload"]pub fn get_files(path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x363c7c0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
 (::unity2::Il2CppString)::core::convert::Into::into(path))}
@@ -117,14 +99,32 @@ pub fn insecure_get_current_directory_method_info()-> & 'static::unity2::il2cpp:
 pub fn get_demand_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
+#[cfg(feature="system-io-directory")]pub trait IDirectory_SearchDataMethods:IDirectory_SearchData{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` overload"]fn ctor(self,full_path:impl::core::convert::Into< ::unity2::Il2CppString> ,user_path:impl::core::convert::Into< ::unity2::Il2CppString> ,search_option:impl::core::convert::Into<crate::system::io::searchoption::SearchOption>)->(){unsafe{let __receiver= <Directory_SearchData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d4220usize)as*mut u8,();
+(Directory_SearchData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(full_path),(::unity2::Il2CppString)::core::convert::Into::into(user_path),(crate::system::io::searchoption::SearchOption)::core::convert::Into::into(search_option))}
+}
+}
+
+#[cfg(feature="system-io-directory")]impl<__T:IDirectory_SearchData>IDirectory_SearchDataMethods for __T{}
+
+#[cfg(feature="system-io-directory")]impl Directory_SearchData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-io-directory")]impl Directory_SearchData{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::io::searchoption::SearchOption)` — overload selector"]pub fn new(full_path: ::unity2::Il2CppString,user_path: ::unity2::Il2CppString,search_option:crate::system::io::searchoption::SearchOption)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Directory_SearchData), ::core::stringify!(new),));
+ <Self as IDirectory_SearchDataMethods> ::ctor(this,full_path,user_path,search_option);
+this}
+}
+
 #[cfg(feature = "system-io-directory")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Directory;
+    pub use super::IDirectory;
     pub use super::Directory_SearchData;
     pub use super::IDirectory_SearchData;
     pub use super::IDirectory_SearchDataMethods;
-    pub use super::Directory;
-    pub use super::IDirectory;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

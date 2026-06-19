@@ -17,53 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController.md"))]#[::unity2::class(namespace="App",name="EventCharacterLookAtController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventCharacterLookAtController{#[static_field]#[rename(name="CurrentTargetNameOfEye")]pub current_target_name_of_eye: ::unity2::Il2CppString, #[static_field]#[rename(name="CurrentTargetNameOfHead")]pub current_target_name_of_head: ::unity2::Il2CppString, #[static_field]#[rename(name="WeightMin")]pub weight_min:f32, #[offset(24)]#[rename(name="m_character")]pub m_character:crate::combat::character::Character, #[offset(32)]#[rename(name="m_characterJoint")]pub m_character_joint:crate::combat::characterjoint::CharacterJoint, #[offset(40)]#[rename(name="m_currentTargetOfEye")]pub m_current_target_of_eye:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_currentTargetOfHead")]pub m_current_target_of_head:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_currentTargetPosOfEye")]pub m_current_target_pos_of_eye:crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController_PositionFader, #[offset(64)]#[rename(name="m_currentTargetPosOfHead")]pub m_current_target_pos_of_head:crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController_PositionFader, #[offset(72)]#[rename(name="m_weightOfEye")]pub m_weight_of_eye:crate::app::weightfader::WeightFader, #[offset(80)]#[rename(name="m_weightOfHead")]pub m_weight_of_head:crate::app::weightfader::WeightFader, #[offset(88)]#[rename(name="m_ikEye")]pub m_ik_eye:crate::root_motion::final_ik::lookatik::LookAtIK, #[offset(96)]#[rename(name="m_ikHead")]pub m_ik_head:crate::root_motion::final_ik::lookatik::LookAtIK,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController_PositionFader.md"))]#[::unity2::class(namespace="App",name="EventCharacterLookAtController.PositionFader")]#[parent(crate::system::object::Object)]pub struct EventCharacterLookAtController_PositionFader{#[offset(16)]#[rename(name="m_pos")]pub m_pos:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="m_posFrom")]pub m_pos_from:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_posTo")]pub m_pos_to:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="m_time")]pub m_time:f32, #[offset(56)]#[rename(name="m_duration")]pub m_duration:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventcharacterlookatcontroller/EventCharacterLookAtController.md"))]#[::unity2::class(namespace="App",name="EventCharacterLookAtController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventCharacterLookAtController{#[static_field]#[rename(name="CurrentTargetNameOfEye")]pub current_target_name_of_eye: ::unity2::Il2CppString, #[static_field]#[rename(name="CurrentTargetNameOfHead")]pub current_target_name_of_head: ::unity2::Il2CppString, #[static_field]#[rename(name="WeightMin")]pub weight_min:f32, #[offset(24)]#[rename(name="m_character")]pub m_character:crate::combat::character::Character, #[offset(32)]#[rename(name="m_characterJoint")]pub m_character_joint:crate::combat::characterjoint::CharacterJoint, #[offset(40)]#[rename(name="m_currentTargetOfEye")]pub m_current_target_of_eye:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_currentTargetOfHead")]pub m_current_target_of_head:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_currentTargetPosOfEye")]pub m_current_target_pos_of_eye:crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController_PositionFader, #[offset(64)]#[rename(name="m_currentTargetPosOfHead")]pub m_current_target_pos_of_head:crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController_PositionFader, #[offset(72)]#[rename(name="m_weightOfEye")]pub m_weight_of_eye:crate::app::weightfader::WeightFader, #[offset(80)]#[rename(name="m_weightOfHead")]pub m_weight_of_head:crate::app::weightfader::WeightFader,}
 
 }
 
 #[cfg(feature = "app-eventcharacterlookatcontroller-types")]
 pub use __types::*;
-
-#[cfg(feature="app-eventcharacterlookatcontroller")]pub trait IEventCharacterLookAtController_PositionFaderMethods:IEventCharacterLookAtController_PositionFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55320usize)as*mut u8,();
-(EventCharacterLookAtController_PositionFader)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55360usize)as*mut u8,();
-(EventCharacterLookAtController_PositionFader)__receiver)}
-}
-#[doc="`Get()` overload"]fn get(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55380usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(EventCharacterLookAtController_PositionFader)__receiver)}
-}
-#[doc="`Set(crate::unity_engine::vector3::Vector3, f32)` overload"]fn set(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55390usize)as*mut u8,();
-(EventCharacterLookAtController_PositionFader)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(msec))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e553e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(EventCharacterLookAtController_PositionFader)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventcharacterlookatcontroller")]impl<__T:IEventCharacterLookAtController_PositionFader>IEventCharacterLookAtController_PositionFaderMethods for __T{}
-
-#[cfg(feature="app-eventcharacterlookatcontroller")]impl EventCharacterLookAtController_PositionFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-eventcharacterlookatcontroller")]impl EventCharacterLookAtController_PositionFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventCharacterLookAtController_PositionFader), ::core::stringify!(new),));
- <Self as IEventCharacterLookAtController_PositionFaderMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-eventcharacterlookatcontroller")]pub trait IEventCharacterLookAtControllerMethods:IEventCharacterLookAtController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventCharacterLookAtController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1fa0usize)as*mut u8,();
@@ -123,15 +85,53 @@ pub fn set_weight_of_head_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 this}
 }
 
+#[cfg(feature="app-eventcharacterlookatcontroller")]pub trait IEventCharacterLookAtController_PositionFaderMethods:IEventCharacterLookAtController_PositionFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55320usize)as*mut u8,();
+(EventCharacterLookAtController_PositionFader)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55360usize)as*mut u8,();
+(EventCharacterLookAtController_PositionFader)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55380usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(EventCharacterLookAtController_PositionFader)__receiver)}
+}
+#[doc="`Set(crate::unity_engine::vector3::Vector3, f32)` overload"]fn set(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e55390usize)as*mut u8,();
+(EventCharacterLookAtController_PositionFader)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(msec))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <EventCharacterLookAtController_PositionFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e553e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(EventCharacterLookAtController_PositionFader)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventcharacterlookatcontroller")]impl<__T:IEventCharacterLookAtController_PositionFader>IEventCharacterLookAtController_PositionFaderMethods for __T{}
+
+#[cfg(feature="app-eventcharacterlookatcontroller")]impl EventCharacterLookAtController_PositionFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-eventcharacterlookatcontroller")]impl EventCharacterLookAtController_PositionFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventCharacterLookAtController_PositionFader), ::core::stringify!(new),));
+ <Self as IEventCharacterLookAtController_PositionFaderMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-eventcharacterlookatcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventCharacterLookAtController_PositionFader;
-    pub use super::IEventCharacterLookAtController_PositionFader;
-    pub use super::IEventCharacterLookAtController_PositionFaderMethods;
     pub use super::EventCharacterLookAtController;
     pub use super::IEventCharacterLookAtController;
     pub use super::IEventCharacterLookAtControllerMethods;
+    pub use super::EventCharacterLookAtController_PositionFader;
+    pub use super::IEventCharacterLookAtController_PositionFader;
+    pub use super::IEventCharacterLookAtController_PositionFaderMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

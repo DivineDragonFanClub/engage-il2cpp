@@ -19,140 +19,21 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct InvestmentMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_nextText")]pub m_next_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_totalText")]pub m_total_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_levelBeforeTitle")]pub m_level_before_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_levelAfterTitle")]pub m_level_after_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_levelEffectTitle")]pub m_level_effect_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_levelBonusTitle")]pub m_level_bonus_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_battleTitle")]pub m_battle_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_resultTitle")]pub m_result_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_completeText")]pub m_complete_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_completeInfoText")]pub m_complete_info_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(312)]#[rename(name="m_nextCostRoot")]pub m_next_cost_root:crate::unity_engine::gameobject::GameObject, #[offset(320)]#[rename(name="m_maxCostRoot")]pub m_max_cost_root:crate::unity_engine::gameobject::GameObject, #[offset(328)]#[rename(name="m_useCost")]pub m_use_cost:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(336)]#[rename(name="m_useCostUnit")]pub m_use_cost_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(344)]#[rename(name="m_maxCostUnit")]pub m_max_cost_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(352)]#[rename(name="m_nextCost")]pub m_next_cost:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(360)]#[rename(name="m_nextCostUnit")]pub m_next_cost_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(368)]#[rename(name="m_bgSymbol")]pub m_bg_symbol:crate::unity_engine::ui::image::Image, #[offset(376)]#[rename(name="m_currentLevel")]pub m_current_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(384)]#[rename(name="m_nextLevel")]pub m_next_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(392)]#[rename(name="m_bonusItem")]pub m_bonus_item:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(400)]#[rename(name="m_mapRoot")]pub m_map_root:crate::unity_engine::ui::image::Image, #[offset(408)]#[rename(name="m_mapPoint")]pub m_map_point:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(416)]#[rename(name="m_mapFrm")]pub m_map_frm:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(424)]#[rename(name="m_mapBeforeTexture")]pub m_map_before_texture:crate::unity_engine::sprite::Sprite, #[offset(432)]#[rename(name="m_mapAfterTexture")]pub m_map_after_texture:crate::unity_engine::sprite::Sprite, #[offset(440)]#[rename(name="m_goldEnemyInfo")]pub m_gold_enemy_info:crate::app::investmentmenucontent::InvestmentMenuContent_BattleEnemyInfo, #[offset(448)]#[rename(name="m_expEnemyInfo")]pub m_exp_enemy_info:crate::app::investmentmenucontent::InvestmentMenuContent_BattleEnemyInfo, #[offset(456)]#[rename(name="m_dropItemInfo")]pub m_drop_item_info:crate::system::collections::generic::list_1::List_1<crate::app::investmentmenucontent::InvestmentMenuContent_DropItemInfo> , #[offset(464)]#[rename(name="m_animalInfo")]pub m_animal_info:crate::system::collections::generic::list_1::List_1<crate::app::investmentmenucontent::InvestmentMenuContent_AnimalInfo> , #[offset(472)]#[rename(name="m_lvMaxShowObject")]pub m_lv_max_show_object:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(480)]#[rename(name="m_lvMaxHideObject")]pub m_lv_max_hide_object:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(488)]#[rename(name="m_lvMaxBgTexture")]pub m_lv_max_bg_texture:crate::unity_engine::sprite::Sprite, #[offset(496)]#[rename(name="m_normalBgTexture")]pub m_normal_bg_texture:crate::unity_engine::sprite::Sprite, #[offset(504)]#[rename(name="m_textureChangeImage")]pub m_texture_change_image:crate::unity_engine::ui::image::Image, #[offset(512)]#[rename(name="m_dispTotalCost")]pub m_disp_total_cost:i32, #[offset(520)]#[rename(name="m_dispNationData")]pub m_disp_nation_data:crate::app::hubnationdata::HubNationData,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_BattleEnemyInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.BattleEnemyInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_BattleEnemyInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_current")]pub m_current:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_next")]pub m_next:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_nextPercent")]pub m_next_percent:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_DropItemInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.DropItemInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_DropItemInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_current")]pub m_current:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_nextCode")]pub m_next_code:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_next")]pub m_next:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_AnimalInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.AnimalInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_AnimalInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct InvestmentMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_nextText")]pub m_next_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_totalText")]pub m_total_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_levelBeforeTitle")]pub m_level_before_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_levelAfterTitle")]pub m_level_after_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_levelEffectTitle")]pub m_level_effect_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_levelBonusTitle")]pub m_level_bonus_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_battleTitle")]pub m_battle_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_resultTitle")]pub m_result_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_completeText")]pub m_complete_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_completeInfoText")]pub m_complete_info_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(312)]#[rename(name="m_nextCostRoot")]pub m_next_cost_root:crate::unity_engine::gameobject::GameObject, #[offset(320)]#[rename(name="m_maxCostRoot")]pub m_max_cost_root:crate::unity_engine::gameobject::GameObject, #[offset(328)]#[rename(name="m_useCost")]pub m_use_cost:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(336)]#[rename(name="m_useCostUnit")]pub m_use_cost_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(344)]#[rename(name="m_maxCostUnit")]pub m_max_cost_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(352)]#[rename(name="m_nextCost")]pub m_next_cost:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(360)]#[rename(name="m_nextCostUnit")]pub m_next_cost_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(368)]#[rename(name="m_bgSymbol")]pub m_bg_symbol:crate::unity_engine::ui::image::Image, #[offset(376)]#[rename(name="m_currentLevel")]pub m_current_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(384)]#[rename(name="m_nextLevel")]pub m_next_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(392)]#[rename(name="m_bonusItem")]pub m_bonus_item:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(400)]#[rename(name="m_mapRoot")]pub m_map_root:crate::unity_engine::ui::image::Image, #[offset(408)]#[rename(name="m_mapPoint")]pub m_map_point:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(416)]#[rename(name="m_mapFrm")]pub m_map_frm:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(424)]#[rename(name="m_mapBeforeTexture")]pub m_map_before_texture:crate::unity_engine::sprite::Sprite, #[offset(432)]#[rename(name="m_mapAfterTexture")]pub m_map_after_texture:crate::unity_engine::sprite::Sprite, #[offset(440)]#[rename(name="m_goldEnemyInfo")]pub m_gold_enemy_info:crate::app::investmentmenucontent::InvestmentMenuContent_BattleEnemyInfo, #[offset(448)]#[rename(name="m_expEnemyInfo")]pub m_exp_enemy_info:crate::app::investmentmenucontent::InvestmentMenuContent_BattleEnemyInfo, #[offset(456)]#[rename(name="m_dropItemInfo")]pub m_drop_item_info:crate::system::collections::generic::list_1::List_1<crate::app::investmentmenucontent::InvestmentMenuContent_DropItemInfo> , #[offset(464)]#[rename(name="m_animalInfo")]pub m_animal_info:crate::system::collections::generic::list_1::List_1<crate::app::investmentmenucontent::InvestmentMenuContent_AnimalInfo> , #[offset(472)]#[rename(name="m_lvMaxShowObject")]pub m_lv_max_show_object:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(480)]#[rename(name="m_lvMaxHideObject")]pub m_lv_max_hide_object:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(488)]#[rename(name="m_lvMaxBgTexture")]pub m_lv_max_bg_texture:crate::unity_engine::sprite::Sprite, #[offset(496)]#[rename(name="m_normalBgTexture")]pub m_normal_bg_texture:crate::unity_engine::sprite::Sprite, #[offset(504)]#[rename(name="m_textureChangeImage")]pub m_texture_change_image:crate::unity_engine::ui::image::Image, #[offset(512)]#[rename(name="m_dispTotalCost")]pub m_disp_total_cost:i32, #[offset(520)]#[rename(name="m_dispNationData")]pub m_disp_nation_data:crate::app::hubnationdata::HubNationData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_DropItemInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.DropItemInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_DropItemInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_current")]pub m_current:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_nextCode")]pub m_next_code:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_next")]pub m_next:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-investmentmenucontent-types")]
 pub use __types::*;
-
-#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_BattleEnemyInfoMethods:IInvestmentMenuContent_BattleEnemyInfo{#[doc="`SetTitle(::unity2::Il2CppString)` overload"]fn set_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd670usize)as*mut u8,();
-(InvestmentMenuContent_BattleEnemyInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
-}
-#[doc="`SetValue(i32, i32)` overload"]fn set_value(self,current:impl::core::convert::Into<i32> ,next:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd6f0usize)as*mut u8,();
-(InvestmentMenuContent_BattleEnemyInfo)__receiver,(i32)::core::convert::Into::into(current),(i32)::core::convert::Into::into(next))}
-}
-#[doc="`SetValueMax(i32)` overload"]fn set_value_max(self,current:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd8f0usize)as*mut u8,();
-(InvestmentMenuContent_BattleEnemyInfo)__receiver,(i32)::core::convert::Into::into(current))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd980usize)as*mut u8,();
-(InvestmentMenuContent_BattleEnemyInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_BattleEnemyInfo>IInvestmentMenuContent_BattleEnemyInfoMethods for __T{}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_BattleEnemyInfo{pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_value_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_BattleEnemyInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InvestmentMenuContent_BattleEnemyInfo), ::core::stringify!(new),));
- <Self as IInvestmentMenuContent_BattleEnemyInfoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_DropItemInfoMethods:IInvestmentMenuContent_DropItemInfo{#[doc="`SetupObj()` overload"]fn setup_obj(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd990usize)as*mut u8,();
-(InvestmentMenuContent_DropItemInfo)__receiver)}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdbc0usize)as*mut u8,();
-(InvestmentMenuContent_DropItemInfo)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdc40usize)as*mut u8,();
-(InvestmentMenuContent_DropItemInfo)__receiver)}
-}
-#[doc="`SetTitle(::unity2::Il2CppString)` overload"]fn set_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdcc0usize)as*mut u8,();
-(InvestmentMenuContent_DropItemInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
-}
-#[doc="`SetValue(i32, i32)` overload"]fn set_value(self,current:impl::core::convert::Into<i32> ,next:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdd40usize)as*mut u8,();
-(InvestmentMenuContent_DropItemInfo)__receiver,(i32)::core::convert::Into::into(current),(i32)::core::convert::Into::into(next))}
-}
-#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdf10usize)as*mut u8,();
-(InvestmentMenuContent_DropItemInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdff0usize)as*mut u8,();
-(InvestmentMenuContent_DropItemInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_DropItemInfo>IInvestmentMenuContent_DropItemInfoMethods for __T{}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_DropItemInfo{pub fn setup_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_DropItemInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InvestmentMenuContent_DropItemInfo), ::core::stringify!(new),));
- <Self as IInvestmentMenuContent_DropItemInfoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_AnimalInfoMethods:IInvestmentMenuContent_AnimalInfo{#[doc="`SetupObj()` overload"]fn setup_obj(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd1d0usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver)}
-}
-#[doc="`Set(::unity2::Il2CppString)` overload"]fn set(self,animal_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd380usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(animal_id))}
-}
-#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd580usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd500usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd660usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_AnimalInfo>IInvestmentMenuContent_AnimalInfoMethods for __T{}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{pub fn setup_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InvestmentMenuContent_AnimalInfo), ::core::stringify!(new),));
- <Self as IInvestmentMenuContent_AnimalInfoMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27a27f0usize)as*mut u8,();
 )}
@@ -244,21 +125,140 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_BattleEnemyInfoMethods:IInvestmentMenuContent_BattleEnemyInfo{#[doc="`SetTitle(::unity2::Il2CppString)` overload"]fn set_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd670usize)as*mut u8,();
+(InvestmentMenuContent_BattleEnemyInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+#[doc="`SetValue(i32, i32)` overload"]fn set_value(self,current:impl::core::convert::Into<i32> ,next:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd6f0usize)as*mut u8,();
+(InvestmentMenuContent_BattleEnemyInfo)__receiver,(i32)::core::convert::Into::into(current),(i32)::core::convert::Into::into(next))}
+}
+#[doc="`SetValueMax(i32)` overload"]fn set_value_max(self,current:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd8f0usize)as*mut u8,();
+(InvestmentMenuContent_BattleEnemyInfo)__receiver,(i32)::core::convert::Into::into(current))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_BattleEnemyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd980usize)as*mut u8,();
+(InvestmentMenuContent_BattleEnemyInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_BattleEnemyInfo>IInvestmentMenuContent_BattleEnemyInfoMethods for __T{}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_BattleEnemyInfo{pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_value_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_BattleEnemyInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenuContent_BattleEnemyInfo), ::core::stringify!(new),));
+ <Self as IInvestmentMenuContent_BattleEnemyInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_AnimalInfoMethods:IInvestmentMenuContent_AnimalInfo{#[doc="`SetupObj()` overload"]fn setup_obj(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd1d0usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver)}
+}
+#[doc="`Set(::unity2::Il2CppString)` overload"]fn set(self,animal_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd380usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(animal_id))}
+}
+#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd580usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd500usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd660usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_AnimalInfo>IInvestmentMenuContent_AnimalInfoMethods for __T{}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{pub fn setup_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenuContent_AnimalInfo), ::core::stringify!(new),));
+ <Self as IInvestmentMenuContent_AnimalInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_DropItemInfoMethods:IInvestmentMenuContent_DropItemInfo{#[doc="`SetupObj()` overload"]fn setup_obj(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd990usize)as*mut u8,();
+(InvestmentMenuContent_DropItemInfo)__receiver)}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdbc0usize)as*mut u8,();
+(InvestmentMenuContent_DropItemInfo)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdc40usize)as*mut u8,();
+(InvestmentMenuContent_DropItemInfo)__receiver)}
+}
+#[doc="`SetTitle(::unity2::Il2CppString)` overload"]fn set_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdcc0usize)as*mut u8,();
+(InvestmentMenuContent_DropItemInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+#[doc="`SetValue(i32, i32)` overload"]fn set_value(self,current:impl::core::convert::Into<i32> ,next:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdd40usize)as*mut u8,();
+(InvestmentMenuContent_DropItemInfo)__receiver,(i32)::core::convert::Into::into(current),(i32)::core::convert::Into::into(next))}
+}
+#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdf10usize)as*mut u8,();
+(InvestmentMenuContent_DropItemInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcdff0usize)as*mut u8,();
+(InvestmentMenuContent_DropItemInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_DropItemInfo>IInvestmentMenuContent_DropItemInfoMethods for __T{}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_DropItemInfo{pub fn setup_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_DropItemInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenuContent_DropItemInfo), ::core::stringify!(new),));
+ <Self as IInvestmentMenuContent_DropItemInfoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-investmentmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InvestmentMenuContent_BattleEnemyInfo;
-    pub use super::IInvestmentMenuContent_BattleEnemyInfo;
-    pub use super::IInvestmentMenuContent_BattleEnemyInfoMethods;
-    pub use super::InvestmentMenuContent_DropItemInfo;
-    pub use super::IInvestmentMenuContent_DropItemInfo;
-    pub use super::IInvestmentMenuContent_DropItemInfoMethods;
-    pub use super::InvestmentMenuContent_AnimalInfo;
-    pub use super::IInvestmentMenuContent_AnimalInfo;
-    pub use super::IInvestmentMenuContent_AnimalInfoMethods;
     pub use super::InvestmentMenuContent;
     pub use super::IInvestmentMenuContent;
     pub use super::IInvestmentMenuContentMethods;
+    pub use super::InvestmentMenuContent_BattleEnemyInfo;
+    pub use super::IInvestmentMenuContent_BattleEnemyInfo;
+    pub use super::IInvestmentMenuContent_BattleEnemyInfoMethods;
+    pub use super::InvestmentMenuContent_AnimalInfo;
+    pub use super::IInvestmentMenuContent_AnimalInfo;
+    pub use super::IInvestmentMenuContent_AnimalInfoMethods;
+    pub use super::InvestmentMenuContent_DropItemInfo;
+    pub use super::IInvestmentMenuContent_DropItemInfo;
+    pub use super::IInvestmentMenuContent_DropItemInfoMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

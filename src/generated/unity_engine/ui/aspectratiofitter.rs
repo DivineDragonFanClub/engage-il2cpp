@@ -23,9 +23,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="AspectRatioFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct AspectRatioFitter{#[offset(24)]#[rename(name="m_AspectMode")]pub m_aspect_mode:crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode, #[offset(28)]#[rename(name="m_AspectRatio")]pub m_aspect_ratio:f32, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_DelayedSetDirty")]pub m_delayed_set_dirty:bool, #[offset(41)]#[rename(name="m_DoesParentExist")]pub m_does_parent_exist:bool, #[offset(42)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AspectRatioFitter_AspectMode{pub value:i32,}
 impl::unity2::ClassIdentity for AspectRatioFitter_AspectMode{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="AspectRatioFitter.AspectMode";
@@ -46,6 +43,9 @@ pub fn fit_in_parent()->Self{Self{value:3}
 pub fn envelope_parent()->Self{Self{value:4}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="AspectRatioFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct AspectRatioFitter{#[offset(24)]#[rename(name="m_AspectMode")]pub m_aspect_mode:crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode, #[offset(28)]#[rename(name="m_AspectRatio")]pub m_aspect_ratio:f32, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_DelayedSetDirty")]pub m_delayed_set_dirty:bool, #[offset(41)]#[rename(name="m_DoesParentExist")]pub m_does_parent_exist:bool, #[offset(42)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
 
 }
 
@@ -173,10 +173,10 @@ this}
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AspectRatioFitter_AspectMode;
     pub use super::AspectRatioFitter;
     pub use super::IAspectRatioFitter;
     pub use super::IAspectRatioFitterMethods;
-    pub use super::AspectRatioFitter_AspectMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -23,21 +23,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetDecideMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{#[offset(100)]#[rename(name="m_Enabled")]pub m_enabled:bool, #[offset(101)]#[rename(name="m_Usabled")]pub m_usabled:bool, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefreshUnitSetDecideMenu{#[offset(200)]#[rename(name="m_KeyUpEventHandler")]pub m_key_up_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, #[offset(208)]#[rename(name="m_KeyDownEventHandler")]pub m_key_down_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, #[offset(216)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler, #[offset(224)]#[rename(name="m_Closed")]pub m_closed:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.KeyDownEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.KeyUpEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefreshUnitSetDecideMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for RefreshUnitSetDecideMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RefreshUnitSetDecideMenu.Result2";
@@ -53,99 +38,46 @@ pub fn cancel()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.KeyUpEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefreshUnitSetDecideMenu{#[offset(200)]#[rename(name="m_KeyUpEventHandler")]pub m_key_up_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyUpEventHandler, #[offset(208)]#[rename(name="m_KeyDownEventHandler")]pub m_key_down_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_KeyDownEventHandler, #[offset(216)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler, #[offset(224)]#[rename(name="m_Closed")]pub m_closed:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetDecideMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.RefreshUnitSetDecideMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{#[offset(100)]#[rename(name="m_Enabled")]pub m_enabled:bool, #[offset(101)]#[rename(name="m_Usabled")]pub m_usabled:bool, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetDecideMenu.KeyDownEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler{}
+
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-refreshunitsetdecidemenu")]pub trait IRefreshUnitSetDecideMenu_DecideEventHandlerMethods:IRefreshUnitSetDecideMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02000usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-refreshunitsetdecidemenu")]pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods:IRefreshUnitSetDecideMenu_KeyUpEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_KeyUpEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02590usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_KeyUpEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02020usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_DecideEventHandler)__receiver,(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)::core::convert::Into::into(result))}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_KeyUpEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b025b0usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_KeyUpEventHandler)__receiver)}
 }
 }
 
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl<__T:IRefreshUnitSetDecideMenu_DecideEventHandler>IRefreshUnitSetDecideMenu_DecideEventHandlerMethods for __T{}
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl<__T:IRefreshUnitSetDecideMenu_KeyUpEventHandler>IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods for __T{}
 
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_KeyUpEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_KeyUpEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RefreshUnitSetDecideMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-refreshunitsetdecidemenu")]pub trait IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods:IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{#[doc="`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"]fn ctor(self,enabled:impl::core::convert::Into<bool> ,usabled:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02800usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver,(bool)::core::convert::Into::into(enabled),(bool)::core::convert::Into::into(usabled),(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02860usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02870usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02880usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02980usize)as*mut u8, ::unity2::Il2CppString;
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b029d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`UpdateEnabled(bool, bool)` overload"]fn update_enabled(self,enabled:impl::core::convert::Into<bool> ,usabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b029f0usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver,(bool)::core::convert::Into::into(enabled),(bool)::core::convert::Into::into(usabled))}
-}
-#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02ae0usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02b70usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02c20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02d00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl<__T:IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem>IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods for __T{}
-
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn update_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{#[doc="`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` — overload selector"]pub fn new(enabled:bool,usabled:bool,decide_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem), ::core::stringify!(new),));
- <Self as IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods> ::ctor(this,enabled,usabled,decide_event_handler);
+ failed to instantiate", ::core::stringify!(RefreshUnitSetDecideMenu_KeyUpEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -242,6 +174,97 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-refreshunitsetdecidemenu")]pub trait IRefreshUnitSetDecideMenu_DecideEventHandlerMethods:IRefreshUnitSetDecideMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02000usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02020usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_DecideEventHandler)__receiver,(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl<__T:IRefreshUnitSetDecideMenu_DecideEventHandler>IRefreshUnitSetDecideMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSetDecideMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-refreshunitsetdecidemenu")]pub trait IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods:IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{#[doc="`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` overload"]fn ctor(self,enabled:impl::core::convert::Into<bool> ,usabled:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02800usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver,(bool)::core::convert::Into::into(enabled),(bool)::core::convert::Into::into(usabled),(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02860usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02870usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02880usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02980usize)as*mut u8, ::unity2::Il2CppString;
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b029d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`UpdateEnabled(bool, bool)` overload"]fn update_enabled(self,enabled:impl::core::convert::Into<bool> ,usabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b029f0usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver,(bool)::core::convert::Into::into(enabled),(bool)::core::convert::Into::into(usabled))}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02ae0usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02b70usize)as*mut u8,();
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02c20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02d00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl<__T:IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem>IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods for __T{}
+
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem{#[doc="`.ctor(bool, bool, crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)` — overload selector"]pub fn new(enabled:bool,usabled:bool,decide_event_handler:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem), ::core::stringify!(new),));
+ <Self as IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods> ::ctor(this,enabled,usabled,decide_event_handler);
+this}
+}
+
 #[cfg(feature="app-refreshunitsetdecidemenu")]pub trait IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods:IRefreshUnitSetDecideMenu_KeyDownEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_KeyDownEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02320usize)as*mut u8,();
 (RefreshUnitSetDecideMenu_KeyDownEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -265,48 +288,25 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-refreshunitsetdecidemenu")]pub trait IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods:IRefreshUnitSetDecideMenu_KeyUpEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_KeyUpEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02590usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_KeyUpEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefreshUnitSetDecideMenu_KeyUpEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b025b0usize)as*mut u8,();
-(RefreshUnitSetDecideMenu_KeyUpEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl<__T:IRefreshUnitSetDecideMenu_KeyUpEventHandler>IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods for __T{}
-
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_KeyUpEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refreshunitsetdecidemenu")]impl RefreshUnitSetDecideMenu_KeyUpEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefreshUnitSetDecideMenu_KeyUpEventHandler), ::core::stringify!(new),));
- <Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RefreshUnitSetDecideMenu_Result2;
+    pub use super::RefreshUnitSetDecideMenu_KeyUpEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_KeyUpEventHandler;
+    pub use super::IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods;
+    pub use super::RefreshUnitSetDecideMenu;
+    pub use super::IRefreshUnitSetDecideMenu;
+    pub use super::IRefreshUnitSetDecideMenuMethods;
     pub use super::RefreshUnitSetDecideMenu_DecideEventHandler;
     pub use super::IRefreshUnitSetDecideMenu_DecideEventHandler;
     pub use super::IRefreshUnitSetDecideMenu_DecideEventHandlerMethods;
     pub use super::RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem;
     pub use super::IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem;
     pub use super::IRefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItemMethods;
-    pub use super::RefreshUnitSetDecideMenu;
-    pub use super::IRefreshUnitSetDecideMenu;
-    pub use super::IRefreshUnitSetDecideMenuMethods;
     pub use super::RefreshUnitSetDecideMenu_KeyDownEventHandler;
     pub use super::IRefreshUnitSetDecideMenu_KeyDownEventHandler;
     pub use super::IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods;
-    pub use super::RefreshUnitSetDecideMenu_KeyUpEventHandler;
-    pub use super::IRefreshUnitSetDecideMenu_KeyUpEventHandler;
-    pub use super::IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods;
-    pub use super::RefreshUnitSetDecideMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

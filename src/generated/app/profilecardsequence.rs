@@ -19,6 +19,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardsequence/ProfileCardSequence.md"))]#[::unity2::class(namespace="App",name="ProfileCardSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardSequence{#[offset(112)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::profilecardtopmenu::ProfileCardTopMenu_Result2, #[offset(116)]#[rename(name="m_MyCardMenuResult")]pub m_my_card_menu_result:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2, #[offset(120)]#[rename(name="m_SelectEditMenuResult")]pub m_select_edit_menu_result:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2, #[offset(124)]#[rename(name="m_CommentIndexMenuResult")]pub m_comment_index_menu_result:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2, #[offset(128)]#[rename(name="m_AlbumMenuResult")]pub m_album_menu_result:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2, #[offset(132)]#[rename(name="m_AlbumListMenuResult")]pub m_album_list_menu_result:crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2, #[offset(136)]#[rename(name="m_ProfileCardMyCardRoot")]pub m_profile_card_my_card_root:crate::app::profilecardmycardroot::ProfileCardMyCardRoot, #[offset(144)]#[rename(name="m_ProfileCardAlbumRoot")]pub m_profile_card_album_root:crate::app::profilecardalbumroot::ProfileCardAlbumRoot, #[offset(152)]#[rename(name="m_ProfileCardTemp")]pub m_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(160)]#[rename(name="m_AlbumIndex")]pub m_album_index:i32, #[offset(164)]#[rename(name="m_EnabledPhoto")]pub m_enabled_photo:bool, #[offset(168)]#[rename(name="m_CommentIndex")]pub m_comment_index:i32, #[offset(184)]#[rename(name="m_CommentTempArray")]pub m_comment_temp_array: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData> , #[offset(192)]#[rename(name="m_NeededUpdateCardOnBuild")]pub m_needed_update_card_on_build:bool, #[offset(200)]#[rename(name="m_BgData")]pub m_bg_data:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(208)]#[rename(name="m_FrameData")]pub m_frame_data:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(216)]#[rename(name="m_LoadingBgData")]pub m_loading_bg_data:bool, #[offset(217)]#[rename(name="m_LoadingFrameData")]pub m_loading_frame_data:bool, #[offset(224)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardsequence::ProfileCardSequence_DisposeEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardSequence.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardSequence_DisposeEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardsequence/ProfileCardSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardSequence.Label";
@@ -82,39 +88,10 @@ pub fn end()->Self{Self{value:25}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardsequence/ProfileCardSequence_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardSequence.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardSequence_DisposeEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardsequence/ProfileCardSequence.md"))]#[::unity2::class(namespace="App",name="ProfileCardSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardSequence{#[offset(112)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::profilecardtopmenu::ProfileCardTopMenu_Result2, #[offset(116)]#[rename(name="m_MyCardMenuResult")]pub m_my_card_menu_result:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2, #[offset(120)]#[rename(name="m_SelectEditMenuResult")]pub m_select_edit_menu_result:crate::app::profilecardselecteditmenu::ProfileCardSelectEditMenu_Result2, #[offset(124)]#[rename(name="m_CommentIndexMenuResult")]pub m_comment_index_menu_result:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2, #[offset(128)]#[rename(name="m_AlbumMenuResult")]pub m_album_menu_result:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2, #[offset(132)]#[rename(name="m_AlbumListMenuResult")]pub m_album_list_menu_result:crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_Result2, #[offset(136)]#[rename(name="m_ProfileCardMyCardRoot")]pub m_profile_card_my_card_root:crate::app::profilecardmycardroot::ProfileCardMyCardRoot, #[offset(144)]#[rename(name="m_ProfileCardAlbumRoot")]pub m_profile_card_album_root:crate::app::profilecardalbumroot::ProfileCardAlbumRoot, #[offset(152)]#[rename(name="m_ProfileCardTemp")]pub m_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(160)]#[rename(name="m_AlbumIndex")]pub m_album_index:i32, #[offset(164)]#[rename(name="m_EnabledPhoto")]pub m_enabled_photo:bool, #[offset(168)]#[rename(name="m_CommentIndex")]pub m_comment_index:i32, #[offset(184)]#[rename(name="m_CommentTempArray")]pub m_comment_temp_array: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData> , #[offset(192)]#[rename(name="m_NeededUpdateCardOnBuild")]pub m_needed_update_card_on_build:bool, #[offset(200)]#[rename(name="m_BgData")]pub m_bg_data:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(208)]#[rename(name="m_FrameData")]pub m_frame_data:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(216)]#[rename(name="m_LoadingBgData")]pub m_loading_bg_data:bool, #[offset(217)]#[rename(name="m_LoadingFrameData")]pub m_loading_frame_data:bool, #[offset(224)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardsequence::ProfileCardSequence_DisposeEventHandler,}
-
 }
 
 #[cfg(feature = "app-profilecardsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardsequence")]pub trait IProfileCardSequence_DisposeEventHandlerMethods:IProfileCardSequence_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardSequence_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226b780usize)as*mut u8,();
-(ProfileCardSequence_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardSequence_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226b7a0usize)as*mut u8,();
-(ProfileCardSequence_DisposeEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardsequence")]impl<__T:IProfileCardSequence_DisposeEventHandler>IProfileCardSequence_DisposeEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardsequence")]impl ProfileCardSequence_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardsequence")]impl ProfileCardSequence_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardSequence_DisposeEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardSequence_DisposeEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-profilecardsequence")]impl ProfileCardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool, crate::app::profilecardsequence::ProfileCardSequence_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,enabled_photo:impl::core::convert::Into<bool> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardsequence::ProfileCardSequence_DisposeEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2324040usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(enabled_photo),(crate::app::profilecardsequence::ProfileCardSequence_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
@@ -425,16 +402,39 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-profilecardsequence")]pub trait IProfileCardSequence_DisposeEventHandlerMethods:IProfileCardSequence_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardSequence_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226b780usize)as*mut u8,();
+(ProfileCardSequence_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardSequence_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226b7a0usize)as*mut u8,();
+(ProfileCardSequence_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardsequence")]impl<__T:IProfileCardSequence_DisposeEventHandler>IProfileCardSequence_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardsequence")]impl ProfileCardSequence_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardsequence")]impl ProfileCardSequence_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardSequence_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardSequence_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-profilecardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardSequence_Label;
-    pub use super::ProfileCardSequence_DisposeEventHandler;
-    pub use super::IProfileCardSequence_DisposeEventHandler;
-    pub use super::IProfileCardSequence_DisposeEventHandlerMethods;
     pub use super::ProfileCardSequence;
     pub use super::IProfileCardSequence;
     pub use super::IProfileCardSequenceMethods;
+    pub use super::ProfileCardSequence_DisposeEventHandler;
+    pub use super::IProfileCardSequence_DisposeEventHandler;
+    pub use super::IProfileCardSequence_DisposeEventHandlerMethods;
+    pub use super::ProfileCardSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

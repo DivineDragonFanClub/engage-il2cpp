@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitentrust/UnitEntrust.md"))]#[::unity2::class(namespace="App",name="UnitEntrust")]#[parent(crate::system::object::Object)]pub struct UnitEntrust{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitentrust/UnitEntrust_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitEntrust_Type{pub value:i32,}
 impl::unity2::ClassIdentity for UnitEntrust_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitEntrust.Type";
@@ -43,6 +40,9 @@ pub fn num()->Self{Self{value:7}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitentrust/UnitEntrust.md"))]#[::unity2::class(namespace="App",name="UnitEntrust")]#[parent(crate::system::object::Object)]pub struct UnitEntrust{}
+
 }
 
 #[cfg(feature = "app-unitentrust-types")]
@@ -69,10 +69,10 @@ this}
 #[cfg(feature = "app-unitentrust")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitEntrust_Type;
     pub use super::UnitEntrust;
     pub use super::IUnitEntrust;
     pub use super::IUnitEntrustMethods;
-    pub use super::UnitEntrust_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

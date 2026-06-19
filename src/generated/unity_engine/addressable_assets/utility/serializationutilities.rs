@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Utility",name="SerializationUtilities")]#[parent(crate::system::object::Object)]pub struct SerializationUtilities{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities_ObjectType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SerializationUtilities_ObjectType{pub value:i32,}
 impl::unity2::ClassIdentity for SerializationUtilities_ObjectType{const NAMESPACE: &'static str="UnityEngine.AddressableAssets.Utility";
 const NAME: &'static str="SerializationUtilities.ObjectType";
@@ -42,6 +39,9 @@ pub fn r#type()->Self{Self{value:6}
 pub fn json_object()->Self{Self{value:7}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Utility",name="SerializationUtilities")]#[parent(crate::system::object::Object)]pub struct SerializationUtilities{}
 
 }
 
@@ -71,9 +71,9 @@ pub fn write_object_to_byte_list_method_info()-> & 'static::unity2::il2cpp::Meth
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SerializationUtilities_ObjectType;
     pub use super::SerializationUtilities;
     pub use super::ISerializationUtilities;
-    pub use super::SerializationUtilities_ObjectType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -9,13 +9,13 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/kaneko/Kaneko_DummyDisposable.md"))]#[::unity2::class(namespace="Combat",name="Kaneko.DummyDisposable")]#[parent(crate::system::object::Object)]pub struct Kaneko_DummyDisposable{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/kaneko/Kaneko.md"))]#[::unity2::class(namespace="Combat",name="Kaneko")]#[parent(crate::system::object::Object)]pub struct Kaneko{#[static_field]#[rename(name="Epsilon")]pub epsilon:f32, #[static_field]#[rename(name="s_DummyDisposable")]pub s_dummy_disposable:crate::combat::kaneko::Kaneko_DummyDisposable,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/kaneko/Kaneko_GUIFitScope.md"))]#[::unity2::class(namespace="Combat",name="Kaneko.GUIFitScope")]#[parent(crate::system::object::Object)]pub struct Kaneko_GUIFitScope{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/kaneko/Kaneko_DummyDisposable.md"))]#[::unity2::class(namespace="Combat",name="Kaneko.DummyDisposable")]#[parent(crate::system::object::Object)]pub struct Kaneko_DummyDisposable{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/kaneko/Kaneko_Screen.md"))]#[::unity2::class(namespace="Combat",name="Kaneko.Screen")]#[parent(crate::system::object::Object)]pub struct Kaneko_Screen{#[static_field]#[rename(name="width")]pub width:f32, #[static_field]#[rename(name="height")]pub height:f32,}
@@ -24,29 +24,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "combat-kaneko-types")]
 pub use __types::*;
-
-#[cfg(feature="combat-kaneko")]pub trait IKaneko_DummyDisposableMethods:IKaneko_DummyDisposable{#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Kaneko_DummyDisposable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd31c0usize)as*mut u8,();
-(Kaneko_DummyDisposable)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Kaneko_DummyDisposable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd31d0usize)as*mut u8,();
-(Kaneko_DummyDisposable)__receiver)}
-}
-}
-
-#[cfg(feature="combat-kaneko")]impl<__T:IKaneko_DummyDisposable>IKaneko_DummyDisposableMethods for __T{}
-
-#[cfg(feature="combat-kaneko")]impl Kaneko_DummyDisposable{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="combat-kaneko")]impl Kaneko_DummyDisposable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Kaneko_DummyDisposable), ::core::stringify!(new),));
- <Self as IKaneko_DummyDisposableMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="combat-kaneko")]impl Kaneko{#[doc="`FindInChildren(crate::unity_engine::transform::Transform, ::unity2::Il2CppString)` overload"]pub fn find_in_children(self_:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x205b910usize)as*mut u8,crate::unity_engine::transform::Transform;
 (crate::unity_engine::transform::Transform)::core::convert::Into::into(self_),(::unity2::Il2CppString)::core::convert::Into::into(name))}
@@ -454,6 +431,29 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
+#[cfg(feature="combat-kaneko")]pub trait IKaneko_DummyDisposableMethods:IKaneko_DummyDisposable{#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Kaneko_DummyDisposable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd31c0usize)as*mut u8,();
+(Kaneko_DummyDisposable)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Kaneko_DummyDisposable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd31d0usize)as*mut u8,();
+(Kaneko_DummyDisposable)__receiver)}
+}
+}
+
+#[cfg(feature="combat-kaneko")]impl<__T:IKaneko_DummyDisposable>IKaneko_DummyDisposableMethods for __T{}
+
+#[cfg(feature="combat-kaneko")]impl Kaneko_DummyDisposable{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="combat-kaneko")]impl Kaneko_DummyDisposable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Kaneko_DummyDisposable), ::core::stringify!(new),));
+ <Self as IKaneko_DummyDisposableMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="combat-kaneko")]impl Kaneko_Screen{#[doc="`get_WH()` overload"]pub fn get_wh()->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd32d0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
 )}
 }
@@ -465,14 +465,14 @@ this}
 #[cfg(feature = "combat-kaneko")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Kaneko_DummyDisposable;
-    pub use super::IKaneko_DummyDisposable;
-    pub use super::IKaneko_DummyDisposableMethods;
     pub use super::Kaneko;
     pub use super::IKaneko;
     pub use super::Kaneko_GUIFitScope;
     pub use super::IKaneko_GUIFitScope;
     pub use super::IKaneko_GUIFitScopeMethods;
+    pub use super::Kaneko_DummyDisposable;
+    pub use super::IKaneko_DummyDisposable;
+    pub use super::IKaneko_DummyDisposableMethods;
     pub use super::Kaneko_Screen;
     pub use super::IKaneko_Screen;
     pub use crate::system::object::IObject;

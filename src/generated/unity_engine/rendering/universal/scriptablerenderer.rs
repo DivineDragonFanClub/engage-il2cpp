@@ -11,30 +11,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ScriptableRenderer_RenderBlocks_BlockRange{pub m_current:i32,pub m_end:i32,}
-impl::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks_BlockRange{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
-const NAME: &'static str="ScriptableRenderer.RenderBlocks.BlockRange";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ScriptableRenderer_RenderBlocks_BlockRange{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.Profiling.RenderPass")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_Profiling_RenderPass{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="configure")]pub configure:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.Profiling")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_Profiling{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="setPerCameraShaderVariables")]pub set_per_camera_shader_variables:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="sortRenderPasses")]pub sort_render_passes:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="setupLights")]pub setup_lights:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="setupCamera")]pub setup_camera:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="addRenderPasses")]pub add_render_passes:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="clearRenderingState")]pub clear_rendering_state:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="internalStartRendering")]pub internal_start_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="internalFinishRendering")]pub internal_finish_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.RenderPassBlock")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_RenderPassBlock{#[static_field]#[rename(name="BeforeRendering")]pub before_rendering:i32, #[static_field]#[rename(name="MainRenderingOpaque")]pub main_rendering_opaque:i32, #[static_field]#[rename(name="MainRenderingTransparent")]pub main_rendering_transparent:i32, #[static_field]#[rename(name="AfterRendering")]pub after_rendering:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.Profiling.RenderBlock")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_Profiling_RenderBlock{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="beforeRendering")]pub before_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="mainRenderingOpaque")]pub main_rendering_opaque:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="mainRenderingTransparent")]pub main_rendering_transparent:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="afterRendering")]pub after_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.RenderingFeatures")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_RenderingFeatures{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer{#[static_field]#[rename(name="current")]pub current:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, #[static_field]#[rename(name="k_RenderPassBlockCount")]pub k_render_pass_block_count:i32, #[offset(40)]#[rename(name="m_ActiveRenderPassQueue")]pub m_active_render_pass_queue:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass> , #[offset(48)]#[rename(name="m_RendererFeatures")]pub m_renderer_features:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature> , #[offset(56)]#[rename(name="m_CameraColorTarget")]pub m_camera_color_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[offset(96)]#[rename(name="m_CameraDepthTarget")]pub m_camera_depth_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[offset(136)]#[rename(name="m_FirstTimeCameraColorTargetIsBound")]pub m_first_time_camera_color_target_is_bound:bool, #[offset(137)]#[rename(name="m_FirstTimeCameraDepthTargetIsBound")]pub m_first_time_camera_depth_target_is_bound:bool, #[offset(138)]#[rename(name="m_IsPipelineExecuting")]pub m_is_pipeline_executing:bool, #[offset(139)]#[rename(name="isCameraColorTargetValid")]pub is_camera_color_target_valid:bool, #[static_field]#[rename(name="m_ActiveColorAttachments")]pub m_active_color_attachments: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> , #[static_field]#[rename(name="m_ActiveDepthAttachment")]pub m_active_depth_attachment:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[static_field]#[rename(name="m_TrimmedColorAttachmentCopies")]pub m_trimmed_color_attachment_copies: ::unity2::Array< ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> > ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ScriptableRenderer_RenderBlocks{}
@@ -48,130 +25,35 @@ impl::unity2::IlType for ScriptableRenderer_RenderBlocks{fn il_type()-> &'static
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer{#[static_field]#[rename(name="current")]pub current:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, #[static_field]#[rename(name="k_RenderPassBlockCount")]pub k_render_pass_block_count:i32, #[offset(40)]#[rename(name="m_ActiveRenderPassQueue")]pub m_active_render_pass_queue:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass> , #[offset(48)]#[rename(name="m_RendererFeatures")]pub m_renderer_features:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature> , #[offset(56)]#[rename(name="m_CameraColorTarget")]pub m_camera_color_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[offset(96)]#[rename(name="m_CameraDepthTarget")]pub m_camera_depth_target:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[offset(136)]#[rename(name="m_FirstTimeCameraColorTargetIsBound")]pub m_first_time_camera_color_target_is_bound:bool, #[offset(137)]#[rename(name="m_FirstTimeCameraDepthTargetIsBound")]pub m_first_time_camera_depth_target_is_bound:bool, #[offset(138)]#[rename(name="m_IsPipelineExecuting")]pub m_is_pipeline_executing:bool, #[offset(139)]#[rename(name="isCameraColorTargetValid")]pub is_camera_color_target_valid:bool, #[static_field]#[rename(name="m_ActiveColorAttachments")]pub m_active_color_attachments: ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> , #[static_field]#[rename(name="m_ActiveDepthAttachment")]pub m_active_depth_attachment:crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, #[static_field]#[rename(name="m_TrimmedColorAttachmentCopies")]pub m_trimmed_color_attachment_copies: ::unity2::Array< ::unity2::Array<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> > ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.Profiling.RenderPass")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_Profiling_RenderPass{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="configure")]pub configure:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.Profiling.RenderBlock")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_Profiling_RenderBlock{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="beforeRendering")]pub before_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="mainRenderingOpaque")]pub main_rendering_opaque:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="mainRenderingTransparent")]pub main_rendering_transparent:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="afterRendering")]pub after_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.RenderingFeatures")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_RenderingFeatures{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ScriptableRenderer_RenderBlocks_BlockRange{pub m_current:i32,pub m_end:i32,}
+impl::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks_BlockRange{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
+const NAME: &'static str="ScriptableRenderer.RenderBlocks.BlockRange";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ScriptableRenderer_RenderBlocks_BlockRange{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.Profiling")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_Profiling{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="setPerCameraShaderVariables")]pub set_per_camera_shader_variables:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="sortRenderPasses")]pub sort_render_passes:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="setupLights")]pub setup_lights:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="setupCamera")]pub setup_camera:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="addRenderPasses")]pub add_render_passes:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="clearRenderingState")]pub clear_rendering_state:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="internalStartRendering")]pub internal_start_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="internalFinishRendering")]pub internal_finish_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRenderer.RenderPassBlock")]#[parent(crate::system::object::Object)]pub struct ScriptableRenderer_RenderPassBlock{#[static_field]#[rename(name="BeforeRendering")]pub before_rendering:i32, #[static_field]#[rename(name="MainRenderingOpaque")]pub main_rendering_opaque:i32, #[static_field]#[rename(name="MainRenderingTransparent")]pub main_rendering_transparent:i32, #[static_field]#[rename(name="AfterRendering")]pub after_rendering:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks_BlockRange{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,begin:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba2f0usize)as*mut u8,();
-(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange,(i32)::core::convert::Into::into(begin),(i32)::core::convert::Into::into(end))}
-}
-#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbafd0usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange;
-(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
-}
-#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbafe0usize)as*mut u8,bool;
-(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
-}
-#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbb000usize)as*mut u8,i32;
-(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbb010usize)as*mut u8,();
-(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks_BlockRange{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbaf30usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderPass{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb9ce0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderPassBlock{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba310usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderPassBlock{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderBlock{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbadc0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderBlock{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]pub trait IScriptableRenderer_RenderingFeaturesMethods:IScriptableRenderer_RenderingFeatures{#[doc="`get_cameraStacking()` overload"]fn get_camera_stacking(self,)->bool{unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba390usize)as*mut u8,bool;
-(ScriptableRenderer_RenderingFeatures)__receiver)}
-}
-#[doc="`set_cameraStacking(bool)` overload"]fn set_camera_stacking(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3a0usize)as*mut u8,();
-(ScriptableRenderer_RenderingFeatures)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_msaa()` overload"]fn get_msaa(self,)->bool{unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3b0usize)as*mut u8,bool;
-(ScriptableRenderer_RenderingFeatures)__receiver)}
-}
-#[doc="`set_msaa(bool)` overload"]fn set_msaa(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3c0usize)as*mut u8,();
-(ScriptableRenderer_RenderingFeatures)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3d0usize)as*mut u8,();
-(ScriptableRenderer_RenderingFeatures)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl<__T:IScriptableRenderer_RenderingFeatures>IScriptableRenderer_RenderingFeaturesMethods for __T{}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderingFeatures{pub fn get_camera_stacking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_camera_stacking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_msaa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_msaa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderingFeatures{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ScriptableRenderer_RenderingFeatures), ::core::stringify!(new),));
- <Self as IScriptableRenderer_RenderingFeaturesMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]pub fn ctor(&mut self,active_render_pass_queue:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb9f50usize)as*mut u8,();
-(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)::core::convert::Into::into(active_render_pass_queue))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba250usize)as*mut u8,();
-(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks)}
-}
-#[doc="`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]pub fn fill_block_ranges(&mut self,active_render_pass_queue:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba130usize)as*mut u8,();
-(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)::core::convert::Into::into(active_render_pass_queue))}
-}
-#[doc="`GetLength(i32)` overload"]pub fn get_length(&mut self,index:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba2b0usize)as*mut u8,i32;
-(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetRange(i32)` overload"]pub fn get_range(&mut self,index:impl::core::convert::Into<i32>)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba2c0usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange;
-(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(i32)::core::convert::Into::into(index))}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn fill_block_ranges_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
 
 #[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptableRenderer_unity2_raw{use super:: * ;
 pub unsafe fn setup(this:ScriptableRenderer,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Setup").unwrap_or_else(||panic!("unity2: abstract method `{}
@@ -449,25 +331,143 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]pub fn ctor(&mut self,active_render_pass_queue:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb9f50usize)as*mut u8,();
+(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)::core::convert::Into::into(active_render_pass_queue))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba250usize)as*mut u8,();
+(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks)}
+}
+#[doc="`FillBlockRanges(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)` overload"]pub fn fill_block_ranges(&mut self,active_render_pass_queue:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba130usize)as*mut u8,();
+(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)::core::convert::Into::into(active_render_pass_queue))}
+}
+#[doc="`GetLength(i32)` overload"]pub fn get_length(&mut self,index:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba2b0usize)as*mut u8,i32;
+(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetRange(i32)` overload"]pub fn get_range(&mut self,index:impl::core::convert::Into<i32>)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba2c0usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange;
+(*mut ScriptableRenderer_RenderBlocks)self as*mut ScriptableRenderer_RenderBlocks,(i32)::core::convert::Into::into(index))}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn fill_block_ranges_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbaf30usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderPass{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderBlock{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbadc0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling_RenderBlock{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]pub trait IScriptableRenderer_RenderingFeaturesMethods:IScriptableRenderer_RenderingFeatures{#[doc="`get_cameraStacking()` overload"]fn get_camera_stacking(self,)->bool{unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba390usize)as*mut u8,bool;
+(ScriptableRenderer_RenderingFeatures)__receiver)}
+}
+#[doc="`set_cameraStacking(bool)` overload"]fn set_camera_stacking(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3a0usize)as*mut u8,();
+(ScriptableRenderer_RenderingFeatures)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_msaa()` overload"]fn get_msaa(self,)->bool{unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3b0usize)as*mut u8,bool;
+(ScriptableRenderer_RenderingFeatures)__receiver)}
+}
+#[doc="`set_msaa(bool)` overload"]fn set_msaa(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3c0usize)as*mut u8,();
+(ScriptableRenderer_RenderingFeatures)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptableRenderer_RenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cba3d0usize)as*mut u8,();
+(ScriptableRenderer_RenderingFeatures)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl<__T:IScriptableRenderer_RenderingFeatures>IScriptableRenderer_RenderingFeaturesMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderingFeatures{pub fn get_camera_stacking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_camera_stacking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_msaa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_msaa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderingFeatures{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptableRenderer_RenderingFeatures), ::core::stringify!(new),));
+ <Self as IScriptableRenderer_RenderingFeaturesMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks_BlockRange{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,begin:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba2f0usize)as*mut u8,();
+(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange,(i32)::core::convert::Into::into(begin),(i32)::core::convert::Into::into(end))}
+}
+#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbafd0usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer_RenderBlocks_BlockRange;
+(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
+}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbafe0usize)as*mut u8,bool;
+(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
+}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbb000usize)as*mut u8,i32;
+(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbb010usize)as*mut u8,();
+(*mut ScriptableRenderer_RenderBlocks_BlockRange)self as*mut ScriptableRenderer_RenderBlocks_BlockRange)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderBlocks_BlockRange{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb9ce0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_Profiling{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderPassBlock{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cba310usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderer")]impl ScriptableRenderer_RenderPassBlock{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptableRenderer_RenderBlocks_BlockRange;
+    pub use super::ScriptableRenderer;
+    pub use super::IScriptableRenderer;
+    pub use super::IScriptableRendererMethods;
+    pub use super::ScriptableRenderer_RenderBlocks;
     pub use super::ScriptableRenderer_Profiling_RenderPass;
     pub use super::IScriptableRenderer_Profiling_RenderPass;
-    pub use super::ScriptableRenderer_Profiling;
-    pub use super::IScriptableRenderer_Profiling;
-    pub use super::ScriptableRenderer_RenderPassBlock;
-    pub use super::IScriptableRenderer_RenderPassBlock;
     pub use super::ScriptableRenderer_Profiling_RenderBlock;
     pub use super::IScriptableRenderer_Profiling_RenderBlock;
     pub use super::ScriptableRenderer_RenderingFeatures;
     pub use super::IScriptableRenderer_RenderingFeatures;
     pub use super::IScriptableRenderer_RenderingFeaturesMethods;
-    pub use super::ScriptableRenderer_RenderBlocks;
-    pub use super::ScriptableRenderer;
-    pub use super::IScriptableRenderer;
-    pub use super::IScriptableRendererMethods;
+    pub use super::ScriptableRenderer_RenderBlocks_BlockRange;
+    pub use super::ScriptableRenderer_Profiling;
+    pub use super::IScriptableRenderer_Profiling;
+    pub use super::ScriptableRenderer_RenderPassBlock;
+    pub use super::IScriptableRenderer_RenderPassBlock;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

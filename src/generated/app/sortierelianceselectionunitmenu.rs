@@ -15,39 +15,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu.md"))]#[::unity2::class(namespace="App",name="SortieRelianceSelectionUnitMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SortieRelianceSelectionUnitMenu{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu_UnitMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieRelianceSelectionUnitMenu.UnitMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct SortieRelianceSelectionUnitMenu_UnitMenuItem{#[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_CanTalk")]pub m_can_talk:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu.md"))]#[::unity2::class(namespace="App",name="SortieRelianceSelectionUnitMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SortieRelianceSelectionUnitMenu{}
 
 }
 
 #[cfg(feature = "app-sortierelianceselectionunitmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-sortierelianceselectionunitmenu")]impl SortieRelianceSelectionUnitMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe87e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-sortierelianceselectionunitmenu")]pub trait ISortieRelianceSelectionUnitMenuMethods:ISortieRelianceSelectionUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <SortieRelianceSelectionUnitMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8a50usize)as*mut u8,();
-(SortieRelianceSelectionUnitMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
-
-#[cfg(feature="app-sortierelianceselectionunitmenu")]impl<__T:ISortieRelianceSelectionUnitMenu>ISortieRelianceSelectionUnitMenuMethods for __T{}
-
-#[cfg(feature="app-sortierelianceselectionunitmenu")]impl SortieRelianceSelectionUnitMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-sortierelianceselectionunitmenu")]impl SortieRelianceSelectionUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieRelianceSelectionUnitMenu), ::core::stringify!(new),));
- <Self as ISortieRelianceSelectionUnitMenuMethods> ::ctor(this,menu_item_list);
-this}
-}
 
 #[cfg(feature="app-sortierelianceselectionunitmenu")]pub trait ISortieRelianceSelectionUnitMenu_UnitMenuItemMethods:ISortieRelianceSelectionUnitMenu_UnitMenuItem{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SortieRelianceSelectionUnitMenu_UnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d75920usize)as*mut u8,();
@@ -82,15 +58,39 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-sortierelianceselectionunitmenu")]impl SortieRelianceSelectionUnitMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe87e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-sortierelianceselectionunitmenu")]pub trait ISortieRelianceSelectionUnitMenuMethods:ISortieRelianceSelectionUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <SortieRelianceSelectionUnitMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8a50usize)as*mut u8,();
+(SortieRelianceSelectionUnitMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-sortierelianceselectionunitmenu")]impl<__T:ISortieRelianceSelectionUnitMenu>ISortieRelianceSelectionUnitMenuMethods for __T{}
+
+#[cfg(feature="app-sortierelianceselectionunitmenu")]impl SortieRelianceSelectionUnitMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-sortierelianceselectionunitmenu")]impl SortieRelianceSelectionUnitMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieRelianceSelectionUnitMenu), ::core::stringify!(new),));
+ <Self as ISortieRelianceSelectionUnitMenuMethods> ::ctor(this,menu_item_list);
+this}
+}
+
 #[cfg(feature = "app-sortierelianceselectionunitmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieRelianceSelectionUnitMenu;
-    pub use super::ISortieRelianceSelectionUnitMenu;
-    pub use super::ISortieRelianceSelectionUnitMenuMethods;
     pub use super::SortieRelianceSelectionUnitMenu_UnitMenuItem;
     pub use super::ISortieRelianceSelectionUnitMenu_UnitMenuItem;
     pub use super::ISortieRelianceSelectionUnitMenu_UnitMenuItemMethods;
+    pub use super::SortieRelianceSelectionUnitMenu;
+    pub use super::ISortieRelianceSelectionUnitMenu;
+    pub use super::ISortieRelianceSelectionUnitMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

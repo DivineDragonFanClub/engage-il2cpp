@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagwindow/TalkTagWindow.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagWindow")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagWindow{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PidForCreate")]pub m_pid_for_create: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_LocationName")]pub m_location_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ReplaceName")]pub m_replace_name: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagwindow/TalkTagWindow_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagWindow_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagWindow_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagWindow.TagID";
@@ -45,9 +48,6 @@ pub fn show_bg()->Self{Self{value:8}
 pub fn hide_bg()->Self{Self{value:9}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagwindow/TalkTagWindow.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagWindow")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagWindow{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PidForCreate")]pub m_pid_for_create: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_LocationName")]pub m_location_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ReplaceName")]pub m_replace_name: ::unity2::Il2CppString,}
 
 }
 
@@ -100,10 +100,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktagwindow")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkTagWindow_TagID;
     pub use super::TalkTagWindow;
     pub use super::ITalkTagWindow;
     pub use super::ITalkTagWindowMethods;
+    pub use super::TalkTagWindow_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

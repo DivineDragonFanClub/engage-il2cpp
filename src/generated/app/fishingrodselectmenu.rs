@@ -23,6 +23,24 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct FishingRodSelectMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct FishingRodSelectMenu_RodItem{#[static_field]#[rename(name="cTextureRootPath")]pub c_texture_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cAtlasPath")]pub c_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureLarge")]pub c_texture_large: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureMiddle")]pub c_texture_middle: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureSmall")]pub c_texture_small: ::unity2::Il2CppString, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, #[offset(112)]#[rename(name="m_MenuObj")]pub m_menu_obj:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_FishList")]pub m_fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> , #[offset(128)]#[rename(name="m_Result")]pub m_result:crate::app::fishing::sticktype::StickType, #[offset(136)]#[rename(name="m_Label")]pub m_label: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_ItemTrans")]pub m_item_trans:crate::unity_engine::transform::Transform, #[offset(152)]#[rename(name="m_Sprites")]pub m_sprites:crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodBItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodBItem")]#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]pub struct FishingRodSelectMenu_RodBItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodAItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodAItem")]#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]pub struct FishingRodSelectMenu_RodAItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FishingRodSelectMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodCItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodCItem")]#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]pub struct FishingRodSelectMenu_RodCItem{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FishingRodSelectMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for FishingRodSelectMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="FishingRodSelectMenu.Result2";
@@ -42,150 +60,10 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodAItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodAItem")]#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]pub struct FishingRodSelectMenu_RodAItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodBItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodBItem")]#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]pub struct FishingRodSelectMenu_RodBItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FishingRodSelectMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodCItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodCItem")]#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]pub struct FishingRodSelectMenu_RodCItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct FishingRodSelectMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodItem.md"))]#[::unity2::class(namespace="App",name="FishingRodSelectMenu.RodItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct FishingRodSelectMenu_RodItem{#[static_field]#[rename(name="cTextureRootPath")]pub c_texture_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cAtlasPath")]pub c_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureLarge")]pub c_texture_large: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureMiddle")]pub c_texture_middle: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureSmall")]pub c_texture_small: ::unity2::Il2CppString, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, #[offset(112)]#[rename(name="m_MenuObj")]pub m_menu_obj:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_FishList")]pub m_fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> , #[offset(128)]#[rename(name="m_Result")]pub m_result:crate::app::fishing::sticktype::StickType, #[offset(136)]#[rename(name="m_Label")]pub m_label: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_ItemTrans")]pub m_item_trans:crate::unity_engine::transform::Transform, #[offset(152)]#[rename(name="m_Sprites")]pub m_sprites:crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite> ,}
-
 }
 
 #[cfg(feature = "app-fishingrodselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_RodAItemMethods:IFishingRodSelectMenu_RodAItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler> ,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,fish_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> >)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61240usize)as*mut u8,();
-(FishingRodSelectMenu_RodAItem)__receiver,(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::unity_engine::transform::Transform)::core::convert::Into::into(item_trans),(crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)::core::convert::Into::into(fish_list))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61500usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(FishingRodSelectMenu_RodAItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61510usize)as*mut u8, ::unity2::Il2CppString;
-(FishingRodSelectMenu_RodAItem)__receiver)}
-}
-#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61590usize)as*mut u8,();
-(FishingRodSelectMenu_RodAItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_RodAItem>IFishingRodSelectMenu_RodAItemMethods for __T{}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodAItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodAItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]pub fn new(event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,menu_obj:crate::unity_engine::gameobject::GameObject,item_trans:crate::unity_engine::transform::Transform,fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FishingRodSelectMenu_RodAItem), ::core::stringify!(new),));
- <Self as IFishingRodSelectMenu_RodAItemMethods> ::ctor(this,event_handler,menu_obj,item_trans,fish_list);
-this}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_RodBItemMethods:IFishingRodSelectMenu_RodBItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler> ,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,fish_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> >)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e616d0usize)as*mut u8,();
-(FishingRodSelectMenu_RodBItem)__receiver,(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::unity_engine::transform::Transform)::core::convert::Into::into(item_trans),(crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)::core::convert::Into::into(fish_list))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61870usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(FishingRodSelectMenu_RodBItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61880usize)as*mut u8, ::unity2::Il2CppString;
-(FishingRodSelectMenu_RodBItem)__receiver)}
-}
-#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61900usize)as*mut u8,();
-(FishingRodSelectMenu_RodBItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_RodBItem>IFishingRodSelectMenu_RodBItemMethods for __T{}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodBItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodBItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]pub fn new(event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,menu_obj:crate::unity_engine::gameobject::GameObject,item_trans:crate::unity_engine::transform::Transform,fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FishingRodSelectMenu_RodBItem), ::core::stringify!(new),));
- <Self as IFishingRodSelectMenu_RodBItemMethods> ::ctor(this,event_handler,menu_obj,item_trans,fish_list);
-this}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_DecideEventHandlerMethods:IFishingRodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FishingRodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e60f20usize)as*mut u8,();
-(FishingRodSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::fishing::sticktype::StickType)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::fishing::sticktype::StickType>)->(){unsafe{let __receiver= <FishingRodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e60f40usize)as*mut u8,();
-(FishingRodSelectMenu_DecideEventHandler)__receiver,(crate::app::fishing::sticktype::StickType)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_DecideEventHandler>IFishingRodSelectMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FishingRodSelectMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IFishingRodSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_RodCItemMethods:IFishingRodSelectMenu_RodCItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler> ,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,fish_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> >)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61a40usize)as*mut u8,();
-(FishingRodSelectMenu_RodCItem)__receiver,(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::unity_engine::transform::Transform)::core::convert::Into::into(item_trans),(crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)::core::convert::Into::into(fish_list))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61be0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(FishingRodSelectMenu_RodCItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61bf0usize)as*mut u8, ::unity2::Il2CppString;
-(FishingRodSelectMenu_RodCItem)__receiver)}
-}
-#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61c70usize)as*mut u8,();
-(FishingRodSelectMenu_RodCItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_RodCItem>IFishingRodSelectMenu_RodCItemMethods for __T{}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodCItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodCItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]pub fn new(event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,menu_obj:crate::unity_engine::gameobject::GameObject,item_trans:crate::unity_engine::transform::Transform,fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FishingRodSelectMenu_RodCItem), ::core::stringify!(new),));
- <Self as IFishingRodSelectMenu_RodCItemMethods> ::ctor(this,event_handler,menu_obj,item_trans,fish_list);
-this}
-}
 
 #[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::fishing::sticktype::StickType, crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::fishing::sticktype::StickType> ,event_handler:impl::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2608d40usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::fishing::sticktype::StickType)::core::convert::Into::into(initial_selected),(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
@@ -294,28 +172,150 @@ pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
+#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_RodBItemMethods:IFishingRodSelectMenu_RodBItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler> ,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,fish_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> >)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e616d0usize)as*mut u8,();
+(FishingRodSelectMenu_RodBItem)__receiver,(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::unity_engine::transform::Transform)::core::convert::Into::into(item_trans),(crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)::core::convert::Into::into(fish_list))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61870usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(FishingRodSelectMenu_RodBItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61880usize)as*mut u8, ::unity2::Il2CppString;
+(FishingRodSelectMenu_RodBItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodBItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61900usize)as*mut u8,();
+(FishingRodSelectMenu_RodBItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_RodBItem>IFishingRodSelectMenu_RodBItemMethods for __T{}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodBItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodBItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]pub fn new(event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,menu_obj:crate::unity_engine::gameobject::GameObject,item_trans:crate::unity_engine::transform::Transform,fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingRodSelectMenu_RodBItem), ::core::stringify!(new),));
+ <Self as IFishingRodSelectMenu_RodBItemMethods> ::ctor(this,event_handler,menu_obj,item_trans,fish_list);
+this}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_RodAItemMethods:IFishingRodSelectMenu_RodAItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler> ,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,fish_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> >)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61240usize)as*mut u8,();
+(FishingRodSelectMenu_RodAItem)__receiver,(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::unity_engine::transform::Transform)::core::convert::Into::into(item_trans),(crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)::core::convert::Into::into(fish_list))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61500usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(FishingRodSelectMenu_RodAItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61510usize)as*mut u8, ::unity2::Il2CppString;
+(FishingRodSelectMenu_RodAItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodAItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61590usize)as*mut u8,();
+(FishingRodSelectMenu_RodAItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_RodAItem>IFishingRodSelectMenu_RodAItemMethods for __T{}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodAItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodAItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]pub fn new(event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,menu_obj:crate::unity_engine::gameobject::GameObject,item_trans:crate::unity_engine::transform::Transform,fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingRodSelectMenu_RodAItem), ::core::stringify!(new),));
+ <Self as IFishingRodSelectMenu_RodAItemMethods> ::ctor(this,event_handler,menu_obj,item_trans,fish_list);
+this}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_DecideEventHandlerMethods:IFishingRodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FishingRodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e60f20usize)as*mut u8,();
+(FishingRodSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::fishing::sticktype::StickType)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::fishing::sticktype::StickType>)->(){unsafe{let __receiver= <FishingRodSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e60f40usize)as*mut u8,();
+(FishingRodSelectMenu_DecideEventHandler)__receiver,(crate::app::fishing::sticktype::StickType)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_DecideEventHandler>IFishingRodSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingRodSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IFishingRodSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]pub trait IFishingRodSelectMenu_RodCItemMethods:IFishingRodSelectMenu_RodCItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler> ,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,fish_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData> >)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61a40usize)as*mut u8,();
+(FishingRodSelectMenu_RodCItem)__receiver,(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::unity_engine::transform::Transform)::core::convert::Into::into(item_trans),(crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)::core::convert::Into::into(fish_list))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61be0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(FishingRodSelectMenu_RodCItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61bf0usize)as*mut u8, ::unity2::Il2CppString;
+(FishingRodSelectMenu_RodCItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <FishingRodSelectMenu_RodCItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e61c70usize)as*mut u8,();
+(FishingRodSelectMenu_RodCItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl<__T:IFishingRodSelectMenu_RodCItem>IFishingRodSelectMenu_RodCItemMethods for __T{}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodCItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-fishingrodselectmenu")]impl FishingRodSelectMenu_RodCItem{#[doc="`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]pub fn new(event_handler:crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,menu_obj:crate::unity_engine::gameobject::GameObject,item_trans:crate::unity_engine::transform::Transform,fish_list:crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingRodSelectMenu_RodCItem), ::core::stringify!(new),));
+ <Self as IFishingRodSelectMenu_RodCItemMethods> ::ctor(this,event_handler,menu_obj,item_trans,fish_list);
+this}
+}
+
 #[cfg(feature = "app-fishingrodselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingRodSelectMenu_Result2;
-    pub use super::FishingRodSelectMenu_RodAItem;
-    pub use super::IFishingRodSelectMenu_RodAItem;
-    pub use super::IFishingRodSelectMenu_RodAItemMethods;
-    pub use super::FishingRodSelectMenu_RodBItem;
-    pub use super::IFishingRodSelectMenu_RodBItem;
-    pub use super::IFishingRodSelectMenu_RodBItemMethods;
-    pub use super::FishingRodSelectMenu_DecideEventHandler;
-    pub use super::IFishingRodSelectMenu_DecideEventHandler;
-    pub use super::IFishingRodSelectMenu_DecideEventHandlerMethods;
-    pub use super::FishingRodSelectMenu_RodCItem;
-    pub use super::IFishingRodSelectMenu_RodCItem;
-    pub use super::IFishingRodSelectMenu_RodCItemMethods;
     pub use super::FishingRodSelectMenu;
     pub use super::IFishingRodSelectMenu;
     pub use super::IFishingRodSelectMenuMethods;
     pub use super::FishingRodSelectMenu_RodItem;
     pub use super::IFishingRodSelectMenu_RodItem;
     pub use super::IFishingRodSelectMenu_RodItemMethods;
+    pub use super::FishingRodSelectMenu_RodBItem;
+    pub use super::IFishingRodSelectMenu_RodBItem;
+    pub use super::IFishingRodSelectMenu_RodBItemMethods;
+    pub use super::FishingRodSelectMenu_RodAItem;
+    pub use super::IFishingRodSelectMenu_RodAItem;
+    pub use super::IFishingRodSelectMenu_RodAItemMethods;
+    pub use super::FishingRodSelectMenu_DecideEventHandler;
+    pub use super::IFishingRodSelectMenu_DecideEventHandler;
+    pub use super::IFishingRodSelectMenu_DecideEventHandlerMethods;
+    pub use super::FishingRodSelectMenu_RodCItem;
+    pub use super::IFishingRodSelectMenu_RodCItem;
+    pub use super::IFishingRodSelectMenu_RodCItemMethods;
+    pub use super::FishingRodSelectMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

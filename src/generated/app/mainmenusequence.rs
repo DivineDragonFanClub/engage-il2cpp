@@ -43,44 +43,54 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{pub value:i32,}
-impl::unity2::ClassIdentity for MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MainMenuSequence.PlayerBirthdayInputMenuSequence.LayoutType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{pub fn jp_ch_korea()->Self{Self{value:0}
-}
-pub fn us_eu_etc()->Self{Self{value:1}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_MenuSequenceBase.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.MenuSequenceBase")]#[parent(crate::app::procinst::ProcInst)]pub struct MainMenuSequence_MenuSequenceBase{#[offset(112)]#[rename(name="m_LayoutPrefab")]pub m_layout_prefab:crate::unity_engine::gameobject::GameObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_ValueFrameObject")]pub m_value_frame_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.RandomMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_TopMenuSequence_Menu_MenuContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.DayMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu.DeleteMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_OptionMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_DifficultySelectMenuSequence{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MonthMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{#[offset(104)]#[rename(name="m_DayMenuItem")]pub m_day_menu_item:crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu.CopyMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_OptionMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu.LanguageSettingMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_OptionMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_LanguageSettingMenuSequence{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_HistoryInfo_InfoKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MainMenuSequence_HistoryInfo_InfoKind{pub value:i32,}
+impl::unity2::ClassIdentity for MainMenuSequence_HistoryInfo_InfoKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MainMenuSequence.HistoryInfo.InfoKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MainMenuSequence_HistoryInfo_InfoKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MainMenuSequence_HistoryInfo_InfoKind{pub fn player_name()->Self{Self{value:0}
+}
+pub fn birthday()->Self{Self{value:1}
+}
+pub fn difficulty()->Self{Self{value:2}
+}
+pub fn grow_mode()->Self{Self{value:3}
+}
+pub fn network_service()->Self{Self{value:4}
+}
+pub fn game_mode()->Self{Self{value:5}
+}
+pub fn max()->Self{Self{value:6}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MainMenuSequence_Label{pub value:i32,}
@@ -159,61 +169,209 @@ pub fn end()->Self{Self{value:30}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_MenuSequenceBase.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.MenuSequenceBase")]#[parent(crate::app::procinst::ProcInst)]pub struct MainMenuSequence_MenuSequenceBase{#[offset(112)]#[rename(name="m_LayoutPrefab")]pub m_layout_prefab:crate::unity_engine::gameobject::GameObject,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.YesMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_HistoryInfo.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.HistoryInfo")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_HistoryInfo{#[static_field]#[rename(name="LayoutPrefabPath")]pub layout_prefab_path: ::unity2::Il2CppString, #[offset(16)]#[rename(name="m_LayoutPrefab")]pub m_layout_prefab:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Window")]pub m_window: ::unity2::Array<crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_Window> , #[offset(32)]#[rename(name="m_MenuAnimator")]pub m_menu_animator:crate::unity_engine::animator::Animator,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_GameModeSelectMenuSequence{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{#[offset(100)]#[rename(name="m_GrowMode")]pub m_grow_mode:crate::app::growmode::GrowMode,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{#[static_field]#[rename(name="MonthMin")]pub month_min:i32, #[static_field]#[rename(name="MonthMax")]pub month_max:i32, #[static_field]#[rename(name="DayMin")]pub day_min:i32, #[static_field]#[rename(name="DayMax")]pub day_max: ::unity2::Array<i32> , #[offset(196)]#[rename(name="m_Month")]pub m_month:i32, #[offset(200)]#[rename(name="m_Day")]pub m_day:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.DLCMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_StartMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.StartMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_StartMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.NoMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MonthMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu{#[static_field]#[rename(name="LanguageMessTable")]pub language_mess_table: ::unity2::Array<crate::app::language::Language_Langs> , #[static_field]#[rename(name="LanguageVoiceTable")]pub language_voice_table: ::unity2::Array<crate::app::language::Language_Voices> , #[offset(196)]#[rename(name="m_LangMessIndexOld")]pub m_lang_mess_index_old:i32, #[offset(200)]#[rename(name="m_LangVoiceIndexOld")]pub m_lang_voice_index_old:i32, #[offset(204)]#[rename(name="m_LangMessIndex")]pub m_lang_mess_index:i32, #[offset(208)]#[rename(name="m_LangVoiceIndex")]pub m_lang_voice_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_AlphaFader.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.AlphaFader")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_AlphaFader{#[offset(16)]#[rename(name="m_alpha")]pub m_alpha:f32, #[offset(20)]#[rename(name="m_alphaFrom")]pub m_alpha_from:f32, #[offset(24)]#[rename(name="m_alphaTo")]pub m_alpha_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_CharacterWork.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.CharacterWork")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_CharacterWork{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.HardMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_OptionMenuSequence_Menu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.NormalMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_GameModeSelectMenuSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.LunaticMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mainmenusequence::MainMenuSequence>)]pub struct MainMenuSequence{#[static_field]#[rename(name="GameStartSceneName")]pub game_start_scene_name: ::unity2::Il2CppString, #[offset(116)]#[rename(name="m_PrevSequence")]pub m_prev_sequence:crate::app::mainmenusequence::MainMenuSequence_Label, #[offset(120)]#[rename(name="m_NowSequence")]pub m_now_sequence:crate::app::mainmenusequence::MainMenuSequence_Label, #[offset(124)]#[rename(name="m_NextSequence")]pub m_next_sequence:crate::app::mainmenusequence::MainMenuSequence_Label, #[offset(128)]#[rename(name="m_CharacterWorkPlayerMale")]pub m_character_work_player_male:crate::app::mainmenusequence::MainMenuSequence_CharacterWork, #[offset(136)]#[rename(name="m_CharacterWorkPlayerFemale")]pub m_character_work_player_female:crate::app::mainmenusequence::MainMenuSequence_CharacterWork, #[offset(144)]#[rename(name="m_CameraWork")]pub m_camera_work:crate::app::mainmenusequence::MainMenuSequence_CameraWork, #[offset(152)]#[rename(name="m_HistoryInfo")]pub m_history_info:crate::app::mainmenusequence::MainMenuSequence_HistoryInfo, #[offset(160)]#[rename(name="m_saveDataHeaderReader")]pub m_save_data_header_reader:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader, #[offset(168)]#[rename(name="m_IsFirst")]pub m_is_first:bool, #[offset(169)]#[rename(name="m_IsContinueEnable")]pub m_is_continue_enable:bool, #[offset(172)]#[rename(name="m_TopMenuCursorIndex")]pub m_top_menu_cursor_index:i32, #[offset(176)]#[rename(name="m_OptionMenuCursorIndex")]pub m_option_menu_cursor_index:i32, #[offset(180)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty, #[offset(184)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode, #[offset(188)]#[rename(name="m_GrowMode")]pub m_grow_mode:crate::app::growmode::GrowMode, #[offset(192)]#[rename(name="m_IsNetworkService")]pub m_is_network_service:bool, #[offset(193)]#[rename(name="m_IsNetworkLoginOnce")]pub m_is_network_login_once:bool, #[offset(196)]#[rename(name="m_PlayerGender")]pub m_player_gender:crate::app::gender::Gender, #[offset(200)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(208)]#[rename(name="m_DayOfPlayerBirthday")]pub m_day_of_player_birthday:i32, #[offset(212)]#[rename(name="m_MonthOfPlayerBirthday")]pub m_month_of_player_birthday:i32, #[offset(216)]#[rename(name="m_IsReloadLanguageMess")]pub m_is_reload_language_mess:bool, #[offset(220)]#[rename(name="m_ReloadLanguageMess")]pub m_reload_language_mess:crate::app::language::Language_Langs, #[offset(224)]#[rename(name="m_IsReloadLanguageVoice")]pub m_is_reload_language_voice:bool, #[offset(228)]#[rename(name="m_ReloadLanguageVoice")]pub m_reload_language_voice:crate::app::language::Language_Voices,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_FinalConfirmDialog_NoDialogItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.FinalConfirmDialog.NoDialogItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MainMenuSequence_FinalConfirmDialog_NoDialogItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_TopMenuSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_CameraWork.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.CameraWork")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_CameraWork{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.DLCMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{pub value:i32,}
+impl::unity2::ClassIdentity for MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MainMenuSequence.PlayerBirthdayInputMenuSequence.LayoutType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType{pub fn jp_ch_korea()->Self{Self{value:0}
+}
+pub fn us_eu_etc()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerGenderSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerGenderSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_PlayerGenderSelectMenuSequence{#[offset(120)]#[rename(name="m_Gender")]pub m_gender:crate::app::gender::Gender, #[offset(128)]#[rename(name="m_MenuAnimator")]pub m_menu_animator:crate::unity_engine::animator::Animator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_HistoryInfo.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.HistoryInfo")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_HistoryInfo{#[static_field]#[rename(name="LayoutPrefabPath")]pub layout_prefab_path: ::unity2::Il2CppString, #[offset(16)]#[rename(name="m_LayoutPrefab")]pub m_layout_prefab:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Window")]pub m_window: ::unity2::Array<crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_Window> , #[offset(32)]#[rename(name="m_MenuAnimator")]pub m_menu_animator:crate::unity_engine::animator::Animator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.HardMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.NoMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu.CopyMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_OptionMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.CasualMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.FixedMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_FinalConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.FinalConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MainMenuSequence_FinalConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NameCheckDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NameCheckDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MainMenuSequence_NameCheckDialogItemYes{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_AlphaFader.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.AlphaFader")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_AlphaFader{#[offset(16)]#[rename(name="m_alpha")]pub m_alpha:f32, #[offset(20)]#[rename(name="m_alphaFrom")]pub m_alpha_from:f32, #[offset(24)]#[rename(name="m_alphaTo")]pub m_alpha_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.DayMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{#[offset(100)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MonthMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{#[offset(104)]#[rename(name="m_DayMenuItem")]pub m_day_menu_item:crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_OptionMenuSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_TopMenuSequence_Menu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_FinalConfirmDialog_YesDialogItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.FinalConfirmDialog.YesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MainMenuSequence_FinalConfirmDialog_YesDialogItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.OptionMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_GrowModeSelectMenuSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_TopMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.ClassicMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_StartMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.StartMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_StartMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.ContinueMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_MenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.NormalMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_ValueFrameObject")]pub m_value_frame_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mainmenusequence::MainMenuSequence>)]pub struct MainMenuSequence{#[static_field]#[rename(name="GameStartSceneName")]pub game_start_scene_name: ::unity2::Il2CppString, #[offset(116)]#[rename(name="m_PrevSequence")]pub m_prev_sequence:crate::app::mainmenusequence::MainMenuSequence_Label, #[offset(120)]#[rename(name="m_NowSequence")]pub m_now_sequence:crate::app::mainmenusequence::MainMenuSequence_Label, #[offset(124)]#[rename(name="m_NextSequence")]pub m_next_sequence:crate::app::mainmenusequence::MainMenuSequence_Label, #[offset(128)]#[rename(name="m_CharacterWorkPlayerMale")]pub m_character_work_player_male:crate::app::mainmenusequence::MainMenuSequence_CharacterWork, #[offset(136)]#[rename(name="m_CharacterWorkPlayerFemale")]pub m_character_work_player_female:crate::app::mainmenusequence::MainMenuSequence_CharacterWork, #[offset(144)]#[rename(name="m_CameraWork")]pub m_camera_work:crate::app::mainmenusequence::MainMenuSequence_CameraWork, #[offset(152)]#[rename(name="m_HistoryInfo")]pub m_history_info:crate::app::mainmenusequence::MainMenuSequence_HistoryInfo, #[offset(160)]#[rename(name="m_saveDataHeaderReader")]pub m_save_data_header_reader:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader, #[offset(168)]#[rename(name="m_IsFirst")]pub m_is_first:bool, #[offset(169)]#[rename(name="m_IsContinueEnable")]pub m_is_continue_enable:bool, #[offset(172)]#[rename(name="m_TopMenuCursorIndex")]pub m_top_menu_cursor_index:i32, #[offset(176)]#[rename(name="m_OptionMenuCursorIndex")]pub m_option_menu_cursor_index:i32, #[offset(180)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty, #[offset(184)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode, #[offset(188)]#[rename(name="m_GrowMode")]pub m_grow_mode:crate::app::growmode::GrowMode, #[offset(192)]#[rename(name="m_IsNetworkService")]pub m_is_network_service:bool, #[offset(193)]#[rename(name="m_IsNetworkLoginOnce")]pub m_is_network_login_once:bool, #[offset(196)]#[rename(name="m_PlayerGender")]pub m_player_gender:crate::app::gender::Gender, #[offset(200)]#[rename(name="m_PlayerName")]pub m_player_name: ::unity2::Il2CppString, #[offset(208)]#[rename(name="m_DayOfPlayerBirthday")]pub m_day_of_player_birthday:i32, #[offset(212)]#[rename(name="m_MonthOfPlayerBirthday")]pub m_month_of_player_birthday:i32, #[offset(216)]#[rename(name="m_IsReloadLanguageMess")]pub m_is_reload_language_mess:bool, #[offset(220)]#[rename(name="m_ReloadLanguageMess")]pub m_reload_language_mess:crate::app::language::Language_Langs, #[offset(224)]#[rename(name="m_IsReloadLanguageVoice")]pub m_is_reload_language_voice:bool, #[offset(228)]#[rename(name="m_ReloadLanguageVoice")]pub m_reload_language_voice:crate::app::language::Language_Voices,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{#[offset(232)]#[rename(name="m_MonthUnitText")]pub m_month_unit_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_DayUnitText")]pub m_day_unit_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu.LanguageSettingMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_OptionMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MonthMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NameCheckDialogItemNo.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NameCheckDialogItemNo")]#[parent(crate::app::mainmenusequence::MainMenuSequence_NameCheckDialogItemYes)]pub struct MainMenuSequence_NameCheckDialogItemNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.VoiceMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu{#[static_field]#[rename(name="LanguageMessTable")]pub language_mess_table: ::unity2::Array<crate::app::language::Language_Langs> , #[static_field]#[rename(name="LanguageVoiceTable")]pub language_voice_table: ::unity2::Array<crate::app::language::Language_Voices> , #[offset(196)]#[rename(name="m_LangMessIndexOld")]pub m_lang_mess_index_old:i32, #[offset(200)]#[rename(name="m_LangVoiceIndexOld")]pub m_lang_voice_index_old:i32, #[offset(204)]#[rename(name="m_LangMessIndex")]pub m_lang_mess_index:i32, #[offset(208)]#[rename(name="m_LangVoiceIndex")]pub m_lang_voice_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_HistoryInfo_Window.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.HistoryInfo.Window")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_HistoryInfo_Window{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(32)]#[rename(name="m_HistoryText")]pub m_history_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_InfoKind")]pub m_info_kind:crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_LanguageSettingMenuSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{#[offset(100)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_ParamText")]pub m_param_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.YesMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog{}
@@ -225,444 +383,15 @@ pub fn end()->Self{Self{value:30}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.MessMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_TopMenuSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_FinalConfirmDialog_YesDialogItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.FinalConfirmDialog.YesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MainMenuSequence_FinalConfirmDialog_YesDialogItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{#[offset(232)]#[rename(name="m_MonthUnitText")]pub m_month_unit_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_DayUnitText")]pub m_day_unit_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_TopMenuSequence_Menu_MenuContent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.OptionMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_FinalConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.FinalConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MainMenuSequence_FinalConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_FinalConfirmDialog_NoDialogItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.FinalConfirmDialog.NoDialogItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MainMenuSequence_FinalConfirmDialog_NoDialogItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_CameraWork.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.CameraWork")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_CameraWork{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{#[offset(100)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu.DeleteMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_OptionMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.ConfirmDialog.NoDialogItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.RandomMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NameCheckDialogItemNo.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NameCheckDialogItemNo")]#[parent(crate::app::mainmenusequence::MainMenuSequence_NameCheckDialogItemYes)]pub struct MainMenuSequence_NameCheckDialogItemNo{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_TopMenuSequence_Menu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_CharacterWork.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.CharacterWork")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_CharacterWork{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.DayMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.ContinueMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NameCheckDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NameCheckDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MainMenuSequence_NameCheckDialogItemYes{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.CasualMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.FixedMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_NetworkServiceSelectMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.NetworkServiceSelectMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_TopMenuSequence_Menu_MenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{#[offset(100)]#[rename(name="m_GrowMode")]pub m_grow_mode:crate::app::growmode::GrowMode,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_HistoryInfo_Window.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.HistoryInfo.Window")]#[parent(crate::system::object::Object)]pub struct MainMenuSequence_HistoryInfo_Window{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(32)]#[rename(name="m_HistoryText")]pub m_history_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_InfoKind")]pub m_info_kind:crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_HistoryInfo_InfoKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MainMenuSequence_HistoryInfo_InfoKind{pub value:i32,}
-impl::unity2::ClassIdentity for MainMenuSequence_HistoryInfo_InfoKind{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MainMenuSequence.HistoryInfo.InfoKind";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MainMenuSequence_HistoryInfo_InfoKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MainMenuSequence_HistoryInfo_InfoKind{pub fn player_name()->Self{Self{value:0}
-}
-pub fn birthday()->Self{Self{value:1}
-}
-pub fn difficulty()->Self{Self{value:2}
-}
-pub fn grow_mode()->Self{Self{value:3}
-}
-pub fn network_service()->Self{Self{value:4}
-}
-pub fn game_mode()->Self{Self{value:5}
-}
-pub fn max()->Self{Self{value:6}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.VoiceMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.ClassicMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_ParamText")]pub m_param_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GrowModeSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GrowModeSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_GrowModeSelectMenuSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.GameModeSelectMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerBirthdayInputMenuSequence.Menu.DayMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)]pub struct MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.ConfirmDialog.YesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_OptionMenuSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_PlayerGenderSelectMenuSequence.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.PlayerGenderSelectMenuSequence")]#[parent(crate::app::mainmenusequence::MainMenuSequence_MenuSequenceBase)]pub struct MainMenuSequence_PlayerGenderSelectMenuSequence{#[offset(120)]#[rename(name="m_Gender")]pub m_gender:crate::app::gender::Gender, #[offset(128)]#[rename(name="m_MenuAnimator")]pub m_menu_animator:crate::unity_engine::animator::Animator,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{#[offset(100)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.DifficultySelectMenuSequence.Menu.LunaticMenuItem")]#[parent(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)]pub struct MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_TopMenuSequence_Menu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.TopMenuSequence.Menu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MainMenuSequence_TopMenuSequence_Menu_MenuItemContent{#[offset(72)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_OptionMenuSequence_Menu.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.OptionMenuSequence.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MainMenuSequence_OptionMenuSequence_Menu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mainmenusequence/MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent.md"))]#[::unity2::class(namespace="App",name="MainMenuSequence.LanguageSettingMenuSequence.Menu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{}
 
 }
 
 #[cfg(feature = "app-mainmenusequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{#[doc="`GetValueFrameObject()` overload"]fn get_value_frame_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305c70usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305c80usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305d30usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305e40usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305570usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{pub fn get_value_frame_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd98a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequenceMethods:IMainMenuSequence_DifficultySelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9690usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd96e0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9760usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd97b0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9800usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9930usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence>IMainMenuSequence_DifficultySelectMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_DifficultySelectMenuSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301990usize)as*mut u8,i32;
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23019b0usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{#[doc="`.ctor(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)` overload"]fn ctor(self,day_menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305e50usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)::core::convert::Into::into(day_menu_item))}
-}
-#[doc="`KeyCall()` overload"]fn key_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305e90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn key_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{#[doc="`.ctor(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)` — overload selector"]pub fn new(day_menu_item:crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods> ::ctor(this,day_menu_item);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods:IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23046f0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304770usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304780usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304830usize)as*mut u8,();
-(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem>IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304100usize)as*mut u8,i32;
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304120usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods:IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23049a0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304a20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304a30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304ae0usize)as*mut u8,();
-(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem>IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a97e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequenceMethods:IMainMenuSequence_LanguageSettingMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9570usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a95c0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9640usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a96c0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9710usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9870usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence>IMainMenuSequence_LanguageSettingMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_LanguageSettingMenuSequenceMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_MenuSequenceBaseMethods:IMainMenuSequence_MenuSequenceBase{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_MenuSequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9890usize)as*mut u8, ::unity2::Il2CppString;
@@ -752,31 +481,1117 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23045e0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem)__receiver)}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302090usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem)__receiver)}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304660usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23046e0usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem)__receiver)}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23020c0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods for __T{}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods for __T{}
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_TopMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306b90usize)as*mut u8,i32;
+(MainMenuSequence_TopMenuSequence_Menu_MenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ba0usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_MenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_MenuContent>IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305450usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305560usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods:IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304850usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23048d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23048e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304990usize)as*mut u8,();
+(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem>IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68190usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68160usize)as*mut u8,i32;
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68170usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68180usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu>IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd98a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequenceMethods:IMainMenuSequence_DifficultySelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9690usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd96e0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9760usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd97b0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
+}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9800usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9930usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence>IMainMenuSequence_DifficultySelectMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_DifficultySelectMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304100usize)as*mut u8,i32;
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304120usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{#[doc="`GetParamName()` overload"]fn get_param_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302720usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302770usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302830usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem>IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{pub fn get_param_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::growmode::GrowMode)` overload"]fn ctor(self,grow_mode:impl::core::convert::Into<crate::app::growmode::GrowMode>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301900usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver,(crate::app::growmode::GrowMode)::core::convert::Into::into(grow_mode))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301a20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301af0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::growmode::GrowMode)` — overload selector"]pub fn new(grow_mode:crate::app::growmode::GrowMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,grow_mode);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b694b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69650usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69370usize)as*mut u8,i32;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69380usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver)}
+}
+#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69390usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693a0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693b0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693d0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693f0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu>IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_CharacterWorkMethods:IMainMenuSequence_CharacterWork{#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a50usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a60usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Character()` overload"]fn get_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a70usize)as*mut u8,crate::combat::character::Character;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`set_Character(crate::combat::character::Character)` overload"]fn set_character(self,value:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a80usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::combat::character::Character)::core::convert::Into::into(value))}
+}
+#[doc="`get_Appearance()` overload"]fn get_appearance(self,)->crate::combat::characterappearance::CharacterAppearance{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a90usize)as*mut u8,crate::combat::characterappearance::CharacterAppearance;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`set_Appearance(crate::combat::characterappearance::CharacterAppearance)` overload"]fn set_appearance(self,value:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8aa0usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(value))}
+}
+#[doc="`get_RootAnimator()` overload"]fn get_root_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ab0usize)as*mut u8,crate::unity_engine::animator::Animator;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`set_RootAnimator(crate::unity_engine::animator::Animator)` overload"]fn set_root_animator(self,value:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ac0usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(value))}
+}
+#[doc="`get_LookAtController()` overload"]fn get_look_at_controller(self,)->crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ad0usize)as*mut u8,crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`set_LookAtController(crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController)` overload"]fn set_look_at_controller(self,value:impl::core::convert::Into<crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ae0usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController)::core::convert::Into::into(value))}
+}
+#[doc="`get_LookAtTarget()` overload"]fn get_look_at_target(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8af0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`set_LookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"]fn set_look_at_target(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b00usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_AlphaFader()` overload"]fn get_alpha_fader(self,)->crate::app::mainmenusequence::MainMenuSequence_AlphaFader{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b10usize)as*mut u8,crate::app::mainmenusequence::MainMenuSequence_AlphaFader;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`set_AlphaFader(crate::app::mainmenusequence::MainMenuSequence_AlphaFader)` overload"]fn set_alpha_fader(self,value:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_AlphaFader>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b20usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::app::mainmenusequence::MainMenuSequence_AlphaFader)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,appearance:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b30usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(appearance))}
+}
+#[doc="`SetupByCharacter(crate::combat::character::Character)` overload"]fn setup_by_character(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8560usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8c00usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8c60usize)as*mut u8,bool;
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`SetPosByLocatorName(::unity2::Il2CppString)` overload"]fn set_pos_by_locator_name(self,pos_locator_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8cf0usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pos_locator_name))}
+}
+#[doc="`PlayBodyAnim(::unity2::Il2CppString, f32)` overload"]fn play_body_anim(self,body_anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,transition_duration:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8e60usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(body_anim_name),(f32)::core::convert::Into::into(transition_duration))}
+}
+#[doc="`PlayFacialAnim(::unity2::Il2CppString)` overload"]fn play_facial_anim(self,facial_anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8f40usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(facial_anim_name))}
+}
+#[doc="`SetLookAt(crate::unity_engine::gameobject::GameObject)` overload"]fn set_look_at(self,target:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ff0usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target))}
+}
+#[doc="`FadeIn()` overload"]fn fade_in(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9090usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`FadeOut()` overload"]fn fade_out(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd90b0usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`ToDefault()` overload"]fn to_default(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd90d0usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`ToActive()` overload"]fn to_active(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9200usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`ToInactive()` overload"]fn to_inactive(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9390usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`ToDecide()` overload"]fn to_decide(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9510usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`ToNotDecide()` overload"]fn to_not_decide(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8490usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+#[doc="`ToGameStart()` overload"]fn to_game_start(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9530usize)as*mut u8,();
+(MainMenuSequence_CharacterWork)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_CharacterWork>IMainMenuSequence_CharacterWorkMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CharacterWork{pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_root_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_root_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_look_at_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_look_at_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_alpha_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_alpha_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn setup_by_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_pos_by_locator_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn play_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn play_facial_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_look_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn to_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn to_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn to_inactive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn to_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn to_not_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn to_game_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CharacterWork{#[doc="`.ctor(::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,appearance:crate::combat::characterappearance::CharacterAppearance)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_CharacterWork), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_CharacterWorkMethods> ::ctor(this,pid,appearance);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b678f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b678c0usize)as*mut u8,i32;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b678d0usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b678e0usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu>IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69130usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_MenuMethods:IMainMenuSequence_OptionMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69100usize)as*mut u8,();
+(MainMenuSequence_OptionMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69110usize)as*mut u8,i32;
+(MainMenuSequence_OptionMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69120usize)as*mut u8,();
+(MainMenuSequence_OptionMenuSequence_Menu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu>IMainMenuSequence_OptionMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_OptionMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300850usize)as*mut u8,i32;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300870usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent>IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23041c0usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304330usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23042c0usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304410usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304460usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302240usize)as*mut u8,i32;
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent)__receiver)}
+}
+#[doc="`SetCursorColor(crate::unity_engine::color::Color)` overload"]fn set_cursor_color(self,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302250usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23026b0usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent>IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_cursor_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9d40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequenceMethods:IMainMenuSequence_GameModeSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9b30usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9b80usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9c00usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9c50usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
+}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9ca0usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9dd0usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence>IMainMenuSequence_GameModeSelectMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GameModeSelectMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300af0usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300cd0usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300c20usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300e10usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300ea0usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300740usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300770usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem)__receiver)}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23007d0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem>IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b67f20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67ef0usize)as*mut u8,i32;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67f00usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67f10usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu>IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods:IMainMenuSequence_FinalConfirmDialog_NoDialogItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_NoDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67b40usize)as*mut u8,();
+(MainMenuSequence_FinalConfirmDialog_NoDialogItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_NoDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67bd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_FinalConfirmDialog_NoDialogItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_NoDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_FinalConfirmDialog_NoDialogItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_FinalConfirmDialog_NoDialogItem>IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_NoDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_NoDialogItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_FinalConfirmDialog_NoDialogItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ad130usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequenceMethods:IMainMenuSequence_TopMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24acee0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence)__receiver)}
+}
+#[doc="`IsTitleBarEnable()` overload"]fn is_title_bar_enable(self,)->bool{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24acf30usize)as*mut u8,bool;
+(MainMenuSequence_TopMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24acf40usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24acfc0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad040usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence)__receiver)}
+}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad090usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad1c0usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence>IMainMenuSequence_TopMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_title_bar_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_CameraWorkMethods:IMainMenuSequence_CameraWork{#[doc="`get_Camera()` overload"]fn get_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87a0usize)as*mut u8,crate::unity_engine::camera::Camera;
+(MainMenuSequence_CameraWork)__receiver)}
+}
+#[doc="`set_Camera(crate::unity_engine::camera::Camera)` overload"]fn set_camera(self,value:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87b0usize)as*mut u8,();
+(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(value))}
+}
+#[doc="`get_Animator()` overload"]fn get_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87c0usize)as*mut u8,crate::unity_engine::animator::Animator;
+(MainMenuSequence_CameraWork)__receiver)}
+}
+#[doc="`set_Animator(crate::unity_engine::animator::Animator)` overload"]fn set_animator(self,value:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87d0usize)as*mut u8,();
+(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(value))}
+}
+#[doc="`get_LookAtTarget()` overload"]fn get_look_at_target(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(MainMenuSequence_CameraWork)__receiver)}
+}
+#[doc="`set_LookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"]fn set_look_at_target(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87f0usize)as*mut u8,();
+(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::camera::Camera, crate::unity_engine::animator::Animator, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,look_at_target:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8800usize)as*mut u8,();
+(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(look_at_target))}
+}
+#[doc="`IsPlayingAnim(::unity2::Il2CppString)` overload"]fn is_playing_anim(self,anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8870usize)as*mut u8,bool;
+(MainMenuSequence_CameraWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_name))}
+}
+#[doc="`PlayAnim(::unity2::Il2CppString, i32)` overload"]fn play_anim(self,anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,duration_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8950usize)as*mut u8,();
+(MainMenuSequence_CameraWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_name),(i32)::core::convert::Into::into(duration_msec))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_CameraWork>IMainMenuSequence_CameraWorkMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CameraWork{pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_playing_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn play_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CameraWork{#[doc="`.ctor(crate::unity_engine::camera::Camera, crate::unity_engine::animator::Animator, crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(camera:crate::unity_engine::camera::Camera,animator:crate::unity_engine::animator::Animator,look_at_target:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_CameraWork), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_CameraWorkMethods> ::ctor(this,camera,animator,look_at_target);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305a10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305b50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305440usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301510usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23016f0usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301640usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301830usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23018c0usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306a40usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ac0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ad0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306b80usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem>IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerGenderSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ace40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods:IMainMenuSequence_PlayerGenderSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab090usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab0e0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab160usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab1b0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab230usize)as*mut u8,();
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab2c0usize)as*mut u8,();
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`InitLayoutObjectReference()` overload"]fn init_layout_object_reference(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac5f0usize)as*mut u8,();
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`CloseWindow()` overload"]fn close_window(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac6b0usize)as*mut u8,();
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`WaitCloseWindow()` overload"]fn wait_close_window(self,)->bool{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac710usize)as*mut u8,bool;
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`SetGender(crate::app::gender::Gender)` overload"]fn set_gender(self,gender:impl::core::convert::Into<crate::app::gender::Gender>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac4d0usize)as*mut u8,();
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver,(crate::app::gender::Gender)::core::convert::Into::into(gender))}
+}
+#[doc="`GetProcDesc()` overload"]fn get_proc_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac7c0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aced0usize)as*mut u8,();
+(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerGenderSelectMenuSequence>IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerGenderSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn init_layout_object_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn wait_close_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_proc_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerGenderSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerGenderSelectMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods> ::ctor(this,);
 this}
 }
 
@@ -852,225 +1667,69 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24aa910usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa700usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa750usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa7d0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa820usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa870usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa9a0usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence>IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9d40usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequenceMethods:IMainMenuSequence_GameModeSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9b30usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9b80usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9c00usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9c50usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9ca0usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9dd0usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence>IMainMenuSequence_GameModeSelectMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GameModeSelectMenuSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b694b0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69650usize)as*mut u8,();
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{#[doc="`ReturnSequence()` overload"]pub fn return_sequence()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68e00usize)as*mut u8,();
 )}
 }
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69370usize)as*mut u8,i32;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69380usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver)}
-}
-#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69390usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693a0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693b0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693d0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b693f0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68f00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu>IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods for __T{}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68dd0usize)as*mut u8,i32;
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68de0usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68df0usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu>IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn return_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306a40usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300600usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem)__receiver)}
 }
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ac0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300660usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem)__receiver)}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ad0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306b80usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem)__receiver)}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23006c0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem>IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods for __T{}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem>IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods for __T{}
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2307040usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23070c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23070d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2307170usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem>IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_StartMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_StartMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -1102,26 +1761,111 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23067e0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods:IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23046f0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23068f0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent)__receiver)}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304770usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304780usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304830usize)as*mut u8,();
+(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods for __T{}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem>IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods for __T{}
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300fc0usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301020usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem)__receiver)}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301080usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem>IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23018d0usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301930usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9950usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_FinalConfirmDialogMethods:IMainMenuSequence_FinalConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,dialog_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9940usize)as*mut u8,();
+(MainMenuSequence_FinalConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(dialog_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_FinalConfirmDialog>IMainMenuSequence_FinalConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,dialog_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_FinalConfirmDialog), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_FinalConfirmDialogMethods> ::ctor(this,menu_item_list,dialog_content);
 this}
 }
 
@@ -1179,41 +1923,69 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68ae0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NameCheckDialogItemYesMethods:IMainMenuSequence_NameCheckDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa4e0usize)as*mut u8,();
+(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
 }
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68cd0usize)as*mut u8,();
-)}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa3d0usize)as*mut u8,();
+(MainMenuSequence_NameCheckDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
 }
+#[doc="`ToRename()` overload"]fn to_rename(self,)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa460usize)as*mut u8,();
+(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
 }
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68780usize)as*mut u8,i32;
-(MainMenuSequence_LanguageSettingMenuSequence_Menu)__receiver)}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa570usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
 }
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68790usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa600usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
 }
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68870usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu>IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NameCheckDialogItemYes>IMainMenuSequence_NameCheckDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_rename_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NameCheckDialogItemYes), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NameCheckDialogItemYesMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NameCheckDialogItemYes), ::core::stringify!(new_2),));
+ <Self as IMainMenuSequence_NameCheckDialogItemYesMethods> ::ctor_2(this,text);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301990usize)as*mut u8,i32;
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23019b0usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
 this}
 }
 
@@ -1255,65 +2027,453 @@ pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b678f0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{#[doc="`KeyCall()` overload"]fn key_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304b80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305430usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b678c0usize)as*mut u8,i32;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b678d0usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b678e0usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{pub fn key_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu>IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300600usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem)__receiver)}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304190usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)__receiver)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300660usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem)__receiver)}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23006c0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23041b0usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem>IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods for __T{}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods for __T{}
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::gamemode::GameMode)` overload"]fn ctor(self,game_mode:impl::core::convert::Into<crate::app::gamemode::GameMode>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300ff0usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver,(crate::app::gamemode::GameMode)::core::convert::Into::into(game_mode))}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23012a0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23012f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301460usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem>IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::gamemode::GameMode)` — overload selector"]pub fn new(game_mode:crate::app::gamemode::GameMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,game_mode);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{#[doc="`.ctor(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)` overload"]fn ctor(self,day_menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305e50usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)::core::convert::Into::into(day_menu_item))}
+}
+#[doc="`KeyCall()` overload"]fn key_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305e90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn key_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem{#[doc="`.ctor(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)` — overload selector"]pub fn new(day_menu_item:crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods> ::ctor(this,day_menu_item);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24aac00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequenceMethods:IMainMenuSequence_OptionMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa9b0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_OptionMenuSequence)__receiver)}
+}
+#[doc="`IsTitleBarEnable()` overload"]fn is_title_bar_enable(self,)->bool{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aaa00usize)as*mut u8,bool;
+(MainMenuSequence_OptionMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aaa10usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_OptionMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aaa90usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_OptionMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aab10usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_OptionMenuSequence)__receiver)}
+}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aab60usize)as*mut u8,();
+(MainMenuSequence_OptionMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aac90usize)as*mut u8,();
+(MainMenuSequence_OptionMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence>IMainMenuSequence_OptionMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_title_bar_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_OptionMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69750usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_MenuMethods:IMainMenuSequence_TopMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69720usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69730usize)as*mut u8,i32;
+(MainMenuSequence_TopMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69740usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu>IMainMenuSequence_TopMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods:IMainMenuSequence_FinalConfirmDialog_YesDialogItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67d30usize)as*mut u8,();
+(MainMenuSequence_FinalConfirmDialog_YesDialogItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67dc0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_FinalConfirmDialog_YesDialogItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67e40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_FinalConfirmDialog_YesDialogItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_FinalConfirmDialog_YesDialogItem>IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_YesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_YesDialogItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_FinalConfirmDialog_YesDialogItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ef0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306f70usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306f80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2307030usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem>IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9ff0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequenceMethods:IMainMenuSequence_GrowModeSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9de0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9e30usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9eb0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9f00usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
+}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9f50usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fda080usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence>IMainMenuSequence_GrowModeSelectMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GrowModeSelectMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306c90usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306e00usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306d90usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ee0usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent>IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301100usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301130usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem)__receiver)}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301190usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem>IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2307040usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23070c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23070d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2307170usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem>IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_StartMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_StartMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_StartMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306900usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306980usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306990usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306a30usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem>IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_MenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2306c10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_TopMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304b70usize)as*mut u8,();
+(MainMenuSequence_TopMenuSequence_Menu_MenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_MenuItem>IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -1345,37 +2505,41 @@ pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b67f20usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{#[doc="`GetValueFrameObject()` overload"]fn get_value_frame_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305c70usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305c80usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305d30usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305e40usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305570usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent)__receiver)}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67ef0usize)as*mut u8,i32;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67f00usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67f10usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{pub fn get_value_frame_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu>IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
 this}
 }
 
@@ -1612,26 +2776,497 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304190usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)__receiver)}
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305580usize)as*mut u8,i32;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23041b0usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)__receiver)}
+#[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23055a0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305790usize)as*mut u8,f32;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2305890usize)as*mut u8,f32;
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23059a0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver)}
 }
 }
 
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods for __T{}
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods for __T{}
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_obj_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_cursor_moved_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301d40usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301eb0usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301e40usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301ff0usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302080usize)as*mut u8,();
+(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods:IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23049a0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304a20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304a30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304ae0usize)as*mut u8,();
+(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem>IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23067e0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23068f0usize)as*mut u8,();
+(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NameCheckDialogItemNoMethods:IMainMenuSequence_NameCheckDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa340usize)as*mut u8,();
+(MainMenuSequence_NameCheckDialogItemNo)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa3e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_NameCheckDialogItemNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NameCheckDialogItemNo>IMainMenuSequence_NameCheckDialogItemNoMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NameCheckDialogItemNo), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NameCheckDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23036f0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
+}
+#[doc="`GetParamName()` overload"]fn get_param_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2303770usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
+}
+#[doc="`KeyCall()` overload"]fn key_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2303880usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23040f0usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem>IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_param_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn key_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68ae0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68cd0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68780usize)as*mut u8,i32;
+(MainMenuSequence_LanguageSettingMenuSequence_Menu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68790usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68870usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu>IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301210usize)as*mut u8,i32;
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2301230usize)as*mut u8,();
+(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent>IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_HistoryInfo_WindowMethods:IMainMenuSequence_HistoryInfo_Window{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,info_kind:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind>)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68400usize)as*mut u8,();
+(MainMenuSequence_HistoryInfo_Window)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)::core::convert::Into::into(info_kind))}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68530usize)as*mut u8,();
+(MainMenuSequence_HistoryInfo_Window)__receiver)}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68540usize)as*mut u8,();
+(MainMenuSequence_HistoryInfo_Window)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68600usize)as*mut u8,();
+(MainMenuSequence_HistoryInfo_Window)__receiver)}
+}
+#[doc="`SetHistoryText(::unity2::Il2CppString)` overload"]fn set_history_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b686c0usize)as*mut u8,();
+(MainMenuSequence_HistoryInfo_Window)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ClearHistoryText()` overload"]fn clear_history_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b686e0usize)as*mut u8,();
+(MainMenuSequence_HistoryInfo_Window)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_HistoryInfo_Window>IMainMenuSequence_HistoryInfo_WindowMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_HistoryInfo_Window{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_history_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_history_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_HistoryInfo_Window{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject,info_kind:crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_HistoryInfo_Window), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_HistoryInfo_WindowMethods> ::ctor(this,root_object,info_kind);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a97e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequenceMethods:IMainMenuSequence_LanguageSettingMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9570usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a95c0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9640usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a96c0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
+}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9710usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24a9870usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence>IMainMenuSequence_LanguageSettingMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_LanguageSettingMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::difficulty::Difficulty)` overload"]fn ctor(self,difficulty:impl::core::convert::Into<crate::app::difficulty::Difficulty>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300630usize)as*mut u8,();
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver,(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty))}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23008e0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300930usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2300a40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem>IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::difficulty::Difficulty)` — overload selector"]pub fn new(difficulty:crate::app::difficulty::Difficulty)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,difficulty);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24aa910usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa700usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa750usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa7d0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
+}
+#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa820usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
+}
+#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa870usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa9a0usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence>IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302840usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302a20usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302970usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildTextColor()` overload"]fn build_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302b70usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302c40usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2302cd0usize)as*mut u8,();
+(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent>IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23045e0usize)as*mut u8, ::unity2::Il2CppString;
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2304660usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23046e0usize)as*mut u8,();
+(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem), ::core::stringify!(new),));
+ <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -1715,452 +3350,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ad130usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequenceMethods:IMainMenuSequence_TopMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24acee0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence)__receiver)}
-}
-#[doc="`IsTitleBarEnable()` overload"]fn is_title_bar_enable(self,)->bool{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24acf30usize)as*mut u8,bool;
-(MainMenuSequence_TopMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24acf40usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24acfc0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad040usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence)__receiver)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad090usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ad1c0usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence>IMainMenuSequence_TopMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_title_bar_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods:IMainMenuSequence_FinalConfirmDialog_YesDialogItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67d30usize)as*mut u8,();
-(MainMenuSequence_FinalConfirmDialog_YesDialogItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67dc0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_FinalConfirmDialog_YesDialogItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67e40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_FinalConfirmDialog_YesDialogItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_FinalConfirmDialog_YesDialogItem>IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_YesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_YesDialogItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_FinalConfirmDialog_YesDialogItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305580usize)as*mut u8,i32;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23055a0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305790usize)as*mut u8,f32;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
-}
-#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305890usize)as*mut u8,f32;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23059a0usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn init_obj_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn calc_cursor_moved_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_TopMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306b90usize)as*mut u8,i32;
-(MainMenuSequence_TopMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ba0usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_MenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_MenuContent>IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ef0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306f70usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306f80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2307030usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem>IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9950usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_FinalConfirmDialogMethods:IMainMenuSequence_FinalConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,dialog_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9940usize)as*mut u8,();
-(MainMenuSequence_FinalConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(dialog_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_FinalConfirmDialog>IMainMenuSequence_FinalConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,dialog_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_FinalConfirmDialog), ::core::stringify!(new),));
- <Self as IMainMenuSequence_FinalConfirmDialogMethods> ::ctor(this,menu_item_list,dialog_content);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods:IMainMenuSequence_FinalConfirmDialog_NoDialogItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_NoDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67b40usize)as*mut u8,();
-(MainMenuSequence_FinalConfirmDialog_NoDialogItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_NoDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67bd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_FinalConfirmDialog_NoDialogItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_FinalConfirmDialog_NoDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_FinalConfirmDialog_NoDialogItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_FinalConfirmDialog_NoDialogItem>IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_NoDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_FinalConfirmDialog_NoDialogItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_FinalConfirmDialog_NoDialogItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{#[doc="`GetParamName()` overload"]fn get_param_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302720usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302770usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302830usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem>IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{pub fn get_param_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305a10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305b50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305440usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_CameraWorkMethods:IMainMenuSequence_CameraWork{#[doc="`get_Camera()` overload"]fn get_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87a0usize)as*mut u8,crate::unity_engine::camera::Camera;
-(MainMenuSequence_CameraWork)__receiver)}
-}
-#[doc="`set_Camera(crate::unity_engine::camera::Camera)` overload"]fn set_camera(self,value:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87b0usize)as*mut u8,();
-(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(value))}
-}
-#[doc="`get_Animator()` overload"]fn get_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87c0usize)as*mut u8,crate::unity_engine::animator::Animator;
-(MainMenuSequence_CameraWork)__receiver)}
-}
-#[doc="`set_Animator(crate::unity_engine::animator::Animator)` overload"]fn set_animator(self,value:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87d0usize)as*mut u8,();
-(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(value))}
-}
-#[doc="`get_LookAtTarget()` overload"]fn get_look_at_target(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(MainMenuSequence_CameraWork)__receiver)}
-}
-#[doc="`set_LookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"]fn set_look_at_target(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd87f0usize)as*mut u8,();
-(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::unity_engine::camera::Camera, crate::unity_engine::animator::Animator, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,look_at_target:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8800usize)as*mut u8,();
-(MainMenuSequence_CameraWork)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(look_at_target))}
-}
-#[doc="`IsPlayingAnim(::unity2::Il2CppString)` overload"]fn is_playing_anim(self,anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8870usize)as*mut u8,bool;
-(MainMenuSequence_CameraWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_name))}
-}
-#[doc="`PlayAnim(::unity2::Il2CppString, i32)` overload"]fn play_anim(self,anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,duration_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MainMenuSequence_CameraWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8950usize)as*mut u8,();
-(MainMenuSequence_CameraWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_name),(i32)::core::convert::Into::into(duration_msec))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_CameraWork>IMainMenuSequence_CameraWorkMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CameraWork{pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_playing_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn play_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CameraWork{#[doc="`.ctor(crate::unity_engine::camera::Camera, crate::unity_engine::animator::Animator, crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(camera:crate::unity_engine::camera::Camera,animator:crate::unity_engine::animator::Animator,look_at_target:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_CameraWork), ::core::stringify!(new),));
- <Self as IMainMenuSequence_CameraWorkMethods> ::ctor(this,camera,animator,look_at_target);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300af0usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300cd0usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300c20usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300e10usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300ea0usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::gamemode::GameMode)` overload"]fn ctor(self,game_mode:impl::core::convert::Into<crate::app::gamemode::GameMode>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300ff0usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver,(crate::app::gamemode::GameMode)::core::convert::Into::into(game_mode))}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23012a0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23012f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301460usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem>IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::gamemode::GameMode)` — overload selector"]pub fn new(game_mode:crate::app::gamemode::GameMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,game_mode);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods:IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304850usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23048d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23048e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304990usize)as*mut u8,();
-(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem>IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItemMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb370usize)as*mut u8, ::unity2::Il2CppString;
 (MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem)__receiver)}
@@ -2189,906 +3378,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302090usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23020c0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NameCheckDialogItemNoMethods:IMainMenuSequence_NameCheckDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa340usize)as*mut u8,();
-(MainMenuSequence_NameCheckDialogItemNo)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa3e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_NameCheckDialogItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NameCheckDialogItemNo>IMainMenuSequence_NameCheckDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NameCheckDialogItemNo), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NameCheckDialogItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69750usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_MenuMethods:IMainMenuSequence_TopMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69720usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69730usize)as*mut u8,i32;
-(MainMenuSequence_TopMenuSequence_Menu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69740usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu>IMainMenuSequence_TopMenuSequence_MenuMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_CharacterWorkMethods:IMainMenuSequence_CharacterWork{#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a50usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a60usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Character()` overload"]fn get_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a70usize)as*mut u8,crate::combat::character::Character;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`set_Character(crate::combat::character::Character)` overload"]fn set_character(self,value:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a80usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::combat::character::Character)::core::convert::Into::into(value))}
-}
-#[doc="`get_Appearance()` overload"]fn get_appearance(self,)->crate::combat::characterappearance::CharacterAppearance{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8a90usize)as*mut u8,crate::combat::characterappearance::CharacterAppearance;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`set_Appearance(crate::combat::characterappearance::CharacterAppearance)` overload"]fn set_appearance(self,value:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8aa0usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(value))}
-}
-#[doc="`get_RootAnimator()` overload"]fn get_root_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ab0usize)as*mut u8,crate::unity_engine::animator::Animator;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`set_RootAnimator(crate::unity_engine::animator::Animator)` overload"]fn set_root_animator(self,value:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ac0usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(value))}
-}
-#[doc="`get_LookAtController()` overload"]fn get_look_at_controller(self,)->crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ad0usize)as*mut u8,crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`set_LookAtController(crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController)` overload"]fn set_look_at_controller(self,value:impl::core::convert::Into<crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ae0usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::app::eventcharacterlookatcontroller::EventCharacterLookAtController)::core::convert::Into::into(value))}
-}
-#[doc="`get_LookAtTarget()` overload"]fn get_look_at_target(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8af0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`set_LookAtTarget(crate::unity_engine::gameobject::GameObject)` overload"]fn set_look_at_target(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b00usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`get_AlphaFader()` overload"]fn get_alpha_fader(self,)->crate::app::mainmenusequence::MainMenuSequence_AlphaFader{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b10usize)as*mut u8,crate::app::mainmenusequence::MainMenuSequence_AlphaFader;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`set_AlphaFader(crate::app::mainmenusequence::MainMenuSequence_AlphaFader)` overload"]fn set_alpha_fader(self,value:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_AlphaFader>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b20usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::app::mainmenusequence::MainMenuSequence_AlphaFader)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,appearance:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8b30usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(appearance))}
-}
-#[doc="`SetupByCharacter(crate::combat::character::Character)` overload"]fn setup_by_character(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8560usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8c00usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8c60usize)as*mut u8,bool;
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`SetPosByLocatorName(::unity2::Il2CppString)` overload"]fn set_pos_by_locator_name(self,pos_locator_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8cf0usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pos_locator_name))}
-}
-#[doc="`PlayBodyAnim(::unity2::Il2CppString, f32)` overload"]fn play_body_anim(self,body_anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,transition_duration:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8e60usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(body_anim_name),(f32)::core::convert::Into::into(transition_duration))}
-}
-#[doc="`PlayFacialAnim(::unity2::Il2CppString)` overload"]fn play_facial_anim(self,facial_anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8f40usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(facial_anim_name))}
-}
-#[doc="`SetLookAt(crate::unity_engine::gameobject::GameObject)` overload"]fn set_look_at(self,target:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8ff0usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target))}
-}
-#[doc="`FadeIn()` overload"]fn fade_in(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9090usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`FadeOut()` overload"]fn fade_out(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd90b0usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`ToDefault()` overload"]fn to_default(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd90d0usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`ToActive()` overload"]fn to_active(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9200usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`ToInactive()` overload"]fn to_inactive(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9390usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`ToDecide()` overload"]fn to_decide(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9510usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`ToNotDecide()` overload"]fn to_not_decide(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd8490usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-#[doc="`ToGameStart()` overload"]fn to_game_start(self,)->(){unsafe{let __receiver= <MainMenuSequence_CharacterWork as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9530usize)as*mut u8,();
-(MainMenuSequence_CharacterWork)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_CharacterWork>IMainMenuSequence_CharacterWorkMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CharacterWork{pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_root_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_root_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_look_at_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_look_at_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_look_at_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_alpha_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_alpha_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn setup_by_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn set_pos_by_locator_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn play_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn play_facial_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn set_look_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn to_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn to_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn to_inactive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn to_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn to_not_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn to_game_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_CharacterWork{#[doc="`.ctor(::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,appearance:crate::combat::characterappearance::CharacterAppearance)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_CharacterWork), ::core::stringify!(new),));
- <Self as IMainMenuSequence_CharacterWorkMethods> ::ctor(this,pid,appearance);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{#[doc="`KeyCall()` overload"]fn key_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304b80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305430usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{pub fn key_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306900usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306980usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306990usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306a30usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem>IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NameCheckDialogItemYesMethods:IMainMenuSequence_NameCheckDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa4e0usize)as*mut u8,();
-(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
-}
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa3d0usize)as*mut u8,();
-(MainMenuSequence_NameCheckDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`ToRename()` overload"]fn to_rename(self,)->(){unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa460usize)as*mut u8,();
-(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa570usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_NameCheckDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa600usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_NameCheckDialogItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NameCheckDialogItemYes>IMainMenuSequence_NameCheckDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_rename_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NameCheckDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NameCheckDialogItemYes), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NameCheckDialogItemYesMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NameCheckDialogItemYes), ::core::stringify!(new_2),));
- <Self as IMainMenuSequence_NameCheckDialogItemYesMethods> ::ctor_2(this,text);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68190usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68160usize)as*mut u8,i32;
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68170usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68180usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu>IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301510usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23016f0usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301640usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301830usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23018c0usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23041c0usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304330usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23042c0usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304410usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304460usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301d40usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301eb0usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301e40usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301ff0usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302080usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300fc0usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301020usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem)__receiver)}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301080usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem>IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23018d0usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301930usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{#[doc="`ReturnSequence()` overload"]pub fn return_sequence()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68e00usize)as*mut u8,();
-)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b68f00usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu{#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68dd0usize)as*mut u8,i32;
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68de0usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu)__receiver)}
-}
-#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_NetworkServiceSelectMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68df0usize)as*mut u8,();
-(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu>IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn return_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_NetworkServiceSelectMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_NetworkServiceSelectMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_TopMenuSequence_Menu_MenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306c10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_TopMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2304b70usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_MenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_MenuItem>IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::growmode::GrowMode)` overload"]fn ctor(self,grow_mode:impl::core::convert::Into<crate::app::growmode::GrowMode>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301900usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver,(crate::app::growmode::GrowMode)::core::convert::Into::into(grow_mode))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301a20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301af0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem>IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::growmode::GrowMode)` — overload selector"]pub fn new(grow_mode:crate::app::growmode::GrowMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,grow_mode);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_HistoryInfo_WindowMethods:IMainMenuSequence_HistoryInfo_Window{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,info_kind:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind>)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68400usize)as*mut u8,();
-(MainMenuSequence_HistoryInfo_Window)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)::core::convert::Into::into(info_kind))}
-}
-#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68530usize)as*mut u8,();
-(MainMenuSequence_HistoryInfo_Window)__receiver)}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68540usize)as*mut u8,();
-(MainMenuSequence_HistoryInfo_Window)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b68600usize)as*mut u8,();
-(MainMenuSequence_HistoryInfo_Window)__receiver)}
-}
-#[doc="`SetHistoryText(::unity2::Il2CppString)` overload"]fn set_history_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b686c0usize)as*mut u8,();
-(MainMenuSequence_HistoryInfo_Window)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`ClearHistoryText()` overload"]fn clear_history_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_HistoryInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b686e0usize)as*mut u8,();
-(MainMenuSequence_HistoryInfo_Window)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_HistoryInfo_Window>IMainMenuSequence_HistoryInfo_WindowMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_HistoryInfo_Window{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_history_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn clear_history_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_HistoryInfo_Window{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject,info_kind:crate::app::mainmenusequence::MainMenuSequence_HistoryInfo_InfoKind)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_HistoryInfo_Window), ::core::stringify!(new),));
- <Self as IMainMenuSequence_HistoryInfo_WindowMethods> ::ctor(this,root_object,info_kind);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300850usize)as*mut u8,i32;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300870usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent>IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23036f0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
-}
-#[doc="`GetParamName()` overload"]fn get_param_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2303770usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
-}
-#[doc="`KeyCall()` overload"]fn key_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2303880usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23040f0usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem>IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_param_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn key_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301100usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301130usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem)__receiver)}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301190usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem>IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302840usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302a20usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302970usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildTextColor()` overload"]fn build_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302b70usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302c40usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302cd0usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent>IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9ff0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GrowModeSelectMenuSequenceMethods:IMainMenuSequence_GrowModeSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9de0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9e30usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9eb0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9f00usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd9f50usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GrowModeSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fda080usize)as*mut u8,();
-(MainMenuSequence_GrowModeSelectMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GrowModeSelectMenuSequence>IMainMenuSequence_GrowModeSelectMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GrowModeSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GrowModeSelectMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GrowModeSelectMenuSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301210usize)as*mut u8,i32;
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2301230usize)as*mut u8,();
-(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent>IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305450usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2305560usize)as*mut u8,();
-(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent>IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItemMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb410usize)as*mut u8,();
 (MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem)__receiver)}
@@ -3112,381 +3401,225 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24aac00usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequenceMethods:IMainMenuSequence_OptionMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aa9b0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_OptionMenuSequence)__receiver)}
-}
-#[doc="`IsTitleBarEnable()` overload"]fn is_title_bar_enable(self,)->bool{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aaa00usize)as*mut u8,bool;
-(MainMenuSequence_OptionMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aaa10usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_OptionMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aaa90usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_OptionMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aab10usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_OptionMenuSequence)__receiver)}
-}
-#[doc="`CreateMenuBind(crate::app::procinst::ProcInst)` overload"]fn create_menu_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aab60usize)as*mut u8,();
-(MainMenuSequence_OptionMenuSequence)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aac90usize)as*mut u8,();
-(MainMenuSequence_OptionMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence>IMainMenuSequence_OptionMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_title_bar_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_OptionMenuSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerGenderSelectMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ace40usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods:IMainMenuSequence_PlayerGenderSelectMenuSequence{#[doc="`GetLayoutPrefabPath()` overload"]fn get_layout_prefab_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab090usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarName()` overload"]fn get_title_bar_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab0e0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarHelp()` overload"]fn get_title_bar_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab160usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`GetTitleBarKeyHelpId()` overload"]fn get_title_bar_key_help_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab1b0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab230usize)as*mut u8,();
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ab2c0usize)as*mut u8,();
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`InitLayoutObjectReference()` overload"]fn init_layout_object_reference(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac5f0usize)as*mut u8,();
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`CloseWindow()` overload"]fn close_window(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac6b0usize)as*mut u8,();
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`WaitCloseWindow()` overload"]fn wait_close_window(self,)->bool{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac710usize)as*mut u8,bool;
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`SetGender(crate::app::gender::Gender)` overload"]fn set_gender(self,gender:impl::core::convert::Into<crate::app::gender::Gender>)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac4d0usize)as*mut u8,();
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver,(crate::app::gender::Gender)::core::convert::Into::into(gender))}
-}
-#[doc="`GetProcDesc()` overload"]fn get_proc_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ac7c0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_PlayerGenderSelectMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24aced0usize)as*mut u8,();
-(MainMenuSequence_PlayerGenderSelectMenuSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_PlayerGenderSelectMenuSequence>IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerGenderSelectMenuSequence{pub fn get_layout_prefab_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_title_bar_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_title_bar_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_title_bar_key_help_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn init_layout_object_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn close_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn wait_close_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_proc_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_PlayerGenderSelectMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_PlayerGenderSelectMenuSequence), ::core::stringify!(new),));
- <Self as IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::difficulty::Difficulty)` overload"]fn ctor(self,difficulty:impl::core::convert::Into<crate::app::difficulty::Difficulty>)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300630usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver,(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty))}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23008e0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300930usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300a40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem>IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem{#[doc="`.ctor(crate::app::difficulty::Difficulty)` — overload selector"]pub fn new(difficulty:crate::app::difficulty::Difficulty)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods> ::ctor(this,difficulty);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods:IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300740usize)as*mut u8,();
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2300770usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem)__receiver)}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23007d0usize)as*mut u8, ::unity2::Il2CppString;
-(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem>IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem), ::core::stringify!(new),));
- <Self as IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods:IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306c90usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306e00usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem>)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306d90usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver,(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_TopMenuSequence_Menu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2306ee0usize)as*mut u8,();
-(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent>IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_TopMenuSequence_Menu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_TopMenuSequence_Menu_MenuItemContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu{#[doc="`CreateMenuBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent)` overload"]pub fn create_menu_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69130usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_OptionMenuSequence_MenuMethods:IMainMenuSequence_OptionMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69100usize)as*mut u8,();
-(MainMenuSequence_OptionMenuSequence_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69110usize)as*mut u8,i32;
-(MainMenuSequence_OptionMenuSequence_Menu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MainMenuSequence_OptionMenuSequence_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69120usize)as*mut u8,();
-(MainMenuSequence_OptionMenuSequence_Menu)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_OptionMenuSequence_Menu>IMainMenuSequence_OptionMenuSequence_MenuMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_menu_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_OptionMenuSequence_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_OptionMenuSequence_Menu), ::core::stringify!(new),));
- <Self as IMainMenuSequence_OptionMenuSequence_MenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-mainmenusequence")]pub trait IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302240usize)as*mut u8,i32;
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent)__receiver)}
-}
-#[doc="`SetCursorColor(crate::unity_engine::color::Color)` overload"]fn set_cursor_color(self,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2302250usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23026b0usize)as*mut u8,();
-(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl<__T:IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent>IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods for __T{}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_cursor_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mainmenusequence")]impl MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent), ::core::stringify!(new),));
- <Self as IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mainmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods;
-    pub use super::MainMenuSequence_DifficultySelectMenuSequence;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequenceMethods;
-    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods;
-    pub use super::MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem;
-    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem;
-    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods;
-    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods;
-    pub use super::MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem;
-    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem;
-    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods;
-    pub use super::MainMenuSequence_LanguageSettingMenuSequence;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequenceMethods;
-    pub use super::MainMenuSequence_Label;
     pub use super::MainMenuSequence_MenuSequenceBase;
     pub use super::IMainMenuSequence_MenuSequenceBase;
     pub use super::IMainMenuSequence_MenuSequenceBaseMethods;
-    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods;
-    pub use super::MainMenuSequence_HistoryInfo;
-    pub use super::IMainMenuSequence_HistoryInfo;
-    pub use super::IMainMenuSequence_HistoryInfoMethods;
-    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods;
-    pub use super::MainMenuSequence_GameModeSelectMenuSequence;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequenceMethods;
+    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods;
+    pub use super::MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem;
+    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem;
+    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods;
+    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods;
+    pub use super::MainMenuSequence_DifficultySelectMenuSequence;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequenceMethods;
+    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContentMethods;
+    pub use super::MainMenuSequence_HistoryInfo_InfoKind;
+    pub use super::MainMenuSequence_Label;
+    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods;
+    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods;
     pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu;
     pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu;
     pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu_StartMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods;
-    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItemMethods;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequenceMethods;
-    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence_AlphaFader;
-    pub use super::IMainMenuSequence_AlphaFader;
-    pub use super::IMainMenuSequence_AlphaFaderMethods;
+    pub use super::MainMenuSequence_CharacterWork;
+    pub use super::IMainMenuSequence_CharacterWork;
+    pub use super::IMainMenuSequence_CharacterWorkMethods;
     pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu;
     pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu;
     pub use super::IMainMenuSequence_DifficultySelectMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods;
-    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItemMethods;
+    pub use super::MainMenuSequence_OptionMenuSequence_Menu;
+    pub use super::IMainMenuSequence_OptionMenuSequence_Menu;
+    pub use super::IMainMenuSequence_OptionMenuSequence_MenuMethods;
+    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods;
+    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods;
+    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods;
+    pub use super::MainMenuSequence_GameModeSelectMenuSequence;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequenceMethods;
+    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods;
+    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods;
     pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu;
     pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu;
     pub use super::IMainMenuSequence_GameModeSelectMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence;
-    pub use super::IMainMenuSequence;
-    pub use super::IMainMenuSequenceMethods;
+    pub use super::MainMenuSequence_FinalConfirmDialog_NoDialogItem;
+    pub use super::IMainMenuSequence_FinalConfirmDialog_NoDialogItem;
+    pub use super::IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods;
+    pub use super::MainMenuSequence_TopMenuSequence;
+    pub use super::IMainMenuSequence_TopMenuSequence;
+    pub use super::IMainMenuSequence_TopMenuSequenceMethods;
+    pub use super::MainMenuSequence_CameraWork;
+    pub use super::IMainMenuSequence_CameraWork;
+    pub use super::IMainMenuSequence_CameraWorkMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods;
+    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu_DLCMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_DLCMenuItemMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_LayoutType;
+    pub use super::MainMenuSequence_PlayerGenderSelectMenuSequence;
+    pub use super::IMainMenuSequence_PlayerGenderSelectMenuSequence;
+    pub use super::IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods;
+    pub use super::MainMenuSequence_HistoryInfo;
+    pub use super::IMainMenuSequence_HistoryInfo;
+    pub use super::IMainMenuSequence_HistoryInfoMethods;
+    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods;
+    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_HardMenuItemMethods;
+    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItem;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_NoMenuItemMethods;
+    pub use super::MainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem;
+    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItem;
+    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_CopyMenuItemMethods;
+    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods;
+    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods;
+    pub use super::MainMenuSequence_FinalConfirmDialog;
+    pub use super::IMainMenuSequence_FinalConfirmDialog;
+    pub use super::IMainMenuSequence_FinalConfirmDialogMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequenceMethods;
+    pub use super::MainMenuSequence_NameCheckDialogItemYes;
+    pub use super::IMainMenuSequence_NameCheckDialogItemYes;
+    pub use super::IMainMenuSequence_NameCheckDialogItemYesMethods;
+    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuContentMethods;
+    pub use super::MainMenuSequence_AlphaFader;
+    pub use super::IMainMenuSequence_AlphaFader;
+    pub use super::IMainMenuSequence_AlphaFaderMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods;
     pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem;
     pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItem;
     pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemMethods;
+    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItem;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemMethods;
+    pub use super::MainMenuSequence_OptionMenuSequence;
+    pub use super::IMainMenuSequence_OptionMenuSequence;
+    pub use super::IMainMenuSequence_OptionMenuSequenceMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu;
+    pub use super::IMainMenuSequence_TopMenuSequence_MenuMethods;
+    pub use super::MainMenuSequence_FinalConfirmDialog_YesDialogItem;
+    pub use super::IMainMenuSequence_FinalConfirmDialog_YesDialogItem;
+    pub use super::IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods;
+    pub use super::MainMenuSequence_GrowModeSelectMenuSequence;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequenceMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods;
+    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu_StartMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_StartMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_StartMenuItemMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods;
+    pub use super::MainMenuSequence_TopMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods;
+    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_NormalMenuItemMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemContentMethods;
+    pub use super::MainMenuSequence;
+    pub use super::IMainMenuSequence;
+    pub use super::IMainMenuSequenceMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods;
+    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods;
+    pub use super::MainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem;
+    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItem;
+    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_LanguageSettingMenuItemMethods;
+    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContent;
+    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MonthMenuItemContentMethods;
+    pub use super::MainMenuSequence_NameCheckDialogItemNo;
+    pub use super::IMainMenuSequence_NameCheckDialogItemNo;
+    pub use super::IMainMenuSequence_NameCheckDialogItemNoMethods;
+    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods;
+    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_MenuMethods;
+    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent;
+    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods;
+    pub use super::MainMenuSequence_HistoryInfo_Window;
+    pub use super::IMainMenuSequence_HistoryInfo_Window;
+    pub use super::IMainMenuSequence_HistoryInfo_WindowMethods;
+    pub use super::MainMenuSequence_LanguageSettingMenuSequence;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequenceMethods;
+    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem;
+    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods;
+    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequenceMethods;
+    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent;
+    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods;
+    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItem;
+    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_YesMenuItemMethods;
     pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialogMethods;
@@ -3496,145 +3629,12 @@ pub mod prelude {
     pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItem;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MessMenuItemMethods;
-    pub use super::MainMenuSequence_TopMenuSequence;
-    pub use super::IMainMenuSequence_TopMenuSequence;
-    pub use super::IMainMenuSequence_TopMenuSequenceMethods;
-    pub use super::MainMenuSequence_FinalConfirmDialog_YesDialogItem;
-    pub use super::IMainMenuSequence_FinalConfirmDialog_YesDialogItem;
-    pub use super::IMainMenuSequence_FinalConfirmDialog_YesDialogItemMethods;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuContentMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuContentMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu_OptionMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_OptionMenuItemMethods;
-    pub use super::MainMenuSequence_FinalConfirmDialog;
-    pub use super::IMainMenuSequence_FinalConfirmDialog;
-    pub use super::IMainMenuSequence_FinalConfirmDialogMethods;
-    pub use super::MainMenuSequence_FinalConfirmDialog_NoDialogItem;
-    pub use super::IMainMenuSequence_FinalConfirmDialog_NoDialogItem;
-    pub use super::IMainMenuSequence_FinalConfirmDialog_NoDialogItemMethods;
-    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemMethods;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_MenuItemMethods;
-    pub use super::MainMenuSequence_CameraWork;
-    pub use super::IMainMenuSequence_CameraWork;
-    pub use super::IMainMenuSequence_CameraWorkMethods;
-    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContentMethods;
-    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemMethods;
-    pub use super::MainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem;
-    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItem;
-    pub use super::IMainMenuSequence_OptionMenuSequence_Menu_DeleteMenuItemMethods;
     pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItem;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_NoDialogItemMethods;
-    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItem;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_RandomMenuItemMethods;
-    pub use super::MainMenuSequence_NameCheckDialogItemNo;
-    pub use super::IMainMenuSequence_NameCheckDialogItemNo;
-    pub use super::IMainMenuSequence_NameCheckDialogItemNoMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu;
-    pub use super::IMainMenuSequence_TopMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence_CharacterWork;
-    pub use super::IMainMenuSequence_CharacterWork;
-    pub use super::IMainMenuSequence_CharacterWorkMethods;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItem;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_ContinueMenuItemMethods;
-    pub use super::MainMenuSequence_NameCheckDialogItemYes;
-    pub use super::IMainMenuSequence_NameCheckDialogItemYes;
-    pub use super::IMainMenuSequence_NameCheckDialogItemYesMethods;
-    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuItemContentMethods;
-    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuItemContentMethods;
-    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemContentMethods;
-    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItem;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_CasualMenuItemMethods;
-    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItem;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_FixedMenuItemMethods;
-    pub use super::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu;
-    pub use super::IMainMenuSequence_NetworkServiceSelectMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItemMethods;
-    pub use super::MainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence_Menu_MenuItemMethods;
-    pub use super::MainMenuSequence_HistoryInfo_Window;
-    pub use super::IMainMenuSequence_HistoryInfo_Window;
-    pub use super::IMainMenuSequence_HistoryInfo_WindowMethods;
-    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuContentMethods;
-    pub use super::MainMenuSequence_HistoryInfo_InfoKind;
-    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItem;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_VoiceMenuItemMethods;
-    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItem;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_ClassicMenuItemMethods;
-    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuItemContentMethods;
-    pub use super::MainMenuSequence_GrowModeSelectMenuSequence;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequence;
-    pub use super::IMainMenuSequence_GrowModeSelectMenuSequenceMethods;
-    pub use super::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContentMethods;
-    pub use super::MainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContent;
-    pub use super::IMainMenuSequence_PlayerBirthdayInputMenuSequence_Menu_DayMenuItemContentMethods;
     pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItem;
     pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_ConfirmDialog_YesDialogItemMethods;
-    pub use super::MainMenuSequence_OptionMenuSequence;
-    pub use super::IMainMenuSequence_OptionMenuSequence;
-    pub use super::IMainMenuSequence_OptionMenuSequenceMethods;
-    pub use super::MainMenuSequence_PlayerGenderSelectMenuSequence;
-    pub use super::IMainMenuSequence_PlayerGenderSelectMenuSequence;
-    pub use super::IMainMenuSequence_PlayerGenderSelectMenuSequenceMethods;
-    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemMethods;
-    pub use super::MainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItem;
-    pub use super::IMainMenuSequence_DifficultySelectMenuSequence_Menu_LunaticMenuItemMethods;
-    pub use super::MainMenuSequence_TopMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent;
-    pub use super::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods;
-    pub use super::MainMenuSequence_OptionMenuSequence_Menu;
-    pub use super::IMainMenuSequence_OptionMenuSequence_Menu;
-    pub use super::IMainMenuSequence_OptionMenuSequence_MenuMethods;
-    pub use super::MainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContent;
-    pub use super::IMainMenuSequence_LanguageSettingMenuSequence_Menu_MenuContentMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

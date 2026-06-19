@@ -21,43 +21,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatortablesub2d/CalculatorTableSub2D_TableCommand.md"))]#[::unity2::class(namespace="App",name="CalculatorTableSub2D.TableCommand")]#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]pub struct CalculatorTableSub2D_TableCommand{#[offset(48)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatortablesub2d/CalculatorTableSub2D.md"))]#[::unity2::class(namespace="App",name="CalculatorTableSub2D")]#[parent(crate::app::calculatortable2d_1::CalculatorTable2D_1<crate::app::calculatortablesub2d::CalculatorTableSub2D>)]pub struct CalculatorTableSub2D{#[static_field]#[rename(name="Min")]pub min:i32, #[static_field]#[rename(name="Max")]pub max:i32, #[static_field]#[rename(name="Num")]pub num:i32, #[offset(208)]#[rename(name="m_Table")]pub m_table:crate::app::calculatortable::CalculatorTable,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatortablesub2d/CalculatorTableSub2D_TableCommand.md"))]#[::unity2::class(namespace="App",name="CalculatorTableSub2D.TableCommand")]#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]pub struct CalculatorTableSub2D_TableCommand{#[offset(48)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-calculatortablesub2d-types")]
 pub use __types::*;
-
-#[cfg(feature="app-calculatortablesub2d")]pub trait ICalculatorTableSub2D_TableCommandMethods:ICalculatorTableSub2D_TableCommand{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CalculatorTableSub2D_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd590usize)as*mut u8,();
-(CalculatorTableSub2D_TableCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorTableSub2D_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd5d0usize)as*mut u8, ::unity2::Il2CppString;
-(CalculatorTableSub2D_TableCommand)__receiver)}
-}
-#[doc="`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <CalculatorTableSub2D_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd5e0usize)as*mut u8,f32;
-(CalculatorTableSub2D_TableCommand)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
-}
-}
-
-#[cfg(feature="app-calculatortablesub2d")]impl<__T:ICalculatorTableSub2D_TableCommand>ICalculatorTableSub2D_TableCommandMethods for __T{}
-
-#[cfg(feature="app-calculatortablesub2d")]impl CalculatorTableSub2D_TableCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn func_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-calculatortablesub2d")]impl CalculatorTableSub2D_TableCommand{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CalculatorTableSub2D_TableCommand), ::core::stringify!(new),));
- <Self as ICalculatorTableSub2D_TableCommandMethods> ::ctor(this,name);
-this}
-}
 
 #[cfg(feature="app-calculatortablesub2d")]impl CalculatorTableSub2D{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29927c0usize)as*mut u8,();
 )}
@@ -517,15 +489,43 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-calculatortablesub2d")]pub trait ICalculatorTableSub2D_TableCommandMethods:ICalculatorTableSub2D_TableCommand{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CalculatorTableSub2D_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd590usize)as*mut u8,();
+(CalculatorTableSub2D_TableCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorTableSub2D_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd5d0usize)as*mut u8, ::unity2::Il2CppString;
+(CalculatorTableSub2D_TableCommand)__receiver)}
+}
+#[doc="`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <CalculatorTableSub2D_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd5e0usize)as*mut u8,f32;
+(CalculatorTableSub2D_TableCommand)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
+}
+}
+
+#[cfg(feature="app-calculatortablesub2d")]impl<__T:ICalculatorTableSub2D_TableCommand>ICalculatorTableSub2D_TableCommandMethods for __T{}
+
+#[cfg(feature="app-calculatortablesub2d")]impl CalculatorTableSub2D_TableCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn func_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-calculatortablesub2d")]impl CalculatorTableSub2D_TableCommand{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CalculatorTableSub2D_TableCommand), ::core::stringify!(new),));
+ <Self as ICalculatorTableSub2D_TableCommandMethods> ::ctor(this,name);
+this}
+}
+
 #[cfg(feature = "app-calculatortablesub2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CalculatorTableSub2D_TableCommand;
-    pub use super::ICalculatorTableSub2D_TableCommand;
-    pub use super::ICalculatorTableSub2D_TableCommandMethods;
     pub use super::CalculatorTableSub2D;
     pub use super::ICalculatorTableSub2D;
     pub use super::ICalculatorTableSub2DMethods;
+    pub use super::CalculatorTableSub2D_TableCommand;
+    pub use super::ICalculatorTableSub2D_TableCommand;
+    pub use super::ICalculatorTableSub2D_TableCommandMethods;
     pub use crate::app::calculatorcommand::ICalculatorCommand;
     pub use crate::app::calculatortable2d_1::ICalculatorTable2D_1;
     pub use crate::app::gamecalculatorcommand::IGameCalculatorCommand;

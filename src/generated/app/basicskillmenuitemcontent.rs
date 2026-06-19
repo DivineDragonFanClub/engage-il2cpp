@@ -23,9 +23,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]#[::unity2::class(namespace="App",name="BasicSkillMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct BasicSkillMenuItemContent{#[offset(72)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Name")]pub m_name:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_SubText")]pub m_sub_text:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_Border")]pub m_border:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_Efficacy")]pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(112)]#[rename(name="m_IsDouble")]pub m_is_double:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BasicSkillMenuItemContent_SubText{pub value:i32,}
 impl::unity2::ClassIdentity for BasicSkillMenuItemContent_SubText{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BasicSkillMenuItemContent.SubText";
@@ -54,6 +51,9 @@ pub fn equiped()->Self{Self{value:7}
 pub fn double()->Self{Self{value:8}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]#[::unity2::class(namespace="App",name="BasicSkillMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct BasicSkillMenuItemContent{#[offset(72)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Name")]pub m_name:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_SubText")]pub m_sub_text:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_Border")]pub m_border:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_Efficacy")]pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(112)]#[rename(name="m_IsDouble")]pub m_is_double:bool,}
 
 }
 
@@ -131,10 +131,10 @@ this}
 #[cfg(feature = "app-basicskillmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BasicSkillMenuItemContent_SubText;
     pub use super::BasicSkillMenuItemContent;
     pub use super::IBasicSkillMenuItemContent;
     pub use super::IBasicSkillMenuItemContentMethods;
-    pub use super::BasicSkillMenuItemContent_SubText;
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

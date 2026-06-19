@@ -17,7 +17,7 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/lookatikrotationlimit/LookAtIKRotationLimit.md"))]#[::unity2::class(namespace="Combat",name="LookAtIKRotationLimit")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LookAtIKRotationLimit{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/lookatikrotationlimit/LookAtIKRotationLimit.md"))]#[::unity2::class(namespace="Combat",name="LookAtIKRotationLimit")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LookAtIKRotationLimit{#[offset(24)]#[rename(name="limits")]pub limits: ::unity2::Array<crate::root_motion::final_ik::rotationlimit::RotationLimit> ,}
 
 }
 

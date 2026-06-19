@@ -17,10 +17,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymenu/ChallengeDifficultyMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeDifficultyMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeDifficultyMenu_RequestCloseEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymenu/ChallengeDifficultyMenu.md"))]#[::unity2::class(namespace="App",name="ChallengeDifficultyMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ChallengeDifficultyMenu{#[offset(200)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::challengedifficultymenu::ChallengeDifficultyMenu_RequestCloseEventHandler, #[offset(208)]#[rename(name="m_Root")]pub m_root:crate::app::challengemapselectroot::ChallengeMapSelectRoot, #[offset(216)]#[rename(name="m_TextDifficulty")]pub m_text_difficulty:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymenu/ChallengeDifficultyMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeDifficultyMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeDifficultyMenu_RequestCloseEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymenu/ChallengeDifficultyMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeDifficultyMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeDifficultyMenu_DecideEventHandler{}
@@ -29,29 +29,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-challengedifficultymenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-challengedifficultymenu")]pub trait IChallengeDifficultyMenu_RequestCloseEventHandlerMethods:IChallengeDifficultyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeDifficultyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19beed0usize)as*mut u8,();
-(ChallengeDifficultyMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32)` overload"]fn invoke(self,difficulty:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChallengeDifficultyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19beef0usize)as*mut u8,();
-(ChallengeDifficultyMenu_RequestCloseEventHandler)__receiver,(i32)::core::convert::Into::into(difficulty))}
-}
-}
-
-#[cfg(feature="app-challengedifficultymenu")]impl<__T:IChallengeDifficultyMenu_RequestCloseEventHandler>IChallengeDifficultyMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-challengedifficultymenu")]impl ChallengeDifficultyMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-challengedifficultymenu")]impl ChallengeDifficultyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ChallengeDifficultyMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IChallengeDifficultyMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-challengedifficultymenu")]impl ChallengeDifficultyMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::basicmenucontent::BasicMenuContent, crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler, crate::app::challengedifficultymenu::ChallengeDifficultyMenu_RequestCloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,root:impl::core::convert::Into<crate::app::challengemapselectroot::ChallengeMapSelectRoot> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,decide_event_handler:impl::core::convert::Into<crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::challengedifficultymenu::ChallengeDifficultyMenu_RequestCloseEventHandler>)->crate::app::challengedifficultymenu::ChallengeDifficultyMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c23f0usize)as*mut u8,crate::app::challengedifficultymenu::ChallengeDifficultyMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::challengemapselectroot::ChallengeMapSelectRoot)::core::convert::Into::into(root),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
@@ -112,6 +89,29 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-challengedifficultymenu")]pub trait IChallengeDifficultyMenu_RequestCloseEventHandlerMethods:IChallengeDifficultyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeDifficultyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19beed0usize)as*mut u8,();
+(ChallengeDifficultyMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,difficulty:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChallengeDifficultyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19beef0usize)as*mut u8,();
+(ChallengeDifficultyMenu_RequestCloseEventHandler)__receiver,(i32)::core::convert::Into::into(difficulty))}
+}
+}
+
+#[cfg(feature="app-challengedifficultymenu")]impl<__T:IChallengeDifficultyMenu_RequestCloseEventHandler>IChallengeDifficultyMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-challengedifficultymenu")]impl ChallengeDifficultyMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-challengedifficultymenu")]impl ChallengeDifficultyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChallengeDifficultyMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IChallengeDifficultyMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="app-challengedifficultymenu")]pub trait IChallengeDifficultyMenu_DecideEventHandlerMethods:IChallengeDifficultyMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeDifficultyMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19bebe0usize)as*mut u8,();
 (ChallengeDifficultyMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -138,12 +138,12 @@ this}
 #[cfg(feature = "app-challengedifficultymenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ChallengeDifficultyMenu_RequestCloseEventHandler;
-    pub use super::IChallengeDifficultyMenu_RequestCloseEventHandler;
-    pub use super::IChallengeDifficultyMenu_RequestCloseEventHandlerMethods;
     pub use super::ChallengeDifficultyMenu;
     pub use super::IChallengeDifficultyMenu;
     pub use super::IChallengeDifficultyMenuMethods;
+    pub use super::ChallengeDifficultyMenu_RequestCloseEventHandler;
+    pub use super::IChallengeDifficultyMenu_RequestCloseEventHandler;
+    pub use super::IChallengeDifficultyMenu_RequestCloseEventHandlerMethods;
     pub use super::ChallengeDifficultyMenu_DecideEventHandler;
     pub use super::IChallengeDifficultyMenu_DecideEventHandler;
     pub use super::IChallengeDifficultyMenu_DecideEventHandlerMethods;

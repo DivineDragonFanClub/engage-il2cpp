@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MaterialListMenuSequence{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenusequence/MaterialListMenuSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MaterialListMenuSequence_Label2{pub value:i32,}
 impl::unity2::ClassIdentity for MaterialListMenuSequence_Label2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MaterialListMenuSequence.Label2";
@@ -32,6 +29,9 @@ impl MaterialListMenuSequence_Label2{pub fn entry()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MaterialListMenuSequence{}
 
 }
 
@@ -90,10 +90,10 @@ this}
 #[cfg(feature = "app-materiallistmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MaterialListMenuSequence_Label2;
     pub use super::MaterialListMenuSequence;
     pub use super::IMaterialListMenuSequence;
     pub use super::IMaterialListMenuSequenceMethods;
-    pub use super::MaterialListMenuSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

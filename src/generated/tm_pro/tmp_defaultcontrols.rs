@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md"))]#[::unity2::class(namespace="TMPro",name="TMP_DefaultControls")]#[parent(crate::system::object::Object)]pub struct TMP_DefaultControls{#[static_field]#[rename(name="kWidth")]pub k_width:f32, #[static_field]#[rename(name="kThickHeight")]pub k_thick_height:f32, #[static_field]#[rename(name="kThinHeight")]pub k_thin_height:f32, #[static_field]#[rename(name="s_TextElementSize")]pub s_text_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ThickElementSize")]pub s_thick_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ThinElementSize")]pub s_thin_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_DefaultSelectableColor")]pub s_default_selectable_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="s_TextColor")]pub s_text_color:crate::unity_engine::color::Color,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls_Resources.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_DefaultControls_Resources{pub standard:crate::unity_engine::sprite::Sprite,pub background:crate::unity_engine::sprite::Sprite,pub input_field:crate::unity_engine::sprite::Sprite,pub knob:crate::unity_engine::sprite::Sprite,pub checkmark:crate::unity_engine::sprite::Sprite,pub dropdown:crate::unity_engine::sprite::Sprite,pub mask:crate::unity_engine::sprite::Sprite,}
 impl::unity2::ClassIdentity for TMP_DefaultControls_Resources{const NAMESPACE: &'static str="TMPro";
 const NAME: &'static str="TMP_DefaultControls.Resources";
@@ -20,9 +23,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for TMP_DefaultControls_Resources{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md"))]#[::unity2::class(namespace="TMPro",name="TMP_DefaultControls")]#[parent(crate::system::object::Object)]pub struct TMP_DefaultControls{#[static_field]#[rename(name="kWidth")]pub k_width:f32, #[static_field]#[rename(name="kThickHeight")]pub k_thick_height:f32, #[static_field]#[rename(name="kThinHeight")]pub k_thin_height:f32, #[static_field]#[rename(name="s_TextElementSize")]pub s_text_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ThickElementSize")]pub s_thick_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ThinElementSize")]pub s_thin_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_DefaultSelectableColor")]pub s_default_selectable_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="s_TextColor")]pub s_text_color:crate::unity_engine::color::Color,}
 
 }
 
@@ -84,9 +84,9 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "tm_pro-tmp_defaultcontrols")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_DefaultControls_Resources;
     pub use super::TMP_DefaultControls;
     pub use super::ITMP_DefaultControls;
+    pub use super::TMP_DefaultControls_Resources;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

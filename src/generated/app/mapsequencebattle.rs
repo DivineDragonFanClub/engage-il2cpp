@@ -27,6 +27,34 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequencebattle::MapSequenceBattle>)]pub struct MapSequenceBattle{#[offset(160)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapsequencebattle::MapSequenceBattle_Kinds, #[offset(164)]#[rename(name="m_TargetIndex")]pub m_target_index:i32, #[offset(168)]#[rename(name="m_BattleCount")]pub m_battle_count:i32, #[offset(172)]#[rename(name="m_GainExp")]pub m_gain_exp:i32, #[offset(176)]#[rename(name="m_ExpStatus")]pub m_exp_status:crate::app::battleinfoside::BattleInfoSide_Status, #[offset(180)]#[rename(name="m_ExpendCount")]pub m_expend_count:i32, #[offset(184)]#[rename(name="m_StartX")]pub m_start_x:i32, #[offset(188)]#[rename(name="m_StartZ")]pub m_start_z:i32, #[offset(192)]#[rename(name="m_GrowTalk")]pub m_grow_talk:bool, #[offset(200)]#[rename(name="m_Defender")]pub m_defender:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_Status")]pub m_status:crate::app::mapsequencebattle::MapSequenceBattle_BitFieldStatus, #[offset(216)]#[rename(name="m_DeadUnits")]pub m_dead_units:crate::app::mapsequencebattle::MapSequenceBattle_UnitList, #[offset(224)]#[rename(name="m_DieEvents")]pub m_die_events:crate::app::mapsequencebattle::MapSequenceBattle_UnitList, #[offset(232)]#[rename(name="m_FadeUnits")]pub m_fade_units:crate::app::mapsequencebattle::MapSequenceBattle_UnitList, #[offset(240)]#[rename(name="m_DropUnits")]pub m_drop_units:crate::app::mapsequencebattle::MapSequenceBattle_UnitList,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle.RangeWarpTargets")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)]pub struct MapSequenceBattle_RangeWarpTargets{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceBattle_Status{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceBattle_Status{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceBattle.Status";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceBattle_Status{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceBattle_Status{pub fn multi_battle()->Self{Self{value:1}
+}
+pub fn single_rod()->Self{Self{value:2}
+}
+pub fn used_rod()->Self{Self{value:4}
+}
+pub fn used_move()->Self{Self{value:8}
+}
+pub fn last_boss_die()->Self{Self{value:16}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceBattle_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceBattle_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceBattle.Kinds";
@@ -45,6 +73,9 @@ pub fn destroy()->Self{Self{value:2}
 pub fn rod()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle.UnitList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)]pub struct MapSequenceBattle_UnitList{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceBattle_Label{pub value:i32,}
@@ -97,7 +128,7 @@ pub fn end()->Self{Self{value:18}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequencebattle::MapSequenceBattle>)]pub struct MapSequenceBattle{#[offset(160)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapsequencebattle::MapSequenceBattle_Kinds, #[offset(164)]#[rename(name="m_TargetIndex")]pub m_target_index:i32, #[offset(168)]#[rename(name="m_BattleCount")]pub m_battle_count:i32, #[offset(172)]#[rename(name="m_GainExp")]pub m_gain_exp:i32, #[offset(176)]#[rename(name="m_ExpStatus")]pub m_exp_status:crate::app::battleinfoside::BattleInfoSide_Status, #[offset(180)]#[rename(name="m_ExpendCount")]pub m_expend_count:i32, #[offset(184)]#[rename(name="m_StartX")]pub m_start_x:i32, #[offset(188)]#[rename(name="m_StartZ")]pub m_start_z:i32, #[offset(192)]#[rename(name="m_GrowTalk")]pub m_grow_talk:bool, #[offset(200)]#[rename(name="m_Defender")]pub m_defender:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_Status")]pub m_status:crate::app::mapsequencebattle::MapSequenceBattle_BitFieldStatus, #[offset(216)]#[rename(name="m_DeadUnits")]pub m_dead_units:crate::app::mapsequencebattle::MapSequenceBattle_UnitList, #[offset(224)]#[rename(name="m_DieEvents")]pub m_die_events:crate::app::mapsequencebattle::MapSequenceBattle_UnitList, #[offset(232)]#[rename(name="m_FadeUnits")]pub m_fade_units:crate::app::mapsequencebattle::MapSequenceBattle_UnitList, #[offset(240)]#[rename(name="m_DropUnits")]pub m_drop_units:crate::app::mapsequencebattle::MapSequenceBattle_UnitList,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle.BitFieldStatus")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapsequencebattle::MapSequenceBattle_Status>)]pub struct MapSequenceBattle_BitFieldStatus{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_BattleUnitScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSequenceBattle_BattleUnitScope{pub m_info:crate::app::battleinfo::BattleInfo,}
@@ -109,37 +140,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for MapSequenceBattle_BattleUnitScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceBattle_Status{pub value:i32,}
-impl::unity2::ClassIdentity for MapSequenceBattle_Status{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapSequenceBattle.Status";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapSequenceBattle_Status{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapSequenceBattle_Status{pub fn multi_battle()->Self{Self{value:1}
-}
-pub fn single_rod()->Self{Self{value:2}
-}
-pub fn used_rod()->Self{Self{value:4}
-}
-pub fn used_move()->Self{Self{value:8}
-}
-pub fn last_boss_die()->Self{Self{value:16}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle.RangeWarpTargets")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)]pub struct MapSequenceBattle_RangeWarpTargets{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle.UnitList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)]pub struct MapSequenceBattle_UnitList{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md"))]#[::unity2::class(namespace="App",name="MapSequenceBattle.BitFieldStatus")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapsequencebattle::MapSequenceBattle_Status>)]pub struct MapSequenceBattle_BitFieldStatus{}
 
 }
 
@@ -571,18 +571,6 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-mapsequencebattle")]impl MapSequenceBattle_BattleUnitScope{#[doc="`.ctor(crate::app::battleinfo::BattleInfo)` overload"]pub fn ctor(&mut self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218fbf0usize)as*mut u8,();
-(*mut MapSequenceBattle_BattleUnitScope)self as*mut MapSequenceBattle_BattleUnitScope,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218fd10usize)as*mut u8,();
-(*mut MapSequenceBattle_BattleUnitScope)self as*mut MapSequenceBattle_BattleUnitScope)}
-}
-}
-
-#[cfg(feature="app-mapsequencebattle")]impl MapSequenceBattle_BattleUnitScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
 #[cfg(feature="app-mapsequencebattle")]pub trait IMapSequenceBattle_RangeWarpTargetsMethods:IMapSequenceBattle_RangeWarpTargets{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` overload"]fn ctor(self,rod_unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,range:impl::core::convert::Into<i32> ,warp_x:impl::core::convert::Into<i32> ,warp_z:impl::core::convert::Into<i32> ,can_self:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapSequenceBattle_RangeWarpTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2192710usize)as*mut u8,();
 (MapSequenceBattle_RangeWarpTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(rod_unit),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(range),(i32)::core::convert::Into::into(warp_x),(i32)::core::convert::Into::into(warp_z),(bool)::core::convert::Into::into(can_self))}
@@ -652,25 +640,37 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapsequencebattle")]impl MapSequenceBattle_BattleUnitScope{#[doc="`.ctor(crate::app::battleinfo::BattleInfo)` overload"]pub fn ctor(&mut self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218fbf0usize)as*mut u8,();
+(*mut MapSequenceBattle_BattleUnitScope)self as*mut MapSequenceBattle_BattleUnitScope,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218fd10usize)as*mut u8,();
+(*mut MapSequenceBattle_BattleUnitScope)self as*mut MapSequenceBattle_BattleUnitScope)}
+}
+}
+
+#[cfg(feature="app-mapsequencebattle")]impl MapSequenceBattle_BattleUnitScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
 #[cfg(feature = "app-mapsequencebattle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceBattle_Kinds;
-    pub use super::MapSequenceBattle_Label;
     pub use super::MapSequenceBattle;
     pub use super::IMapSequenceBattle;
     pub use super::IMapSequenceBattleMethods;
-    pub use super::MapSequenceBattle_BattleUnitScope;
-    pub use super::MapSequenceBattle_Status;
     pub use super::MapSequenceBattle_RangeWarpTargets;
     pub use super::IMapSequenceBattle_RangeWarpTargets;
     pub use super::IMapSequenceBattle_RangeWarpTargetsMethods;
+    pub use super::MapSequenceBattle_Status;
+    pub use super::MapSequenceBattle_Kinds;
     pub use super::MapSequenceBattle_UnitList;
     pub use super::IMapSequenceBattle_UnitList;
     pub use super::IMapSequenceBattle_UnitListMethods;
+    pub use super::MapSequenceBattle_Label;
     pub use super::MapSequenceBattle_BitFieldStatus;
     pub use super::IMapSequenceBattle_BitFieldStatus;
     pub use super::IMapSequenceBattle_BitFieldStatusMethods;
+    pub use super::MapSequenceBattle_BattleUnitScope;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

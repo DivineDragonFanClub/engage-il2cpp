@@ -17,29 +17,20 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile_Results.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexProfile_Results{pub value:i32,}
-impl::unity2::ClassIdentity for NexProfile_Results{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexProfile.Results";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile_ServerSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexProfile_ServerSequence_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for NexProfile_ServerSequence_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexProfile.ServerSequence.Mode";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexProfile_Results{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexProfile_ServerSequence_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexProfile_Results{pub fn failed()->Self{Self{value:0}
+impl NexProfile_ServerSequence_Mode{pub fn upload()->Self{Self{value:0}
 }
-pub fn failed_not_found()->Self{Self{value:1}
-}
-pub fn failed_permission_denied()->Self{Self{value:2}
-}
-pub fn cancelled()->Self{Self{value:3}
-}
-pub fn succeeded()->Self{Self{value:4}
+pub fn download()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile_ServerSequence.md"))]#[::unity2::class(namespace="App",name="NexProfile.ServerSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexProfile_ServerSequence{#[static_field]#[rename(name="BufferSizeMax")]pub buffer_size_max:i32, #[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::nexprofile::NexProfile_ServerSequence_Mode, #[offset(120)]#[rename(name="m_PrincipalID")]pub m_principal_id:u64, #[offset(128)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard, #[offset(136)]#[rename(name="m_DataID")]pub m_data_id:u64,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile_ServerSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexProfile_ServerSequence_Label{pub value:i32,}
@@ -70,28 +61,90 @@ pub fn end()->Self{Self{value:7}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile_ServerSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexProfile_ServerSequence_Mode{pub value:i32,}
-impl::unity2::ClassIdentity for NexProfile_ServerSequence_Mode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexProfile.ServerSequence.Mode";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile.md"))]#[::unity2::class(namespace="App",name="NexProfile")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexprofile::NexProfile>)]pub struct NexProfile{#[offset(28)]#[rename(name="m_LastResult")]pub m_last_result:crate::app::nexprofile::NexProfile_Results, #[offset(32)]#[rename(name="m_LastResultData")]pub m_last_result_data:crate::app::profilecard::ProfileCard,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile_Results.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexProfile_Results{pub value:i32,}
+impl::unity2::ClassIdentity for NexProfile_Results{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexProfile.Results";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for NexProfile_ServerSequence_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for NexProfile_Results{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl NexProfile_ServerSequence_Mode{pub fn upload()->Self{Self{value:0}
+impl NexProfile_Results{pub fn failed()->Self{Self{value:0}
 }
-pub fn download()->Self{Self{value:1}
+pub fn failed_not_found()->Self{Self{value:1}
+}
+pub fn failed_permission_denied()->Self{Self{value:2}
+}
+pub fn cancelled()->Self{Self{value:3}
+}
+pub fn succeeded()->Self{Self{value:4}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile.md"))]#[::unity2::class(namespace="App",name="NexProfile")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexprofile::NexProfile>)]pub struct NexProfile{#[offset(28)]#[rename(name="m_LastResult")]pub m_last_result:crate::app::nexprofile::NexProfile_Results, #[offset(32)]#[rename(name="m_LastResultData")]pub m_last_result_data:crate::app::profilecard::ProfileCard,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexprofile/NexProfile_ServerSequence.md"))]#[::unity2::class(namespace="App",name="NexProfile.ServerSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexProfile_ServerSequence{#[static_field]#[rename(name="BufferSizeMax")]pub buffer_size_max:i32, #[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::nexprofile::NexProfile_ServerSequence_Mode, #[offset(120)]#[rename(name="m_PrincipalID")]pub m_principal_id:u64, #[offset(128)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard, #[offset(136)]#[rename(name="m_DataID")]pub m_data_id:u64,}
 
 }
 
 #[cfg(feature = "app-nexprofile-types")]
 pub use __types::*;
+
+#[cfg(feature="app-nexprofile")]pub trait INexProfileMethods:INexProfile{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15e20usize)as*mut u8,();
+(NexProfile)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15ed0usize)as*mut u8,();
+(NexProfile)__receiver)}
+}
+#[doc="`Upload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]fn upload(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,profile:impl::core::convert::Into<crate::app::profilecard::ProfileCard>)->bool{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15ee0usize)as*mut u8,bool;
+(NexProfile)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(profile))}
+}
+#[doc="`Download(crate::app::procinst::ProcInst, u64)` overload"]fn download(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,principal_id:impl::core::convert::Into<u64>)->bool{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15f30usize)as*mut u8,bool;
+(NexProfile)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(principal_id))}
+}
+#[doc="`get_Result()` overload"]fn get_result(self,)->crate::app::nexprofile::NexProfile_Results{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15f80usize)as*mut u8,crate::app::nexprofile::NexProfile_Results;
+(NexProfile)__receiver)}
+}
+#[doc="`get_ResultData()` overload"]fn get_result_data(self,)->crate::app::profilecard::ProfileCard{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15f90usize)as*mut u8,crate::app::profilecard::ProfileCard;
+(NexProfile)__receiver)}
+}
+#[doc="`ClearResult()` overload"]fn clear_result(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15ec0usize)as*mut u8,();
+(NexProfile)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15fa0usize)as*mut u8,();
+(NexProfile)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexprofile")]impl<__T:INexProfile>INexProfileMethods for __T{}
+
+#[cfg(feature="app-nexprofile")]impl NexProfile{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_result_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-nexprofile")]impl NexProfile{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexProfile), ::core::stringify!(new),));
+ <Self as INexProfileMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-nexprofile")]impl NexProfile_ServerSequence{#[doc="`CreateBindDownload(crate::app::procinst::ProcInst, u64)` overload"]pub fn create_bind_download(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,principal_id:impl::core::convert::Into<u64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20a6880usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(principal_id))}
@@ -203,71 +256,18 @@ pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 this}
 }
 
-#[cfg(feature="app-nexprofile")]pub trait INexProfileMethods:INexProfile{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15e20usize)as*mut u8,();
-(NexProfile)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15ed0usize)as*mut u8,();
-(NexProfile)__receiver)}
-}
-#[doc="`Upload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]fn upload(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,profile:impl::core::convert::Into<crate::app::profilecard::ProfileCard>)->bool{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15ee0usize)as*mut u8,bool;
-(NexProfile)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(profile))}
-}
-#[doc="`Download(crate::app::procinst::ProcInst, u64)` overload"]fn download(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,principal_id:impl::core::convert::Into<u64>)->bool{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15f30usize)as*mut u8,bool;
-(NexProfile)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(u64)::core::convert::Into::into(principal_id))}
-}
-#[doc="`get_Result()` overload"]fn get_result(self,)->crate::app::nexprofile::NexProfile_Results{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15f80usize)as*mut u8,crate::app::nexprofile::NexProfile_Results;
-(NexProfile)__receiver)}
-}
-#[doc="`get_ResultData()` overload"]fn get_result_data(self,)->crate::app::profilecard::ProfileCard{unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15f90usize)as*mut u8,crate::app::profilecard::ProfileCard;
-(NexProfile)__receiver)}
-}
-#[doc="`ClearResult()` overload"]fn clear_result(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15ec0usize)as*mut u8,();
-(NexProfile)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f15fa0usize)as*mut u8,();
-(NexProfile)__receiver)}
-}
-}
-
-#[cfg(feature="app-nexprofile")]impl<__T:INexProfile>INexProfileMethods for __T{}
-
-#[cfg(feature="app-nexprofile")]impl NexProfile{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_result_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn clear_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-nexprofile")]impl NexProfile{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NexProfile), ::core::stringify!(new),));
- <Self as INexProfileMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-nexprofile")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NexProfile_ServerSequence_Mode;
+    pub use super::NexProfile_ServerSequence_Label;
+    pub use super::NexProfile;
+    pub use super::INexProfile;
+    pub use super::INexProfileMethods;
     pub use super::NexProfile_Results;
     pub use super::NexProfile_ServerSequence;
     pub use super::INexProfile_ServerSequence;
     pub use super::INexProfile_ServerSequenceMethods;
-    pub use super::NexProfile_ServerSequence_Label;
-    pub use super::NexProfile_ServerSequence_Mode;
-    pub use super::NexProfile;
-    pub use super::INexProfile;
-    pub use super::INexProfileMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;

@@ -17,19 +17,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToNextEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.ChangeUnitToNextEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_ChangeUnitToNextEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.SwitchDetailDisplaywayEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct WeaponShopBuyMenu{#[offset(200)]#[rename(name="m_ShopContentArray")]pub m_shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent> , #[offset(208)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds, #[offset(216)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(224)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler, #[offset(232)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(240)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler, #[offset(248)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler, #[offset(256)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler, #[offset(264)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler, #[offset(272)]#[rename(name="m_SwitchDetailDisplaywayEventHandler")]pub m_switch_detail_displayway_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToPrevEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.ChangeUnitToPrevEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_RequestCloseEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct WeaponShopBuyMenu{#[offset(200)]#[rename(name="m_ShopContentArray")]pub m_shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent> , #[offset(208)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds, #[offset(216)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(224)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler, #[offset(232)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(240)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler, #[offset(248)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler, #[offset(256)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler, #[offset(264)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler, #[offset(272)]#[rename(name="m_SwitchDetailDisplaywayEventHandler")]pub m_switch_detail_displayway_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_SelectEventHandler{}
@@ -37,54 +28,40 @@ use crate::system::object::{IObject,Object}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_DecideEventHandler{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_RequestCloseEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToNextEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.ChangeUnitToNextEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_ChangeUnitToNextEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.SwitchDetailDisplaywayEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{}
+
 }
 
 #[cfg(feature = "app-weaponshopbuymenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2a860usize)as*mut u8,();
-(WeaponShopBuyMenu_ChangeUnitToNextEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ac20usize)as*mut u8,();
+(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2a880usize)as*mut u8,();
-(WeaponShopBuyMenu_ChangeUnitToNextEventHandler)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ac40usize)as*mut u8,();
+(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
 }
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler>IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods for __T{}
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler>IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods for __T{}
 
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToNextEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b9f0usize)as*mut u8,();
-(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ba10usize)as*mut u8,();
-(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler>IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods for __T{}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -180,52 +157,6 @@ pub fn on_done_to_buy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ac20usize)as*mut u8,();
-(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ac40usize)as*mut u8,();
-(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
-}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler>IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods for __T{}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_RequestCloseEventHandlerMethods:IWeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b3c0usize)as*mut u8,();
-(WeaponShopBuyMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b3e0usize)as*mut u8,();
-(WeaponShopBuyMenu_RequestCloseEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_RequestCloseEventHandler>IWeaponShopBuyMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_SelectEventHandlerMethods:IWeaponShopBuyMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b630usize)as*mut u8,();
 (WeaponShopBuyMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -272,30 +203,99 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_RequestCloseEventHandlerMethods:IWeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b3c0usize)as*mut u8,();
+(WeaponShopBuyMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b3e0usize)as*mut u8,();
+(WeaponShopBuyMenu_RequestCloseEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_RequestCloseEventHandler>IWeaponShopBuyMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2a860usize)as*mut u8,();
+(WeaponShopBuyMenu_ChangeUnitToNextEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2a880usize)as*mut u8,();
+(WeaponShopBuyMenu_ChangeUnitToNextEventHandler)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler>IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods for __T{}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToNextEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b9f0usize)as*mut u8,();
+(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ba10usize)as*mut u8,();
+(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler>IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods for __T{}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-weaponshopbuymenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeaponShopBuyMenu_ChangeUnitToNextEventHandler;
-    pub use super::IWeaponShopBuyMenu_ChangeUnitToNextEventHandler;
-    pub use super::IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods;
-    pub use super::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
-    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
-    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods;
-    pub use super::WeaponShopBuyMenu;
-    pub use super::IWeaponShopBuyMenu;
-    pub use super::IWeaponShopBuyMenuMethods;
     pub use super::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler;
     pub use super::IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler;
     pub use super::IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods;
-    pub use super::WeaponShopBuyMenu_RequestCloseEventHandler;
-    pub use super::IWeaponShopBuyMenu_RequestCloseEventHandler;
-    pub use super::IWeaponShopBuyMenu_RequestCloseEventHandlerMethods;
+    pub use super::WeaponShopBuyMenu;
+    pub use super::IWeaponShopBuyMenu;
+    pub use super::IWeaponShopBuyMenuMethods;
     pub use super::WeaponShopBuyMenu_SelectEventHandler;
     pub use super::IWeaponShopBuyMenu_SelectEventHandler;
     pub use super::IWeaponShopBuyMenu_SelectEventHandlerMethods;
     pub use super::WeaponShopBuyMenu_DecideEventHandler;
     pub use super::IWeaponShopBuyMenu_DecideEventHandler;
     pub use super::IWeaponShopBuyMenu_DecideEventHandlerMethods;
+    pub use super::WeaponShopBuyMenu_RequestCloseEventHandler;
+    pub use super::IWeaponShopBuyMenu_RequestCloseEventHandler;
+    pub use super::IWeaponShopBuyMenu_RequestCloseEventHandlerMethods;
+    pub use super::WeaponShopBuyMenu_ChangeUnitToNextEventHandler;
+    pub use super::IWeaponShopBuyMenu_ChangeUnitToNextEventHandler;
+    pub use super::IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods;
+    pub use super::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
+    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
+    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

@@ -13,12 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Entity.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil.Entity")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil_Entity{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::calculatorutil::CalculatorUtil_Type, #[offset(24)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Value")]pub m_value:f32, #[offset(36)]#[rename(name="m_Code")]pub m_code:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil{#[static_field]#[rename(name="NullArgs")]pub null_args:crate::system::collections::generic::list_1::List_1<f32> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CalculatorUtil_Type{pub value:i32,}
 impl::unity2::ClassIdentity for CalculatorUtil_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="CalculatorUtil.Type";
@@ -108,48 +102,16 @@ pub fn string()->Self{Self{value:38}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil{#[static_field]#[rename(name="NullArgs")]pub null_args:crate::system::collections::generic::list_1::List_1<f32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Entity.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil.Entity")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil_Entity{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::calculatorutil::CalculatorUtil_Type, #[offset(24)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Value")]pub m_value:f32, #[offset(36)]#[rename(name="m_Code")]pub m_code:i32,}
+
 }
 
 #[cfg(feature = "app-calculatorutil-types")]
 pub use __types::*;
-
-#[cfg(feature="app-calculatorutil")]pub trait ICalculatorUtil_EntityMethods:ICalculatorUtil_Entity{#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::calculatorutil::CalculatorUtil_Type{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd700usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Type;
-(CalculatorUtil_Entity)__receiver)}
-}
-#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd710usize)as*mut u8, ::unity2::Il2CppString;
-(CalculatorUtil_Entity)__receiver)}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd720usize)as*mut u8,f32;
-(CalculatorUtil_Entity)__receiver)}
-}
-#[doc="`get_Code()` overload"]fn get_code(self,)->i32{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd730usize)as*mut u8,i32;
-(CalculatorUtil_Entity)__receiver)}
-}
-#[doc="`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd740usize)as*mut u8,();
-(CalculatorUtil_Entity)__receiver,(crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-calculatorutil")]impl<__T:ICalculatorUtil_Entity>ICalculatorUtil_EntityMethods for __T{}
-
-#[cfg(feature="app-calculatorutil")]impl CalculatorUtil_Entity{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-calculatorutil")]impl CalculatorUtil_Entity{#[doc="`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"]pub fn new(r#type:crate::app::calculatorutil::CalculatorUtil_Type,name: ::unity2::Il2CppString,value:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CalculatorUtil_Entity), ::core::stringify!(new),));
- <Self as ICalculatorUtil_EntityMethods> ::ctor(this,r#type,name,value);
-this}
-}
 
 #[cfg(feature="app-calculatorutil")]impl CalculatorUtil{#[doc="`GetPriority(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]pub fn get_priority(r#type:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29935a0usize)as*mut u8,i32;
 (crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(r#type))}
@@ -235,16 +197,54 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-calculatorutil")]pub trait ICalculatorUtil_EntityMethods:ICalculatorUtil_Entity{#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::calculatorutil::CalculatorUtil_Type{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd700usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Type;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd710usize)as*mut u8, ::unity2::Il2CppString;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd720usize)as*mut u8,f32;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`get_Code()` overload"]fn get_code(self,)->i32{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd730usize)as*mut u8,i32;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd740usize)as*mut u8,();
+(CalculatorUtil_Entity)__receiver,(crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-calculatorutil")]impl<__T:ICalculatorUtil_Entity>ICalculatorUtil_EntityMethods for __T{}
+
+#[cfg(feature="app-calculatorutil")]impl CalculatorUtil_Entity{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-calculatorutil")]impl CalculatorUtil_Entity{#[doc="`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"]pub fn new(r#type:crate::app::calculatorutil::CalculatorUtil_Type,name: ::unity2::Il2CppString,value:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CalculatorUtil_Entity), ::core::stringify!(new),));
+ <Self as ICalculatorUtil_EntityMethods> ::ctor(this,r#type,name,value);
+this}
+}
+
 #[cfg(feature = "app-calculatorutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CalculatorUtil_Entity;
-    pub use super::ICalculatorUtil_Entity;
-    pub use super::ICalculatorUtil_EntityMethods;
+    pub use super::CalculatorUtil_Type;
     pub use super::CalculatorUtil;
     pub use super::ICalculatorUtil;
     pub use super::ICalculatorUtilMethods;
-    pub use super::CalculatorUtil_Type;
+    pub use super::CalculatorUtil_Entity;
+    pub use super::ICalculatorUtil_Entity;
+    pub use super::ICalculatorUtil_EntityMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

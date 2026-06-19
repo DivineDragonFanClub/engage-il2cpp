@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScreenSpaceAmbientOcclusionSettings")]#[parent(crate::system::object::Object)]pub struct ScreenSpaceAmbientOcclusionSettings{#[offset(16)]#[rename(name="Downsample")]pub downsample:bool, #[offset(20)]#[rename(name="Source")]pub source:crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings_DepthSource, #[offset(24)]#[rename(name="NormalSamples")]pub normal_samples:crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings_NormalQuality, #[offset(28)]#[rename(name="Intensity")]pub intensity:f32, #[offset(32)]#[rename(name="DirectLightingStrength")]pub direct_lighting_strength:f32, #[offset(36)]#[rename(name="Radius")]pub radius:f32, #[offset(40)]#[rename(name="SampleCount")]pub sample_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_DepthSource.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ScreenSpaceAmbientOcclusionSettings_DepthSource{pub value:i32,}
 impl::unity2::ClassIdentity for ScreenSpaceAmbientOcclusionSettings_DepthSource{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
 const NAME: &'static str="ScreenSpaceAmbientOcclusionSettings.DepthSource";
@@ -30,6 +27,9 @@ impl ScreenSpaceAmbientOcclusionSettings_DepthSource{pub fn depth()->Self{Self{v
 pub fn depth_normals()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScreenSpaceAmbientOcclusionSettings")]#[parent(crate::system::object::Object)]pub struct ScreenSpaceAmbientOcclusionSettings{#[offset(16)]#[rename(name="Downsample")]pub downsample:bool, #[offset(20)]#[rename(name="Source")]pub source:crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings_DepthSource, #[offset(24)]#[rename(name="NormalSamples")]pub normal_samples:crate::unity_engine::rendering::universal::screenspaceambientocclusionsettings::ScreenSpaceAmbientOcclusionSettings_NormalQuality, #[offset(28)]#[rename(name="Intensity")]pub intensity:f32, #[offset(32)]#[rename(name="DirectLightingStrength")]pub direct_lighting_strength:f32, #[offset(36)]#[rename(name="Radius")]pub radius:f32, #[offset(40)]#[rename(name="SampleCount")]pub sample_count:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ScreenSpaceAmbientOcclusionSettings_NormalQuality{pub value:i32,}
@@ -75,10 +75,10 @@ this}
 #[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ScreenSpaceAmbientOcclusionSettings_DepthSource;
     pub use super::ScreenSpaceAmbientOcclusionSettings;
     pub use super::IScreenSpaceAmbientOcclusionSettings;
     pub use super::IScreenSpaceAmbientOcclusionSettingsMethods;
-    pub use super::ScreenSpaceAmbientOcclusionSettings_DepthSource;
     pub use super::ScreenSpaceAmbientOcclusionSettings_NormalQuality;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

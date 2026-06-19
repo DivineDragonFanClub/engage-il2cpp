@@ -21,15 +21,38 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingcontinuedialog/FishingContinueDialog.md"))]#[::unity2::class(namespace="App",name="FishingContinueDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct FishingContinueDialog{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingcontinuedialog/FishingContinueDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="FishingContinueDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FishingContinueDialog_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingcontinuedialog/FishingContinueDialog.md"))]#[::unity2::class(namespace="App",name="FishingContinueDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct FishingContinueDialog{}
 
 }
 
 #[cfg(feature = "app-fishingcontinuedialog-types")]
 pub use __types::*;
+
+#[cfg(feature="app-fishingcontinuedialog")]pub trait IFishingContinueDialog_DecideEventHandlerMethods:IFishingContinueDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FishingContinueDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e60380usize)as*mut u8,();
+(FishingContinueDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool)` overload"]fn invoke(self,result:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingContinueDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e603a0usize)as*mut u8,();
+(FishingContinueDialog_DecideEventHandler)__receiver,(bool)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-fishingcontinuedialog")]impl<__T:IFishingContinueDialog_DecideEventHandler>IFishingContinueDialog_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-fishingcontinuedialog")]impl FishingContinueDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-fishingcontinuedialog")]impl FishingContinueDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingContinueDialog_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IFishingContinueDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-fishingcontinuedialog")]impl FishingContinueDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::fishingcontinuedialog::FishingContinueDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,event_handler:impl::core::convert::Into<crate::app::fishingcontinuedialog::FishingContinueDialog_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26f04a0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::fishingcontinuedialog::FishingContinueDialog_DecideEventHandler)::core::convert::Into::into(event_handler))}
@@ -85,38 +108,15 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-fishingcontinuedialog")]pub trait IFishingContinueDialog_DecideEventHandlerMethods:IFishingContinueDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FishingContinueDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e60380usize)as*mut u8,();
-(FishingContinueDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(bool)` overload"]fn invoke(self,result:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingContinueDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e603a0usize)as*mut u8,();
-(FishingContinueDialog_DecideEventHandler)__receiver,(bool)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-fishingcontinuedialog")]impl<__T:IFishingContinueDialog_DecideEventHandler>IFishingContinueDialog_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-fishingcontinuedialog")]impl FishingContinueDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-fishingcontinuedialog")]impl FishingContinueDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FishingContinueDialog_DecideEventHandler), ::core::stringify!(new),));
- <Self as IFishingContinueDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-fishingcontinuedialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingContinueDialog;
-    pub use super::IFishingContinueDialog;
-    pub use super::IFishingContinueDialogMethods;
     pub use super::FishingContinueDialog_DecideEventHandler;
     pub use super::IFishingContinueDialog_DecideEventHandler;
     pub use super::IFishingContinueDialog_DecideEventHandlerMethods;
+    pub use super::FishingContinueDialog;
+    pub use super::IFishingContinueDialog;
+    pub use super::IFishingContinueDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;

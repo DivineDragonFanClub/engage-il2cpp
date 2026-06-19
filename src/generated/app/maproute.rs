@@ -19,6 +19,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maproute/MapRoute_Func.md"))]#[::unity2::class(namespace="App",name="MapRoute.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapRoute_Func{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maproute/MapRoute.md"))]#[::unity2::class(namespace="App",name="MapRoute")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maproute::MapRoute>)]pub struct MapRoute{#[static_field]#[rename(name="Max")]pub max:i32, #[static_field]#[rename(name="ScoreCross")]pub score_cross:i32, #[static_field]#[rename(name="ScoreContinue")]pub score_continue:i32, #[static_field]#[rename(name="ScoreDistance")]pub score_distance:i32, #[static_field]#[rename(name="ScoreAvoid")]pub score_avoid:i32, #[static_field]#[rename(name="ScoreDef")]pub score_def:i32, #[offset(32)]#[rename(name="m_Routes")]pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type> , #[offset(40)]#[rename(name="m_Count")]pub m_count:u8, #[offset(41)]#[rename(name="m_FirstX")]pub m_first_x:i8, #[offset(42)]#[rename(name="m_FirstZ")]pub m_first_z:i8, #[offset(43)]#[rename(name="m_LastX")]pub m_last_x:i8, #[offset(44)]#[rename(name="m_LastZ")]pub m_last_z:i8, #[offset(45)]#[rename(name="m_CursorX")]pub m_cursor_x:i8, #[offset(46)]#[rename(name="m_CursorZ")]pub m_cursor_z:i8, #[offset(47)]#[rename(name="m_Cost")]pub m_cost:u8, #[offset(48)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(52)]#[rename(name="m_Active")]pub m_active:bool, #[offset(56)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maproute/MapRoute_Flag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapRoute_Flag{pub value:i32,}
 impl::unity2::ClassIdentity for MapRoute_Flag{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapRoute.Flag";
@@ -48,16 +54,33 @@ pub fn mask_mind()->Self{Self{value:95}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maproute/MapRoute.md"))]#[::unity2::class(namespace="App",name="MapRoute")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maproute::MapRoute>)]pub struct MapRoute{#[static_field]#[rename(name="Max")]pub max:i32, #[static_field]#[rename(name="ScoreCross")]pub score_cross:i32, #[static_field]#[rename(name="ScoreContinue")]pub score_continue:i32, #[static_field]#[rename(name="ScoreDistance")]pub score_distance:i32, #[static_field]#[rename(name="ScoreAvoid")]pub score_avoid:i32, #[static_field]#[rename(name="ScoreDef")]pub score_def:i32, #[offset(32)]#[rename(name="m_Routes")]pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type> , #[offset(40)]#[rename(name="m_Count")]pub m_count:u8, #[offset(41)]#[rename(name="m_FirstX")]pub m_first_x:i8, #[offset(42)]#[rename(name="m_FirstZ")]pub m_first_z:i8, #[offset(43)]#[rename(name="m_LastX")]pub m_last_x:i8, #[offset(44)]#[rename(name="m_LastZ")]pub m_last_z:i8, #[offset(45)]#[rename(name="m_CursorX")]pub m_cursor_x:i8, #[offset(46)]#[rename(name="m_CursorZ")]pub m_cursor_z:i8, #[offset(47)]#[rename(name="m_Cost")]pub m_cost:u8, #[offset(48)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(52)]#[rename(name="m_Active")]pub m_active:bool, #[offset(56)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maproute/MapRoute_Func.md"))]#[::unity2::class(namespace="App",name="MapRoute.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapRoute_Func{}
-
 }
 
 #[cfg(feature = "app-maproute-types")]
 pub use __types::*;
+
+#[cfg(feature="app-maproute")]pub trait IMapRoute_FuncMethods:IMapRoute_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapRoute_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d7e0usize)as*mut u8,();
+(MapRoute_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapRoute_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d800usize)as*mut u8,();
+(MapRoute_Func)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
+
+#[cfg(feature="app-maproute")]impl<__T:IMapRoute_Func>IMapRoute_FuncMethods for __T{}
+
+#[cfg(feature="app-maproute")]impl MapRoute_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-maproute")]impl MapRoute_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapRoute_Func), ::core::stringify!(new),));
+ <Self as IMapRoute_FuncMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-maproute")]impl MapRoute{#[doc="`GetGoalX(i32, ::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]pub fn get_goal_x(x:impl::core::convert::Into<i32> ,routes:impl::core::convert::Into< ::unity2::Array<crate::app::dir_2::Dir_Type> >)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235e410usize)as*mut u8,i32;
 (i32)::core::convert::Into::into(x),(::unity2::Array<crate::app::dir_2::Dir_Type>)::core::convert::Into::into(routes))}
@@ -353,39 +376,16 @@ pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-maproute")]pub trait IMapRoute_FuncMethods:IMapRoute_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapRoute_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218d7e0usize)as*mut u8,();
-(MapRoute_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapRoute_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218d800usize)as*mut u8,();
-(MapRoute_Func)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-}
-
-#[cfg(feature="app-maproute")]impl<__T:IMapRoute_Func>IMapRoute_FuncMethods for __T{}
-
-#[cfg(feature="app-maproute")]impl MapRoute_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-maproute")]impl MapRoute_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapRoute_Func), ::core::stringify!(new),));
- <Self as IMapRoute_FuncMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-maproute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapRoute_Flag;
-    pub use super::MapRoute;
-    pub use super::IMapRoute;
-    pub use super::IMapRouteMethods;
     pub use super::MapRoute_Func;
     pub use super::IMapRoute_Func;
     pub use super::IMapRoute_FuncMethods;
+    pub use super::MapRoute;
+    pub use super::IMapRoute;
+    pub use super::IMapRouteMethods;
+    pub use super::MapRoute_Flag;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

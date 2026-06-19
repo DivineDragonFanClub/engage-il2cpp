@@ -43,6 +43,12 @@ pub fn muscle_exercise()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog.AssistItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MinigameAssistDialog_AssistItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct MinigameAssistDialog{#[static_field]#[rename(name="ConfirmLabels")]pub confirm_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="YesLabels")]pub yes_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="NoLabels")]pub no_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="CancelLabels")]pub cancel_labels: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_AssistResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MinigameAssistDialog_AssistResult{pub value:i32,}
 impl::unity2::ClassIdentity for MinigameAssistDialog_AssistResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MinigameAssistDialog.AssistResult";
@@ -63,37 +69,31 @@ pub fn cancel()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MinigameAssistDialog_DecideEventHandler{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct MinigameAssistDialog{#[static_field]#[rename(name="ConfirmLabels")]pub confirm_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="YesLabels")]pub yes_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="NoLabels")]pub no_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="CancelLabels")]pub cancel_labels: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog.AssistItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MinigameAssistDialog_AssistItem{}
-
 }
 
 #[cfg(feature = "app-minigameassistdialog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_DecideEventHandlerMethods:IMinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208e600usize)as*mut u8,();
-(MinigameAssistDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_AssistItemMethods:IMinigameAssistDialog_AssistItem{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MinigameAssistDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208e4c0usize)as*mut u8,();
+(MinigameAssistDialog_AssistItem)__receiver)}
 }
-#[doc="`Invoke(i32)` overload"]fn invoke(self,set:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208e620usize)as*mut u8,();
-(MinigameAssistDialog_DecideEventHandler)__receiver,(i32)::core::convert::Into::into(set))}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MinigameAssistDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208e5c0usize)as*mut u8,();
+(MinigameAssistDialog_AssistItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
-}
-
-#[cfg(feature="app-minigameassistdialog")]impl<__T:IMinigameAssistDialog_DecideEventHandler>IMinigameAssistDialog_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-minigameassistdialog")]impl<__T:IMinigameAssistDialog_AssistItem>IMinigameAssistDialog_AssistItemMethods for __T{}
+
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_AssistItem{pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_AssistItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MinigameAssistDialog_DecideEventHandler), ::core::stringify!(new),));
- <Self as IMinigameAssistDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(MinigameAssistDialog_AssistItem), ::core::stringify!(new),));
+ <Self as IMinigameAssistDialog_AssistItemMethods> ::ctor(this,name);
 this}
 }
 
@@ -155,26 +155,26 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_AssistItemMethods:IMinigameAssistDialog_AssistItem{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MinigameAssistDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208e4c0usize)as*mut u8,();
-(MinigameAssistDialog_AssistItem)__receiver)}
+#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_DecideEventHandlerMethods:IMinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208e600usize)as*mut u8,();
+(MinigameAssistDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MinigameAssistDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208e5c0usize)as*mut u8,();
-(MinigameAssistDialog_AssistItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,set:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208e620usize)as*mut u8,();
+(MinigameAssistDialog_DecideEventHandler)__receiver,(i32)::core::convert::Into::into(set))}
 }
-}
-
-#[cfg(feature="app-minigameassistdialog")]impl<__T:IMinigameAssistDialog_AssistItem>IMinigameAssistDialog_AssistItemMethods for __T{}
-
-#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_AssistItem{pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_AssistItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-minigameassistdialog")]impl<__T:IMinigameAssistDialog_DecideEventHandler>IMinigameAssistDialog_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MinigameAssistDialog_AssistItem), ::core::stringify!(new),));
- <Self as IMinigameAssistDialog_AssistItemMethods> ::ctor(this,name);
+ failed to instantiate", ::core::stringify!(MinigameAssistDialog_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IMinigameAssistDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -182,16 +182,16 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MinigameAssistDialog_MinigameType;
+    pub use super::MinigameAssistDialog_AssistItem;
+    pub use super::IMinigameAssistDialog_AssistItem;
+    pub use super::IMinigameAssistDialog_AssistItemMethods;
+    pub use super::MinigameAssistDialog;
+    pub use super::IMinigameAssistDialog;
+    pub use super::IMinigameAssistDialogMethods;
     pub use super::MinigameAssistDialog_AssistResult;
     pub use super::MinigameAssistDialog_DecideEventHandler;
     pub use super::IMinigameAssistDialog_DecideEventHandler;
     pub use super::IMinigameAssistDialog_DecideEventHandlerMethods;
-    pub use super::MinigameAssistDialog;
-    pub use super::IMinigameAssistDialog;
-    pub use super::IMinigameAssistDialogMethods;
-    pub use super::MinigameAssistDialog_AssistItem;
-    pub use super::IMinigameAssistDialog_AssistItem;
-    pub use super::IMinigameAssistDialog_AssistItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

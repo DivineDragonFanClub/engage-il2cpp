@@ -23,15 +23,38 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmresetdialog/SortieConfirmResetDialog.md"))]#[::unity2::class(namespace="App",name="SortieConfirmResetDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct SortieConfirmResetDialog{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmresetdialog/SortieConfirmResetDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="SortieConfirmResetDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SortieConfirmResetDialog_ConfirmYesDialogItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmresetdialog/SortieConfirmResetDialog.md"))]#[::unity2::class(namespace="App",name="SortieConfirmResetDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct SortieConfirmResetDialog{}
 
 }
 
 #[cfg(feature = "app-sortieconfirmresetdialog-types")]
 pub use __types::*;
+
+#[cfg(feature="app-sortieconfirmresetdialog")]pub trait ISortieConfirmResetDialog_ConfirmYesDialogItemMethods:ISortieConfirmResetDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SortieConfirmResetDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72c70usize)as*mut u8,();
+(SortieConfirmResetDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieConfirmResetDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SortieConfirmResetDialog_ConfirmYesDialogItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortieconfirmresetdialog")]impl<__T:ISortieConfirmResetDialog_ConfirmYesDialogItem>ISortieConfirmResetDialog_ConfirmYesDialogItemMethods for __T{}
+
+#[cfg(feature="app-sortieconfirmresetdialog")]impl SortieConfirmResetDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-sortieconfirmresetdialog")]impl SortieConfirmResetDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieConfirmResetDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
+ <Self as ISortieConfirmResetDialog_ConfirmYesDialogItemMethods> ::ctor(this,text);
+this}
+}
 
 #[cfg(feature="app-sortieconfirmresetdialog")]impl SortieConfirmResetDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5930usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -57,38 +80,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-sortieconfirmresetdialog")]pub trait ISortieConfirmResetDialog_ConfirmYesDialogItemMethods:ISortieConfirmResetDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SortieConfirmResetDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72c70usize)as*mut u8,();
-(SortieConfirmResetDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieConfirmResetDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SortieConfirmResetDialog_ConfirmYesDialogItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortieconfirmresetdialog")]impl<__T:ISortieConfirmResetDialog_ConfirmYesDialogItem>ISortieConfirmResetDialog_ConfirmYesDialogItemMethods for __T{}
-
-#[cfg(feature="app-sortieconfirmresetdialog")]impl SortieConfirmResetDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-sortieconfirmresetdialog")]impl SortieConfirmResetDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieConfirmResetDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
- <Self as ISortieConfirmResetDialog_ConfirmYesDialogItemMethods> ::ctor(this,text);
-this}
-}
-
 #[cfg(feature = "app-sortieconfirmresetdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieConfirmResetDialog;
-    pub use super::ISortieConfirmResetDialog;
-    pub use super::ISortieConfirmResetDialogMethods;
     pub use super::SortieConfirmResetDialog_ConfirmYesDialogItem;
     pub use super::ISortieConfirmResetDialog_ConfirmYesDialogItem;
     pub use super::ISortieConfirmResetDialog_ConfirmYesDialogItemMethods;
+    pub use super::SortieConfirmResetDialog;
+    pub use super::ISortieConfirmResetDialog;
+    pub use super::ISortieConfirmResetDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

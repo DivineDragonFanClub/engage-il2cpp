@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktaganimation/TalkTagAnimation.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagAnimation")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagAnimation{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktaganimation::TalkTagAnimation_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_AnimeName")]pub m_anime_name: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktaganimation/TalkTagAnimation_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagAnimation_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagAnimation_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagAnimation.TagID";
@@ -31,9 +34,6 @@ pub fn face()->Self{Self{value:1}
 pub fn look_at()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktaganimation/TalkTagAnimation.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagAnimation")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagAnimation{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktaganimation::TalkTagAnimation_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_AnimeName")]pub m_anime_name: ::unity2::Il2CppString,}
 
 }
 
@@ -76,10 +76,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktaganimation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkTagAnimation_TagID;
     pub use super::TalkTagAnimation;
     pub use super::ITalkTagAnimation;
     pub use super::ITalkTagAnimationMethods;
+    pub use super::TalkTagAnimation_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

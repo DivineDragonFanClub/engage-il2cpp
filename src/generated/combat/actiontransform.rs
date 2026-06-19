@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiontransform/ActionTransform.md"))]#[::unity2::class(namespace="Combat",name="ActionTransform")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionTransform{#[offset(40)]#[rename(name="m_DoPlayer")]pub m_do_player:bool, #[offset(41)]#[rename(name="m_DoEnemy")]pub m_do_enemy:bool, #[offset(44)]#[rename(name="m_State")]pub m_state:crate::combat::actiontransform::ActionTransform_State,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiontransform/ActionTransform_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ActionTransform_State{pub value:i32,}
 impl::unity2::ClassIdentity for ActionTransform_State{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="ActionTransform.State";
@@ -36,6 +33,9 @@ pub fn transform()->Self{Self{value:1}
 pub fn finish()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiontransform/ActionTransform.md"))]#[::unity2::class(namespace="Combat",name="ActionTransform")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionTransform{#[offset(40)]#[rename(name="m_DoPlayer")]pub m_do_player:bool, #[offset(41)]#[rename(name="m_DoEnemy")]pub m_do_enemy:bool, #[offset(44)]#[rename(name="m_State")]pub m_state:crate::combat::actiontransform::ActionTransform_State,}
 
 }
 
@@ -83,10 +83,10 @@ this}
 #[cfg(feature = "combat-actiontransform")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ActionTransform_State;
     pub use super::ActionTransform;
     pub use super::IActionTransform;
     pub use super::IActionTransformMethods;
-    pub use super::ActionTransform_State;
     pub use crate::combat::actionbase::IActionBase;
     pub use crate::combat::state::IState;
     pub use crate::system::object::IObject;

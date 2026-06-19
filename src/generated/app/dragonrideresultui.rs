@@ -16,9 +16,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI{#[static_field]#[rename(name="cFanfareExcellentIndex")]pub c_fanfare_excellent_index:i32, #[static_field]#[rename(name="cFanfareGoodIndex")]pub c_fanfare_good_index:i32, #[offset(16)]#[rename(name="cRankNodeList")]pub c_rank_node_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="cTargetNodeList")]pub c_target_node_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="cTargetMessageList")]pub c_target_message_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_data")]pub m_data:crate::app::dragonrideresultui::DragonRideResultUI_DataSet, #[offset(56)]#[rename(name="m_Timer")]pub m_timer:f64, #[offset(64)]#[rename(name="m_Phase")]pub m_phase:crate::app::dragonrideresultui::DragonRideResultUI_ResultPhase, #[offset(72)]#[rename(name="m_LevelText")]pub m_level_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_BrokenTargetNode")]pub m_broken_target_node:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="m_AssistNode")]pub m_assist_node:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_ScoreNode")]pub m_score_node:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="m_ScoreText")]pub m_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_RankRoot")]pub m_rank_root:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_RankNode")]pub m_rank_node:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="m_BestScoreNode")]pub m_best_score_node:crate::unity_engine::transform::Transform, #[offset(136)]#[rename(name="m_BestScoreText")]pub m_best_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_NewRecordNode")]pub m_new_record_node:crate::unity_engine::transform::Transform, #[offset(152)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_DataSet.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI.DataSet")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI_DataSet{#[offset(16)]#[rename(name="Level")]pub level:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_ResultPhase.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DragonRideResultUI_ResultPhase{pub value:i32,}
 impl::unity2::ClassIdentity for DragonRideResultUI_ResultPhase{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DragonRideResultUI.ResultPhase";
@@ -52,6 +49,9 @@ pub fn phase_count()->Self{Self{value:9}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_DragonRideResultUITarget.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI.DragonRideResultUITarget")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI_DragonRideResultUITarget{#[offset(16)]#[rename(name="m_Node")]pub m_node:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_DataSet.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI.DataSet")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI_DataSet{#[offset(16)]#[rename(name="Level")]pub level:i32,}
 
 }
 
@@ -123,6 +123,44 @@ pub fn get_is_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 ::{}
  failed to instantiate", ::core::stringify!(DragonRideResultUI), ::core::stringify!(new),));
  <Self as IDragonRideResultUIMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-dragonrideresultui")]pub trait IDragonRideResultUI_DragonRideResultUITargetMethods:IDragonRideResultUI_DragonRideResultUITarget{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd50f0usize)as*mut u8,();
+(DragonRideResultUI_DragonRideResultUITarget)__receiver)}
+}
+#[doc="`Init(crate::unity_engine::transform::Transform)` overload"]fn init(self,base_obj:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5100usize)as*mut u8,();
+(DragonRideResultUI_DragonRideResultUITarget)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(base_obj))}
+}
+#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd51f0usize)as*mut u8,();
+(DragonRideResultUI_DragonRideResultUITarget)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5200usize)as*mut u8,();
+(DragonRideResultUI_DragonRideResultUITarget)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5230usize)as*mut u8,();
+(DragonRideResultUI_DragonRideResultUITarget)__receiver)}
+}
+}
+
+#[cfg(feature="app-dragonrideresultui")]impl<__T:IDragonRideResultUI_DragonRideResultUITarget>IDragonRideResultUI_DragonRideResultUITargetMethods for __T{}
+
+#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI_DragonRideResultUITarget{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI_DragonRideResultUITarget{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideResultUI_DragonRideResultUITarget), ::core::stringify!(new),));
+ <Self as IDragonRideResultUI_DragonRideResultUITargetMethods> ::ctor(this,);
 this}
 }
 
@@ -264,57 +302,19 @@ pub fn set_target_count_list_method_info()-> & 'static::unity2::il2cpp::MethodIn
 this}
 }
 
-#[cfg(feature="app-dragonrideresultui")]pub trait IDragonRideResultUI_DragonRideResultUITargetMethods:IDragonRideResultUI_DragonRideResultUITarget{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd50f0usize)as*mut u8,();
-(DragonRideResultUI_DragonRideResultUITarget)__receiver)}
-}
-#[doc="`Init(crate::unity_engine::transform::Transform)` overload"]fn init(self,base_obj:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5100usize)as*mut u8,();
-(DragonRideResultUI_DragonRideResultUITarget)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(base_obj))}
-}
-#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd51f0usize)as*mut u8,();
-(DragonRideResultUI_DragonRideResultUITarget)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5200usize)as*mut u8,();
-(DragonRideResultUI_DragonRideResultUITarget)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5230usize)as*mut u8,();
-(DragonRideResultUI_DragonRideResultUITarget)__receiver)}
-}
-}
-
-#[cfg(feature="app-dragonrideresultui")]impl<__T:IDragonRideResultUI_DragonRideResultUITarget>IDragonRideResultUI_DragonRideResultUITargetMethods for __T{}
-
-#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI_DragonRideResultUITarget{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI_DragonRideResultUITarget{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DragonRideResultUI_DragonRideResultUITarget), ::core::stringify!(new),));
- <Self as IDragonRideResultUI_DragonRideResultUITargetMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-dragonrideresultui")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::DragonRideResultUI;
     pub use super::IDragonRideResultUI;
     pub use super::IDragonRideResultUIMethods;
-    pub use super::DragonRideResultUI_DataSet;
-    pub use super::IDragonRideResultUI_DataSet;
-    pub use super::IDragonRideResultUI_DataSetMethods;
     pub use super::DragonRideResultUI_ResultPhase;
     pub use super::DragonRideResultUI_DragonRideResultUITarget;
     pub use super::IDragonRideResultUI_DragonRideResultUITarget;
     pub use super::IDragonRideResultUI_DragonRideResultUITargetMethods;
+    pub use super::DragonRideResultUI_DataSet;
+    pub use super::IDragonRideResultUI_DataSet;
+    pub use super::IDragonRideResultUI_DataSetMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

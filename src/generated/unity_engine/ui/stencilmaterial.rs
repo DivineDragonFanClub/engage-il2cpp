@@ -9,33 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/stencilmaterial/StencilMaterial_MatEntry.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="StencilMaterial.MatEntry")]#[parent(crate::system::object::Object)]pub struct StencilMaterial_MatEntry{#[offset(16)]#[rename(name="baseMat")]pub base_mat:crate::unity_engine::material::Material, #[offset(24)]#[rename(name="customMat")]pub custom_mat:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="count")]pub count:i32, #[offset(36)]#[rename(name="stencilId")]pub stencil_id:i32, #[offset(40)]#[rename(name="operation")]pub operation:crate::unity_engine::rendering::stencilop::StencilOp, #[offset(44)]#[rename(name="compareFunction")]pub compare_function:crate::unity_engine::rendering::comparefunction::CompareFunction, #[offset(48)]#[rename(name="readMask")]pub read_mask:i32, #[offset(52)]#[rename(name="writeMask")]pub write_mask:i32, #[offset(56)]#[rename(name="useAlphaClip")]pub use_alpha_clip:bool, #[offset(60)]#[rename(name="colorMask")]pub color_mask:crate::unity_engine::rendering::colorwritemask::ColorWriteMask,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/stencilmaterial/StencilMaterial.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="StencilMaterial")]#[parent(crate::system::object::Object)]pub struct StencilMaterial{#[static_field]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::stencilmaterial::StencilMaterial_MatEntry> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/stencilmaterial/StencilMaterial_MatEntry.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="StencilMaterial.MatEntry")]#[parent(crate::system::object::Object)]pub struct StencilMaterial_MatEntry{#[offset(16)]#[rename(name="baseMat")]pub base_mat:crate::unity_engine::material::Material, #[offset(24)]#[rename(name="customMat")]pub custom_mat:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="count")]pub count:i32, #[offset(36)]#[rename(name="stencilId")]pub stencil_id:i32, #[offset(40)]#[rename(name="operation")]pub operation:crate::unity_engine::rendering::stencilop::StencilOp, #[offset(44)]#[rename(name="compareFunction")]pub compare_function:crate::unity_engine::rendering::comparefunction::CompareFunction, #[offset(48)]#[rename(name="readMask")]pub read_mask:i32, #[offset(52)]#[rename(name="writeMask")]pub write_mask:i32, #[offset(56)]#[rename(name="useAlphaClip")]pub use_alpha_clip:bool, #[offset(60)]#[rename(name="colorMask")]pub color_mask:crate::unity_engine::rendering::colorwritemask::ColorWriteMask,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-stencilmaterial-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-ui-stencilmaterial")]pub trait IStencilMaterial_MatEntryMethods:IStencilMaterial_MatEntry{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StencilMaterial_MatEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c05870usize)as*mut u8,();
-(StencilMaterial_MatEntry)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-ui-stencilmaterial")]impl<__T:IStencilMaterial_MatEntry>IStencilMaterial_MatEntryMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-stencilmaterial")]impl StencilMaterial_MatEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-ui-stencilmaterial")]impl StencilMaterial_MatEntry{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(StencilMaterial_MatEntry), ::core::stringify!(new),));
- <Self as IStencilMaterial_MatEntryMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-ui-stencilmaterial")]impl StencilMaterial{#[doc="`Add(crate::unity_engine::material::Material, i32)` overload"]pub fn add(base_mat:impl::core::convert::Into<crate::unity_engine::material::Material> ,stencil_id:impl::core::convert::Into<i32>)->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c04dc0usize)as*mut u8,crate::unity_engine::material::Material;
 (crate::unity_engine::material::Material)::core::convert::Into::into(base_mat),(i32)::core::convert::Into::into(stencil_id))}
@@ -65,14 +47,32 @@ pub fn clear_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="unity_engine-ui-stencilmaterial")]pub trait IStencilMaterial_MatEntryMethods:IStencilMaterial_MatEntry{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StencilMaterial_MatEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c05870usize)as*mut u8,();
+(StencilMaterial_MatEntry)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-stencilmaterial")]impl<__T:IStencilMaterial_MatEntry>IStencilMaterial_MatEntryMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-stencilmaterial")]impl StencilMaterial_MatEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-stencilmaterial")]impl StencilMaterial_MatEntry{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StencilMaterial_MatEntry), ::core::stringify!(new),));
+ <Self as IStencilMaterial_MatEntryMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-ui-stencilmaterial")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::StencilMaterial;
+    pub use super::IStencilMaterial;
     pub use super::StencilMaterial_MatEntry;
     pub use super::IStencilMaterial_MatEntry;
     pub use super::IStencilMaterial_MatEntryMethods;
-    pub use super::StencilMaterial;
-    pub use super::IStencilMaterial;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

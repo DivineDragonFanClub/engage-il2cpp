@@ -17,6 +17,15 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence.md"))]#[::unity2::class(namespace="App",name="EventSequence")]#[parent(crate::app::stackprocinst_1::StackProcInst_1<crate::app::eventsequence::EventSequence>)]pub struct EventSequence{#[offset(112)]#[rename(name="m_Current")]pub m_current:crate::app::eventsequence::EventSequence_Coroutine, #[offset(120)]#[rename(name="m_Coroutines")]pub m_coroutines:crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine> , #[offset(128)]#[rename(name="m_BindingUI")]pub m_binding_ui:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_MapEventStatck.md"))]#[::unity2::class(namespace="App",name="EventSequence.MapEventStatck")]#[parent(crate::app::procinst::ProcInst)]pub struct EventSequence_MapEventStatck{#[offset(112)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> , #[offset(120)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_Coroutine.md"))]#[::unity2::class(namespace="App",name="EventSequence.Coroutine")]#[parent(crate::system::object::Object)]pub struct EventSequence_Coroutine{#[offset(16)]#[rename(name="m_Func")]pub m_func:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(24)]#[rename(name="m_Args")]pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> , #[offset(32)]#[rename(name="m_First")]pub m_first:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for EventSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="EventSequence.Label";
@@ -30,146 +39,10 @@ impl EventSequence_Label{pub fn end()->Self{Self{value:0}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_MapEventStatck.md"))]#[::unity2::class(namespace="App",name="EventSequence.MapEventStatck")]#[parent(crate::app::procinst::ProcInst)]pub struct EventSequence_MapEventStatck{#[offset(112)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> , #[offset(120)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_Coroutine.md"))]#[::unity2::class(namespace="App",name="EventSequence.Coroutine")]#[parent(crate::system::object::Object)]pub struct EventSequence_Coroutine{#[offset(16)]#[rename(name="m_Func")]pub m_func:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(24)]#[rename(name="m_Args")]pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> , #[offset(32)]#[rename(name="m_First")]pub m_first:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence.md"))]#[::unity2::class(namespace="App",name="EventSequence")]#[parent(crate::app::stackprocinst_1::StackProcInst_1<crate::app::eventsequence::EventSequence>)]pub struct EventSequence{#[offset(112)]#[rename(name="m_Current")]pub m_current:crate::app::eventsequence::EventSequence_Coroutine, #[offset(120)]#[rename(name="m_Coroutines")]pub m_coroutines:crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine> , #[offset(128)]#[rename(name="m_BindingUI")]pub m_binding_ui:bool,}
-
 }
 
 #[cfg(feature = "app-eventsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]pub fn try_create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59000usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]pub fn try_create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59120usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
-}
-#[doc="`IsExist(crate::app::unit::Unit)` overload"]pub fn is_exist(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591b0usize)as*mut u8,bool;
-(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]pub fn try_create_bind_3(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591d0usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]pub fn try_create_bind_4(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59210usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn try_create_bind_5(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,from:impl::core::convert::Into<crate::app::unit::Unit> ,to:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59240usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(from),(crate::app::unit::Unit)::core::convert::Into::into(to))}
-}
-}
-
-#[cfg(feature="app-eventsequence")]pub trait IEventSequence_MapEventStatckMethods:IEventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` overload"]fn ctor(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58d30usize)as*mut u8,();
-(EventSequence_MapEventStatck)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
-}
-#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]fn ctor_2(self,stack:impl::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> > ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58e00usize)as*mut u8,();
-(EventSequence_MapEventStatck)__receiver,(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>)::core::convert::Into::into(stack),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58e60usize)as*mut u8,();
-(EventSequence_MapEventStatck)__receiver)}
-}
-#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58ef0usize)as*mut u8,();
-(EventSequence_MapEventStatck)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58f80usize)as*mut u8,();
-(EventSequence_MapEventStatck)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventsequence")]impl<__T:IEventSequence_MapEventStatck>IEventSequence_MapEventStatckMethods for __T{}
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn try_create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn try_create_bind_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn try_create_bind_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn try_create_bind_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]pub fn new(inspector:crate::app::mapinspector::MapInspector)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new),));
- <Self as IEventSequence_MapEventStatckMethods> ::ctor(this,inspector);
-this}
-#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]pub fn new_2(stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> ,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new_2),));
- <Self as IEventSequence_MapEventStatckMethods> ::ctor_2(this,stack,unit);
-this}
-}
-
-#[cfg(feature="app-eventsequence")]pub trait IEventSequence_CoroutineMethods:IEventSequence_Coroutine{#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e588b0usize)as*mut u8,();
-(EventSequence_Coroutine)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
-}
-#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor_2(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,callback:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58910usize)as*mut u8,();
-(EventSequence_Coroutine)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func),(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(callback),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
-}
-#[doc="`GetCallbackArgs(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn get_callback_args(self,callback:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)-> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58980usize)as*mut u8, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> ;
-(EventSequence_Coroutine)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(callback),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
-}
-#[doc="`GetCoroutine()` overload"]fn get_coroutine(self,)->crate::moon_sharp::interpreter::coroutine_2::Coroutine_2{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58ad0usize)as*mut u8,crate::moon_sharp::interpreter::coroutine_2::Coroutine_2;
-(EventSequence_Coroutine)__receiver)}
-}
-#[doc="`GetStackTrace()` overload"]fn get_stack_trace(self,)-> ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58af0usize)as*mut u8, ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> ;
-(EventSequence_Coroutine)__receiver)}
-}
-#[doc="`Yield()` overload"]fn r#yield(self,)->(){unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58b50usize)as*mut u8,();
-(EventSequence_Coroutine)__receiver)}
-}
-#[doc="`DoCoroutine()` overload"]fn do_coroutine(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58ba0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(EventSequence_Coroutine)__receiver)}
-}
-#[doc="`IsDead()` overload"]fn is_dead(self,)->bool{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58cf0usize)as*mut u8,bool;
-(EventSequence_Coroutine)__receiver)}
-}
-}
-
-#[cfg(feature="app-eventsequence")]impl<__T:IEventSequence_Coroutine>IEventSequence_CoroutineMethods for __T{}
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_Coroutine{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_callback_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_stack_trace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn yield_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn do_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_Coroutine{#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(func:crate::moon_sharp::interpreter::dynvalue::DynValue,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventSequence_Coroutine), ::core::stringify!(new),));
- <Self as IEventSequence_CoroutineMethods> ::ctor(this,func,args);
-this}
-#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new_2(func:crate::moon_sharp::interpreter::dynvalue::DynValue,callback:crate::moon_sharp::interpreter::dynvalue::DynValue,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventSequence_Coroutine), ::core::stringify!(new_2),));
- <Self as IEventSequence_CoroutineMethods> ::ctor_2(this,func,callback,args);
-this}
-}
 
 #[cfg(feature="app-eventsequence")]impl EventSequence{#[doc="`GetCoroutines()` overload"]pub fn get_coroutines()->crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e3740usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine> ;
 )}
@@ -402,19 +275,146 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]pub fn try_create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59000usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]pub fn try_create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59120usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`IsExist(crate::app::unit::Unit)` overload"]pub fn is_exist(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591b0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]pub fn try_create_bind_3(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591d0usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]pub fn try_create_bind_4(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59210usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn try_create_bind_5(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,from:impl::core::convert::Into<crate::app::unit::Unit> ,to:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59240usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(from),(crate::app::unit::Unit)::core::convert::Into::into(to))}
+}
+}
+
+#[cfg(feature="app-eventsequence")]pub trait IEventSequence_MapEventStatckMethods:IEventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` overload"]fn ctor(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58d30usize)as*mut u8,();
+(EventSequence_MapEventStatck)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]fn ctor_2(self,stack:impl::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> > ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58e00usize)as*mut u8,();
+(EventSequence_MapEventStatck)__receiver,(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>)::core::convert::Into::into(stack),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58e60usize)as*mut u8,();
+(EventSequence_MapEventStatck)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58ef0usize)as*mut u8,();
+(EventSequence_MapEventStatck)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58f80usize)as*mut u8,();
+(EventSequence_MapEventStatck)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventsequence")]impl<__T:IEventSequence_MapEventStatck>IEventSequence_MapEventStatckMethods for __T{}
+
+#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn try_create_bind_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn try_create_bind_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_create_bind_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]pub fn new(inspector:crate::app::mapinspector::MapInspector)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new),));
+ <Self as IEventSequence_MapEventStatckMethods> ::ctor(this,inspector);
+this}
+#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]pub fn new_2(stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> ,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new_2),));
+ <Self as IEventSequence_MapEventStatckMethods> ::ctor_2(this,stack,unit);
+this}
+}
+
+#[cfg(feature="app-eventsequence")]pub trait IEventSequence_CoroutineMethods:IEventSequence_Coroutine{#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e588b0usize)as*mut u8,();
+(EventSequence_Coroutine)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor_2(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,callback:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58910usize)as*mut u8,();
+(EventSequence_Coroutine)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func),(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(callback),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`GetCallbackArgs(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn get_callback_args(self,callback:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)-> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58980usize)as*mut u8, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> ;
+(EventSequence_Coroutine)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(callback),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`GetCoroutine()` overload"]fn get_coroutine(self,)->crate::moon_sharp::interpreter::coroutine_2::Coroutine_2{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58ad0usize)as*mut u8,crate::moon_sharp::interpreter::coroutine_2::Coroutine_2;
+(EventSequence_Coroutine)__receiver)}
+}
+#[doc="`GetStackTrace()` overload"]fn get_stack_trace(self,)-> ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58af0usize)as*mut u8, ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> ;
+(EventSequence_Coroutine)__receiver)}
+}
+#[doc="`Yield()` overload"]fn r#yield(self,)->(){unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58b50usize)as*mut u8,();
+(EventSequence_Coroutine)__receiver)}
+}
+#[doc="`DoCoroutine()` overload"]fn do_coroutine(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58ba0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(EventSequence_Coroutine)__receiver)}
+}
+#[doc="`IsDead()` overload"]fn is_dead(self,)->bool{unsafe{let __receiver= <EventSequence_Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58cf0usize)as*mut u8,bool;
+(EventSequence_Coroutine)__receiver)}
+}
+}
+
+#[cfg(feature="app-eventsequence")]impl<__T:IEventSequence_Coroutine>IEventSequence_CoroutineMethods for __T{}
+
+#[cfg(feature="app-eventsequence")]impl EventSequence_Coroutine{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_callback_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_stack_trace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn yield_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn do_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-eventsequence")]impl EventSequence_Coroutine{#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(func:crate::moon_sharp::interpreter::dynvalue::DynValue,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventSequence_Coroutine), ::core::stringify!(new),));
+ <Self as IEventSequence_CoroutineMethods> ::ctor(this,func,args);
+this}
+#[doc="`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new_2(func:crate::moon_sharp::interpreter::dynvalue::DynValue,callback:crate::moon_sharp::interpreter::dynvalue::DynValue,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventSequence_Coroutine), ::core::stringify!(new_2),));
+ <Self as IEventSequence_CoroutineMethods> ::ctor_2(this,func,callback,args);
+this}
+}
+
 #[cfg(feature = "app-eventsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventSequence_Label;
+    pub use super::EventSequence;
+    pub use super::IEventSequence;
+    pub use super::IEventSequenceMethods;
     pub use super::EventSequence_MapEventStatck;
     pub use super::IEventSequence_MapEventStatck;
     pub use super::IEventSequence_MapEventStatckMethods;
     pub use super::EventSequence_Coroutine;
     pub use super::IEventSequence_Coroutine;
     pub use super::IEventSequence_CoroutineMethods;
-    pub use super::EventSequence;
-    pub use super::IEventSequence;
-    pub use super::IEventSequenceMethods;
+    pub use super::EventSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::stackprocinst_1::IStackProcInst_1;
     pub use crate::system::object::IObject;

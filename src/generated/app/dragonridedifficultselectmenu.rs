@@ -23,6 +23,15 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct DragonRideDifficultSelectMenu{#[offset(200)]#[rename(name="m_EnableChecker")]pub m_enable_checker: ::unity2::Array<bool> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DifficultyItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct DragonRideDifficultSelectMenu_DifficultyItem{#[offset(104)]#[rename(name="m_DifficultID")]pub m_difficult_id: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(113)]#[rename(name="m_IsExpert")]pub m_is_expert:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DragonRideDifficultSelectMenu_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DragonRideDifficultSelectMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for DragonRideDifficultSelectMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DragonRideDifficultSelectMenu.Result2";
@@ -41,15 +50,6 @@ pub fn hard()->Self{Self{value:2}
 pub fn expert()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct DragonRideDifficultSelectMenu{#[offset(200)]#[rename(name="m_EnableChecker")]pub m_enable_checker: ::unity2::Array<bool> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DragonRideDifficultSelectMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DifficultyItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct DragonRideDifficultSelectMenu_DifficultyItem{#[offset(104)]#[rename(name="m_DifficultID")]pub m_difficult_id: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(113)]#[rename(name="m_IsExpert")]pub m_is_expert:bool,}
 
 }
 
@@ -120,29 +120,6 @@ pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-dragonridedifficultselectmenu")]pub trait IDragonRideDifficultSelectMenu_DecideEventHandlerMethods:IDragonRideDifficultSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3e80usize)as*mut u8,();
-(DragonRideDifficultSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3ea0usize)as*mut u8,();
-(DragonRideDifficultSelectMenu_DecideEventHandler)__receiver,(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-dragonridedifficultselectmenu")]impl<__T:IDragonRideDifficultSelectMenu_DecideEventHandler>IDragonRideDifficultSelectMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-dragonridedifficultselectmenu")]impl DragonRideDifficultSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-dragonridedifficultselectmenu")]impl DragonRideDifficultSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DragonRideDifficultSelectMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IDragonRideDifficultSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature="app-dragonridedifficultselectmenu")]pub trait IDragonRideDifficultSelectMenu_DifficultyItemMethods:IDragonRideDifficultSelectMenu_DifficultyItem{#[doc="`.ctor(::unity2::Il2CppString, bool, bool)` overload"]fn ctor(self,difficult_id:impl::core::convert::Into< ::unity2::Il2CppString> ,enable:impl::core::convert::Into<bool> ,is_expert:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DifficultyItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd41a0usize)as*mut u8,();
 (DragonRideDifficultSelectMenu_DifficultyItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(difficult_id),(bool)::core::convert::Into::into(enable),(bool)::core::convert::Into::into(is_expert))}
@@ -171,19 +148,42 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
+#[cfg(feature="app-dragonridedifficultselectmenu")]pub trait IDragonRideDifficultSelectMenu_DecideEventHandlerMethods:IDragonRideDifficultSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3e80usize)as*mut u8,();
+(DragonRideDifficultSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3ea0usize)as*mut u8,();
+(DragonRideDifficultSelectMenu_DecideEventHandler)__receiver,(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-dragonridedifficultselectmenu")]impl<__T:IDragonRideDifficultSelectMenu_DecideEventHandler>IDragonRideDifficultSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-dragonridedifficultselectmenu")]impl DragonRideDifficultSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-dragonridedifficultselectmenu")]impl DragonRideDifficultSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideDifficultSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IDragonRideDifficultSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-dragonridedifficultselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideDifficultSelectMenu_Result2;
     pub use super::DragonRideDifficultSelectMenu;
     pub use super::IDragonRideDifficultSelectMenu;
     pub use super::IDragonRideDifficultSelectMenuMethods;
-    pub use super::DragonRideDifficultSelectMenu_DecideEventHandler;
-    pub use super::IDragonRideDifficultSelectMenu_DecideEventHandler;
-    pub use super::IDragonRideDifficultSelectMenu_DecideEventHandlerMethods;
     pub use super::DragonRideDifficultSelectMenu_DifficultyItem;
     pub use super::IDragonRideDifficultSelectMenu_DifficultyItem;
     pub use super::IDragonRideDifficultSelectMenu_DifficultyItemMethods;
+    pub use super::DragonRideDifficultSelectMenu_DecideEventHandler;
+    pub use super::IDragonRideDifficultSelectMenu_DecideEventHandler;
+    pub use super::IDragonRideDifficultSelectMenu_DecideEventHandlerMethods;
+    pub use super::DragonRideDifficultSelectMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

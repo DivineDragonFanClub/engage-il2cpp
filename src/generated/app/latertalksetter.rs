@@ -17,10 +17,10 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))]#[::unity2::class(namespace="App",name="LaterTalkSetter.UnitInfo")]#[parent(crate::system::object::Object)]pub struct LaterTalkSetter_UnitInfo{#[offset(16)]#[rename(name="InfoLv")]pub info_lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="InfoMostEmblem")]pub info_most_emblem:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="Title")]pub title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="Name")]pub name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="Lv")]pub lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="Job")]pub job:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="BattleCount")]pub battle_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="WinCount")]pub win_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="MostEmblem")]pub most_emblem:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksetter/LaterTalkSetter_UnitData.md"))]#[::unity2::class(namespace="App",name="LaterTalkSetter.UnitData")]#[parent(crate::system::object::Object)]pub struct LaterTalkSetter_UnitData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))]#[::unity2::class(namespace="App",name="LaterTalkSetter.UnitInfo")]#[parent(crate::system::object::Object)]pub struct LaterTalkSetter_UnitInfo{#[offset(16)]#[rename(name="InfoLv")]pub info_lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="InfoMostEmblem")]pub info_most_emblem:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="Title")]pub title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="Name")]pub name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="Lv")]pub lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="Job")]pub job:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="BattleCount")]pub battle_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="WinCount")]pub win_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="MostEmblem")]pub most_emblem:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksetter/LaterTalkSetter.md"))]#[::unity2::class(namespace="App",name="LaterTalkSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LaterTalkSetter{#[offset(24)]#[rename(name="CharaSolo")]pub chara_solo:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="CharaPair")]pub chara_pair:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="Main")]pub main:crate::app::latertalksetter::LaterTalkSetter_UnitInfo, #[offset(48)]#[rename(name="PairLeft")]pub pair_left:crate::app::latertalksetter::LaterTalkSetter_UnitInfo, #[offset(56)]#[rename(name="PairRight")]pub pair_right:crate::app::latertalksetter::LaterTalkSetter_UnitInfo, #[offset(64)]#[rename(name="Symbol")]pub symbol:crate::unity_engine::ui::image::Image, #[offset(72)]#[rename(name="MainText")]pub main_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_BaseDispTime")]pub m_base_disp_time:f32, #[offset(84)]#[rename(name="m_OthersTime")]pub m_others_time:f32, #[offset(88)]#[rename(name="m_WaitTimeAfter")]pub m_wait_time_after:f32, #[offset(92)]#[rename(name="m_CurrentTime")]pub m_current_time:f32, #[offset(96)]#[rename(name="m_UnitData")]pub m_unit_data:crate::system::collections::generic::list_1::List_1<crate::app::latertalksetter::LaterTalkSetter_UnitData> , #[offset(104)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32, #[offset(112)]#[rename(name="m_StartTime")]pub m_start_time:f64,}
@@ -29,24 +29,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 #[cfg(feature = "app-latertalksetter-types")]
 pub use __types::*;
-
-#[cfg(feature="app-latertalksetter")]pub trait ILaterTalkSetter_UnitInfoMethods:ILaterTalkSetter_UnitInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LaterTalkSetter_UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd63b0usize)as*mut u8,();
-(LaterTalkSetter_UnitInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-latertalksetter")]impl<__T:ILaterTalkSetter_UnitInfo>ILaterTalkSetter_UnitInfoMethods for __T{}
-
-#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(LaterTalkSetter_UnitInfo), ::core::stringify!(new),));
- <Self as ILaterTalkSetter_UnitInfoMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-latertalksetter")]pub trait ILaterTalkSetter_UnitDataMethods:ILaterTalkSetter_UnitData{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd62c0usize)as*mut u8,crate::app::unit::Unit;
@@ -133,6 +115,24 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(LaterTalkSetter_UnitData), ::core::stringify!(new),));
  <Self as ILaterTalkSetter_UnitDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-latertalksetter")]pub trait ILaterTalkSetter_UnitInfoMethods:ILaterTalkSetter_UnitInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LaterTalkSetter_UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd63b0usize)as*mut u8,();
+(LaterTalkSetter_UnitInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-latertalksetter")]impl<__T:ILaterTalkSetter_UnitInfo>ILaterTalkSetter_UnitInfoMethods for __T{}
+
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LaterTalkSetter_UnitInfo), ::core::stringify!(new),));
+ <Self as ILaterTalkSetter_UnitInfoMethods> ::ctor(this,);
 this}
 }
 
@@ -227,12 +227,12 @@ this}
 #[cfg(feature = "app-latertalksetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LaterTalkSetter_UnitInfo;
-    pub use super::ILaterTalkSetter_UnitInfo;
-    pub use super::ILaterTalkSetter_UnitInfoMethods;
     pub use super::LaterTalkSetter_UnitData;
     pub use super::ILaterTalkSetter_UnitData;
     pub use super::ILaterTalkSetter_UnitDataMethods;
+    pub use super::LaterTalkSetter_UnitInfo;
+    pub use super::ILaterTalkSetter_UnitInfo;
+    pub use super::ILaterTalkSetter_UnitInfoMethods;
     pub use super::LaterTalkSetter;
     pub use super::ILaterTalkSetter;
     pub use super::ILaterTalkSetterMethods;

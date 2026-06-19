@@ -19,21 +19,69 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="GodRoomUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GodRoomUnitSelectMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="GodRoomUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GodRoomUnitSelectMenu{#[static_field]#[rename(name="ForceMask")]pub force_mask:u32, #[static_field]#[rename(name="s_ScrollIndex")]pub s_scroll_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="GodRoomUnitSelectMenu.GodRoomUnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem{#[offset(100)]#[rename(name="m_Index")]pub m_index:i32, #[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="GodRoomUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GodRoomUnitSelectMenu_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="GodRoomUnitSelectMenu.GodRoomUnitSelectEmptyMenuItem")]#[parent(crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)]pub struct GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="GodRoomUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GodRoomUnitSelectMenu{#[static_field]#[rename(name="ForceMask")]pub force_mask:u32, #[static_field]#[rename(name="s_ScrollIndex")]pub s_scroll_index:i32,}
 
 }
 
 #[cfg(feature = "app-godroomunitselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-godroomunitselectmenu")]pub trait IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods:IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda100usize)as*mut u8,();
+(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3b0usize)as*mut u8, ::unity2::Il2CppString;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda300usize)as*mut u8,();
+(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda490usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda530usize)as*mut u8,crate::app::unit::Unit;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-godroomunitselectmenu")]impl<__T:IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem>IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods for __T{}
+
+#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` — overload selector"]pub fn new(index:i32,unit:crate::app::unit::Unit,decide_event_handler:crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem), ::core::stringify!(new),));
+ <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods> ::ctor(this,index,unit,decide_event_handler);
+this}
+}
 
 #[cfg(feature="app-godroomunitselectmenu")]pub trait IGodRoomUnitSelectMenu_DecideEventHandlerMethods:IGodRoomUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd9ce0usize)as*mut u8,();
@@ -55,6 +103,44 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(GodRoomUnitSelectMenu_DecideEventHandler), ::core::stringify!(new),));
  <Self as IGodRoomUnitSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-godroomunitselectmenu")]pub trait IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods:IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda0b0usize)as*mut u8,();
+(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda160usize)as*mut u8, ::unity2::Il2CppString;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda1e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda1f0usize)as*mut u8,();
+(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-godroomunitselectmenu")]impl<__T:IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem>IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods for __T{}
+
+#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -116,107 +202,21 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-godroomunitselectmenu")]pub trait IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods:IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda100usize)as*mut u8,();
-(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3b0usize)as*mut u8, ::unity2::Il2CppString;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda300usize)as*mut u8,();
-(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda490usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
-}
-#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda530usize)as*mut u8,crate::app::unit::Unit;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-godroomunitselectmenu")]impl<__T:IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem>IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` — overload selector"]pub fn new(index:i32,unit:crate::app::unit::Unit,decide_event_handler:crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem), ::core::stringify!(new),));
- <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods> ::ctor(this,index,unit,decide_event_handler);
-this}
-}
-
-#[cfg(feature="app-godroomunitselectmenu")]pub trait IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods:IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda0b0usize)as*mut u8,();
-(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda160usize)as*mut u8, ::unity2::Il2CppString;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda1e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda1f0usize)as*mut u8,();
-(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cda3a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-godroomunitselectmenu")]impl<__T:IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem>IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods for __T{}
-
-#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-godroomunitselectmenu")]impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem), ::core::stringify!(new),));
- <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-godroomunitselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodRoomUnitSelectMenu_DecideEventHandler;
-    pub use super::IGodRoomUnitSelectMenu_DecideEventHandler;
-    pub use super::IGodRoomUnitSelectMenu_DecideEventHandlerMethods;
-    pub use super::GodRoomUnitSelectMenu;
-    pub use super::IGodRoomUnitSelectMenu;
-    pub use super::IGodRoomUnitSelectMenuMethods;
     pub use super::GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem;
     pub use super::IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem;
     pub use super::IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods;
+    pub use super::GodRoomUnitSelectMenu_DecideEventHandler;
+    pub use super::IGodRoomUnitSelectMenu_DecideEventHandler;
+    pub use super::IGodRoomUnitSelectMenu_DecideEventHandlerMethods;
     pub use super::GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem;
     pub use super::IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem;
     pub use super::IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods;
+    pub use super::GodRoomUnitSelectMenu;
+    pub use super::IGodRoomUnitSelectMenu;
+    pub use super::IGodRoomUnitSelectMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

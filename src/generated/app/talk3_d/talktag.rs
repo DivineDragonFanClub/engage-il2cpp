@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktag/TalkTag.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTag")]#[parent(crate::system::object::Object)]pub struct TalkTag{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktag/TalkTag_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTag_Result{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTag_Result{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTag.Result";
@@ -42,6 +39,9 @@ pub fn r#continue()->Self{Self{value:6}
 pub fn error()->Self{Self{value:7}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktag/TalkTag.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTag")]#[parent(crate::system::object::Object)]pub struct TalkTag{}
 
 }
 
@@ -99,10 +99,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktag")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkTag_Result;
     pub use super::TalkTag;
     pub use super::ITalkTag;
     pub use super::ITalkTagMethods;
-    pub use super::TalkTag_Result;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

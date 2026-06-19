@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourcepool_1/RenderGraphResourcePool_1.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphResourcePool`1")]#[parent(crate::system::object::Object)]pub struct RenderGraphResourcePool_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_CurrentFrameIndex")]pub s_current_frame_index:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourcepool_1/RenderGraphResourcePool_1_ResourceLogInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraphResourcePool_1_ResourceLogInfo<T0>{pub _phantom: ::core::marker::PhantomData<(T0,)>}
 impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for RenderGraphResourcePool_1_ResourceLogInfo<T0>{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
 const NAME: &'static str="RenderGraphResourcePool`1.ResourceLogInfo";
@@ -20,9 +23,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for RenderGraphResourcePool_1_ResourceLogInfo<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphresourcepool_1/RenderGraphResourcePool_1.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphResourcePool`1")]#[parent(crate::system::object::Object)]pub struct RenderGraphResourcePool_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_CurrentFrameIndex")]pub s_current_frame_index:i32,}
 
 }
 
@@ -54,10 +54,10 @@ this}
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RenderGraphResourcePool_1_ResourceLogInfo;
     pub use super::RenderGraphResourcePool_1;
     pub use super::IRenderGraphResourcePool_1;
     pub use super::IRenderGraphResourcePool_1Methods;
+    pub use super::RenderGraphResourcePool_1_ResourceLogInfo;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

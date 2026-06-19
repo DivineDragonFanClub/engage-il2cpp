@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentdata/ProfileCardCommentData.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardcommentdata::ProfileCardCommentData>)]pub struct ProfileCardCommentData{#[static_field]#[rename(name="CategoryMid")]pub category_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentdata/ProfileCardCommentData_Categories.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardCommentData_Categories{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardCommentData_Categories{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardCommentData.Categories";
@@ -46,6 +43,9 @@ pub fn person_name()->Self{Self{value:5}
 pub fn num()->Self{Self{value:6}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentdata/ProfileCardCommentData.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardcommentdata::ProfileCardCommentData>)]pub struct ProfileCardCommentData{#[static_field]#[rename(name="CategoryMid")]pub category_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
@@ -142,10 +142,10 @@ this}
 #[cfg(feature = "app-profilecardcommentdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardCommentData_Categories;
     pub use super::ProfileCardCommentData;
     pub use super::IProfileCardCommentData;
     pub use super::IProfileCardCommentDataMethods;
-    pub use super::ProfileCardCommentData_Categories;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

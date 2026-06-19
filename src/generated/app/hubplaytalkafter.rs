@@ -27,37 +27,16 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.SelectListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubPlayTalkAfter_SelectListMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.GodRelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_GodRelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FleaMarketMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FleaMarketMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_ReplacePerson.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.ReplacePerson")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalkAfter_ReplacePerson{#[offset(112)]#[rename(name="m_LoadingCharacterCount")]pub m_loading_character_count:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_MuscleMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.MuscleMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_MuscleMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FortuneTellingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FortuneTellingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FortuneTellingMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingMenu{#[offset(104)]#[rename(name="m_FishingTopMenu")]pub m_fishing_top_menu:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_PlayCount")]pub m_play_count:i32, #[offset(116)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(120)]#[rename(name="m_gyotakuSprite")]pub m_gyotaku_sprite:crate::unity_engine::sprite::Sprite,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FleaMarketMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FleaMarketMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingPictureBookMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingPictureBookMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingPictureBookMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.GodRelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_GodRelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess, #[offset(112)]#[rename(name="m_relianceLevelUp")]pub m_reliance_level_up:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubPlayTalkAfter_RingMenu_YesItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.NoItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubPlayTalkAfter_RingMenu_NoItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubPlayTalkAfter_Label{pub value:i32,}
@@ -98,10 +77,28 @@ pub fn end()->Self{Self{value:12}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.NoItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubPlayTalkAfter_RingMenu_NoItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.DragonRideMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_DragonRideMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess, #[offset(112)]#[rename(name="m_relianceLevelUp")]pub m_reliance_level_up:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingMenu{#[offset(104)]#[rename(name="m_FishingTopMenu")]pub m_fishing_top_menu:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_PlayCount")]pub m_play_count:i32, #[offset(116)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(120)]#[rename(name="m_gyotakuSprite")]pub m_gyotaku_sprite:crate::unity_engine::sprite::Sprite,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingPictureBookMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingPictureBookMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingPictureBookMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FortuneTellingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FortuneTellingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FortuneTellingMenu{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_CookingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.CookingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_CookingMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RingMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.SelectListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubPlayTalkAfter_SelectListMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_TalkGiftMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.TalkGiftMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_TalkGiftMenu{}
@@ -110,47 +107,84 @@ pub fn end()->Self{Self{value:12}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::hubplaytalkafter::HubPlayTalkAfter>)]pub struct HubPlayTalkAfter{#[static_field]#[rename(name="cMenuPartsPath")]pub c_menu_parts_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cFishingTextureAtlasPath")]pub c_fishing_texture_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="MuscleMainPID")]pub muscle_main_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="FleaMarketMainPID")]pub flea_market_main_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="FishingMainPID")]pub fishing_main_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="DragonRideMainPID")]pub dragon_ride_main_pid: ::unity2::Il2CppString, #[offset(192)]#[rename(name="m_ReliancePopUp")]pub m_reliance_pop_up:crate::app::reliancepopupcontroller::ReliancePopUpController,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.DragonRideMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_DragonRideMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubPlayTalkAfter_RingMenu_YesItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RingMenu{}
 
 }
 
 #[cfg(feature = "app-hubplaytalkafter-types")]
 pub use __types::*;
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`get_CurrentMenuSelect()` overload"]pub fn get_current_menu_select()->crate::app::basicmenuselect::BasicMenuSelect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7e80usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
-)}
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_GodRelianceMenuMethods:IHubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4fc0usize)as*mut u8,();
+(HubPlayTalkAfter_GodRelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
 }
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f80usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5000usize)as*mut u8,();
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
 }
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8620usize)as*mut u8,();
-)}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae50a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5120usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5150usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_SelectListMenuMethods:IHubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7ef0usize)as*mut u8,();
-(HubPlayTalkAfter_SelectListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f30usize)as*mut u8, ::unity2::Il2CppString;
-(HubPlayTalkAfter_SelectListMenu)__receiver)}
-}
-}
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_GodRelianceMenu>IHubPlayTalkAfter_GodRelianceMenuMethods for __T{}
 
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_SelectListMenu>IHubPlayTalkAfter_SelectListMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{pub fn get_current_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,super_:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_SelectListMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_SelectListMenuMethods> ::ctor(this,menu_item_list,super_);
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_GodRelianceMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_GodRelianceMenuMethods> ::ctor(this,access);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FleaMarketMenuMethods:IHubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4b90usize)as*mut u8,();
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4ba0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4c20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4c30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FleaMarketMenu>IHubPlayTalkAfter_FleaMarketMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FleaMarketMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FleaMarketMenuMethods> ::ctor(this,);
 this}
 }
 
@@ -268,36 +302,92 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FortuneTellingMenuMethods:IHubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dc0usize)as*mut u8,();
-(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dd0usize)as*mut u8, ::unity2::Il2CppString;
-(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4e50usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4e60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_NoItemMethods:IHubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_NoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65690usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu_NoItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FortuneTellingMenu>IHubPlayTalkAfter_FortuneTellingMenuMethods for __T{}
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_NoItem>IHubPlayTalkAfter_RingMenu_NoItemMethods for __T{}
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_NoItem), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RingMenu_NoItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_DragonRideMenuMethods:IHubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f40usize)as*mut u8,();
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f50usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2fd0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2fe0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_DragonRideMenu>IHubPlayTalkAfter_DragonRideMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FortuneTellingMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_FortuneTellingMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_DragonRideMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_DragonRideMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RelianceMenuMethods:IHubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess> ,reliance_level_up:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5510usize)as*mut u8,();
+(HubPlayTalkAfter_RelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access),(bool)::core::convert::Into::into(reliance_level_up))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5560usize)as*mut u8,();
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5600usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5680usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae56a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RelianceMenu>IHubPlayTalkAfter_RelianceMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess,reliance_level_up:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RelianceMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RelianceMenuMethods> ::ctor(this,access,reliance_level_up);
 this}
 }
 
@@ -359,39 +449,6 @@ pub fn set_target_fish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FleaMarketMenuMethods:IHubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4b90usize)as*mut u8,();
-(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4ba0usize)as*mut u8, ::unity2::Il2CppString;
-(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4c20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4c30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FleaMarketMenu>IHubPlayTalkAfter_FleaMarketMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FleaMarketMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_FleaMarketMenuMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FishingPictureBookMenuMethods:IHubPlayTalkAfter_FishingPictureBookMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4990usize)as*mut u8,();
 (HubPlayTalkAfter_FishingPictureBookMenu)__receiver)}
@@ -425,120 +482,36 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_GodRelianceMenuMethods:IHubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4fc0usize)as*mut u8,();
-(HubPlayTalkAfter_GodRelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FortuneTellingMenuMethods:IHubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dc0usize)as*mut u8,();
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
 }
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5000usize)as*mut u8,();
-(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dd0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae50a0usize)as*mut u8, ::unity2::Il2CppString;
-(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4e50usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
 }
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5120usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5150usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4e60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_GodRelianceMenu>IHubPlayTalkAfter_GodRelianceMenuMethods for __T{}
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FortuneTellingMenu>IHubPlayTalkAfter_FortuneTellingMenuMethods for __T{}
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_GodRelianceMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_GodRelianceMenuMethods> ::ctor(this,access);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RelianceMenuMethods:IHubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess> ,reliance_level_up:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5510usize)as*mut u8,();
-(HubPlayTalkAfter_RelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access),(bool)::core::convert::Into::into(reliance_level_up))}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5560usize)as*mut u8,();
-(HubPlayTalkAfter_RelianceMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5600usize)as*mut u8, ::unity2::Il2CppString;
-(HubPlayTalkAfter_RelianceMenu)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5680usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(HubPlayTalkAfter_RelianceMenu)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae56a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubPlayTalkAfter_RelianceMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RelianceMenu>IHubPlayTalkAfter_RelianceMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess,reliance_level_up:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RelianceMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_RelianceMenuMethods> ::ctor(this,access,reliance_level_up);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_YesItemMethods:IHubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65720usize)as*mut u8,();
-(HubPlayTalkAfter_RingMenu_YesItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b657b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubPlayTalkAfter_RingMenu_YesItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_YesItem>IHubPlayTalkAfter_RingMenu_YesItemMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_YesItem), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_RingMenu_YesItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_NoItemMethods:IHubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_NoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65690usize)as*mut u8,();
-(HubPlayTalkAfter_RingMenu_NoItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_NoItem>IHubPlayTalkAfter_RingMenu_NoItemMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_NoItem), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_RingMenu_NoItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FortuneTellingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FortuneTellingMenuMethods> ::ctor(this,);
 this}
 }
 
@@ -575,41 +548,40 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenuMethods:IHubPlayTalkAfter_RingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7c10usize)as*mut u8,();
-(HubPlayTalkAfter_RingMenu)__receiver)}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`get_CurrentMenuSelect()` overload"]pub fn get_current_menu_select()->crate::app::basicmenuselect::BasicMenuSelect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7e80usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+)}
 }
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7c20usize)as*mut u8,();
-(HubPlayTalkAfter_RingMenu)__receiver)}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7cc0usize)as*mut u8, ::unity2::Il2CppString;
-(HubPlayTalkAfter_RingMenu)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7d40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(HubPlayTalkAfter_RingMenu)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7d50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubPlayTalkAfter_RingMenu)__receiver)}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8620usize)as*mut u8,();
+)}
 }
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu>IHubPlayTalkAfter_RingMenuMethods for __T{}
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_SelectListMenuMethods:IHubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7ef0usize)as*mut u8,();
+(HubPlayTalkAfter_SelectListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f30usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_SelectListMenu)__receiver)}
+}
+}
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_SelectListMenu>IHubPlayTalkAfter_SelectListMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{pub fn get_current_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,super_:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_RingMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_SelectListMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_SelectListMenuMethods> ::ctor(this,menu_item_list,super_);
 this}
 }
 
@@ -894,91 +866,119 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_DragonRideMenuMethods:IHubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f40usize)as*mut u8,();
-(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_YesItemMethods:IHubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65720usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu_YesItem)__receiver)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f50usize)as*mut u8, ::unity2::Il2CppString;
-(HubPlayTalkAfter_DragonRideMenu)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2fd0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(HubPlayTalkAfter_DragonRideMenu)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2fe0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b657b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_RingMenu_YesItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_DragonRideMenu>IHubPlayTalkAfter_DragonRideMenuMethods for __T{}
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_YesItem>IHubPlayTalkAfter_RingMenu_YesItemMethods for __T{}
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_DragonRideMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_DragonRideMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_YesItem), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RingMenu_YesItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenuMethods:IHubPlayTalkAfter_RingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7c10usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7c20usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7cc0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7d40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7d50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu>IHubPlayTalkAfter_RingMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RingMenuMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-hubplaytalkafter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubPlayTalkAfter_SelectListMenu;
-    pub use super::IHubPlayTalkAfter_SelectListMenu;
-    pub use super::IHubPlayTalkAfter_SelectListMenuMethods;
+    pub use super::HubPlayTalkAfter_GodRelianceMenu;
+    pub use super::IHubPlayTalkAfter_GodRelianceMenu;
+    pub use super::IHubPlayTalkAfter_GodRelianceMenuMethods;
+    pub use super::HubPlayTalkAfter_FleaMarketMenu;
+    pub use super::IHubPlayTalkAfter_FleaMarketMenu;
+    pub use super::IHubPlayTalkAfter_FleaMarketMenuMethods;
     pub use super::HubPlayTalkAfter_ReplacePerson;
     pub use super::IHubPlayTalkAfter_ReplacePerson;
     pub use super::IHubPlayTalkAfter_ReplacePersonMethods;
     pub use super::HubPlayTalkAfter_MuscleMenu;
     pub use super::IHubPlayTalkAfter_MuscleMenu;
     pub use super::IHubPlayTalkAfter_MuscleMenuMethods;
-    pub use super::HubPlayTalkAfter_FortuneTellingMenu;
-    pub use super::IHubPlayTalkAfter_FortuneTellingMenu;
-    pub use super::IHubPlayTalkAfter_FortuneTellingMenuMethods;
-    pub use super::HubPlayTalkAfter_FishingMenu;
-    pub use super::IHubPlayTalkAfter_FishingMenu;
-    pub use super::IHubPlayTalkAfter_FishingMenuMethods;
-    pub use super::HubPlayTalkAfter_FleaMarketMenu;
-    pub use super::IHubPlayTalkAfter_FleaMarketMenu;
-    pub use super::IHubPlayTalkAfter_FleaMarketMenuMethods;
-    pub use super::HubPlayTalkAfter_FishingPictureBookMenu;
-    pub use super::IHubPlayTalkAfter_FishingPictureBookMenu;
-    pub use super::IHubPlayTalkAfter_FishingPictureBookMenuMethods;
-    pub use super::HubPlayTalkAfter_GodRelianceMenu;
-    pub use super::IHubPlayTalkAfter_GodRelianceMenu;
-    pub use super::IHubPlayTalkAfter_GodRelianceMenuMethods;
-    pub use super::HubPlayTalkAfter_RelianceMenu;
-    pub use super::IHubPlayTalkAfter_RelianceMenu;
-    pub use super::IHubPlayTalkAfter_RelianceMenuMethods;
-    pub use super::HubPlayTalkAfter_RingMenu_YesItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_YesItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_YesItemMethods;
+    pub use super::HubPlayTalkAfter_Label;
     pub use super::HubPlayTalkAfter_RingMenu_NoItem;
     pub use super::IHubPlayTalkAfter_RingMenu_NoItem;
     pub use super::IHubPlayTalkAfter_RingMenu_NoItemMethods;
-    pub use super::HubPlayTalkAfter_Label;
+    pub use super::HubPlayTalkAfter_DragonRideMenu;
+    pub use super::IHubPlayTalkAfter_DragonRideMenu;
+    pub use super::IHubPlayTalkAfter_DragonRideMenuMethods;
+    pub use super::HubPlayTalkAfter_RelianceMenu;
+    pub use super::IHubPlayTalkAfter_RelianceMenu;
+    pub use super::IHubPlayTalkAfter_RelianceMenuMethods;
+    pub use super::HubPlayTalkAfter_FishingMenu;
+    pub use super::IHubPlayTalkAfter_FishingMenu;
+    pub use super::IHubPlayTalkAfter_FishingMenuMethods;
+    pub use super::HubPlayTalkAfter_FishingPictureBookMenu;
+    pub use super::IHubPlayTalkAfter_FishingPictureBookMenu;
+    pub use super::IHubPlayTalkAfter_FishingPictureBookMenuMethods;
+    pub use super::HubPlayTalkAfter_FortuneTellingMenu;
+    pub use super::IHubPlayTalkAfter_FortuneTellingMenu;
+    pub use super::IHubPlayTalkAfter_FortuneTellingMenuMethods;
     pub use super::HubPlayTalkAfter_CookingMenu;
     pub use super::IHubPlayTalkAfter_CookingMenu;
     pub use super::IHubPlayTalkAfter_CookingMenuMethods;
-    pub use super::HubPlayTalkAfter_RingMenu;
-    pub use super::IHubPlayTalkAfter_RingMenu;
-    pub use super::IHubPlayTalkAfter_RingMenuMethods;
+    pub use super::HubPlayTalkAfter_SelectListMenu;
+    pub use super::IHubPlayTalkAfter_SelectListMenu;
+    pub use super::IHubPlayTalkAfter_SelectListMenuMethods;
     pub use super::HubPlayTalkAfter_TalkGiftMenu;
     pub use super::IHubPlayTalkAfter_TalkGiftMenu;
     pub use super::IHubPlayTalkAfter_TalkGiftMenuMethods;
     pub use super::HubPlayTalkAfter;
     pub use super::IHubPlayTalkAfter;
     pub use super::IHubPlayTalkAfterMethods;
-    pub use super::HubPlayTalkAfter_DragonRideMenu;
-    pub use super::IHubPlayTalkAfter_DragonRideMenu;
-    pub use super::IHubPlayTalkAfter_DragonRideMenuMethods;
+    pub use super::HubPlayTalkAfter_RingMenu_YesItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_YesItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_YesItemMethods;
+    pub use super::HubPlayTalkAfter_RingMenu;
+    pub use super::IHubPlayTalkAfter_RingMenu;
+    pub use super::IHubPlayTalkAfter_RingMenuMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

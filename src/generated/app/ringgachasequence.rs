@@ -21,16 +21,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_Result1Proc.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence.Result1Proc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingGachaSequence_Result1Proc{#[offset(112)]#[rename(name="m_RefineRingResult1Window")]pub m_refine_ring_result1_window:crate::app::refineringresult1window::RefineRingResult1Window, #[offset(120)]#[rename(name="m_UnitRing")]pub m_unit_ring:crate::app::unitring::UnitRing, #[offset(128)]#[rename(name="m_New")]pub m_new:bool, #[offset(136)]#[rename(name="m_TitleBar")]pub m_title_bar:crate::app::titlebar::TitleBar,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_SkipCallback.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence.SkipListenerProc.SkipCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingGachaSequence_SkipListenerProc_SkipCallback{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_Result10Proc.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence.Result10Proc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingGachaSequence_Result10Proc{#[offset(112)]#[rename(name="m_RefineRingResult10Window")]pub m_refine_ring_result10_window:crate::app::refineringresult10window::RefineRingResult10Window, #[offset(120)]#[rename(name="m_UnitRingList")]pub m_unit_ring_list:crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> , #[offset(128)]#[rename(name="m_NewList")]pub m_new_list:crate::system::collections::generic::list_1::List_1<bool> , #[offset(136)]#[rename(name="m_TitleBar")]pub m_title_bar:crate::app::titlebar::TitleBar,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringgachasequence::RingGachaSequence>)]pub struct RingGachaSequence{#[offset(120)]#[rename(name="m_SceneResourceHandle")]pub m_scene_resource_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(128)]#[rename(name="m_DisableList")]pub m_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(136)]#[rename(name="SceneName")]pub scene_name: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_RingGachaScene")]pub m_ring_gacha_scene:crate::unity_engine::scene_management::scene::Scene, #[offset(152)]#[rename(name="m_EffectObject")]pub m_effect_object:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_BgEffectRootObject")]pub m_bg_effect_root_object:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_TitleBar")]pub m_title_bar:crate::app::titlebar::TitleBar, #[offset(176)]#[rename(name="m_EngageZonePrefabPath")]pub m_engage_zone_prefab_path: ::unity2::Il2CppString, #[offset(184)]#[rename(name="m_CommonRingHandle")]pub m_common_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(192)]#[rename(name="m_CommonRingController")]pub m_common_ring_controller:crate::app::commonringcontroller::CommonRingController, #[offset(200)]#[rename(name="m_RingModelRoot")]pub m_ring_model_root:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="StartEffectPath")]pub start_effect_path: ::unity2::Il2CppString, #[offset(216)]#[rename(name="CreateEffectPaths")]pub create_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(224)]#[rename(name="LoopEffectPaths")]pub loop_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(232)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(240)]#[rename(name="m_RingList")]pub m_ring_list:crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> , #[offset(248)]#[rename(name="m_RingIndex")]pub m_ring_index:i32, #[offset(256)]#[rename(name="m_NewList")]pub m_new_list:crate::system::collections::generic::list_1::List_1<bool> , #[offset(264)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::system::action::Action, #[offset(272)]#[rename(name="m_SkipListenerProc")]pub m_skip_listener_proc:crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc, #[offset(280)]#[rename(name="m_ResultProc")]pub m_result_proc:crate::app::procinst::ProcInst, #[offset(288)]#[rename(name="m_StartEffect")]pub m_start_effect:crate::unity_engine::gameobject::GameObject, #[offset(296)]#[rename(name="m_CreateEffect")]pub m_create_effect:crate::unity_engine::gameobject::GameObject, #[offset(304)]#[rename(name="m_LoopEffect")]pub m_loop_effect:crate::unity_engine::gameobject::GameObject, #[offset(312)]#[rename(name="m_RingObject")]pub m_ring_object:crate::unity_engine::gameobject::GameObject,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingGachaSequence_SkipListenerProc_Type{pub value:i32,}
@@ -49,6 +40,9 @@ pub fn one()->Self{Self{value:1}
 pub fn all()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringgachasequence::RingGachaSequence>)]pub struct RingGachaSequence{#[offset(120)]#[rename(name="m_SceneResourceHandle")]pub m_scene_resource_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(128)]#[rename(name="m_DisableList")]pub m_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(136)]#[rename(name="SceneName")]pub scene_name: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_RingGachaScene")]pub m_ring_gacha_scene:crate::unity_engine::scene_management::scene::Scene, #[offset(152)]#[rename(name="m_EffectObject")]pub m_effect_object:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_BgEffectRootObject")]pub m_bg_effect_root_object:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_TitleBar")]pub m_title_bar:crate::app::titlebar::TitleBar, #[offset(176)]#[rename(name="m_EngageZonePrefabPath")]pub m_engage_zone_prefab_path: ::unity2::Il2CppString, #[offset(184)]#[rename(name="m_CommonRingHandle")]pub m_common_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(192)]#[rename(name="m_CommonRingController")]pub m_common_ring_controller:crate::app::commonringcontroller::CommonRingController, #[offset(200)]#[rename(name="m_RingModelRoot")]pub m_ring_model_root:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="StartEffectPath")]pub start_effect_path: ::unity2::Il2CppString, #[offset(216)]#[rename(name="CreateEffectPaths")]pub create_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(224)]#[rename(name="LoopEffectPaths")]pub loop_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(232)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(240)]#[rename(name="m_RingList")]pub m_ring_list:crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> , #[offset(248)]#[rename(name="m_RingIndex")]pub m_ring_index:i32, #[offset(256)]#[rename(name="m_NewList")]pub m_new_list:crate::system::collections::generic::list_1::List_1<bool> , #[offset(264)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::system::action::Action, #[offset(272)]#[rename(name="m_SkipListenerProc")]pub m_skip_listener_proc:crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc, #[offset(280)]#[rename(name="m_ResultProc")]pub m_result_proc:crate::app::procinst::ProcInst, #[offset(288)]#[rename(name="m_StartEffect")]pub m_start_effect:crate::unity_engine::gameobject::GameObject, #[offset(296)]#[rename(name="m_CreateEffect")]pub m_create_effect:crate::unity_engine::gameobject::GameObject, #[offset(304)]#[rename(name="m_LoopEffect")]pub m_loop_effect:crate::unity_engine::gameobject::GameObject, #[offset(312)]#[rename(name="m_RingObject")]pub m_ring_object:crate::unity_engine::gameobject::GameObject,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingGachaSequence_Label{pub value:i32,}
@@ -73,84 +67,18 @@ pub fn end()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_SkipCallback.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence.SkipListenerProc.SkipCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingGachaSequence_SkipListenerProc_SkipCallback{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence.SkipListenerProc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingGachaSequence_SkipListenerProc{#[offset(120)]#[rename(name="m_SkipCallback")]pub m_skip_callback:crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringgachasequence/RingGachaSequence_Result1Proc.md"))]#[::unity2::class(namespace="App",name="RingGachaSequence.Result1Proc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingGachaSequence_Result1Proc{#[offset(112)]#[rename(name="m_RefineRingResult1Window")]pub m_refine_ring_result1_window:crate::app::refineringresult1window::RefineRingResult1Window, #[offset(120)]#[rename(name="m_UnitRing")]pub m_unit_ring:crate::app::unitring::UnitRing, #[offset(128)]#[rename(name="m_New")]pub m_new:bool, #[offset(136)]#[rename(name="m_TitleBar")]pub m_title_bar:crate::app::titlebar::TitleBar,}
 
 }
 
 #[cfg(feature = "app-ringgachasequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_Result1Proc{#[doc="`CreateBind(crate::app::ringgachasequence::RingGachaSequence, crate::app::unitring::UnitRing, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence> ,ring_data:impl::core::convert::Into<crate::app::unitring::UnitRing> ,new_ring:impl::core::convert::Into<bool>)->crate::app::ringgachasequence::RingGachaSequence_Result1Proc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b12520usize)as*mut u8,crate::app::ringgachasequence::RingGachaSequence_Result1Proc;
-(crate::app::ringgachasequence::RingGachaSequence)::core::convert::Into::into(super_),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring_data),(bool)::core::convert::Into::into(new_ring))}
-}
-}
-
-#[cfg(feature="app-ringgachasequence")]pub trait IRingGachaSequence_Result1ProcMethods:IRingGachaSequence_Result1Proc{#[doc="`.ctor(crate::app::unitring::UnitRing, bool)` overload"]fn ctor(self,ring_data:impl::core::convert::Into<crate::app::unitring::UnitRing> ,new_ring:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b127e0usize)as*mut u8,();
-(RingGachaSequence_Result1Proc)__receiver,(crate::app::unitring::UnitRing)::core::convert::Into::into(ring_data),(bool)::core::convert::Into::into(new_ring))}
-}
-#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b128f0usize)as*mut u8,();
-(RingGachaSequence_Result1Proc)__receiver)}
-}
-#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b129c0usize)as*mut u8,bool;
-(RingGachaSequence_Result1Proc)__receiver)}
-}
-#[doc="`IsKeyInputted()` overload"]fn is_key_inputted(self,)->bool{unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b12a60usize)as*mut u8,bool;
-(RingGachaSequence_Result1Proc)__receiver)}
-}
-#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b12c50usize)as*mut u8,bool;
-(RingGachaSequence_Result1Proc)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b12cf0usize)as*mut u8,();
-(RingGachaSequence_Result1Proc)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringgachasequence")]impl<__T:IRingGachaSequence_Result1Proc>IRingGachaSequence_Result1ProcMethods for __T{}
-
-#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_Result1Proc{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_key_inputted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_Result1Proc{#[doc="`.ctor(crate::app::unitring::UnitRing, bool)` — overload selector"]pub fn new(ring_data:crate::app::unitring::UnitRing,new_ring:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingGachaSequence_Result1Proc), ::core::stringify!(new),));
- <Self as IRingGachaSequence_Result1ProcMethods> ::ctor(this,ring_data,new_ring);
-this}
-}
-
-#[cfg(feature="app-ringgachasequence")]pub trait IRingGachaSequence_SkipListenerProc_SkipCallbackMethods:IRingGachaSequence_SkipListenerProc_SkipCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingGachaSequence_SkipListenerProc_SkipCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7cc10usize)as*mut u8,();
-(RingGachaSequence_SkipListenerProc_SkipCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)` overload"]fn invoke(self,r#type:impl::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type>)->(){unsafe{let __receiver= <RingGachaSequence_SkipListenerProc_SkipCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7cc30usize)as*mut u8,();
-(RingGachaSequence_SkipListenerProc_SkipCallback)__receiver,(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)::core::convert::Into::into(r#type))}
-}
-}
-
-#[cfg(feature="app-ringgachasequence")]impl<__T:IRingGachaSequence_SkipListenerProc_SkipCallback>IRingGachaSequence_SkipListenerProc_SkipCallbackMethods for __T{}
-
-#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_SkipListenerProc_SkipCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_SkipListenerProc_SkipCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingGachaSequence_SkipListenerProc_SkipCallback), ::core::stringify!(new),));
- <Self as IRingGachaSequence_SkipListenerProc_SkipCallbackMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_Result10Proc{#[doc="`CreateBind(crate::app::ringgachasequence::RingGachaSequence, crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>, crate::system::collections::generic::list_1::List_1<bool>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence> ,ring_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> > ,new_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<bool> >)->crate::app::ringgachasequence::RingGachaSequence_Result10Proc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b11bf0usize)as*mut u8,crate::app::ringgachasequence::RingGachaSequence_Result10Proc;
 (crate::app::ringgachasequence::RingGachaSequence)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>)::core::convert::Into::into(ring_data_list),(crate::system::collections::generic::list_1::List_1<bool>)::core::convert::Into::into(new_list))}
@@ -350,6 +278,29 @@ pub fn get_loop_effect_path_method_info()-> & 'static::unity2::il2cpp::MethodInf
 this}
 }
 
+#[cfg(feature="app-ringgachasequence")]pub trait IRingGachaSequence_SkipListenerProc_SkipCallbackMethods:IRingGachaSequence_SkipListenerProc_SkipCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingGachaSequence_SkipListenerProc_SkipCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7cc10usize)as*mut u8,();
+(RingGachaSequence_SkipListenerProc_SkipCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)` overload"]fn invoke(self,r#type:impl::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type>)->(){unsafe{let __receiver= <RingGachaSequence_SkipListenerProc_SkipCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7cc30usize)as*mut u8,();
+(RingGachaSequence_SkipListenerProc_SkipCallback)__receiver,(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)::core::convert::Into::into(r#type))}
+}
+}
+
+#[cfg(feature="app-ringgachasequence")]impl<__T:IRingGachaSequence_SkipListenerProc_SkipCallback>IRingGachaSequence_SkipListenerProc_SkipCallbackMethods for __T{}
+
+#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_SkipListenerProc_SkipCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_SkipListenerProc_SkipCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingGachaSequence_SkipListenerProc_SkipCallback), ::core::stringify!(new),));
+ <Self as IRingGachaSequence_SkipListenerProc_SkipCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_SkipListenerProc{#[doc="`Create(crate::app::ringgachasequence::RingGachaSequence, crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence> ,skip_callback:impl::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback>)->crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b12dc0usize)as*mut u8,crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc;
 (crate::app::ringgachasequence::RingGachaSequence)::core::convert::Into::into(super_),(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)::core::convert::Into::into(skip_callback))}
 }
@@ -399,26 +350,75 @@ pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
+#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_Result1Proc{#[doc="`CreateBind(crate::app::ringgachasequence::RingGachaSequence, crate::app::unitring::UnitRing, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::ringgachasequence::RingGachaSequence> ,ring_data:impl::core::convert::Into<crate::app::unitring::UnitRing> ,new_ring:impl::core::convert::Into<bool>)->crate::app::ringgachasequence::RingGachaSequence_Result1Proc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b12520usize)as*mut u8,crate::app::ringgachasequence::RingGachaSequence_Result1Proc;
+(crate::app::ringgachasequence::RingGachaSequence)::core::convert::Into::into(super_),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring_data),(bool)::core::convert::Into::into(new_ring))}
+}
+}
+
+#[cfg(feature="app-ringgachasequence")]pub trait IRingGachaSequence_Result1ProcMethods:IRingGachaSequence_Result1Proc{#[doc="`.ctor(crate::app::unitring::UnitRing, bool)` overload"]fn ctor(self,ring_data:impl::core::convert::Into<crate::app::unitring::UnitRing> ,new_ring:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b127e0usize)as*mut u8,();
+(RingGachaSequence_Result1Proc)__receiver,(crate::app::unitring::UnitRing)::core::convert::Into::into(ring_data),(bool)::core::convert::Into::into(new_ring))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b128f0usize)as*mut u8,();
+(RingGachaSequence_Result1Proc)__receiver)}
+}
+#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b129c0usize)as*mut u8,bool;
+(RingGachaSequence_Result1Proc)__receiver)}
+}
+#[doc="`IsKeyInputted()` overload"]fn is_key_inputted(self,)->bool{unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b12a60usize)as*mut u8,bool;
+(RingGachaSequence_Result1Proc)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b12c50usize)as*mut u8,bool;
+(RingGachaSequence_Result1Proc)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RingGachaSequence_Result1Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b12cf0usize)as*mut u8,();
+(RingGachaSequence_Result1Proc)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringgachasequence")]impl<__T:IRingGachaSequence_Result1Proc>IRingGachaSequence_Result1ProcMethods for __T{}
+
+#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_Result1Proc{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_key_inputted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-ringgachasequence")]impl RingGachaSequence_Result1Proc{#[doc="`.ctor(crate::app::unitring::UnitRing, bool)` — overload selector"]pub fn new(ring_data:crate::app::unitring::UnitRing,new_ring:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingGachaSequence_Result1Proc), ::core::stringify!(new),));
+ <Self as IRingGachaSequence_Result1ProcMethods> ::ctor(this,ring_data,new_ring);
+this}
+}
+
 #[cfg(feature = "app-ringgachasequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingGachaSequence_Result1Proc;
-    pub use super::IRingGachaSequence_Result1Proc;
-    pub use super::IRingGachaSequence_Result1ProcMethods;
-    pub use super::RingGachaSequence_SkipListenerProc_SkipCallback;
-    pub use super::IRingGachaSequence_SkipListenerProc_SkipCallback;
-    pub use super::IRingGachaSequence_SkipListenerProc_SkipCallbackMethods;
     pub use super::RingGachaSequence_Result10Proc;
     pub use super::IRingGachaSequence_Result10Proc;
     pub use super::IRingGachaSequence_Result10ProcMethods;
+    pub use super::RingGachaSequence_SkipListenerProc_Type;
     pub use super::RingGachaSequence;
     pub use super::IRingGachaSequence;
     pub use super::IRingGachaSequenceMethods;
-    pub use super::RingGachaSequence_SkipListenerProc_Type;
     pub use super::RingGachaSequence_Label;
+    pub use super::RingGachaSequence_SkipListenerProc_SkipCallback;
+    pub use super::IRingGachaSequence_SkipListenerProc_SkipCallback;
+    pub use super::IRingGachaSequence_SkipListenerProc_SkipCallbackMethods;
     pub use super::RingGachaSequence_SkipListenerProc;
     pub use super::IRingGachaSequence_SkipListenerProc;
     pub use super::IRingGachaSequence_SkipListenerProcMethods;
+    pub use super::RingGachaSequence_Result1Proc;
+    pub use super::IRingGachaSequence_Result1Proc;
+    pub use super::IRingGachaSequence_Result1ProcMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::delegate::IDelegate;

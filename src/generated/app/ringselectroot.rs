@@ -17,15 +17,48 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectroot/RingSelectRoot.md"))]#[::unity2::class(namespace="App",name="RingSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingSelectRoot{#[offset(24)]#[rename(name="m_RingMenu")]pub m_ring_menu:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_GodImageRoot")]pub m_god_image_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_RingModelRoot")]pub m_ring_model_root:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_UnitStatusRoot")]pub m_unit_status_root:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Photos")]pub m_photos: ::unity2::Array<crate::app::ringselectroot::RingSelectRoot_CharaPhoto> , #[offset(64)]#[rename(name="m_PhotoIdx")]pub m_photo_idx:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectroot/RingSelectRoot_CharaPhoto.md"))]#[::unity2::class(namespace="App",name="RingSelectRoot.CharaPhoto")]#[parent(crate::system::object::Object)]pub struct RingSelectRoot_CharaPhoto{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_CharaImage")]pub m_chara_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_IsSetup")]pub m_is_setup:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringselectroot/RingSelectRoot.md"))]#[::unity2::class(namespace="App",name="RingSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingSelectRoot{#[offset(24)]#[rename(name="m_RingMenu")]pub m_ring_menu:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_GodImageRoot")]pub m_god_image_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_RingModelRoot")]pub m_ring_model_root:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_UnitStatusRoot")]pub m_unit_status_root:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Photos")]pub m_photos: ::unity2::Array<crate::app::ringselectroot::RingSelectRoot_CharaPhoto> , #[offset(64)]#[rename(name="m_PhotoIdx")]pub m_photo_idx:i32,}
 
 }
 
 #[cfg(feature = "app-ringselectroot-types")]
 pub use __types::*;
+
+#[cfg(feature="app-ringselectroot")]pub trait IRingSelectRoot_CharaPhotoMethods:IRingSelectRoot_CharaPhoto{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61990usize)as*mut u8,();
+(RingSelectRoot_CharaPhoto)__receiver)}
+}
+#[doc="`FadeIn()` overload"]fn fade_in(self,)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61a10usize)as*mut u8,();
+(RingSelectRoot_CharaPhoto)__receiver)}
+}
+#[doc="`FadeOut()` overload"]fn fade_out(self,)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61af0usize)as*mut u8,();
+(RingSelectRoot_CharaPhoto)__receiver)}
+}
+#[doc="`SetRingChara(crate::app::ringdata::RingData)` overload"]fn set_ring_chara(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61b80usize)as*mut u8,();
+(RingSelectRoot_CharaPhoto)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+}
+
+#[cfg(feature="app-ringselectroot")]impl<__T:IRingSelectRoot_CharaPhoto>IRingSelectRoot_CharaPhotoMethods for __T{}
+
+#[cfg(feature="app-ringselectroot")]impl RingSelectRoot_CharaPhoto{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_ring_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-ringselectroot")]impl RingSelectRoot_CharaPhoto{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingSelectRoot_CharaPhoto), ::core::stringify!(new),));
+ <Self as IRingSelectRoot_CharaPhotoMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-ringselectroot")]pub trait IRingSelectRootMethods:IRingSelectRoot{#[doc="`GetRingMenu()` overload"]fn get_ring_menu(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <RingSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ebdbb0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
@@ -80,48 +113,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-ringselectroot")]pub trait IRingSelectRoot_CharaPhotoMethods:IRingSelectRoot_CharaPhoto{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61990usize)as*mut u8,();
-(RingSelectRoot_CharaPhoto)__receiver)}
-}
-#[doc="`FadeIn()` overload"]fn fade_in(self,)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61a10usize)as*mut u8,();
-(RingSelectRoot_CharaPhoto)__receiver)}
-}
-#[doc="`FadeOut()` overload"]fn fade_out(self,)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61af0usize)as*mut u8,();
-(RingSelectRoot_CharaPhoto)__receiver)}
-}
-#[doc="`SetRingChara(crate::app::ringdata::RingData)` overload"]fn set_ring_chara(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingSelectRoot_CharaPhoto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d61b80usize)as*mut u8,();
-(RingSelectRoot_CharaPhoto)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
-}
-}
-
-#[cfg(feature="app-ringselectroot")]impl<__T:IRingSelectRoot_CharaPhoto>IRingSelectRoot_CharaPhotoMethods for __T{}
-
-#[cfg(feature="app-ringselectroot")]impl RingSelectRoot_CharaPhoto{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_ring_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-ringselectroot")]impl RingSelectRoot_CharaPhoto{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingSelectRoot_CharaPhoto), ::core::stringify!(new),));
- <Self as IRingSelectRoot_CharaPhotoMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-ringselectroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingSelectRoot;
-    pub use super::IRingSelectRoot;
-    pub use super::IRingSelectRootMethods;
     pub use super::RingSelectRoot_CharaPhoto;
     pub use super::IRingSelectRoot_CharaPhoto;
     pub use super::IRingSelectRoot_CharaPhotoMethods;
+    pub use super::RingSelectRoot;
+    pub use super::IRingSelectRoot;
+    pub use super::IRingSelectRootMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

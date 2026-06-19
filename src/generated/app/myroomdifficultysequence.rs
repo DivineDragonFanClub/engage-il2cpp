@@ -23,95 +23,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomdifficultysequence/MyRoomDifficultySequence.md"))]#[::unity2::class(namespace="App",name="MyRoomDifficultySequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MyRoomDifficultySequence{#[offset(112)]#[rename(name="m_CurrentDifficulty")]pub m_current_difficulty:crate::app::difficulty::Difficulty, #[offset(116)]#[rename(name="m_NextDifficulty")]pub m_next_difficulty:crate::app::difficulty::Difficulty,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomdifficultysequence/MyRoomDifficultySequence_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomDifficultySequence.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MyRoomDifficultySequence_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomdifficultysequence/MyRoomDifficultySequence_YesMenuItem_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="MyRoomDifficultySequence.YesMenuItem.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MyRoomDifficultySequence_YesMenuItem_YesEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomdifficultysequence/MyRoomDifficultySequence_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomDifficultySequence.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MyRoomDifficultySequence_NoMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomdifficultysequence/MyRoomDifficultySequence.md"))]#[::unity2::class(namespace="App",name="MyRoomDifficultySequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MyRoomDifficultySequence{#[offset(112)]#[rename(name="m_CurrentDifficulty")]pub m_current_difficulty:crate::app::difficulty::Difficulty, #[offset(116)]#[rename(name="m_NextDifficulty")]pub m_next_difficulty:crate::app::difficulty::Difficulty,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomdifficultysequence/MyRoomDifficultySequence_YesMenuItem_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="MyRoomDifficultySequence.YesMenuItem.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MyRoomDifficultySequence_YesMenuItem_YesEventHandler{}
 
 }
 
 #[cfg(feature = "app-myroomdifficultysequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-myroomdifficultysequence")]pub trait IMyRoomDifficultySequence_YesMenuItemMethods:IMyRoomDifficultySequence_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_event_handler:impl::core::convert::Into<crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler>)->(){unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20936f0usize)as*mut u8,();
-(MyRoomDifficultySequence_YesMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2093730usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomDifficultySequence_YesMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2093740usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomDifficultySequence_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl<__T:IMyRoomDifficultySequence_YesMenuItem>IMyRoomDifficultySequence_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,yes_event_handler:crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomDifficultySequence_YesMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomDifficultySequence_YesMenuItemMethods> ::ctor(this,message,yes_event_handler);
-this}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]pub trait IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods:IMyRoomDifficultySequence_YesMenuItem_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73f60usize)as*mut u8,();
-(MyRoomDifficultySequence_YesMenuItem_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73f80usize)as*mut u8,();
-(MyRoomDifficultySequence_YesMenuItem_YesEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl<__T:IMyRoomDifficultySequence_YesMenuItem_YesEventHandler>IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods for __T{}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomDifficultySequence_YesMenuItem_YesEventHandler), ::core::stringify!(new),));
- <Self as IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]pub trait IMyRoomDifficultySequence_NoMenuItemMethods:IMyRoomDifficultySequence_NoMenuItem{#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomDifficultySequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20936d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomDifficultySequence_NoMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomDifficultySequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20936e0usize)as*mut u8,();
-(MyRoomDifficultySequence_NoMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl<__T:IMyRoomDifficultySequence_NoMenuItem>IMyRoomDifficultySequence_NoMenuItemMethods for __T{}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_NoMenuItem{pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomDifficultySequence_NoMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomDifficultySequence_NoMenuItemMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x238d360usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -152,21 +78,95 @@ pub fn change_difficulty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 this}
 }
 
+#[cfg(feature="app-myroomdifficultysequence")]pub trait IMyRoomDifficultySequence_YesMenuItemMethods:IMyRoomDifficultySequence_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_event_handler:impl::core::convert::Into<crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler>)->(){unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20936f0usize)as*mut u8,();
+(MyRoomDifficultySequence_YesMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2093730usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MyRoomDifficultySequence_YesMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2093740usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomDifficultySequence_YesMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl<__T:IMyRoomDifficultySequence_YesMenuItem>IMyRoomDifficultySequence_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,yes_event_handler:crate::app::myroomdifficultysequence::MyRoomDifficultySequence_YesMenuItem_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomDifficultySequence_YesMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomDifficultySequence_YesMenuItemMethods> ::ctor(this,message,yes_event_handler);
+this}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]pub trait IMyRoomDifficultySequence_NoMenuItemMethods:IMyRoomDifficultySequence_NoMenuItem{#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomDifficultySequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20936d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MyRoomDifficultySequence_NoMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomDifficultySequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20936e0usize)as*mut u8,();
+(MyRoomDifficultySequence_NoMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl<__T:IMyRoomDifficultySequence_NoMenuItem>IMyRoomDifficultySequence_NoMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_NoMenuItem{pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomDifficultySequence_NoMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomDifficultySequence_NoMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]pub trait IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods:IMyRoomDifficultySequence_YesMenuItem_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73f60usize)as*mut u8,();
+(MyRoomDifficultySequence_YesMenuItem_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <MyRoomDifficultySequence_YesMenuItem_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73f80usize)as*mut u8,();
+(MyRoomDifficultySequence_YesMenuItem_YesEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl<__T:IMyRoomDifficultySequence_YesMenuItem_YesEventHandler>IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods for __T{}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-myroomdifficultysequence")]impl MyRoomDifficultySequence_YesMenuItem_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomDifficultySequence_YesMenuItem_YesEventHandler), ::core::stringify!(new),));
+ <Self as IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-myroomdifficultysequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomDifficultySequence_YesMenuItem;
-    pub use super::IMyRoomDifficultySequence_YesMenuItem;
-    pub use super::IMyRoomDifficultySequence_YesMenuItemMethods;
-    pub use super::MyRoomDifficultySequence_YesMenuItem_YesEventHandler;
-    pub use super::IMyRoomDifficultySequence_YesMenuItem_YesEventHandler;
-    pub use super::IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods;
-    pub use super::MyRoomDifficultySequence_NoMenuItem;
-    pub use super::IMyRoomDifficultySequence_NoMenuItem;
-    pub use super::IMyRoomDifficultySequence_NoMenuItemMethods;
     pub use super::MyRoomDifficultySequence;
     pub use super::IMyRoomDifficultySequence;
     pub use super::IMyRoomDifficultySequenceMethods;
+    pub use super::MyRoomDifficultySequence_YesMenuItem;
+    pub use super::IMyRoomDifficultySequence_YesMenuItem;
+    pub use super::IMyRoomDifficultySequence_YesMenuItemMethods;
+    pub use super::MyRoomDifficultySequence_NoMenuItem;
+    pub use super::IMyRoomDifficultySequence_NoMenuItem;
+    pub use super::IMyRoomDifficultySequence_NoMenuItemMethods;
+    pub use super::MyRoomDifficultySequence_YesMenuItem_YesEventHandler;
+    pub use super::IMyRoomDifficultySequence_YesMenuItem_YesEventHandler;
+    pub use super::IMyRoomDifficultySequence_YesMenuItem_YesEventHandlerMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

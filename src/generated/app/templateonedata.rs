@@ -19,10 +19,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/templateonedata/TemplateOneData.md"))]#[::unity2::class(namespace="App",name="TemplateOneData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::templateonedata::TemplateOneData>)]pub struct TemplateOneData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/templateonedata/TemplateOneData_SampleClass.md"))]#[::unity2::class(namespace="App",name="TemplateOneData.SampleClass")]#[parent(crate::system::object::Object)]pub struct TemplateOneData_SampleClass{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/templateonedata/TemplateOneData.md"))]#[::unity2::class(namespace="App",name="TemplateOneData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::templateonedata::TemplateOneData>)]pub struct TemplateOneData{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/templateonedata/TemplateOneData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TemplateOneData_Flags{pub value:i32,}
@@ -48,6 +48,44 @@ pub fn flag4()->Self{Self{value:8}
 
 #[cfg(feature = "app-templateonedata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-templateonedata")]pub trait ITemplateOneData_SampleClassMethods:ITemplateOneData_SampleClass{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f00usize)as*mut u8, ::unity2::Il2CppString;
+(TemplateOneData_SampleClass)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f10usize)as*mut u8,();
+(TemplateOneData_SampleClass)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f20usize)as*mut u8,i32;
+(TemplateOneData_SampleClass)__receiver)}
+}
+#[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f30usize)as*mut u8,();
+(TemplateOneData_SampleClass)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f40usize)as*mut u8,();
+(TemplateOneData_SampleClass)__receiver)}
+}
+}
+
+#[cfg(feature="app-templateonedata")]impl<__T:ITemplateOneData_SampleClass>ITemplateOneData_SampleClassMethods for __T{}
+
+#[cfg(feature="app-templateonedata")]impl TemplateOneData_SampleClass{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-templateonedata")]impl TemplateOneData_SampleClass{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TemplateOneData_SampleClass), ::core::stringify!(new),));
+ <Self as ITemplateOneData_SampleClassMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-templateonedata")]impl TemplateOneData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e22a0usize)as*mut u8,();
 )}
@@ -168,53 +206,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-templateonedata")]pub trait ITemplateOneData_SampleClassMethods:ITemplateOneData_SampleClass{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f00usize)as*mut u8, ::unity2::Il2CppString;
-(TemplateOneData_SampleClass)__receiver)}
-}
-#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f10usize)as*mut u8,();
-(TemplateOneData_SampleClass)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f20usize)as*mut u8,i32;
-(TemplateOneData_SampleClass)__receiver)}
-}
-#[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f30usize)as*mut u8,();
-(TemplateOneData_SampleClass)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TemplateOneData_SampleClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2203f40usize)as*mut u8,();
-(TemplateOneData_SampleClass)__receiver)}
-}
-}
-
-#[cfg(feature="app-templateonedata")]impl<__T:ITemplateOneData_SampleClass>ITemplateOneData_SampleClassMethods for __T{}
-
-#[cfg(feature="app-templateonedata")]impl TemplateOneData_SampleClass{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-templateonedata")]impl TemplateOneData_SampleClass{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TemplateOneData_SampleClass), ::core::stringify!(new),));
- <Self as ITemplateOneData_SampleClassMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-templateonedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TemplateOneData;
-    pub use super::ITemplateOneData;
-    pub use super::ITemplateOneDataMethods;
     pub use super::TemplateOneData_SampleClass;
     pub use super::ITemplateOneData_SampleClass;
     pub use super::ITemplateOneData_SampleClassMethods;
+    pub use super::TemplateOneData;
+    pub use super::ITemplateOneData;
+    pub use super::ITemplateOneDataMethods;
     pub use super::TemplateOneData_Flags;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;

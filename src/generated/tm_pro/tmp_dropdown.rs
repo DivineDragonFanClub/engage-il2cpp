@@ -25,42 +25,24 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.DropdownEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<i32>)]pub struct TMP_Dropdown_DropdownEvent{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionDataList.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.OptionDataList")]#[parent(crate::system::object::Object)]pub struct TMP_Dropdown_OptionDataList{#[offset(16)]#[rename(name="m_Options")]pub m_options:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.DropdownEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<i32>)]pub struct TMP_Dropdown_DropdownEvent{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct TMP_Dropdown{#[offset(248)]#[rename(name="m_Template")]pub m_template:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_CaptionText")]pub m_caption_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(264)]#[rename(name="m_CaptionImage")]pub m_caption_image:crate::unity_engine::ui::image::Image, #[offset(272)]#[rename(name="m_Placeholder")]pub m_placeholder:crate::unity_engine::ui::graphic::Graphic, #[offset(280)]#[rename(name="m_ItemText")]pub m_item_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(288)]#[rename(name="m_ItemImage")]pub m_item_image:crate::unity_engine::ui::image::Image, #[offset(296)]#[rename(name="m_Value")]pub m_value:i32, #[offset(304)]#[rename(name="m_Options")]pub m_options:crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionDataList, #[offset(312)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownEvent, #[offset(320)]#[rename(name="m_AlphaFadeSpeed")]pub m_alpha_fade_speed:f32, #[offset(328)]#[rename(name="m_Dropdown")]pub m_dropdown:crate::unity_engine::gameobject::GameObject, #[offset(336)]#[rename(name="m_Blocker")]pub m_blocker:crate::unity_engine::gameobject::GameObject, #[offset(344)]#[rename(name="m_Items")]pub m_items:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem> , #[offset(352)]#[rename(name="m_AlphaTweenRunner")]pub m_alpha_tween_runner:crate::tm_pro::tweenrunner_1_2::TweenRunner_1_2<crate::tm_pro::floattween_2::FloatTween_2> , #[offset(360)]#[rename(name="validTemplate")]pub valid_template:bool, #[offset(368)]#[rename(name="m_Coroutine")]pub m_coroutine:crate::unity_engine::coroutine::Coroutine, #[static_field]#[rename(name="s_NoOptionData")]pub s_no_option_data:crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionData.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.OptionData")]#[parent(crate::system::object::Object)]pub struct TMP_Dropdown_OptionData{#[offset(16)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::sprite::Sprite,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownItem.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.DropdownItem")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TMP_Dropdown_DropdownItem{#[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(32)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(48)]#[rename(name="m_Toggle")]pub m_toggle:crate::unity_engine::ui::toggle::Toggle,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionData.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.OptionData")]#[parent(crate::system::object::Object)]pub struct TMP_Dropdown_OptionData{#[offset(16)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::sprite::Sprite,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_dropdown-types")]
 pub use __types::*;
-
-#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_DropdownEventMethods:ITMP_Dropdown_DropdownEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8580usize)as*mut u8,();
-(TMP_Dropdown_DropdownEvent)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_DropdownEvent>ITMP_Dropdown_DropdownEventMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_DropdownEvent), ::core::stringify!(new),));
- <Self as ITMP_Dropdown_DropdownEventMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_OptionDataListMethods:ITMP_Dropdown_OptionDataList{#[doc="`get_options()` overload"]fn get_options(self,)->crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>{unsafe{let __receiver= <TMP_Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea88e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> ;
@@ -87,6 +69,24 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionDataList), ::core::stringify!(new),));
  <Self as ITMP_Dropdown_OptionDataListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_DropdownEventMethods:ITMP_Dropdown_DropdownEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8580usize)as*mut u8,();
+(TMP_Dropdown_DropdownEvent)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_DropdownEvent>ITMP_Dropdown_DropdownEventMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_DropdownEvent), ::core::stringify!(new),));
+ <Self as ITMP_Dropdown_DropdownEventMethods> ::ctor(this,);
 this}
 }
 
@@ -384,74 +384,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_OptionDataMethods:ITMP_Dropdown_OptionData{#[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87c0usize)as*mut u8, ::unity2::Il2CppString;
-(TMP_Dropdown_OptionData)__receiver)}
-}
-#[doc="`set_text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87d0usize)as*mut u8,();
-(TMP_Dropdown_OptionData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_image()` overload"]fn get_image(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87e0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
-(TMP_Dropdown_OptionData)__receiver)}
-}
-#[doc="`set_image(crate::unity_engine::sprite::Sprite)` overload"]fn set_image(self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87f0usize)as*mut u8,();
-(TMP_Dropdown_OptionData)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8800usize)as*mut u8,();
-(TMP_Dropdown_OptionData)__receiver)}
-}
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8810usize)as*mut u8,();
-(TMP_Dropdown_OptionData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`.ctor(crate::unity_engine::sprite::Sprite)` overload"]fn ctor_3(self,image:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8850usize)as*mut u8,();
-(TMP_Dropdown_OptionData)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(image))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]fn ctor_4(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,image:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8890usize)as*mut u8,();
-(TMP_Dropdown_OptionData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(image))}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_OptionData>ITMP_Dropdown_OptionDataMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionData{pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new),));
- <Self as ITMP_Dropdown_OptionDataMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new_2),));
- <Self as ITMP_Dropdown_OptionDataMethods> ::ctor_2(this,text);
-this}
-#[doc="`.ctor(crate::unity_engine::sprite::Sprite)` — overload selector"]pub fn new_3(image:crate::unity_engine::sprite::Sprite)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new_3),));
- <Self as ITMP_Dropdown_OptionDataMethods> ::ctor_3(this,image);
-this}
-#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` — overload selector"]pub fn new_4(text: ::unity2::Il2CppString,image:crate::unity_engine::sprite::Sprite)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new_4),));
- <Self as ITMP_Dropdown_OptionDataMethods> ::ctor_4(this,text,image);
-this}
-}
-
 #[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_DropdownItemMethods:ITMP_Dropdown_DropdownItem{#[doc="`get_text()` overload"]fn get_text(self,)->crate::tm_pro::tmp_text::TMP_Text{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea85e0usize)as*mut u8,crate::tm_pro::tmp_text::TMP_Text;
 (TMP_Dropdown_DropdownItem)__receiver)}
@@ -520,24 +452,92 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_OptionDataMethods:ITMP_Dropdown_OptionData{#[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87c0usize)as*mut u8, ::unity2::Il2CppString;
+(TMP_Dropdown_OptionData)__receiver)}
+}
+#[doc="`set_text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87d0usize)as*mut u8,();
+(TMP_Dropdown_OptionData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_image()` overload"]fn get_image(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87e0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(TMP_Dropdown_OptionData)__receiver)}
+}
+#[doc="`set_image(crate::unity_engine::sprite::Sprite)` overload"]fn set_image(self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87f0usize)as*mut u8,();
+(TMP_Dropdown_OptionData)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8800usize)as*mut u8,();
+(TMP_Dropdown_OptionData)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8810usize)as*mut u8,();
+(TMP_Dropdown_OptionData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor(crate::unity_engine::sprite::Sprite)` overload"]fn ctor_3(self,image:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8850usize)as*mut u8,();
+(TMP_Dropdown_OptionData)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(image))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` overload"]fn ctor_4(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,image:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <TMP_Dropdown_OptionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8890usize)as*mut u8,();
+(TMP_Dropdown_OptionData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(image))}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_OptionData>ITMP_Dropdown_OptionDataMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionData{pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new),));
+ <Self as ITMP_Dropdown_OptionDataMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new_2),));
+ <Self as ITMP_Dropdown_OptionDataMethods> ::ctor_2(this,text);
+this}
+#[doc="`.ctor(crate::unity_engine::sprite::Sprite)` — overload selector"]pub fn new_3(image:crate::unity_engine::sprite::Sprite)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new_3),));
+ <Self as ITMP_Dropdown_OptionDataMethods> ::ctor_3(this,image);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::sprite::Sprite)` — overload selector"]pub fn new_4(text: ::unity2::Il2CppString,image:crate::unity_engine::sprite::Sprite)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionData), ::core::stringify!(new_4),));
+ <Self as ITMP_Dropdown_OptionDataMethods> ::ctor_4(this,text,image);
+this}
+}
+
 #[cfg(feature = "tm_pro-tmp_dropdown")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_Dropdown_DropdownEvent;
-    pub use super::ITMP_Dropdown_DropdownEvent;
-    pub use super::ITMP_Dropdown_DropdownEventMethods;
     pub use super::TMP_Dropdown_OptionDataList;
     pub use super::ITMP_Dropdown_OptionDataList;
     pub use super::ITMP_Dropdown_OptionDataListMethods;
+    pub use super::TMP_Dropdown_DropdownEvent;
+    pub use super::ITMP_Dropdown_DropdownEvent;
+    pub use super::ITMP_Dropdown_DropdownEventMethods;
     pub use super::TMP_Dropdown;
     pub use super::ITMP_Dropdown;
     pub use super::ITMP_DropdownMethods;
-    pub use super::TMP_Dropdown_OptionData;
-    pub use super::ITMP_Dropdown_OptionData;
-    pub use super::ITMP_Dropdown_OptionDataMethods;
     pub use super::TMP_Dropdown_DropdownItem;
     pub use super::ITMP_Dropdown_DropdownItem;
     pub use super::ITMP_Dropdown_DropdownItemMethods;
+    pub use super::TMP_Dropdown_OptionData;
+    pub use super::ITMP_Dropdown_OptionData;
+    pub use super::ITMP_Dropdown_OptionDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

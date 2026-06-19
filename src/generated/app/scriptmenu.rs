@@ -17,10 +17,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu_EventMenu.md"))]#[::unity2::class(namespace="App",name="ScriptMenu.EventMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct ScriptMenu_EventMenu{#[offset(220)]#[rename(name="m_Index")]pub m_index:i32, #[offset(224)]#[rename(name="m_Address")]pub m_address:i32, #[offset(232)]#[rename(name="m_CancelCall")]pub m_cancel_call:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(240)]#[rename(name="m_CancelJump")]pub m_cancel_jump:crate::moon_sharp::interpreter::dynvalue::DynValue,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu_EventMenuItem.md"))]#[::unity2::class(namespace="App",name="ScriptMenu.EventMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct ScriptMenu_EventMenuItem{#[offset(32)]#[rename(name="m_Mid")]pub m_mid: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Function")]pub m_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(48)]#[rename(name="m_Args")]pub m_args:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(56)]#[rename(name="m_SelectFunction")]pub m_select_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(64)]#[rename(name="m_SelectArgs")]pub m_select_args:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(72)]#[rename(name="m_Condition")]pub m_condition:crate::app::scriptutil::ScriptUtil_MenuCondtion,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu_EventMenu.md"))]#[::unity2::class(namespace="App",name="ScriptMenu.EventMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct ScriptMenu_EventMenu{#[offset(220)]#[rename(name="m_Index")]pub m_index:i32, #[offset(224)]#[rename(name="m_Address")]pub m_address:i32, #[offset(232)]#[rename(name="m_CancelCall")]pub m_cancel_call:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(240)]#[rename(name="m_CancelJump")]pub m_cancel_jump:crate::moon_sharp::interpreter::dynvalue::DynValue,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu.md"))]#[::unity2::class(namespace="App",name="ScriptMenu")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct ScriptMenu{}
@@ -29,79 +29,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-scriptmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-scriptmenu")]pub trait IScriptMenu_EventMenuMethods:IScriptMenu_EventMenu{#[doc="`GetIndex()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68130usize)as*mut u8,i32;
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68140usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`LoadCursor()` overload"]fn load_cursor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d681d0usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`ToSelectableIndex(i32)` overload"]fn to_selectable_index(self,select:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68290usize)as*mut u8,i32;
-(ScriptMenu_EventMenu)__receiver,(i32)::core::convert::Into::into(select))}
-}
-#[doc="`SaveCursor(bool)` overload"]fn save_cursor(self,decide:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68340usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver,(bool)::core::convert::Into::into(decide))}
-}
-#[doc="`OnOpen()` overload"]fn on_open(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68600usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d687e0usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68820usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68830usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a20usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ScriptMenu_EventMenu)__receiver)}
-}
-#[doc="`SetCancelCall(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_cancel_call(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a30usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
-}
-#[doc="`SetCancelJump(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_cancel_jump(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a40usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-scriptmenu")]impl<__T:IScriptMenu_EventMenu>IScriptMenu_EventMenuMethods for __T{}
-
-#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenu{pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn load_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn to_selectable_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn save_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_cancel_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_cancel_jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-}
-
-#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ScriptMenu_EventMenu), ::core::stringify!(new),));
- <Self as IScriptMenu_EventMenuMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-scriptmenu")]pub trait IScriptMenu_EventMenuItemMethods:IScriptMenu_EventMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a50usize)as*mut u8,();
@@ -191,6 +118,79 @@ pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="app-scriptmenu")]pub trait IScriptMenu_EventMenuMethods:IScriptMenu_EventMenu{#[doc="`GetIndex()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68130usize)as*mut u8,i32;
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68140usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`LoadCursor()` overload"]fn load_cursor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d681d0usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`ToSelectableIndex(i32)` overload"]fn to_selectable_index(self,select:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68290usize)as*mut u8,i32;
+(ScriptMenu_EventMenu)__receiver,(i32)::core::convert::Into::into(select))}
+}
+#[doc="`SaveCursor(bool)` overload"]fn save_cursor(self,decide:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68340usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver,(bool)::core::convert::Into::into(decide))}
+}
+#[doc="`OnOpen()` overload"]fn on_open(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68600usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d687e0usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68820usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68830usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a20usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(ScriptMenu_EventMenu)__receiver)}
+}
+#[doc="`SetCancelCall(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_cancel_call(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a30usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`SetCancelJump(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_cancel_jump(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a40usize)as*mut u8,();
+(ScriptMenu_EventMenu)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-scriptmenu")]impl<__T:IScriptMenu_EventMenu>IScriptMenu_EventMenuMethods for __T{}
+
+#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenu{pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_selectable_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn save_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_cancel_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_cancel_jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptMenu_EventMenu), ::core::stringify!(new),));
+ <Self as IScriptMenu_EventMenuMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-scriptmenu")]impl ScriptMenu{#[doc="`MenuCreate(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn menu_create(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed63d0usize)as*mut u8,crate::moon_sharp::interpreter::dynvalue::DynValue;
 (::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
 }
@@ -266,12 +266,12 @@ this}
 #[cfg(feature = "app-scriptmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptMenu_EventMenu;
-    pub use super::IScriptMenu_EventMenu;
-    pub use super::IScriptMenu_EventMenuMethods;
     pub use super::ScriptMenu_EventMenuItem;
     pub use super::IScriptMenu_EventMenuItem;
     pub use super::IScriptMenu_EventMenuItemMethods;
+    pub use super::ScriptMenu_EventMenu;
+    pub use super::IScriptMenu_EventMenu;
+    pub use super::IScriptMenu_EventMenuMethods;
     pub use super::ScriptMenu;
     pub use super::IScriptMenu;
     pub use super::IScriptMenuMethods;

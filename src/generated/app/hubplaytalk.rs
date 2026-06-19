@@ -18,6 +18,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]#[::unity2::class(namespace="App",name="HubPlayTalk.CallPuppetEvent")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalk_CallPuppetEvent{#[offset(112)]#[rename(name="File")]pub file: ::unity2::Il2CppString, #[offset(120)]#[rename(name="Mid")]pub mid: ::unity2::Il2CppString,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalk/HubPlayTalk.md"))]#[::unity2::class(namespace="App",name="HubPlayTalk")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalk{#[static_field]#[rename(name="GiveAccessoryFlag1")]pub give_accessory_flag1: ::unity2::Il2CppString, #[static_field]#[rename(name="GiveAccessoryFlag2")]pub give_accessory_flag2: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalk/HubPlayTalk_TalkType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubPlayTalk_TalkType{pub value:i32,}
 impl::unity2::ClassIdentity for HubPlayTalk_TalkType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubPlayTalk.TalkType";
@@ -34,9 +37,6 @@ pub fn shop()->Self{Self{value:1}
 pub fn event()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalk/HubPlayTalk.md"))]#[::unity2::class(namespace="App",name="HubPlayTalk")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalk{#[static_field]#[rename(name="GiveAccessoryFlag1")]pub give_accessory_flag1: ::unity2::Il2CppString, #[static_field]#[rename(name="GiveAccessoryFlag2")]pub give_accessory_flag2: ::unity2::Il2CppString,}
 
 }
 
@@ -414,10 +414,10 @@ pub mod prelude {
     pub use super::HubPlayTalk_CallPuppetEvent;
     pub use super::IHubPlayTalk_CallPuppetEvent;
     pub use super::IHubPlayTalk_CallPuppetEventMethods;
-    pub use super::HubPlayTalk_TalkType;
     pub use super::HubPlayTalk;
     pub use super::IHubPlayTalk;
     pub use super::IHubPlayTalkMethods;
+    pub use super::HubPlayTalk_TalkType;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

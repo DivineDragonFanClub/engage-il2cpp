@@ -23,10 +23,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowertopmenu/CapeTowerTopMenu.md"))]#[::unity2::class(namespace="App",name="CapeTowerTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct CapeTowerTopMenu{#[offset(200)]#[rename(name="m_Root")]pub m_root:crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowertopmenu/CapeTowerTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="CapeTowerTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct CapeTowerTopMenu_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowertopmenu/CapeTowerTopMenu.md"))]#[::unity2::class(namespace="App",name="CapeTowerTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct CapeTowerTopMenu{#[offset(200)]#[rename(name="m_Root")]pub m_root:crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowertopmenu/CapeTowerTopMenu_VersusMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerTopMenu.VersusMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct CapeTowerTopMenu_VersusMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowertopmenu/CapeTowerTopMenu_RelayMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerTopMenu.RelayMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct CapeTowerTopMenu_RelayMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,}
@@ -54,36 +57,10 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowertopmenu/CapeTowerTopMenu_VersusMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerTopMenu.VersusMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct CapeTowerTopMenu_VersusMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,}
-
 }
 
 #[cfg(feature = "app-capetowertopmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-capetowertopmenu")]pub trait ICapeTowerTopMenu_DecideEventHandlerMethods:ICapeTowerTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CapeTowerTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19be250usize)as*mut u8,();
-(CapeTowerTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_Result2>)->(){unsafe{let __receiver= <CapeTowerTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bdff0usize)as*mut u8,();
-(CapeTowerTopMenu_DecideEventHandler)__receiver,(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-capetowertopmenu")]impl<__T:ICapeTowerTopMenu_DecideEventHandler>ICapeTowerTopMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CapeTowerTopMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as ICapeTowerTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bf990usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
@@ -131,6 +108,62 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 ::{}
  failed to instantiate", ::core::stringify!(CapeTowerTopMenu), ::core::stringify!(new),));
  <Self as ICapeTowerTopMenuMethods> ::ctor(this,menu_item_list,menu_content,root,initial_selected,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-capetowertopmenu")]pub trait ICapeTowerTopMenu_DecideEventHandlerMethods:ICapeTowerTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CapeTowerTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19be250usize)as*mut u8,();
+(CapeTowerTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_Result2>)->(){unsafe{let __receiver= <CapeTowerTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bdff0usize)as*mut u8,();
+(CapeTowerTopMenu_DecideEventHandler)__receiver,(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)::core::convert::Into::into(result))}
+}
+}
+
+#[cfg(feature="app-capetowertopmenu")]impl<__T:ICapeTowerTopMenu_DecideEventHandler>ICapeTowerTopMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapeTowerTopMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as ICapeTowerTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-capetowertopmenu")]pub trait ICapeTowerTopMenu_VersusMenuItemMethods:ICapeTowerTopMenu_VersusMenuItem{#[doc="`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19be5a0usize)as*mut u8,();
+(CapeTowerTopMenu_VersusMenuItem)__receiver,(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19be650usize)as*mut u8,();
+(CapeTowerTopMenu_VersusMenuItem)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19be710usize)as*mut u8,();
+(CapeTowerTopMenu_VersusMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19be800usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(CapeTowerTopMenu_VersusMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-capetowertopmenu")]impl<__T:ICapeTowerTopMenu_VersusMenuItem>ICapeTowerTopMenu_VersusMenuItemMethods for __T{}
+
+#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_VersusMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_VersusMenuItem{#[doc="`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapeTowerTopMenu_VersusMenuItem), ::core::stringify!(new),));
+ <Self as ICapeTowerTopMenu_VersusMenuItemMethods> ::ctor(this,decide_event_handler);
 this}
 }
 
@@ -205,48 +238,18 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-capetowertopmenu")]pub trait ICapeTowerTopMenu_VersusMenuItemMethods:ICapeTowerTopMenu_VersusMenuItem{#[doc="`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19be5a0usize)as*mut u8,();
-(CapeTowerTopMenu_VersusMenuItem)__receiver,(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19be650usize)as*mut u8,();
-(CapeTowerTopMenu_VersusMenuItem)__receiver)}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19be710usize)as*mut u8,();
-(CapeTowerTopMenu_VersusMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerTopMenu_VersusMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19be800usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(CapeTowerTopMenu_VersusMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-capetowertopmenu")]impl<__T:ICapeTowerTopMenu_VersusMenuItem>ICapeTowerTopMenu_VersusMenuItemMethods for __T{}
-
-#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_VersusMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-capetowertopmenu")]impl CapeTowerTopMenu_VersusMenuItem{#[doc="`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CapeTowerTopMenu_VersusMenuItem), ::core::stringify!(new),));
- <Self as ICapeTowerTopMenu_VersusMenuItemMethods> ::ctor(this,decide_event_handler);
-this}
-}
-
 #[cfg(feature = "app-capetowertopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CapeTowerTopMenu_DecideEventHandler;
-    pub use super::ICapeTowerTopMenu_DecideEventHandler;
-    pub use super::ICapeTowerTopMenu_DecideEventHandlerMethods;
     pub use super::CapeTowerTopMenu;
     pub use super::ICapeTowerTopMenu;
     pub use super::ICapeTowerTopMenuMethods;
+    pub use super::CapeTowerTopMenu_DecideEventHandler;
+    pub use super::ICapeTowerTopMenu_DecideEventHandler;
+    pub use super::ICapeTowerTopMenu_DecideEventHandlerMethods;
+    pub use super::CapeTowerTopMenu_VersusMenuItem;
+    pub use super::ICapeTowerTopMenu_VersusMenuItem;
+    pub use super::ICapeTowerTopMenu_VersusMenuItemMethods;
     pub use super::CapeTowerTopMenu_RelayMenuItem;
     pub use super::ICapeTowerTopMenu_RelayMenuItem;
     pub use super::ICapeTowerTopMenu_RelayMenuItemMethods;
@@ -254,9 +257,6 @@ pub mod prelude {
     pub use super::ICapeTowerTopMenu_ChallengeMenuItem;
     pub use super::ICapeTowerTopMenu_ChallengeMenuItemMethods;
     pub use super::CapeTowerTopMenu_Result2;
-    pub use super::CapeTowerTopMenu_VersusMenuItem;
-    pub use super::ICapeTowerTopMenu_VersusMenuItem;
-    pub use super::ICapeTowerTopMenu_VersusMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

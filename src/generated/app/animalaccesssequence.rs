@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalaccesssequence/AnimalAccessSequence.md"))]#[::unity2::class(namespace="App",name="AnimalAccessSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalaccesssequence::AnimalAccessSequence>)]pub struct AnimalAccessSequence{#[offset(136)]#[rename(name="m_AnimalCamera")]pub m_animal_camera:crate::app::animalaccesscamera::AnimalAccessCamera,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalaccesssequence/AnimalAccessSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalAccessSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for AnimalAccessSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AnimalAccessSequence.Label";
@@ -34,6 +31,9 @@ impl AnimalAccessSequence_Label{pub fn main()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalaccesssequence/AnimalAccessSequence.md"))]#[::unity2::class(namespace="App",name="AnimalAccessSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalaccesssequence::AnimalAccessSequence>)]pub struct AnimalAccessSequence{#[offset(136)]#[rename(name="m_AnimalCamera")]pub m_animal_camera:crate::app::animalaccesscamera::AnimalAccessCamera,}
 
 }
 
@@ -112,10 +112,10 @@ this}
 #[cfg(feature = "app-animalaccesssequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AnimalAccessSequence_Label;
     pub use super::AnimalAccessSequence;
     pub use super::IAnimalAccessSequence;
     pub use super::IAnimalAccessSequenceMethods;
-    pub use super::AnimalAccessSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

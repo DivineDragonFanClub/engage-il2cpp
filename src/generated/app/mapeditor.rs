@@ -19,33 +19,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditor/MapEditor_EditObject.md"))]#[::unity2::class(namespace="App",name="MapEditor.EditObject")]#[parent(crate::system::object::Object)]pub struct MapEditor_EditObject{#[offset(16)]#[rename(name="gameObject")]pub game_object:crate::unity_engine::gameobject::GameObject,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditor/MapEditor.md"))]#[::unity2::class(namespace="App",name="MapEditor")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapeditor::MapEditor>)]pub struct MapEditor{#[offset(32)]#[rename(name="m_EditObjects")]pub m_edit_objects: ::unity2::Array<crate::app::mapeditor::MapEditor_EditObject> , #[offset(40)]#[rename(name="m_CasualMapEditData")]pub m_casual_map_edit_data:crate::app::casualmap::CasualMap, #[offset(48)]#[rename(name="m_Mesh")]pub m_mesh:crate::app::map::Map_CellMesh, #[offset(56)]#[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::mapeditor::MapEditor_EditObject> , #[static_field]#[rename(name="Version")]pub version:i32, #[offset(64)]#[rename(name="m_IsEnableGrid")]pub m_is_enable_grid:bool, #[static_field]#[rename(name="s_IsPlaySound")]pub s_is_play_sound:bool, #[static_field]#[rename(name="s_MapObjects")]pub s_map_objects:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mappos::MapPos,i32> , #[static_field]#[rename(name="s_MapObjectRotates")]pub s_map_object_rotates:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mappos::MapPos,i32> , #[static_field]#[rename(name="CasualMapSlotMax")]pub casual_map_slot_max:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditor/MapEditor_EditObject.md"))]#[::unity2::class(namespace="App",name="MapEditor.EditObject")]#[parent(crate::system::object::Object)]pub struct MapEditor_EditObject{#[offset(16)]#[rename(name="gameObject")]pub game_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-mapeditor-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapeditor")]pub trait IMapEditor_EditObjectMethods:IMapEditor_EditObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEditor_EditObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c4350usize)as*mut u8,();
-(MapEditor_EditObject)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapeditor")]impl<__T:IMapEditor_EditObject>IMapEditor_EditObjectMethods for __T{}
-
-#[cfg(feature="app-mapeditor")]impl MapEditor_EditObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapeditor")]impl MapEditor_EditObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEditor_EditObject), ::core::stringify!(new),));
- <Self as IMapEditor_EditObjectMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mapeditor")]impl MapEditor{#[doc="`CalcKey(::unity2::Il2CppString)` overload"]pub fn calc_key(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1db2090usize)as*mut u8,i32;
 (::unity2::Il2CppString)::core::convert::Into::into(name))}
@@ -319,15 +301,33 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-mapeditor")]pub trait IMapEditor_EditObjectMethods:IMapEditor_EditObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEditor_EditObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c4350usize)as*mut u8,();
+(MapEditor_EditObject)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapeditor")]impl<__T:IMapEditor_EditObject>IMapEditor_EditObjectMethods for __T{}
+
+#[cfg(feature="app-mapeditor")]impl MapEditor_EditObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapeditor")]impl MapEditor_EditObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEditor_EditObject), ::core::stringify!(new),));
+ <Self as IMapEditor_EditObjectMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-mapeditor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapEditor_EditObject;
-    pub use super::IMapEditor_EditObject;
-    pub use super::IMapEditor_EditObjectMethods;
     pub use super::MapEditor;
     pub use super::IMapEditor;
     pub use super::IMapEditorMethods;
+    pub use super::MapEditor_EditObject;
+    pub use super::IMapEditor_EditObject;
+    pub use super::IMapEditor_EditObjectMethods;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

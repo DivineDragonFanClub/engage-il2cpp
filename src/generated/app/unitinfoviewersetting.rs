@@ -27,6 +27,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitInfoViewerSetting{#[offset(24)]#[rename(name="m_LeftUnit")]pub m_left_unit:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData, #[offset(32)]#[rename(name="m_RightUnit")]pub m_right_unit:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData, #[offset(40)]#[rename(name="m_IsCharaOnlyTransition")]pub m_is_chara_only_transition:bool, #[offset(44)]#[rename(name="m_Seq")]pub m_seq:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting.ForceList")]#[parent(crate::system::object::Object)]pub struct UnitInfoViewerSetting_ForceList{#[static_field]#[rename(name="Types")]pub types: ::unity2::Array<crate::app::force::Force_Type> , #[static_field]#[rename(name="Names")]pub names: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfoViewerSetting_Seq{pub value:i32,}
 impl::unity2::ClassIdentity for UnitInfoViewerSetting_Seq{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitInfoViewerSetting.Seq";
@@ -43,9 +46,6 @@ pub fn wait_reshowing_canvas()->Self{Self{value:1}
 pub fn normal()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting.ForceList")]#[parent(crate::system::object::Object)]pub struct UnitInfoViewerSetting_ForceList{#[static_field]#[rename(name="Types")]pub types: ::unity2::Array<crate::app::force::Force_Type> , #[static_field]#[rename(name="Names")]pub names: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
@@ -182,9 +182,9 @@ pub mod prelude {
     pub use super::UnitInfoViewerSetting;
     pub use super::IUnitInfoViewerSetting;
     pub use super::IUnitInfoViewerSettingMethods;
-    pub use super::UnitInfoViewerSetting_Seq;
     pub use super::UnitInfoViewerSetting_ForceList;
     pub use super::IUnitInfoViewerSetting_ForceList;
+    pub use super::UnitInfoViewerSetting_Seq;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

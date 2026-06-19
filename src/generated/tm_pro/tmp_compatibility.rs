@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Compatibility")]#[parent(crate::system::object::Object)]pub struct TMP_Compatibility{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_compatibility/TMP_Compatibility_AnchorPositions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_Compatibility_AnchorPositions{pub value:i32,}
 impl::unity2::ClassIdentity for TMP_Compatibility_AnchorPositions{const NAMESPACE: &'static str="TMPro";
 const NAME: &'static str="TMP_Compatibility.AnchorPositions";
@@ -46,9 +49,6 @@ pub fn none()->Self{Self{value:10}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Compatibility")]#[parent(crate::system::object::Object)]pub struct TMP_Compatibility{}
-
 }
 
 #[cfg(feature = "tm_pro-tmp_compatibility-types")]
@@ -65,9 +65,9 @@ pub use __types::*;
 #[cfg(feature = "tm_pro-tmp_compatibility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_Compatibility_AnchorPositions;
     pub use super::TMP_Compatibility;
     pub use super::ITMP_Compatibility;
+    pub use super::TMP_Compatibility_AnchorPositions;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

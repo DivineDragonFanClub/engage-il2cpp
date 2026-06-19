@@ -14,17 +14,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aienum/AIEnum.md"))]#[::unity2::class(namespace="App",name="AIEnum")]#[parent(crate::system::object::Object)]pub struct AIEnum{#[static_field]#[rename(name="s_SkillRangeEnemyEnumerator")]pub s_skill_range_enemy_enumerator:crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIEnum_SkillRangeEnemyData{pub unit:crate::app::unit::Unit,pub x:i8,pub z:i8,}
-impl::unity2::ClassIdentity for AIEnum_SkillRangeEnemyData{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIEnum.SkillRangeEnemyData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIEnum_SkillRangeEnemyData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aienum/AIEnum_SkillRangeEnemyEnumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIEnum_SkillRangeEnemyEnumerator{pub m_unit:crate::app::unit::Unit,pub m_offsets:crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>,pub m_target_x:i32,pub m_target_z:i32,pub m_index:i32,pub m_current:crate::app::aienum::AIEnum_SkillRangeEnemyData,pub m_enumerated:crate::system::collections::generic::list_1::List_1<i32>,}
 impl::unity2::ClassIdentity for AIEnum_SkillRangeEnemyEnumerator{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIEnum.SkillRangeEnemyEnumerator";
@@ -33,6 +22,17 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for AIEnum_SkillRangeEnemyEnumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIEnum_SkillRangeEnemyData{pub unit:crate::app::unit::Unit,pub x:i8,pub z:i8,}
+impl::unity2::ClassIdentity for AIEnum_SkillRangeEnemyData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIEnum.SkillRangeEnemyData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIEnum_SkillRangeEnemyData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -89,8 +89,8 @@ pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub mod prelude {
     pub use super::AIEnum;
     pub use super::IAIEnum;
-    pub use super::AIEnum_SkillRangeEnemyData;
     pub use super::AIEnum_SkillRangeEnemyEnumerator;
+    pub use super::AIEnum_SkillRangeEnemyData;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

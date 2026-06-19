@@ -294,19 +294,22 @@ pub use vibrate_ext::*;
 
 #[cfg(all(feature = "app-procvoidmethod", feature = "system-object"))]
 mod proc_void_method_ext {
-    use unity2::{FromIlInstance, IlInstance, IntPtr, MethodInfo, OptionalMethod};
+    use unity2::{FromIlInstance, IlInstance, IntPtr, MethodInfo, OptionalMethod, SystemObject};
 
     use crate::{app::procvoidmethod::ProcVoidMethod, system::object::Object};
 
     pub trait ProcVoidMethodExt: Sized {
-        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod)) -> Option<Self>;
+        /// Bind `target` and call `callback` on it. ProcVoidMethod's Invoke() takes no VM argument, so
+        /// the bound target is the only object the callback ever sees, that's why it's required. The
+        /// callback's first parameter is forced to the same type as `target`, so they can't drift.
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: T, callback: extern "C" fn(T, OptionalMethod)) -> Option<Self>;
         fn from_raw_parts(target: IlInstance, method_info: &'static MethodInfo) -> Option<Self>;
     }
 
     impl ProcVoidMethodExt for ProcVoidMethod {
-        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod)) -> Option<Self> {
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: T, callback: extern "C" fn(T, OptionalMethod)) -> Option<Self> {
             let intptr = super::method_info_intptr(callback as *mut u8, 0);
-            Some(ProcVoidMethod::new(<Object as FromIlInstance>::from_il_instance(target), intptr))
+            Some(ProcVoidMethod::new(<Object as FromIlInstance>::from_il_instance(target.as_instance()), intptr))
         }
 
         fn from_raw_parts(target: IlInstance, method_info: &'static MethodInfo) -> Option<Self> {
@@ -320,24 +323,42 @@ pub use proc_void_method_ext::*;
 
 #[cfg(all(feature = "app-procvoidfunction", feature = "app-procinst", feature = "system-object",))]
 mod proc_void_function_ext {
-    use unity2::{FromIlInstance, IlInstance, OptionalMethod};
+    use unity2::{FromIlInstance, IlInstance, OptionalMethod, SystemObject};
 
     use crate::{app::procvoidfunction::ProcVoidFunction, system::object::Object};
 
     pub trait ProcVoidFunctionExt: Sized {
-        fn from_fn<T: crate::app::procinst::IProcInst, U: crate::app::procinst::IProcInst>(
-            target: IlInstance,
+        /// Wrap a Rust fn as a ProcVoidFunction (for `Proc::call` steps). The proc running the desc is
+        /// handed to the callback by the VM itself, so there's nothing to bind, the callback just
+        /// receives that proc as its argument. Prefer this unless you need a bound object that differs
+        /// from the running proc.
+        fn from_fn<T: crate::app::procinst::IProcInst>(callback: extern "C" fn(T, OptionalMethod)) -> Option<Self>;
+
+        /// Like `from_fn`, but also binds `target`. The callback receives `(target, inst, methodinfo)`
+        /// where `inst` is the proc running the desc. Use this only when the object you want differs
+        /// from the running proc. The target's type is tied to the callback's first parameter.
+        fn from_fn_with_target<T: crate::app::procinst::IProcInst, U: crate::app::procinst::IProcInst>(
+            target: T,
             callback: extern "C" fn(T, U, OptionalMethod),
         ) -> Option<Self>;
     }
 
     impl ProcVoidFunctionExt for ProcVoidFunction {
-        fn from_fn<T: crate::app::procinst::IProcInst, U: crate::app::procinst::IProcInst>(
-            target: IlInstance,
+        fn from_fn<T: crate::app::procinst::IProcInst>(callback: extern "C" fn(T, OptionalMethod)) -> Option<Self> {
+            // A null target plus parameters_count = 1 makes the delegate's Invoke(inst) call the
+            // callback as method_ptr(inst, method_info), so its only argument is the executing proc.
+            let intptr = super::method_info_intptr(callback as *mut u8, 1);
+            Some(ProcVoidFunction::new(<Object as FromIlInstance>::from_il_instance(IlInstance::null()), intptr))
+        }
+
+        fn from_fn_with_target<T: crate::app::procinst::IProcInst, U: crate::app::procinst::IProcInst>(
+            target: T,
             callback: extern "C" fn(T, U, OptionalMethod),
         ) -> Option<Self> {
+            // parameters_count = 2 with a real target makes Invoke(inst) call
+            // method_ptr(target, inst, method_info).
             let intptr = super::method_info_intptr(callback as *mut u8, 2);
-            Some(ProcVoidFunction::new(<Object as FromIlInstance>::from_il_instance(target), intptr))
+            Some(ProcVoidFunction::new(<Object as FromIlInstance>::from_il_instance(target.as_instance()), intptr))
         }
     }
 }
@@ -346,18 +367,21 @@ pub use proc_void_function_ext::*;
 
 #[cfg(all(feature = "app-procboolmethod", feature = "system-object"))]
 mod proc_bool_method_ext {
-    use unity2::{FromIlInstance, IlInstance, OptionalMethod};
+    use unity2::{FromIlInstance, OptionalMethod, SystemObject};
 
     use crate::{app::procboolmethod::ProcBoolMethod, system::object::Object};
 
     pub trait ProcBoolMethodExt: Sized {
-        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod) -> bool) -> Option<Self>;
+        /// Bind `target` and call `callback` on it (returning bool). Like ProcVoidMethod, Invoke() takes
+        /// no VM argument, so the bound target is the only object the callback sees. The callback's first
+        /// parameter is forced to the same type as `target`.
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: T, callback: extern "C" fn(T, OptionalMethod) -> bool) -> Option<Self>;
     }
 
     impl ProcBoolMethodExt for ProcBoolMethod {
-        fn from_fn<T: crate::app::procinst::IProcInst>(target: IlInstance, callback: extern "C" fn(T, OptionalMethod) -> bool) -> Option<Self> {
+        fn from_fn<T: crate::app::procinst::IProcInst>(target: T, callback: extern "C" fn(T, OptionalMethod) -> bool) -> Option<Self> {
             let intptr = super::method_info_intptr(callback as *mut u8, 0);
-            Some(ProcBoolMethod::new(<Object as FromIlInstance>::from_il_instance(target), intptr))
+            Some(ProcBoolMethod::new(<Object as FromIlInstance>::from_il_instance(target.as_instance()), intptr))
         }
     }
 }

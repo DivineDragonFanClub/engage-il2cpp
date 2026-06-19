@@ -19,74 +19,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistselectmenu/FriendListSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="FriendListSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FriendListSelectMenu_DecideEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistselectmenu/FriendListSelectMenu.md"))]#[::unity2::class(namespace="App",name="FriendListSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct FriendListSelectMenu{#[static_field]#[rename(name="s_ScrollIndex")]pub s_scroll_index:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistselectmenu/FriendListSelectMenu_FriendListSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="FriendListSelectMenu.FriendListSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct FriendListSelectMenu_FriendListSelectMenuItem{#[offset(104)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistselectmenu/FriendListSelectMenu.md"))]#[::unity2::class(namespace="App",name="FriendListSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct FriendListSelectMenu{#[static_field]#[rename(name="s_ScrollIndex")]pub s_scroll_index:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistselectmenu/FriendListSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="FriendListSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FriendListSelectMenu_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-friendlistselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-friendlistselectmenu")]pub trait IFriendListSelectMenu_DecideEventHandlerMethods:IFriendListSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FriendListSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65100usize)as*mut u8,();
-(FriendListSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65120usize)as*mut u8,();
-(FriendListSelectMenu_DecideEventHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
-}
-}
-
-#[cfg(feature="app-friendlistselectmenu")]impl<__T:IFriendListSelectMenu_DecideEventHandler>IFriendListSelectMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FriendListSelectMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IFriendListSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-friendlistselectmenu")]pub trait IFriendListSelectMenu_FriendListSelectMenuItemMethods:IFriendListSelectMenu_FriendListSelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e654c0usize)as*mut u8,();
-(FriendListSelectMenu_FriendListSelectMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65510usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(FriendListSelectMenu_FriendListSelectMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65540usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(FriendListSelectMenu_FriendListSelectMenuItem)__receiver)}
-}
-#[doc="`GetPID()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65550usize)as*mut u8, ::unity2::Il2CppString;
-(FriendListSelectMenu_FriendListSelectMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-friendlistselectmenu")]impl<__T:IFriendListSelectMenu_FriendListSelectMenuItem>IFriendListSelectMenu_FriendListSelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_FriendListSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_FriendListSelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,decide_event_handler:crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FriendListSelectMenu_FriendListSelectMenuItem), ::core::stringify!(new),));
- <Self as IFriendListSelectMenu_FriendListSelectMenuItemMethods> ::ctor(this,pid,decide_event_handler);
-this}
-}
 
 #[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu{#[doc="`ResetScrollRecord()` overload"]pub fn reset_scroll_record()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226f8e0usize)as*mut u8,();
 )}
@@ -135,18 +79,74 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-friendlistselectmenu")]pub trait IFriendListSelectMenu_FriendListSelectMenuItemMethods:IFriendListSelectMenu_FriendListSelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e654c0usize)as*mut u8,();
+(FriendListSelectMenu_FriendListSelectMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65510usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(FriendListSelectMenu_FriendListSelectMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65540usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(FriendListSelectMenu_FriendListSelectMenuItem)__receiver)}
+}
+#[doc="`GetPID()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListSelectMenu_FriendListSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65550usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListSelectMenu_FriendListSelectMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-friendlistselectmenu")]impl<__T:IFriendListSelectMenu_FriendListSelectMenuItem>IFriendListSelectMenu_FriendListSelectMenuItemMethods for __T{}
+
+#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_FriendListSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_FriendListSelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,decide_event_handler:crate::app::friendlistselectmenu::FriendListSelectMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FriendListSelectMenu_FriendListSelectMenuItem), ::core::stringify!(new),));
+ <Self as IFriendListSelectMenu_FriendListSelectMenuItemMethods> ::ctor(this,pid,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-friendlistselectmenu")]pub trait IFriendListSelectMenu_DecideEventHandlerMethods:IFriendListSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FriendListSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65100usize)as*mut u8,();
+(FriendListSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65120usize)as*mut u8,();
+(FriendListSelectMenu_DecideEventHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+}
+
+#[cfg(feature="app-friendlistselectmenu")]impl<__T:IFriendListSelectMenu_DecideEventHandler>IFriendListSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-friendlistselectmenu")]impl FriendListSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FriendListSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IFriendListSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-friendlistselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FriendListSelectMenu_DecideEventHandler;
-    pub use super::IFriendListSelectMenu_DecideEventHandler;
-    pub use super::IFriendListSelectMenu_DecideEventHandlerMethods;
-    pub use super::FriendListSelectMenu_FriendListSelectMenuItem;
-    pub use super::IFriendListSelectMenu_FriendListSelectMenuItem;
-    pub use super::IFriendListSelectMenu_FriendListSelectMenuItemMethods;
     pub use super::FriendListSelectMenu;
     pub use super::IFriendListSelectMenu;
     pub use super::IFriendListSelectMenuMethods;
+    pub use super::FriendListSelectMenu_FriendListSelectMenuItem;
+    pub use super::IFriendListSelectMenu_FriendListSelectMenuItem;
+    pub use super::IFriendListSelectMenu_FriendListSelectMenuItemMethods;
+    pub use super::FriendListSelectMenu_DecideEventHandler;
+    pub use super::IFriendListSelectMenu_DecideEventHandler;
+    pub use super::IFriendListSelectMenu_DecideEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking/Cooking_Probability.md"))]#[::unity2::class(namespace="App",name="Cooking.Probability")]#[parent(crate::system::object::Object)]pub struct Cooking_Probability{#[static_field]#[rename(name="BaseProbability")]pub base_probability: ::unity2::Array<f32> , #[static_field]#[rename(name="ProbabilityCorrections")]pub probability_corrections: ::unity2::Array< ::unity2::Array<f32> > , #[static_field]#[rename(name="ProbabilityFromFoodstuff")]pub probability_from_foodstuff: ::unity2::Array< ::unity2::Array<f32> > ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking/Cooking.md"))]#[::unity2::class(namespace="App",name="Cooking")]#[parent(crate::system::object::Object)]pub struct Cooking{}
 
 
@@ -31,6 +28,26 @@ impl::unity2::IlType for Cooking_Order{fn il_type()-> &'static::unity2::il2cpp::
 impl Cooking_Order{pub fn before()->Self{Self{value:0}
 }
 pub fn after()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking/Cooking_ConversationType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Cooking_ConversationType{pub value:i32,}
+impl::unity2::ClassIdentity for Cooking_ConversationType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Cooking.ConversationType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Cooking_ConversationType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Cooking_ConversationType{pub fn about_delicious()->Self{Self{value:0}
+}
+pub fn monologue()->Self{Self{value:1}
+}
+pub fn dialogue()->Self{Self{value:2}
+}
+pub fn num()->Self{Self{value:3}
 }
 }
 
@@ -61,57 +78,12 @@ pub fn none()->Self{Self{value:6}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking/Cooking_ConversationType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Cooking_ConversationType{pub value:i32,}
-impl::unity2::ClassIdentity for Cooking_ConversationType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Cooking.ConversationType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Cooking_ConversationType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Cooking_ConversationType{pub fn about_delicious()->Self{Self{value:0}
-}
-pub fn monologue()->Self{Self{value:1}
-}
-pub fn dialogue()->Self{Self{value:2}
-}
-pub fn num()->Self{Self{value:3}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking/Cooking_Probability.md"))]#[::unity2::class(namespace="App",name="Cooking.Probability")]#[parent(crate::system::object::Object)]pub struct Cooking_Probability{#[static_field]#[rename(name="BaseProbability")]pub base_probability: ::unity2::Array<f32> , #[static_field]#[rename(name="ProbabilityCorrections")]pub probability_corrections: ::unity2::Array< ::unity2::Array<f32> > , #[static_field]#[rename(name="ProbabilityFromFoodstuff")]pub probability_from_foodstuff: ::unity2::Array< ::unity2::Array<f32> > ,}
 
 }
 
 #[cfg(feature = "app-cooking-types")]
 pub use __types::*;
-
-#[cfg(feature="app-cooking")]impl Cooking_Probability{#[doc="`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]pub fn get_probabilities(difficulty:impl::core::convert::Into<crate::app::cookdata::CookData_Difficulty> ,foodstuffs:impl::core::convert::Into< ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> >)->crate::system::collections::generic::list_1::List_1<f32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19ccdd0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<f32> ;
-(crate::app::cookdata::CookData_Difficulty)::core::convert::Into::into(difficulty),(::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19ccfc0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-cooking")]pub trait ICooking_ProbabilityMethods:ICooking_Probability{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Cooking_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19ccfb0usize)as*mut u8,();
-(Cooking_Probability)__receiver)}
-}
-}
-
-#[cfg(feature="app-cooking")]impl<__T:ICooking_Probability>ICooking_ProbabilityMethods for __T{}
-
-#[cfg(feature="app-cooking")]impl Cooking_Probability{pub fn get_probabilities_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-cooking")]impl Cooking_Probability{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Cooking_Probability), ::core::stringify!(new),));
- <Self as ICooking_ProbabilityMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-cooking")]impl Cooking{#[doc="`Cook(crate::app::unit::Unit, crate::app::fooddata::FoodData, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]pub fn cook(unit:impl::core::convert::Into<crate::app::unit::Unit> ,food_data:impl::core::convert::Into<crate::app::fooddata::FoodData> ,foodstuffs:impl::core::convert::Into< ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> >)->crate::app::dish::Dish{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25447b0usize)as*mut u8,crate::app::dish::Dish;
 (crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::fooddata::FoodData)::core::convert::Into::into(food_data),(::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs))}
@@ -165,18 +137,46 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-cooking")]impl Cooking_Probability{#[doc="`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]pub fn get_probabilities(difficulty:impl::core::convert::Into<crate::app::cookdata::CookData_Difficulty> ,foodstuffs:impl::core::convert::Into< ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> >)->crate::system::collections::generic::list_1::List_1<f32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19ccdd0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<f32> ;
+(crate::app::cookdata::CookData_Difficulty)::core::convert::Into::into(difficulty),(::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19ccfc0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-cooking")]pub trait ICooking_ProbabilityMethods:ICooking_Probability{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Cooking_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19ccfb0usize)as*mut u8,();
+(Cooking_Probability)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking")]impl<__T:ICooking_Probability>ICooking_ProbabilityMethods for __T{}
+
+#[cfg(feature="app-cooking")]impl Cooking_Probability{pub fn get_probabilities_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-cooking")]impl Cooking_Probability{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Cooking_Probability), ::core::stringify!(new),));
+ <Self as ICooking_ProbabilityMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-cooking")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Cooking_Probability;
-    pub use super::ICooking_Probability;
-    pub use super::ICooking_ProbabilityMethods;
     pub use super::Cooking;
     pub use super::ICooking;
     pub use super::ICookingMethods;
     pub use super::Cooking_Order;
-    pub use super::Cooking_Quality;
     pub use super::Cooking_ConversationType;
+    pub use super::Cooking_Quality;
+    pub use super::Cooking_Probability;
+    pub use super::ICooking_Probability;
+    pub use super::ICooking_ProbabilityMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

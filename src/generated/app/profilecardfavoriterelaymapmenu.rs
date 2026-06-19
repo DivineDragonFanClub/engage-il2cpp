@@ -17,38 +17,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardfavoriterelaymapmenu/ProfileCardFavoriteRelayMapMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardFavoriteRelayMapMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardFavoriteRelayMapMenu_DisposeEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardfavoriterelaymapmenu/ProfileCardFavoriteRelayMapMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardFavoriteRelayMapMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardFavoriteRelayMapMenu{#[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[static_field]#[rename(name="m_MenuItemIndexEmpty")]pub m_menu_item_index_empty:i32, #[offset(200)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler, #[offset(208)]#[rename(name="m_ProfileCardRoot")]pub m_profile_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(216)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(224)]#[rename(name="m_DecidedMenuItemIndex")]pub m_decided_menu_item_index:i32, #[offset(228)]#[rename(name="m_Sorted")]pub m_sorted:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardfavoriterelaymapmenu/ProfileCardFavoriteRelayMapMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardFavoriteRelayMapMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardFavoriteRelayMapMenu_DisposeEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardfavoriterelaymapmenu")]pub trait IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods:IProfileCardFavoriteRelayMapMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22694f0usize)as*mut u8,();
-(ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2269510usize)as*mut u8,();
-(ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardfavoriterelaymapmenu")]impl<__T:IProfileCardFavoriteRelayMapMenu_DisposeEventHandler>IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardfavoriterelaymapmenu")]impl ProfileCardFavoriteRelayMapMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardfavoriterelaymapmenu")]impl ProfileCardFavoriteRelayMapMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardFavoriteRelayMapMenu_DisposeEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-profilecardfavoriterelaymapmenu")]impl ProfileCardFavoriteRelayMapMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent> ,profile_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler>)->crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2315970usize)as*mut u8,crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profile_card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(crate::app::profilecardfavoriterelaymapmenu::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
@@ -125,15 +102,38 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-profilecardfavoriterelaymapmenu")]pub trait IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods:IProfileCardFavoriteRelayMapMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22694f0usize)as*mut u8,();
+(ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardFavoriteRelayMapMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2269510usize)as*mut u8,();
+(ProfileCardFavoriteRelayMapMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardfavoriterelaymapmenu")]impl<__T:IProfileCardFavoriteRelayMapMenu_DisposeEventHandler>IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardfavoriterelaymapmenu")]impl ProfileCardFavoriteRelayMapMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardfavoriterelaymapmenu")]impl ProfileCardFavoriteRelayMapMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardFavoriteRelayMapMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-profilecardfavoriterelaymapmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler;
-    pub use super::IProfileCardFavoriteRelayMapMenu_DisposeEventHandler;
-    pub use super::IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods;
     pub use super::ProfileCardFavoriteRelayMapMenu;
     pub use super::IProfileCardFavoriteRelayMapMenu;
     pub use super::IProfileCardFavoriteRelayMapMenuMethods;
+    pub use super::ProfileCardFavoriteRelayMapMenu_DisposeEventHandler;
+    pub use super::IProfileCardFavoriteRelayMapMenu_DisposeEventHandler;
+    pub use super::IProfileCardFavoriteRelayMapMenu_DisposeEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

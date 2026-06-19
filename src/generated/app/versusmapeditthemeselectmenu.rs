@@ -19,62 +19,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu.md"))]#[::unity2::class(namespace="App",name="VersusMapEditThemeSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusMapEditThemeSelectMenu{#[offset(200)]#[rename(name="m_Content")]pub m_content:crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent, #[offset(208)]#[rename(name="m_SelectedCategory")]pub m_selected_category:crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories, #[offset(216)]#[rename(name="m_SelectList")]pub m_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusMapEditThemeSelectMenu.VersusMapEditThemeSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem{#[offset(104)]#[rename(name="m_Data")]pub m_data:crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, #[offset(112)]#[rename(name="m_IsChecked")]pub m_is_checked:bool, #[offset(120)]#[rename(name="m_SelectedFunc")]pub m_selected_func:crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu_SelectedFunction.md"))]#[::unity2::class(namespace="App",name="VersusMapEditThemeSelectMenu.SelectedFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusMapEditThemeSelectMenu_SelectedFunction{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapeditthemeselectmenu/VersusMapEditThemeSelectMenu.md"))]#[::unity2::class(namespace="App",name="VersusMapEditThemeSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct VersusMapEditThemeSelectMenu{#[offset(200)]#[rename(name="m_Content")]pub m_content:crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent, #[offset(208)]#[rename(name="m_SelectedCategory")]pub m_selected_category:crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories, #[offset(216)]#[rename(name="m_SelectList")]pub m_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> ,}
+
 }
 
 #[cfg(feature = "app-versusmapeditthemeselectmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-versusmapeditthemeselectmenu")]impl VersusMapEditThemeSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,now_theme:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData> ,func:impl::core::convert::Into<crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26af660usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)::core::convert::Into::into(now_theme),(crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction)::core::convert::Into::into(func))}
-}
-}
-
-#[cfg(feature="app-versusmapeditthemeselectmenu")]pub trait IVersusMapEditThemeSelectMenuMethods:IVersusMapEditThemeSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent, crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,content:impl::core::convert::Into<crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent> ,init_category:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories>)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26af880usize)as*mut u8,();
-(VersusMapEditThemeSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent)::core::convert::Into::into(content),(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)::core::convert::Into::into(init_category))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26afa50usize)as*mut u8,();
-(VersusMapEditThemeSelectMenu)__receiver)}
-}
-#[doc="`ChangeCategoryLeft()` overload"]fn change_category_left(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26affe0usize)as*mut u8,();
-(VersusMapEditThemeSelectMenu)__receiver)}
-}
-#[doc="`ChangeCategoryRight()` overload"]fn change_category_right(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0000usize)as*mut u8,();
-(VersusMapEditThemeSelectMenu)__receiver)}
-}
-#[doc="`ChangeCategory(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` overload"]fn change_category(self,next:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories>)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0020usize)as*mut u8,();
-(VersusMapEditThemeSelectMenu)__receiver,(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)::core::convert::Into::into(next))}
-}
-}
-
-#[cfg(feature="app-versusmapeditthemeselectmenu")]impl<__T:IVersusMapEditThemeSelectMenu>IVersusMapEditThemeSelectMenuMethods for __T{}
-
-#[cfg(feature="app-versusmapeditthemeselectmenu")]impl VersusMapEditThemeSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn change_category_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn change_category_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn change_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-versusmapeditthemeselectmenu")]impl VersusMapEditThemeSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent, crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,content:crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent,init_category:crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VersusMapEditThemeSelectMenu), ::core::stringify!(new),));
- <Self as IVersusMapEditThemeSelectMenuMethods> ::ctor(this,menu_item_list,content,init_category);
-this}
-}
 
 #[cfg(feature="app-versusmapeditthemeselectmenu")]pub trait IVersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItemMethods:IVersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem{#[doc="`.ctor(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, bool, crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData> ,is_checked:impl::core::convert::Into<bool> ,func:impl::core::convert::Into<crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction>)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b61540usize)as*mut u8,();
@@ -172,18 +128,62 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-versusmapeditthemeselectmenu")]impl VersusMapEditThemeSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,now_theme:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData> ,func:impl::core::convert::Into<crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26af660usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData)::core::convert::Into::into(now_theme),(crate::app::versusmapeditthemeselectmenu::VersusMapEditThemeSelectMenu_SelectedFunction)::core::convert::Into::into(func))}
+}
+}
+
+#[cfg(feature="app-versusmapeditthemeselectmenu")]pub trait IVersusMapEditThemeSelectMenuMethods:IVersusMapEditThemeSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent, crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,content:impl::core::convert::Into<crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent> ,init_category:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories>)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26af880usize)as*mut u8,();
+(VersusMapEditThemeSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent)::core::convert::Into::into(content),(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)::core::convert::Into::into(init_category))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26afa50usize)as*mut u8,();
+(VersusMapEditThemeSelectMenu)__receiver)}
+}
+#[doc="`ChangeCategoryLeft()` overload"]fn change_category_left(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26affe0usize)as*mut u8,();
+(VersusMapEditThemeSelectMenu)__receiver)}
+}
+#[doc="`ChangeCategoryRight()` overload"]fn change_category_right(self,)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0000usize)as*mut u8,();
+(VersusMapEditThemeSelectMenu)__receiver)}
+}
+#[doc="`ChangeCategory(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` overload"]fn change_category(self,next:impl::core::convert::Into<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories>)->(){unsafe{let __receiver= <VersusMapEditThemeSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0020usize)as*mut u8,();
+(VersusMapEditThemeSelectMenu)__receiver,(crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)::core::convert::Into::into(next))}
+}
+}
+
+#[cfg(feature="app-versusmapeditthemeselectmenu")]impl<__T:IVersusMapEditThemeSelectMenu>IVersusMapEditThemeSelectMenuMethods for __T{}
+
+#[cfg(feature="app-versusmapeditthemeselectmenu")]impl VersusMapEditThemeSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn change_category_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn change_category_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn change_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-versusmapeditthemeselectmenu")]impl VersusMapEditThemeSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent, crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,content:crate::app::versusmapeditthemeselectcontent::VersusMapEditThemeSelectContent,init_category:crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData_Categories)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusMapEditThemeSelectMenu), ::core::stringify!(new),));
+ <Self as IVersusMapEditThemeSelectMenuMethods> ::ctor(this,menu_item_list,content,init_category);
+this}
+}
+
 #[cfg(feature = "app-versusmapeditthemeselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VersusMapEditThemeSelectMenu;
-    pub use super::IVersusMapEditThemeSelectMenu;
-    pub use super::IVersusMapEditThemeSelectMenuMethods;
     pub use super::VersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem;
     pub use super::IVersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItem;
     pub use super::IVersusMapEditThemeSelectMenu_VersusMapEditThemeSelectMenuItemMethods;
     pub use super::VersusMapEditThemeSelectMenu_SelectedFunction;
     pub use super::IVersusMapEditThemeSelectMenu_SelectedFunction;
     pub use super::IVersusMapEditThemeSelectMenu_SelectedFunctionMethods;
+    pub use super::VersusMapEditThemeSelectMenu;
+    pub use super::IVersusMapEditThemeSelectMenu;
+    pub use super::IVersusMapEditThemeSelectMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

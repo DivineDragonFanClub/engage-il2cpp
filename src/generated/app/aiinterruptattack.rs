@@ -14,12 +14,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack{#[static_field]#[rename(name="MaxAttackCountLunatic")]pub max_attack_count_lunatic:i32, #[static_field]#[rename(name="MaxAttackCountDefault")]pub max_attack_count_default:i32, #[static_field]#[rename(name="MaxCandidate")]pub max_candidate:i32, #[offset(16)]#[rename(name="m_Original")]pub m_original:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_OriginalMoveX")]pub m_original_move_x:i32, #[offset(28)]#[rename(name="m_OriginalMoveZ")]pub m_original_move_z:i32, #[offset(32)]#[rename(name="m_OriginalAttackX")]pub m_original_attack_x:i32, #[offset(36)]#[rename(name="m_OriginalAttackZ")]pub m_original_attack_z:i32, #[offset(40)]#[rename(name="m_OriginalItemIndex")]pub m_original_item_index:i32, #[offset(44)]#[rename(name="m_OriginalBulletPattern")]pub m_original_bullet_pattern:i32, #[offset(48)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit, #[offset(56)]#[rename(name="m_TargetBaseX")]pub m_target_base_x:i32, #[offset(60)]#[rename(name="m_TargetBaseZ")]pub m_target_base_z:i32, #[offset(64)]#[rename(name="m_TargetX")]pub m_target_x:i32, #[offset(68)]#[rename(name="m_TargetZ")]pub m_target_z:i32, #[offset(72)]#[rename(name="m_Candidates")]pub m_candidates:crate::app::aiinterruptattack::AIInterruptAttack_CandidateList, #[offset(80)]#[rename(name="m_AttackCount")]pub m_attack_count:i32, #[offset(84)]#[rename(name="m_MaxAttackCount")]pub m_max_attack_count:i32, #[offset(88)]#[rename(name="m_IsDecidedAttacker")]pub m_is_decided_attacker:bool, #[offset(96)]#[rename(name="m_BattleSimulator")]pub m_battle_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(104)]#[rename(name="m_ASResult")]pub m_as_result:crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack.CandidateList")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack_CandidateList{#[offset(16)]#[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate> , #[offset(24)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack_Candidate.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack.Candidate")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack_Candidate{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack_AttackScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIInterruptAttack_AttackScoreResult{}
 impl::unity2::ClassIdentity for AIInterruptAttack_AttackScoreResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIInterruptAttack.AttackScoreResult";
@@ -29,6 +23,12 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for AIInterruptAttack_AttackScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack_Candidate.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack.Candidate")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack_Candidate{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack.CandidateList")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack_CandidateList{#[offset(16)]#[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate> , #[offset(24)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate> ,}
 
 }
 
@@ -151,57 +151,60 @@ pub fn dbg_log_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 this}
 }
 
-#[cfg(feature="app-aiinterruptattack")]pub trait IAIInterruptAttack_CandidateListMethods:IAIInterruptAttack_CandidateList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2944ac0usize)as*mut u8,();
-(AIInterruptAttack_CandidateList)__receiver)}
+#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_AttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944870usize)as*mut u8,u32;
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
 }
-#[doc="`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]fn add(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_think_break:impl::core::convert::Into<bool> ,is_think_chain:impl::core::convert::Into<bool> ,dist:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2944620usize)as*mut u8,();
-(AIInterruptAttack_CandidateList)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(is_think_break),(bool)::core::convert::Into::into(is_think_chain),(i32)::core::convert::Into::into(dist))}
+#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944880usize)as*mut u8,();
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(u32)::core::convert::Into::into(value))}
 }
-#[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2944d00usize)as*mut u8,();
-(AIInterruptAttack_CandidateList)__receiver)}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944890usize)as*mut u8,i32;
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
 }
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2944e30usize)as*mut u8,();
-(AIInterruptAttack_CandidateList)__receiver)}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448a0usize)as*mut u8,();
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`HasAttacker()` overload"]fn has_attacker(self,)->bool{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2944f00usize)as*mut u8,bool;
-(AIInterruptAttack_CandidateList)__receiver)}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448b0usize)as*mut u8,i32;
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
 }
-#[doc="`GetAttacker()` overload"]fn get_attacker(self,)->crate::app::aiinterruptattack::AIInterruptAttack_Candidate{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2944f80usize)as*mut u8,crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
-(AIInterruptAttack_CandidateList)__receiver)}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448c0usize)as*mut u8,();
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2945040usize)as*mut u8,i32;
-(AIInterruptAttack_CandidateList)__receiver)}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448d0usize)as*mut u8,i32;
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
 }
-#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::app::aiinterruptattack::AIInterruptAttack_Candidate{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2945090usize)as*mut u8,crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
-(AIInterruptAttack_CandidateList)__receiver,(i32)::core::convert::Into::into(index))}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448e0usize)as*mut u8,();
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
 }
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448f0usize)as*mut u8,i32;
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
 }
-
-#[cfg(feature="app-aiinterruptattack")]impl<__T:IAIInterruptAttack_CandidateList>IAIInterruptAttack_CandidateListMethods for __T{}
-
-#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_CandidateList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn has_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944900usize)as*mut u8,();
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944910usize)as*mut u8,i32;
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
+}
+#[doc="`set_ItemIndex(i32)` overload"]pub fn set_item_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944920usize)as*mut u8,();
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944930usize)as*mut u8,();
+(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
+}
 }
 
-#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_CandidateList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIInterruptAttack_CandidateList), ::core::stringify!(new),));
- <Self as IAIInterruptAttack_CandidateListMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_AttackScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 }
 
 #[cfg(feature="app-aiinterruptattack")]pub trait IAIInterruptAttack_CandidateMethods:IAIInterruptAttack_Candidate{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <AIInterruptAttack_Candidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -332,60 +335,57 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_AttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944870usize)as*mut u8,u32;
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
+#[cfg(feature="app-aiinterruptattack")]pub trait IAIInterruptAttack_CandidateListMethods:IAIInterruptAttack_CandidateList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2944ac0usize)as*mut u8,();
+(AIInterruptAttack_CandidateList)__receiver)}
 }
-#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944880usize)as*mut u8,();
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(u32)::core::convert::Into::into(value))}
+#[doc="`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]fn add(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_think_break:impl::core::convert::Into<bool> ,is_think_chain:impl::core::convert::Into<bool> ,dist:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2944620usize)as*mut u8,();
+(AIInterruptAttack_CandidateList)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(is_think_break),(bool)::core::convert::Into::into(is_think_chain),(i32)::core::convert::Into::into(dist))}
 }
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944890usize)as*mut u8,i32;
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
+#[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2944d00usize)as*mut u8,();
+(AIInterruptAttack_CandidateList)__receiver)}
 }
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448a0usize)as*mut u8,();
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2944e30usize)as*mut u8,();
+(AIInterruptAttack_CandidateList)__receiver)}
 }
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448b0usize)as*mut u8,i32;
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
+#[doc="`HasAttacker()` overload"]fn has_attacker(self,)->bool{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2944f00usize)as*mut u8,bool;
+(AIInterruptAttack_CandidateList)__receiver)}
 }
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448c0usize)as*mut u8,();
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
+#[doc="`GetAttacker()` overload"]fn get_attacker(self,)->crate::app::aiinterruptattack::AIInterruptAttack_Candidate{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2944f80usize)as*mut u8,crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
+(AIInterruptAttack_CandidateList)__receiver)}
 }
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448d0usize)as*mut u8,i32;
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2945040usize)as*mut u8,i32;
+(AIInterruptAttack_CandidateList)__receiver)}
 }
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448e0usize)as*mut u8,();
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29448f0usize)as*mut u8,i32;
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944900usize)as*mut u8,();
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944910usize)as*mut u8,i32;
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
-}
-#[doc="`set_ItemIndex(i32)` overload"]pub fn set_item_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944920usize)as*mut u8,();
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944930usize)as*mut u8,();
-(*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::app::aiinterruptattack::AIInterruptAttack_Candidate{unsafe{let __receiver= <AIInterruptAttack_CandidateList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2945090usize)as*mut u8,crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
+(AIInterruptAttack_CandidateList)__receiver,(i32)::core::convert::Into::into(index))}
 }
 }
 
-#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_AttackScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+#[cfg(feature="app-aiinterruptattack")]impl<__T:IAIInterruptAttack_CandidateList>IAIInterruptAttack_CandidateListMethods for __T{}
+
+#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_CandidateList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn has_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_CandidateList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIInterruptAttack_CandidateList), ::core::stringify!(new),));
+ <Self as IAIInterruptAttack_CandidateListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-aiinterruptattack")]
@@ -394,13 +394,13 @@ pub mod prelude {
     pub use super::AIInterruptAttack;
     pub use super::IAIInterruptAttack;
     pub use super::IAIInterruptAttackMethods;
-    pub use super::AIInterruptAttack_CandidateList;
-    pub use super::IAIInterruptAttack_CandidateList;
-    pub use super::IAIInterruptAttack_CandidateListMethods;
+    pub use super::AIInterruptAttack_AttackScoreResult;
     pub use super::AIInterruptAttack_Candidate;
     pub use super::IAIInterruptAttack_Candidate;
     pub use super::IAIInterruptAttack_CandidateMethods;
-    pub use super::AIInterruptAttack_AttackScoreResult;
+    pub use super::AIInterruptAttack_CandidateList;
+    pub use super::IAIInterruptAttack_CandidateList;
+    pub use super::IAIInterruptAttack_CandidateListMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

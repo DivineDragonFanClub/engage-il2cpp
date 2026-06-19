@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengesequence/ChallengeSequence.md"))]#[::unity2::class(namespace="App",name="ChallengeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ChallengeSequence{#[offset(112)]#[rename(name="m_ChallengeMapSelectRoot")]pub m_challenge_map_select_root:crate::app::challengemapselectroot::ChallengeMapSelectRoot, #[offset(120)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(128)]#[rename(name="m_Result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(136)]#[rename(name="m_ChallengeData")]pub m_challenge_data:crate::app::challengedata::ChallengeData, #[offset(144)]#[rename(name="m_Difficulty")]pub m_difficulty:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengesequence/ChallengeSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ChallengeSequence_Label2{pub value:i32,}
 impl::unity2::ClassIdentity for ChallengeSequence_Label2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ChallengeSequence.Label2";
@@ -38,6 +35,9 @@ pub fn end_and_start_map()->Self{Self{value:3}
 pub fn end_and_return()->Self{Self{value:4}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengesequence/ChallengeSequence.md"))]#[::unity2::class(namespace="App",name="ChallengeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ChallengeSequence{#[offset(112)]#[rename(name="m_ChallengeMapSelectRoot")]pub m_challenge_map_select_root:crate::app::challengemapselectroot::ChallengeMapSelectRoot, #[offset(120)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(128)]#[rename(name="m_Result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(136)]#[rename(name="m_ChallengeData")]pub m_challenge_data:crate::app::challengedata::ChallengeData, #[offset(144)]#[rename(name="m_Difficulty")]pub m_difficulty:i32,}
 
 }
 
@@ -136,10 +136,10 @@ this}
 #[cfg(feature = "app-challengesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ChallengeSequence_Label2;
     pub use super::ChallengeSequence;
     pub use super::IChallengeSequence;
     pub use super::IChallengeSequenceMethods;
-    pub use super::ChallengeSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

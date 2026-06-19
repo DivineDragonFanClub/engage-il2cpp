@@ -21,12 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_ReturnEntryComponent.md"))]#[::unity2::class(namespace="App.RingCleaning",name="FaceImagesController.ReturnEntryComponent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FaceImagesController_ReturnEntryComponent{#[offset(24)]#[rename(name="m_Character")]pub m_character:crate::combat::character::Character, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_NowAnimName")]pub m_now_anim_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ChangeAnimName")]pub m_change_anim_name: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_Time")]pub m_time:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/faceimagescontroller/FaceImagesController.md"))]#[::unity2::class(namespace="App.RingCleaning",name="FaceImagesController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FaceImagesController{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_UnitModelRoot")]pub m_unit_model_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_GodModelRoot")]pub m_god_model_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_UnitChara")]pub m_unit_chara:crate::combat::character::Character, #[offset(48)]#[rename(name="m_GodChara")]pub m_god_chara:crate::combat::character::Character, #[offset(56)]#[rename(name="m_GodEffectPos")]pub m_god_effect_pos:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="m_FinishSetupNum")]pub m_finish_setup_num:i32, #[offset(72)]#[rename(name="m_IsSetupLookAt")]pub m_is_setup_look_at:bool, #[offset(73)]#[rename(name="m_IsFirstCleaning")]pub m_is_first_cleaning:bool, #[offset(74)]#[rename(name="m_カメラの高さをキャラクターの頭部に合わせる")]pub m_カメラの高さをキャラクターの頭部に合わせる:bool, #[offset(76)]#[rename(name="m_カメラの高さ補正値")]pub m_カメラの高さ補正値:f32, #[static_field]#[rename(name="UnitDefaultAnim")]pub unit_default_anim: ::unity2::Il2CppString, #[offset(80)]#[rename(name="m_GodStrongHitIndex")]pub m_god_strong_hit_index:i32, #[offset(88)]#[rename(name="GodStrongHitAnim")]pub god_strong_hit_anim: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_AnimType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FaceImagesController_AnimType{pub value:i32,}
 impl::unity2::ClassIdentity for FaceImagesController_AnimType{const NAMESPACE: &'static str="App.RingCleaning";
 const NAME: &'static str="FaceImagesController.AnimType";
@@ -53,6 +47,9 @@ pub fn shy()->Self{Self{value:5}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/faceimagescontroller/FaceImagesController.md"))]#[::unity2::class(namespace="App.RingCleaning",name="FaceImagesController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FaceImagesController{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_UnitModelRoot")]pub m_unit_model_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_GodModelRoot")]pub m_god_model_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_UnitChara")]pub m_unit_chara:crate::combat::character::Character, #[offset(48)]#[rename(name="m_GodChara")]pub m_god_chara:crate::combat::character::Character, #[offset(56)]#[rename(name="m_GodEffectPos")]pub m_god_effect_pos:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="m_FinishSetupNum")]pub m_finish_setup_num:i32, #[offset(72)]#[rename(name="m_IsSetupLookAt")]pub m_is_setup_look_at:bool, #[offset(73)]#[rename(name="m_IsFirstCleaning")]pub m_is_first_cleaning:bool, #[offset(74)]#[rename(name="m_カメラの高さをキャラクターの頭部に合わせる")]pub m_カメラの高さをキャラクターの頭部に合わせる:bool, #[offset(76)]#[rename(name="m_カメラの高さ補正値")]pub m_カメラの高さ補正値:f32, #[static_field]#[rename(name="UnitDefaultAnim")]pub unit_default_anim: ::unity2::Il2CppString, #[offset(80)]#[rename(name="m_GodStrongHitIndex")]pub m_god_strong_hit_index:i32, #[offset(88)]#[rename(name="GodStrongHitAnim")]pub god_strong_hit_anim: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_PlayPattern.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FaceImagesController_PlayPattern{pub value:i32,}
 impl::unity2::ClassIdentity for FaceImagesController_PlayPattern{const NAMESPACE: &'static str="App.RingCleaning";
 const NAME: &'static str="FaceImagesController.PlayPattern";
@@ -72,38 +69,13 @@ pub fn clear()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_ReturnEntryComponent.md"))]#[::unity2::class(namespace="App.RingCleaning",name="FaceImagesController.ReturnEntryComponent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FaceImagesController_ReturnEntryComponent{#[offset(24)]#[rename(name="m_Character")]pub m_character:crate::combat::character::Character, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_NowAnimName")]pub m_now_anim_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ChangeAnimName")]pub m_change_anim_name: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_Time")]pub m_time:f32,}
+
 }
 
 #[cfg(feature = "app-ring_cleaning-faceimagescontroller-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ring_cleaning-faceimagescontroller")]pub trait IFaceImagesController_ReturnEntryComponentMethods:IFaceImagesController_ReturnEntryComponent{#[doc="`SetCharacter(crate::combat::character::Character, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_character(self,chara:impl::core::convert::Into<crate::combat::character::Character> ,now_anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,change_anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FaceImagesController_ReturnEntryComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d410usize)as*mut u8,();
-(FaceImagesController_ReturnEntryComponent)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chara),(::unity2::Il2CppString)::core::convert::Into::into(now_anim_name),(::unity2::Il2CppString)::core::convert::Into::into(change_anim_name))}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <FaceImagesController_ReturnEntryComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d490usize)as*mut u8,();
-(FaceImagesController_ReturnEntryComponent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FaceImagesController_ReturnEntryComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d630usize)as*mut u8,();
-(FaceImagesController_ReturnEntryComponent)__receiver)}
-}
-}
-
-#[cfg(feature="app-ring_cleaning-faceimagescontroller")]impl<__T:IFaceImagesController_ReturnEntryComponent>IFaceImagesController_ReturnEntryComponentMethods for __T{}
-
-#[cfg(feature="app-ring_cleaning-faceimagescontroller")]impl FaceImagesController_ReturnEntryComponent{pub fn set_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ring_cleaning-faceimagescontroller")]impl FaceImagesController_ReturnEntryComponent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FaceImagesController_ReturnEntryComponent), ::core::stringify!(new),));
- <Self as IFaceImagesController_ReturnEntryComponentMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-ring_cleaning-faceimagescontroller")]impl FaceImagesController{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d50660usize)as*mut u8,();
 )}
@@ -205,17 +177,45 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-ring_cleaning-faceimagescontroller")]pub trait IFaceImagesController_ReturnEntryComponentMethods:IFaceImagesController_ReturnEntryComponent{#[doc="`SetCharacter(crate::combat::character::Character, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_character(self,chara:impl::core::convert::Into<crate::combat::character::Character> ,now_anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,change_anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FaceImagesController_ReturnEntryComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d410usize)as*mut u8,();
+(FaceImagesController_ReturnEntryComponent)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chara),(::unity2::Il2CppString)::core::convert::Into::into(now_anim_name),(::unity2::Il2CppString)::core::convert::Into::into(change_anim_name))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <FaceImagesController_ReturnEntryComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d490usize)as*mut u8,();
+(FaceImagesController_ReturnEntryComponent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FaceImagesController_ReturnEntryComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5d630usize)as*mut u8,();
+(FaceImagesController_ReturnEntryComponent)__receiver)}
+}
+}
+
+#[cfg(feature="app-ring_cleaning-faceimagescontroller")]impl<__T:IFaceImagesController_ReturnEntryComponent>IFaceImagesController_ReturnEntryComponentMethods for __T{}
+
+#[cfg(feature="app-ring_cleaning-faceimagescontroller")]impl FaceImagesController_ReturnEntryComponent{pub fn set_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ring_cleaning-faceimagescontroller")]impl FaceImagesController_ReturnEntryComponent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FaceImagesController_ReturnEntryComponent), ::core::stringify!(new),));
+ <Self as IFaceImagesController_ReturnEntryComponentMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FaceImagesController_ReturnEntryComponent;
-    pub use super::IFaceImagesController_ReturnEntryComponent;
-    pub use super::IFaceImagesController_ReturnEntryComponentMethods;
+    pub use super::FaceImagesController_AnimType;
     pub use super::FaceImagesController;
     pub use super::IFaceImagesController;
     pub use super::IFaceImagesControllerMethods;
-    pub use super::FaceImagesController_AnimType;
     pub use super::FaceImagesController_PlayPattern;
+    pub use super::FaceImagesController_ReturnEntryComponent;
+    pub use super::IFaceImagesController_ReturnEntryComponent;
+    pub use super::IFaceImagesController_ReturnEntryComponentMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

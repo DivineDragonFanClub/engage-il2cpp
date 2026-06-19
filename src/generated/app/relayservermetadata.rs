@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayservermetadata/RelayServerMetaData.md"))]#[::unity2::class(namespace="App",name="RelayServerMetaData")]#[parent(crate::system::object::Object)]pub struct RelayServerMetaData{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[static_field]#[rename(name="BufferOnServerSize")]pub buffer_on_server_size:i32, #[static_field]#[rename(name="Version")]pub version:u16, #[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(32)]#[rename(name="m_BufferOnServer")]pub m_buffer_on_server: ::unity2::Array<u8> , #[offset(40)]#[rename(name="m_SizeOnServer")]pub m_size_on_server:i32, #[offset(48)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(56)]#[rename(name="m_DataCode")]pub m_data_code: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_UpdatedUnixTimeOnServer")]pub m_updated_unix_time_on_server:i64, #[offset(72)]#[rename(name="m_IsSecret")]pub m_is_secret:bool, #[offset(80)]#[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString, #[offset(88)]#[rename(name="m_BeginUnixTime")]pub m_begin_unix_time:i64, #[offset(96)]#[rename(name="m_EndUnixTime")]pub m_end_unix_time:i64, #[offset(104)]#[rename(name="m_Turn")]pub m_turn:u8, #[offset(108)]#[rename(name="m_State")]pub m_state:crate::app::relayservermetadata::RelayServerMetaData_States, #[offset(112)]#[rename(name="m_PlayerIds")]pub m_player_ids:crate::system::collections::generic::list_1::List_1<u64> , #[offset(120)]#[rename(name="m_PlayerNames")]pub m_player_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(128)]#[rename(name="m_Pids")]pub m_pids:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_PlayingCount")]pub m_playing_count:u32, #[offset(144)]#[rename(name="m_Awardees")]pub m_awardees:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::relayawardeedata::RelayAwardeeData> , #[offset(152)]#[rename(name="m_AwardRandomSeed")]pub m_award_random_seed:crate::app::randomseed::RandomSeed,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayservermetadata/RelayServerMetaData_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayServerMetaData_States{pub value:i32,}
 impl::unity2::ClassIdentity for RelayServerMetaData_States{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RelayServerMetaData.States";
@@ -29,9 +32,6 @@ pub fn completed()->Self{Self{value:1}
 pub fn game_over()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayservermetadata/RelayServerMetaData.md"))]#[::unity2::class(namespace="App",name="RelayServerMetaData")]#[parent(crate::system::object::Object)]pub struct RelayServerMetaData{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[static_field]#[rename(name="BufferOnServerSize")]pub buffer_on_server_size:i32, #[static_field]#[rename(name="Version")]pub version:u16, #[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(32)]#[rename(name="m_BufferOnServer")]pub m_buffer_on_server: ::unity2::Array<u8> , #[offset(40)]#[rename(name="m_SizeOnServer")]pub m_size_on_server:i32, #[offset(48)]#[rename(name="m_DataId")]pub m_data_id:u64, #[offset(56)]#[rename(name="m_DataCode")]pub m_data_code: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_UpdatedUnixTimeOnServer")]pub m_updated_unix_time_on_server:i64, #[offset(72)]#[rename(name="m_IsSecret")]pub m_is_secret:bool, #[offset(80)]#[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString, #[offset(88)]#[rename(name="m_BeginUnixTime")]pub m_begin_unix_time:i64, #[offset(96)]#[rename(name="m_EndUnixTime")]pub m_end_unix_time:i64, #[offset(104)]#[rename(name="m_Turn")]pub m_turn:u8, #[offset(108)]#[rename(name="m_State")]pub m_state:crate::app::relayservermetadata::RelayServerMetaData_States, #[offset(112)]#[rename(name="m_PlayerIds")]pub m_player_ids:crate::system::collections::generic::list_1::List_1<u64> , #[offset(120)]#[rename(name="m_PlayerNames")]pub m_player_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(128)]#[rename(name="m_Pids")]pub m_pids:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_PlayingCount")]pub m_playing_count:u32, #[offset(144)]#[rename(name="m_Awardees")]pub m_awardees:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::relayawardeedata::RelayAwardeeData> , #[offset(152)]#[rename(name="m_AwardRandomSeed")]pub m_award_random_seed:crate::app::randomseed::RandomSeed,}
 
 }
 
@@ -299,10 +299,10 @@ this}
 #[cfg(feature = "app-relayservermetadata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayServerMetaData_States;
     pub use super::RelayServerMetaData;
     pub use super::IRelayServerMetaData;
     pub use super::IRelayServerMetaDataMethods;
+    pub use super::RelayServerMetaData_States;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

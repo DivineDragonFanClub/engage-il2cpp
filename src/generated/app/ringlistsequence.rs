@@ -37,87 +37,19 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingListSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for RingListSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="RingListSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RingListSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl RingListSequence_Label{pub fn start()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaImageController.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaImageController")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaImageController{#[static_field]#[rename(name="CharaImageMax")]pub chara_image_max:i32, #[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_CharaImage")]pub m_chara_image: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_CharaImage> , #[offset(32)]#[rename(name="m_CurrentCharaImageIndex")]pub m_current_chara_image_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_PageData.md"))]#[::unity2::class(namespace="App",name="RingListSequence.PageData")]#[parent(crate::system::object::Object)]pub struct RingListSequence_PageData{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RingListSequence_GodAndRingListWindow_MenuItemContent{#[offset(72)]#[rename(name="m_Setter")]pub m_setter:crate::app::unitmenuitemsetter::UnitMenuItemSetter,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_Menu.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RingListSequence_GodAndRingListWindow_Menu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_SkillInfo.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingListWindow.SkillInfo")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RingListWindow_SkillInfo{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_DescriptionText")]pub m_description_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaArrowGroup.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaArrowGroup")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaArrowGroup{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_LeftArrowImage")]pub m_left_arrow_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_RightArrowImage")]pub m_right_arrow_image:crate::unity_engine::ui::image::Image,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_PageDataList.md"))]#[::unity2::class(namespace="App",name="RingListSequence.PageDataList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::ringlistsequence::RingListSequence_PageData>)]pub struct RingListSequence_PageDataList{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfoRank.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingListSequence_RingListWindow_RingInfoRank{pub value:i32,}
-impl::unity2::ClassIdentity for RingListSequence_RingListWindow_RingInfoRank{const NAMESPACE: &'static str="App";
-const NAME: &'static str="RingListSequence.RingListWindow.RingInfoRank";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RingListSequence_RingListWindow_RingInfoRank{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl RingListSequence_RingListWindow_RingInfoRank{pub fn c()->Self{Self{value:0}
-}
-pub fn b()->Self{Self{value:1}
-}
-pub fn a()->Self{Self{value:2}
-}
-pub fn s()->Self{Self{value:3}
-}
-pub fn max()->Self{Self{value:4}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItem.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingListSequence_GodAndRingListWindow_MenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow")]#[parent(crate::system::object::Object)]pub struct RingListSequence_GodAndRingListWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Menu")]pub m_menu:crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingListWindow.RingInfo")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RingListWindow_RingInfo{#[static_field]#[rename(name="GainMax")]pub gain_max:i32, #[offset(16)]#[rename(name="m_Rank")]pub m_rank:crate::app::ringdata::RingData_Ranks, #[offset(24)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_RingImage")]pub m_ring_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_Gain")]pub m_gain: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo_Gain> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaNavigation.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaNavigation")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaNavigation{#[static_field]#[rename(name="PointMax")]pub point_max:i32, #[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_PointImage")]pub m_point_image: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(32)]#[rename(name="m_PointNum")]pub m_point_num:i32, #[offset(36)]#[rename(name="m_CurrentPointIndex")]pub m_current_point_index:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo_Gain.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingListWindow.RingInfo.Gain")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RingListWindow_RingInfo_Gain{#[offset(16)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_ParamText")]pub m_param_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RelatedGroupWindow.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RelatedGroupWindow")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RelatedGroupWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_GroupNameText")]pub m_group_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_CurrentWorldMid")]pub m_current_world_mid: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence.md"))]#[::unity2::class(namespace="App",name="RingListSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringlistsequence::RingListSequence>)]pub struct RingListSequence{#[static_field]#[rename(name="LayoutPrefabPath")]pub layout_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="CharaFrameImageSpriteAtlasPath")]pub chara_frame_image_sprite_atlas_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_PageList")]pub m_page_list:crate::app::ringlistsequence::RingListSequence_PageDataList, #[offset(128)]#[rename(name="m_CurrentPageIndex")]pub m_current_page_index:i32, #[offset(136)]#[rename(name="m_CurrentPageData")]pub m_current_page_data:crate::app::ringlistsequence::RingListSequence_PageData, #[offset(144)]#[rename(name="m_LayoutPrefab")]pub m_layout_prefab:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_RelatedGroupWindow")]pub m_related_group_window:crate::app::ringlistsequence::RingListSequence_RelatedGroupWindow, #[offset(160)]#[rename(name="m_CharaArrowGroup")]pub m_chara_arrow_group:crate::app::ringlistsequence::RingListSequence_CharaArrowGroup, #[offset(168)]#[rename(name="m_CharaImageController")]pub m_chara_image_controller:crate::app::ringlistsequence::RingListSequence_CharaImageController, #[offset(176)]#[rename(name="m_CharaNavigation")]pub m_chara_navigation:crate::app::ringlistsequence::RingListSequence_CharaNavigation, #[offset(184)]#[rename(name="m_CharaInfoWindow")]pub m_chara_info_window:crate::app::ringlistsequence::RingListSequence_CharaInfoWindow, #[offset(192)]#[rename(name="m_SkillListWindow")]pub m_skill_list_window:crate::app::ringlistskillmenu::RingListSkillMenu, #[offset(200)]#[rename(name="m_RingListWindow")]pub m_ring_list_window:crate::app::ringlistsequence::RingListSequence_RingListWindow, #[offset(208)]#[rename(name="m_GodAndRingListWindow")]pub m_god_and_ring_list_window:crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow, #[offset(216)]#[rename(name="m_ReservedJumpPageData")]pub m_reserved_jump_page_data:crate::app::ringlistsequence::RingListSequence_PageData, #[offset(224)]#[rename(name="m_CharaFrameSpriteAtlasManager")]pub m_chara_frame_sprite_atlas_manager:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2, #[offset(232)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_Menu.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RingListSequence_GodAndRingListWindow_Menu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaImage.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaImage")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaImage{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_CharaImage")]pub m_chara_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_BackImage")]pub m_back_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_CharaMaterial")]pub m_chara_material:crate::unity_engine::material::Material, #[offset(64)]#[rename(name="m_FrameMaterial")]pub m_frame_material:crate::unity_engine::material::Material,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodPageData.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodPageData")]#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]pub struct RingListSequence_GodPageData{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaInfoWindow_CharaDescriptionText.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingListSequence_CharaInfoWindow_CharaDescriptionText{pub value:i32,}
@@ -144,119 +76,207 @@ pub fn max()->Self{Self{value:5}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaInfoWindow.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaInfoWindow")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaInfoWindow{#[offset(16)]#[rename(name="m_CharaNameText")]pub m_chara_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_RingNameText")]pub m_ring_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_CharaDescriptionText")]pub m_chara_description_text: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(40)]#[rename(name="m_RingImage")]pub m_ring_image:crate::unity_engine::ui::image::Image,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodPageData.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodPageData")]#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]pub struct RingListSequence_GodPageData{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuContent.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.MenuContent")]#[parent(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)]pub struct RingListSequence_GodAndRingListWindow_MenuContent{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RingListSequence_GodAndRingListWindow_MenuItemContent{#[offset(72)]#[rename(name="m_Setter")]pub m_setter:crate::app::unitmenuitemsetter::UnitMenuItemSetter,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItem.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingListSequence_GodAndRingListWindow_MenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfoRank.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingListSequence_RingListWindow_RingInfoRank{pub value:i32,}
+impl::unity2::ClassIdentity for RingListSequence_RingListWindow_RingInfoRank{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingListSequence.RingListWindow.RingInfoRank";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingListSequence_RingListWindow_RingInfoRank{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingListSequence_RingListWindow_RingInfoRank{pub fn c()->Self{Self{value:0}
+}
+pub fn b()->Self{Self{value:1}
+}
+pub fn a()->Self{Self{value:2}
+}
+pub fn s()->Self{Self{value:3}
+}
+pub fn max()->Self{Self{value:4}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_PageDataList_GodComparer.md"))]#[::unity2::class(namespace="App",name="RingListSequence.PageDataList.GodComparer")]#[parent(crate::system::object::Object)]pub struct RingListSequence_PageDataList_GodComparer{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingPageData.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingPageData")]#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]pub struct RingListSequence_RingPageData{#[static_field]#[rename(name="SpecialGroupPageDataNum")]pub special_group_page_data_num:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingListWindow.RingInfo")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RingListWindow_RingInfo{#[static_field]#[rename(name="GainMax")]pub gain_max:i32, #[offset(16)]#[rename(name="m_Rank")]pub m_rank:crate::app::ringdata::RingData_Ranks, #[offset(24)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_RingImage")]pub m_ring_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_Gain")]pub m_gain: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo_Gain> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo_Gain.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingListWindow.RingInfo.Gain")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RingListWindow_RingInfo_Gain{#[offset(16)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_ParamText")]pub m_param_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_PageData.md"))]#[::unity2::class(namespace="App",name="RingListSequence.PageData")]#[parent(crate::system::object::Object)]pub struct RingListSequence_PageData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuContent.md"))]#[::unity2::class(namespace="App",name="RingListSequence.GodAndRingListWindow.MenuContent")]#[parent(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)]pub struct RingListSequence_GodAndRingListWindow_MenuContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaInfoWindow.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaInfoWindow")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaInfoWindow{#[offset(16)]#[rename(name="m_CharaNameText")]pub m_chara_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_RingNameText")]pub m_ring_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_CharaDescriptionText")]pub m_chara_description_text: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(40)]#[rename(name="m_RingImage")]pub m_ring_image:crate::unity_engine::ui::image::Image,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingListWindow")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RingListWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_RingInfo")]pub m_ring_info: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo> , #[offset(40)]#[rename(name="m_SkillInfo")]pub m_skill_info:crate::app::ringlistsequence::RingListSequence_RingListWindow_SkillInfo,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_PageDataList.md"))]#[::unity2::class(namespace="App",name="RingListSequence.PageDataList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::ringlistsequence::RingListSequence_PageData>)]pub struct RingListSequence_PageDataList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence.md"))]#[::unity2::class(namespace="App",name="RingListSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringlistsequence::RingListSequence>)]pub struct RingListSequence{#[static_field]#[rename(name="LayoutPrefabPath")]pub layout_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="CharaFrameImageSpriteAtlasPath")]pub chara_frame_image_sprite_atlas_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_PageList")]pub m_page_list:crate::app::ringlistsequence::RingListSequence_PageDataList, #[offset(128)]#[rename(name="m_CurrentPageIndex")]pub m_current_page_index:i32, #[offset(136)]#[rename(name="m_CurrentPageData")]pub m_current_page_data:crate::app::ringlistsequence::RingListSequence_PageData, #[offset(144)]#[rename(name="m_LayoutPrefab")]pub m_layout_prefab:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_RelatedGroupWindow")]pub m_related_group_window:crate::app::ringlistsequence::RingListSequence_RelatedGroupWindow, #[offset(160)]#[rename(name="m_CharaArrowGroup")]pub m_chara_arrow_group:crate::app::ringlistsequence::RingListSequence_CharaArrowGroup, #[offset(168)]#[rename(name="m_CharaImageController")]pub m_chara_image_controller:crate::app::ringlistsequence::RingListSequence_CharaImageController, #[offset(176)]#[rename(name="m_CharaNavigation")]pub m_chara_navigation:crate::app::ringlistsequence::RingListSequence_CharaNavigation, #[offset(184)]#[rename(name="m_CharaInfoWindow")]pub m_chara_info_window:crate::app::ringlistsequence::RingListSequence_CharaInfoWindow, #[offset(192)]#[rename(name="m_SkillListWindow")]pub m_skill_list_window:crate::app::ringlistskillmenu::RingListSkillMenu, #[offset(200)]#[rename(name="m_RingListWindow")]pub m_ring_list_window:crate::app::ringlistsequence::RingListSequence_RingListWindow, #[offset(208)]#[rename(name="m_GodAndRingListWindow")]pub m_god_and_ring_list_window:crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow, #[offset(216)]#[rename(name="m_ReservedJumpPageData")]pub m_reserved_jump_page_data:crate::app::ringlistsequence::RingListSequence_PageData, #[offset(224)]#[rename(name="m_CharaFrameSpriteAtlasManager")]pub m_chara_frame_sprite_atlas_manager:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2, #[offset(232)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingListWindow_SkillInfo.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingListWindow.SkillInfo")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RingListWindow_SkillInfo{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_DescriptionText")]pub m_description_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RelatedGroupWindow.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RelatedGroupWindow")]#[parent(crate::system::object::Object)]pub struct RingListSequence_RelatedGroupWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_GroupNameText")]pub m_group_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_CurrentWorldMid")]pub m_current_world_mid: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_RingPageData.md"))]#[::unity2::class(namespace="App",name="RingListSequence.RingPageData")]#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]pub struct RingListSequence_RingPageData{#[static_field]#[rename(name="SpecialGroupPageDataNum")]pub special_group_page_data_num:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingListSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RingListSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingListSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingListSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingListSequence_Label{pub fn start()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaImageController.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaImageController")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaImageController{#[static_field]#[rename(name="CharaImageMax")]pub chara_image_max:i32, #[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_CharaImage")]pub m_chara_image: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_CharaImage> , #[offset(32)]#[rename(name="m_CurrentCharaImageIndex")]pub m_current_chara_image_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistsequence/RingListSequence_CharaArrowGroup.md"))]#[::unity2::class(namespace="App",name="RingListSequence.CharaArrowGroup")]#[parent(crate::system::object::Object)]pub struct RingListSequence_CharaArrowGroup{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_LeftArrowImage")]pub m_left_arrow_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_RightArrowImage")]pub m_right_arrow_image:crate::unity_engine::ui::image::Image,}
 
 }
 
 #[cfg(feature = "app-ringlistsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_CharaImageControllerMethods:IRingListSequence_CharaImageController{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_CharaImageController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b15f40usize)as*mut u8,();
-(RingListSequence_CharaImageController)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindow_MenuItemMethods:IRingListSequence_GodAndRingListWindow_MenuItem{#[doc="`get_PageData()` overload"]fn get_page_data(self,)->crate::app::ringlistsequence::RingListSequence_PageData{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4b0usize)as*mut u8,crate::app::ringlistsequence::RingListSequence_PageData;
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
 }
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <RingListSequence_CharaImageController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b16120usize)as*mut u8,();
-(RingListSequence_CharaImageController)__receiver)}
+#[doc="`set_PageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn set_page_data(self,value:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4c0usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(value))}
 }
-#[doc="`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn change_image(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_CharaImageController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b16200usize)as*mut u8,();
-(RingListSequence_CharaImageController)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
+#[doc="`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn ctor(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4d0usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
 }
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d510usize)as*mut u8, ::unity2::Il2CppString;
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
 }
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_CharaImageController>IRingListSequence_CharaImageControllerMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaImageController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn change_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d840usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
 }
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaImageController{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_CharaImageController), ::core::stringify!(new),));
- <Self as IRingListSequence_CharaImageControllerMethods> ::ctor(this,root_object);
-this}
+#[doc="`IsGod()` overload"]fn is_god(self,)->bool{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d720usize)as*mut u8,bool;
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
 }
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_PageDataMethods:IRingListSequence_PageData{#[doc="`get_PageIndex()` overload"]fn get_page_index(self,)->i32{unsafe{let __receiver= <RingListSequence_PageData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ed0usize)as*mut u8,i32;
-(RingListSequence_PageData)__receiver)}
+#[doc="`IsRing()` overload"]fn is_ring(self,)->bool{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d7b0usize)as*mut u8,bool;
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
 }
-#[doc="`set_PageIndex(i32)` overload"]fn set_page_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_PageData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ee0usize)as*mut u8,();
-(RingListSequence_PageData)__receiver,(i32)::core::convert::Into::into(value))}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d850usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_PageData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ec0usize)as*mut u8,();
-(RingListSequence_PageData)__receiver)}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7da10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_PageData>IRingListSequence_PageDataMethods for __T{}
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow_MenuItem>IRingListSequence_GodAndRingListWindow_MenuItemMethods for __T{}
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageData{pub fn get_page_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_page_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItem{pub fn get_page_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_page_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItem{#[doc="`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` — overload selector"]pub fn new(page_data:crate::app::ringlistsequence::RingListSequence_PageData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSequence_PageData), ::core::stringify!(new),));
- <Self as IRingListSequence_PageDataMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItem), ::core::stringify!(new),));
+ <Self as IRingListSequence_GodAndRingListWindow_MenuItemMethods> ::ctor(this,page_data);
 this}
 }
 
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindow_MenuItemContentMethods:IRingListSequence_GodAndRingListWindow_MenuItemContent{#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7db70usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
-(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver)}
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindowMethods:IRingListSequence_GodAndRingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17a10usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
 }
-#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7db90usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+#[doc="`Delete()` overload"]fn delete(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17a50usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow)__receiver)}
 }
-#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7df80usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver)}
-}
-#[doc="`SetupByMenuItem(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7dc50usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver,(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)::core::convert::Into::into(menu_item))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7dfd0usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver)}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn create_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,current_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17a70usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(current_page_data))}
 }
 }
 
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow_MenuItemContent>IRingListSequence_GodAndRingListWindow_MenuItemContentMethods for __T{}
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow>IRingListSequence_GodAndRingListWindowMethods for __T{}
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItemContent{pub fn get_text_mesh_pro_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItemContent), ::core::stringify!(new),));
- <Self as IRingListSequence_GodAndRingListWindow_MenuItemContentMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow), ::core::stringify!(new),));
+ <Self as IRingListSequence_GodAndRingListWindowMethods> ::ctor(this,root_object);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_CharaNavigationMethods:IRingListSequence_CharaNavigation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_CharaNavigation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b175e0usize)as*mut u8,();
+(RingListSequence_CharaNavigation)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Setup(i32, i32)` overload"]fn setup(self,current_point_index:impl::core::convert::Into<i32> ,point_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_CharaNavigation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b177c0usize)as*mut u8,();
+(RingListSequence_CharaNavigation)__receiver,(i32)::core::convert::Into::into(current_point_index),(i32)::core::convert::Into::into(point_num))}
+}
+#[doc="`SetCurrentPointIndex(i32)` overload"]fn set_current_point_index(self,current_point_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_CharaNavigation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b178b0usize)as*mut u8,();
+(RingListSequence_CharaNavigation)__receiver,(i32)::core::convert::Into::into(current_point_index))}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_CharaNavigation>IRingListSequence_CharaNavigationMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaNavigation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_current_point_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaNavigation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_CharaNavigation), ::core::stringify!(new),));
+ <Self as IRingListSequence_CharaNavigationMethods> ::ctor(this,root_object);
 this}
 }
 
@@ -301,346 +321,6 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 ::{}
  failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow_Menu), ::core::stringify!(new),));
  <Self as IRingListSequence_GodAndRingListWindow_MenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindow_SkillInfoMethods:IRingListSequence_RingListWindow_SkillInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_SkillInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec4c0usize)as*mut u8,();
-(RingListSequence_RingListWindow_SkillInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_SkillInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec660usize)as*mut u8,();
-(RingListSequence_RingListWindow_SkillInfo)__receiver)}
-}
-#[doc="`SetData(crate::app::ringdata::RingData)` overload"]fn set_data(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_SkillInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec6e0usize)as*mut u8,();
-(RingListSequence_RingListWindow_SkillInfo)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow_SkillInfo>IRingListSequence_RingListWindow_SkillInfoMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_SkillInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_SkillInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow_SkillInfo), ::core::stringify!(new),));
- <Self as IRingListSequence_RingListWindow_SkillInfoMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_CharaArrowGroupMethods:IRingListSequence_CharaArrowGroup{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_CharaArrowGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b152d0usize)as*mut u8,();
-(RingListSequence_CharaArrowGroup)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`ShowAll()` overload"]fn show_all(self,)->(){unsafe{let __receiver= <RingListSequence_CharaArrowGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b15430usize)as*mut u8,();
-(RingListSequence_CharaArrowGroup)__receiver)}
-}
-#[doc="`HideAll()` overload"]fn hide_all(self,)->(){unsafe{let __receiver= <RingListSequence_CharaArrowGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b15470usize)as*mut u8,();
-(RingListSequence_CharaArrowGroup)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_CharaArrowGroup>IRingListSequence_CharaArrowGroupMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaArrowGroup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn hide_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaArrowGroup{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_CharaArrowGroup), ::core::stringify!(new),));
- <Self as IRingListSequence_CharaArrowGroupMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_PageDataListMethods:IRingListSequence_PageDataList{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <RingListSequence_PageDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ef0usize)as*mut u8,();
-(RingListSequence_PageDataList)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_PageDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b188a0usize)as*mut u8,();
-(RingListSequence_PageDataList)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_PageDataList>IRingListSequence_PageDataListMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_PageDataList), ::core::stringify!(new),));
- <Self as IRingListSequence_PageDataListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindowMethods:IRingListSequence_GodAndRingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17a10usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Delete()` overload"]fn delete(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17a50usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow)__receiver)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn create_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,current_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17a70usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(current_page_data))}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow>IRingListSequence_GodAndRingListWindowMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow), ::core::stringify!(new),));
- <Self as IRingListSequence_GodAndRingListWindowMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindow_RingInfoMethods:IRingListSequence_RingListWindow_RingInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,rank:impl::core::convert::Into<crate::app::ringdata::RingData_Ranks>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e2f0usize)as*mut u8,();
-(RingListSequence_RingListWindow_RingInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(crate::app::ringdata::RingData_Ranks)::core::convert::Into::into(rank))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e6a0usize)as*mut u8,();
-(RingListSequence_RingListWindow_RingInfo)__receiver)}
-}
-#[doc="`SetData(crate::app::ringdata::RingData)` overload"]fn set_data(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e7b0usize)as*mut u8,();
-(RingListSequence_RingListWindow_RingInfo)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow_RingInfo>IRingListSequence_RingListWindow_RingInfoMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject,rank:crate::app::ringdata::RingData_Ranks)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow_RingInfo), ::core::stringify!(new),));
- <Self as IRingListSequence_RingListWindow_RingInfoMethods> ::ctor(this,root_object,rank);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_CharaNavigationMethods:IRingListSequence_CharaNavigation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_CharaNavigation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b175e0usize)as*mut u8,();
-(RingListSequence_CharaNavigation)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Setup(i32, i32)` overload"]fn setup(self,current_point_index:impl::core::convert::Into<i32> ,point_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_CharaNavigation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b177c0usize)as*mut u8,();
-(RingListSequence_CharaNavigation)__receiver,(i32)::core::convert::Into::into(current_point_index),(i32)::core::convert::Into::into(point_num))}
-}
-#[doc="`SetCurrentPointIndex(i32)` overload"]fn set_current_point_index(self,current_point_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_CharaNavigation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b178b0usize)as*mut u8,();
-(RingListSequence_CharaNavigation)__receiver,(i32)::core::convert::Into::into(current_point_index))}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_CharaNavigation>IRingListSequence_CharaNavigationMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaNavigation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_current_point_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaNavigation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_CharaNavigation), ::core::stringify!(new),));
- <Self as IRingListSequence_CharaNavigationMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindow_RingInfo_GainMethods:IRingListSequence_RingListWindow_RingInfo_Gain{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo_Gain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed95e0usize)as*mut u8,();
-(RingListSequence_RingListWindow_RingInfo_Gain)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`SetName(crate::app::capabilitydefinition::CapabilityDefinition_Type, bool)` overload"]fn set_name(self,capability_type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type> ,is_opend:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo_Gain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed96f0usize)as*mut u8,();
-(RingListSequence_RingListWindow_RingInfo_Gain)__receiver,(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(capability_type),(bool)::core::convert::Into::into(is_opend))}
-}
-#[doc="`SetParam(i32)` overload"]fn set_param(self,capability_enhance:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo_Gain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9800usize)as*mut u8,();
-(RingListSequence_RingListWindow_RingInfo_Gain)__receiver,(i32)::core::convert::Into::into(capability_enhance))}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow_RingInfo_Gain>IRingListSequence_RingListWindow_RingInfo_GainMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo_Gain{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo_Gain{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow_RingInfo_Gain), ::core::stringify!(new),));
- <Self as IRingListSequence_RingListWindow_RingInfo_GainMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RelatedGroupWindowMethods:IRingListSequence_RelatedGroupWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RelatedGroupWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18920usize)as*mut u8,();
-(RingListSequence_RelatedGroupWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`SetText(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn set_text(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_RelatedGroupWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18a00usize)as*mut u8,();
-(RingListSequence_RelatedGroupWindow)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RelatedGroupWindow>IRingListSequence_RelatedGroupWindowMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RelatedGroupWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RelatedGroupWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence_RelatedGroupWindow), ::core::stringify!(new),));
- <Self as IRingListSequence_RelatedGroupWindowMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence{#[doc="`GetGodUnit(crate::app::goddata::GodData)` overload"]pub fn get_god_unit(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242c970usize)as*mut u8,crate::app::godunit::GodUnit;
-(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
-}
-#[doc="`IsGotGod(crate::app::goddata::GodData)` overload"]pub fn is_got_god(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242c980usize)as*mut u8,bool;
-(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
-}
-#[doc="`IsGotRing(crate::app::ringdata::RingData)` overload"]pub fn is_got_ring(ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242ca70usize)as*mut u8,bool;
-(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
-}
-#[doc="`IsGodAndRingRelated(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]pub fn is_god_and_ring_related(god_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData> ,ring_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242ca80usize)as*mut u8,bool;
-(crate::app::ringlistsequence::RingListSequence_GodPageData)::core::convert::Into::into(god_page_data),(crate::app::ringlistsequence::RingListSequence_RingPageData)::core::convert::Into::into(ring_page_data))}
-}
-#[doc="`GetGodName(crate::app::goddata::GodData)` overload"]pub fn get_god_name(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242cab0usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
-}
-#[doc="`GetGodName(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]pub fn get_god_name_2(page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242cb10usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
-}
-#[doc="`GetWorldTextMid(crate::app::goddata::GodData)` overload"]pub fn get_world_text_mid(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242cc60usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242f910usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`IsOpenEnable()` overload"]pub fn is_open_enable()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242fa50usize)as*mut u8,bool;
-)}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequenceMethods:IRingListSequence{#[doc="`CompareGodName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn compare_god_name(self,god_name1:impl::core::convert::Into< ::unity2::Il2CppString> ,god_name2:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242cc50usize)as*mut u8,bool;
-(RingListSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(god_name1),(::unity2::Il2CppString)::core::convert::Into::into(god_name2))}
-}
-#[doc="`Load()` overload"]fn load(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242ccf0usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242ce70usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`WaitLoading()` overload"]fn wait_loading(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242d030usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242d180usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`SetPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn set_page_data(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242d770usize)as*mut u8,();
-(RingListSequence)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
-}
-#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242de80usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`WaitOpening()` overload"]fn wait_opening(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242e060usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242e120usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242ee90usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`WaitClosing()` overload"]fn wait_closing(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242f010usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242f0d0usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242f170usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-#[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242f250usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(RingListSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x242f990usize)as*mut u8,();
-(RingListSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence>IRingListSequenceMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence{pub fn get_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_got_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_got_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_god_and_ring_related_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_god_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn compare_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_world_text_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn wait_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_page_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn wait_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn wait_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn is_open_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSequence), ::core::stringify!(new),));
- <Self as IRingListSequenceMethods> ::ctor(this,);
 this}
 }
 
@@ -775,6 +455,180 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindow_MenuItemContentMethods:IRingListSequence_GodAndRingListWindow_MenuItemContent{#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7db70usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7db90usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7df80usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver)}
+}
+#[doc="`SetupByMenuItem(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7dc50usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver,(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7dfd0usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow_MenuItemContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow_MenuItemContent>IRingListSequence_GodAndRingListWindow_MenuItemContentMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItemContent{pub fn get_text_mesh_pro_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_by_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItemContent), ::core::stringify!(new),));
+ <Self as IRingListSequence_GodAndRingListWindow_MenuItemContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_PageDataList_GodComparerMethods:IRingListSequence_PageDataList_GodComparer{#[doc="`Compare(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData> ,b:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>)->i32{unsafe{let __receiver= <RingListSequence_PageDataList_GodComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e2c0usize)as*mut u8,i32;
+(RingListSequence_PageDataList_GodComparer)__receiver,(crate::app::ringlistsequence::RingListSequence_GodPageData)::core::convert::Into::into(a),(crate::app::ringlistsequence::RingListSequence_GodPageData)::core::convert::Into::into(b))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_PageDataList_GodComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e2e0usize)as*mut u8,();
+(RingListSequence_PageDataList_GodComparer)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_PageDataList_GodComparer>IRingListSequence_PageDataList_GodComparerMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList_GodComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList_GodComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_PageDataList_GodComparer), ::core::stringify!(new),));
+ <Self as IRingListSequence_PageDataList_GodComparerMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindow_RingInfoMethods:IRingListSequence_RingListWindow_RingInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,rank:impl::core::convert::Into<crate::app::ringdata::RingData_Ranks>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e2f0usize)as*mut u8,();
+(RingListSequence_RingListWindow_RingInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(crate::app::ringdata::RingData_Ranks)::core::convert::Into::into(rank))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e6a0usize)as*mut u8,();
+(RingListSequence_RingListWindow_RingInfo)__receiver)}
+}
+#[doc="`SetData(crate::app::ringdata::RingData)` overload"]fn set_data(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e7b0usize)as*mut u8,();
+(RingListSequence_RingListWindow_RingInfo)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow_RingInfo>IRingListSequence_RingListWindow_RingInfoMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::ringdata::RingData_Ranks)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject,rank:crate::app::ringdata::RingData_Ranks)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow_RingInfo), ::core::stringify!(new),));
+ <Self as IRingListSequence_RingListWindow_RingInfoMethods> ::ctor(this,root_object,rank);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindow_RingInfo_GainMethods:IRingListSequence_RingListWindow_RingInfo_Gain{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo_Gain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed95e0usize)as*mut u8,();
+(RingListSequence_RingListWindow_RingInfo_Gain)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`SetName(crate::app::capabilitydefinition::CapabilityDefinition_Type, bool)` overload"]fn set_name(self,capability_type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type> ,is_opend:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo_Gain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed96f0usize)as*mut u8,();
+(RingListSequence_RingListWindow_RingInfo_Gain)__receiver,(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(capability_type),(bool)::core::convert::Into::into(is_opend))}
+}
+#[doc="`SetParam(i32)` overload"]fn set_param(self,capability_enhance:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_RingInfo_Gain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9800usize)as*mut u8,();
+(RingListSequence_RingListWindow_RingInfo_Gain)__receiver,(i32)::core::convert::Into::into(capability_enhance))}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow_RingInfo_Gain>IRingListSequence_RingListWindow_RingInfo_GainMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo_Gain{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_RingInfo_Gain{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow_RingInfo_Gain), ::core::stringify!(new),));
+ <Self as IRingListSequence_RingListWindow_RingInfo_GainMethods> ::ctor(this,root_object);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_PageDataMethods:IRingListSequence_PageData{#[doc="`get_PageIndex()` overload"]fn get_page_index(self,)->i32{unsafe{let __receiver= <RingListSequence_PageData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ed0usize)as*mut u8,i32;
+(RingListSequence_PageData)__receiver)}
+}
+#[doc="`set_PageIndex(i32)` overload"]fn set_page_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSequence_PageData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ee0usize)as*mut u8,();
+(RingListSequence_PageData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_PageData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ec0usize)as*mut u8,();
+(RingListSequence_PageData)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_PageData>IRingListSequence_PageDataMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageData{pub fn get_page_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_page_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_PageData), ::core::stringify!(new),));
+ <Self as IRingListSequence_PageDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuContent{#[doc="`CreateContent()` overload"]pub fn create_content()->crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d070usize)as*mut u8,crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent;
+)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindow_MenuContentMethods:IRingListSequence_GodAndRingListWindow_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d490usize)as*mut u8,i32;
+(RingListSequence_GodAndRingListWindow_MenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4a0usize)as*mut u8,();
+(RingListSequence_GodAndRingListWindow_MenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow_MenuContent>IRingListSequence_GodAndRingListWindow_MenuContentMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuContent), ::core::stringify!(new),));
+ <Self as IRingListSequence_GodAndRingListWindow_MenuContentMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_CharaInfoWindowMethods:IRingListSequence_CharaInfoWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_CharaInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b16410usize)as*mut u8,();
 (RingListSequence_CharaInfoWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
@@ -813,113 +667,241 @@ pub fn set_page_data_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuContent{#[doc="`CreateContent()` overload"]pub fn create_content()->crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d070usize)as*mut u8,crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent;
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindowMethods:IRingListSequence_RingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18b60usize)as*mut u8,();
+(RingListSequence_RingListWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18fb0usize)as*mut u8,();
+(RingListSequence_RingListWindow)__receiver)}
+}
+#[doc="`SetData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]fn set_data(self,ring_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19050usize)as*mut u8,();
+(RingListSequence_RingListWindow)__receiver,(crate::app::ringlistsequence::RingListSequence_RingPageData)::core::convert::Into::into(ring_page_data))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18fa0usize)as*mut u8,();
+(RingListSequence_RingListWindow)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19110usize)as*mut u8,();
+(RingListSequence_RingListWindow)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow>IRingListSequence_RingListWindowMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow), ::core::stringify!(new),));
+ <Self as IRingListSequence_RingListWindowMethods> ::ctor(this,root_object);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_PageDataListMethods:IRingListSequence_PageDataList{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <RingListSequence_PageDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b17ef0usize)as*mut u8,();
+(RingListSequence_PageDataList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_PageDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b188a0usize)as*mut u8,();
+(RingListSequence_PageDataList)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_PageDataList>IRingListSequence_PageDataListMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_PageDataList), ::core::stringify!(new),));
+ <Self as IRingListSequence_PageDataListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence{#[doc="`GetGodUnit(crate::app::goddata::GodData)` overload"]pub fn get_god_unit(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242c970usize)as*mut u8,crate::app::godunit::GodUnit;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`IsGotGod(crate::app::goddata::GodData)` overload"]pub fn is_got_god(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242c980usize)as*mut u8,bool;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`IsGotRing(crate::app::ringdata::RingData)` overload"]pub fn is_got_ring(ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242ca70usize)as*mut u8,bool;
+(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+#[doc="`IsGodAndRingRelated(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]pub fn is_god_and_ring_related(god_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData> ,ring_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242ca80usize)as*mut u8,bool;
+(crate::app::ringlistsequence::RingListSequence_GodPageData)::core::convert::Into::into(god_page_data),(crate::app::ringlistsequence::RingListSequence_RingPageData)::core::convert::Into::into(ring_page_data))}
+}
+#[doc="`GetGodName(crate::app::goddata::GodData)` overload"]pub fn get_god_name(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242cab0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`GetGodName(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]pub fn get_god_name_2(page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242cb10usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
+}
+#[doc="`GetWorldTextMid(crate::app::goddata::GodData)` overload"]pub fn get_world_text_mid(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242cc60usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242f910usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`IsOpenEnable()` overload"]pub fn is_open_enable()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242fa50usize)as*mut u8,bool;
 )}
 }
 }
 
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindow_MenuContentMethods:IRingListSequence_GodAndRingListWindow_MenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d490usize)as*mut u8,i32;
-(RingListSequence_GodAndRingListWindow_MenuContent)__receiver)}
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequenceMethods:IRingListSequence{#[doc="`CompareGodName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn compare_god_name(self,god_name1:impl::core::convert::Into< ::unity2::Il2CppString> ,god_name2:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242cc50usize)as*mut u8,bool;
+(RingListSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(god_name1),(::unity2::Il2CppString)::core::convert::Into::into(god_name2))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4a0usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow_MenuContent)__receiver)}
+#[doc="`Load()` overload"]fn load(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242ccf0usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242ce70usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`WaitLoading()` overload"]fn wait_loading(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242d030usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242d180usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`SetPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn set_page_data(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242d770usize)as*mut u8,();
+(RingListSequence)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242de80usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`WaitOpening()` overload"]fn wait_opening(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242e060usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242e120usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242ee90usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`WaitClosing()` overload"]fn wait_closing(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242f010usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242f0d0usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242f170usize)as*mut u8,();
+(RingListSequence)__receiver)}
+}
+#[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242f250usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(RingListSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242f990usize)as*mut u8,();
+(RingListSequence)__receiver)}
 }
 }
 
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow_MenuContent>IRingListSequence_GodAndRingListWindow_MenuContentMethods for __T{}
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence>IRingListSequenceMethods for __T{}
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence{pub fn get_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_got_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_got_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_god_and_ring_related_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_god_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn compare_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_world_text_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn wait_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_page_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn wait_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn wait_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_open_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
 }
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuContent), ::core::stringify!(new),));
- <Self as IRingListSequence_GodAndRingListWindow_MenuContentMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RingListSequence), ::core::stringify!(new),));
+ <Self as IRingListSequenceMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_GodAndRingListWindow_MenuItemMethods:IRingListSequence_GodAndRingListWindow_MenuItem{#[doc="`get_PageData()` overload"]fn get_page_data(self,)->crate::app::ringlistsequence::RingListSequence_PageData{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4b0usize)as*mut u8,crate::app::ringlistsequence::RingListSequence_PageData;
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindow_SkillInfoMethods:IRingListSequence_RingListWindow_SkillInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_SkillInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec4c0usize)as*mut u8,();
+(RingListSequence_RingListWindow_SkillInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
 }
-#[doc="`set_PageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn set_page_data(self,value:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4c0usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(value))}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_SkillInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec660usize)as*mut u8,();
+(RingListSequence_RingListWindow_SkillInfo)__receiver)}
 }
-#[doc="`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn ctor(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d4d0usize)as*mut u8,();
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d510usize)as*mut u8, ::unity2::Il2CppString;
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d840usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
-}
-#[doc="`IsGod()` overload"]fn is_god(self,)->bool{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d720usize)as*mut u8,bool;
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
-}
-#[doc="`IsRing()` overload"]fn is_ring(self,)->bool{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d7b0usize)as*mut u8,bool;
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7d850usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSequence_GodAndRingListWindow_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7da10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RingListSequence_GodAndRingListWindow_MenuItem)__receiver)}
+#[doc="`SetData(crate::app::ringdata::RingData)` overload"]fn set_data(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow_SkillInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec6e0usize)as*mut u8,();
+(RingListSequence_RingListWindow_SkillInfo)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
 }
 }
 
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_GodAndRingListWindow_MenuItem>IRingListSequence_GodAndRingListWindow_MenuItemMethods for __T{}
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow_SkillInfo>IRingListSequence_RingListWindow_SkillInfoMethods for __T{}
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItem{pub fn get_page_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_page_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_SkillInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_GodAndRingListWindow_MenuItem{#[doc="`.ctor(crate::app::ringlistsequence::RingListSequence_PageData)` — overload selector"]pub fn new(page_data:crate::app::ringlistsequence::RingListSequence_PageData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow_SkillInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItem), ::core::stringify!(new),));
- <Self as IRingListSequence_GodAndRingListWindow_MenuItemMethods> ::ctor(this,page_data);
+ failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow_SkillInfo), ::core::stringify!(new),));
+ <Self as IRingListSequence_RingListWindow_SkillInfoMethods> ::ctor(this,root_object);
 this}
 }
 
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_PageDataList_GodComparerMethods:IRingListSequence_PageDataList_GodComparer{#[doc="`Compare(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData> ,b:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_GodPageData>)->i32{unsafe{let __receiver= <RingListSequence_PageDataList_GodComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e2c0usize)as*mut u8,i32;
-(RingListSequence_PageDataList_GodComparer)__receiver,(crate::app::ringlistsequence::RingListSequence_GodPageData)::core::convert::Into::into(a),(crate::app::ringlistsequence::RingListSequence_GodPageData)::core::convert::Into::into(b))}
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RelatedGroupWindowMethods:IRingListSequence_RelatedGroupWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RelatedGroupWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18920usize)as*mut u8,();
+(RingListSequence_RelatedGroupWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSequence_PageDataList_GodComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7e2e0usize)as*mut u8,();
-(RingListSequence_PageDataList_GodComparer)__receiver)}
+#[doc="`SetText(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn set_text(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_RelatedGroupWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18a00usize)as*mut u8,();
+(RingListSequence_RelatedGroupWindow)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
 }
-}
-
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_PageDataList_GodComparer>IRingListSequence_PageDataList_GodComparerMethods for __T{}
-
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList_GodComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_PageDataList_GodComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RelatedGroupWindow>IRingListSequence_RelatedGroupWindowMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RelatedGroupWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RelatedGroupWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSequence_PageDataList_GodComparer), ::core::stringify!(new),));
- <Self as IRingListSequence_PageDataList_GodComparerMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RingListSequence_RelatedGroupWindow), ::core::stringify!(new),));
+ <Self as IRingListSequence_RelatedGroupWindowMethods> ::ctor(this,root_object);
 this}
 }
 
@@ -1057,113 +1039,131 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_RingListWindowMethods:IRingListSequence_RingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18b60usize)as*mut u8,();
-(RingListSequence_RingListWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_CharaImageControllerMethods:IRingListSequence_CharaImageController{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_CharaImageController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b15f40usize)as*mut u8,();
+(RingListSequence_CharaImageController)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
 }
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18fb0usize)as*mut u8,();
-(RingListSequence_RingListWindow)__receiver)}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <RingListSequence_CharaImageController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b16120usize)as*mut u8,();
+(RingListSequence_CharaImageController)__receiver)}
 }
-#[doc="`SetData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]fn set_data(self,ring_page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_RingPageData>)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19050usize)as*mut u8,();
-(RingListSequence_RingListWindow)__receiver,(crate::app::ringlistsequence::RingListSequence_RingPageData)::core::convert::Into::into(ring_page_data))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b18fa0usize)as*mut u8,();
-(RingListSequence_RingListWindow)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <RingListSequence_RingListWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19110usize)as*mut u8,();
-(RingListSequence_RingListWindow)__receiver)}
+#[doc="`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]fn change_image(self,page_data:impl::core::convert::Into<crate::app::ringlistsequence::RingListSequence_PageData>)->(){unsafe{let __receiver= <RingListSequence_CharaImageController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b16200usize)as*mut u8,();
+(RingListSequence_CharaImageController)__receiver,(crate::app::ringlistsequence::RingListSequence_PageData)::core::convert::Into::into(page_data))}
 }
 }
 
-#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_RingListWindow>IRingListSequence_RingListWindowMethods for __T{}
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_CharaImageController>IRingListSequence_CharaImageControllerMethods for __T{}
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaImageController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn change_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-ringlistsequence")]impl RingListSequence_RingListWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaImageController{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSequence_RingListWindow), ::core::stringify!(new),));
- <Self as IRingListSequence_RingListWindowMethods> ::ctor(this,root_object);
+ failed to instantiate", ::core::stringify!(RingListSequence_CharaImageController), ::core::stringify!(new),));
+ <Self as IRingListSequence_CharaImageControllerMethods> ::ctor(this,root_object);
+this}
+}
+
+#[cfg(feature="app-ringlistsequence")]pub trait IRingListSequence_CharaArrowGroupMethods:IRingListSequence_CharaArrowGroup{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSequence_CharaArrowGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b152d0usize)as*mut u8,();
+(RingListSequence_CharaArrowGroup)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`ShowAll()` overload"]fn show_all(self,)->(){unsafe{let __receiver= <RingListSequence_CharaArrowGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b15430usize)as*mut u8,();
+(RingListSequence_CharaArrowGroup)__receiver)}
+}
+#[doc="`HideAll()` overload"]fn hide_all(self,)->(){unsafe{let __receiver= <RingListSequence_CharaArrowGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b15470usize)as*mut u8,();
+(RingListSequence_CharaArrowGroup)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl<__T:IRingListSequence_CharaArrowGroup>IRingListSequence_CharaArrowGroupMethods for __T{}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaArrowGroup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringlistsequence")]impl RingListSequence_CharaArrowGroup{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSequence_CharaArrowGroup), ::core::stringify!(new),));
+ <Self as IRingListSequence_CharaArrowGroupMethods> ::ctor(this,root_object);
 this}
 }
 
 #[cfg(feature = "app-ringlistsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RingListSequence_GodAndRingListWindow_MenuItem;
+    pub use super::IRingListSequence_GodAndRingListWindow_MenuItem;
+    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemMethods;
+    pub use super::RingListSequence_GodAndRingListWindow;
+    pub use super::IRingListSequence_GodAndRingListWindow;
+    pub use super::IRingListSequence_GodAndRingListWindowMethods;
+    pub use super::RingListSequence_CharaNavigation;
+    pub use super::IRingListSequence_CharaNavigation;
+    pub use super::IRingListSequence_CharaNavigationMethods;
+    pub use super::RingListSequence_GodAndRingListWindow_Menu;
+    pub use super::IRingListSequence_GodAndRingListWindow_Menu;
+    pub use super::IRingListSequence_GodAndRingListWindow_MenuMethods;
+    pub use super::RingListSequence_CharaImage;
+    pub use super::IRingListSequence_CharaImage;
+    pub use super::IRingListSequence_CharaImageMethods;
+    pub use super::RingListSequence_CharaInfoWindow_CharaDescriptionText;
+    pub use super::RingListSequence_GodPageData;
+    pub use super::IRingListSequence_GodPageData;
+    pub use super::IRingListSequence_GodPageDataMethods;
+    pub use super::RingListSequence_GodAndRingListWindow_MenuItemContent;
+    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemContent;
+    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemContentMethods;
+    pub use super::RingListSequence_RingListWindow_RingInfoRank;
+    pub use super::RingListSequence_PageDataList_GodComparer;
+    pub use super::IRingListSequence_PageDataList_GodComparer;
+    pub use super::IRingListSequence_PageDataList_GodComparerMethods;
+    pub use super::RingListSequence_RingListWindow_RingInfo;
+    pub use super::IRingListSequence_RingListWindow_RingInfo;
+    pub use super::IRingListSequence_RingListWindow_RingInfoMethods;
+    pub use super::RingListSequence_RingListWindow_RingInfo_Gain;
+    pub use super::IRingListSequence_RingListWindow_RingInfo_Gain;
+    pub use super::IRingListSequence_RingListWindow_RingInfo_GainMethods;
+    pub use super::RingListSequence_PageData;
+    pub use super::IRingListSequence_PageData;
+    pub use super::IRingListSequence_PageDataMethods;
+    pub use super::RingListSequence_GodAndRingListWindow_MenuContent;
+    pub use super::IRingListSequence_GodAndRingListWindow_MenuContent;
+    pub use super::IRingListSequence_GodAndRingListWindow_MenuContentMethods;
+    pub use super::RingListSequence_CharaInfoWindow;
+    pub use super::IRingListSequence_CharaInfoWindow;
+    pub use super::IRingListSequence_CharaInfoWindowMethods;
+    pub use super::RingListSequence_RingListWindow;
+    pub use super::IRingListSequence_RingListWindow;
+    pub use super::IRingListSequence_RingListWindowMethods;
+    pub use super::RingListSequence_PageDataList;
+    pub use super::IRingListSequence_PageDataList;
+    pub use super::IRingListSequence_PageDataListMethods;
+    pub use super::RingListSequence;
+    pub use super::IRingListSequence;
+    pub use super::IRingListSequenceMethods;
+    pub use super::RingListSequence_RingListWindow_SkillInfo;
+    pub use super::IRingListSequence_RingListWindow_SkillInfo;
+    pub use super::IRingListSequence_RingListWindow_SkillInfoMethods;
+    pub use super::RingListSequence_RelatedGroupWindow;
+    pub use super::IRingListSequence_RelatedGroupWindow;
+    pub use super::IRingListSequence_RelatedGroupWindowMethods;
+    pub use super::RingListSequence_RingPageData;
+    pub use super::IRingListSequence_RingPageData;
+    pub use super::IRingListSequence_RingPageDataMethods;
     pub use super::RingListSequence_Label;
     pub use super::RingListSequence_CharaImageController;
     pub use super::IRingListSequence_CharaImageController;
     pub use super::IRingListSequence_CharaImageControllerMethods;
-    pub use super::RingListSequence_PageData;
-    pub use super::IRingListSequence_PageData;
-    pub use super::IRingListSequence_PageDataMethods;
-    pub use super::RingListSequence_GodAndRingListWindow_MenuItemContent;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemContent;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemContentMethods;
-    pub use super::RingListSequence_GodAndRingListWindow_Menu;
-    pub use super::IRingListSequence_GodAndRingListWindow_Menu;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuMethods;
-    pub use super::RingListSequence_RingListWindow_SkillInfo;
-    pub use super::IRingListSequence_RingListWindow_SkillInfo;
-    pub use super::IRingListSequence_RingListWindow_SkillInfoMethods;
     pub use super::RingListSequence_CharaArrowGroup;
     pub use super::IRingListSequence_CharaArrowGroup;
     pub use super::IRingListSequence_CharaArrowGroupMethods;
-    pub use super::RingListSequence_PageDataList;
-    pub use super::IRingListSequence_PageDataList;
-    pub use super::IRingListSequence_PageDataListMethods;
-    pub use super::RingListSequence_RingListWindow_RingInfoRank;
-    pub use super::RingListSequence_GodAndRingListWindow;
-    pub use super::IRingListSequence_GodAndRingListWindow;
-    pub use super::IRingListSequence_GodAndRingListWindowMethods;
-    pub use super::RingListSequence_RingListWindow_RingInfo;
-    pub use super::IRingListSequence_RingListWindow_RingInfo;
-    pub use super::IRingListSequence_RingListWindow_RingInfoMethods;
-    pub use super::RingListSequence_CharaNavigation;
-    pub use super::IRingListSequence_CharaNavigation;
-    pub use super::IRingListSequence_CharaNavigationMethods;
-    pub use super::RingListSequence_RingListWindow_RingInfo_Gain;
-    pub use super::IRingListSequence_RingListWindow_RingInfo_Gain;
-    pub use super::IRingListSequence_RingListWindow_RingInfo_GainMethods;
-    pub use super::RingListSequence_RelatedGroupWindow;
-    pub use super::IRingListSequence_RelatedGroupWindow;
-    pub use super::IRingListSequence_RelatedGroupWindowMethods;
-    pub use super::RingListSequence;
-    pub use super::IRingListSequence;
-    pub use super::IRingListSequenceMethods;
-    pub use super::RingListSequence_CharaImage;
-    pub use super::IRingListSequence_CharaImage;
-    pub use super::IRingListSequence_CharaImageMethods;
-    pub use super::RingListSequence_GodPageData;
-    pub use super::IRingListSequence_GodPageData;
-    pub use super::IRingListSequence_GodPageDataMethods;
-    pub use super::RingListSequence_CharaInfoWindow_CharaDescriptionText;
-    pub use super::RingListSequence_CharaInfoWindow;
-    pub use super::IRingListSequence_CharaInfoWindow;
-    pub use super::IRingListSequence_CharaInfoWindowMethods;
-    pub use super::RingListSequence_GodAndRingListWindow_MenuContent;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuContent;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuContentMethods;
-    pub use super::RingListSequence_GodAndRingListWindow_MenuItem;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItem;
-    pub use super::IRingListSequence_GodAndRingListWindow_MenuItemMethods;
-    pub use super::RingListSequence_PageDataList_GodComparer;
-    pub use super::IRingListSequence_PageDataList_GodComparer;
-    pub use super::IRingListSequence_PageDataList_GodComparerMethods;
-    pub use super::RingListSequence_RingPageData;
-    pub use super::IRingListSequence_RingPageData;
-    pub use super::IRingListSequence_RingPageDataMethods;
-    pub use super::RingListSequence_RingListWindow;
-    pub use super::IRingListSequence_RingListWindow;
-    pub use super::IRingListSequence_RingListWindowMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

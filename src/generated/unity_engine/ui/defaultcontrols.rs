@@ -14,6 +14,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/defaultcontrols/DefaultControls.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="DefaultControls")]#[parent(crate::system::object::Object)]pub struct DefaultControls{#[static_field]#[rename(name="m_CurrentFactory")]pub m_current_factory:crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls, #[static_field]#[rename(name="kWidth")]pub k_width:f32, #[static_field]#[rename(name="kThickHeight")]pub k_thick_height:f32, #[static_field]#[rename(name="kThinHeight")]pub k_thin_height:f32, #[static_field]#[rename(name="s_ThickElementSize")]pub s_thick_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ThinElementSize")]pub s_thin_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ImageElementSize")]pub s_image_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_DefaultSelectableColor")]pub s_default_selectable_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="s_PanelColor")]pub s_panel_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="s_TextColor")]pub s_text_color:crate::unity_engine::color::Color,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="DefaultControls.DefaultRuntimeFactory")]#[parent(crate::system::object::Object)]pub struct DefaultControls_DefaultRuntimeFactory{#[static_field]#[rename(name="Default")]pub default:crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/defaultcontrols/DefaultControls_IFactoryControls.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="DefaultControls.IFactoryControls")]pub struct DefaultControls_IFactoryControls{}
 
 
@@ -26,9 +29,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for DefaultControls_Resources{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="DefaultControls.DefaultRuntimeFactory")]#[parent(crate::system::object::Object)]pub struct DefaultControls_DefaultRuntimeFactory{#[static_field]#[rename(name="Default")]pub default:crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls,}
 
 }
 
@@ -115,26 +115,6 @@ pub fn create_scroll_view_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
-#[cfg(feature="unity_engine-ui-defaultcontrols")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DefaultControls_IFactoryControls_unity2_raw{use super:: * ;
-pub unsafe fn create_game_object(this:DefaultControls_IFactoryControls,name: ::unity2::Il2CppString,components: ::unity2::Array< ::unity2::SystemType> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateGameObject").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CreateGameObject", <DefaultControls_IFactoryControls as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(DefaultControls_IFactoryControls, ::unity2::Il2CppString, ::unity2::Array< ::unity2::SystemType> , ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,components,__mi)}
-}
-
-#[cfg(feature="unity_engine-ui-defaultcontrols")]pub trait IDefaultControls_IFactoryControlsMethods:IDefaultControls_IFactoryControls{#[doc="`CreateGameObject(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]fn create_game_object(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,components:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> >)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <DefaultControls_IFactoryControls as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DefaultControls_IFactoryControls_unity2_raw::create_game_object(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(components), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="unity_engine-ui-defaultcontrols")]impl<__T:IDefaultControls_IFactoryControls>IDefaultControls_IFactoryControlsMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-defaultcontrols")]impl DefaultControls_IFactoryControls{pub fn create_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature="unity_engine-ui-defaultcontrols")]impl DefaultControls_DefaultRuntimeFactory{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c0bf30usize)as*mut u8,();
 )}
 }
@@ -164,18 +144,38 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="unity_engine-ui-defaultcontrols")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DefaultControls_IFactoryControls_unity2_raw{use super:: * ;
+pub unsafe fn create_game_object(this:DefaultControls_IFactoryControls,name: ::unity2::Il2CppString,components: ::unity2::Array< ::unity2::SystemType> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateGameObject").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CreateGameObject", <DefaultControls_IFactoryControls as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(DefaultControls_IFactoryControls, ::unity2::Il2CppString, ::unity2::Array< ::unity2::SystemType> , ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,components,__mi)}
+}
+
+#[cfg(feature="unity_engine-ui-defaultcontrols")]pub trait IDefaultControls_IFactoryControlsMethods:IDefaultControls_IFactoryControls{#[doc="`CreateGameObject(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]fn create_game_object(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,components:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> >)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <DefaultControls_IFactoryControls as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DefaultControls_IFactoryControls_unity2_raw::create_game_object(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(components), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-defaultcontrols")]impl<__T:IDefaultControls_IFactoryControls>IDefaultControls_IFactoryControlsMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-defaultcontrols")]impl DefaultControls_IFactoryControls{pub fn create_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-ui-defaultcontrols")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::DefaultControls;
     pub use super::IDefaultControls;
+    pub use super::DefaultControls_DefaultRuntimeFactory;
+    pub use super::IDefaultControls_DefaultRuntimeFactory;
+    pub use super::IDefaultControls_DefaultRuntimeFactoryMethods;
     pub use super::DefaultControls_IFactoryControls;
     pub use super::IDefaultControls_IFactoryControls;
     pub use super::IDefaultControls_IFactoryControlsMethods;
     pub use super::DefaultControls_Resources;
-    pub use super::DefaultControls_DefaultRuntimeFactory;
-    pub use super::IDefaultControls_DefaultRuntimeFactory;
-    pub use super::IDefaultControls_DefaultRuntimeFactoryMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

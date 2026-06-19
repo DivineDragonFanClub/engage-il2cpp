@@ -17,6 +17,27 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialsequence/TutorialSequence.md"))]#[::unity2::class(namespace="App",name="TutorialSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::tutorialsequence::TutorialSequence>)]pub struct TutorialSequence{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasPaths")]pub sprite_atlas_paths: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="CapCommonName")]pub cap_common_name: ::unity2::Il2CppString, #[static_field]#[rename(name="USCommonName")]pub us_common_name: ::unity2::Il2CppString, #[static_field]#[rename(name="EUCommonName")]pub eu_common_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_TutorialObject")]pub m_tutorial_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_MainSpriteAtlas")]pub m_main_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(136)]#[rename(name="m_SubSpriteAtlas")]pub m_sub_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(144)]#[rename(name="m_LocatorRoot")]pub m_locator_root:crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot, #[offset(152)]#[rename(name="m_TutorialData")]pub m_tutorial_data:crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData> , #[offset(160)]#[rename(name="m_TutorialID")]pub m_tutorial_id: ::unity2::Il2CppString, #[static_field]#[rename(name="FirstPage")]pub first_page:i32, #[offset(168)]#[rename(name="m_Page")]pub m_page:i32, #[offset(172)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(176)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(184)]#[rename(name="m_MainHandle")]pub m_main_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[offset(192)]#[rename(name="m_SubHandle")]pub m_sub_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[static_field]#[rename(name="ClassChangeKey")]pub class_change_key: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialsequence/TutorialSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for TutorialSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TutorialSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TutorialSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TutorialSequence_Label{pub fn load()->Self{Self{value:0}
+}
+pub fn unload()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialsequence/TutorialSequence_LanguageType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialSequence_LanguageType{pub value:i32,}
 impl::unity2::ClassIdentity for TutorialSequence_LanguageType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="TutorialSequence.LanguageType";
@@ -45,27 +66,6 @@ pub fn simplified()->Self{Self{value:7}
 pub fn korean()->Self{Self{value:8}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialsequence/TutorialSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for TutorialSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="TutorialSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TutorialSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TutorialSequence_Label{pub fn load()->Self{Self{value:0}
-}
-pub fn unload()->Self{Self{value:1}
-}
-pub fn end()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tutorialsequence/TutorialSequence.md"))]#[::unity2::class(namespace="App",name="TutorialSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::tutorialsequence::TutorialSequence>)]pub struct TutorialSequence{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasPaths")]pub sprite_atlas_paths: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="CapCommonName")]pub cap_common_name: ::unity2::Il2CppString, #[static_field]#[rename(name="USCommonName")]pub us_common_name: ::unity2::Il2CppString, #[static_field]#[rename(name="EUCommonName")]pub eu_common_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_TutorialObject")]pub m_tutorial_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_MainSpriteAtlas")]pub m_main_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(136)]#[rename(name="m_SubSpriteAtlas")]pub m_sub_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(144)]#[rename(name="m_LocatorRoot")]pub m_locator_root:crate::root::wdwtutoriallocatorroot::WdwTutorialLocatorRoot, #[offset(152)]#[rename(name="m_TutorialData")]pub m_tutorial_data:crate::system::collections::generic::list_1::List_1<crate::app::tutorialdata::TutorialData> , #[offset(160)]#[rename(name="m_TutorialID")]pub m_tutorial_id: ::unity2::Il2CppString, #[static_field]#[rename(name="FirstPage")]pub first_page:i32, #[offset(168)]#[rename(name="m_Page")]pub m_page:i32, #[offset(172)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(176)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(184)]#[rename(name="m_MainHandle")]pub m_main_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[offset(192)]#[rename(name="m_SubHandle")]pub m_sub_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[static_field]#[rename(name="ClassChangeKey")]pub class_change_key: ::unity2::Il2CppString,}
 
 }
 
@@ -193,11 +193,11 @@ this}
 #[cfg(feature = "app-tutorialsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TutorialSequence_LanguageType;
-    pub use super::TutorialSequence_Label;
     pub use super::TutorialSequence;
     pub use super::ITutorialSequence;
     pub use super::ITutorialSequenceMethods;
+    pub use super::TutorialSequence_Label;
+    pub use super::TutorialSequence_LanguageType;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

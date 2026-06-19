@@ -21,7 +21,7 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))]#[::unity2::class(namespace="App",name="GmapLineRenderer.LinePoint")]#[parent(crate::system::object::Object)]pub struct GmapLineRenderer_LinePoint{#[offset(16)]#[rename(name="vtxOffsets")]pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(24)]#[rename(name="uv_table")]pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2> , #[offset(32)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmaplinerenderer/GmapLineRenderer.md"))]#[::unity2::class(namespace="App",name="GmapLineRenderer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapLineRenderer{#[offset(24)]#[rename(name="m_DrawType")]pub m_draw_type:crate::app::gmaplinerenderer::GmapLineRenderer_DrawType, #[offset(32)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(40)]#[rename(name="m_Step")]pub m_step:f32, #[offset(44)]#[rename(name="m_Size")]pub m_size:f32, #[offset(48)]#[rename(name="m_AppearSpeed")]pub m_appear_speed:f32, #[offset(56)]#[rename(name="m_MeshRenderer")]pub m_mesh_renderer:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(64)]#[rename(name="m_LinePoints")]pub m_line_points:crate::system::collections::generic::list_1::List_1<crate::app::gmaplinerenderer::GmapLineRenderer_LinePoint> , #[offset(80)]#[rename(name="m_IsAppearing")]pub m_is_appearing:bool, #[offset(84)]#[rename(name="m_PathLength")]pub m_path_length:f32, #[offset(88)]#[rename(name="m_AppeardPathLength")]pub m_appeard_path_length:f32, #[offset(96)]#[rename(name="m_LineRenderer")]pub m_line_renderer:crate::unity_engine::linerenderer::LineRenderer, #[offset(104)]#[rename(name="m_LineStep")]pub m_line_step:f32, #[offset(112)]#[rename(name="m_LinePositionList")]pub m_line_position_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> , #[offset(120)]#[rename(name="m_LineAppearCountOld")]pub m_line_appear_count_old:i32, #[offset(124)]#[rename(name="m_LineAppearCount")]pub m_line_appear_count:i32, #[offset(128)]#[rename(name="m_LineAppearSpeed")]pub m_line_appear_speed:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmaplinerenderer/GmapLineRenderer_DrawType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapLineRenderer_DrawType{pub value:i32,}
@@ -38,92 +38,12 @@ impl GmapLineRenderer_DrawType{pub fn 線()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmaplinerenderer/GmapLineRenderer.md"))]#[::unity2::class(namespace="App",name="GmapLineRenderer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapLineRenderer{#[offset(24)]#[rename(name="m_DrawType")]pub m_draw_type:crate::app::gmaplinerenderer::GmapLineRenderer_DrawType, #[offset(32)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(40)]#[rename(name="m_Step")]pub m_step:f32, #[offset(44)]#[rename(name="m_Size")]pub m_size:f32, #[offset(48)]#[rename(name="m_AppearSpeed")]pub m_appear_speed:f32, #[offset(56)]#[rename(name="m_MeshRenderer")]pub m_mesh_renderer:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(64)]#[rename(name="m_LinePoints")]pub m_line_points:crate::system::collections::generic::list_1::List_1<crate::app::gmaplinerenderer::GmapLineRenderer_LinePoint> , #[offset(80)]#[rename(name="m_IsAppearing")]pub m_is_appearing:bool, #[offset(84)]#[rename(name="m_PathLength")]pub m_path_length:f32, #[offset(88)]#[rename(name="m_AppeardPathLength")]pub m_appeard_path_length:f32, #[offset(96)]#[rename(name="m_LineRenderer")]pub m_line_renderer:crate::unity_engine::linerenderer::LineRenderer, #[offset(104)]#[rename(name="m_LineStep")]pub m_line_step:f32, #[offset(112)]#[rename(name="m_LinePositionList")]pub m_line_position_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> , #[offset(120)]#[rename(name="m_LineAppearCountOld")]pub m_line_appear_count_old:i32, #[offset(124)]#[rename(name="m_LineAppearCount")]pub m_line_appear_count:i32, #[offset(128)]#[rename(name="m_LineAppearSpeed")]pub m_line_appear_speed:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md"))]#[::unity2::class(namespace="App",name="GmapLineRenderer.LinePoint")]#[parent(crate::system::object::Object)]pub struct GmapLineRenderer_LinePoint{#[offset(16)]#[rename(name="vtxOffsets")]pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(24)]#[rename(name="uv_table")]pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2> , #[offset(32)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-gmaplinerenderer-types")]
 pub use __types::*;
-
-#[cfg(feature="app-gmaplinerenderer")]pub trait IGmapLineRenderer_LinePointMethods:IGmapLineRenderer_LinePoint{#[doc="`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71610usize)as*mut u8,();
-(GmapLineRenderer_LinePoint)__receiver,(i32)::core::convert::Into::into(index),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
-}
-#[doc="`get_index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717a0usize)as*mut u8,i32;
-(GmapLineRenderer_LinePoint)__receiver)}
-}
-#[doc="`get_position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717b0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(GmapLineRenderer_LinePoint)__receiver)}
-}
-#[doc="`get_color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717c0usize)as*mut u8,crate::unity_engine::color::Color;
-(GmapLineRenderer_LinePoint)__receiver)}
-}
-#[doc="`set_color(crate::unity_engine::color::Color)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717d0usize)as*mut u8,();
-(GmapLineRenderer_LinePoint)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
-}
-#[doc="`get_alpha()` overload"]fn get_alpha(self,)->f32{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717f0usize)as*mut u8,f32;
-(GmapLineRenderer_LinePoint)__receiver)}
-}
-#[doc="`set_alpha(f32)` overload"]fn set_alpha(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71800usize)as*mut u8,();
-(GmapLineRenderer_LinePoint)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_isApperd()` overload"]fn get_is_apperd(self,)->bool{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71810usize)as*mut u8,bool;
-(GmapLineRenderer_LinePoint)__receiver)}
-}
-#[doc="`set_isApperd(bool)` overload"]fn set_is_apperd(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71820usize)as*mut u8,();
-(GmapLineRenderer_LinePoint)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`Add(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, *mutcrate::system::collections::generic::list_1::List_1<i32>, f32, f32)` overload"]fn add(self,size:impl::core::convert::Into<f32> ,rotate:impl::core::convert::Into<f32>)->(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> ,crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> ,crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2> ,crate::system::collections::generic::list_1::List_1<i32>){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> > ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> > ::uninit();
-let mut __out_2= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2> > ::uninit();
-let mut __out_3= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<i32> > ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71830usize)as*mut u8,();
-(GmapLineRenderer_LinePoint)__receiver,(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)__out_0.as_mut_ptr(),(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)__out_1.as_mut_ptr(),(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>)__out_2.as_mut_ptr(),(*mut crate::system::collections::generic::list_1::List_1<i32>)__out_3.as_mut_ptr(),(f32)::core::convert::Into::into(size),(f32)::core::convert::Into::into(rotate));
-(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
-}
-#[doc="`UpdateColor(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]fn update_color(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> > ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71cb0usize)as*mut u8,();
-(GmapLineRenderer_LinePoint)__receiver,(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71d70usize)as*mut u8,();
-(GmapLineRenderer_LinePoint)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmaplinerenderer")]impl<__T:IGmapLineRenderer_LinePoint>IGmapLineRenderer_LinePointMethods for __T{}
-
-#[cfg(feature="app-gmaplinerenderer")]impl GmapLineRenderer_LinePoint{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_is_apperd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_is_apperd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn update_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-}
-
-#[cfg(feature="app-gmaplinerenderer")]impl GmapLineRenderer_LinePoint{#[doc="`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"]pub fn new(index:i32,pos:crate::unity_engine::vector3::Vector3,color:crate::unity_engine::color::Color)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapLineRenderer_LinePoint), ::core::stringify!(new),));
- <Self as IGmapLineRenderer_LinePointMethods> ::ctor(this,index,pos,color);
-this}
-}
 
 #[cfg(feature="app-gmaplinerenderer")]pub trait IGmapLineRendererMethods:IGmapLineRenderer{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <GmapLineRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2528c30usize)as*mut u8,();
@@ -216,16 +136,96 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-gmaplinerenderer")]pub trait IGmapLineRenderer_LinePointMethods:IGmapLineRenderer_LinePoint{#[doc="`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71610usize)as*mut u8,();
+(GmapLineRenderer_LinePoint)__receiver,(i32)::core::convert::Into::into(index),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`get_index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717a0usize)as*mut u8,i32;
+(GmapLineRenderer_LinePoint)__receiver)}
+}
+#[doc="`get_position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717b0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapLineRenderer_LinePoint)__receiver)}
+}
+#[doc="`get_color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717c0usize)as*mut u8,crate::unity_engine::color::Color;
+(GmapLineRenderer_LinePoint)__receiver)}
+}
+#[doc="`set_color(crate::unity_engine::color::Color)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717d0usize)as*mut u8,();
+(GmapLineRenderer_LinePoint)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`get_alpha()` overload"]fn get_alpha(self,)->f32{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e717f0usize)as*mut u8,f32;
+(GmapLineRenderer_LinePoint)__receiver)}
+}
+#[doc="`set_alpha(f32)` overload"]fn set_alpha(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71800usize)as*mut u8,();
+(GmapLineRenderer_LinePoint)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_isApperd()` overload"]fn get_is_apperd(self,)->bool{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71810usize)as*mut u8,bool;
+(GmapLineRenderer_LinePoint)__receiver)}
+}
+#[doc="`set_isApperd(bool)` overload"]fn set_is_apperd(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71820usize)as*mut u8,();
+(GmapLineRenderer_LinePoint)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Add(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>, *mutcrate::system::collections::generic::list_1::List_1<i32>, f32, f32)` overload"]fn add(self,size:impl::core::convert::Into<f32> ,rotate:impl::core::convert::Into<f32>)->(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> ,crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> ,crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2> ,crate::system::collections::generic::list_1::List_1<i32>){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> > ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2> > ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<i32> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71830usize)as*mut u8,();
+(GmapLineRenderer_LinePoint)__receiver,(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>)__out_0.as_mut_ptr(),(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)__out_1.as_mut_ptr(),(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>)__out_2.as_mut_ptr(),(*mut crate::system::collections::generic::list_1::List_1<i32>)__out_3.as_mut_ptr(),(f32)::core::convert::Into::into(size),(f32)::core::convert::Into::into(rotate));
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+#[doc="`UpdateColor(*mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)` overload"]fn update_color(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>{unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71cb0usize)as*mut u8,();
+(GmapLineRenderer_LinePoint)__receiver,(*mut crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <GmapLineRenderer_LinePoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e71d70usize)as*mut u8,();
+(GmapLineRenderer_LinePoint)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmaplinerenderer")]impl<__T:IGmapLineRenderer_LinePoint>IGmapLineRenderer_LinePointMethods for __T{}
+
+#[cfg(feature="app-gmaplinerenderer")]impl GmapLineRenderer_LinePoint{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_apperd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_is_apperd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-gmaplinerenderer")]impl GmapLineRenderer_LinePoint{#[doc="`.ctor(i32, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"]pub fn new(index:i32,pos:crate::unity_engine::vector3::Vector3,color:crate::unity_engine::color::Color)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapLineRenderer_LinePoint), ::core::stringify!(new),));
+ <Self as IGmapLineRenderer_LinePointMethods> ::ctor(this,index,pos,color);
+this}
+}
+
 #[cfg(feature = "app-gmaplinerenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapLineRenderer_LinePoint;
-    pub use super::IGmapLineRenderer_LinePoint;
-    pub use super::IGmapLineRenderer_LinePointMethods;
-    pub use super::GmapLineRenderer_DrawType;
     pub use super::GmapLineRenderer;
     pub use super::IGmapLineRenderer;
     pub use super::IGmapLineRendererMethods;
+    pub use super::GmapLineRenderer_DrawType;
+    pub use super::GmapLineRenderer_LinePoint;
+    pub use super::IGmapLineRenderer_LinePoint;
+    pub use super::IGmapLineRenderer_LinePointMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

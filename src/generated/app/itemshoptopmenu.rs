@@ -26,15 +26,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu_SellMenuItem.md"))]#[::unity2::class(namespace="App",name="ItemShopTopMenu.SellMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ItemShopTopMenu_SellMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ItemShopTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ItemShopTopMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu.md"))]#[::unity2::class(namespace="App",name="ItemShopTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ItemShopTopMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu_BuyMenuItem.md"))]#[::unity2::class(namespace="App",name="ItemShopTopMenu.BuyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ItemShopTopMenu_BuyMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ItemShopTopMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for ItemShopTopMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ItemShopTopMenu.Result2";
@@ -51,6 +42,15 @@ pub fn sell()->Self{Self{value:1}
 pub fn end()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ItemShopTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ItemShopTopMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu.md"))]#[::unity2::class(namespace="App",name="ItemShopTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ItemShopTopMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshoptopmenu/ItemShopTopMenu_BuyMenuItem.md"))]#[::unity2::class(namespace="App",name="ItemShopTopMenu.BuyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ItemShopTopMenu_BuyMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::itemshoptopmenu::ItemShopTopMenu_DecideEventHandler,}
 
 }
 
@@ -186,6 +186,7 @@ pub mod prelude {
     pub use super::ItemShopTopMenu_SellMenuItem;
     pub use super::IItemShopTopMenu_SellMenuItem;
     pub use super::IItemShopTopMenu_SellMenuItemMethods;
+    pub use super::ItemShopTopMenu_Result2;
     pub use super::ItemShopTopMenu_DecideEventHandler;
     pub use super::IItemShopTopMenu_DecideEventHandler;
     pub use super::IItemShopTopMenu_DecideEventHandlerMethods;
@@ -195,7 +196,6 @@ pub mod prelude {
     pub use super::ItemShopTopMenu_BuyMenuItem;
     pub use super::IItemShopTopMenu_BuyMenuItem;
     pub use super::IItemShopTopMenu_BuyMenuItemMethods;
-    pub use super::ItemShopTopMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

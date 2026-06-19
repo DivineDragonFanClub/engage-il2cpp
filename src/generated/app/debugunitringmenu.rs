@@ -19,10 +19,13 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CommonRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingItemBase)]pub struct DebugUnitRingMenu_CommonRingItem{#[offset(40)]#[rename(name="m_Ring")]pub m_ring:crate::app::unitring::UnitRing,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_UnitRingMenu.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.UnitRingMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct DebugUnitRingMenu_UnitRingMenu{#[offset(224)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CommonRingLabelItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]pub struct DebugUnitRingMenu_CommonRingLabelItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_RingItemBase.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.RingItemBase")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]pub struct DebugUnitRingMenu_RingItemBase{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CurrentRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CurrentRingLabelItem")]#[parent(crate::app::labelitem::LabelItem)]pub struct DebugUnitRingMenu_CurrentRingLabelItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_UnitMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.UnitMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugUnitRingMenu_UnitMenuItem{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
@@ -31,19 +34,7 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_RingLabelItemBase.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.RingLabelItemBase")]#[parent(crate::app::labelitem::LabelItem)]pub struct DebugUnitRingMenu_RingLabelItemBase{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu")]#[parent(crate::system::object::Object)]pub struct DebugUnitRingMenu{#[static_field]#[rename(name="ColumnWidth0")]pub column_width0:f32, #[static_field]#[rename(name="ColumnWidth1")]pub column_width1:f32, #[static_field]#[rename(name="ColumnWidth2")]pub column_width2:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CurrentRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CurrentRingLabelItem")]#[parent(crate::app::labelitem::LabelItem)]pub struct DebugUnitRingMenu_CurrentRingLabelItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_RingItemBase.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.RingItemBase")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]pub struct DebugUnitRingMenu_RingItemBase{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_EmblemRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.EmblemRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingItemBase)]pub struct DebugUnitRingMenu_EmblemRingItem{#[offset(40)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_UnitRingMenu.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.UnitRingMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct DebugUnitRingMenu_UnitRingMenu{#[offset(224)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CommonRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingItemBase)]pub struct DebugUnitRingMenu_CommonRingItem{#[offset(40)]#[rename(name="m_Ring")]pub m_ring:crate::app::unitring::UnitRing,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_EmblemRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.EmblemRingLabelItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]pub struct DebugUnitRingMenu_EmblemRingLabelItem{}
@@ -51,79 +42,101 @@ use crate::system::object::{IObject,Object}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_ClearRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.ClearRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]pub struct DebugUnitRingMenu_ClearRingItem{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CommonRingLabelItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]pub struct DebugUnitRingMenu_CommonRingLabelItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_EmblemRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.EmblemRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingItemBase)]pub struct DebugUnitRingMenu_EmblemRingItem{#[offset(40)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu")]#[parent(crate::system::object::Object)]pub struct DebugUnitRingMenu{#[static_field]#[rename(name="ColumnWidth0")]pub column_width0:f32, #[static_field]#[rename(name="ColumnWidth1")]pub column_width1:f32, #[static_field]#[rename(name="ColumnWidth2")]pub column_width2:f32,}
+
 }
 
 #[cfg(feature = "app-debugunitringmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingItemMethods:IDebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe1d0usize)as*mut u8,();
-(DebugUnitRingMenu_CommonRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_UnitRingMenuMethods:IDebugUnitRingMenu_UnitRingMenu{#[doc="`Build(crate::app::unit::Unit)` overload"]fn build(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea90usize)as*mut u8,();
+(DebugUnitRingMenu_UnitRingMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
-#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe260usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_CommonRingItem)__receiver)}
+#[doc="`OnRebuild()` overload"]fn on_rebuild(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbf010usize)as*mut u8,();
+(DebugUnitRingMenu_UnitRingMenu)__receiver)}
 }
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe270usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_CommonRingItem)__receiver)}
-}
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe2a0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_CommonRingItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe310usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugUnitRingMenu_CommonRingItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbf020usize)as*mut u8,();
+(DebugUnitRingMenu_UnitRingMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingItem>IDebugUnitRingMenu_CommonRingItemMethods for __T{}
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_UnitRingMenu>IDebugUnitRingMenu_UnitRingMenuMethods for __T{}
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,ring:crate::app::unitring::UnitRing)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_CommonRingItemMethods> ::ctor(this,unit,ring);
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_UnitRingMenu), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_UnitRingMenuMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingLabelItemMethods:IDebugUnitRingMenu_CommonRingLabelItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe350usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_RingItemBaseMethods:IDebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe220usize)as*mut u8,();
+(DebugUnitRingMenu_RingItemBase)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe3a0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea10usize)as*mut u8,i32;
+(DebugUnitRingMenu_RingItemBase)__receiver)}
 }
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe3f0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea20usize)as*mut u8,f32;
+(DebugUnitRingMenu_RingItemBase)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe440usize)as*mut u8,();
-(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea30usize)as*mut u8,f32;
+(DebugUnitRingMenu_RingItemBase)__receiver)}
 }
+#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea40usize)as*mut u8,f32;
+(DebugUnitRingMenu_RingItemBase)__receiver)}
 }
-
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingLabelItem>IDebugUnitRingMenu_CommonRingLabelItemMethods for __T{}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_RingItemBase>IDebugUnitRingMenu_RingItemBaseMethods for __T{}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_column_width2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingLabelItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_CommonRingLabelItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_RingItemBase), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_RingItemBaseMethods> ::ctor(this,unit);
+this}
+}
+
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CurrentRingLabelItemMethods:IDebugUnitRingMenu_CurrentRingLabelItem{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_CurrentRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe520usize)as*mut u8,();
+(DebugUnitRingMenu_CurrentRingLabelItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CurrentRingLabelItem>IDebugUnitRingMenu_CurrentRingLabelItemMethods for __T{}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CurrentRingLabelItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CurrentRingLabelItem{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CurrentRingLabelItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_CurrentRingLabelItemMethods> ::ctor(this,unit);
 this}
 }
 
@@ -183,153 +196,41 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu{#[doc="`CanCreate(crate::app::unit::Unit)` overload"]pub fn can_create(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a114e0usize)as*mut u8,bool;
-(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingItemMethods:IDebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe1d0usize)as*mut u8,();
+(DebugUnitRingMenu_CommonRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
 }
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a11810usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe260usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_CommonRingItem)__receiver)}
 }
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe270usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_CommonRingItem)__receiver)}
 }
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenuMethods:IDebugUnitRingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a118a0usize)as*mut u8,();
-(DebugUnitRingMenu)__receiver)}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe2a0usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_CommonRingItem)__receiver)}
 }
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu>IDebugUnitRingMenuMethods for __T{}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu{pub fn can_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CurrentRingLabelItemMethods:IDebugUnitRingMenu_CurrentRingLabelItem{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_CurrentRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe520usize)as*mut u8,();
-(DebugUnitRingMenu_CurrentRingLabelItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe310usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(DebugUnitRingMenu_CommonRingItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CurrentRingLabelItem>IDebugUnitRingMenu_CurrentRingLabelItemMethods for __T{}
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingItem>IDebugUnitRingMenu_CommonRingItemMethods for __T{}
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CurrentRingLabelItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CurrentRingLabelItem{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CurrentRingLabelItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_CurrentRingLabelItemMethods> ::ctor(this,unit);
-this}
-}
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_RingItemBaseMethods:IDebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe220usize)as*mut u8,();
-(DebugUnitRingMenu_RingItemBase)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea10usize)as*mut u8,i32;
-(DebugUnitRingMenu_RingItemBase)__receiver)}
-}
-#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea20usize)as*mut u8,f32;
-(DebugUnitRingMenu_RingItemBase)__receiver)}
-}
-#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea30usize)as*mut u8,f32;
-(DebugUnitRingMenu_RingItemBase)__receiver)}
-}
-#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea40usize)as*mut u8,f32;
-(DebugUnitRingMenu_RingItemBase)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_RingItemBase>IDebugUnitRingMenu_RingItemBaseMethods for __T{}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_column_width2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_RingItemBase), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_RingItemBaseMethods> ::ctor(this,unit);
-this}
-}
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_EmblemRingItemMethods:IDebugUnitRingMenu_EmblemRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe680usize)as*mut u8,();
-(DebugUnitRingMenu_EmblemRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
-}
-#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe6d0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_EmblemRingItem)__receiver)}
-}
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe760usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_EmblemRingItem)__receiver)}
-}
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe7b0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugUnitRingMenu_EmblemRingItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe820usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugUnitRingMenu_EmblemRingItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_EmblemRingItem>IDebugUnitRingMenu_EmblemRingItemMethods for __T{}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,god_unit:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,ring:crate::app::unitring::UnitRing)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_EmblemRingItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_EmblemRingItemMethods> ::ctor(this,unit,god_unit);
-this}
-}
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_UnitRingMenuMethods:IDebugUnitRingMenu_UnitRingMenu{#[doc="`Build(crate::app::unit::Unit)` overload"]fn build(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea90usize)as*mut u8,();
-(DebugUnitRingMenu_UnitRingMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`OnRebuild()` overload"]fn on_rebuild(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbf010usize)as*mut u8,();
-(DebugUnitRingMenu_UnitRingMenu)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbf020usize)as*mut u8,();
-(DebugUnitRingMenu_UnitRingMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_UnitRingMenu>IDebugUnitRingMenu_UnitRingMenuMethods for __T{}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_UnitRingMenu), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_UnitRingMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_CommonRingItemMethods> ::ctor(this,unit,ring);
 this}
 }
 
@@ -394,42 +295,141 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingLabelItemMethods:IDebugUnitRingMenu_CommonRingLabelItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe350usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe3a0usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe3f0usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe440usize)as*mut u8,();
+(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingLabelItem>IDebugUnitRingMenu_CommonRingLabelItemMethods for __T{}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingLabelItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_CommonRingLabelItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_EmblemRingItemMethods:IDebugUnitRingMenu_EmblemRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe680usize)as*mut u8,();
+(DebugUnitRingMenu_EmblemRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe6d0usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_EmblemRingItem)__receiver)}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe760usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_EmblemRingItem)__receiver)}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe7b0usize)as*mut u8, ::unity2::Il2CppString;
+(DebugUnitRingMenu_EmblemRingItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe820usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(DebugUnitRingMenu_EmblemRingItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_EmblemRingItem>IDebugUnitRingMenu_EmblemRingItemMethods for __T{}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,god_unit:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_EmblemRingItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_EmblemRingItemMethods> ::ctor(this,unit,god_unit);
+this}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu{#[doc="`CanCreate(crate::app::unit::Unit)` overload"]pub fn can_create(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a114e0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a11810usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenuMethods:IDebugUnitRingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a118a0usize)as*mut u8,();
+(DebugUnitRingMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu>IDebugUnitRingMenuMethods for __T{}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu{pub fn can_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenuMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-debugunitringmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugUnitRingMenu_CommonRingItem;
-    pub use super::IDebugUnitRingMenu_CommonRingItem;
-    pub use super::IDebugUnitRingMenu_CommonRingItemMethods;
-    pub use super::DebugUnitRingMenu_CommonRingLabelItem;
-    pub use super::IDebugUnitRingMenu_CommonRingLabelItem;
-    pub use super::IDebugUnitRingMenu_CommonRingLabelItemMethods;
+    pub use super::DebugUnitRingMenu_UnitRingMenu;
+    pub use super::IDebugUnitRingMenu_UnitRingMenu;
+    pub use super::IDebugUnitRingMenu_UnitRingMenuMethods;
+    pub use super::DebugUnitRingMenu_RingItemBase;
+    pub use super::IDebugUnitRingMenu_RingItemBase;
+    pub use super::IDebugUnitRingMenu_RingItemBaseMethods;
+    pub use super::DebugUnitRingMenu_CurrentRingLabelItem;
+    pub use super::IDebugUnitRingMenu_CurrentRingLabelItem;
+    pub use super::IDebugUnitRingMenu_CurrentRingLabelItemMethods;
     pub use super::DebugUnitRingMenu_UnitMenuItem;
     pub use super::IDebugUnitRingMenu_UnitMenuItem;
     pub use super::IDebugUnitRingMenu_UnitMenuItemMethods;
     pub use super::DebugUnitRingMenu_RingLabelItemBase;
     pub use super::IDebugUnitRingMenu_RingLabelItemBase;
     pub use super::IDebugUnitRingMenu_RingLabelItemBaseMethods;
-    pub use super::DebugUnitRingMenu;
-    pub use super::IDebugUnitRingMenu;
-    pub use super::IDebugUnitRingMenuMethods;
-    pub use super::DebugUnitRingMenu_CurrentRingLabelItem;
-    pub use super::IDebugUnitRingMenu_CurrentRingLabelItem;
-    pub use super::IDebugUnitRingMenu_CurrentRingLabelItemMethods;
-    pub use super::DebugUnitRingMenu_RingItemBase;
-    pub use super::IDebugUnitRingMenu_RingItemBase;
-    pub use super::IDebugUnitRingMenu_RingItemBaseMethods;
-    pub use super::DebugUnitRingMenu_EmblemRingItem;
-    pub use super::IDebugUnitRingMenu_EmblemRingItem;
-    pub use super::IDebugUnitRingMenu_EmblemRingItemMethods;
-    pub use super::DebugUnitRingMenu_UnitRingMenu;
-    pub use super::IDebugUnitRingMenu_UnitRingMenu;
-    pub use super::IDebugUnitRingMenu_UnitRingMenuMethods;
+    pub use super::DebugUnitRingMenu_CommonRingItem;
+    pub use super::IDebugUnitRingMenu_CommonRingItem;
+    pub use super::IDebugUnitRingMenu_CommonRingItemMethods;
     pub use super::DebugUnitRingMenu_EmblemRingLabelItem;
     pub use super::IDebugUnitRingMenu_EmblemRingLabelItem;
     pub use super::IDebugUnitRingMenu_EmblemRingLabelItemMethods;
     pub use super::DebugUnitRingMenu_ClearRingItem;
     pub use super::IDebugUnitRingMenu_ClearRingItem;
     pub use super::IDebugUnitRingMenu_ClearRingItemMethods;
+    pub use super::DebugUnitRingMenu_CommonRingLabelItem;
+    pub use super::IDebugUnitRingMenu_CommonRingLabelItem;
+    pub use super::IDebugUnitRingMenu_CommonRingLabelItemMethods;
+    pub use super::DebugUnitRingMenu_EmblemRingItem;
+    pub use super::IDebugUnitRingMenu_EmblemRingItem;
+    pub use super::IDebugUnitRingMenu_EmblemRingItemMethods;
+    pub use super::DebugUnitRingMenu;
+    pub use super::IDebugUnitRingMenu;
+    pub use super::IDebugUnitRingMenuMethods;
     pub use crate::app::debugmenu::IDebugMenu;
     pub use crate::app::labelitem::ILabelItem;
     pub use crate::app::menuitem::IMenuItem;

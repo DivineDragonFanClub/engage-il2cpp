@@ -21,10 +21,10 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/eventtrigger/EventTrigger_TriggerEvent.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="EventTrigger.TriggerEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)]pub struct EventTrigger_TriggerEvent{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="EventTrigger.Entry")]#[parent(crate::system::object::Object)]pub struct EventTrigger_Entry{#[offset(16)]#[rename(name="eventID")]pub event_id:crate::unity_engine::event_systems::eventtriggertype::EventTriggerType, #[offset(24)]#[rename(name="callback")]pub callback:crate::unity_engine::event_systems::eventtrigger::EventTrigger_TriggerEvent,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/eventtrigger/EventTrigger_TriggerEvent.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="EventTrigger.TriggerEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)]pub struct EventTrigger_TriggerEvent{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/eventtrigger/EventTrigger.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="EventTrigger")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventTrigger{#[offset(24)]#[rename(name="m_Delegates")]pub m_delegates:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::eventtrigger::EventTrigger_Entry> ,}
@@ -33,24 +33,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 #[cfg(feature = "unity_engine-event_systems-eventtrigger-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-event_systems-eventtrigger")]pub trait IEventTrigger_TriggerEventMethods:IEventTrigger_TriggerEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventTrigger_TriggerEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c5f0usize)as*mut u8,();
-(EventTrigger_TriggerEvent)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl<__T:IEventTrigger_TriggerEvent>IEventTrigger_TriggerEventMethods for __T{}
-
-#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_TriggerEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_TriggerEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventTrigger_TriggerEvent), ::core::stringify!(new),));
- <Self as IEventTrigger_TriggerEventMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-event_systems-eventtrigger")]pub trait IEventTrigger_EntryMethods:IEventTrigger_Entry{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventTrigger_Entry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c540usize)as*mut u8,();
@@ -67,6 +49,24 @@ this}
 ::{}
  failed to instantiate", ::core::stringify!(EventTrigger_Entry), ::core::stringify!(new),));
  <Self as IEventTrigger_EntryMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]pub trait IEventTrigger_TriggerEventMethods:IEventTrigger_TriggerEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventTrigger_TriggerEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c5f0usize)as*mut u8,();
+(EventTrigger_TriggerEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl<__T:IEventTrigger_TriggerEvent>IEventTrigger_TriggerEventMethods for __T{}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_TriggerEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-event_systems-eventtrigger")]impl EventTrigger_TriggerEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventTrigger_TriggerEvent), ::core::stringify!(new),));
+ <Self as IEventTrigger_TriggerEventMethods> ::ctor(this,);
 this}
 }
 
@@ -201,12 +201,12 @@ this}
 #[cfg(feature = "unity_engine-event_systems-eventtrigger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventTrigger_TriggerEvent;
-    pub use super::IEventTrigger_TriggerEvent;
-    pub use super::IEventTrigger_TriggerEventMethods;
     pub use super::EventTrigger_Entry;
     pub use super::IEventTrigger_Entry;
     pub use super::IEventTrigger_EntryMethods;
+    pub use super::EventTrigger_TriggerEvent;
+    pub use super::IEventTrigger_TriggerEvent;
+    pub use super::IEventTrigger_TriggerEventMethods;
     pub use super::EventTrigger;
     pub use super::IEventTrigger;
     pub use super::IEventTriggerMethods;

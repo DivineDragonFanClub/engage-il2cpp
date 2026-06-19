@@ -25,31 +25,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_RelianceLevel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_RelianceLevel{pub value:i32,}
-impl::unity2::ClassIdentity for GodData_RelianceLevel{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GodData.RelianceLevel";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GodData_RelianceLevel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GodData_RelianceLevel{pub fn d()->Self{Self{value:0}
-}
-pub fn c()->Self{Self{value:1}
-}
-pub fn b()->Self{Self{value:2}
-}
-pub fn a()->Self{Self{value:3}
-}
-pub fn s()->Self{Self{value:4}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_FlagField.md"))]#[::unity2::class(namespace="App",name="GodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::goddata::GodData_Flags>)]pub struct GodData_FlagField{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_AIEngageAttackTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_AIEngageAttackTypes{pub value:i32,}
 impl::unity2::ClassIdentity for GodData_AIEngageAttackTypes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GodData.AIEngageAttackTypes";
@@ -82,7 +57,7 @@ pub fn summon()->Self{Self{value:9}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData.md"))]#[::unity2::class(namespace="App",name="GodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::goddata::GodData>)]pub struct GodData{#[offset(328)]#[rename(name="m_EngageHauntUnit")]pub m_engage_haunt_unit:crate::app::unit::Unit, #[static_field]#[rename(name="s_LinkDics")]pub s_link_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::goddata::GodData> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_FlagField.md"))]#[::unity2::class(namespace="App",name="GodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::goddata::GodData_Flags>)]pub struct GodData_FlagField{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_Flags{pub value:i32,}
@@ -107,6 +82,31 @@ pub fn only_engage_weapon()->Self{Self{value:16}
 pub fn armlet()->Self{Self{value:32}
 }
 pub fn hero()->Self{Self{value: -2147483648}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData.md"))]#[::unity2::class(namespace="App",name="GodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::goddata::GodData>)]pub struct GodData{#[offset(328)]#[rename(name="m_EngageHauntUnit")]pub m_engage_haunt_unit:crate::app::unit::Unit, #[static_field]#[rename(name="s_LinkDics")]pub s_link_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::goddata::GodData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_RelianceLevel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_RelianceLevel{pub value:i32,}
+impl::unity2::ClassIdentity for GodData_RelianceLevel{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GodData.RelianceLevel";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GodData_RelianceLevel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GodData_RelianceLevel{pub fn d()->Self{Self{value:0}
+}
+pub fn c()->Self{Self{value:1}
+}
+pub fn b()->Self{Self{value:2}
+}
+pub fn a()->Self{Self{value:3}
+}
+pub fn s()->Self{Self{value:4}
 }
 }
 
@@ -717,15 +717,15 @@ this}
 #[cfg(feature = "app-goddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodData_RelianceLevel;
+    pub use super::GodData_AIEngageAttackTypes;
     pub use super::GodData_FlagField;
     pub use super::IGodData_FlagField;
     pub use super::IGodData_FlagFieldMethods;
-    pub use super::GodData_AIEngageAttackTypes;
+    pub use super::GodData_Flags;
     pub use super::GodData;
     pub use super::IGodData;
     pub use super::IGodDataMethods;
-    pub use super::GodData_Flags;
+    pub use super::GodData_RelianceLevel;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

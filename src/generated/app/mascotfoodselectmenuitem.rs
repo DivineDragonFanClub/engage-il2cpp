@@ -23,21 +23,68 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogNo.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectMenuItem.ConfirmDialogNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MascotFoodSelectMenuItem_ConfirmDialogNo{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MascotFoodSelectMenuItem{#[offset(104)]#[rename(name="m_foodStuffData")]pub m_food_stuff_data:crate::app::foodstuffdata::FoodstuffData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogYes.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectMenuItem.ConfirmDialogYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MascotFoodSelectMenuItem_ConfirmDialogYes{#[offset(112)]#[rename(name="m_foodStuffData")]pub m_food_stuff_data:crate::app::foodstuffdata::FoodstuffData,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectMenuItem.ConfirmDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct MascotFoodSelectMenuItem_ConfirmDialog{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogYes.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectMenuItem.ConfirmDialogYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MascotFoodSelectMenuItem_ConfirmDialogYes{#[offset(112)]#[rename(name="m_foodStuffData")]pub m_food_stuff_data:crate::app::foodstuffdata::FoodstuffData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogNo.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectMenuItem.ConfirmDialogNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MascotFoodSelectMenuItem_ConfirmDialogNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MascotFoodSelectMenuItem{#[offset(104)]#[rename(name="m_foodStuffData")]pub m_food_stuff_data:crate::app::foodstuffdata::FoodstuffData,}
 
 }
 
 #[cfg(feature = "app-mascotfoodselectmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]pub trait IMascotFoodSelectMenuItem_ConfirmDialogYesMethods:IMascotFoodSelectMenuItem_ConfirmDialogYes{#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]fn ctor(self,foodstuff_data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <MascotFoodSelectMenuItem_ConfirmDialogYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e549b0usize)as*mut u8,();
+(MascotFoodSelectMenuItem_ConfirmDialogYes)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff_data))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotFoodSelectMenuItem_ConfirmDialogYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e54af0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MascotFoodSelectMenuItem_ConfirmDialogYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]impl<__T:IMascotFoodSelectMenuItem_ConfirmDialogYes>IMascotFoodSelectMenuItem_ConfirmDialogYesMethods for __T{}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialogYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialogYes{#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]pub fn new(foodstuff_data:crate::app::foodstuffdata::FoodstuffData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogYes), ::core::stringify!(new),));
+ <Self as IMascotFoodSelectMenuItem_ConfirmDialogYesMethods> ::ctor(this,foodstuff_data);
+this}
+}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::foodstuffdata::FoodstuffData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,foodstuff_data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->crate::app::mascotfoodselectmenuitem::MascotFoodSelectMenuItem_ConfirmDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e54720usize)as*mut u8,crate::app::mascotfoodselectmenuitem::MascotFoodSelectMenuItem_ConfirmDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff_data))}
+}
+}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]pub trait IMascotFoodSelectMenuItem_ConfirmDialogMethods:IMascotFoodSelectMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <MascotFoodSelectMenuItem_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e54710usize)as*mut u8,();
+(MascotFoodSelectMenuItem_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]impl<__T:IMascotFoodSelectMenuItem_ConfirmDialog>IMascotFoodSelectMenuItem_ConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialog), ::core::stringify!(new),));
+ <Self as IMascotFoodSelectMenuItem_ConfirmDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
 
 #[cfg(feature="app-mascotfoodselectmenuitem")]pub trait IMascotFoodSelectMenuItem_ConfirmDialogNoMethods:IMascotFoodSelectMenuItem_ConfirmDialogNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotFoodSelectMenuItem_ConfirmDialogNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e54a60usize)as*mut u8,();
@@ -130,68 +177,21 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::foodstuffdata::FoodstuffData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,foodstuff_data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->crate::app::mascotfoodselectmenuitem::MascotFoodSelectMenuItem_ConfirmDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e54720usize)as*mut u8,crate::app::mascotfoodselectmenuitem::MascotFoodSelectMenuItem_ConfirmDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff_data))}
-}
-}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]pub trait IMascotFoodSelectMenuItem_ConfirmDialogMethods:IMascotFoodSelectMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <MascotFoodSelectMenuItem_ConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e54710usize)as*mut u8,();
-(MascotFoodSelectMenuItem_ConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]impl<__T:IMascotFoodSelectMenuItem_ConfirmDialog>IMascotFoodSelectMenuItem_ConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialog), ::core::stringify!(new),));
- <Self as IMascotFoodSelectMenuItem_ConfirmDialogMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]pub trait IMascotFoodSelectMenuItem_ConfirmDialogYesMethods:IMascotFoodSelectMenuItem_ConfirmDialogYes{#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]fn ctor(self,foodstuff_data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <MascotFoodSelectMenuItem_ConfirmDialogYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e549b0usize)as*mut u8,();
-(MascotFoodSelectMenuItem_ConfirmDialogYes)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff_data))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotFoodSelectMenuItem_ConfirmDialogYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e54af0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MascotFoodSelectMenuItem_ConfirmDialogYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]impl<__T:IMascotFoodSelectMenuItem_ConfirmDialogYes>IMascotFoodSelectMenuItem_ConfirmDialogYesMethods for __T{}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialogYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mascotfoodselectmenuitem")]impl MascotFoodSelectMenuItem_ConfirmDialogYes{#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]pub fn new(foodstuff_data:crate::app::foodstuffdata::FoodstuffData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogYes), ::core::stringify!(new),));
- <Self as IMascotFoodSelectMenuItem_ConfirmDialogYesMethods> ::ctor(this,foodstuff_data);
-this}
-}
-
 #[cfg(feature = "app-mascotfoodselectmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MascotFoodSelectMenuItem_ConfirmDialogYes;
+    pub use super::IMascotFoodSelectMenuItem_ConfirmDialogYes;
+    pub use super::IMascotFoodSelectMenuItem_ConfirmDialogYesMethods;
+    pub use super::MascotFoodSelectMenuItem_ConfirmDialog;
+    pub use super::IMascotFoodSelectMenuItem_ConfirmDialog;
+    pub use super::IMascotFoodSelectMenuItem_ConfirmDialogMethods;
     pub use super::MascotFoodSelectMenuItem_ConfirmDialogNo;
     pub use super::IMascotFoodSelectMenuItem_ConfirmDialogNo;
     pub use super::IMascotFoodSelectMenuItem_ConfirmDialogNoMethods;
     pub use super::MascotFoodSelectMenuItem;
     pub use super::IMascotFoodSelectMenuItem;
     pub use super::IMascotFoodSelectMenuItemMethods;
-    pub use super::MascotFoodSelectMenuItem_ConfirmDialog;
-    pub use super::IMascotFoodSelectMenuItem_ConfirmDialog;
-    pub use super::IMascotFoodSelectMenuItem_ConfirmDialogMethods;
-    pub use super::MascotFoodSelectMenuItem_ConfirmDialogYes;
-    pub use super::IMascotFoodSelectMenuItem_ConfirmDialogYes;
-    pub use super::IMascotFoodSelectMenuItem_ConfirmDialogYesMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

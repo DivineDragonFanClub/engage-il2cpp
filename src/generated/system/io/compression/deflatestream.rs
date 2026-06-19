@@ -15,10 +15,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream.ReadMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStream_ReadMethod{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream")]#[parent(crate::system::io::stream::Stream)]pub struct DeflateStream{#[offset(40)]#[rename(name="base_stream")]pub base_stream:crate::system::io::stream::Stream, #[offset(48)]#[rename(name="mode")]pub mode:crate::system::io::compression::compressionmode::CompressionMode, #[offset(52)]#[rename(name="leaveOpen")]pub leave_open:bool, #[offset(53)]#[rename(name="disposed")]pub disposed:bool, #[offset(56)]#[rename(name="native")]pub native:crate::system::io::compression::deflatestreamnative::DeflateStreamNative,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream.ReadMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStream_ReadMethod{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream.WriteMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStream_WriteMethod{}
@@ -27,29 +27,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "system-io-compression-deflatestream-types")]
 pub use __types::*;
-
-#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_ReadMethodMethods:IDeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f340usize)as*mut u8,();
-(DeflateStream_ReadMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f360usize)as*mut u8,i32;
-(DeflateStream_ReadMethod)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
-}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_ReadMethod>IDeflateStream_ReadMethodMethods for __T{}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DeflateStream_ReadMethod), ::core::stringify!(new),));
- <Self as IDeflateStream_ReadMethodMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStreamMethods:IDeflateStream{#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` overload"]fn ctor(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3558330usize)as*mut u8,();
@@ -179,6 +156,29 @@ this}
 this}
 }
 
+#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_ReadMethodMethods:IDeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f340usize)as*mut u8,();
+(DeflateStream_ReadMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f360usize)as*mut u8,i32;
+(DeflateStream_ReadMethod)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_ReadMethod>IDeflateStream_ReadMethodMethods for __T{}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream_ReadMethod), ::core::stringify!(new),));
+ <Self as IDeflateStream_ReadMethodMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_WriteMethodMethods:IDeflateStream_WriteMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_WriteMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f7e0usize)as*mut u8,();
 (DeflateStream_WriteMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
@@ -205,12 +205,12 @@ this}
 #[cfg(feature = "system-io-compression-deflatestream")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DeflateStream_ReadMethod;
-    pub use super::IDeflateStream_ReadMethod;
-    pub use super::IDeflateStream_ReadMethodMethods;
     pub use super::DeflateStream;
     pub use super::IDeflateStream;
     pub use super::IDeflateStreamMethods;
+    pub use super::DeflateStream_ReadMethod;
+    pub use super::IDeflateStream_ReadMethod;
+    pub use super::IDeflateStream_ReadMethodMethods;
     pub use super::DeflateStream_WriteMethod;
     pub use super::IDeflateStream_WriteMethod;
     pub use super::IDeflateStream_WriteMethodMethods;

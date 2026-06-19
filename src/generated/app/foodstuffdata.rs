@@ -45,48 +45,15 @@ pub fn raise_reliance()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData_FlagField.md"))]#[::unity2::class(namespace="App",name="FoodstuffData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::foodstuffdata::FoodstuffData_Flags>)]pub struct FoodstuffData_FlagField{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData.md"))]#[::unity2::class(namespace="App",name="FoodstuffData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::foodstuffdata::FoodstuffData>)]pub struct FoodstuffData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData_FlagField.md"))]#[::unity2::class(namespace="App",name="FoodstuffData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::foodstuffdata::FoodstuffData_Flags>)]pub struct FoodstuffData_FlagField{}
 
 }
 
 #[cfg(feature = "app-foodstuffdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-foodstuffdata")]pub trait IFoodstuffData_FlagFieldMethods:IFoodstuffData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62df0usize)as*mut u8,();
-(FoodstuffData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_Flags>)->(){unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62e50usize)as*mut u8,();
-(FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(f))}
-}
-#[doc="`ToInt(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_Flags>)->i32{unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62eb0usize)as*mut u8,i32;
-(FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-foodstuffdata")]impl<__T:IFoodstuffData_FlagField>IFoodstuffData_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-foodstuffdata")]impl FoodstuffData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-foodstuffdata")]impl FoodstuffData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FoodstuffData_FlagField), ::core::stringify!(new),));
- <Self as IFoodstuffData_FlagFieldMethods> ::ctor(this,f);
-this}
-#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` — overload selector"]pub fn new_2(f:crate::app::foodstuffdata::FoodstuffData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FoodstuffData_FlagField), ::core::stringify!(new_2),));
- <Self as IFoodstuffData_FlagFieldMethods> ::ctor_2(this,f);
-this}
-}
 
 #[cfg(feature="app-foodstuffdata")]impl FoodstuffData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2610be0usize)as*mut u8,();
 )}
@@ -206,16 +173,49 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-foodstuffdata")]pub trait IFoodstuffData_FlagFieldMethods:IFoodstuffData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62df0usize)as*mut u8,();
+(FoodstuffData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_Flags>)->(){unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62e50usize)as*mut u8,();
+(FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_Flags>)->i32{unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62eb0usize)as*mut u8,i32;
+(FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-foodstuffdata")]impl<__T:IFoodstuffData_FlagField>IFoodstuffData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-foodstuffdata")]impl FoodstuffData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-foodstuffdata")]impl FoodstuffData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffData_FlagField), ::core::stringify!(new),));
+ <Self as IFoodstuffData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` — overload selector"]pub fn new_2(f:crate::app::foodstuffdata::FoodstuffData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffData_FlagField), ::core::stringify!(new_2),));
+ <Self as IFoodstuffData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
+
 #[cfg(feature = "app-foodstuffdata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FoodstuffData_Flags;
-    pub use super::FoodstuffData_FlagField;
-    pub use super::IFoodstuffData_FlagField;
-    pub use super::IFoodstuffData_FlagFieldMethods;
     pub use super::FoodstuffData;
     pub use super::IFoodstuffData;
     pub use super::IFoodstuffDataMethods;
+    pub use super::FoodstuffData_FlagField;
+    pub use super::IFoodstuffData_FlagField;
+    pub use super::IFoodstuffData_FlagFieldMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
