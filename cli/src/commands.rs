@@ -44,29 +44,52 @@ fn scan_layout(layout: &workspace::Layout, use_cargo_check_fallback: bool) -> Re
     let manifest = Manifest::load(&layout.bindings_root.join("features.json"))?;
 
     let listed = toml_writer::read_features(&layout.features_manifest).unwrap_or_default();
+
+    // Seed the enabled set from whatever Cargo.toml already lists.
     let mut enabled: BTreeSet<String> = BTreeSet::new();
     for f in &listed {
         enabled.extend(manifest.closure(f));
     }
 
-    let mut referenced_paths = BTreeSet::new();
-
-    for root in &layout.scan_roots {
-        let found = scan::collect_paths(root, &manifest, &[], &[], &enabled)?;
-        referenced_paths.extend(found);
-    }
-
+    // Finding references is a fixpoint, not one pass. The hand-written wrappers
+    // in the bindings (ext.rs) hide their references behind #[cfg(feature = "...")],
+    // so a wrapper's references only become visible once that wrapper's feature is
+    // on. Each pass turns on the features we found last pass, which can uncover
+    // more, so we loop until the enabled set stops growing. Without this a single
+    // `apply` only peels off the first layer and the build still reports the next
+    // layer as missing (you'd have to run apply again).
     let bindings_src = layout.bindings_root.join("src");
+    let mut referenced_paths;
 
-    if bindings_src.exists() {
-        let found = scan::collect_paths(
-            &bindings_src,
-            &manifest,
-            &["crate"],
-            &["generated"],
-            &enabled,
-        )?;
-        referenced_paths.extend(found);
+    loop {
+        let mut found = BTreeSet::new();
+
+        for root in &layout.scan_roots {
+            found.extend(scan::collect_paths(root, &manifest, &[], &[], &enabled)?);
+        }
+
+        if bindings_src.exists() {
+            found.extend(scan::collect_paths(
+                &bindings_src,
+                &manifest,
+                &["crate"],
+                &["generated"],
+                &enabled,
+            )?);
+        }
+
+        // Turn on whatever this pass referenced and see if that grew the set. If it
+        // didn't, this pass already saw everything reachable, so we're converged.
+        let before = enabled.len();
+        for f in scan::paths_to_features(&found, &manifest) {
+            enabled.extend(manifest.closure(&f));
+        }
+
+        referenced_paths = found;
+
+        if enabled.len() == before {
+            break;
+        }
     }
 
     if use_cargo_check_fallback {

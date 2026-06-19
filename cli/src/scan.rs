@@ -115,6 +115,14 @@ impl<'a> PathVisitor<'a> {
                 return;
             }
 
+            // Code usually imports the short re-export path (engage_il2cpp::app::Fade)
+            // rather than the canonical one (engage_il2cpp::app::fade::Fade). Record the
+            // canonical so it maps to a feature downstream.
+            if let Some(canonical) = self.manifest.reexports.get(&candidate) {
+                self.out.insert(canonical.clone());
+                return;
+            }
+
             if let Some(leaf) = segments.get(n - 1) {
                 if self.manifest.ext_wrappers.contains_key(leaf) {
                     self.out.insert(candidate);

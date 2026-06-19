@@ -15,6 +15,13 @@ pub struct Manifest {
     pub dependencies: BTreeMap<String, Vec<String>>,
     #[serde(skip)]
     pub ext_wrappers: BTreeMap<String, Vec<String>>,
+    /// Short re-export path -> canonical path. Types live at
+    /// `engage_il2cpp::<ns>::<module>::<Type>` but the generated `<ns>` module
+    /// re-exports them one level up (the `pub use <module>::{Type}` lines in
+    /// app.rs etc), so code usually imports the short `engage_il2cpp::<ns>::<Type>`.
+    /// This maps that short form back so the scanner recognizes it.
+    #[serde(skip)]
+    pub reexports: BTreeMap<String, String>,
 }
 
 const SCHEMA_VERSION: u32 = 1;
@@ -36,6 +43,8 @@ impl Manifest {
         if let Some(bindings_root) = path.parent() {
             m.ext_wrappers = load_ext_wrappers(bindings_root).unwrap_or_default();
         }
+
+        m.reexports = build_reexports(&m.paths);
 
         Ok(m)
     }
@@ -68,6 +77,41 @@ impl Manifest {
 
         out
     }
+}
+
+/// Invert the namespace-root re-exports: for each canonical
+/// `engage_il2cpp::<ns>::<module>::<Type>`, the `<ns>` module re-exports it as
+/// `engage_il2cpp::<ns>::<Type>`, so drop the module segment (second to last) to
+/// get the short form code actually imports. A real `pub use` at one level can't
+/// name two types the same way, so if two canonicals ever collapse to the same
+/// short form we drop it rather than guess.
+fn build_reexports(paths: &BTreeMap<String, String>) -> BTreeMap<String, String> {
+    let mut grouped: BTreeMap<String, Vec<&String>> = BTreeMap::new();
+
+    for canonical in paths.keys() {
+        let segs: Vec<&str> = canonical.split("::").collect();
+
+        // Need at least crate::ns::module::Type for there to be a module to drop.
+        if segs.len() < 4 {
+            continue;
+        }
+
+        let mut short_segs = segs.clone();
+        short_segs.remove(segs.len() - 2);
+        let short = short_segs.join("::");
+
+        if short != *canonical {
+            grouped.entry(short).or_default().push(canonical);
+        }
+    }
+
+    grouped
+        .into_iter()
+        .filter_map(|(short, canonicals)| match canonicals.as_slice() {
+            [only] => Some((short, (*only).clone())),
+            _ => None,
+        })
+        .collect()
 }
 
 fn load_ext_wrappers(bindings_root: &Path) -> Option<BTreeMap<String, Vec<String>>> {
